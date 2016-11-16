@@ -11,13 +11,13 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionbuttons.html',
                 controller: 'QuestionButtonsCtrl'
             })
-            .when('/questionslider', {
-                templateUrl: 'views/questionslider.html',
-                controller: 'QuestionSliderCtrl'
-            })
             .when('/questionbuttonslider', {
                 templateUrl: 'views/questionbuttonslider.html',
                 controller: 'QuestionButtonSliderCtrl'
+            })
+            .when('/end', {
+                templateUrl: 'views/end.html',
+                controller: ''
             })
             .otherwise({
                 redirectTo: '/start'

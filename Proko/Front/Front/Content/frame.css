@@ -49,26 +49,32 @@ GENERAL STYLES
   margin: 20px 0;
 }
 
-.el.center-2 {
-    margin: 0 auto;
-}
-
-.el-inline {
-    display: inline-block;
+.line-high {
+    line-height: 120%;
 }
 
 /*
 PADDINGS & MARGINS
 **************************/
 
-.m-t-5r {
-    margin-top: 5rem;
-}
-
-.m-b-3r {
-    margin-bottom: 3rem;
-}
-
+/* padding top */
 .p-t-1r {
     padding-top: 1rem;
+}
+
+.p-t-3r {
+    padding-top: 3rem;
+}
+
+.p-t-5r {
+    padding-top: 5rem;
+}
+
+.p-t-8r {
+    padding-top: 8rem;
+}
+
+/* padding bottom */
+.p-b-3r {
+    padding-bottom: 3rem;
 }
