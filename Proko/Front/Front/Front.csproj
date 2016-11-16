@@ -69,6 +69,7 @@
     <Content Include="Content\frame.css" />
     <Content Include="Content\views.css" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
+    <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
@@ -118,8 +119,10 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Services\answerService.js" />
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\questionbuttons.html" />
+    <Content Include="views\questionbuttonslider.html" />
     <Content Include="views\questionslider.html" />
     <Content Include="views\start.html" />
     <Content Include="Web.config" />
@@ -127,7 +130,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="newfiles\" />
+    <Folder Include="oldfiles\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

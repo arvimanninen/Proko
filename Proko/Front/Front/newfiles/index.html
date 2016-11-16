@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,11 @@
     <link href="Content/bootstrap.css" rel="stylesheet">
     <!-- Own modifications css-->
     <link href="Content/frame.css" rel="stylesheet">
-    <link href="Content/views.css" rel="stylesheet">
+    <link href="Content/view.css" rel="stylesheet">
+
+    <!-- AngularJS-->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
 
     <!-- TODO: UPDATE HTML5SHIV AND RESPOND -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,7 +33,7 @@
             </div> <!--container div ends-->
         </header>
         <!-- begin page content -->
-        <div ng-view class="container">
+        <div class="container">
 
 
         </div> <!-- page content div ends-->
@@ -44,17 +48,11 @@
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="Scripts/bootstrap.min.js"></script>
-    <!-- AngularJS-->
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-route.min.js"></script>
     <!-- App module -->
-    <script src="Scripts/app.js"></script>
-    <!-- Angular controllers -->
-    <script src="Controllers/StartCtrl.js"></script>
-    <script src="Controllers/QuestionButtonsCtrl.js"></script>
-    <script src="Controllers/QuestionSliderCtrl.js"></script>
-    <script src="Controllers/QuestionButtonSliderCtrl.js"></script>
-    <!-- Angular services -->
-    <script src="Services/answerService.js"></script>
+    <script src="Scripts/app.module.js"></script>
+    <!-- Test controller-->
+    <script src="Controllers/TestCtrl.js"></script>
+    <script src="Scripts/ui-scripts.js"></script>
+
 </body>
 </html>

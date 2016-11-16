@@ -15,9 +15,9 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionslider.html',
                 controller: 'QuestionSliderCtrl'
             })
-            .when('/bubblecharttest', {
-                templateUrl: 'views/bubblecharttest.html',
-                controller: 'QuestionSliderCtrl'
+            .when('/questionbuttonslider', {
+                templateUrl: 'views/questionbuttonslider.html',
+                controller: 'QuestionButtonSliderCtrl'
             })
             .otherwise({
                 redirectTo: '/start'

@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Iss Proko - Rakennushankekysely</title>
+    <title>Bootstrap 101 Template</title>
     <!-- Bootstrap css-->
-    <link href="Content/bootstrap.css" rel="stylesheet">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <!-- Own modifications css-->
-    <link href="Content/frame.css" rel="stylesheet">
-    <link href="Content/views.css" rel="stylesheet">
+    <link href="Content/frame.css" rel="stylesheet" />
+    <link href="Content/views.css" rel="stylesheet" />
+    <!-- AngularJS-->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <!--<script src="Scripts/moment-with-locales.min.js"></script>
+    <script src="Scripts/Chart.min.js"></script> -->
 
     <!-- TODO: UPDATE HTML5SHIV AND RESPOND -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,39 +28,31 @@
     <!--[endif]-->
 </head>
 <body>
-    <div id="wrap">
-        <header>
-            <div class="container">
-                <h3 id="header-text" class="text-center">Kysely Rakennusprojektiin NN</h3>
-            </div> <!--container div ends-->
-        </header>
-        <!-- begin page content -->
-        <div ng-view class="container">
+    <div id="content-all">
+        <div class="wrap">
+            <header>
+                <h2>Kysely xyz</h2>
+            </header>
+                <div ng-view id="content-inner" class="m-t-20 m-b-20">               
+                 
+                </div> <!-- content div -->
+              
+        </div> <!-- wrap div -->
+        <footer>
+            <h3>ISS Proko Oy</h3>
+        </footer>
 
-
-        </div> <!-- page content div ends-->
-    </div><!-- wrap div ends -->
-    <footer>
-        <div class="container">
-            <h4 id="footer-text" class="text-center">ISS Proko Oy</h4>
-        </div>
-    </footer>
-
+    </div> <!-- content-all div -->
+    <!-- SCRIPTS -->
     <!-- jQuery  -->
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="Scripts/bootstrap.min.js"></script>
-    <!-- AngularJS-->
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-route.min.js"></script>
     <!-- App module -->
     <script src="Scripts/app.js"></script>
-    <!-- Angular controllers -->
+    <!-- Controllers -->
     <script src="Controllers/StartCtrl.js"></script>
     <script src="Controllers/QuestionButtonsCtrl.js"></script>
     <script src="Controllers/QuestionSliderCtrl.js"></script>
-    <script src="Controllers/QuestionButtonSliderCtrl.js"></script>
-    <!-- Angular services -->
-    <script src="Services/answerService.js"></script>
 </body>
 </html>
