@@ -11,7 +11,7 @@
 
     var getAllAnswers = function () {
         return answerList;
-    }
+    };
 
     return {
         setAnswer: setAnswer,
