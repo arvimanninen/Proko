@@ -3,7 +3,7 @@
 
     var setAnswer = function (newAnswer) {
         answerList.push(newAnswer);
-    };
+    }
 
     var getAnswer = function (index) {
         return answerList[index];
