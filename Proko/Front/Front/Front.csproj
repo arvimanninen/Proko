@@ -68,12 +68,14 @@
   <ItemGroup>
     <Content Include="Content\frame.css" />
     <Content Include="Content\views.css" />
+    <Content Include="Controllers\BarChartCtrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\angular-chart.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\Chart.js" />

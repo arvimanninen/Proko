@@ -11,7 +11,7 @@ app.controller('QuestionButtonsCtrl', function QuestionButtonsCtrl($scope, $loca
                 answerService.setAnswer($scope.answerOne);
                 answerService.setAnswer($scope.answerTwo);
                 console.log("Tiedot talletettu!")
-                $location.path("/start");
+                $location.path("/end");
             } else {
                 alert("Syötä vastaus 2!");
             }
