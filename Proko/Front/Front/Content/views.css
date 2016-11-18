@@ -99,16 +99,20 @@ fieldset[disabled] .btn-default.focus {
 BUTTON SLIDER VIEW
 ***********************/
 
-.btn-slider {
-    width: 100px;
-    height: 30px;
-}
-
 .btn-slider-text-div {
-    width: 90%;
+    width: 550px;
     margin: 0 auto;
 }
 
 .btn-slider-text {
     color: #666666;
+}
+
+.pd-text {
+    color: #fff;
+}
+
+.btn-slider {
+    width: 100px;
+    height: 30px;
 }
