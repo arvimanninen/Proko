@@ -17,6 +17,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionbuttonslider.html',
                 controller: 'QuestionButtonSliderCtrl'
             })
+            .when('/questiondragdrop', {
+                templateUrl: 'views/questiondragdrop.html',
+                controller: 'QuestionDragDropCtrl'
+            })
             .when('/end', {
                 templateUrl: 'views/end.html',
                 controller: ''
