@@ -9,16 +9,20 @@
 	margin-top: 5rem;
 	margin-bottom: 1.5rem;
 }
-
-.q-alt {
+/*
+.m-b-1half {
     margin-bottom: 1.5rem;
 }
-
+*/
 .not-answered {
     color: red;
     display: inline-block;
-
 }
+
+.not-answered-2 {
+    color: red;
+}
+
 
 /*
 .btn-next-m-b {
