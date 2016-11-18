@@ -16,6 +16,8 @@
 
 .not-answered {
     color: red;
+    display: inline-block;
+
 }
 
 /*
@@ -98,7 +100,7 @@ BUTTON SLIDER VIEW
     height: 30px;
 }
 
-.btn-slider-div {
+.btn-slider-text-div {
     width: 90%;
     margin: 0 auto;
 }
