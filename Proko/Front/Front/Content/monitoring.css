@@ -1,2 +1,34 @@
-﻿body {
+﻿/* monitoring styles */
+
+#panel-questions {
+    margin-top: 2rem;
 }
+
+/*
+RESULTS CONTENT
+**************************/
+#poll-results {
+    min-height: 440px;
+
+    margin: 2rem 0 2rem 0;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border: 1px solid #ddd;
+}
+
+/*
+MEDIA QUERIES (bootstrap 3 widths)
+***********************************/
+
+@media screen and (min-width: 768px) {
+    .el-select {
+        margin: 8px 0 0 10%;
+    }
+}
+
+@media screen and (min-width: 992px) { }
+
+@media screen and (min-width: 1200px) { }
