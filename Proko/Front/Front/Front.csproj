@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\frame.css" />
+    <Content Include="Content\monitoring.css" />
     <Content Include="Content\views.css" />
     <Content Include="Controllers\BarChartCtrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
@@ -125,6 +126,7 @@
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\end.html" />
+    <Content Include="views\monitoring.html" />
     <Content Include="views\questionbuttons.html" />
     <Content Include="views\questionbuttonslider.html" />
     <Content Include="views\questionslider.html" />
