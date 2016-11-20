@@ -83,6 +83,7 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\dragdrop.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
