@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var app = angular.module('app', ["ngRoute"]);
+var app = angular.module('app', ["ngRoute", "chart.js"]);
 
 
 app.config(['$routeProvider', '$locationProvider',
@@ -30,9 +30,9 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/end.html',
                 controller: ''
             })
-            .when('/monitoringstart', {
-                templateUrl: 'views/monitoringstart.html',
-                controller: 'MonitoringStartCtrl'
+            .when('/monitoring', {
+                templateUrl: 'views/monitoring.html',
+                controller: 'MonitoringCtrl'
             })
             .when('/barchart', {
                 templateUrl: 'views/barchart.html',
