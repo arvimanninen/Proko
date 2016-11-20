@@ -10,6 +10,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/start.html',
                 controller: 'StartCtrl'
             })
+            .when('/answerertype', {
+                templateUrl: 'views/answerertype.html',
+                controller: 'AnswererTypeCtrl'
+            })
             .when('/questionbuttons', {
                 templateUrl: 'views/questionbuttons.html',
                 controller: 'QuestionButtonsCtrl'
