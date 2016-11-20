@@ -70,7 +70,7 @@
     <Content Include="Content\monitoring.css" />
     <Content Include="Content\views.css" />
     <Content Include="Controllers\BarChartCtrl.js" />
-    <Content Include="Controllers\MonitoringStart.js" />
+    <Content Include="Controllers\MonitoringStartCtrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionDragDropCtrl.js" />
