@@ -27,6 +27,10 @@ MEDIA QUERIES (bootstrap 3 widths)
     .el-select {
         margin: 8px 0 0 10%;
     }
+
+    #poll-results {
+        margin: 2rem 0 2rem -20px;
+    }
 }
 
 @media screen and (min-width: 992px) { }
