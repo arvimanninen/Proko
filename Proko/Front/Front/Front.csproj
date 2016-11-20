@@ -126,6 +126,7 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Services\answerService.js" />
+    <Content Include="views\answerertype.html" />
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\end.html" />
