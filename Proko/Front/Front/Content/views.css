@@ -150,6 +150,12 @@ DRAG & DROP VIEW
     height: 100px;
 }
 
+.smiley {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
 /* testit */
 
 .objects {

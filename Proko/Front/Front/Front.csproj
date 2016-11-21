@@ -78,9 +78,11 @@
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
+    <Content Include="Images\1f610.svg" />
     <Content Include="Images\1f612.svg" />
     <Content Include="Images\1f621.svg" />
     <Content Include="Images\1f642.svg" />
+    <Content Include="Images\1f914.svg" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
     <Content Include="Scripts\angular-route.js" />
