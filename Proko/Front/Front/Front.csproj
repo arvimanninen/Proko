@@ -72,6 +72,7 @@
     <Content Include="Controllers\AnswererTypeCtrl.js" />
     <Content Include="Controllers\BarChartCtrl.js" />
     <Content Include="Controllers\EndCtrl.js" />
+    <Content Include="Controllers\Monitoring-2Ctrl.js" />
     <Content Include="Controllers\MonitoringCtrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
@@ -139,6 +140,7 @@
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\end.html" />
+    <Content Include="views\monitoring-2.html" />
     <Content Include="views\monitoring.html" />
     <Content Include="views\questionbuttons.html" />
     <Content Include="views\questionbuttonslider.html" />

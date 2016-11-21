@@ -9,7 +9,7 @@
         $scope.pollData = answerData;
     };
 
-    $scope.pollLabels = ['2006', '2007', '2008', '2009'];
+    $scope.pollLabels = ['Lokakuu', 'Marraskuu', 'Joulukuu', 'Tammikuu'];
     $scope.pollSeries = ['Series A'];
     $scope.pollData = [1, 2, 3, 5];
     console.log("Type of pollData: " + typeof($scope.pollData[0]));

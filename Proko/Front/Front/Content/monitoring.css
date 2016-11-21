@@ -7,9 +7,9 @@
 /*
 RESULTS CONTENT
 **************************/
-#poll-results {
+.poll-results {
     min-height: 440px;
-
+    max-width: 100%;
     margin: 2rem 0 2rem 0;
     background-color: #fff;
     border: 1px solid transparent;
@@ -28,8 +28,8 @@ MEDIA QUERIES (bootstrap 3 widths)
         margin: 8px 0 0 10%;
     }
 
-    #poll-results {
-        margin: 2rem 0 2rem -20px;
+    .poll-results {
+        margin: 2rem 0 2rem 0px;
     }
 }
 
