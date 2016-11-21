@@ -4,8 +4,8 @@
     
     var setAnswers = function (answerArray) {
         console.log("storageService.setAnswers() started!");
-        if (answerArray.length === localStorageKeys.length) {
-            for (var i = 0; i <= answerArray.length - 1; i++) {
+        for (var i = 0; i <= answerArray.length - 1; i++) {
+            if (i = 0) {
                 console.log("current i:" + i);
                 console.log("current localStorageKey:" + localStorageKeys[i]);
                 console.log("current answerArray:" + answerArray[i]);
@@ -20,8 +20,6 @@
                 console.log("storageService.setAnswers().answerCountKey NOT available!");
                 localStorage.setItem(answerCountKey, 1);
             }
-        } else {
-            alert("Answer array's length and reference doesn't match!");
         }
     };
     var getAnswers = function () {
