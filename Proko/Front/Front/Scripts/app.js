@@ -28,7 +28,7 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .when('/end', {
                 templateUrl: 'views/end.html',
-                controller: ''
+                controller: 'EndCtrl'
             })
             .when('/monitoring', {
                 templateUrl: 'views/monitoring.html',

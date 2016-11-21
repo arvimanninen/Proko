@@ -71,6 +71,7 @@
     <Content Include="Content\views.css" />
     <Content Include="Controllers\AnswererTypeCtrl.js" />
     <Content Include="Controllers\BarChartCtrl.js" />
+    <Content Include="Controllers\EndCtrl.js" />
     <Content Include="Controllers\MonitoringCtrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
@@ -128,6 +129,7 @@
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\ui-scripts.js" />
     <Content Include="Services\answerService.js" />
+    <Content Include="Services\storageService.js" />
     <Content Include="views\answerertype.html" />
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />
