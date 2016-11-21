@@ -36,7 +36,7 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .when('/monitoring-2', {
                 templateUrl: 'views/monitoring-2.html',
-                controller: 'Monitoring-2Ctrl'
+                controller: 'Monitoring2Ctrl'
             })
             .when('/barchart', {
                 templateUrl: 'views/barchart.html',
