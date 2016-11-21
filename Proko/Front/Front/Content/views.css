@@ -130,6 +130,12 @@ DRAG & DROP VIEW
     max-width: 500px;
 }
 
+.panel-cstm-2 {
+    width: 220px;
+    height: 160px;
+    margin-bottom: 2rem;
+}
+
 .panel-h-cstm {
     font-size: 16px;
 }
@@ -164,3 +170,4 @@ DRAG & DROP VIEW
     padding: 8px;
     /*font-size: 18px;*/
 }
+
