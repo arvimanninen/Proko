@@ -132,7 +132,6 @@ DRAG & DROP VIEW
 
 .panel-cstm-2 {
     width: 220px;
-    height: 160px;
     margin-bottom: 2rem;
 }
 
@@ -145,6 +144,10 @@ DRAG & DROP VIEW
     margin: 0 auto;
     margin-bottom: 10px;
     display: block;
+}
+
+.panel-body-cstm-2 {
+    height: 100px;
 }
 
 /* testit */
