@@ -126,6 +126,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\ui-scripts.js" />
     <Content Include="Services\answerService.js" />
     <Content Include="views\answerertype.html" />
     <Content Include="views\barchart.html" />
