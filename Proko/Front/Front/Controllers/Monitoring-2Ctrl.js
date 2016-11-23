@@ -9,7 +9,7 @@
         $scope.pollData = answerData;
     };
 
-    $scope.pollLabels = ['Lokakuu', 'Marraskuu', 'Joulukuu', 'Tammikuu'];
+    $scope.pollLabels = ['Sähkömiehet', 'Putkimiehet', 'Rakennusmiehet', 'Raskaiden ajoneuvojen kuljettajat'];
     $scope.pollSeries = ['Series A'];
     $scope.pollData = [1, 2, 3, 5];
     console.log("Type of pollData: " + typeof ($scope.pollData[0]));

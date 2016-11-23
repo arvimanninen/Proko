@@ -67,8 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\frame.css" />
+    <Content Include="Content\jquery-ui.min.dragndroponly.css" />
     <Content Include="Content\monitoring.css" />
     <Content Include="Content\views.css" />
+    <Content Include="Controllers\AdndTestCtrl.js" />
     <Content Include="Controllers\AnswererTypeCtrl.js" />
     <Content Include="Controllers\BarChartCtrl.js" />
     <Content Include="Controllers\EndCtrl.js" />
@@ -87,6 +89,7 @@
     <Content Include="Images\1f914.svg" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
+    <Content Include="Scripts\angular-dragdrop.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\Chart.js" />
@@ -129,6 +132,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.min.dragndroponly.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
@@ -136,6 +140,7 @@
     <Content Include="Scripts\ui-scripts.js" />
     <Content Include="Services\answerService.js" />
     <Content Include="Services\storageService.js" />
+    <Content Include="views\adndtest.html" />
     <Content Include="views\answerertype.html" />
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />

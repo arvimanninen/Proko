@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var app = angular.module('app', ["ngRoute", "chart.js"]);
+var app = angular.module('app', ["ngRoute", "chart.js", "ngDragDrop"]);
 
 
 app.config(['$routeProvider', '$locationProvider',
@@ -41,6 +41,10 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/barchart', {
                 templateUrl: 'views/barchart.html',
                 controller: 'BarChartCtrl'
+            })
+            .when('/adndtest', {
+                templateUrl: 'views/adndtest.html',
+                controller: 'AdndTestCtrl'
             })
             .otherwise({
                 redirectTo: '/start'
