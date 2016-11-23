@@ -79,6 +79,7 @@
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionDragDropCtrl.js" />
+    <Content Include="Controllers\QuestionDragDropSmileysCtrl.js" />
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
@@ -150,6 +151,7 @@
     <Content Include="views\questionbuttons.html" />
     <Content Include="views\questionbuttonslider.html" />
     <Content Include="views\questiondragdrop.html" />
+    <Content Include="views\questiondragdropsmileys.html" />
     <Content Include="views\questionslider.html" />
     <Content Include="views\start.html" />
     <Content Include="Web.config" />

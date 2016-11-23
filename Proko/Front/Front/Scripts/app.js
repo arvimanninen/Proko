@@ -38,13 +38,9 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/monitoring-2.html',
                 controller: 'Monitoring2Ctrl'
             })
-            .when('/barchart', {
-                templateUrl: 'views/barchart.html',
-                controller: 'BarChartCtrl'
-            })
-            .when('/adndtest', {
-                templateUrl: 'views/adndtest.html',
-                controller: 'AdndTestCtrl'
+            .when('/questiondragdropsmileys', {
+                templateUrl: 'views/questiondragropsmileys.html',
+                controller: 'QuestionDragDropSmileysCtrl'
             })
             .otherwise({
                 redirectTo: '/start'
