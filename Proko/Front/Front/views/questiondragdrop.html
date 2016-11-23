@@ -3,44 +3,52 @@
 
     <div class="row">
         <div class="col-sm-5">
-            <div class="text-center">
-                <button type="button" class="btn btn-default btn-drag" id="object1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">Tilaajan tekemä aikataulutus</button>
-                <button type="button" class="btn btn-default btn-drag" id="object2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">Muiden sidosryhmien töiden aikataulutus</button>
-                <button type="button" class="btn btn-default btn-drag" id="object3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">Tilaajan ammattitaitoisuus</button>
-                <button type="button" class="btn btn-default btn-drag" id="object4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">Muiden sidosryhmien ammattitaitoisuus</button>
-                <button type="button" class="btn btn-default btn-drag" id="object5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">Väittämä 5</button>
-                <button type="button" class="btn btn-default btn-drag" id="object6" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">Väittämä 6</button>
-            </div>
+            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop1" jqyoui-draggable="{animate:true}" ng-hide="!prop1.title">{{prop1.title}}</div>
+            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop2" jqyoui-draggable="{animate:true}" ng-hide="!prop2.title">{{prop2.title}}</div>
+            <!--<div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop3" jqyoui-draggable="{animate:true}" ng-hide="!prop3.title">{{prop3.title}}</div>
+            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop4" jqyoui-draggable="{animate:true}" ng-hide="!prop4.title">{{prop4.title}}</div>
+            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop5" jqyoui-draggable="{animate:true}" ng-hide="!prop5.title">{{prop5.title}}</div>
+            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop6" jqyoui-draggable="{animate:true}" ng-hide="!prop6.title">{{prop6.title}}</div>-->
+
         </div>
 
         <div class="col-sm-7">
-            <div class="panel panel-success panel-cstm">
+            <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable="{multiple:'true', stack:'true'}" style="height:100px;">
+                <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+            </div>
+
+            <!--<div class="panel panel-success panel-cstm">
                 <div class="panel-heading text-center panel-h-cstm to-center">Asia erinomaisessa kunnossa</div>
-                <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+                <div class="panel-body panel-body-cstm-1" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable={animate:'true'}>
+                    <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
                 </div>
-            </div>
-            <div class="panel panel-success panel-cstm">
-                <div class="panel-heading text-center panel-h-cstm to-center">Asia melko hyvässä kunnossa</div>
-                <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-                </div>
-            </div>
-            <div class="panel panel-warning panel-cstm">
-                <div class="panel-heading text-center panel-h-cstm to-center">Asiassa jonkin verran kehitettävää</div>
-                <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-                </div>
-            </div>
-            <div class="panel panel-warning panel-cstm">
-                <div class="panel-heading text-center panel-h-cstm to-center">Asiassa paljon kehitettävää</div>
-                <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-                </div>
+            </div>-->
+
+                <!--<div class="panel panel-success panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asia erinomaisessa kunnossa</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
             </div>
         </div>
+        <div class="panel panel-success panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asia melko hyvässä kunnossa</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>
+        <div class="panel panel-warning panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asiassa jonkin verran kehitettävää</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>
+        <div class="panel panel-warning panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asiassa paljon kehitettävää</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>-->
+            </div>
     </div> <!-- row div ends -->
 
-    <hr />
-
     <div class="text-center p-t-5r p-b-4r">
-        <a class="btn btn-default btn-lg" href="#end" role="button">Seuraava</a>
+        <a class="btn btn-default btn-lg" href="#questiondragdropsmileys" role="button">Seuraava</a>
         <p id="app_status" class="text-center pd-text p-t-3r">App status...</p>
     </div>
 </div>

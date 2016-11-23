@@ -140,13 +140,12 @@ DRAG & DROP VIEW
     max-width: 500px;
 }
 
-.panel-cstm-2 {
-    width: 220px;
-    margin-bottom: 2rem;
-}
-
 .panel-h-cstm {
     font-size: 16px;
+}
+
+.panel-body-cstm-1 {
+    height: 100px;
 }
 
 .btn-drag {
@@ -154,6 +153,11 @@ DRAG & DROP VIEW
     margin: 0 auto;
     margin-bottom: 10px;
     display: block;
+}
+
+.panel-cstm-2 {
+    width: 220px;
+    margin-bottom: 2rem;
 }
 
 .panel-body-cstm-2 {

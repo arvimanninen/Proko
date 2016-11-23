@@ -26,6 +26,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questiondragdrop.html',
                 controller: 'QuestionDragDropCtrl'
             })
+            .when('/questiondragdropsmileys', {
+                templateUrl: 'views/questiondragdropsmileys.html',
+                controller: 'QuestionDragDropSmileysCtrl'
+            })
             .when('/end', {
                 templateUrl: 'views/end.html',
                 controller: 'EndCtrl'
@@ -37,10 +41,6 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/monitoring-2', {
                 templateUrl: 'views/monitoring-2.html',
                 controller: 'Monitoring2Ctrl'
-            })
-            .when('/questiondragdropsmileys', {
-                templateUrl: 'views/questiondragropsmileys.html',
-                controller: 'QuestionDragDropSmileysCtrl'
             })
             .otherwise({
                 redirectTo: '/start'
