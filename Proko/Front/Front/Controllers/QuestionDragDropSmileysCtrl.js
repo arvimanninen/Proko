@@ -1,8 +1,6 @@
-﻿app.controller('QuestionDragDropSmileysCtrl', function QuestionDragDropSmileysCtrl($scope, $location, answerService) {
-
-
-
-    //$scope.list1 = { title: 'AngularJS - Drag Me' };
-    //$scope.list2 = {};
+﻿app.controller('QuestionDragDropSmileysCtrl', function QuestionDragDropSmileysCtrl($scope, $location, answerService, dragulaService) {
+    dragulaService.options($scope, 'smiley-bag', {
+        copy: true
+    });
 
 });
