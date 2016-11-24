@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var app = angular.module('app', ["ngRoute", "chart.js", "ngDragDrop"]);
+var app = angular.module('app', ["ngRoute", "chart.js", "ngDragDrop", angularDragula(angular)]);
 
 
 app.config(['$routeProvider', '$locationProvider',

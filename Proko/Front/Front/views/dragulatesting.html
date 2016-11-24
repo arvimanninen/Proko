@@ -1,0 +1,55 @@
+﻿<div class="container-fluid">
+
+    <div class="progress pr-bar-cstm">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            <span class="sr-only">60% Complete</span>
+        </div>
+    </div>
+
+    <h3 class="q-main-4 text-center">Sijoita väittämät siihen laatikkoon, jonne koet niiden kuuluvan:</h3>
+
+    <div class="row">
+        <div id="objectsource" class="col-sm-5">
+            <div class="btn btn-primary"></div>
+            <div class="btn btn-primary"></div>
+        </div>
+
+        <div id="objectdestination" class="col-sm-7">
+            <div >
+                <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+            </div>
+
+            <!--<div class="panel panel-success panel-cstm">
+                <div class="panel-heading text-center panel-h-cstm to-center">Asia erinomaisessa kunnossa</div>
+                <div class="panel-body panel-body-cstm-1" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable={animate:'true'}>
+                    <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+                </div>
+            </div>-->
+
+                <!--<div class="panel panel-success panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asia erinomaisessa kunnossa</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>
+        <div class="panel panel-success panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asia melko hyvässä kunnossa</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>
+        <div class="panel panel-warning panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asiassa jonkin verran kehitettävää</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>
+        <div class="panel panel-warning panel-cstm">
+            <div class="panel-heading text-center panel-h-cstm to-center">Asiassa paljon kehitettävää</div>
+            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
+            </div>
+        </div>-->
+    <!-- row div ends -->
+
+    <div class="text-center p-t-5r p-b-4r">
+        <a class="btn btn-default btn-lg" href="#questiondragdropsmileys" role="button">Seuraava</a>
+        <p id="app_status" class="text-center pd-text p-t-3r">App status...</p>
+    </div>
+</div>
