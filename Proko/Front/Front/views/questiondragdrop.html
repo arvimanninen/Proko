@@ -9,49 +9,35 @@
     <h3 class="q-main-4 text-center">Sijoita väittämät siihen laatikkoon, jonne koet niiden kuuluvan:</h3>
 
     <div class="row">
-        <div class="col-sm-5">
-            <div class="btn btn-primary"></div>
-            <div class="btn btn-primary"></div>
-            <!--<div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop3" jqyoui-draggable="{animate:true}" ng-hide="!prop3.title">{{prop3.title}}</div>
-            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop4" jqyoui-draggable="{animate:true}" ng-hide="!prop4.title">{{prop4.title}}</div>
-            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop5" jqyoui-draggable="{animate:true}" ng-hide="!prop5.title">{{prop5.title}}</div>
-            <div class="btn btn-primary btn-drag" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="prop6" jqyoui-draggable="{animate:true}" ng-hide="!prop6.title">{{prop6.title}}</div>-->
-
-        </div>
-
-        <div class="col-sm-7">
-            <div class="thumbnail" >
-                <div class="btn btn-success"></div>
+        
+        <div class="col-sm-12 dwrapper">
+            <div class="dcontainer" dragula="'first-bag'">
+                <div class="draggable">Tilaajan tekemä aikataulutus</div>
+                <div class="draggable">Muiden sidosryhmien töiden aikataulutus</div>
+                <div class="draggable">Tilaajan ammattitaitoisuus</div>
+                <div class="draggable">Muiden sidosryhmien ammattitaitoisuus</div>
+                <div class="draggable">Väittämä 5</div>
+                <div class="draggable">Väittämä 6</div>
             </div>
-
-            <!--<div class="panel panel-success panel-cstm">
-                <div class="panel-heading text-center panel-h-cstm to-center">Asia erinomaisessa kunnossa</div>
-                <div class="panel-body panel-body-cstm-1" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable={animate:'true'}>
-                    <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+            <div class="panel panel-success panel-cstm">
+                <div class="panel-heading panel-h-cstm">Asia hyvässä kunnossa</div>
+                <div class="panel-body panel-body-cstm-1 dcontainer" dragula="'first-bag'">
                 </div>
-            </div>-->
+            </div>
+            <div class="panel panel-warning panel-cstm">
+                <div class="panel-heading panel-h-cstm">Asia jonkin verran kehitettävää</div>
+                <div class="panel-body panel-body-cstm-1 dcontainer" dragula="'first-bag'">
+                </div>
+            </div>
+            <div class="panel panel-danger panel-cstm">
+                <div class="panel-heading panel-h-cstm">Asia paljon kehitettävää</div>
+                <div class="panel-body panel-body-cstm-1 dcontainer" dragula="'first-bag'">
+                </div>
+            </div>
+        </div>
 
-                <!--<div class="panel panel-success panel-cstm">
-            <div class="panel-heading text-center panel-h-cstm to-center">Asia erinomaisessa kunnossa</div>
-            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-            </div>
-        </div>
-        <div class="panel panel-success panel-cstm">
-            <div class="panel-heading text-center panel-h-cstm to-center">Asia melko hyvässä kunnossa</div>
-            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-            </div>
-        </div>
-        <div class="panel panel-warning panel-cstm">
-            <div class="panel-heading text-center panel-h-cstm to-center">Asiassa jonkin verran kehitettävää</div>
-            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-            </div>
-        </div>
-        <div class="panel panel-warning panel-cstm">
-            <div class="panel-heading text-center panel-h-cstm to-center">Asiassa paljon kehitettävää</div>
-            <div class="panel-body drop-zone" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-            </div>
-        </div>-->
-            </div>
+
+
     </div> <!-- row div ends -->
 
     <div class="text-center p-t-5r p-b-4r">
