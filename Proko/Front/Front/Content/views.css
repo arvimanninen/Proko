@@ -24,11 +24,7 @@
     margin-top: 2.5rem;
     margin-bottom: -0.5rem;
 }
-/*
-.m-b-1half {
-    margin-bottom: 1.5rem;
-}
-*/
+
 .not-answered {
     color: red;
     display: inline-block;
@@ -38,12 +34,11 @@
     color: red;
 }
 
-
-/*
-.btn-next-m-b {
-    margin-bottom: 1rem;
+.pr-bar-cstm {
+    max-width: 600px;
+    margin: 2.5rem auto 0;
 }
-*/
+
 /*
 VERTICAL RADIO-BUTTON VIEW
 ****************************/
