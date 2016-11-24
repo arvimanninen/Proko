@@ -71,6 +71,7 @@
     <Content Include="Content\monitoring.css" />
     <Content Include="Content\views.css" />
     <Content Include="Controllers\AdndTestCtrl.js" />
+    <Content Include="Controllers\AngularDragulaCtrl.js" />
     <Content Include="Controllers\AnswererTypeCtrl.js" />
     <Content Include="Controllers\BarChartCtrl.js" />
     <Content Include="Controllers\EndCtrl.js" />
@@ -91,6 +92,7 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
     <Content Include="Scripts\angular-dragdrop.min.js" />
+    <Content Include="Scripts\angular-dragula.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\Chart.js" />
