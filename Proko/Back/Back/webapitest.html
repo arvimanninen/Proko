@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Question App</title>
+</head>
+<body>
+
+    <div>
+        <h2>All Questions</h2>
+        <ul id="questions" />
+    </div>
+    <div>
+        <h2>Search by ID</h2>
+        <input type="text" id="questionId" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="question" />
+    </div>
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        var uri = 'api/QuestionsControllerApi';
+
+        $(document).ready(function () {
+          // Send an AJAX request
+          $.getJSON(uri)
+              .done(function (data) {
+                // On success, 'data' contains a list of products.
+                $.each(data, function (key, item) {
+                  // Add a list item for the product.
+                  $('<li>', { text: item }).appendTo($('#questions'));
+                });
+              });
+        });
+
+        function find() {
+          var id = $('#questionId').val();
+          $.getJSON(uri + '/' + id)
+              .done(function (data) {
+                $('#question').text(data);
+              })
+              .fail(function (jqXHR, textStatus, err) {
+                $('#question').text('Error: ' + err);
+              });
+        }
+
+    </script>
+</body>
+</html>
