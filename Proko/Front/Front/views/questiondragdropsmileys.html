@@ -8,98 +8,37 @@
 
     <h3 class="q-main-4 text-center">Valitse kullekin työntekijäryhmälle sopivin hymiö:</h3>
 
-    <!--<div class="row">
-        <div class="col-sm-3">
+    <div class="row">
+        <div class="dwrapper">
+            <div class="col-xs-12">
+                <div class="smiley-div-out dcontainer">
+                    <h4>Rakennusmiesten ammattitaito</h4>
+                    <div class="panelc smiley-div-in" dragula="'smiley-bag'"></div>
+                </div>
+                <div class="smiley-div-out dcontainer">
+                    <h4>Sähkömiesten ammattitaito</h4>
+                    <div class="panelc smiley-div-in" dragula="'smiley-bag'"></div>
+                </div>
+                <div class="smiley-div-out dcontainer">
+                    <h4>Putkimiesten ammattitaito</h4>
+                    <div class="panelc smiley-div-in" dragula="'smiley-bag'"></div>
+                </div>
+            </div>
 
-            <div class="panel panel-info panel-cstm-2 to-center">
-                <div class="panel-heading text-center panel-h-cstm to-center">Rakennusmiesten ammattitaitoisuus</div>
-                <div class="panel-body drop-zone-2 panel-body-cstm-2">
+            <div class="col-xs-12">
+                <div class="">
+                    <div class="smiley-around-div p-t-3r p-b-3r" dragula="'smiley-bag'">
+                        <img src="Images/1f642.svg" class="smiley" />
+                        <img src="Images/1f914.svg" class="smiley" />
+                        <img src="Images/1f621.svg" class="smiley" />
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-
-            <div class="panel panel-info panel-cstm-2 to-center">
-                <div class="panel-heading text-center panel-h-cstm to-center">Sähkömiesten ammattitaitoisuus</div>
-                <div class="panel-body drop-zone-2 panel-body-cstm-2">
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-
-            <div class="panel panel-info panel-cstm-2 to-center">
-                <div class="panel-heading text-center panel-h-cstm to-center">Putkimiesten ammattitaitoisuus</div>
-                <div class="panel-body drop-zone-2 panel-body-cstm-2" >
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-
-            <div class="panel panel-info panel-cstm-2 to-center">
-                <div class="panel-heading text-center panel-h-cstm to-center">Raskauden ajoneuvojen kuljettajien ammattitaitoisuus</div>
-                <div class="panel-body drop-zone-2 panel-body-cstm-2" ondragenter="drag_enter(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)">
-                </div>
-            </div>
-        </div>
-    </div>--> <!-- row div ends -->
-    <!--<div class="row">
-        <div class="col-sm-12">-->
-    <div class="text-center p-t-3r p-b-3r">
-        <img src="Images/1f642.svg" class="smiley" />
-        <img src="Images/1f914.svg" class="smiley" />
-        <img src="Images/1f621.svg" class="smiley" />
     </div>
 
-    <div class='dwrapper'>
-        <div class='dcontainer' dragula="'smiley-bag'">
-            <div>You can move these elements between these two containers</div>
-            <div>Moving them anywhere else isn't quite possible</div>
-            <div>There's also the possibility of moving elements around in the same container, changing their position</div>
-        </div>
-        <div class='dcontainer' dragula="'smiley-bag'">
-            <div>This is the default use case. You only need to specify the containers you want to use</div>
-            <div>More interactive use cases lie ahead</div>
-            <div>Make sure to check out the <a href='https://github.com/bevacqua/dragula#readme'>documentation on GitHub!</a></div>
-        </div>
+    <div class="text-center p-t-5r p-b-4r">
+        <a class="btn btn-default btn-lg" href="#end" role="button">Seuraava</a>
+        <p id="app_status" class="text-center pd-text p-t-3r">App status...</p>
     </div>
-    <!--</div>
-    </div>-->
-    <hr />
-
-    <!--<div class='examples' ng-app='angular-dragula-example'>
-        <div class='parent'>
-            <label for='hy'>Move stuff between these two containers. Note how the stuff gets inserted near the mouse pointer? Great stuff.</label>
-            <div class='wrapper'>
-                <div class='container' dragula='"first-bag"'>
-                    <div>You can move these elements between these two containers</div>
-                    <div>Moving them anywhere else isn't quite possible</div>
-                    <div>There's also the possibility of moving elements around in the same container, changing their position</div>
-                </div>
-                <div class='container' dragula='"first-bag"'>
-                    <div>This is the default use case. You only need to specify the containers you want to use</div>
-                    <div>More interactive use cases lie ahead</div>
-                    <div>Make sure to check out the <a href='https://github.com/bevacqua/dragula#readme'>documentation on GitHub!</a></div>
-                </div>
-            </div>
-            <pre>
-            <code>
-    &lt;div dragula=&#039;&quot;first-bag&quot;&#039;&gt;&lt;/div&gt;
-    &lt;div dragula=&#039;&quot;first-bag&quot;&#039;&gt;&lt;/div&gt;
-          </code>
-        </pre>
-        </div>
-    </div>-->
-
-
-        <!--<div class="thumbnail to-center" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style="width:300px;height:150px;">
-            <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
-        </div>
-
-        <div class="btn" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title"><img src="Images/1f642.svg" class="smiley" /></div>-->
-
-        <hr />
-        <div class="text-center p-t-5r p-b-4r">
-            <a class="btn btn-default btn-lg" href="#end" role="button">Seuraava</a>
-            <p id="app_status" class="text-center pd-text p-t-3r">App status...</p>
-        </div>
-    </div>
+</div>

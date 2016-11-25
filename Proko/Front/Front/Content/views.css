@@ -131,8 +131,12 @@ BUTTON SLIDER VIEW
 DRAG & DROP VIEW
 ****************************/
 
-.panel-cstm {
+.panel-cstm-1 {
     max-width: 360px;
+}
+
+.panel-cstm-2 {
+    max-width: 150px;
 }
 
 .panel-h-cstm {
@@ -142,6 +146,10 @@ DRAG & DROP VIEW
 
 .panel-body-cstm-1 {
     height: 50px;
+}
+
+.panel-body-cstm-2 {
+    height: 120px;
 }
 
 .draggable {
@@ -177,12 +185,70 @@ DRAG & DROP VIEW
 
 .panel-body-cstm-2 {
     height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* DRAG DROP SMILEYS */
+
+/*
+.row-c-out {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid green;
+}
+
+.row-c-in {
+
+}
+
+.col-up {
+    display: block;
+    border: 1px solid black;
+}
+
+.col-down {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid orange;
+}
+*/
+.smiley-div-out {
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.smiley-div-in {
+    height: 100px;
+    width: 120px;
+    margin: 0 auto;
+}
+
+
+.smiley-around-div {
+    text-align: center;
+}
+
+.panelc {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .smiley {
     width: 70px;
     height: 70px;
-    margin: 10px;
+    display: inline-block;
+    margin: 15px auto 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
 }
 
 /* testit */
@@ -208,3 +274,14 @@ DRAG & DROP VIEW
     padding: 8px;
     /*font-size: 18px;*/
 }
+/*
+MEDIA QUERIES (bootstrap 3 widths)
+**********************************/
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) { }
+
+@media screen and (min-width: 1200px) { }
