@@ -131,7 +131,7 @@ BUTTON SLIDER VIEW
 DRAG & DROP VIEW
 ****************************/
 
-.panel-cstm-1 {
+/*.panel-cstm-1 {
     max-width: 360px;
 }
 
@@ -151,6 +151,17 @@ DRAG & DROP VIEW
 .panel-body-cstm-2 {
     height: 120px;
 }
+
+.panel-cstm-2 {
+    width: 220px;
+    margin-bottom: 2rem;
+}
+
+.panel-body-cstm-2 {
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+}*/
 
 .draggable {
     width: 310px;
@@ -172,21 +183,30 @@ DRAG & DROP VIEW
     color: #2C7CB7;
 }
 
-/*.btn-drag {
+.draggable-white {
     width: 310px;
     margin: 0 auto 6px;
     display: block;
-}*/
-
-.panel-cstm-2 {
-    width: 220px;
-    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: #fff;
 }
 
-.panel-body-cstm-2 {
-    height: 100px;
-    display: table-cell;
-    vertical-align: middle;
+
+/* DRAG DROP 1ST VIEW */
+
+.dd-div-out {
+    width: 430px;
+    text-align: center;
+}
+
+.dd-div-in {
+    min-height: 60px;
+    width: 380px;
+    margin: 0 auto;
+    padding-top: 8px;
 }
 
 /* DRAG DROP SMILEYS */
