@@ -1,16 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
-    <title></title>
+    
+    <title>GET test</title>
 	<meta charset="utf-8" />
-    <script>
-        $.getJSON("api/QuestionsControllerApi", function (data) {
-            console.log("Ei saatana!");
-        });
-    </script>
+    
 </head>
 <body>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        /*var testVariable = $.getJSON("api/QuestionsApi/1", function (data) {
+            console.log("GET successful!");
+            console.log(data);
+        }); */
 
+        var Answer = function (nValue, nQuestionID, nUserID) {
+            // AnswerID created automatically in back-end
+            this.Value = nValue; 
+            this.QuestionID = nQuestionID;
+            this.UserID = nUserID;
+        }
+
+        var na = new Answer(2, 1, 1);
+
+        $.post("api/AnswersApi",
+            {
+                Value: 3
+            },
+            function (data, status) {
+            console.log("Data: " + data + "\nStatus: " + status);
+        });
+
+
+        
+    </script>
 </body>
 </html>

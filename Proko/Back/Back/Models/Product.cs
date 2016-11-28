@@ -6,10 +6,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Back.Models
 {
-    public class Contractor
+    public class Product
     {
-        public int ContractorID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection <User> Users { get; set; }
+        public string Category { get; set; }
+        public decimal Price { get; set; }
     }
 }
