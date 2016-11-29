@@ -67,7 +67,7 @@ PADDINGS & MARGINS
 
 /* margin bottom */
 .m-b-min1 {
-    margin-bottom: -1px;
+    margin-bottom: -0.5rem;
 }
 
 /* padding top */
@@ -81,6 +81,10 @@ PADDINGS & MARGINS
 
 .p-t-3r {
     padding-top: 3rem;
+}
+
+.p-t-4r {
+    padding-top: 4rem;
 }
 
 .p-t-5r {
