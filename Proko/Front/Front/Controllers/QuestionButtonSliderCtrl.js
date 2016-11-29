@@ -8,7 +8,7 @@ app.controller('QuestionButtonSliderCtrl', function QuestionButtonSliderCtrl($sc
             if ($scope.answerTwo === 1 || $scope.answerTwo === 2 || $scope.answerTwo === 3 || $scope.answerTwo === 4 || $scope.answerTwo === 5) {
                 answerService.setAnswer($scope.answerOne);
                 answerService.setAnswer($scope.answerTwo);
-                console.log("Tiedot talletettu!")
+                console.log("Tiedot talletettu!");
                 $location.path("/questiondragdrop");
             } else {
                 alert("Syötä vastaus 2!");
