@@ -1,25 +1,5 @@
 /* view styles */
 
-.q-main {
-	margin-top: 4rem;
-	margin-bottom: 2.5rem;
-}
-
-.q-main-2 {
-	margin-top: 5rem;
-	margin-bottom: 1.5rem;
-}
-
-.q-main-3 {
-	margin-top: 5rem;
-    margin-bottom: -2rem;
-}
-
-.q-main-4 {
-	margin-top: 4rem;
-	margin-bottom: 4rem;
-}
-
 .q-mon {
     margin-top: 2.5rem;
     margin-bottom: -0.5rem;
@@ -131,47 +111,17 @@ BUTTON SLIDER VIEW
 DRAG & DROP VIEW
 ****************************/
 
-/*.panel-cstm-1 {
-    max-width: 360px;
-}
-
-.panel-cstm-2 {
-    max-width: 150px;
-}
-
-.panel-h-cstm {
-    text-align: center;
-    font-size: 16px;
-}
-
-.panel-body-cstm-1 {
-    height: 50px;
-}
-
-.panel-body-cstm-2 {
-    height: 120px;
-}
-
-.panel-cstm-2 {
-    width: 220px;
-    margin-bottom: 2rem;
-}
-
-.panel-body-cstm-2 {
-    height: 100px;
-    display: table-cell;
-    vertical-align: middle;
-}*/
-
 .draggable {
     width: 310px;
     margin: 0 auto 6px;
     display: block;
     text-align: center;
-    border: 1px solid #2C7CB7;
+    border: 1px solid #2c7cb7; /*#236290*/
+    background-color: #328ccd; /*#2C7CB7*/
+    color: #fff;
+    font-size: 17px;
     border-radius: 4px;
     padding: 6px 12px;
-    color: #236290;
     cursor: pointer;
     -webkit-user-select: none;
         -moz-user-select: none;
@@ -194,6 +144,13 @@ DRAG & DROP VIEW
     color: #fff;
 }
 
+.panelc {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
 
 /* DRAG DROP 1ST VIEW */
 
@@ -209,30 +166,16 @@ DRAG & DROP VIEW
     padding-top: 8px;
 }
 
+.panelc-2 {
+    background-color: #fff;
+    border: 2px solid #999999;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+}
+
 /* DRAG DROP SMILEYS */
 
-/*
-.row-c-out {
-    max-width: 900px;
-    margin: 0 auto;
-    border: 1px solid green;
-}
-
-.row-c-in {
-
-}
-
-.col-up {
-    display: block;
-    border: 1px solid black;
-}
-
-.col-down {
-    display: block;
-    margin: 0 auto;
-    border: 1px solid orange;
-}
-*/
 .smiley-div-out {
     width: 30%;
     padding-left: 20px;
@@ -246,17 +189,8 @@ DRAG & DROP VIEW
     margin: 0 auto;
 }
 
-
 .smiley-around-div {
     text-align: center;
-}
-
-.panelc {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .smiley {
@@ -299,9 +233,23 @@ MEDIA QUERIES (bootstrap 3 widths)
 **********************************/
 
 @media screen and (min-width: 768px) {
-
+    .dd-drop-div {
+        margin-left: 2%;
+    }
 }
 
-@media screen and (min-width: 992px) { }
+@media screen and (min-width: 992px) {
+    .dd-row {
+        margin-left: 8%;
+    }
 
-@media screen and (min-width: 1200px) { }
+    .dd-drop-div {
+        margin-left: 4%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .dd-row {
+        margin-left: 14%;
+    }
+}
