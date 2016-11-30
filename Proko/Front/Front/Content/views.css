@@ -116,7 +116,7 @@ DRAG & DROP VIEW
 ****************************/
 
 .draggable {
-    width: 310px;
+    width: 280px;
     margin: 0 auto 6px;
     display: block;
     text-align: center;
@@ -159,13 +159,13 @@ DRAG & DROP VIEW
 /* DRAG DROP 1ST VIEW */
 
 .dd-div-out {
-    width: 430px;
+    width: 350px;
     text-align: center;
 }
 
 .dd-div-in {
     min-height: 60px;
-    width: 380px;
+    width: 310px;
     margin: 0 auto;
     padding-top: 8px;
 }
