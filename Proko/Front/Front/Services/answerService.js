@@ -1,4 +1,6 @@
-﻿app.service('answerService', function () {
+﻿'use strict';
+
+app.service('answerService', function () {
     var answerList = [];
 
     var setAnswer = function (newAnswer) {
@@ -14,10 +16,7 @@
     };
 
     var format = function () {
-        var ogLength = answerList.length;
-        for (var i = 0; i < ogLength - 1; i++) {
-            answerList[i] = null;
-        }
+        answerList.length = 0;
         console.log("answerService.answerList length after formatting:" + answerList.length);
     };
 
