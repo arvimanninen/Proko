@@ -3,22 +3,22 @@
         <div class="col-sm-3 col-lg-2 sidebar">
             <div class="list-group">
                 <div id="panel-questions" class="panel panel-primary">
-                    <div class="panel-heading">Kysymykset</div>
+                    <div class="panel-heading">Tilastot</div>
                     <div class="list-group"> 
-                        <a class="list-group-item" href="#monitoring">Yhteenveto</a>
-                        <a class="list-group-item" href="#monitoring-2" role="button">Kysymys 1</a>
-                        <a class="list-group-item">Kysymys 2</a>
+                        <a class="list-group-item" href="#monitoringov">Yhteenveto</a>
+                        <a class="list-group-item" href="#monitoring" role="button">Vastaajamäärä</a>
+                        <a class="list-group-item" href="#monitoring-2">Aikataulutus</a>
                         <a class="list-group-item">Kysymys 3</a>
                         <a class="list-group-item">Kysymys 4</a>
                     </div>
                 </div>
             </div>
+            <a class="btn btn-default btn-block" href="#start" role="button">Uusi kysely</a>
         </div>
-        <h3 class="text-center q-mon">Vastausten keskiarvo</h3>
+        <h3 class="text-center q-mon">Vastausten keskiarvo (1-5)</h3>
 
         <div class="col-sm-9 col-lg-10">
             <canvas class="chart chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries" chart-options="options"></canvas>
-
         </div> <!-- 2nd col div in outer row -->
     </div> <!-- row div -->
 </div>
