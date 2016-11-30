@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Back.Models;
 
+
 namespace Back.ApiControllers
 {
     public class AnswersApiController : ApiController
@@ -78,7 +79,12 @@ namespace Back.ApiControllers
             {
                 return BadRequest(ModelState);
             }
-
+            System.Diagnostics.Debug.WriteLine("answer.AnswerID: " + answer.AnswerID);
+            System.Diagnostics.Debug.WriteLine("answer.QuestionID: " + answer.QuestionID);
+            System.Diagnostics.Debug.WriteLine("answer.UserID: " + answer.UserID);
+            System.Diagnostics.Debug.WriteLine("answer.Value: " + answer.Value);
+            
+            
             db.Answers.Add(answer);
             db.SaveChanges();
 

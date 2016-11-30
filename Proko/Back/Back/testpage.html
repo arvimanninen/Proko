@@ -1,10 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    
-    <title>GET test</title>
+    <title>Web API test</title>
 	<meta charset="utf-8" />
-    
 </head>
 <body>
     <script src="Scripts/jquery-3.1.1.min.js"></script>
@@ -14,25 +12,24 @@
             console.log(data);
         }); */
 
-        var Answer = function (nValue, nQuestionID, nUserID) {
-            // AnswerID created automatically in back-end
-            this.Value = nValue; 
+        // Answer object constructor
+        var Answer = function (nAnswerID, nValue, nQuestionID, nUserID) {
+            // AnswerID created automatically in back-end?
+            this.AnswerID = nAnswerID;
+            this.Value = nValue;
             this.QuestionID = nQuestionID;
             this.UserID = nUserID;
-        }
+        };
 
-        var na = new Answer(2, 1, 1);
+        var na = new Answer(3, 1, 1, 1);
 
-        $.post("api/AnswersApi",
-            {
-                Value: 3
-            },
-            function (data, status) {
+        //var na = { "AnswerID": 2, "Value": 1, "QuestionID" : 1, "UserID" : 1 };
+
+        $.post("api/AnswersApi", na,
+        function (data, status) {
             console.log("Data: " + data + "\nStatus: " + status);
         });
 
-
-        
     </script>
 </body>
 </html>

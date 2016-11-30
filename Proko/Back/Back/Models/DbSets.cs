@@ -16,8 +16,5 @@ namespace Back.Models
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionMethod> QuestionMethods { get; set; }
         public DbSet<QuestionScale> QuestionScales { get; set; }
-
-       
-        }
-    
+    }
 }
