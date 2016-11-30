@@ -3,5 +3,5 @@
     $scope.formatAndGo = function () {
         answerService.format();
         $location.path("/questionbuttons");
-    }
+    };
 });

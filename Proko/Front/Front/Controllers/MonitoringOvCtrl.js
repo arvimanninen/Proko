@@ -6,7 +6,18 @@
      }
      $scope.pollData = answerAverages;
      $scope.pollLabels = ['Aikataulutus (tilaaja)', 'Aikataulutus (muut)', 'Kommunikointi (tilaaja)', 'Kommunikointi (muut)'];
-     $scope.pollSeries = ['Kuukausi'];
+     $scope.pollSeries = ['Tyytyvaisyys'];
+     $scope.options = {
+         scales: {
+             yAxes: [{
+                 ticks: {
+                     max: 5,
+                     min: 0.8,
+                     stepSize: 0.2
+                 }
+             }]
+         }
+     };
 
 });
 

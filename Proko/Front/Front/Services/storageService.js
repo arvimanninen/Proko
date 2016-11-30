@@ -1,8 +1,9 @@
 ﻿'use strict';
 
 app.service('storageService', function () {
-    // localStorageKeys save average answers of each question
+    // localStorage keys for average answers of each question
     var localStorageKeys = ["p-answerOne", "p-answerTwo", "p-answerThree", "p-answerFour"];
+    // localStorage key for answer count
     var answerCountKey = "p-count";
     
     // PRIVATE FUNCTIONS
@@ -67,7 +68,7 @@ app.service('storageService', function () {
 
     var getAnswerCount = function () {
         var ac = Number(localStorage.getItem(answerCountKey));
-        console.log("storageService.getAnswerCount.ac " + ac);
+        console.log("storageService.getAnswerCount.ac: " + ac);
         return ac;
     };
 
