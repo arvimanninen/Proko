@@ -57,7 +57,7 @@ app.service('storageService', function () {
         var edited = 0;
         for (var i = 0; i <= localStorageKeys.length - 1; i++) {
             unedited = Number(localStorage.getItem(localStorageKeys[i]));
-            // converts unedited as String with one decimal format and then (back) to Number
+            // converts unedited to String with one decimal format and then (back) to Number
             edited = Number(unedited.toFixed(1));
             averages.push(edited);
             console.log("storageService.getAverages().averages[" + i + "]: " + averages[i]);
