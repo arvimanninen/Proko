@@ -7,6 +7,7 @@
      $scope.answerCount = count;
      $scope.pollData = answerAverages;
      $scope.pollLabels = ['Aikataulutus (tilaaja)', 'Aikataulutus (muut)', 'Kommunikointi (tilaaja)', 'Kommunikointi (muut)'];
+
      $scope.pollSeries = ['Tyytyvaisyys'];
      $scope.options = {
          scales: {
