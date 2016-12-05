@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
     <div class="progress pr-bar-cstm">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
@@ -6,57 +6,61 @@
         </div>
     </div>
 
-    <p class="lead text-center p-t-4r">Miten projekti on mielestäsi aikataulutettu:</p>
+    <p class="lead text-center p-t-4r p-b-1r">Miten projekti on mielestäsi aikataulutettu:</p>
 
-    <div class="text-center">
-        <div class="to-center">
-            <p class="lead m-b-min1">Tilaajan toimesta?</p>
-            <span class="not-answered-2 pd-text">{{answerOne}}</span>
+    <div id="q-1-div">
+        <div class="q-1a text-center">
+            <div class="to-center">
+                <p class="lead m-b-min1">Tilaajan toimesta?</p>
+                <span class="not-answered-2 pd-text">{{answerOne}}</span>
+            </div>
+            <div class="btn-group-vertical" data-toggle="buttons">
+                <label class="btn btn-default" ng-click="answerOne = 5">
+                    <input type="radio" name="options"> erittäin hyvin
+                </label>
+                <label class="btn btn-default" ng-click="answerOne = 4">
+                    <input type="radio" name="options"> hyvin
+                </label>
+                <label class="btn btn-default" ng-click="answerOne = 3">
+                    <input type="radio" name="options"> kohtalaisesti
+                </label>
+                <label class="btn btn-default" ng-click="answerOne = 2">
+                    <input type="radio" name="options"> huonosti
+                </label>
+                <label class="btn btn-default" ng-click="answerOne = 1">
+                    <input type="radio" name="options"> erittäin huonosti
+                </label>
+            </div>
         </div>
-        <div class="btn-group-vertical" data-toggle="buttons">
-            <label class="btn btn-default" ng-click="answerOne = 5">
-                <input type="radio" name="options"> erittäin hyvin
-            </label>
-            <label class="btn btn-default" ng-click="answerOne = 4">
-                <input type="radio" name="options"> hyvin
-            </label>
-            <label class="btn btn-default" ng-click="answerOne = 3">
-                <input type="radio" name="options"> kohtalaisesti
-            </label>
-            <label class="btn btn-default" ng-click="answerOne = 2">
-                <input type="radio" name="options"> huonosti
-            </label>
-            <label class="btn btn-default" ng-click="answerOne = 1">
-                <input type="radio" name="options"> erittäin huonosti
-            </label>
+
+        <div class="q-1b text-center">
+            <div class="to-center">
+                <p class="lead m-b-min1">Muiden sidosryhmien toimesta?</p>
+                <span class="not-answered-2 pd-text">{{answerTwo}}</span>
+            </div>
+            <div class="btn-group-vertical" data-toggle="buttons">
+                <label class="btn btn-default" ng-click="answerTwo = 5">
+                    <input type="radio" name="options"> erittäin hyvin
+                </label>
+                <label class="btn btn-default" ng-click="answerTwo = 4">
+                    <input type="radio" name="options"> hyvin
+                </label>
+                <label class="btn btn-default" ng-click="answerTwo = 3">
+                    <input type="radio" name="options"> kohtalaisesti
+                </label>
+                <label class="btn btn-default" ng-click="answerTwo = 2">
+                    <input type="radio" name="options"> huonosti
+                </label>
+                <label class="btn btn-default" ng-click="answerTwo = 1">
+                    <input type="radio" name="options"> erittäin huonosti
+                </label>
+            </div>
         </div>
+        <div class="clearfix"></div>
     </div>
 
-    <div class="text-center p-t-2r">
-        <div class="to-center">
-            <p class="lead m-b-min1">Muiden sidosryhmien toimesta?</p>
-            <span class="not-answered-2 pd-text">{{answerTwo}}</span>
-        </div>
-        <div class="btn-group-vertical" data-toggle="buttons">
-            <label class="btn btn-default" ng-click="answerTwo = 5">
-                <input type="radio" name="options"> erittäin hyvin
-            </label>
-            <label class="btn btn-default" ng-click="answerTwo = 4">
-                <input type="radio" name="options"> hyvin
-            </label>
-            <label class="btn btn-default" ng-click="answerTwo = 3">
-                <input type="radio" name="options"> kohtalaisesti
-            </label>
-            <label class="btn btn-default" ng-click="answerTwo = 2">
-                <input type="radio" name="options"> huonosti
-            </label>
-            <label class="btn btn-default" ng-click="answerTwo = 1">
-                <input type="radio" name="options"> erittäin huonosti
-            </label>
-        </div>
-    </div>
 
-    <div class="text-center p-t-4r p-b-4r">
+    <div class="text-center p-t-5r p-b-4r">
         <a class="btn btn-default btn-lg" role="button" ng-click="setAnswers()">Seuraava</a>
     </div>
 </div>
