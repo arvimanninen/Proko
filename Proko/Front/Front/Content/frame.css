@@ -50,7 +50,7 @@ GENERAL STYLES
 }
 
 .line-high {
-    line-height: 120%;
+    line-height: 130%;
 }
 
 .inline {
@@ -96,18 +96,14 @@ PADDINGS & MARGINS
 }
 
 /* padding bottom */
+.p-b-1r {
+    padding-bottom: 1rem;
+}
+
 .p-b-3r {
     padding-bottom: 3rem;
 }
 
 .p-b-4r {
     padding-bottom: 4rem;
-}
-
-/*
-PADDINGS & MARGINS
-**************************/
-
-@media screen and (min-width: 768px) {
-    
 }

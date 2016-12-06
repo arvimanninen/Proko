@@ -20,7 +20,18 @@
 }
 
 /*
-VERTICAL RADIO-BUTTON VIEW
+BUTTONS VIEW
+****************************/
+
+#q-1-div {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+
+
+/*
+BUTTON-SLIDER VIEW
 ****************************/
 
 .btn-group-vertical > .btn {
@@ -236,13 +247,37 @@ DRAG & DROP VIEW
 MEDIA QUERIES (bootstrap 3 widths)
 **********************************/
 
+@media screen and (max-width: 767px) {
+    v-1 {
+        
+    }
+
+    .q-1b {
+        padding-top: 3rem;
+    }
+}
+
 @media screen and (min-width: 768px) {
+    v-1 {
+        
+    }
+    
+    .q-1a {
+        float: left;
+    }
+
+    .q-1b {
+        float: right;
+    }
+    
+
     .dd-drop-div {
         margin-left: 2%;
     }
 }
 
 @media screen and (min-width: 992px) {
+
     .dd-row {
         margin-left: 8%;
     }
