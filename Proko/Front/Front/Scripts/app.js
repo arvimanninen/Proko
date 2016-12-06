@@ -30,6 +30,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questiondragdropsmileys.html',
                 controller: 'QuestionDragDropSmileysCtrl'
             })
+            .when('/questionsafety', {
+                templateUrl: 'views/questionsafety.html',
+                controller: 'QuestionSafetyCtrl'
+            })
             .when('/end', {
                 templateUrl: 'views/end.html',
                 controller: 'EndCtrl'
