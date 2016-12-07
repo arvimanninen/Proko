@@ -4,7 +4,7 @@
     margin-top: 3rem;
 }
 
-#panel-questions {
+.panel-questions {
     margin-top: 2rem;
 }
 
@@ -26,6 +26,7 @@ MEDIA QUERIES (bootstrap 3 widths)
 ***********************************/
 
 @media screen and (min-width: 768px) {
+
     .el-select {
         margin: 8px 0 0 10%;
     }

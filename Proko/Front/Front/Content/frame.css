@@ -91,8 +91,20 @@ PADDINGS & MARGINS
     padding-top: 5rem;
 }
 
+.p-t-6r {
+    padding-top: 6rem;
+}
+
+.p-t-7r {
+    padding-top: 7rem;
+}
+
 .p-t-8r {
     padding-top: 8rem;
+}
+
+.p-t-10r {
+    padding-top: 10rem;
 }
 
 /* padding bottom */
@@ -106,4 +118,8 @@ PADDINGS & MARGINS
 
 .p-b-4r {
     padding-bottom: 4rem;
+}
+
+.p-b-6r {
+    padding-bottom: 6rem;
 }
