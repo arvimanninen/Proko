@@ -8,8 +8,8 @@
     margin-top: 2rem;
 }
 
-/*
 
+/*
 RESULTS CONTENT
 **************************/
 .poll-results {
@@ -22,14 +22,34 @@ RESULTS CONTENT
 }
 
 /*
+RESULTS CUSTOM
+**************************/
+
+.panel-custom {
+  border-color: #d6e9c6;
+}
+.panel-custom > .panel-heading {
+  color: #fff;
+  background-color: #5DB75D; /*#dff0d8;*/
+  border-color: #5DB75D; /*#d6e9c6;*/
+}
+.panel-custom > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.panel-custom > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.panel-custom > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+
+
+/*
 MEDIA QUERIES (bootstrap 3 widths)
 ***********************************/
 
 @media screen and (min-width: 768px) {
-
-    .el-select {
-        margin: 8px 0 0 10%;
-    }
 
     .poll-results {
         margin: 2rem 0 2rem 0px;
