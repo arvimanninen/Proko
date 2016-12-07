@@ -5,5 +5,5 @@
 
     $scope.setAnswers = function () {
         $location.path("/questionsafety");
-    }
+    };
 });

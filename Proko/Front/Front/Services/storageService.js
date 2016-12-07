@@ -45,8 +45,8 @@ app.service('storageService', function () {
                 localStorage.setItem(answerCountKey, 1);
             }
         } else {
-            console.log("answerArray length and reference doesn't match!");
-            alert("answerArray length and reference doesn't match!");
+            console.log("storageService.setAverages().answerArray length and reference doesn't match!");
+            alert("storageService.setAverages().answerArray length and reference doesn't match!");
         }
     };
 
