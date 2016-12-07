@@ -19,7 +19,7 @@ app.controller('QuestionDragDropCtrl', function QuestionDragDropCtrl($scope, $lo
 
             $location.path("/questiondragdropsmileys");
         } else {
-            alert("kaikki väittämiä ei ole sijoitettu vastauslaatikoihin! Ole hyvä ja sijoita kaikki väittämät johonkin vastauslaatikkoon.");
+            alert("kaikki väittämiä ei ole sijoitettu vastauslaatikoihin! Ole hyvä ja sijoita kaikki väittämät johonkin vastauslaatikoista.");
         }
 
         

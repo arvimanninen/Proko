@@ -14,11 +14,18 @@
                 </div>
             </div>
             <a class="btn btn-default btn-block" href="#start" role="button">Uusi kysely</a>
-        </div>
-        <h3 class="text-center q-mon">Työntekijöiden tyytyväisyys aikataulutukseen</h3>
+        </div> <!-- 1st col div ends -->
 
-        <div class="col-sm-9 col-lg-10">
-            <canvas class="poll-results chart chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
-        </div> <!-- 2nd col div in outer row -->
+        <div class="col-sm-9">
+            <h3 class="text-center q-mon">Työntekijöiden tyytyväisyys aikataulutukseen</h3>
+
+            <div class="poll-results" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
+                <canvas class="chart chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
+            </div>
+        </div> <!-- 2nd col div ends -->
+
+        <div class="col-lg-1">
+        </div> <!-- 3rd col div ends -->
+
     </div> <!-- row div -->
 </div>

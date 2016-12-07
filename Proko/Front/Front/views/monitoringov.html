@@ -19,11 +19,18 @@
                 Vastanneiden määrä: <br />
                 <h3 class="text-center">{{answerCount}}</h3>
             </p>
-        </div>
-        <h3 class="text-center q-mon">Yhteenveto vastausten keskiarvoista (1-5)</h3>
+        </div> <!-- 1st col div ends -->
 
-        <div class="col-sm-9 col-lg-10">
-            <canvas class="chart chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries" chart-options="options"></canvas>
-        </div> <!-- 2nd col div in outer row -->
+        <div class="col-sm-9">
+            <h3 class="text-center q-mon">Vastaajien tyytyväisyys aikataulutukseen asteikolla 1-5</h3>
+
+            <div class="poll-results" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
+                <canvas class="chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries" chart-options="options"></canvas>
+            </div>
+        </div> <!-- 2nd col div ends -->
+
+        <div>
+        </div> <!-- 3rd col div ends -->
+
     </div> <!-- row div -->
 </div>
