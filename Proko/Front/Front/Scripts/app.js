@@ -50,6 +50,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/monitoringov.html',
                 controller: 'MonitoringOvCtrl'
             })
+            .when('/monitoringbubbles', {
+                templateUrl: ' views/monitoringbubbles.html',
+                controller: 'MonitoringBubblesCtrl'
+            })
             .otherwise({
                 redirectTo: '/start'
             });

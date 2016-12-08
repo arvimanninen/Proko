@@ -2,7 +2,7 @@
 
 app.service('storageService', function () {
     // localStorage keys for average answers of each question
-    var localStorageKeys = ["p-answerOne", "p-answerTwo", "p-answerThree", "p-answerFour"];
+    var localStorageKeys = ["p-answerOne", "p-answerTwo", "p-answerThree", "p-answerFour", "p-answerFive", "p-answerSix"];
     // localStorage key for answer count
     var answerCountKey = "p-count";
     

@@ -79,6 +79,7 @@
     <Content Include="Controllers\DragulaTestingCtrl.js" />
     <Content Include="Controllers\EndCtrl.js" />
     <Content Include="Controllers\Monitoring-2Ctrl.js" />
+    <Content Include="Controllers\MonitoringBubblesCtrl.js" />
     <Content Include="Controllers\MonitoringOvCtrl.js" />
     <Content Include="Controllers\MonitoringCtrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
@@ -154,6 +155,8 @@
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\end.html" />
+    <Content Include="views\monitoringbubbles.html" />
+    <Content Include="views\monitoringsafety.html" />
     <Content Include="views\monitoringov.html" />
     <Content Include="views\monitoring-2.html" />
     <Content Include="views\monitoring.html" />
