@@ -88,6 +88,7 @@ namespace Back.ApiControllers
             answer.QuestionID = answerdto.QuestionID;
             answer.UserID = answerdto.UserID;
             answer.Value = answerdto.Value;
+
             db.Answers.Add(answer);
             db.SaveChanges();
 

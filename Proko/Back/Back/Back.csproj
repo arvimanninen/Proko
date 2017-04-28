@@ -211,6 +211,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\AnswerDTO.cs" />
     <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\DbSets.cs" />
     <Compile Include="Models\IdentityModels.cs" />

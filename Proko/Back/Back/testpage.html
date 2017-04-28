@@ -12,18 +12,16 @@
             console.log(data);
         }); */
 
-        // Answer object constructor
-        var Answer = function (nAnswerID, nValue, nQuestionID, nUserID) {
-            // AnswerID created automatically in back-end?
-            this.AnswerID = nAnswerID;
-            this.Value = nValue;
+        // AnswerDTO object constructor
+        var AnswerDTO = function (nQuestionID, nUserID, nValue) {
             this.QuestionID = nQuestionID;
             this.UserID = nUserID;
+            this.Value = nValue;
         };
 
-        var na = new Answer(3, 1, 1, 1);
+        var na = new AnswerDTO(5, 3, 1);
 
-        //var na = { "AnswerID": 2, "Value": 1, "QuestionID" : 1, "UserID" : 1 };
+        //var na = { "Value": 1, "QuestionID" : 1, "UserID" : 1 };
 
         $.post("api/AnswersApi", na,
         function (data, status) {
