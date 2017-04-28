@@ -108,6 +108,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\app.js" />
+    <None Include="Properties\PublishProfiles\Prokof - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
