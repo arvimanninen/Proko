@@ -10,6 +10,7 @@ using Back.Models;
 
 namespace Back.Controllers
 {
+    [Authorize]
     public class QuestionScalesController : Controller
     {
         private BackDBContext db = new BackDBContext();
