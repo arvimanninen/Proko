@@ -9,7 +9,7 @@ app.controller('QuestionButtonSliderCtrl', function QuestionButtonSliderCtrl($sc
                 answerService.setAnswer($scope.answerOne);
                 answerService.setAnswer($scope.answerTwo);
                 console.log("Tiedot talletettu!");
-                $location.path("/questiondragdrop");
+                $location.path("/questionsafety");
             } else {
                 alert("Syötä vastaus 2!");
             }

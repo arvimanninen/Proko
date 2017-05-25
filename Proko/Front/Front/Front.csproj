@@ -71,6 +71,7 @@
     <Content Include="Content\frame.css" />
     <Content Include="Content\jquery-ui.min.dragndroponly.css" />
     <Content Include="Content\monitoring.css" />
+    <Content Include="Content\views-not-used.css" />
     <Content Include="Content\views.css" />
     <Content Include="Controllers\AdndTestCtrl.js" />
     <Content Include="Controllers\AngularDragulaCtrl.js" />
@@ -88,6 +89,7 @@
     <Content Include="Controllers\QuestionDragDropSmileysCtrl.js" />
     <Content Include="Controllers\QuestionSafetyCtrl.js" />
     <Content Include="Controllers\QuestionSliderCtrl.js" />
+    <Content Include="Controllers\QuestionThumbsCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
     <Content Include="Images\1f610.svg" />
@@ -156,6 +158,7 @@
     <Content Include="views\barchart.html" />
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\end.html" />
+    <Content Include="views\questionthumbs.html" />
     <Content Include="views\monitoringbubbles.html" />
     <Content Include="views\monitoringsafety.html" />
     <Content Include="views\monitoringov.html" />
