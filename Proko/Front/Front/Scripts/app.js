@@ -34,6 +34,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionsafety.html',
                 controller: 'QuestionSafetyCtrl'
             })
+            .when('/questionthumbs', {
+                templateUrl: ' views/questionthumbs.html',
+                controller: 'QuestionThumbsCtrl'
+            })
             .when('/end', {
                 templateUrl: 'views/end.html',
                 controller: 'EndCtrl'
@@ -54,6 +58,7 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: ' views/monitoringbubbles.html',
                 controller: 'MonitoringBubblesCtrl'
             })
+            
             .otherwise({
                 redirectTo: '/start'
             });
