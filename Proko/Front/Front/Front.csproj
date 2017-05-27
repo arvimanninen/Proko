@@ -87,9 +87,9 @@
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionDragDropCtrl.js" />
     <Content Include="Controllers\QuestionDragDropSmileysCtrl.js" />
+    <Content Include="Controllers\QuestionThumbsCtrl.js" />
     <Content Include="Controllers\QuestionSafetyCtrl.js" />
     <Content Include="Controllers\QuestionSliderCtrl.js" />
-    <Content Include="Controllers\QuestionThumbsCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
     <Content Include="Images\1f610.svg" />
