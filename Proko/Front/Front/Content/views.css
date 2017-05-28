@@ -20,7 +20,7 @@
 }
 
 .btn-next {
-    padding: 6rem 0;
+    padding: 7rem 0;
 }
 
 /*
@@ -174,7 +174,8 @@ QUESTION THUMBS
 **************************************/
 
 .thumbs-div {
-    width: 400px;
+    width: 100%;
+    max-width: 450px;
     margin: 0 auto;
 }
 
@@ -201,6 +202,11 @@ QUESTION THUMBS
     display: none;
     max-width: 500px;
 }
+
+
+/*
+QUESTION SLIDER THUMBS
+**********************************************/
 
 
 

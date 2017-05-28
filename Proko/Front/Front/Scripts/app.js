@@ -38,6 +38,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: ' views/questionthumbs.html',
                 controller: 'QuestionThumbsCtrl'
             })
+            .when('/questionsliderthumbs', {
+                templateUrl: ' views/questionsliderthumbs.html',
+                controller: 'QuestionSliderThumbsCtrl'
+            })
             .when('/end', {
                 templateUrl: 'views/end.html',
                 controller: 'EndCtrl'
