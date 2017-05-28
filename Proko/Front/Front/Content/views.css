@@ -43,7 +43,7 @@ BUTTONS VIEW
 
 
 /*
-BUTTON-SLIDER VIEW
+DEFAULT BTN STYLES
 ****************************************/
 
 .btn-group-vertical > .btn {
@@ -113,22 +113,23 @@ BUTTON SLIDER VIEW
 *****************************************/
 
 .btn-slider-div {
-    min-width: 376px;
+    width: 290px;
 }
 
 .btn-slider {
-    min-width: 94px;
-    height: 33px;
+    min-width: 72px;
+    height: 25px;
 }
 
 .btn-slider-text-div {
-    min-width: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .btn-slider-text {
     color: #666666;
-    font-size: 16px;
+    font-size: 15px;
+    padding-bottom: 4px;
 }
 
 .pd-text {
@@ -143,23 +144,25 @@ QUESTION SAFETY VIEW
 **********************************************/
 
 .btn-numb-div {
-    min-width: 280px;
+    width: 100%;
     margin: 0 auto;
+    /*border: 1px solid red;*/
 }
 
 .btn-number {
-    width: 70px;
-    margin: 0 5px;
+    width: 18%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .btn-number-l {
-    width: 70px;
-    margin-right: 5px;
+    width: 18%;
+    margin-right: 2%;
 }
 
 .btn-number-r {
-    width: 70px;
-    margin-left: 5px;
+    width: 18%;
+    margin-left: 2%;
 }
 
 /*tests*/
@@ -207,81 +210,76 @@ MEDIA QUERIES (bootstrap 3 widths)
 
 
 @media screen and (max-width: 767px) {
-    v-1 {
-        
-    }
+    v-1 { }
+    .q-1b { padding-top: 3rem; }
+}
 
-    .q-1b {
-        padding-top: 3rem;
-    }
-
+@media screen and (min-width: 440px) {
 
 }
 
+    @media screen and (min-width: 550px) {
 
-@media screen and (min-width: 550px) {
+        .btn-slider-div {
+            width: 400px;
+        }
 
-    .btn-slider-div {
-        width: 460px;
-    }
-    
-    .btn-slider {
-        width: 115px;
-    }
+        .btn-slider {
+            width: 100px;
+            height: 28px;
+        }
 
-    .btn-slider-text {
-        font-size: 17px;
-    }
+        .btn-slider-text-div {
+            width: 90%;
+        }
 
-    .btn-number,
-    .btn-number-l,
-    .btn-number-r {
-        width: 90px;
-        margin: 0 12px;
-    }
-}
+        .btn-slider-text {
+            font-size: 17px;
+        }
 
+        .sm-pd-left {
+            padding-left: 7%;
+        }
 
-@media screen and (min-width: 768px) {
-    v-1 {
-        
-    }
-    
-    .q-1a {
-        float: left;
-    }
+        .btn-numb-div {
+            width: 508px;
+        }
 
-    .q-1b {
-        float: right;
+        .btn-number,
+        .btn-number-l,
+        .btn-number-r {
+            width: 90px;
+            margin: 0 12px;
+        }
     }
 
-    .btn-slider-div {
-        width: 520px;
-    }
-    
-    .btn-slider {
-        width: 130px;
+
+    @media screen and (min-width: 768px) {
+        v-1 {
+        }
+
+        .q-1a {
+            float: left;
+        }
+
+        .q-1b {
+            float: right;
+        }
+
+        .btn-slider-div {
+            width: 520px;
+        }
+
+        .btn-slider {
+            width: 130px;
+        }
+
     }
 
-    .dd-drop-div {
-        margin-left: 2%;
-    }
-}
+    @media screen and (min-width: 992px) {
 
-@media screen and (min-width: 992px) {
-
-    .dd-row {
-        margin-left: 8%;
     }
 
-    .dd-drop-div {
-        margin-left: 4%;
-    }
+    @media screen and (min-width: 1200px) {
 
-}
-
-@media screen and (min-width: 1200px) {
-    .dd-row {
-        margin-left: 14%;
     }
-}

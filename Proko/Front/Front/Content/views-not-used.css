@@ -120,3 +120,64 @@ DRAG & DROP VIEW
     padding: 8px;
     /*font-size: 18px;*/
 }
+
+
+
+/*
+MEDIA QUERIES (bootstrap 3 widths)
+***********************************************/
+
+
+@media screen and (max-width: 767px) {
+    v-1 {
+    }
+
+    .q-1b {
+        padding-top: 3rem;
+    }
+}
+
+@media screen and (min-width: 550px) {
+}
+
+@media screen and (min-width: 550px) {
+
+
+}
+
+
+@media screen and (min-width: 768px) {
+    v-1 {
+    }
+
+    .q-1a {
+        float: left;
+    }
+
+    .q-1b {
+        float: right;
+    }
+
+
+
+    .dd-drop-div {
+        margin-left: 2%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .dd-row {
+        margin-left: 8%;
+    }
+
+    .dd-drop-div {
+        margin-left: 4%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .dd-row {
+        margin-left: 14%;
+    }
+}
