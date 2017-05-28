@@ -16,11 +16,11 @@
 
 .pr-bar-cstm {
     width: 100%;
-    margin: 4rem auto 0;
+    margin: 2rem auto 0;
 }
 
 .btn-next {
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 /*
@@ -31,24 +31,11 @@ TEST
     border: 1px solid red;
 }
 
-/*
-BUTTONS VIEW
-***************************************/
-
-#q-1-div {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-
 
 /*
 DEFAULT BTN STYLES
 ****************************************/
 
-.btn-group-vertical > .btn {
-    width: 300px;
-}
 /* from bootstrap css - and modified */
 .btn-default {
   color: #236290;
@@ -106,6 +93,19 @@ fieldset[disabled] .btn-default.focus {
 .btn-default .badge {
   color: #fff;
   background-color: #333;
+}
+
+/*
+VERTICAL BUTTON STYLES
+****************************************/
+
+.btn-group-vertical > .btn {
+    width: 250px;
+}
+
+#q-1-div {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 /*
