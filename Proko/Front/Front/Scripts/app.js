@@ -62,7 +62,15 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: ' views/monitoringbubbles.html',
                 controller: 'MonitoringBubblesCtrl'
             })
-            
+            .when('/monitoringbubbles', {
+                templateUrl: ' views/monitoringbubbles.html',
+                controller: 'MonitoringBubblesCtrl'
+            })
+            .when('/questionbuttonsliderlinks', {
+                templateUrl: 'views/questionbuttonsliderlinks.html',
+                controller: 'QuestionButtonSliderLinksCtrl'
+            })
+            //TODO: reDirectTo: *errorpage*
             .otherwise({
                 redirectTo: '/start'
             });
