@@ -100,7 +100,7 @@ VERTICAL BUTTON STYLES
 ****************************************/
 
 .btn-group-vertical > .btn {
-    width: 250px;
+    width: 220px;
 }
 
 #q-1-div {
@@ -208,7 +208,19 @@ QUESTION THUMBS
 QUESTION SLIDER THUMBS
 **********************************************/
 
+.sl-thumb-div {
+    width: 100%;
+    /*border: 1px solid red;*/
+}
 
+.btn-sl-thumb {
+    width: 32%;
+    height: 40px;
+}
+
+.thumb-sign {
+    padding: 10px;
+}
 
 /*
 MEDIA QUERIES (bootstrap 3 widths)
