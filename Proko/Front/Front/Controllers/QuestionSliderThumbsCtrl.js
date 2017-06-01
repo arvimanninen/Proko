@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('QuestionSliderThumbCtrl', function QuestionSliderThumbs($scope, $location, answerService) {
+app.controller('QuestionSliderThumbsCtrl', function QuestionSliderThumbs($scope, $location, answerService) {
     $scope.answerOne = "Not answered";
     $scope.answerTwo = "Not answered";
     $scope.setAnswers = function () {
