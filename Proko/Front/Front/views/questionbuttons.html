@@ -6,14 +6,10 @@
         </div>
     </div>
 
-    <p class="lead text-center p-t-3r p-b-1r">Miten projekti on mielestäsi aikataulutettu:</p>
-
     <div id="q-1-div">
         <div class="q-1a text-center">
-            <div class="to-center">
-                <p class="lead m-b-min1">Tilaajan toimesta?</p>
-                <span class="not-answered-2 pd-text">{{answerOne}}</span>
-            </div>
+            <p class="lead normal-qxxs">Miten projekti on mielestäsi aikataulutettu?</p>
+                <!--<span class="not-answered-2 pd-text">{{answerOne}}</span>-->
             <div class="btn-group-vertical" data-toggle="buttons">
                 <label class="btn btn-default" ng-click="answerOne = 5">
                     <input type="radio" name="options"> erittäin hyvin
@@ -33,11 +29,9 @@
             </div>
         </div>
 
-        <div class="q-1b text-center">
-            <div class="to-center">
-                <p class="lead m-b-min1">Muiden sidosryhmien toimesta?</p>
-                <span class="not-answered-2 pd-text">{{answerTwo}}</span>
-            </div>
+        <div class="text-center">
+            <p class="lead normal-qxxs">Miten työturvallisuus on mielestäsi otettu työmaalla huomioon?</p>
+                <!--<span class="not-answered-2 pd-text">{{answerTwo}}</span>-->
             <div class="btn-group-vertical" data-toggle="buttons">
                 <label class="btn btn-default" ng-click="answerTwo = 5">
                     <input type="radio" name="options"> erittäin hyvin
@@ -60,7 +54,7 @@
     </div>
 
 
-    <div class="text-center btn-next">
-        <a class="btn btn-default btn-lg" role="button" ng-click="setAnswers()">Seuraava</a>
+    <div class="btn-next-div">
+        <a class="btn btn-default btn-lg btn-next" role="button" ng-click="setAnswers()">Seuraava</a>
     </div>
 </div>

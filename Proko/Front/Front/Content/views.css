@@ -19,8 +19,90 @@
     margin: 2rem auto 0;
 }
 
+.normal-qxxxs {
+    text-align: center;
+    padding-top: 1.2rem;
+}
+
+.normal-qxxs {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 0.3rem;
+}
+
+.normal-qxs {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.normal-qs {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.normal-qm {
+    text-align: center;
+    padding-top: 7vh;
+    padding-bottom: 1.3rem;
+}
+
+.normal-ql {
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 1.3rem;
+}
+
+.normal-qxl {
+    text-align: center;
+    padding-top: 13vh;
+    padding-bottom: 1.3rem;
+}
+
+.normal-qxl {
+    text-align: center;
+    padding-top: 16vh;
+    padding-bottom: 1.3rem;
+}
+
+.btn-fwd-div {
+    width: 100%;
+    height:130px;
+    border: 1px solid red;
+    position: relative;
+}
+
+.btn-fwd2 {
+    position: absolute;
+    left: 50%;
+    margin-left: -55px;
+    bottom: 50px;
+}
+
+.btn-fwd {
+    position: absolute;
+    left: 50%;
+    margin-left: -55px;
+    bottom: 120px;
+}
+
+.btn-fwd-s {
+    position: absolute;
+    left: 50%;
+    margin-left: -67px;
+    bottom: 100px;
+}
+
+.btn-next-div {
+    text-align: center;
+
+}
 .btn-next {
-    padding: 7rem 0;
+    margin: 5rem 0;
+}
+.btn-next2 {
+    margin: 7rem 0 5rem;
 }
 
 /*
@@ -100,12 +182,16 @@ VERTICAL BUTTON STYLES
 ****************************************/
 
 .btn-group-vertical > .btn {
-    width: 220px;
+    width: 190px;
 }
 
 #q-1-div {
     max-width: 720px;
     margin: 0 auto;
+}
+
+.q-1b {
+    padding-top: 2rem;
 }
 
 /*
@@ -150,19 +236,19 @@ QUESTION SAFETY VIEW
 }
 
 .btn-number {
-    width: 18%;
-    margin-left: 2%;
-    margin-right: 2%;
+    width: 20%;
+    /*margin-left: 2%;
+    margin-right: 2%;*/
 }
 
 .btn-number-l {
-    width: 18%;
-    margin-right: 2%;
+    width: 20%;
+    /*margin-right: 2%;*/
 }
 
 .btn-number-r {
-    width: 18%;
-    margin-left: 2%;
+    width: 20%;
+    /*margin-left: 2%;*/
 }
 
 /*tests*/
@@ -214,12 +300,30 @@ QUESTION SLIDER THUMBS
 }
 
 .btn-sl-thumb {
-    width: 32%;
-    height: 40px;
+    width: 33.3%;
 }
 
 .thumb-sign {
     padding: 10px;
+}
+
+
+/*
+BUTTON TEST
+***********************************************/
+
+.flex-container {
+    /*min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;*/
+    margin-top: 30%;
+    /*border: 1px solid red;*/;
+} 
+
+.flex-item {
+    /*border: 1px solid red;*
 }
 
 /*
@@ -253,7 +357,6 @@ MEDIA QUERIES (bootstrap 3 widths)
 
 
 @media screen and (max-width: 767px) {
-    v-1 { }
     .q-1b { padding-top: 3rem; }
 }
 
@@ -261,68 +364,66 @@ MEDIA QUERIES (bootstrap 3 widths)
 
 }
 
-    @media screen and (min-width: 550px) {
+@media screen and (min-width: 550px) {
 
-        .btn-slider-div {
-            width: 400px;
-        }
-
-        .btn-slider {
-            width: 100px;
-            height: 28px;
-        }
-
-        .btn-slider-text-div {
-            width: 90%;
-        }
-
-        .btn-slider-text {
-            font-size: 17px;
-        }
-
-        .sm-pd-left {
-            padding-left: 7%;
-        }
-
-        .btn-numb-div {
-            width: 508px;
-        }
-
-        .btn-number,
-        .btn-number-l,
-        .btn-number-r {
-            width: 90px;
-            margin: 0 12px;
-        }
+    .btn-slider-div {
+        width: 400px;
     }
 
-
-    @media screen and (min-width: 768px) {
-        v-1 {
-        }
-
-        .q-1a {
-            float: left;
-        }
-
-        .q-1b {
-            float: right;
-        }
-
-        .btn-slider-div {
-            width: 520px;
-        }
-
-        .btn-slider {
-            width: 130px;
-        }
-
+    .btn-slider {
+        width: 100px;
+        height: 28px;
     }
 
-    @media screen and (min-width: 992px) {
-
+    .btn-slider-text-div {
+        width: 90%;
     }
 
-    @media screen and (min-width: 1200px) {
-
+    .btn-slider-text {
+        font-size: 15px;
     }
+
+    .sm-pd-left {
+        padding-left: 7%;
+    }
+
+    .btn-numb-div {
+        width: 508px;
+    }
+
+    .btn-number,
+    .btn-number-l,
+    .btn-number-r {
+        width: 90px;
+        margin: 0 12px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .q-1a {
+        float: left;
+    }
+
+    .q-1b {
+        float: right;
+    }
+
+    .btn-slider-div {
+        width: 520px;
+    }
+
+    .btn-slider {
+        width: 130px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}

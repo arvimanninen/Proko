@@ -6,29 +6,24 @@
         </div>
     </div>
 
-
-    <p class="lead text-center p-t-7r">Miten kommunikointi mielestäsi toimii työyhteisössä?</p>
+    <p class="lead text-center normal-ql">Miten hyvin projekti on aikataulutettu?</p>
 
     <div class="text-center">
-        <div class="btn-slider-text-div to-center p-t-1r">
-            <!--<p class="not-answered pd-text">{{answerOne}}</p>-->
-            <span class="btn-slider-text pull-left sm-pd-left">Täysin eri mieltä</span>          
-            <span class="btn-slider-text pull-right">Täysin samaa mieltä</span>
-            <div class="clearfix"></div>
-        </div>
-
-        <div class="btn-group btn-slider-div" data-toggle="buttons">
-            <label class="btn btn-default btn-lg btn-slider" ng-click="setAnswer()">
-                <input type="radio" id="option1">
+        <div class="btn-group-vertical" data-toggle="buttons">
+            <label class="btn btn-default" ng-click="setAnswer()">
+                <input type="radio" name="options"> erittäin hyvin
             </label>
-            <label class="btn btn-default btn-lg btn-slider" ng-click="setAnswer()">
-                <input type="radio" id="option2">
+            <label class="btn btn-default" ng-click="setAnswer()">
+                <input type="radio" name="options"> hyvin
             </label>
-            <label class="btn btn-default btn-lg btn-slider" ng-click="setAnswer()">
-                <input type="radio" id="option3">
+            <label class="btn btn-default" ng-click="setAnswer()">
+                <input type="radio" name="options"> kohtalaisesti
             </label>
-            <label class="btn btn-default btn-lg btn-slider" ng-click="setAnswer()">
-                <input type="radio" id="option4">
+            <label class="btn btn-default" ng-click="setAnswer()">
+                <input type="radio" name="options"> huonosti
+            </label>
+            <label class="btn btn-default" ng-click="setAnswer()">
+                <input type="radio" name="options"> erittäin huonosti
             </label>
         </div>
     </div>

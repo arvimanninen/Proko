@@ -1,55 +1,73 @@
 ﻿<div class="container">
-    <div class="pr-bar-div">
-        <div class="progress pr-bar-cstm">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                <span class="sr-only">60% Complete</span>
-            </div>
+    <div class="progress pr-bar-cstm">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            <span class="sr-only">60% Complete</span>
         </div>
     </div>
 
-    <div class="text-center">
-        <p class="lead p-t-4r p-b-1r">Minkä arvosanan antaisit työmaan työturvallisuusratkaisuista? (1 huono, 5 erinomainen)</p>
+    <p class="lead normal-qxxxs">Minkä arvosanan antaisit seuraavista osa-alueista työmaalla?</p>
+    <p class="text-center">(arviointiasteikko: 1 = surkea, 2 = heikko, 3 = kohtalainen, 4 = hyvä, 5 = erinomainen)</p>
 
-        <div class="btn-group btn-numb-div to-center" data-toggle="buttons">
-            <label class="btn btn-default btn-number-l" ng-click="answerOne = 1">
-                <input type="radio" name="options"> 1
-            </label>
-            <label class="btn btn-default btn-number" ng-click="answerOne = 2">
-                <input type="radio" name="options"> 2
-            </label>
-            <label class="btn btn-default btn-number" ng-click="answerOne = 3">
-                <input type="radio" name="options"> 3
-            </label>
-            <label class="btn btn-default btn-number" ng-click="answerOne = 4">
-                <input type="radio" name="options"> 4
-            </label>
-            <label class="btn btn-default btn-number-r" ng-click="answerOne = 5">
-                <input type="radio" name="options"> 5
-            </label>
-        </div>
+    <p class="lead text-center">Töiden organisointi:</p>
 
-        <p class="lead p-t-4r p-b-1r">Kuinka hyvin työturvallisuussäädöksiä mielestäsi noudatetaan työmaalla? (1 huono, 5 erinomainen)</p>
-
-        <div class="btn-group btn-numb-div" data-toggle="buttons">
-            <label class="btn btn-default btn-number-l" ng-click="answerOne = 1">
-                <input type="radio" name="options"> 1
-            </label>
-            <label class="btn btn-default btn-number" ng-click="answerOne = 2">
-                <input type="radio" name="options"> 2
-            </label>
-            <label class="btn btn-default btn-number" ng-click="answerOne = 3">
-                <input type="radio" name="options"> 3
-            </label>
-            <label class="btn btn-default btn-number" ng-click="answerOne = 4">
-                <input type="radio" name="options"> 4
-            </label>
-            <label class="btn btn-default btn-number-r" ng-click="answerOne = 5">
-                <input type="radio" name="options"> 5
-            </label>
-        </div>
+    <div class="btn-group btn-numb-div to-center" data-toggle="buttons">
+        <label class="btn btn-default btn-number-l" ng-click="answerOne = 1">
+            <input type="radio" name="options"> 1
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 2">
+            <input type="radio" name="options"> 2
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 3">
+            <input type="radio" name="options"> 3
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 4">
+            <input type="radio" name="options"> 4
+        </label>
+        <label class="btn btn-default btn-number-r" ng-click="answerOne = 5">
+            <input type="radio" name="options"> 5
+        </label>
     </div>
 
-    <div class="text-center btn-next">
-        <a class="btn btn-default btn-lg" role="button" ng-click="setAnswers()">Seuraava</a>
+    <p class="lead normal-qxxxs">työturvallisuus:</p>
+
+    <div class="btn-group btn-numb-div" data-toggle="buttons">
+        <label class="btn btn-default btn-number-l" ng-click="answerOne = 1">
+            <input type="radio" name="options"> 1
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 2">
+            <input type="radio" name="options"> 2
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 3">
+            <input type="radio" name="options"> 3
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 4">
+            <input type="radio" name="options"> 4
+        </label>
+        <label class="btn btn-default btn-number-r" ng-click="answerOne = 5">
+            <input type="radio" name="options"> 5
+        </label>
+    </div>
+
+    <p class="lead normal-qxxxs">työnjohdon toiminta:</p>
+    <div class="btn-group btn-numb-div" data-toggle="buttons">
+        <label class="btn btn-default btn-number-l" ng-click="answerOne = 1">
+            <input type="radio" name="options"> 1
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 2">
+            <input type="radio" name="options"> 2
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 3">
+            <input type="radio" name="options"> 3
+        </label>
+        <label class="btn btn-default btn-number" ng-click="answerOne = 4">
+            <input type="radio" name="options"> 4
+        </label>
+        <label class="btn btn-default btn-number-r" ng-click="answerOne = 5">
+            <input type="radio" name="options"> 5
+        </label>
+    </div>
+
+    <div class="btn-next-div">
+        <a class="btn btn-default btn-lg btn-next" role="button" ng-click="setAnswers()">Seuraava</a>
     </div>
 </div>

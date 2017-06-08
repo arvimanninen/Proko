@@ -4,6 +4,6 @@ app.controller('QuestionButtonSliderLinksCtrl', function QuestionButtonSliderCtr
     $scope.answerOne = "Not answered";
     $scope.answerTwo = "Not answered";
     $scope.setAnswer = function () {
-        $location.path("/end");
+        $location.path("/questionbuttontest");
     };
 });
