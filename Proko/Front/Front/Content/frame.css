@@ -13,13 +13,12 @@ body {
 
 /*for sticky footer*/
 #wrap {
-  /*min-height: 100%;
-  height: auto;*/
-  height: 100%;
-  margin: 0 auto -55px;
-  padding: 0 0 55px;
-  color: #236290;
-  /*position: relative;*/
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -55px;
+    padding: 0 0 55px;
+    color: #236290;
+    /*position: relative;*/
 }
 
 /*
@@ -31,17 +30,17 @@ header, footer {
     color: #fff;
 }
 
-#header-text {  
+#header-text {
     margin-top: 15px;
-    margin-bottom: 19px;   
+    margin-bottom: 19px;
 }
 
 footer {
-  height: 55px;
+    height: 55px;
 }
 
 #footer-text {
-	margin-top: 17px;
+    margin-top: 17px;
 }
 
 /*
@@ -49,13 +48,14 @@ GENERAL STYLES
 **************************/
 
 .container {
-  /*width: auto;*/
-  max-width: 680px;
-  padding: 0 15px;
+    /*width: auto;*/
+    max-width: 680px;
+    padding: 0 15px;
 }
-.container .credit {
-  margin: 20px 0;
-}
+
+    .container .credit {
+        margin: 20px 0;
+    }
 
 .line-high {
     line-height: 130%;

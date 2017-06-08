@@ -68,7 +68,7 @@
 
 .btn-fwd-div {
     width: 100%;
-    height:130px;
+    height: 130px;
     border: 1px solid red;
     position: relative;
 }
@@ -96,11 +96,12 @@
 
 .btn-next-div {
     text-align: center;
-
 }
+
 .btn-next {
     margin: 5rem 0;
 }
+
 .btn-next2 {
     margin: 7rem 0 5rem;
 }
@@ -120,62 +121,69 @@ DEFAULT BTN STYLES
 
 /* from bootstrap css - and modified */
 .btn-default {
-  color: #236290;
-  background-color: #fff;
-  border-color: #ccc;
+    color: #236290;
+    background-color: #fff;
+    border-color: #ccc;
 }
-.btn-default:focus,
-.btn-default.focus {
-  color: #236290;
-  background-color: #fff;
-  border-color: #2C7CB7;
-}
-.btn-default:hover {
-  color: #236290;
-  background-color: #fff;
-  border-color: #2C7CB7;
-}
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  color: #fff;
-  background-color: #5DB75D;
-  border-color: #5DB75D;
-}
-.btn-default:active:hover,
-.btn-default.active:hover,
-.open > .dropdown-toggle.btn-default:hover,
-.btn-default:active:focus,
-.btn-default.active:focus,
-.open > .dropdown-toggle.btn-default:focus,
-.btn-default:active.focus,
-.btn-default.active.focus,
-.open > .dropdown-toggle.btn-default.focus {
-  color: #fff;
-  background-color: #5DB75D;
-  border-color: #5DB75D;
-}
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  background-image: none;
-}
-.btn-default.disabled:hover,
-.btn-default[disabled]:hover,
-fieldset[disabled] .btn-default:hover,
-.btn-default.disabled:focus,
-.btn-default[disabled]:focus,
-fieldset[disabled] .btn-default:focus,
-.btn-default.disabled.focus,
-.btn-default[disabled].focus,
-fieldset[disabled] .btn-default.focus {
-  background-color: #fff;
-  border-color: #ccc;
-}
-.btn-default .badge {
-  color: #fff;
-  background-color: #333;
-}
+
+    .btn-default:focus,
+    .btn-default.focus {
+        color: #236290;
+        background-color: #fff;
+        border-color: #2C7CB7;
+    }
+
+    .btn-default:hover {
+        color: #236290;
+        background-color: #fff;
+        border-color: #2C7CB7;
+    }
+
+    .btn-default:active,
+    .btn-default.active,
+    .open > .dropdown-toggle.btn-default {
+        color: #fff;
+        background-color: #5DB75D;
+        border-color: #5DB75D;
+    }
+
+        .btn-default:active:hover,
+        .btn-default.active:hover,
+        .open > .dropdown-toggle.btn-default:hover,
+        .btn-default:active:focus,
+        .btn-default.active:focus,
+        .open > .dropdown-toggle.btn-default:focus,
+        .btn-default:active.focus,
+        .btn-default.active.focus,
+        .open > .dropdown-toggle.btn-default.focus {
+            color: #fff;
+            background-color: #5DB75D;
+            border-color: #5DB75D;
+        }
+
+    .btn-default:active,
+    .btn-default.active,
+    .open > .dropdown-toggle.btn-default {
+        background-image: none;
+    }
+
+    .btn-default.disabled:hover,
+    .btn-default[disabled]:hover,
+    fieldset[disabled] .btn-default:hover,
+    .btn-default.disabled:focus,
+    .btn-default[disabled]:focus,
+    fieldset[disabled] .btn-default:focus,
+    .btn-default.disabled.focus,
+    .btn-default[disabled].focus,
+    fieldset[disabled] .btn-default.focus {
+        background-color: #fff;
+        border-color: #ccc;
+    }
+
+    .btn-default .badge {
+        color: #fff;
+        background-color: #333;
+    }
 
 /*
 VERTICAL BUTTON STYLES
@@ -320,110 +328,81 @@ BUTTON TEST
     flex-direction: column;*/
     margin-top: 30%;
     /*border: 1px solid red;*/;
-} 
+}
 
 .flex-item {
     /*border: 1px solid red;*
 }
 
 /*
-FLEX
-**********************************************/
-/*
-QUESTION LINKS
-**********************************************/
-
-.flex-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 1px solid red;
-}
-
-.flex-item {
-    flex: 1;
-}
-
-
-
-/*
 MEDIA QUERIES (bootstrap 3 widths)
 ***********************************************/
-
-
-@media screen and (max-width: 767px) {
-    .q-1b { padding-top: 3rem; }
-}
-
-@media screen and (min-width: 440px) {
-
-}
-
-@media screen and (min-width: 550px) {
-
-    .btn-slider-div {
-        width: 400px;
+    @media screen and (max-width: 767px) {
+        .q-1b {
+            padding-top: 3rem;
+        }
     }
 
-    .btn-slider {
-        width: 100px;
-        height: 28px;
+    @media screen and (min-width: 440px) {
     }
 
-    .btn-slider-text-div {
-        width: 90%;
+    @media screen and (min-width: 550px) {
+
+        .btn-slider-div {
+            width: 400px;
+        }
+
+        .btn-slider {
+            width: 100px;
+            height: 28px;
+        }
+
+        .btn-slider-text-div {
+            width: 90%;
+        }
+
+        .btn-slider-text {
+            font-size: 15px;
+        }
+
+        .sm-pd-left {
+            padding-left: 7%;
+        }
+
+        .btn-numb-div {
+            width: 508px;
+        }
+
+        .btn-number,
+        .btn-number-l,
+        .btn-number-r {
+            width: 90px;
+            margin: 0 12px;
+        }
     }
 
-    .btn-slider-text {
-        font-size: 15px;
+
+    @media screen and (min-width: 768px) {
+
+        .q-1a {
+            float: left;
+        }
+
+        .q-1b {
+            float: right;
+        }
+
+        .btn-slider-div {
+            width: 520px;
+        }
+
+        .btn-slider {
+            width: 130px;
+        }
     }
 
-    .sm-pd-left {
-        padding-left: 7%;
+    @media screen and (min-width: 992px) {
     }
 
-    .btn-numb-div {
-        width: 508px;
+    @media screen and (min-width: 1200px) {
     }
-
-    .btn-number,
-    .btn-number-l,
-    .btn-number-r {
-        width: 90px;
-        margin: 0 12px;
-    }
-}
-
-
-@media screen and (min-width: 768px) {
-
-    .q-1a {
-        float: left;
-    }
-
-    .q-1b {
-        float: right;
-    }
-
-    .btn-slider-div {
-        width: 520px;
-    }
-
-    .btn-slider {
-        width: 130px;
-    }
-
-}
-
-@media screen and (min-width: 992px) {
-
-}
-
-@media screen and (min-width: 1200px) {
-
-}
