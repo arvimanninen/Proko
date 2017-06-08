@@ -19,32 +19,49 @@
     margin: 2rem auto 0;
 }
 
+.normal-qxxxs {
+    text-align: center;
+    padding-top: 1.2rem;
+}
+
+.normal-qxxs {
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 0.3rem;
+}
+
 .normal-qxs {
+    text-align: center;
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
 
 .normal-qs {
+    text-align: center;
     padding-top: 3rem;
     padding-bottom: 1rem;
 }
 
 .normal-qm {
+    text-align: center;
     padding-top: 7vh;
     padding-bottom: 1.3rem;
 }
 
 .normal-ql {
+    text-align: center;
     padding-top: 10vh;
     padding-bottom: 1.3rem;
 }
 
 .normal-qxl {
+    text-align: center;
     padding-top: 13vh;
     padding-bottom: 1.3rem;
 }
 
 .normal-qxl {
+    text-align: center;
     padding-top: 16vh;
     padding-bottom: 1.3rem;
 }
@@ -283,8 +300,7 @@ QUESTION SLIDER THUMBS
 }
 
 .btn-sl-thumb {
-    width: 32%;
-    height: 40px;
+    width: 33.3%;
 }
 
 .thumb-sign {
@@ -339,7 +355,7 @@ MEDIA QUERIES (bootstrap 3 widths)
     }
 
     .btn-slider-text {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .sm-pd-left {
