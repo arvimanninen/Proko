@@ -70,6 +70,10 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionbuttonsliderlinks.html',
                 controller: 'QuestionButtonSliderLinksCtrl'
             })
+            .when('/questionbuttonslinks', {
+                templateUrl: 'views/questionbuttonslinks.html',
+                controller: 'QuestionButtonsLinksCtrl'
+            })
             //TODO: reDirectTo: *errorpage*
             .otherwise({
                 redirectTo: '/start'

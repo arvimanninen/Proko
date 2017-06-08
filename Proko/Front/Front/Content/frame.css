@@ -13,8 +13,9 @@ body {
 
 /*for sticky footer*/
 #wrap {
-  min-height: 100%;
-  height: auto;
+  /*min-height: 100%;
+  height: auto;*/
+  height: 100%;
   margin: 0 auto -55px;
   padding: 0 0 55px;
   color: #236290;

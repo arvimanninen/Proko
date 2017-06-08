@@ -86,6 +86,7 @@
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderLinksCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
+    <Content Include="Controllers\QuestionButtonsLinksCtrl.js" />
     <Content Include="Controllers\QuestionDragDropCtrl.js" />
     <Content Include="Controllers\QuestionDragDropSmileysCtrl.js" />
     <Content Include="Controllers\QuestionSliderThumbsCtrl.js" />
@@ -162,6 +163,7 @@
     <Content Include="views\bubblecharttest.html" />
     <Content Include="views\end.html" />
     <Content Include="views\questionbuttonsliderlinks.html" />
+    <Content Include="views\questionbuttonslinks.html" />
     <Content Include="views\questionsliderthumbs.html" />
     <Content Include="views\questionthumbs.html" />
     <Content Include="views\monitoringbubbles.html" />
