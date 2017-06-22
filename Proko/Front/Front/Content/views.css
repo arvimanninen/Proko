@@ -60,12 +60,75 @@
     padding-bottom: 1.3rem;
 }
 
-.normal-qxl {
+.normal-qxxl {
     text-align: center;
     padding-top: 16vh;
     padding-bottom: 1.3rem;
 }
 
+/*kysymykset*/
+
+.start-text {
+    text-align: center;
+    padding-top: 7vh;
+    padding-bottom: 1.3rem;
+}
+
+.q-text-1 {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+}
+
+.q-text-2 {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.q-text-3 {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.q-text-4 {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.q-text-5 {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.q-text-6 {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.q-text-6b {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.q-text-7 {
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 1.3rem;
+}
+
+.q-text-8 {
+    text-align: center;
+    padding-top: 13vh;
+    padding-bottom: 1.3rem;
+}
+
+/*
+*
+*
+*
+*/
 .btn-fwd-div {
     width: 100%;
     height: 130px;
@@ -211,8 +274,8 @@ BUTTON SLIDER VIEW
 }
 
 .btn-slider {
-    min-width: 72px;
-    height: 25px;
+    min-width: 58px;
+    height: 35px;
 }
 
 .btn-slider-text-div {
@@ -222,7 +285,7 @@ BUTTON SLIDER VIEW
 
 .btn-slider-text {
     color: #666666;
-    font-size: 15px;
+    font-size: 13px;
     padding-bottom: 4px;
 }
 
