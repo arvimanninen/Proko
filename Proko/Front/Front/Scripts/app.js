@@ -78,6 +78,14 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionbuttontest.html',
                 controller: 'QuestionButtonTestCtrl'
             })
+            .when('/questionSingle3', {
+                templateUrl: 'views/questionSingle3.html',
+                controller: 'QuestionSingle3Ctrl'
+            })
+            .when('/questionSingle4', {
+                templateUrl: 'views/questionSingle4.html',
+                controller: 'QuestionSingle4Ctrl'
+            })
             //TODO: reDirectTo: *errorpage*
             .otherwise({
                 redirectTo: '/start'

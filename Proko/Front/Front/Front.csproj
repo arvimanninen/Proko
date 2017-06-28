@@ -83,12 +83,14 @@
     <Content Include="Controllers\MonitoringBubblesCtrl.js" />
     <Content Include="Controllers\MonitoringOvCtrl.js" />
     <Content Include="Controllers\MonitoringCtrl.js" />
+    <Content Include="Controllers\QuestionSingle3Ctrl.js" />
     <Content Include="Controllers\QuestionButtonsCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderLinksCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionButtonsLinksCtrl.js" />
     <Content Include="Controllers\QuestionDragDropCtrl.js" />
     <Content Include="Controllers\QuestionDragDropSmileysCtrl.js" />
+    <Content Include="Controllers\QuestionSingle4Ctrl.js" />
     <Content Include="Controllers\QuestionSliderThumbsCtrl.js" />
     <Content Include="Controllers\QuestionThumbsCtrl.js" />
     <Content Include="Controllers\QuestionSafetyCtrl.js" />
@@ -121,6 +123,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="views\questionSingle3.html" />
     <Content Include="views\questionbuttontest.html" />
     <Content Include="Controllers\QuestionButtonTestCtrl.js" />
   </ItemGroup>
@@ -166,6 +169,7 @@
     <Content Include="views\end.html" />
     <Content Include="views\questionbuttonsliderlinks.html" />
     <Content Include="views\questionbuttonslinks.html" />
+    <Content Include="views\questionSingle4.html" />
     <Content Include="views\questionsliderthumbs.html" />
     <Content Include="views\questionthumbs.html" />
     <Content Include="views\monitoringbubbles.html" />

@@ -83,15 +83,44 @@
 .q-text-2 {
     text-align: center;
     padding-top: 3rem;
-    padding-bottom: 1rem;
+}
+
+.q-text-2a {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.q-text-2b {
+    text-align: center;
+    padding-top: 4rem;
 }
 
 .q-text-3 {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
 
-.q-text-4 {
+.q-text-3a {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.q-text-3b {
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.q-text-4a {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.q-text-4b {
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.q-text-5 {
     text-align: center;
     padding-top: 3rem;
     padding-bottom: 1rem;
@@ -122,6 +151,22 @@
     text-align: center;
     padding-top: 13vh;
     padding-bottom: 1.3rem;
+}
+
+.q-text-9 {
+    text-align: center;
+    padding-top: 13vh;
+}
+
+.q-text-9b {
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.q-text-10 {
+    text-align: center;
+    padding-top: 20vh;
+    padding-bottom: 1.5rem;
 }
 
 /*
