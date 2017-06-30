@@ -16,7 +16,7 @@ namespace Back.ApiControllers
 {
     public class AnswersApiController : ApiController
     {
-        private BackDBContext db = new BackDBContext();
+        private MainDbContext db = new MainDbContext();
 
         // GET: api/AnswersApi
         public IQueryable<Answer> GetAnswers()

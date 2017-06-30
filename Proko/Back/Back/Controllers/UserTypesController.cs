@@ -13,7 +13,7 @@ namespace Back.Controllers
     [Authorize]
     public class UserTypesController : Controller
     {
-        private BackDBContext db = new BackDBContext();
+        private MainDbContext db = new MainDbContext();
 
         // GET: UserTypes
         public ActionResult Index()

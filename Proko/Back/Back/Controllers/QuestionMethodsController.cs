@@ -13,7 +13,7 @@ namespace Back.Controllers
     [Authorize]
     public class QuestionMethodsController : Controller
     {
-        private BackDBContext db = new BackDBContext();
+        private MainDbContext db = new MainDbContext();
 
         // GET: QuestionMethods
         public ActionResult Index()
