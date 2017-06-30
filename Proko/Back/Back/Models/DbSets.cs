@@ -7,8 +7,11 @@ using System.Web;
 
 namespace Back.Models
 {
-    public class BackDBContext : DbContext
+    public class MainDbContext : DbContext
     {
+        public MainDbContext() : base("BackContext")
+        {
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Contractor> Contractors { get; set; }
         public DbSet<UserType> UserTypes { get; set; }

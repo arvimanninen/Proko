@@ -18,16 +18,16 @@ namespace Back.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class AccountDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public AccountDbContext()
+            : base("BackContext", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static AccountDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new AccountDbContext();
         }
     }
 }

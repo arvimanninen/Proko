@@ -13,7 +13,7 @@ namespace Back.Controllers
     [Authorize]
     public class UsersController : Controller
     {
-        private BackDBContext db = new BackDBContext();
+        private MainDbContext db = new MainDbContext();
 
         // GET: Users
         public ActionResult Index()
