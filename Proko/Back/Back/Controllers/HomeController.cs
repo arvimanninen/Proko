@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace Back.Controllers
 {
+    // UNCOMMENT FOR SSL
+    // [RequireHttps]
+    // IS THIS NEEDED?
     // [Authorize]
     public class HomeController : Controller
     {

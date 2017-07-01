@@ -75,7 +75,8 @@ namespace Back.ApiControllers
         // POST: api/AnswersApi
         // TODO: Narrow allowed headers
         // TODO: Make EnableCors as an editable field (from back management app)
-        [EnableCors(origins: "http://prokof.azurewebsites.net", headers: "*", methods: "post")]
+        // TODO: EnableCors!
+        // [EnableCors(origins: "http://prokof.azurewebsites.net", headers: "*", methods: "post")]
         [ResponseType(typeof(Answer))]
         public IHttpActionResult PostAnswer([FromBody] AnswerDTO answerdto)
         {

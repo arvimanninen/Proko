@@ -12,6 +12,8 @@ using Back.Models;
 
 namespace Back.Controllers
 {
+    // UNCOMMENT FOR SSL
+    // [RequireHttps]
     [Authorize]
     public class AccountController : Controller
     {
