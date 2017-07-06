@@ -10,6 +10,6 @@ namespace Back.Models
     {
         public int ContractorID { get; set; }
         public string Name { get; set; }
-        public ICollection <User> Users { get; set; }
+        public ICollection <SurveyUser> SurveyUsers { get; set; }
     }
 }

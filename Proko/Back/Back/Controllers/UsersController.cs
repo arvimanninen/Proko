@@ -20,7 +20,7 @@ namespace Back.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            var users = db.Users.Include(u => u.Contractor).Include(u => u.UserType);
+            var users = db.SurveyUsers.Include(u => u.Contractor).Include(u => u.SurveyUserType);
             return View(users.ToList());
         }
 
@@ -31,7 +31,7 @@ namespace Back.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            SurveyUser user = db.SurveyUsers.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -43,7 +43,7 @@ namespace Back.Controllers
         public ActionResult Create()
         {
             ViewBag.ContractorID = new SelectList(db.Contractors, "ContractorID", "Name");
-            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "Text");
+            ViewBag.UserTypeID = new SelectList(db.SurveyUserTypes, "UserTypeID", "Text");
             return View();
         }
 
@@ -52,17 +52,17 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,Name,UserTypeID,ContractorID")] User user)
+        public ActionResult Create([Bind(Include = "UserID,Name,UserTypeID,ContractorID")] SurveyUser user)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.SurveyUsers.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.ContractorID = new SelectList(db.Contractors, "ContractorID", "Name", user.ContractorID);
-            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "Text", user.UserTypeID);
+            ViewBag.UserTypeID = new SelectList(db.SurveyUserTypes, "UserTypeID", "Text", user.SurveyUserTypeID);
             return View(user);
         }
 
@@ -73,13 +73,13 @@ namespace Back.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            SurveyUser user = db.SurveyUsers.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
             }
             ViewBag.ContractorID = new SelectList(db.Contractors, "ContractorID", "Name", user.ContractorID);
-            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "Text", user.UserTypeID);
+            ViewBag.UserTypeID = new SelectList(db.SurveyUserTypes, "UserTypeID", "Text", user.SurveyUserTypeID);
             return View(user);
         }
 
@@ -88,7 +88,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,Name,UserTypeID,ContractorID")] User user)
+        public ActionResult Edit([Bind(Include = "UserID,Name,UserTypeID,ContractorID")] SurveyUser user)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace Back.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ContractorID = new SelectList(db.Contractors, "ContractorID", "Name", user.ContractorID);
-            ViewBag.UserTypeID = new SelectList(db.UserTypes, "UserTypeID", "Text", user.UserTypeID);
+            ViewBag.UserTypeID = new SelectList(db.SurveyUserTypes, "UserTypeID", "Text", user.SurveyUserTypeID);
             return View(user);
         }
 
@@ -108,7 +108,7 @@ namespace Back.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            SurveyUser user = db.SurveyUsers.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -121,8 +121,8 @@ namespace Back.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
+            SurveyUser user = db.SurveyUsers.Find(id);
+            db.SurveyUsers.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

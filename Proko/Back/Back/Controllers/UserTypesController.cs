@@ -20,7 +20,7 @@ namespace Back.Controllers
         // GET: UserTypes
         public ActionResult Index()
         {
-            return View(db.UserTypes.ToList());
+            return View(db.SurveyUserTypes.ToList());
         }
 
         // GET: UserTypes/Details/5
@@ -30,7 +30,7 @@ namespace Back.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserType userType = db.UserTypes.Find(id);
+            SurveyUserType userType = db.SurveyUserTypes.Find(id);
             if (userType == null)
             {
                 return HttpNotFound();
@@ -49,11 +49,11 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserTypeID,Text")] UserType userType)
+        public ActionResult Create([Bind(Include = "UserTypeID,Text")] SurveyUserType userType)
         {
             if (ModelState.IsValid)
             {
-                db.UserTypes.Add(userType);
+                db.SurveyUserTypes.Add(userType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -68,7 +68,7 @@ namespace Back.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserType userType = db.UserTypes.Find(id);
+            SurveyUserType userType = db.SurveyUserTypes.Find(id);
             if (userType == null)
             {
                 return HttpNotFound();
@@ -81,7 +81,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserTypeID,Text")] UserType userType)
+        public ActionResult Edit([Bind(Include = "UserTypeID,Text")] SurveyUserType userType)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace Back.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserType userType = db.UserTypes.Find(id);
+            SurveyUserType userType = db.SurveyUserTypes.Find(id);
             if (userType == null)
             {
                 return HttpNotFound();
@@ -112,8 +112,8 @@ namespace Back.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            UserType userType = db.UserTypes.Find(id);
-            db.UserTypes.Remove(userType);
+            SurveyUserType userType = db.SurveyUserTypes.Find(id);
+            db.SurveyUserTypes.Remove(userType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

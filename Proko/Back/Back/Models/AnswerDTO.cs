@@ -10,6 +10,6 @@ namespace Back.Models
     {
         public int Value { get; set; }
         public int QuestionID { get; set; }
-        public int UserID { get; set; }
+        public int SurveyUserID { get; set; }
     }
 }

@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Back.Models
 {
-    public class UserType
+    public class SurveyUserType
     {
-        public int UserTypeID { get; set; }
+        public int SurveyUserTypeID { get; set; }
         public string Text { get; set; }
-        public virtual ICollection <User> Users { get; set; }
+        public virtual ICollection <SurveyUser> SurveyUsers { get; set; }
     }
 }

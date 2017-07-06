@@ -91,7 +91,7 @@ namespace Back.ApiControllers
 
             Answer answer = new Answer();
             answer.QuestionID = answerdto.QuestionID;
-            answer.UserID = answerdto.UserID;
+            answer.SurveyUserID = answerdto.SurveyUserID;
             answer.Value = answerdto.Value;
             db.Answers.Add(answer);
             db.SaveChanges();

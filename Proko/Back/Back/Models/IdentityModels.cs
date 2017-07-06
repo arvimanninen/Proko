@@ -18,9 +18,9 @@ namespace Back.Models
         }
     }
 
-    public class AccountDbContext : IdentityDbContext<ApplicationUser>
+    /* public class AccountDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AccountDbContext()
+        /*public AccountDbContext()
             : base("BackContext", throwIfV1Schema: false)
         {
         }
@@ -29,5 +29,5 @@ namespace Back.Models
         {
             return new AccountDbContext();
         }
-    }
+    } */
 }
