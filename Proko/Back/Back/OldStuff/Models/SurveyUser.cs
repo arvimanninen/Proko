@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Back.Models
 {
+    // TODO: Remove
     public class SurveyUser
     {
         public int SurveyUserID { get; set; }

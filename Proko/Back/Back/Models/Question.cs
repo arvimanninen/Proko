@@ -9,6 +9,7 @@ namespace Back.Models
     public class Question
     {
         public int QuestionID { get; set; }
+        public int ChosenIndex { get; set; }
         public string Text { get; set; }
         public int QuestionMethodID { get; set; }
 

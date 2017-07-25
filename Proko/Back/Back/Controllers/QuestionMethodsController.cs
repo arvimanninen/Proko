@@ -10,9 +10,6 @@ using Back.Models;
 
 namespace Back.Controllers
 {
-    // UNCOMMENT FOR SSL
-    // [RequireHttps]
-    [Authorize]
     public class QuestionMethodsController : Controller
     {
         private MainDbContext db = new MainDbContext();
@@ -20,8 +17,7 @@ namespace Back.Controllers
         // GET: QuestionMethods
         public ActionResult Index()
         {
-            var questionMethods = db.QuestionMethods.Include(q => q.QuestionScale);
-            return View(questionMethods.ToList());
+            return View(db.QuestionMethods.ToList());
         }
 
         // GET: QuestionMethods/Details/5
@@ -42,7 +38,6 @@ namespace Back.Controllers
         // GET: QuestionMethods/Create
         public ActionResult Create()
         {
-            ViewBag.QuestionScaleID = new SelectList(db.QuestionScales, "QuestionScaleID", "QuestionScaleID");
             return View();
         }
 
@@ -51,7 +46,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuestionMethodID,Value,QuestionScaleID")] QuestionMethod questionMethod)
+        public ActionResult Create([Bind(Include = "QuestionMethodID,Value,ScaleMin,ScaleMax")] QuestionMethod questionMethod)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +55,6 @@ namespace Back.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.QuestionScaleID = new SelectList(db.QuestionScales, "QuestionScaleID", "QuestionScaleID", questionMethod.QuestionScaleID);
             return View(questionMethod);
         }
 
@@ -76,7 +70,6 @@ namespace Back.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.QuestionScaleID = new SelectList(db.QuestionScales, "QuestionScaleID", "QuestionScaleID", questionMethod.QuestionScaleID);
             return View(questionMethod);
         }
 
@@ -85,7 +78,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuestionMethodID,Value,QuestionScaleID")] QuestionMethod questionMethod)
+        public ActionResult Edit([Bind(Include = "QuestionMethodID,Value,ScaleMin,ScaleMax")] QuestionMethod questionMethod)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +86,6 @@ namespace Back.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.QuestionScaleID = new SelectList(db.QuestionScales, "QuestionScaleID", "QuestionScaleID", questionMethod.QuestionScaleID);
             return View(questionMethod);
         }
 

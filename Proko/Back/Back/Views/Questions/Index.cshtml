@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.QuestionMethod.Value)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ChosenIndex)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Text)
         </th>
         <th></th>
@@ -24,6 +27,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.QuestionMethod.Value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChosenIndex)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Text)

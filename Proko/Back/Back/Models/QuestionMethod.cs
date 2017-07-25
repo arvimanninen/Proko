@@ -10,8 +10,8 @@ namespace Back.Models
     {
         public int QuestionMethodID { get; set; }
         public string Value { get; set; }
-        public int QuestionScaleID { get; set; }
-        public virtual QuestionScale QuestionScale { get; set; }
+        public virtual int ScaleMin { get; set; }
+        public virtual int ScaleMax { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
     }
 }

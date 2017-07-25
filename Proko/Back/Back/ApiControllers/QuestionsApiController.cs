@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Diagnostics;
 using System.Web.Http.Description;
 using Back.Models;
 
@@ -21,17 +22,22 @@ namespace Back.ApiControllers
         {
             return db.Questions;
         }
+        
+
 
         // GET: api/QuestionsApi/5
-        // [ResponseType(typeof(Question))]
+        [ResponseType(typeof(Question))]
         public IHttpActionResult GetQuestion(int id)
         {
             Question question = db.Questions.Find(id);
+            Debug.WriteLine("question.QuestionID" + question.QuestionID);
+            Debug.WriteLine("question.Text" + question.Text);
             if (question == null)
             {
+                Debug.WriteLine("question is null!");
                 return NotFound();
             }
-            var q = question.QuestionID;
+
             return Ok(question);
         }
 

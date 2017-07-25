@@ -11,6 +11,12 @@ namespace Back
         {
             // Web API configuration and services
 
+            // TODO: Find out why this works
+
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
             // Web API routes
             config.EnableCors();
             config.MapHttpAttributeRoutes();

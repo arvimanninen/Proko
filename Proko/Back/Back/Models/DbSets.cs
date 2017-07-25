@@ -21,13 +21,8 @@ namespace Back.Models
         {
             return new MainDbContext();
         }
-
-        public DbSet<SurveyUser> SurveyUsers { get; set; }
-        public DbSet<Contractor> Contractors { get; set; }
-        public DbSet<SurveyUserType> SurveyUserTypes { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionMethod> QuestionMethods { get; set; }
-        public DbSet<QuestionScale> QuestionScales { get; set; }
     }
 }

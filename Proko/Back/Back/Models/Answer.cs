@@ -10,11 +10,9 @@ namespace Back.Models
     {
         public int AnswerID { get; set; }
         public int Value { get; set; }
+        public DateTime Date { get; set; }
         public int QuestionID { get; set; }
-        public int SurveyUserID { get; set; }
-
         public virtual Question Question { get; set; }
-        public virtual SurveyUser SurveyUser { get; set; }
 
     }
 }

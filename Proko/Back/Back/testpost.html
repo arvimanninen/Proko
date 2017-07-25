@@ -11,17 +11,16 @@
             console.log("GET successful!");
             console.log(data);
         }); */
-
+        console.log("testpage script started!");
         // AnswerDTO object constructor
-        var AnswerDTO = function (nQuestionID, nUserID, nValue) {
+        var AnswerDTO = function (nQuestionID, nValue) {
             this.QuestionID = nQuestionID;
-            this.UserID = nUserID;
             this.Value = nValue;
         };
 
-        var na = new AnswerDTO(5, 4, 1);
+        var na = new AnswerDTO(1, 2);
 
-        //var na = { "Value": 1, "QuestionID" : 1, "UserID" : 1 };
+        //var na = { "QuestionID = 1 , Value=2"}
 
         $.post("api/AnswersApi", na,
         function (data, status) {

@@ -12,10 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.QuestionScale.QuestionScaleID)
+            @Html.DisplayNameFor(model => model.Value)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Value)
+            @Html.DisplayNameFor(model => model.ScaleMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScaleMax)
         </th>
         <th></th>
     </tr>
@@ -23,10 +26,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.QuestionScale.QuestionScaleID)
+            @Html.DisplayFor(modelItem => item.Value)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Value)
+            @Html.DisplayFor(modelItem => item.ScaleMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScaleMax)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.QuestionMethodID }) |

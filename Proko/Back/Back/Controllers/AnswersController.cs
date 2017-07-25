@@ -10,9 +10,6 @@ using Back.Models;
 
 namespace Back.Controllers
 {
-    // UNCOMMENT FOR SSL
-    // [RequireHttps]
-    [Authorize]
     public class AnswersController : Controller
     {
         private MainDbContext db = new MainDbContext();
@@ -20,7 +17,7 @@ namespace Back.Controllers
         // GET: Answers
         public ActionResult Index()
         {
-            var answers = db.Answers.Include(a => a.Question).Include(a => a.SurveyUser);
+            var answers = db.Answers.Include(a => a.Question);
             return View(answers.ToList());
         }
 
@@ -43,7 +40,6 @@ namespace Back.Controllers
         public ActionResult Create()
         {
             ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text");
-            ViewBag.UserID = new SelectList(db.SurveyUsers, "UserID", "Name");
             return View();
         }
 
@@ -52,7 +48,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnswerID,Value,QuestionID,UserID")] Answer answer)
+        public ActionResult Create([Bind(Include = "AnswerID,Value,Date,QuestionID")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +58,6 @@ namespace Back.Controllers
             }
 
             ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            ViewBag.UserID = new SelectList(db.SurveyUsers, "UserID", "Name", answer.SurveyUserID);
             return View(answer);
         }
 
@@ -79,7 +74,6 @@ namespace Back.Controllers
                 return HttpNotFound();
             }
             ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            ViewBag.UserID = new SelectList(db.SurveyUsers, "UserID", "Name", answer.SurveyUserID);
             return View(answer);
         }
 
@@ -88,7 +82,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnswerID,Value,QuestionID,UserID")] Answer answer)
+        public ActionResult Edit([Bind(Include = "AnswerID,Value,Date,QuestionID")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +91,6 @@ namespace Back.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            ViewBag.UserID = new SelectList(db.SurveyUsers, "UserID", "Name", answer.SurveyUserID);
             return View(answer);
         }
 

@@ -91,8 +91,11 @@ namespace Back.ApiControllers
 
             Answer answer = new Answer();
             answer.QuestionID = answerdto.QuestionID;
-            answer.SurveyUserID = answerdto.SurveyUserID;
             answer.Value = answerdto.Value;
+            answer.Date = DateTime.Now;
+            System.Diagnostics.Debug.WriteLine("answer.QuestionID: " + answer.QuestionID);
+            System.Diagnostics.Debug.WriteLine("answer.Value: " + answer.Value);
+            System.Diagnostics.Debug.WriteLine("answer.Date: " + answer.Date);
             db.Answers.Add(answer);
             db.SaveChanges();
 
