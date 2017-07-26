@@ -23,7 +23,10 @@ namespace Back.ApiControllers
             return db.Questions;
         }
         
-
+        /*
+        public IHttpActionResult GetCorrectQuestions()
+            db.Questions.Query(
+         */ 
 
         // GET: api/QuestionsApi/5
         [ResponseType(typeof(Question))]

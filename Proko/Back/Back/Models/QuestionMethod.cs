@@ -9,8 +9,11 @@ namespace Back.Models
     public class QuestionMethod
     {
         public int QuestionMethodID { get; set; }
+        [Required]
         public string Value { get; set; }
+        [Required]
         public virtual int ScaleMin { get; set; }
+        [Required]
         public virtual int ScaleMax { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
     }
