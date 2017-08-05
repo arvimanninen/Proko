@@ -101,6 +101,28 @@ namespace Back.ApiControllers
 
             return CreatedAtRoute("DefaultApi", new { id = answer.AnswerID }, answer);
         }
+        // TODO: DOES THIS WORK?
+        // List or IEnumerable ?
+        [Route("api/postsurveyanswers")]
+        [HttpPost]
+        public void PostSurveyAnswers(List<AnswerDTO> surveyAnswerDtos)
+        {
+            DateTime answerDate = DateTime.Now;
+            foreach (AnswerDTO aDto in surveyAnswerDtos)
+            {
+                Answer a = new Answer();
+                a.QuestionID = aDto.QuestionID;
+                a.Value = aDto.Value;
+                a.Date = answerDate;
+                System.Diagnostics.Debug.WriteLine("a.QuestionID: " + a.QuestionID);
+                System.Diagnostics.Debug.WriteLine("a.Value: " + a.Value);
+                System.Diagnostics.Debug.WriteLine("a.Date: " + a.Date);
+                db.Answers.Add(a);
+                // TODO: Should this be before loop ends?
+            }
+            db.SaveChanges();
+        }
+
 
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]

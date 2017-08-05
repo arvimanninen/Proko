@@ -23,10 +23,43 @@ namespace Back.ApiControllers
             return db.Questions;
         }
         
-        /*
-        public IHttpActionResult GetCorrectQuestions()
-            db.Questions.Query(
-         */ 
+       // TODO: DOES THIS WORK?
+        [Route("api/getchosenquestions")]
+        [HttpGet]
+        public List<QuestionDTO> GetChosenQuestions()
+        {
+            // TODO:FIND OUT IS chosenQuestionDtos NEEDED
+            // -> List off, send chosenQuestions ?
+            
+            var rawDtos = from question in db.Questions
+                          join questionmethod in db.QuestionMethods
+                          on question.QuestionMethodID equals questionmethod.QuestionMethodID
+                          where question.Chosen == true
+                          orderby question.ChosenIndex ascending
+                          select new QuestionDTO
+                          {
+                                 QuestionID = question.QuestionID,
+                                 ChosenIndex = question.ChosenIndex,
+                                 Text = question.Text,
+                                 QuestionMethodValue = questionmethod.Value
+                          };
+            List<QuestionDTO> cleanDtos = new List<QuestionDTO>();
+            
+            foreach (QuestionDTO oldDto in rawDtos)
+            {
+                QuestionDTO newDto = new QuestionDTO();
+                newDto.QuestionID = oldDto.QuestionID;
+                newDto.ChosenIndex = oldDto.ChosenIndex;
+                newDto.Text = oldDto.Text;
+                Debug.WriteLine("q.QuestionMethod.Value: " + oldDto.QuestionMethodValue);
+                newDto.QuestionMethodValue = oldDto.QuestionMethodValue;
+                cleanDtos.Add(newDto);
+            }
+          return cleanDtos;
+        }
+        
+        
+
 
         // GET: api/QuestionsApi/5
         [ResponseType(typeof(Question))]

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Web API test</title>
+</head>
+<body>
+    <p>API status: <strong><span id="api-status"></span></strong></p> <br />
+    <p>QuestionID: <span id="question-id"></span></p> <br />
+    <p>ChosenIndex: <span id="chosen-index"></span></p> <br />
+    <p>Text: <span id="text"></span></p> <br />
+    <p>QuestionMethodValue: <span id="question-method-value"></span></p> <br />
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        console.log("testget script started!");
+        document.getElementById("api-status").innerHTML = "Idle";
+        $.getJSON("api/getchosenquestions", function () {
+            console.log("API call launched");
+        })
+        .done(function (data) {
+            console.log("API call works!");
+            document.getElementById("api-status").innerHTML = "API call successful!";
+            for (var i = 0; i < data.length; i++) {
+                console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
+                console.log("data[" + i + "].ChosenIndex: " + data[i].ChosenIndex);
+                console.log("data[" + i + "].Text: " + data[i].Text);
+                console.log("data[" + i + "].QuestionMethodValue: " + data[i].QuestionMethodValue);
+            }
+            
+            document.getElementById("question-id").innerHTML = data[0].QuestionID;
+            document.getElementById("chosen-index").innerHTML = data[0].ChosenIndex;
+            document.getElementById("text").innerHTML = data[0].Text;
+            document.getElementById("question-method-value").innerHTML = data[0].QuestionMethodValue;
+        })
+        .fail(function () {
+            console.log("API call doesn't work!");
+            document.getElementById("api-status").innerHTML = "API call failed!";
+        });
+    </script>
+</body>
+</html>

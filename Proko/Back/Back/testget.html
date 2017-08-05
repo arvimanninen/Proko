@@ -26,6 +26,7 @@
         */
 
         //var na = { "QuestionID = 1 , Value=2"}
+        // TODO: REDUCE API CALLS -> MAP HTML ELEMENTS 
         document.getElementById("api-status").innerHTML = "Idle";
         $.getJSON("api/QuestionsApi/3", function () {
             console.log("API call launched");
