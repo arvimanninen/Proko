@@ -19,15 +19,27 @@
         };
 
         var newAnswers = [new AnswerDTO(1, 2), new AnswerDTO(2, 3)];
-
-
-        //var na = { "QuestionID = 1 , Value=2"}
-
-        $.post("api/AnswersApi", newAnswers,
+        for (var i = 0; i < newAnswers.length; i++) {
+            console.log("newAnswers[" + i + "].QuestionID: " + newAnswers[i].QuestionID);
+            console.log("newAnswers[" + i + "].Value: " + newAnswers[i].Value);
+        }
+        
+        /*
+        $.post("api/postsurveyanswers", newAnswers,
         function (data, status) {
             console.log("Data: " + data + "\nStatus: " + status);
         });
-
+        */
+        $.ajax({
+            url: "api/postsurveyanswers",
+            type: 'POST',
+            data: JSON.stringify(newAnswers),
+            dataType: 'json',
+            contentType: 'application/json',
+            crossDomain: true,
+            cache: false,
+            success: function (data) { console.log(data); }
+        });
     </script>
 </body>
 </html>

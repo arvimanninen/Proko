@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -93,9 +94,9 @@ namespace Back.ApiControllers
             answer.QuestionID = answerdto.QuestionID;
             answer.Value = answerdto.Value;
             answer.Date = DateTime.Now;
-            System.Diagnostics.Debug.WriteLine("answer.QuestionID: " + answer.QuestionID);
-            System.Diagnostics.Debug.WriteLine("answer.Value: " + answer.Value);
-            System.Diagnostics.Debug.WriteLine("answer.Date: " + answer.Date);
+            Debug.WriteLine("answer.QuestionID: " + answer.QuestionID);
+            Debug.WriteLine("answer.Value: " + answer.Value);
+            Debug.WriteLine("answer.Date: " + answer.Date);
             db.Answers.Add(answer);
             db.SaveChanges();
 
@@ -105,22 +106,37 @@ namespace Back.ApiControllers
         // List or IEnumerable ?
         [Route("api/postsurveyanswers")]
         [HttpPost]
-        public void PostSurveyAnswers(List<AnswerDTO> surveyAnswerDtos)
+        public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
         {
+            Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
+            for (int i = 0; i < surveyAnswerDtos.Count && surveyAnswerDtos.Count >= 1; i++)
+            {
+                Debug.WriteLine("*******");
+                Debug.WriteLine("surveyAnswerDtos[" + i + "].QuestionID: " + surveyAnswerDtos[i].QuestionID);
+                Debug.WriteLine("surveyAnswerDtos[" + i + "].Value: " + surveyAnswerDtos[i].Value);
+            }
+            
+            if (!ModelState.IsValid)
+            {
+                Debug.WriteLine("Model state not valid!");
+                return BadRequest(ModelState);
+            }
             DateTime answerDate = DateTime.Now;
+            // THIS DOESN'T RUN BECAUSE surveyAnswerDtos.Count = 0?
             foreach (AnswerDTO aDto in surveyAnswerDtos)
             {
                 Answer a = new Answer();
                 a.QuestionID = aDto.QuestionID;
                 a.Value = aDto.Value;
                 a.Date = answerDate;
-                System.Diagnostics.Debug.WriteLine("a.QuestionID: " + a.QuestionID);
-                System.Diagnostics.Debug.WriteLine("a.Value: " + a.Value);
-                System.Diagnostics.Debug.WriteLine("a.Date: " + a.Date);
+                Debug.WriteLine("a.QuestionID: " + a.QuestionID);
+                Debug.WriteLine("a.Value: " + a.Value);
+                Debug.WriteLine("a.Date: " + a.Date);
                 db.Answers.Add(a);
                 // TODO: Should this be before loop ends?
             }
             db.SaveChanges();
+            return Ok();
         }
 
 
