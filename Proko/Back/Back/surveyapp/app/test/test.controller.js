@@ -5,10 +5,7 @@ app.controller('TestCtrl', function TestCtrl($location, dataService) {
     var chosenQuestions = dataService.getChosenQuestions();
 
 
-    var AnswerDTO = function (nQuestionID, nValue) {
-        this.QuestionID = nQuestionID;
-        this.Value = nValue;
-    };
+    
     //DAADAA
     var na = [new AnswerDTO(2, 4), new AnswerDTO(1, 5)];
 

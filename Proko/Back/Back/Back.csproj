@@ -285,6 +285,7 @@
     <Content Include="surveyapp\app\buttons-vertical-short-text-5\buttons-vertical-short-text-5.controller.js" />
     <Content Include="surveyapp\app\buttons-vertical-short-text-5\buttons-vertical-short-text-5.template.html" />
     <Content Include="surveyapp\app\core\data.service.js" />
+    <Content Include="surveyapp\app\core\question.service.js" />
     <Content Include="surveyapp\app\end\end.component.js" />
     <Content Include="surveyapp\app\end\end.controller.js" />
     <Content Include="surveyapp\app\end\end.template.html" />
@@ -616,6 +617,7 @@
     <Content Include="surveyapp\node_modules\jquery\README.md" />
     <Content Include="surveyapp\node_modules\jquery\src\.eslintrc.json" />
     <Content Include="surveyapp\package.json" />
+    <Content Include="surveyapp\app\core\answer.service.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
