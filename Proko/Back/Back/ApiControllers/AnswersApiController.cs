@@ -102,27 +102,32 @@ namespace Back.ApiControllers
 
             return CreatedAtRoute("DefaultApi", new { id = answer.AnswerID }, answer);
         }
-        // TODO: DOES THIS WORK?
-        // List or IEnumerable ?
+
         [Route("api/postsurveyanswers")]
         [HttpPost]
         public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
         {
             Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
-            for (int i = 0; i < surveyAnswerDtos.Count && surveyAnswerDtos.Count >= 1; i++)
+            if(surveyAnswerDtos.Count >= 1)
             {
-                Debug.WriteLine("*******");
-                Debug.WriteLine("surveyAnswerDtos[" + i + "].QuestionID: " + surveyAnswerDtos[i].QuestionID);
-                Debug.WriteLine("surveyAnswerDtos[" + i + "].Value: " + surveyAnswerDtos[i].Value);
+                for (int i = 0; i < surveyAnswerDtos.Count; i++)
+                {
+                    Debug.WriteLine("*******");
+                    Debug.WriteLine("surveyAnswerDtos[" + i + "].QuestionID: " + surveyAnswerDtos[i].QuestionID);
+                    Debug.WriteLine("surveyAnswerDtos[" + i + "].Value: " + surveyAnswerDtos[i].Value);
+                }
             }
             
+            if(surveyAnswerDtos.Count == 0)
+            {
+                return BadRequest();
+            }
             if (!ModelState.IsValid)
             {
-                Debug.WriteLine("Model state not valid!");
+                Debug.WriteLine("ModelState not valid!");
                 return BadRequest(ModelState);
             }
             DateTime answerDate = DateTime.Now;
-            // THIS DOESN'T RUN BECAUSE surveyAnswerDtos.Count = 0?
             foreach (AnswerDTO aDto in surveyAnswerDtos)
             {
                 Answer a = new Answer();
@@ -133,7 +138,6 @@ namespace Back.ApiControllers
                 Debug.WriteLine("a.Value: " + a.Value);
                 Debug.WriteLine("a.Date: " + a.Date);
                 db.Answers.Add(a);
-                // TODO: Should this be before loop ends?
             }
             db.SaveChanges();
             return Ok();

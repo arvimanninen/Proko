@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Diagnostics;
 using System.Web.Http.Description;
 using Back.Models;
+using System.Collections;
 
 namespace Back.ApiControllers
 {
@@ -26,7 +27,8 @@ namespace Back.ApiControllers
        // TODO: DOES THIS WORK?
         [Route("api/getchosenquestions")]
         [HttpGet]
-        public List<QuestionDTO> GetChosenQuestions()
+        //public List<QuestionDTO> GetChosenQuestions()
+        public IHttpActionResult GetChosenQuestions()
         {
             // TODO:FIND OUT IS chosenQuestionDtos NEEDED
             // -> List off, send chosenQuestions ?
@@ -43,19 +45,27 @@ namespace Back.ApiControllers
                                  Text = question.Text,
                                  QuestionMethodValue = questionmethod.Value
                           };
+
             List<QuestionDTO> cleanDtos = new List<QuestionDTO>();
             
-            foreach (QuestionDTO oldDto in rawDtos)
+            foreach (QuestionDTO rawDto in rawDtos)
             {
-                QuestionDTO newDto = new QuestionDTO();
-                newDto.QuestionID = oldDto.QuestionID;
-                newDto.ChosenIndex = oldDto.ChosenIndex;
-                newDto.Text = oldDto.Text;
-                Debug.WriteLine("q.QuestionMethod.Value: " + oldDto.QuestionMethodValue);
-                newDto.QuestionMethodValue = oldDto.QuestionMethodValue;
-                cleanDtos.Add(newDto);
+                QuestionDTO cleanDto = new QuestionDTO();
+                cleanDto.QuestionID = rawDto.QuestionID;
+                cleanDto.ChosenIndex = rawDto.ChosenIndex;
+                cleanDto.Text = rawDto.Text;
+                Debug.WriteLine("q.QuestionMethod.Value: " + rawDto.QuestionMethodValue);
+                cleanDto.QuestionMethodValue = rawDto.QuestionMethodValue;
+                cleanDtos.Add(cleanDto);
             }
-          return cleanDtos;
+            if(cleanDtos.Count >= 1)
+            {
+                return Ok(cleanDtos);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
         
         

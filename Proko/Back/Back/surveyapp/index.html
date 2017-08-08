@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Iss Proko - Rakennushankekysely</title>
+    <!-- Bootstrap css-->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Own modifications css-->
+    <link href="css/frame.css" rel="stylesheet">
+    <link href="css/views.css" rel="stylesheet">
+    <link href="css/monitoring.css" rel="stylesheet">
+
+    <!-- TODO: UPDATE HTML5SHIV AND RESPOND -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9] -->
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[endif]-->
+</head>
+<body>
+
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <h3 id="header-text" class="text-center">Kysely</h3>
+            </div> <!--container div ends-->
+        </header>
+        <!-- begin page content -->
+        <div ng-view>
+
+        </div>
+         <!-- page content div ends-->
+    </div><!-- wrap div ends -->
+    <footer>
+        <div class="container">
+            <h4 id="footer-text" class="text-center">ISS Proko Oy</h4>
+        </div>
+    </footer>
+
+    <!-- jQuery  -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Bootstrap scripts -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- AngularJS, Angular-route and Angular-resource -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+
+    <!-- App module and config-->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+
+    <!-- Angular services -->
+    <script src="app/core/data.service.js"></script>
+
+    <!-- Angular controllers and components -->
+    <script src="app/start/start.controller.js"></script>
+    <script src="app/start/start.component.js"></script>
+
+    <script src="app/test/test.controller.js"></script>
+    <script src="app/test/test.component.js"></script>
+	
+	<script src="app/buttons-horizontal-num-5/buttons-horizontal-num-5.controller.js"></script>
+    <script src="app/buttons-horizontal-num-5/buttons-horizontal-num-5.component.js"></script>
+    <script src="app/buttons-horizontal-short-blank-5/buttons-horizontal-short-blank-5.controller.js"></script>
+    <script src="app/buttons-horizontal-short-blank-5/buttons-horizontal-short-blank-5.component.js"></script>
+    <script src="app/buttons-horizontal-text-3/buttons-horizontal-text-3.controller.js"></script>
+    <script src="app/buttons-horizontal-text-3/buttons-horizontal-text-3.component.js"></script>
+    <script src="app/buttons-vertical-short-text-5/buttons-vertical-short-text-5.controller.js"></script>
+    <script src="app/buttons-vertical-short-text-5/buttons-vertical-short-text-5.component.js"></script>
+
+    <script src="app/end/end.controller.js"></script>
+    <script src="app/end/end.component.js"></script>
+
+
+
+</body>
+</html>
