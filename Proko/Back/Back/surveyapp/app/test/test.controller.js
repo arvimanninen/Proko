@@ -29,6 +29,10 @@ app.controller('TestCtrl', function TestCtrl(DataFactory, QuestionService, Answe
             console.log("ans[" + c + "].QuestionID: " + ans[c].QuestionID);
             console.log("ans[" + c + "].Value: " + ans[c].Value);
         }
+        var postAnswers = DataFactory.postSurveyAnswers.save(ans, function () {
+            console.log("Survey answers posted to API");
+        });
+
     });
     
 
