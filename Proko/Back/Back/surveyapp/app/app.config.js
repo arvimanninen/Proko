@@ -1,7 +1,8 @@
 'use strict';
 console.log("app.config started!");
 app.config(['$routeProvider', '$locationProvider',
-
+    // TODO: ADD FUNCTION FOR SELECTION
+    
     function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {

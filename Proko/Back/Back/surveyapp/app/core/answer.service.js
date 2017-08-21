@@ -1,22 +1,22 @@
 ﻿'use strict';
 
-app.service('answerService', function () {
+app.service('AnswerService', function () {
     var surveyAnswers = [];
     var AnswerDTO = function (nQuestionID, nValue) {
         this.QuestionID = nQuestionID;
         this.Value = nValue;
     };
-    var getSurveyAnswers = function () {
+    var getAnswers = function () {
         return surveyAnswers;
-    }
-    var setSurveyAnswer = function (nQuestionID, nValue) {
+    };
+    var setAnswer = function (nQuestionID, nValue) {
         // TODO: DO CHECKUPS
         var sa = new AnswerDTO(nQuestionID, nValue);
         surveyAnswers.push(sa);
-    }
+    };
 
     return {
-        getSurveyAnswers: getSurveyAnswers,
-        setSurveyAnswer: setSurveyAnswer
+        getAnswers: getAnswers,
+        setAnswer: setAnswer
     };
 });

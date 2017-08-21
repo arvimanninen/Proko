@@ -1,19 +1,11 @@
 'use strict';
 
-app.service('dataService', function($resource) {
+app.service('DataService', function($resource, questionService) {
     console.log("dataService started!");
-    
     var getChosenQuestions = function () {
         var cq = $resource('../api/getchosenquestions').query(function () {
-            for (var i = 0; i < cq.length; i++) {
-                console.log("dataService.cq.length: " + cq.length);
-                console.log("dataService.cq[" + i + "].QuestionID: " + cq[i].QuestionID);
-                console.log("dataService.cq[" + i + "].ChosenIndex: " + cq[i].ChosenIndex);
-                console.log("dataService.cq[" + i + "].Text: " + cq[i].Text);
-                console.log("dataService.cq[" + i + "].QuestionMethodValue: " + cq[i].QuestionMethodValue);
-            }
+            questionService.setQuestions(cq);
         });
-        return cq;
     };
 
     var postSurveyAnswers = function (newAnswers) {
