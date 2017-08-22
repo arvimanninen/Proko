@@ -3,17 +3,6 @@
 app.factory('DataFactory', function ($resource) {
     console.log("dataFactory started!");
 
-    // TODO: FOLLOW SAME PATTERN AS IN getChosenQuestions
-
-    var postSurveyAnswers = function (newAnswers) {
-        var psa = $resource('../api/postsurveyanswers').save(newAnswers,
-        function () {
-            console.log("postSurveyAnswer done!");
-            console.log("psa: " + psa);
-        });
-    };
-
-
     return {
         getChosenQuestions: $resource('../api/getchosenquestions'),
         postSurveyAnswers: $resource('../api/postsurveyanswers')
