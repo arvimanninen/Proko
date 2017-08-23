@@ -6,23 +6,23 @@
         </div>
     </div>
 
-    <p class="lead text-center q-text-7">Miten hyvin projekti on aikataulutettu?</p>
+    <p class="lead text-center q-text-7">{{ $ctrl.questionText }}</p>
 
     <div class="text-center">
         <div class="btn-group-vertical" data-toggle="buttons">
-            <label class="btn btn-default" ng-click="setAnswer()">
+            <label class="btn btn-default" ng-click="$ctrl.setAnswerAndGo(1)">
                 <input type="radio" name="options"> erittäin hyvin
             </label>
-            <label class="btn btn-default" ng-click="setAnswer()">
+            <label class="btn btn-default" ng-click="$ctrl.setAnswerAndGo(2)">
                 <input type="radio" name="options"> hyvin
             </label>
-            <label class="btn btn-default" ng-click="setAnswer()">
+            <label class="btn btn-default" ng-click="$ctrl.setAnswerAndGo(3)">
                 <input type="radio" name="options"> kohtalaisesti
             </label>
-            <label class="btn btn-default" ng-click="setAnswer()">
+            <label class="btn btn-default" ng-click="$ctrl.setAnswerAndGo(4)">
                 <input type="radio" name="options"> huonosti
             </label>
-            <label class="btn btn-default" ng-click="setAnswer()">
+            <label class="btn btn-default" ng-click="$ctrl.setAnswerAndGo(5)">
                 <input type="radio" name="options"> erittäin huonosti
             </label>
         </div>

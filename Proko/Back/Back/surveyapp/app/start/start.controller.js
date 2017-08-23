@@ -2,6 +2,8 @@
 app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService) {
     console.log("StartCtrl started");
     var that = this;
+    var startButton = document.getElementById("start-button");
+    startButton.style.visibility = "hidden";
     that.loadText = "Kysymyksiä ladataan...";
        
     var rawQs = DataFactory.getChosenQuestions.query(function () {
@@ -14,14 +16,16 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
             console.log("rawQs[" + i + "].QuestionMethodValue: " + rawQs[i].QuestionMethodValue);
         }
         if (rawQs.length === 0) {
-            alert("Kysymyksiä ei löydy! Sulje selain ja yritä uudestaan");
+            that.loadText = "Kysymyksiä ei löydy! Sulje selain ja yritä uudestaan";
         }
         QuestionService.setQuestions(rawQs);
         that.loadText = "Kysymykset ladattu!";
+        $("#loading-icon").remove();
+        startButton.style.visibility = "visible";
         console.log("QuestionService.getQuestion(0).QuestionMethodValue" + QuestionService.getQuestion(0).QuestionMethodValue);
     });
 
-    that.routeToTest = function () {
+    that.startSurvey = function () {
         $location.path(QuestionService.getQuestion(0).QuestionMethodValue);
     };
 });
