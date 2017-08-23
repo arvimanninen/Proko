@@ -5,8 +5,12 @@
         Tavoitteena on löytää ongelmakohtia, jotta rakennusvaiheen etenemistä voidaan kehittää.
     </p>
     <p class="lead text-center">Vastaa kysymyksiin rehellisesti.</p>
-    <p>{{ $ctrl.loadText }}</p>
+    <p id="loading-status" class="text-center">
+        <!-- TODO: REPLACE brS WITH SOMETHING SENSIBLE -->
+        {{ $ctrl.loadText }}<br /><br />
+        <img id="loading-icon" src="images/loading.gif" alt="Kuvaa ei voida näyttää" />
+    </p>
     <div class="btn-next-div">
-        <a id="start-button" class="btn btn-default btn-lg btn-next"  ng-click="$ctrl.routeToTest()" role="button">Aloita kysely</a>
+        <a id="start-button" class="btn btn-default btn-lg btn-next"  ng-click="$ctrl.startSurvey()" role="button">Aloita kysely</a>
     </div>
 </div>

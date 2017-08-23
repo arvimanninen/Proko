@@ -5,21 +5,21 @@
         </div>
     </div>
 
-    <p class="lead text-center q-text-10">Kommunikoinnin taso työmaalla:</p>
+    <p class="lead text-center q-text-10">{{ $ctrl.questionText }}</p>
     <div class="btn-group sl-thumb-div" data-toggle="buttons">
-        <label class="btn btn-default btn-sl-thumb" ng-click="setAnswer()">
+        <label class="btn btn-default btn-sl-thumb" ng-click="$ctrl.setAnswerAndGo(1)">
             <span aria-hidden="true">
                 Huono
                 <input type="radio">
             </span>
         </label>
-        <label class="btn btn-default btn-sl-thumb" ng-click="setAnswer()">
+        <label class="btn btn-default btn-sl-thumb" ng-click="$ctrl.setAnswerAndGo(2)">
             <span aria-hidden="true">
                 Kohtalainen
                 <input type="radio">
             </span>
         </label>
-        <label class="btn btn-default btn-sl-thumb" ng-click="setAnswer()">
+        <label class="btn btn-default btn-sl-thumb" ng-click="$ctrl.setAnswerAndGo(3)">
             <span aria-hidden="true">
                 Hyvä
                 <input type="radio">

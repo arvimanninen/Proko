@@ -1,9 +1,19 @@
 ﻿'use strict';
 
-app.controller('ButtonsHorizontalShortBlank5Ctrl', function ($scope, $location) {
-    $scope.answerOne = "Not answered";
-    $scope.answerTwo = "Not answered";
-    $scope.setAnswer = function () {
-        $location.path("/questionSingle3");
+app.controller('ButtonsHorizontalShortBlank5Ctrl', function ($location, AnswerService, QuestionService) {
+    var that = this;
+    // TODO: CHECK SHOULD THIS BE var OR that
+    var currentIndex = AnswerService.getAnswers().length;
+    console.log("ButtonsHorizontalNum5Ctrl.currentIndex: " + currentIndex);
+    var currentQuestion = QuestionService.getQuestion(currentIndex);
+    that.questionText = currentQuestion.Text;
+    that.setAnswerAndGo = function (answer) {
+        AnswerService.setAnswer(currentQuestion.QuestionID, answer);
+        currentIndex++;
+        if (currentIndex >= QuestionService.getQuestions().length) {
+            $location.path("/end");
+        } else {
+            $location.path(QuestionService.getQuestion(currentIndex).QuestionMethodValue);
+        }
     };
 });
