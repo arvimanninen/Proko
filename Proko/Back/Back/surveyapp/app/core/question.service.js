@@ -10,9 +10,14 @@ app.service('QuestionService', function () {
         this.QuestionMethodValue = nQuestionMethodValue;
     };
 
+    var getQuestion = function (index) {
+        return questions[index];
+    }
+
     var getQuestions = function () {
         return questions;
     };
+
     var setQuestions = function (qs) {
         //TODO: CHECKUPS
         console.log("questionService.setQuestions started");
@@ -26,6 +31,7 @@ app.service('QuestionService', function () {
     };
 
     return {
+        getQuestion: getQuestion,
         getQuestions: getQuestions,
         setQuestions: setQuestions
     };

@@ -5,8 +5,8 @@
         Tavoitteena on löytää ongelmakohtia, jotta rakennusvaiheen etenemistä voidaan kehittää.
     </p>
     <p class="lead text-center">Vastaa kysymyksiin rehellisesti.</p>
-
+    <p>{{ $ctrl.loadText }}</p>
     <div class="btn-next-div">
-        <a class="btn btn-default btn-lg btn-next"  ng-click="$ctrl.routeToTest()" role="button">Aloita kysely</a>
+        <a id="start-button" class="btn btn-default btn-lg btn-next"  ng-click="$ctrl.routeToTest()" role="button">Aloita kysely</a>
     </div>
 </div>
