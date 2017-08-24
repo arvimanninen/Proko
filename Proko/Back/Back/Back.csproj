@@ -298,7 +298,6 @@
     <Content Include="surveyapp\app\test\test.template.html" />
     <Content Include="surveyapp\css\frame.css" />
     <Content Include="surveyapp\css\monitoring.css" />
-    <Content Include="surveyapp\css\newstyles.css" />
     <Content Include="surveyapp\css\views.css" />
     <Content Include="surveyapp\index.html" />
     <Content Include="surveyapp\images\loading.gif" />
