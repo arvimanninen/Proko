@@ -5,6 +5,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     var startButton = document.getElementById("start-button");
     // NAMED lt INSTEAD OF loadingText FOR AVOIDING CONFUSION WITH that.loadingText
     var lt = document.getElementById("loading-text");
+    var loadingIcon = document.getElementById("loading-icon");
 
     startButton.style.visibility = "hidden";
     that.loadingText = "Kysymyksiä ladataan...";
@@ -18,11 +19,12 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
             console.log("rawQs[" + i + "].Text: " + rawQs[i].Text);
             console.log("rawQs[" + i + "].QuestionMethodValue: " + rawQs[i].QuestionMethodValue);
         }
-        $("#loading-icon").remove();
         if (rawQs.length === 0) {
             that.loadingText = "Kysymyksiä ei löydy! Sulje selain ja yritä uudestaan";
+            loadingIcon.src = "images/warning.gif";
             lt.style.color = "red";
         } else {
+            $("#loading-icon").remove();
             QuestionService.setQuestions(rawQs);
             that.loadingText = "Kysymykset ladattu!";
             lt.style.color = "green";
