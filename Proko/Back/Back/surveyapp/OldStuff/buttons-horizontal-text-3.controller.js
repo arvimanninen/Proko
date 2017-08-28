@@ -1,6 +1,6 @@
-﻿'use strict';
+﻿/*'use strict';
 
-app.controller('ButtonsHorizontalShortBlank5Ctrl', function ($location, $route, $templateCache, AnswerService, QuestionService) {
+app.controller('ButtonsHorizontalText3Ctrl', function ($location, $route, $templateCache, AnswerService, QuestionService) {
     var that = this;
     // TODO: CHECK SHOULD THIS BE var OR that
     var currentIndex = AnswerService.getAnswers().length;
@@ -27,3 +27,4 @@ app.controller('ButtonsHorizontalShortBlank5Ctrl', function ($location, $route, 
         }
     };
 });
+*/

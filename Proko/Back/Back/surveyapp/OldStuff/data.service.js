@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 app.service('DataService', function($resource, questionService) {
     console.log("dataService started!");
