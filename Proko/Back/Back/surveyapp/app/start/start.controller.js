@@ -20,7 +20,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
             console.log("rawQs[" + i + "].QuestionMethodValue: " + rawQs[i].QuestionMethodValue);
         }
         if (rawQs.length === 0) {
-            that.loadingText = "Kysymyksiä ei löydy! Sulje selain ja yritä uudestaan";
+            that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
             loadingIcon.src = "images/warning.gif";
             lt.style.color = "red";
         } else {
@@ -31,6 +31,11 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
             startButton.style.visibility = "visible";
             console.log("QuestionService.getQuestion(0).QuestionMethodValue" + QuestionService.getQuestion(0).QuestionMethodValue);
         }
+    }, function () {
+        // WHEN GET FAILS, THIS FUNCTION LAUNCHES
+        that.loadingText = "Virhe kysymysten lataamisessa! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
+        loadingIcon.src = "images/warning.gif";
+        lt.style.color = "red";
     });
 
     that.startSurvey = function () {

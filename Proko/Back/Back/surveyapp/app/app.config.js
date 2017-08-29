@@ -29,7 +29,7 @@ app.config(['$routeProvider', '$locationProvider',
             })
             /* TODO: MAKE ERROR PAGE */
             .otherwise({
-                template: ''
+                template: '<error-general></error-general>'
             })
     }
 ]);
