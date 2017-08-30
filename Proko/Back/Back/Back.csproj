@@ -277,6 +277,7 @@
     <Content Include="surveyapp\app\error-general\error-general.controller.js" />
     <Content Include="surveyapp\app\error-general\error-general.template.html" />
     <Content Include="surveyapp\css\newstyles.css" />
+    <Content Include="surveyapp\images\success.gif" />
     <Content Include="surveyapp\OldStuff\buttons-horizontal-num-5.controller.js" />
     <Content Include="surveyapp\app\buttons-horizontal-num-5\buttons-horizontal-num-5.template.html" />
     <Content Include="surveyapp\app\buttons-horizontal-short-blank-5\buttons-horizontal-short-blank-5.component.js" />

@@ -1,7 +1,9 @@
 ﻿'use strict';
-app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService) {
+app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService, AnswerService) {
     console.log("StartCtrl started");
     var that = this;
+    AnswerService.reset();
+
     var startButton = document.getElementById("start-button");
     // NAMED lt INSTEAD OF loadingText FOR AVOIDING CONFUSION WITH that.loadingText
     var lt = document.getElementById("loading-text");
@@ -21,13 +23,14 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
         }
         if (rawQs.length === 0) {
             that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
-            loadingIcon.src = "images/warning.gif";
             lt.style.color = "red";
+            loadingIcon.src = "images/warning.gif";
         } else {
-            $("#loading-icon").remove();
+            // $("#loading-icon").remove();
             QuestionService.setQuestions(rawQs);
             that.loadingText = "Kysymykset ladattu!";
             lt.style.color = "green";
+            loadingIcon.src = "images/success.gif";
             startButton.style.visibility = "visible";
             console.log("QuestionService.getQuestion(0).QuestionMethodValue" + QuestionService.getQuestion(0).QuestionMethodValue);
         }

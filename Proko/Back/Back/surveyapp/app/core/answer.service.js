@@ -14,9 +14,13 @@ app.service('AnswerService', function () {
         var sa = new AnswerDTO(nQuestionID, nValue);
         surveyAnswers.push(sa);
     };
+    var reset = function () {
+        surveyAnswers.length = 0;
+    }
 
     return {
         getAnswers: getAnswers,
-        setAnswer: setAnswer
+        setAnswer: setAnswer,
+        reset: reset
     };
 });
