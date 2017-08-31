@@ -5,11 +5,12 @@ app.controller('ProgressBarCtrl', function (QuestionService, AnswerService) {
     that.progress = 0;
 
     var currentStep = AnswerService.getAnswers().length + 1;
-    var questionCount = QuestionService.getQuestions().length;
-    var progressPerStep = 100 / questionCount;
+    var stepCount = QuestionService.getQuestions().length + 1;
+    var progressPerStep = 100 / stepCount;
     var currentProgress = currentStep * progressPerStep;
+    console.log("progressBar.currentProgress: " + currentProgress);
 
-    if (currentProgress <= 100 - progressPerStep) {
+    if (currentProgress <= 100) {
         that.progress = currentProgress;
         prBar.style.width = currentProgress + "%";
     } else {
