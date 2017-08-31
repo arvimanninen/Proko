@@ -10,7 +10,6 @@ app.service('AnswerService', function () {
         return surveyAnswers;
     };
     var setAnswer = function (nQuestionID, nValue) {
-        // TODO: DO CHECKUPS
         var sa = new AnswerDTO(nQuestionID, nValue);
         surveyAnswers.push(sa);
     };

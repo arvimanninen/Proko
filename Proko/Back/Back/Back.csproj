@@ -276,6 +276,9 @@
     <Content Include="surveyapp\app\error-general\error-general.component.js" />
     <Content Include="surveyapp\app\error-general\error-general.controller.js" />
     <Content Include="surveyapp\app\error-general\error-general.template.html" />
+    <Content Include="surveyapp\app\progress-bar\progress-bar.component.js" />
+    <Content Include="surveyapp\app\progress-bar\progress-bar.controller.js" />
+    <Content Include="surveyapp\app\progress-bar\progress-bar.template.html" />
     <Content Include="surveyapp\css\newstyles.css" />
     <Content Include="surveyapp\images\success.gif" />
     <Content Include="surveyapp\OldStuff\buttons-horizontal-num-5.controller.js" />
