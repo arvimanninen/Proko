@@ -48,7 +48,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuestionID,Chosen,ChosenIndex,Text,QuestionMethodID")] Question question)
+        public ActionResult Create([Bind(Include = "QuestionID,ChosenIndex,Text,QuestionMethodID")] Question question)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuestionID,Chosen,ChosenIndex,Text,QuestionMethodID")] Question question)
+        public ActionResult Edit([Bind(Include = "QuestionID,ChosenIndex,Text,QuestionMethodID")] Question question)
         {
             if (ModelState.IsValid)
             {

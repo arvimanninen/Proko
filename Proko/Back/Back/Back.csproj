@@ -498,21 +498,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Answers\Create.cshtml" />
-    <Content Include="Views\Answers\Delete.cshtml" />
-    <Content Include="Views\Answers\Details.cshtml" />
-    <Content Include="Views\Answers\Edit.cshtml" />
-    <Content Include="Views\Answers\Index.cshtml" />
-    <Content Include="Views\Questions\Create.cshtml" />
-    <Content Include="Views\Questions\Delete.cshtml" />
-    <Content Include="Views\Questions\Details.cshtml" />
-    <Content Include="Views\Questions\Edit.cshtml" />
-    <Content Include="Views\Questions\Index.cshtml" />
-    <Content Include="Views\QuestionMethods\Create.cshtml" />
-    <Content Include="Views\QuestionMethods\Delete.cshtml" />
-    <Content Include="Views\QuestionMethods\Details.cshtml" />
-    <Content Include="Views\QuestionMethods\Edit.cshtml" />
-    <Content Include="Views\QuestionMethods\Index.cshtml" />
     <Content Include="surveyapp\.idea\FrontNew.iml" />
     <Content Include="surveyapp\node_modules\angular-resource\angular-resource.min.js.map" />
     <Content Include="surveyapp\node_modules\angular-resource\bower.json" />
@@ -630,6 +615,21 @@
     <Content Include="surveyapp\node_modules\jquery\src\.eslintrc.json" />
     <Content Include="surveyapp\package.json" />
     <Content Include="surveyapp\app\core\answer.service.js" />
+    <Content Include="Views\Answers\Create.cshtml" />
+    <Content Include="Views\Answers\Delete.cshtml" />
+    <Content Include="Views\Answers\Details.cshtml" />
+    <Content Include="Views\Answers\Edit.cshtml" />
+    <Content Include="Views\Answers\Index.cshtml" />
+    <Content Include="Views\Questions\Create.cshtml" />
+    <Content Include="Views\Questions\Delete.cshtml" />
+    <Content Include="Views\Questions\Details.cshtml" />
+    <Content Include="Views\Questions\Edit.cshtml" />
+    <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\QuestionMethods\Create.cshtml" />
+    <Content Include="Views\QuestionMethods\Delete.cshtml" />
+    <Content Include="Views\QuestionMethods\Details.cshtml" />
+    <Content Include="Views\QuestionMethods\Edit.cshtml" />
+    <Content Include="Views\QuestionMethods\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
