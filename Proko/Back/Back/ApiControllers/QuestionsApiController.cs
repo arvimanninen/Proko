@@ -45,7 +45,7 @@ namespace Back.ApiControllers
                                  Text = question.Text,
                                  QuestionMethodValue = questionmethod.Value
                           };
-
+            // REPLACE THIS rawDtos.toList()?
             List<QuestionDTO> cleanDtos = new List<QuestionDTO>();
             
             foreach (QuestionDTO rawDto in rawDtos)

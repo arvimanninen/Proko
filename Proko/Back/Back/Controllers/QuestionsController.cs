@@ -13,11 +13,21 @@ namespace Back.Controllers
     public class QuestionsController : Controller
     {
         private MainDbContext db = new MainDbContext();
-
+        
         // GET: Questions
         public ActionResult Index()
         {
-            var questions = db.Questions.Include(q => q.QuestionMethod);
+            var questions = from question in db.Questions
+                            join questionmethod in db.QuestionMethods
+                            on question.QuestionMethodID equals questionmethod.QuestionMethodID
+                            orderby question.QuestionID ascending
+                            select new QuestionDTO
+                            {
+                                QuestionID = question.QuestionID,
+                                ChosenIndex = question.ChosenIndex,
+                                Text = question.Text,
+                                QuestionMethodValue = questionmethod.Value
+                            };
             return View(questions.ToList());
         }
 

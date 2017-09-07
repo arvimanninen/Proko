@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Back.Models.Question>
+﻿@model IEnumerable<Back.Models.QuestionDTO>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Questions";
 }
 
 <h2>Index</h2>
@@ -12,16 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.QuestionMethod.Value)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Chosen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChosenIndex)
+            @Html.DisplayNameFor(model => model.QuestionID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionMethodValue)
         </th>
         <th></th>
     </tr>
@@ -29,16 +26,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.QuestionMethod.Value)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Chosen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChosenIndex)
+            @Html.DisplayFor(modelItem => item.QuestionID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionMethodValue)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.QuestionID }) |
