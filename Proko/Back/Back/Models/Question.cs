@@ -13,6 +13,7 @@ namespace Back.Models
         [Required]
         public bool Chosen { get; set; }
         // TODO: IF Chosen=true MUST HAVE QuestionMethod
+        [Index(IsUnique = true)]
         public int ChosenIndex { get; set; }
         [Required]
         public string Text { get; set; }

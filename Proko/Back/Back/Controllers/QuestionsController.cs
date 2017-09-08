@@ -96,9 +96,21 @@ namespace Back.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(question).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var rawQIDs = from answer in db.Answers
+                           where answer.QuestionID == question.QuestionID
+                           orderby answer.QuestionID ascending
+                           select answer.QuestionID;
+                List<int> cleanQIDs = rawQIDs.ToList();
+                if (cleanQIDs.Count != 0)
+                {
+                    return Content("Kysymykseen on vastattu! Muokkaaminen ei ole mahdollista.");
+                }
+                else
+                {
+                    db.Entry(question).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
             ViewBag.QuestionMethodID = new SelectList(db.QuestionMethods, "QuestionMethodID", "Value", question.QuestionMethodID);
             return View(question);
@@ -125,9 +137,21 @@ namespace Back.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Question question = db.Questions.Find(id);
-            db.Questions.Remove(question);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var rawQIDs = from answer in db.Answers
+                          where answer.QuestionID == question.QuestionID
+                          orderby answer.QuestionID ascending
+                          select answer.QuestionID;
+            List<int> cleanQIDs = rawQIDs.ToList();
+            if (cleanQIDs.Count != 0)
+            {
+                return Content("Kysymykseen on vastattu! Poistaminen ei ole mahdollista.");
+            }
+            else
+            {
+                db.Questions.Remove(question);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
 
         protected override void Dispose(bool disposing)
