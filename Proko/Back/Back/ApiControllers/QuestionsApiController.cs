@@ -30,33 +30,34 @@ namespace Back.ApiControllers
         //public List<QuestionDTO> GetChosenQuestions()
         public IHttpActionResult GetChosenQuestions()
         {
-            // TODO:FIND OUT IS chosenQuestionDtos NEEDED
-            // -> List off, send chosenQuestions ?
-            
-            var rawDtos = from question in db.Questions
+
+            var rawDtos = from chosenquestion in db.ChosenQuestions
                           join questionmethod in db.QuestionMethods
-                          on question.QuestionMethodID equals questionmethod.QuestionMethodID
-                          where question.Chosen == true
-                          orderby question.ChosenIndex ascending
+                          on chosenquestion.QuestionSet.QuestionMethodID equals questionmethod.QuestionMethodID
+                          orderby chosenquestion.QuestionSet.ChosenIndex ascending, chosenquestion.ChosenIndex ascending
                           select new QuestionDTO
                           {
-                                 QuestionID = question.QuestionID,
-                                 ChosenIndex = question.ChosenIndex,
-                                 Text = question.Text,
-                                 QuestionMethodValue = questionmethod.Value
+                              QuestionID = chosenquestion.QuestionID,
+                              QuestionMethodID = questionmethod.QuestionMethodID,
+                              QuestionSetIndex = chosenquestion.QuestionSet.ChosenIndex,
+                              ChosenQuestionIndex = chosenquestion.ChosenIndex,
+                              QuestionText = chosenquestion.Question.Text,
+                              QuestionMethodValue = questionmethod.Value
                           };
-            // REPLACE THIS rawDtos.toList()?
-            List<QuestionDTO> cleanDtos = new List<QuestionDTO>();
             
-            foreach (QuestionDTO rawDto in rawDtos)
+            
+                           
+            List<QuestionDTO> cleanDtos = rawDtos.ToList();
+            foreach(QuestionDTO d in cleanDtos)
             {
-                QuestionDTO cleanDto = new QuestionDTO();
-                cleanDto.QuestionID = rawDto.QuestionID;
-                cleanDto.ChosenIndex = rawDto.ChosenIndex;
-                cleanDto.Text = rawDto.Text;
-                Debug.WriteLine("q.QuestionMethod.Value: " + rawDto.QuestionMethodValue);
-                cleanDto.QuestionMethodValue = rawDto.QuestionMethodValue;
-                cleanDtos.Add(cleanDto);
+                Debug.WriteLine("");
+                Debug.WriteLine("cleanDtos.QuestionSetIndex: " + d.QuestionSetIndex);
+                Debug.WriteLine("cleanDtos.ChosenQuestionIndex:  " + d.ChosenQuestionIndex);
+                Debug.WriteLine("--------");
+                Debug.WriteLine("cleanDtos.QuestionID: " + d.QuestionID);
+                Debug.WriteLine("cleanDtos.QuestionMethodID: " + d.QuestionMethodID);
+                Debug.WriteLine("cleanDtos.QuestionText: " + d.QuestionText);
+                Debug.WriteLine("cleanDtos.QuestionMethodValue: " + d.QuestionMethodValue);
             }
             if(cleanDtos.Count >= 1)
             {

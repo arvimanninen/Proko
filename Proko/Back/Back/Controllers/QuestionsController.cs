@@ -142,15 +142,15 @@ namespace Back.Controllers
                           orderby answer.QuestionID ascending
                           select answer.QuestionID;
             List<int> cleanQIDs = rawQIDs.ToList();
-            if (cleanQIDs.Count != 0)
-            {
-                return Content("Kysymykseen on vastattu! Poistaminen ei ole mahdollista.");
-            }
-            else
+            if (cleanQIDs.Count == 0)
             {
                 db.Questions.Remove(question);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            else
+            {
+                return Content("Kysymykseen on vastattu! Poistaminen ei ole mahdollista.");
             }
         }
 

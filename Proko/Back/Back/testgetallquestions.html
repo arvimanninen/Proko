@@ -6,36 +6,43 @@
 </head>
 <body>
     <p>API status: <strong><span id="api-status"></span></strong></p> <br />
-    <p>QuestionID: <span id="question-id"></span></p> <br />
-    <p>ChosenIndex: <span id="chosen-index"></span></p> <br />
-    <p>Text: <span id="text"></span></p> <br />
-    <p>QuestionMethodValue: <span id="question-method-value"></span></p> <br />
+    
 
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <script>
         console.log("testget script started!");
-        document.getElementById("api-status").innerHTML = "Idle";
+        var apiStatus = document.getElementById("api-status").innerHTML;
+        apiStatus = "Idle";
         $.getJSON("api/getchosenquestions", function () {
             console.log("API call launched");
+            apiStatus = "API call launched...";
         })
         .done(function (data) {
             console.log("API call works!");
-            document.getElementById("api-status").innerHTML = "API call successful!";
+            apiStatus = "API call successful!";
+            /*
+            public int QuestionID { get; set; }
+            public int QuestionMethodID { get; set; }
+            public int QuestionSetIndex { get; set; }
+            public int ChosenQuestionIndex { get; set; }
+            public string QuestionText { get; set; }
+            public string QuestionMethodValue { get; set; } 
+            */
             for (var i = 0; i < data.length; i++) {
+                console.log("");
+                console.log("data[" + i + "].QuestionSetIndex: " + data[i].QuestionSetIndex);
+                console.log("data[" + i + "].ChosenQuestionIndex: " + data[i].ChosenQuestionIndex);
                 console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
-                console.log("data[" + i + "].ChosenIndex: " + data[i].ChosenIndex);
-                console.log("data[" + i + "].Text: " + data[i].Text);
+                console.log("data[" + i + "].QuestionMethodID: " + data[i].QuestionMethodID);
+                
+                console.log("**************");
+                console.log("data[" + i + "].QuestionText: " + data[i].QuestionText);
                 console.log("data[" + i + "].QuestionMethodValue: " + data[i].QuestionMethodValue);
             }
-            
-            document.getElementById("question-id").innerHTML = data[0].QuestionID;
-            document.getElementById("chosen-index").innerHTML = data[0].ChosenIndex;
-            document.getElementById("text").innerHTML = data[0].Text;
-            document.getElementById("question-method-value").innerHTML = data[0].QuestionMethodValue;
         })
         .fail(function () {
             console.log("API call doesn't work!");
-            document.getElementById("api-status").innerHTML = "API call failed!";
+            apiStatus = "API call failed!";
         });
     </script>
 </body>

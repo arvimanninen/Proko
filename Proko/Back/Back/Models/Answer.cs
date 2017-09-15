@@ -12,10 +12,11 @@ namespace Back.Models
         [Required]
         public int Value { get; set; }
         [Required]
-        public DateTime Date { get; set; }
-        [Required]
         public int QuestionID { get; set; }
+        [Required]
+        public int AnswerSetID { get; set; }
         public virtual Question Question { get; set; }
+        public virtual AnswerSet AnswerSet { get; set; }
 
     }
 }

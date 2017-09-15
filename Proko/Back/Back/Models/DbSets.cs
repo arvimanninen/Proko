@@ -21,8 +21,12 @@ namespace Back.Models
         {
             return new MainDbContext();
         }
-        public DbSet<Answer> Answers { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionMethod> QuestionMethods { get; set; }
+        public DbSet<ChosenQuestion> ChosenQuestions { get; set; }
+        public DbSet<QuestionSet> QuestionSets { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<AnswerSet> AnswerSets { get; set; }
+        public DbSet<AnswerBundle> AnswerBundles { get; set; }
     }
 }
