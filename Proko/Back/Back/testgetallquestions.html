@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Web API test</title>
+</head>
+<body>
+    <p>API status: <strong><span id="api-status"></span></strong></p> <br />
+    
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        console.log("testget script started!");
+        var apiStatus = document.getElementById("api-status").innerHTML;
+        apiStatus = "Idle";
+        $.getJSON("api/getchosenquestions", function () {
+            console.log("API call launched");
+            apiStatus = "API call launched...";
+        })
+        .done(function (data) {
+            console.log("API call works!");
+            apiStatus = "API call successful!";
+            /*
+            public int QuestionID { get; set; }
+            public int QuestionMethodID { get; set; }
+            public int QuestionSetIndex { get; set; }
+            public int ChosenQuestionIndex { get; set; }
+            public string QuestionText { get; set; }
+            public string QuestionMethodValue { get; set; } 
+            */
+            for (var i = 0; i < data.length; i++) {
+                console.log("");
+                console.log("data[" + i + "].QuestionSetIndex: " + data[i].QuestionSetIndex);
+                console.log("data[" + i + "].ChosenQuestionIndex: " + data[i].ChosenQuestionIndex);
+                console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
+                console.log("data[" + i + "].QuestionMethodID: " + data[i].QuestionMethodID);
+                
+                console.log("**************");
+                console.log("data[" + i + "].QuestionText: " + data[i].QuestionText);
+                console.log("data[" + i + "].QuestionMethodValue: " + data[i].QuestionMethodValue);
+            }
+        })
+        .fail(function () {
+            console.log("API call doesn't work!");
+            apiStatus = "API call failed!";
+        });
+    </script>
+</body>
+</html>

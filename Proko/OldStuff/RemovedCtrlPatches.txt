@@ -1,0 +1,4 @@
+﻿<script src="app/buttons-horizontal-num-5/buttons-horizontal-num-5.controller.js"></script>
+<script src="app/buttons-horizontal-short-blank-5/buttons-horizontal-short-blank-5.controller.js"></script>
+<script src="app/buttons-horizontal-text-3/buttons-horizontal-text-3.controller.js"></script>
+<script src="app/buttons-vertical-short-text-5/buttons-vertical-short-text-5.controller.js"></script>

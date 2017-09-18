@@ -1,0 +1,22 @@
+﻿<div class="container">
+    <progress-bar></progress-bar>
+    <p class="lead q-text-9">{{ $ctrl.questionText }}</p>
+    <p class="q-text-9b">(1 = surkeasti, 5 = erinomaisesti)</p>
+    <div class="btn-group btn-numb-div to-center" data-toggle="buttons">
+        <label class="btn btn-default btn-number-l" ng-click="$ctrl.setAnswerAndGo(1)">
+            <input type="radio" name="options"> 1
+        </label>
+        <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswerAndGo(2)">
+            <input type="radio" name="options"> 2
+        </label>
+        <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswerAndGo(3)">
+            <input type="radio" name="options"> 3
+        </label>
+        <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswerAndGo(4)">
+            <input type="radio" name="options"> 4
+        </label>
+        <label class="btn btn-default btn-number-r" ng-click="$ctrl.setAnswerAndGo(5)">
+            <input type="radio" name="options"> 5
+        </label>
+    </div>
+</div>

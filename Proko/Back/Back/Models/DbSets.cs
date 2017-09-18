@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
@@ -7,17 +8,25 @@ using System.Web;
 
 namespace Back.Models
 {
-    public class MainDbContext : DbContext
+    public class MainDbContext : IdentityDbContext<ApplicationUser>
     {
         public MainDbContext() : base("BackContext")
         {
+            // ENABLE THESE FOR DROPPING CURRENT DB AND RECREATING (EMPTY) DB
+            // Database.SetInitializer(new DropCreateDatabaseAlways<MainDbContext>());
+            // Database.Initialize(false);
         }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Contractor> Contractors { get; set; }
-        public DbSet<UserType> UserTypes { get; set; }
-        public DbSet<Answer> Answers { get; set; }
+
+        public static MainDbContext Create()
+        {
+            return new MainDbContext();
+        }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionMethod> QuestionMethods { get; set; }
-        public DbSet<QuestionScale> QuestionScales { get; set; }
+        public DbSet<ChosenQuestion> ChosenQuestions { get; set; }
+        public DbSet<QuestionSet> QuestionSets { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<AnswerSet> AnswerSets { get; set; }
+        public DbSet<AnswerBundle> AnswerBundles { get; set; }
     }
 }

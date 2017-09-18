@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -91,13 +92,57 @@ namespace Back.ApiControllers
 
             Answer answer = new Answer();
             answer.QuestionID = answerdto.QuestionID;
-            answer.UserID = answerdto.UserID;
             answer.Value = answerdto.Value;
+            answer.Date = DateTime.Now;
+            Debug.WriteLine("answer.QuestionID: " + answer.QuestionID);
+            Debug.WriteLine("answer.Value: " + answer.Value);
+            Debug.WriteLine("answer.Date: " + answer.Date);
             db.Answers.Add(answer);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = answer.AnswerID }, answer);
         }
+
+        [Route("api/postsurveyanswers")]
+        [HttpPost]
+        public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
+        {
+            Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
+            if(surveyAnswerDtos.Count >= 1)
+            {
+                for (int i = 0; i < surveyAnswerDtos.Count; i++)
+                {
+                    Debug.WriteLine("*******");
+                    Debug.WriteLine("surveyAnswerDtos[" + i + "].QuestionID: " + surveyAnswerDtos[i].QuestionID);
+                    Debug.WriteLine("surveyAnswerDtos[" + i + "].Value: " + surveyAnswerDtos[i].Value);
+                }
+            }
+            
+            if(surveyAnswerDtos.Count == 0)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                Debug.WriteLine("ModelState not valid!");
+                return BadRequest(ModelState);
+            }
+            DateTime answerDate = DateTime.Now;
+            foreach (AnswerDTO aDto in surveyAnswerDtos)
+            {
+                Answer a = new Answer();
+                a.QuestionID = aDto.QuestionID;
+                a.Value = aDto.Value;
+                a.Date = answerDate;
+                Debug.WriteLine("a.QuestionID: " + a.QuestionID);
+                Debug.WriteLine("a.Value: " + a.Value);
+                Debug.WriteLine("a.Date: " + a.Date);
+                db.Answers.Add(a);
+            }
+            db.SaveChanges();
+            return Ok();
+        }
+
 
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Web API test</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <p>API status: <strong><span id="api-status"></span></strong></p> <br />
+    <p>QuestionID: <span id="question-id"></span></p> <br />
+    <p>ChosenIndex: <span id="chosen-index"></span></p> <br />
+    <p>Text: <span id="text"></span></p> <br />
+    <p>QuestionMethodID: <span id="question-method-id"></span></p> <br />
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        /*var testVariable = $.getJSON("api/QuestionsApi/1", function (data) {
+            console.log("GET successful!");
+            console.log(data);
+        }); */
+        console.log("testget script started!");
+        /*
+        public int QuestionID { get; set; }
+        public int ChosenIndex { get; set; }
+        public string Text { get; set; }
+        public int QuestionMethodID { get; set; }
+        */
+
+        //var na = { "QuestionID = 1 , Value=2"}
+        // TODO: REDUCE API CALLS -> MAP HTML ELEMENTS 
+        document.getElementById("api-status").innerHTML = "Idle";
+        $.getJSON("api/QuestionsApi/3", function () {
+            console.log("API call launched");
+            document.getElementById("api-status").innerHTML = "API call launched";
+        })
+        .done(function (data) {
+            console.log("It works!");
+            document.getElementById("api-status").innerHTML = "API call successful!";
+            console.log("data.QuestionID:" + data.QuestionID);
+            console.log("data.Text:" + data.Text);
+            document.getElementById("question-id").innerHTML = data.QuestionID;
+            document.getElementById("chosen-index").innerHTML = data.ChosenIndex;
+            document.getElementById("text").innerHTML = data.Text;
+            document.getElementById("question-method-id").innerHTML = data.QuestionMethodID;
+        })
+        .fail(function () {
+            console.log("It doesn't work!");
+            document.getElementById("api-status").innerHTML = "API call failed!";
+        });
+
+    </script>
+</body>
+</html>

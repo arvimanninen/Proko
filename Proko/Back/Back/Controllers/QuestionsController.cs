@@ -10,17 +10,24 @@ using Back.Models;
 
 namespace Back.Controllers
 {
-    // UNCOMMENT FOR SSL
-    // [RequireHttps]
-    [Authorize]
     public class QuestionsController : Controller
     {
         private MainDbContext db = new MainDbContext();
-
+        
         // GET: Questions
         public ActionResult Index()
         {
-            var questions = db.Questions.Include(q => q.QuestionMethod);
+            var questions = from question in db.Questions
+                            join questionmethod in db.QuestionMethods
+                            on question.QuestionMethodID equals questionmethod.QuestionMethodID
+                            orderby question.QuestionID ascending
+                            select new QuestionDTO
+                            {
+                                QuestionID = question.QuestionID,
+                                ChosenIndex = question.ChosenIndex,
+                                Text = question.Text,
+                                QuestionMethodValue = questionmethod.Value
+                            };
             return View(questions.ToList());
         }
 
@@ -51,7 +58,7 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuestionID,Text,QuestionMethodID")] Question question)
+        public ActionResult Create([Bind(Include = "QuestionID,Chosen,ChosenIndex,Text,QuestionMethodID")] Question question)
         {
             if (ModelState.IsValid)
             {
@@ -85,13 +92,25 @@ namespace Back.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuestionID,Text,QuestionMethodID")] Question question)
+        public ActionResult Edit([Bind(Include = "QuestionID,Chosen,ChosenIndex,Text,QuestionMethodID")] Question question)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(question).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var rawQIDs = from answer in db.Answers
+                           where answer.QuestionID == question.QuestionID
+                           orderby answer.QuestionID ascending
+                           select answer.QuestionID;
+                List<int> cleanQIDs = rawQIDs.ToList();
+                if (cleanQIDs.Count != 0)
+                {
+                    return Content("Kysymykseen on vastattu! Muokkaaminen ei ole mahdollista.");
+                }
+                else
+                {
+                    db.Entry(question).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
             ViewBag.QuestionMethodID = new SelectList(db.QuestionMethods, "QuestionMethodID", "Value", question.QuestionMethodID);
             return View(question);
@@ -118,9 +137,21 @@ namespace Back.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Question question = db.Questions.Find(id);
-            db.Questions.Remove(question);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var rawQIDs = from answer in db.Answers
+                          where answer.QuestionID == question.QuestionID
+                          orderby answer.QuestionID ascending
+                          select answer.QuestionID;
+            List<int> cleanQIDs = rawQIDs.ToList();
+            if (cleanQIDs.Count == 0)
+            {
+                db.Questions.Remove(question);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Content("Kysymykseen on vastattu! Poistaminen ei ole mahdollista.");
+            }
         }
 
         protected override void Dispose(bool disposing)

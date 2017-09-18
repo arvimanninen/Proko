@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Web API test</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        /*var testVariable = $.getJSON("api/QuestionsApi/1", function (data) {
+            console.log("GET successful!");
+            console.log(data);
+        }); */
+        console.log("testpage script started!");
+        // AnswerDTO object constructor
+        var AnswerDTO = function (nQuestionID, nValue) {
+            this.QuestionID = nQuestionID;
+            this.Value = nValue;
+        };
+
+        var newAnswers = [new AnswerDTO(2, 4), new AnswerDTO(1, 5)];
+        for (var i = 0; i < newAnswers.length; i++) {
+            console.log("newAnswers[" + i + "].QuestionID: " + newAnswers[i].QuestionID);
+            console.log("newAnswers[" + i + "].Value: " + newAnswers[i].Value);
+        }
+        
+        /*
+        $.post("api/postsurveyanswers", newAnswers,
+        function (data, status) {
+            console.log("Data: " + data + "\nStatus: " + status);
+        });
+        */
+        $.ajax({
+            url: "api/postsurveyanswers",
+            type: 'POST',
+            data: JSON.stringify(newAnswers),
+            dataType: 'json',
+            contentType: 'application/json',
+            crossDomain: true,
+            cache: false,
+            success: function (data) { console.log(data); }
+        });
+    </script>
+</body>
+</html>

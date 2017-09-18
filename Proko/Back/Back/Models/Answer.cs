@@ -9,12 +9,14 @@ namespace Back.Models
     public class Answer
     {
         public int AnswerID { get; set; }
+        [Required]
         public int Value { get; set; }
+        [Required]
         public int QuestionID { get; set; }
-        public int UserID { get; set; }
-
+        [Required]
+        public int AnswerSetID { get; set; }
         public virtual Question Question { get; set; }
-        public virtual User User { get; set; }
+        public virtual AnswerSet AnswerSet { get; set; }
 
     }
 }
