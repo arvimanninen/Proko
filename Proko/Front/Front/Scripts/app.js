@@ -66,10 +66,6 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: ' views/monitoringbubbles.html',
                 controller: 'MonitoringBubblesCtrl'
             })
-            .when('/questionbuttonsliderlinks', {
-                templateUrl: 'views/questionbuttonsliderlinks.html',
-                controller: 'QuestionButtonSliderLinksCtrl'
-            })
             .when('/questionbuttonslinks', {
                 templateUrl: 'views/questionbuttonslinks.html',
                 controller: 'QuestionButtonsLinksCtrl'

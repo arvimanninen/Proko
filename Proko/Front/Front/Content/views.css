@@ -227,6 +227,10 @@ TEST
 DEFAULT BTN STYLES
 ****************************************/
 
+.btn {
+    height: 60px;
+}
+
 /* from bootstrap css - and modified */
 .btn-default {
     color: #236290;
@@ -315,12 +319,11 @@ BUTTON SLIDER VIEW
 *****************************************/
 
 .btn-slider-div {
-    width: 290px;
+    width: 94%;
 }
 
 .btn-slider {
-    min-width: 58px;
-    height: 35px;
+    width: 20.12%;
 }
 
 .btn-slider-text-div {
