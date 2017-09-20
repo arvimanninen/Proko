@@ -11,5 +11,6 @@ namespace Back.Models
     {
         public int Value { get; set; }
         public int QuestionID { get; set; }
+        public int QuestionMethodID { get; set; }
     }
 }

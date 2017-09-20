@@ -24,7 +24,7 @@ namespace Back.ApiControllers
             return db.Questions;
         }
         
-       // TODO: DOES THIS WORK?
+       
         [Route("api/getchosenquestions")]
         [HttpGet]
         //public List<QuestionDTO> GetChosenQuestions()

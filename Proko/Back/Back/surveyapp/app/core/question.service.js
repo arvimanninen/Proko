@@ -29,7 +29,9 @@ app.service('QuestionService', function () {
         }
         
     };
-
+    var reset = function () {
+        questions.length = 0;
+    };
     return {
         getQuestion: getQuestion,
         getQuestions: getQuestions,

@@ -2,6 +2,7 @@
 app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService, AnswerService) {
     console.log("StartCtrl started");
     var that = this;
+    QuestionService.reset();
     AnswerService.reset();
 
     var startButton = document.getElementById("start-button");
