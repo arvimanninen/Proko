@@ -2,17 +2,19 @@
 
 app.service('QuestionService', function () {
     var questions = [];
-
-    var QuestionDTO = function (nQuestionID, nChosenIndex, nText, nQuestionMethodValue) {
+    /*
+    var QuestionDTO = function (nQuestionID, nQuestionSetIndex,
+        nChosenQuestionIndex, nQuestionText, nQuestionMethodValue) {
         this.QuestionID = nQuestionID;
-        this.ChosenIndex = nChosenIndex;
-        this.Text = nText;
+        this.QuestionSetIndex = nQuestionSetIndex;
+        this.ChosenQuestionIndex = nChosenQuestionIndex;
+        this.QuestionText = nQuestionText;
         this.QuestionMethodValue = nQuestionMethodValue;
     };
-
+    */
     var getQuestion = function (index) {
         return questions[index];
-    }
+    };
 
     var getQuestions = function () {
         return questions;
@@ -22,9 +24,8 @@ app.service('QuestionService', function () {
         //TODO: CHECKUPS
         console.log("questionService.setQuestions started");
         for (var i = 0; i < qs.length; i++) {
-            var q = new QuestionDTO(qs[i].QuestionID, qs[i].ChosenIndex, qs[i].Text, qs[i].QuestionMethodValue);
 
-            questions.push(q);
+            questions.push(qs[i]);
             console.log("questionService.questions.length: " + questions.length);
         }
         

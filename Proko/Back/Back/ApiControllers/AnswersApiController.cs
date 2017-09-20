@@ -103,16 +103,7 @@ namespace Back.ApiControllers
         public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
         {
             Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
-            if (surveyAnswerDtos.Count >= 1)
-            {
-                for (int i = 0; i < surveyAnswerDtos.Count; i++)
-                {
-                    Debug.WriteLine("*******");
-                    Debug.WriteLine("surveyAnswerDtos[" + i + "].QuestionID: " + surveyAnswerDtos[i].QuestionID);
-                    Debug.WriteLine("surveyAnswerDtos[" + i + "].Value: " + surveyAnswerDtos[i].Value);
-                }
-            }
-
+            
             if (surveyAnswerDtos.Count == 0)
             {
                 return BadRequest();
@@ -158,20 +149,8 @@ namespace Back.ApiControllers
                 Debug.WriteLine("currentQmId:" + currentQmId);
                 Debug.WriteLine("currentAsId:" + currentAsId);
             }
-            
             return Ok();
-            // int index = true
-            /*
-             * 1. Tee uusi AnswerBundle bundle
-             * --- foreach(AnswerDTO aDto in surveyAnswerDTO)
-             *      2. Tee uusi AnswerSet, missä AnswerBundleID = bundle.AnswerBundleID
-             *      JA AnswerSet.QuestionMethodID == aDto.QuestionMethodID = 
-             * ---
-             * 3. Lisää kysymykset QuestionSetiin
-             * 4. Jo
-            */
-
-                        }
+        }
 
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]

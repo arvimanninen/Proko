@@ -27,7 +27,6 @@ namespace Back.ApiControllers
        
         [Route("api/getchosenquestions")]
         [HttpGet]
-        //public List<QuestionDTO> GetChosenQuestions()
         public IHttpActionResult GetChosenQuestions()
         {
 
