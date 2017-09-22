@@ -2,21 +2,21 @@
 
 app.service('AnswerService', function () {
     var surveyAnswers = [];
-    var AnswerDTO = function (nQuestionID, nValue, nQuestionMethodValue) {
-        this.QuestionID = nQuestionID;
+    var AnswerDTO = function (nValue, nQuestionID, nQuestionMethodID) {
         this.Value = nValue;
-        this.QuestionMethodValue = nQuestionMethodValue;
+        this.QuestionID = nQuestionID;
+        this.QuestionMethodID = nQuestionMethodID;
     };
     var getAnswers = function () {
         return surveyAnswers;
     };
-    var setAnswer = function (nQuestionID, nValue, nQuestionMethodValue) {
-        var sa = new AnswerDTO(nQuestionID, nValue, nQuestionMethodValue);
+    var setAnswer = function (nValue, nQuestionID, nQuestionMethodID) {
+        var sa = new AnswerDTO(nValue, nQuestionID, nQuestionMethodID);
         surveyAnswers.push(sa);
     };
     var reset = function () {
         surveyAnswers.length = 0;
-    }
+    };
 
     return {
         getAnswers: getAnswers,

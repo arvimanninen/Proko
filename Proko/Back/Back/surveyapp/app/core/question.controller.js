@@ -1,15 +1,26 @@
 ﻿'use strict';
 
-app.controller('QuestionCtrl', function ($location, $route, $templateCache, AnswerService, QuestionService) {
+app.controller('QuestionCtrl', function ($location, $route, $templateCache, AnswerService, QuestionService, RunService) {
     var that = this;
-    // TODO: CHECK SHOULD THIS BE var OR that
-    var currentIndex = AnswerService.getAnswers().length;
+    var questionSetIndex = RunService.getQuestionSetIndex();
+    console.log("questionSetIndex: " + questionSetIndex);
+    that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
+
+
+    /*var currentIndex = AnswerService.getAnswers().length;
     console.log("ButtonsHorizontalNum5Ctrl.currentIndex: " + currentIndex);
     var currentQuestion = QuestionService.getQuestion(currentIndex);
-    that.questionText = currentQuestion.Text;
-    that.setAnswerAndGo = function (answer) {
-        AnswerService.setAnswer(currentQuestion.QuestionID, answer);
-        var currentQmv = currentQuestion.QuestionMethodValue;
+    that.questionText = currentQuestion.Text;*/
+    that.setAnswer = function (value, questionId, questionMethodId) {
+        AnswerService.setAnswer(value, questionId, questionMethodId);
+        var allAnswers = AnswerService.getAnswers();
+        for (var i = 0; i < allAnswers.length; i++) {
+            console.log("**************");
+            console.log("allAnswers.[" + i + "].Value" + allAnswers[i].Value);
+            console.log("allAnswers.[" + i + "].QuestionID" + allAnswers[i].QuestionID);
+            console.log("allAnswers.[" + i + "].QuestionMethodID" + allAnswers[i].QuestionMethodID);
+        }
+        /*var currentQmv = currentQuestion.QuestionMethodValue;
         var nextQmv;
         currentIndex++;
         if (currentIndex < QuestionService.getQuestions().length) {
@@ -25,5 +36,6 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         } else {
             $location.path(nextQmv);
         }
+           */
     };
 });

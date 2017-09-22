@@ -104,14 +104,15 @@ namespace Back.ApiControllers
         {
             Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
             
-            if (surveyAnswerDtos.Count == 0)
-            {
-                return BadRequest();
-            }
+            
             if (!ModelState.IsValid)
             {
                 Debug.WriteLine("ModelState not valid!");
                 return BadRequest(ModelState);
+            }
+            if (surveyAnswerDtos.Count == 0)
+            {
+                return BadRequest();
             }
 
             // CREATE AnswerBundle bundle

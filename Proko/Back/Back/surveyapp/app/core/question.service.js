@@ -6,12 +6,14 @@ app.service('QuestionService', function () {
     var QuestionDTO = function (nQuestionID, nQuestionSetIndex,
         nChosenQuestionIndex, nQuestionText, nQuestionMethodValue) {
         this.QuestionID = nQuestionID;
+        this.QuestionMethodID = nQuestionMethodID
         this.QuestionSetIndex = nQuestionSetIndex;
         this.ChosenQuestionIndex = nChosenQuestionIndex;
         this.QuestionText = nQuestionText;
         this.QuestionMethodValue = nQuestionMethodValue;
     };
     */
+    
     var getQuestion = function (index) {
         return questions[index];
     };
@@ -20,6 +22,19 @@ app.service('QuestionService', function () {
         return questions;
     };
 
+    var getQuestionsBySetIndex = function (index) {
+        var qs = [];
+        for (var i = 0; i < questions.length; i++) {
+            if (questions[i].QuestionSetIndex === index) {
+                qs.push(questions[i]);
+            }
+        }
+        return qs;
+    };
+    var getQmvBySetIndex = function (index) {
+        var q = questions.find(index);
+        return q.QuestionMethodValue;
+    };
     var setQuestions = function (qs) {
         //TODO: CHECKUPS
         console.log("questionService.setQuestions started");
@@ -36,6 +51,9 @@ app.service('QuestionService', function () {
     return {
         getQuestion: getQuestion,
         getQuestions: getQuestions,
-        setQuestions: setQuestions
+        getQuestionsBySetIndex: getQuestionsBySetIndex,
+        getQmvBySetIndex: getQmvBySetIndex,
+        setQuestions: setQuestions,
+        reset: reset
     };
 });

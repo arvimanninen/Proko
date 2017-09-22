@@ -1,22 +1,36 @@
 ﻿<div class="container">
+    <!--
+        /*
+    var QuestionDTO = function (nQuestionID, nQuestionSetIndex,
+        nChosenQuestionIndex, nQuestionText, nQuestionMethodValue) {
+        this.QuestionID = nQuestionID;
+        this.QuestionSetIndex = nQuestionSetIndex;
+        this.ChosenQuestionIndex = nChosenQuestionIndex;
+        this.QuestionText = nQuestionText;
+        this.QuestionMethodValue = nQuestionMethodValue;
+    };
+    */
+    -->
     <progress-bar></progress-bar>
-    <p class="lead q-text-9">{{ $ctrl.questionText }}</p>
-    <p class="q-text-9b">(1 = surkeasti, 5 = erinomaisesti)</p>
-    <div class="btn-group btn-numb-div to-center" data-toggle="buttons">
-        <label class="btn btn-default btn-number-l" ng-click="$ctrl.setAnswerAndGo(1)">
-            <input type="radio" name="options"> 1
-        </label>
-        <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswerAndGo(2)">
-            <input type="radio" name="options"> 2
-        </label>
-        <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswerAndGo(3)">
-            <input type="radio" name="options"> 3
-        </label>
-        <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswerAndGo(4)">
-            <input type="radio" name="options"> 4
-        </label>
-        <label class="btn btn-default btn-number-r" ng-click="$ctrl.setAnswerAndGo(5)">
-            <input type="radio" name="options"> 5
-        </label>
+    <div class="question" ng-repeat="q in $ctrl.currentQuestions">
+        <p class="lead q-text-9">{{ q.QuestionText }}</p>
+        <p class="q-text-9b">(1 = surkeasti, 5 = erinomaisesti)</p>
+        <div class="btn-group btn-numb-div to-center" data-toggle="buttons">
+            <label class="btn btn-default btn-number-l" ng-click="$ctrl.setAnswer(1, q.QuestionID, q.QuestionMethodID)">
+                <input type="radio" name="options"> 1
+            </label>
+            <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(2, q.QuestionID, q.QuestionMethodID)">
+                <input type="radio" name="options"> 2
+            </label>
+            <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(3, q.QuestionID, q.QuestionMethodID)">
+                <input type="radio" name="options"> 3
+            </label>
+            <label class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(4, q.QuestionID, q.QuestionMethodID)">
+                <input type="radio" name="options"> 4
+            </label>
+            <label class="btn btn-default btn-number-r" ng-click="$ctrl.setAnswer(5, q.QuestionID, q.QuestionMethodID)">
+                <input type="radio" name="options"> 5
+            </label>
+        </div>
     </div>
 </div>
