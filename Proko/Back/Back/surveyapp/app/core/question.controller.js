@@ -5,14 +5,22 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     var questionSetIndex = RunService.getQuestionSetIndex();
     console.log("questionSetIndex: " + questionSetIndex);
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
-
+    /*
+    public int Value { get; set; }
+        public int QuestionSetIndex { get; set; }
+        public int ChosenQuestionIndex { get; set; }
+        public int QuestionID { get; set; }
+        public int QuestionMethodID { get; set; }
+    */
+       
 
     /*var currentIndex = AnswerService.getAnswers().length;
     console.log("ButtonsHorizontalNum5Ctrl.currentIndex: " + currentIndex);
     var currentQuestion = QuestionService.getQuestion(currentIndex);
     that.questionText = currentQuestion.Text;*/
-    that.setAnswer = function (value, questionId, questionMethodId) {
-        AnswerService.setAnswer(value, questionId, questionMethodId);
+    that.setAnswer = function (value, questionSetIndex, chosenQuestionIndex, questionId, questionMethodId) {
+
+        AnswerService.setAnswer(value, questionSetIndex, chosenQuestionIndex, questionId, questionMethodId);
         var allAnswers = AnswerService.getAnswers();
         for (var i = 0; i < allAnswers.length; i++) {
             console.log("**************");

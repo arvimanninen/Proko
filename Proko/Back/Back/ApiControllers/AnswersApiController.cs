@@ -103,8 +103,8 @@ namespace Back.ApiControllers
         public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
         {
             Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
-            
-            
+
+
             if (!ModelState.IsValid)
             {
                 Debug.WriteLine("ModelState not valid!");
@@ -114,7 +114,20 @@ namespace Back.ApiControllers
             {
                 return BadRequest();
             }
+            var rawSortedDtos = from sa in surveyAnswerDtos
+                                orderby sa.QuestionSetIndex, sa.ChosenQuestionIndex
+                                select sa;
+                                
+            List<AnswerDTO> cleanSortedDtos = rawSortedDtos.ToList();
 
+            for (int i = 0; i < cleanSortedDtos.Count; i++)
+            {
+                Debug.WriteLine("cleanSortedDtos[" + i + "].Value: " + cleanSortedDtos[i].Value);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionSetIndex: " + cleanSortedDtos[i].QuestionSetIndex);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].ChosenQuestionIndex: " + cleanSortedDtos[i].ChosenQuestionIndex);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionID: " + cleanSortedDtos[i].QuestionID);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionMethodID: " + cleanSortedDtos[i].QuestionMethodID);
+            }
             // CREATE AnswerBundle bundle
             AnswerBundle bundle = new AnswerBundle();
             bundle.Date = DateTime.Now;
@@ -123,32 +136,34 @@ namespace Back.ApiControllers
             db.SaveChanges();
 
             // ADD AnswerSets TO bundle
-            int currentQmId = -2;
-            int currentAsId = -2;
-            foreach (AnswerDTO aDto in surveyAnswerDtos)
+           // int currentQmId = -2;
+            int currentSetId = -2;
+            int currentSetIndex = -2;
+            
+            foreach (AnswerDTO aDto in cleanSortedDtos)
             {
                 // IF NEW QuestionMethodID IN surveyAnswerDtos,
                 // NEW AnswerSet IS CREATED
-                if(aDto.QuestionMethodID != currentQmId)
+                if(aDto.QuestionSetIndex != currentSetIndex)
                 {
-                    currentQmId = aDto.QuestionMethodID;
+                    // currentQmId = aDto.QuestionMethodID;
+                    currentSetIndex = aDto.QuestionSetIndex;
                     AnswerSet newSet = new AnswerSet();
-                    newSet.QuestionMethodID = currentQmId;
+                    newSet.QuestionMethodID = aDto.QuestionMethodID;
                     newSet.AnswerBundleID = bundle.AnswerBundleID;
                     db.AnswerSets.Add(newSet);
                     db.SaveChanges();
-                    currentAsId = newSet.AnswerSetID;
-                    
+                    currentSetId = newSet.AnswerSetID;
                 }
                 db.Answers.Add(new Answer
                 {
                     Value = aDto.Value,
                     QuestionID = aDto.QuestionID,
-                    AnswerSetID = currentAsId
+                    AnswerSetID = currentSetId
                 });
                 db.SaveChanges();
-                Debug.WriteLine("currentQmId:" + currentQmId);
-                Debug.WriteLine("currentAsId:" + currentAsId);
+                Debug.WriteLine("currentSetId:" + currentSetId);
+                Debug.WriteLine("currentSetIndex:" + currentSetIndex);
             }
             return Ok();
         }
