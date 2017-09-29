@@ -11,15 +11,14 @@
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <script>
         console.log("testget script started!");
-        var apiStatus = document.getElementById("api-status").innerHTML;
-        apiStatus = "Idle";
+        var apiStatus = document.getElementById("api-status");
+        apiStatus.innerHTML = "Loading...";
         $.getJSON("api/getchosenquestions", function () {
             console.log("API call launched");
-            apiStatus = "API call launched...";
         })
         .done(function (data) {
             console.log("API call works!");
-            apiStatus = "API call successful!";
+            apiStatus.innerHTML = "API call successful!";
             /*
             public int QuestionID { get; set; }
             public int QuestionMethodID { get; set; }
@@ -32,12 +31,12 @@
                 console.log("");
                 console.log("data[" + i + "].QuestionSetIndex: " + data[i].QuestionSetIndex);
                 console.log("data[" + i + "].ChosenQuestionIndex: " + data[i].ChosenQuestionIndex);
-                console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
+                /*console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
                 console.log("data[" + i + "].QuestionMethodID: " + data[i].QuestionMethodID);
                 
                 console.log("**************");
                 console.log("data[" + i + "].QuestionText: " + data[i].QuestionText);
-                console.log("data[" + i + "].QuestionMethodValue: " + data[i].QuestionMethodValue);
+                console.log("data[" + i + "].QuestionMethodValue: " + data[i].QuestionMethodValue);*/
             }
         })
         .fail(function () {

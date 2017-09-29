@@ -30,6 +30,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
         } else {
             // $("#loading-icon").remove();
             QuestionService.setQuestions(rawQs);
+            RunService.setQuestionSetCount(QuestionService.getSetCount());
             that.loadingText = "Kysymykset ladattu!";
             lt.style.color = "green";
             loadingIcon.src = "images/success.gif";
@@ -44,6 +45,6 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     });
 
     that.startSurvey = function () {
-        $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex));
+        $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex()));
     };
 });
