@@ -1,8 +1,10 @@
 ﻿'use strict';
-app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService, AnswerService) {
+app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService, AnswerService, RunService) {
     console.log("StartCtrl started");
     var that = this;
+    QuestionService.reset();
     AnswerService.reset();
+    RunService.reset();
 
     var startButton = document.getElementById("start-button");
     // NAMED lt INSTEAD OF loadingText FOR AVOIDING CONFUSION WITH that.loadingText
@@ -15,12 +17,12 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     var rawQs = DataFactory.getChosenQuestions.query(function () {
         console.log("All get!");
         console.log("rawQs.length" + rawQs.length);
-        for (var i = 0; i < rawQs.length; i++) {
+        /*for (var i = 0; i < rawQs.length; i++) {
             console.log("rawQs[" + i + "].QuestionID: " + rawQs[i].QuestionID);
             console.log("rawQs[" + i + "].ChosenIndex: " + rawQs[i].ChosenIndex);
             console.log("rawQs[" + i + "].Text: " + rawQs[i].Text);
             console.log("rawQs[" + i + "].QuestionMethodValue: " + rawQs[i].QuestionMethodValue);
-        }
+        }*/
         if (rawQs.length === 0) {
             that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
             lt.style.color = "red";
@@ -28,6 +30,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
         } else {
             // $("#loading-icon").remove();
             QuestionService.setQuestions(rawQs);
+            RunService.setQuestionSetCount(QuestionService.getSetCount());
             that.loadingText = "Kysymykset ladattu!";
             lt.style.color = "green";
             loadingIcon.src = "images/success.gif";
@@ -42,6 +45,6 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     });
 
     that.startSurvey = function () {
-        $location.path(QuestionService.getQuestion(0).QuestionMethodValue);
+        $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex()));
     };
 });

@@ -5,8 +5,8 @@ app.controller('ProgressBarCtrl', function (QuestionService, AnswerService) {
     that.progress = 0;
 
     var currentStep = AnswerService.getAnswers().length + 1;
-    var stepCount = QuestionService.getQuestions().length + 1;
-    var progressPerStep = 100 / stepCount;
+    var maxSteps = QuestionService.getQuestions().length + 1;
+    var progressPerStep = 100 / maxSteps;
     var currentProgress = currentStep * progressPerStep;
     console.log("progressBar.currentProgress: " + currentProgress);
 

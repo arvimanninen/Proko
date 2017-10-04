@@ -13,15 +13,25 @@
         }); */
         console.log("testpage script started!");
         // AnswerDTO object constructor
-        var AnswerDTO = function (nQuestionID, nValue) {
+        var AnswerDTO = function (nQuestionID, nQuestionSetIndex, nChosenQuestionIndex, nValue, nQuestionMethodID) {
             this.QuestionID = nQuestionID;
+            this.QuestionSetIndex = nQuestionSetIndex;
+            this.ChosenQuestionIndex = nChosenQuestionIndex;
             this.Value = nValue;
+            this.QuestionMethodID = nQuestionMethodID;
         };
 
-        var newAnswers = [new AnswerDTO(2, 4), new AnswerDTO(1, 5)];
+        var newAnswers = [new AnswerDTO(2, 2, 2, 3, 3),
+            new AnswerDTO(5, 1, 1, 4, 5),
+            new AnswerDTO(7, 1, 2, 4, 2),
+            new AnswerDTO(3, 2, 1, 1, 1)];
+
         for (var i = 0; i < newAnswers.length; i++) {
             console.log("newAnswers[" + i + "].QuestionID: " + newAnswers[i].QuestionID);
             console.log("newAnswers[" + i + "].Value: " + newAnswers[i].Value);
+            console.log("newAnswers[" + i + "].ChosenQuestionIndex: " + newAnswers[i].ChosenQuestionIndex);
+            console.log("newAnswers[" + i + "].QuestionSetIndex: " + newAnswers[i].QuestionSetIndex);
+            console.log("newAnswers[" + i + "].QuestionMethodID: " + newAnswers[i].QuestionID);
         }
         
         /*

@@ -24,13 +24,11 @@ namespace Back.ApiControllers
             return db.Questions;
         }
         
-       // TODO: DOES THIS WORK?
+       
         [Route("api/getchosenquestions")]
         [HttpGet]
-        //public List<QuestionDTO> GetChosenQuestions()
         public IHttpActionResult GetChosenQuestions()
         {
-
             var rawDtos = from chosenquestion in db.ChosenQuestions
                           join questionmethod in db.QuestionMethods
                           on chosenquestion.QuestionSet.QuestionMethodID equals questionmethod.QuestionMethodID
@@ -46,8 +44,52 @@ namespace Back.ApiControllers
                           };
             
             
-                           
+            
             List<QuestionDTO> cleanDtos = rawDtos.ToList();
+            
+            int setIndex = 1;
+            int questionIndex = 1;
+            
+            for(int i = 0; i < cleanDtos.Count; i++)
+            {
+                Debug.WriteLine("setIndex " + i + ": " + setIndex);
+                Debug.WriteLine("questionIndex " + i + ": " + questionIndex);
+                Debug.WriteLine("cleanDtos iteration: " + i);
+                if(cleanDtos[i].QuestionSetIndex != setIndex)
+                {
+                    if(cleanDtos[i].QuestionSetIndex == setIndex + 1)
+                    {
+                        setIndex = cleanDtos[i].QuestionSetIndex;
+                        questionIndex = 1;
+                    }
+                    else
+                    {
+                        Debug.WriteLine("setIndex error!");
+                        Debug.WriteLine("cleanDtos[" + i + "].QuestionSetIndex: " + cleanDtos[i].QuestionSetIndex);
+                        Debug.WriteLine("cleanDtos[" + i + "].ChosenQuestionIndex: " + cleanDtos[i].ChosenQuestionIndex);
+                        // TODO: CHANGE THIS TO SOMETHING SENSIBLE
+                        return NotFound();
+                    }
+                }
+                if(cleanDtos[i].ChosenQuestionIndex != questionIndex)
+                {
+                    if(cleanDtos[i].ChosenQuestionIndex == questionIndex + 1)
+                    {
+                        questionIndex = cleanDtos[i].ChosenQuestionIndex;
+                    }
+                    else
+                    {
+                        
+                        Debug.WriteLine("questionIndex error!");
+                        Debug.WriteLine("cleanDtos[" + i + "].QuestionSetIndex: " + cleanDtos[i].QuestionSetIndex);
+                        Debug.WriteLine("cleanDtos[" + i + "].ChosenQuestionIndex: " + cleanDtos[i].ChosenQuestionIndex);
+                        // TODO: CHANGE THIS TO SOMETHING SENSIBLE
+                        return NotFound();
+                    }
+                }
+            }
+            
+            /*
             foreach(QuestionDTO d in cleanDtos)
             {
                 Debug.WriteLine("");
@@ -59,6 +101,7 @@ namespace Back.ApiControllers
                 Debug.WriteLine("cleanDtos.QuestionText: " + d.QuestionText);
                 Debug.WriteLine("cleanDtos.QuestionMethodValue: " + d.QuestionMethodValue);
             }
+            */
             if(cleanDtos.Count >= 1)
             {
                 return Ok(cleanDtos);

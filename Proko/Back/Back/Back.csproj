@@ -196,6 +196,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\AnswersApiController.cs" />
     <Compile Include="ApiControllers\QuestionsApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -291,6 +292,8 @@
     <Content Include="surveyapp\app\app.config.js" />
     <Content Include="surveyapp\app\app.module.js" />
     <Content Include="surveyapp\app\buttons-horizontal-num-5\buttons-horizontal-num-5.component.js" />
+    <Content Include="surveyapp\app\core\question.controller.js" />
+    <Content Include="surveyapp\app\core\run.service.js" />
     <Content Include="surveyapp\app\error-general\error-general.component.js" />
     <Content Include="surveyapp\app\error-general\error-general.controller.js" />
     <Content Include="surveyapp\app\error-general\error-general.template.html" />
@@ -311,7 +314,6 @@
     <Content Include="surveyapp\app\buttons-vertical-short-text-5\buttons-vertical-short-text-5.template.html" />
     <Content Include="surveyapp\app\core\data.factory.js" />
     <Content Include="surveyapp\OldStuff\data.service.js" />
-    <Content Include="surveyapp\app\core\question.controller.js" />
     <Content Include="surveyapp\app\core\question.service.js" />
     <Content Include="surveyapp\app\end\end.component.js" />
     <Content Include="surveyapp\app\end\end.controller.js" />
