@@ -4,7 +4,11 @@ app.controller('QuestionThumbsCtrl', function QuestionThumbsCtrl($scope, $locati
     $scope.questionTwo = "muihin sidosryhmiin?";
     $scope.setAnswers = function () {
 
-        $location.path("/questionbuttonsliderlinks");
+        $scope.previousView = function () {
+            $location.path("/questionsafety");
+        };
+
+        $location.path("/start");
 
         //if ($scope.answerOne === 1 || $scope.answerOne === 2 || $scope.answerOne === 3 || $scope.answerOne === 4 || $scope.answerOne === 5) {
         //    if ($scope.answerTwo === 1 || $scope.answerTwo === 2 || $scope.answerTwo === 3 || $scope.answerTwo === 4 || $scope.answerTwo === 5) {

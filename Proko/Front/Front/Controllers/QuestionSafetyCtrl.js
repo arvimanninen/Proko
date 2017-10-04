@@ -4,6 +4,10 @@ app.controller('QuestionSafetyCtrl', function QuestionSafetyCtrl($scope, $locati
     $scope.questionTwo = "muihin sidosryhmiin?";
     $scope.setAnswers = function () {
 
+        $scope.previousView = function () {
+            $location.path("/questionbuttonslider");
+        };
+
         $location.path("/questionthumbs");
 
         //if ($scope.answerOne === 1 || $scope.answerOne === 2 || $scope.answerOne === 3 || $scope.answerOne === 4 || $scope.answerOne === 5) {

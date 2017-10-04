@@ -1,6 +1,8 @@
 ﻿@import "variables.scss";
 
-/*Frame styles*/
+/* STYLES FOR:
+    body, container, header, footer, progress bar, navigation buttons
+*/
 
 html,
 body {
@@ -13,20 +15,18 @@ body {
 }
 
 
-/*for sticky footer*/
+// for sticky footer
 #wrap {
     min-height: 100%;
     height: auto;
     margin: 0 auto -55px;
     padding: 0 0 55px;
-    color: #236290;
-    /*position: relative;*/
+    color: $grey;
 }
 
 /*
 FONTS
 **************************/
-
 
 h1 {
     color: $grey;
@@ -140,13 +140,12 @@ p {
     text-align: center;
 }
 
+/*
+HEADER & FOOTER
+**************************/
 
-header {
+header, footer {
     background-color: $header-color;
-}
-
-footer {
-    background-color: $footer-color;
 }
 
 .header-text, .footer-text {
@@ -165,6 +164,7 @@ footer {
 .footer-text {
     margin-top: 17px;
 }
+
 /*
 GENERAL STYLES
 **************************/
@@ -174,7 +174,6 @@ span {
 }
 
 .container {
-    /*width: auto;*/
     max-width: 680px;
     padding: 0 15px;
     max-height: 2200px;
@@ -196,6 +195,26 @@ span {
     margin: 0 auto;
 }
 
+/*
+START VIEW
+**************************/
+
+.start-title {
+    margin: 24 * $grid auto 8 * $grid;
+
+    @include media-query($on-mobile) {
+        margin: 18 * $grid auto 7 * $grid;
+    }
+
+    @include media-query($on-small-mobile) {
+        margin: 14 * $grid auto 6 * $grid;
+    }
+}
+
+/*
+PROGRESS BAR
+**************************/
+
 .pr-bar-custom {
     margin: 9 * $grid 0 12 * $grid;
 
@@ -205,6 +224,31 @@ span {
 
     @include media-query($on-mobile) {
         margin: 6 * $grid 0 8 * $grid;
+    }
+}
+
+/*
+NAVIGATION BUTTONS
+**************************/
+.btn-nav-div {
+    display: flex;
+    justify-content: center;
+    margin: 26 * $grid auto 14 * $grid;
+
+    @include media-query($on-tablet) {
+        margin: 22 * $grid auto 10 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        margin: 17 * $grid auto 8 * $grid;
+    }
+
+    & a.nav-btn-prev {
+        margin: 0 6 * $grid 0 0;
+    }
+
+    & a.nav-btn-next {
+        margin: 0 0 0 6 * $grid;
     }
 }
 

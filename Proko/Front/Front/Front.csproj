@@ -128,7 +128,14 @@
     <Content Include="Images\smiley-angry.svg" />
     <Content Include="Images\smiley-happy.svg" />
     <Content Include="Images\smiley-little-sad.svg" />
+    <Content Include="Images\soso-hands-white.png" />
+    <Content Include="Images\thumbs-down-grey.png" />
+    <Content Include="Images\thumbs-down-red.png" />
+    <Content Include="Images\thumbs-down-white.png" />
     <Content Include="Images\thumbs-down.png" />
+    <Content Include="Images\thumbs-up-green.png" />
+    <Content Include="Images\thumbs-up-grey.png" />
+    <Content Include="Images\thumbs-up-white.png" />
     <Content Include="Images\thumbs-up.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
