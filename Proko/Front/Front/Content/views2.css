@@ -123,7 +123,7 @@ div.btn-group {
             height: 48px; } }
         div.btn-group.thumbs-div table tr td.thumbs-question {
           position: relative;
-          width: 52%; }
+          width: 46%; }
           div.btn-group.thumbs-div table tr td.thumbs-question h4 {
             position: relative;
             text-align: left;
@@ -131,8 +131,9 @@ div.btn-group {
             padding: 0;
             top: -3px; }
         div.btn-group.thumbs-div table tr td:not(:first-child) {
-          width: 16%;
-          position: relative; }
+          width: 18%;
+          position: relative;
+          border: 1px solid red; }
     div.btn-group.thumbs-div label {
       float: right;
       position: relative;
@@ -146,12 +147,12 @@ div.btn-group {
           height: 48px; } }
       @media screen and (max-width: 480px) {
         div.btn-group.thumbs-div label {
-          width: 50px;
-          height: 40px; } }
+          width: 52px;
+          height: 41.6px; } }
       @media screen and (max-width: 375px) {
         div.btn-group.thumbs-div label {
-          width: 44px;
-          height: 35.2px; } }
+          width: 48px;
+          height: 38.4px; } }
       div.btn-group.thumbs-div label img {
         width: 48px;
         height: 48px;

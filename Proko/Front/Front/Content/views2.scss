@@ -183,7 +183,7 @@ div.btn-group {
 
                 td.thumbs-question {
                     position: relative;
-                    width: 52%;
+                    width: 46%;
 
                     h4 {
                         position: relative;
@@ -195,8 +195,9 @@ div.btn-group {
                 }
 
                 td:not(:first-child) {
-                    width: 16%;
+                    width: 18%;
                     position: relative;
+                    border: 1px solid red;
                 }
             }
         }
@@ -215,13 +216,13 @@ div.btn-group {
             }
 
             @include media-query($on-mobile) {
-                width: 12.5 * $grid;
-                height: 10 * $grid;
+                width: 13 * $grid;
+                height: 10.4 * $grid;
             }
 
             @include media-query($on-small-mobile) {
-                width: 11 * $grid;
-                height: 8.8 * $grid;
+                width: 12 * $grid;
+                height: 9.6 * $grid;
             }
 
             img {
