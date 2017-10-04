@@ -1,83 +1,67 @@
 ﻿<div class="container">
 
-    <div class="progress pr-bar-cstm">
+    <div class="progress pr-bar-custom">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
             <span class="sr-only">50% Complete</span>
         </div>
     </div>
 
-    <p class="lead text-center q-text-5">Arvioi seuraavia osa-alueita rakennustyömaalla:</p>
+    <h4>Testi kysymys: Milta tuntuu tehda tata kyselya lorem ipsum sit dolor amet?</h4>
 
-    <div class="thumbs-div">
+    <div class="btn-group thumbs-div">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="thumbs-question">
+                        <h5>Tyoturvallisuus</h5>
+                    </td>
+                    <td>
+                        <input type="radio" name="question-1" id="q-a1" value="1" />
+                        <label for="q-a1" class="thumb-down">
+                            <img src="../Images/thumbs-down.png" alt="thumbs down" />
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" name="question-1" id="q-a2" value="2" />
+                        <label for="q-a2" class="thumb-neutral">
+                            <img src="" alt="" />
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" name="question-1" id="q-a3" value="3" />
+                        <label for="q-a3" class="thumb-up">
+                            <img src="../Images/thumbs-up.png" alt="thumbs up" />
+                        </label>
+                    </td>
+                </tr>
 
-        <div class="list-div">
-            <p class="lead list-q">Työturvallisuus</p>
-            <div class="btn-group-lg list-answer" data-toggle="buttons">
-                <label class="btn btn-success btn-new">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
-                        <input type="radio" name="options" ng-click="answerOne = 1">
-                    </span>
-                </label>
-                <label class="btn btn-danger btn-new">
-                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">
-                        <input type="radio" name="options" ng-click="answerOne = 2">
-                    </span>
-                </label>
-            </div>
-            <div class="clearfix"></div>
-        </div>
+                <tr>
+                    <td class="thumbs-question">
+                        <h5>Tyoturvallisuus</h5>
+                    </td>
+                    <td>
+                        <input type="radio" name="question-1" id="q-b1" value="1" />
+                        <label for="q-b1" class="thumb-down">
+                            <img src="../Images/thumbs-down.png" alt="thumbs down" />
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" name="question-1" id="q-b2" value="2" />
+                        <label for="q-b2" class="thumb-neutral">
+                            <img src="" alt="" />
+                        </label>
+                    </td>
+                    <td>
+                        <input type="radio" name="question-1" id="q-b3" value="3" />
+                        <label for="q-b3" class="thumb-up">
+                            <img src="../Images/thumbs-up.png" alt="thumbs up" />
+                        </label>
+                    </td>
+                </tr>               
 
-        <div class="list-div">
-            <p class="lead list-q">Aikataulutus</p>
-            <div class="btn-group-lg list-answer" data-toggle="buttons">
-                <label class="btn btn-success btn-new" ng-click="answerTwo = 1">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
-                        <input type="radio" name="options">
-                    </span>
-                </label>
-                <label class="btn btn-danger btn-new" ng-click="answerTwo = 2">
-                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">
-                        <input type="radio" name="options">
-                    </span>
-                </label>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-
-        <div class="list-div">
-            <p class="lead list-q">Työvälineet</p>
-            <div class="btn-group-lg list-answer" data-toggle="buttons">
-                <label class="btn btn-success btn-new" ng-click="answerTwo = 1">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
-                        <input type="radio" name="options">
-                    </span>
-                </label>
-                <label class="btn btn-danger btn-new" ng-click="answerTwo = 2">
-                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">
-                        <input type="radio" name="options">
-                    </span>
-                </label>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-
-        <div class="list-div">
-            <p class="lead list-q">Taukotilat</p>
-            <div class="btn-group-lg list-answer" data-toggle="buttons">
-                <label class="btn btn-success btn-new" ng-click="answerTwo = 1">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
-                        <input type="radio" name="options">
-                    </span>
-                </label>
-                <label class="btn btn-danger btn-new btn-a-no" ng-click="answerTwo = 2">
-                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">
-                        <input type="radio" name="options">
-                    </span>
-                </label>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-
+            </tbody>
+        </table>
+        
     </div>
 
     <div class="btn-next-div">

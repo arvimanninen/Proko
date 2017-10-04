@@ -1,0 +1,38 @@
+﻿//sizes
+$grid: 4px;
+
+//colors
+$white: #fff;
+$grey: #333;
+
+$body-bg-color: #FAFAFA;
+$header-color: lighten(#4D4C51, 15%);
+$footer-color: #808080;
+
+$primary-color: #0094ff;
+$secondary-color: #b6ff00;
+$tertiary-color: #ffd800;
+$warning-color: #ff0000;
+
+// button colors
+$button-bg-color: #72BB57;
+$button-text-color: #fff;
+$button-border-color: #338316;
+$button-color-hover: darken($button-bg-color, 5%);
+$button-color-checked: darken($button-bg-color, 15%);
+
+// btn group border radius
+$btn-grp-radius-left: 2 * $grid 0 0 2 * $grid;
+$btn-grp-radius-right: 0 2 * $grid 2 * $grid 0;
+
+// devices
+$on-tablet: 768px;
+$on-mobile: 480px;
+$on-small-mobile: 375px;
+
+//mixins
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}

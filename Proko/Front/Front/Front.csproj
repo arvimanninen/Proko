@@ -66,11 +66,43 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\frame.css" />
+    <Content Include="Content\frame.css">
+      <DependentUpon>frame.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\frame.min.css">
+      <DependentUpon>frame.css</DependentUpon>
+    </Content>
     <Content Include="Content\jquery-ui.min.dragndroponly.css" />
     <Content Include="Content\monitoring.css" />
+    <Content Include="Content\texture\brilliant.png" />
+    <Content Include="Content\texture\squared_metal.png" />
+    <Content Include="Content\texture\squared_metal_%402X.png" />
+    <Content Include="Content\variables.css">
+      <DependentUpon>variables.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\variables.min.css">
+      <DependentUpon>variables.css</DependentUpon>
+    </Content>
     <Content Include="Content\views-not-used.css" />
-    <Content Include="Content\views.css" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\variables.scss" />
+    <Content Include="Content\frame.scss" />
+    <None Include="Content\views.scss" />
+    <Content Include="Content\views.css">
+      <DependentUpon>views.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\views.min.css">
+      <DependentUpon>views.css</DependentUpon>
+    </Content>
+    <Content Include="Content\views2.css">
+      <DependentUpon>views2.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\views2.min.css">
+      <DependentUpon>views2.css</DependentUpon>
+    </Content>
     <Content Include="Controllers\AdndTestCtrl.js" />
     <Content Include="Controllers\AngularDragulaCtrl.js" />
     <Content Include="Controllers\AnswererTypeCtrl.js" />
@@ -91,11 +123,13 @@
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
-    <Content Include="Images\1f610.svg" />
+    <Content Include="Images\smiley-neutral.svg" />
     <Content Include="Images\1f612.svg" />
-    <Content Include="Images\1f621.svg" />
-    <Content Include="Images\1f642.svg" />
-    <Content Include="Images\1f914.svg" />
+    <Content Include="Images\smiley-angry.svg" />
+    <Content Include="Images\smiley-happy.svg" />
+    <Content Include="Images\smiley-little-sad.svg" />
+    <Content Include="Images\thumbs-down.png" />
+    <Content Include="Images\thumbs-up.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
     <Content Include="Scripts\angular-dragdrop.min.js" />
@@ -109,6 +143,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Content\views2.scss" />
     <None Include="Properties\PublishProfiles\Front-testaus - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\prokof - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ProkoFrontTest - Web Deploy.pubxml" />
