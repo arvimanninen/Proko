@@ -1,133 +1,278 @@
-/*Frame styles*/
-
+﻿/* STYLES FOR:
+    body, container, header, footer, progress bar, navigation buttons
+*/
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+  height: 100%;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  background-color: #FAFAFA;
+  /*url("texture/brilliant.png") rgba(48, 122, 21, 0.2);*/
+  font-size: 16px; }
 
-body {
-    min-width: 320px;
-}
-
-/*for sticky footer*/
 #wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -55px;
-    padding: 0 0 55px;
-    color: #236290;
-    /*position: relative;*/
-}
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -55px;
+  padding: 0 0 55px;
+  color: #333; }
+
+/*
+FONTS
+**************************/
+h1 {
+  color: #333;
+  font-size: 48px;
+  line-height: 56px;
+  margin: 16px 0 16px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+      margin: 12px 0 12px; } }
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      margin: 10px 0 10px; } }
+
+h2 {
+  color: #333;
+  font-size: 36px;
+  line-height: 48px;
+  margin: 14px 0 12px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+      margin: 12px 0 10px; } }
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 26px;
+      line-height: 32px;
+      margin: 11px 0 8px; } }
+
+h3 {
+  color: #333;
+  font-size: 28px;
+  line-height: 36px;
+  margin: 14px 0 10px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 12px 0 8px; } }
+  @media screen and (max-width: 480px) {
+    h3 {
+      font-size: 22px;
+      line-height: 28px;
+      margin: 12px 0 8px; } }
+
+h4 {
+  color: #333;
+  font-size: 22px;
+  line-height: 26.4px;
+  margin: 12px 0 8px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    h4 {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 12px 0 8px; } }
+  @media screen and (max-width: 768px) {
+    h4 {
+      font-size: 18px;
+      line-height: 22px;
+      margin: 12px 0 8px; } }
+
+h5 {
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 6px 0 6px;
+  text-align: center; }
+
+h6 {
+  color: #333;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 4px 0 4px;
+  text-align: center; }
+
+.lead {
+  color: #333;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 12px 0 6px;
+  text-align: center; }
+
+p {
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 8px 0 4px;
+  text-align: center; }
 
 /*
 HEADER & FOOTER
 **************************/
-
 header, footer {
-    background-color: #056cb9;
-    color: #fff;
-}
+  background-color: #337ab7; }
 
-#header-text {
-    margin-top: 15px;
-    margin-bottom: 19px;
-}
+.header-text, .footer-text {
+  color: #fff; }
+
+.header-text {
+  margin-top: 15px;
+  margin-bottom: 19px; }
 
 footer {
-    height: 55px;
-}
+  height: 55px; }
 
-#footer-text {
-    margin-top: 17px;
-}
+.footer-text {
+  margin-top: 17px; }
 
 /*
 GENERAL STYLES
 **************************/
+span {
+  display: inline-block; }
 
 .container {
-    /*width: auto;*/
-    max-width: 680px;
-    padding: 0 15px;
-}
+  max-width: 680px;
+  padding: 0 15px;
+  max-height: 2200px; }
 
-    .container .credit {
-        margin: 20px 0;
-    }
+.container .credit {
+  margin: 20px 0; }
 
 .line-high {
-    line-height: 130%;
-}
+  line-height: 130%; }
 
 .inline {
-    display: inline-block;
-}
+  display: inline-block; }
 
 .to-center {
-    margin: 0 auto;
-}
+  margin: 0 auto; }
+
+/*
+START VIEW
+**************************/
+.start-title {
+  margin: 96px auto 32px; }
+  @media screen and (max-width: 480px) {
+    .start-title {
+      margin: 72px auto 28px; } }
+  @media screen and (max-width: 375px) {
+    .start-title {
+      margin: 56px auto 24px; } }
+
+/*
+PROGRESS BAR
+**************************/
+.pr-bar-custom {
+  margin: 36px 0 48px; }
+  @media screen and (max-width: 768px) {
+    .pr-bar-custom {
+      margin: 28px 0 36px; } }
+  @media screen and (max-width: 480px) {
+    .pr-bar-custom {
+      margin: 24px 0 32px; } }
+
+/*
+NAVIGATION BUTTONS
+**************************/
+.btn-nav-div {
+  display: flex;
+  justify-content: center;
+  margin: 104px auto 56px; }
+  @media screen and (max-width: 768px) {
+    .btn-nav-div {
+      margin: 88px auto 40px; } }
+  @media screen and (max-width: 480px) {
+    .btn-nav-div {
+      margin: 68px auto 32px; } }
+  .btn-nav-div a.nav-btn-prev {
+    margin: 0 32px 0 0; }
+  .btn-nav-div a.nav-btn-next {
+    margin: 0 0 0 32px; }
 
 /*
 PADDINGS & MARGINS
 **************************/
-
 /* margin bottom */
 .m-b-min1 {
-    margin-bottom: -0.5rem;
-}
+  margin-bottom: -0.5rem; }
 
 /* padding top */
 .p-t-1r {
-    padding-top: 1rem;
-}
+  padding-top: 1rem; }
 
 .p-t-2r {
-    padding-top: 2rem;
-}
+  padding-top: 2rem; }
 
 .p-t-3r {
-    padding-top: 3rem;
-}
+  padding-top: 3rem; }
 
 .p-t-4r {
-    padding-top: 4rem;
-}
+  padding-top: 4rem; }
 
 .p-t-5r {
-    padding-top: 5rem;
-}
+  padding-top: 5rem; }
 
 .p-t-6r {
-    padding-top: 6rem;
-}
+  padding-top: 6rem; }
 
 .p-t-7r {
-    padding-top: 7rem;
-}
+  padding-top: 7rem; }
 
 .p-t-8r {
-    padding-top: 8rem;
-}
+  padding-top: 8rem; }
 
 .p-t-10r {
-    padding-top: 10rem;
-}
+  padding-top: 10rem; }
 
 /* padding bottom */
 .p-b-1r {
-    padding-bottom: 1rem;
-}
+  padding-bottom: 1rem; }
 
 .p-b-3r {
-    padding-bottom: 3rem;
-}
+  padding-bottom: 3rem; }
 
 .p-b-4r {
-    padding-bottom: 4rem;
-}
+  padding-bottom: 4rem; }
 
 .p-b-6r {
-    padding-bottom: 6rem;
-}
+  padding-bottom: 6rem; }
+
+.m-t-1r {
+  margin-top: 1rem; }
+
+.m-t-2r {
+  margin-top: 2rem; }
+
+.m-t-3r {
+  margin-top: 3rem; }
+
+.m-t-4r {
+  margin-top: 4rem; }
+
+.m-t-5r {
+  margin-top: 5rem; }
+
+.m-t-6r {
+  margin-top: 6rem; }
+
+.m-t-7r {
+  margin-top: 7rem; }
+
+.p-t-8r {
+  padding-top: 8rem; }
+
+.p-t-10r {
+  padding-top: 10rem; }
+
