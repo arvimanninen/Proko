@@ -197,9 +197,9 @@ NAVIGATION BUTTONS
     .btn-nav-div {
       margin: 68px auto 32px; } }
   .btn-nav-div a.nav-btn-prev {
-    margin: 0 24px 0 0; }
+    margin: 0 32px 0 0; }
   .btn-nav-div a.nav-btn-next {
-    margin: 0 0 0 24px; }
+    margin: 0 0 0 32px; }
 
 /*
 PADDINGS & MARGINS
