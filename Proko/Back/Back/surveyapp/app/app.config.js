@@ -27,7 +27,6 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/end', {
                 template: '<end></end>'
             })
-            /* TODO: MAKE ERROR PAGE */
             .otherwise({
                 template: '<error-general></error-general>'
             })

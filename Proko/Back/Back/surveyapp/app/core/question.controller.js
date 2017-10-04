@@ -8,6 +8,8 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     console.log("questionSetIndex: " + questionSetIndex);
     var currentQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
     var nextQmv;
+    
+    
 
     var changeLocation = function (currentLocation, nextLocation, index, maximumIndex) {
         if (index > maximumIndex) {
@@ -28,6 +30,23 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     }
 
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
+    var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
+
+    var checkAnsweredAndActivate = function () {
+        for(var i = 0; i < currentAnswers; i++) {
+            var cqi = currentAnswers[i].ChosenQuestionIndex.toString();
+            var i1 = i.toString();
+            var elementId = "#" + cgi + " " + i1;
+            var currentElement = angular.element( document.querySelector( elementId ) );
+            currentElement.addClass('active');
+        }
+    };
+        
+
+        
+        
+    };
+
     that.setAnswer = function (value, questionSetIndex, chosenQuestionIndex, questionId, questionMethodId) {
         // Check if Answer exists
         var answerIndex = AnswerService.getAnswerIndex(questionSetIndex, chosenQuestionIndex);
@@ -71,29 +90,4 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     };
 });
 
-/*
-    var currentIndex = AnswerService.getAnswers().length;
-    console.log("ButtonsHorizontalNum5Ctrl.currentIndex: " + currentIndex);
-    var currentQuestion = QuestionService.getQuestion(currentIndex);
-    that.questionText = currentQuestion.Text;
-    that.setAnswerAndGo = function (answer) {
-        AnswerService.setAnswer(currentQuestion.QuestionID, answer);
-        var currentQmv = currentQuestion.QuestionMethodValue;
-        var nextQmv;
-        currentIndex++;
-        if (currentIndex < QuestionService.getQuestions().length) {
-            nextQmv = QuestionService.getQuestion(currentIndex).QuestionMethodValue;
-        }
 
-        if (currentIndex >= QuestionService.getQuestions().length) {
-            $location.path("/end");
-        } else if (currentQmv === nextQmv) {
-            var currentPageTemplate = $route.current.templateUrl;
-            $templateCache.remove(currentPageTemplate);
-            $route.reload();
-        } else {
-            $location.path(nextQmv);
-        }
-    };
-});
-*/
