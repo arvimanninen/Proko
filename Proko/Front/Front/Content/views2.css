@@ -132,8 +132,7 @@ div.btn-group {
             top: -3px; }
         div.btn-group.thumbs-div table tr td:not(:first-child) {
           width: 18%;
-          position: relative;
-          border: 1px solid red; }
+          position: relative; }
     div.btn-group.thumbs-div label {
       float: right;
       position: relative;
