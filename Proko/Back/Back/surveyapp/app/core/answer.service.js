@@ -9,6 +9,9 @@ app.service('AnswerService', function () {
         this.QuestionID = nQuestionID;
         this.QuestionMethodID = nQuestionMethodID;
     };
+    var getAnswer = function (index) {
+        return surveyAnswers[index];
+    };
     var getAnswers = function () {
         return surveyAnswers;
     };
@@ -22,6 +25,17 @@ app.service('AnswerService', function () {
         console.log("answerCountByQuestionSetIndex: " + aCount);
         return aCount;
     };
+
+    var getAnswersBySetIndex = function (setIndex) {
+        var ans = [];
+        for (var i = 0; i < surveyAnswers.length; i++) {
+            if (surveyAnswers[i].QuestionSetIndex === setIndex) {
+                ans.push(surveyAnswers[i]);
+            }
+        }
+        return ans;
+    };
+
     var setAnswer = function (nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID) {
         var sa = new AnswerDTO(nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID);
         surveyAnswers.push(sa);
@@ -52,13 +66,16 @@ app.service('AnswerService', function () {
         }
         return -1;
     };
+
     var reset = function () {
         surveyAnswers.length = 0;
     };
 
     return {
+        getAnswer: getAnswer,
         getAnswers: getAnswers,
         getAnswerCountByQuestionSetIndex: getAnswerCountByQuestionSetIndex,
+        getAnswersBySetIndex: getAnswersBySetIndex,
         setAnswer: setAnswer,
         getAnswerIndex: getAnswerIndex,
         replaceAnswer: replaceAnswer,

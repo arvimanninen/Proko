@@ -1,4 +1,5 @@
-﻿'use strict';
+﻿/// <reference path="question.service.js" />
+'use strict';
 
 app.service('QuestionService', function () {
     var questions = [];
