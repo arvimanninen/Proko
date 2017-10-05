@@ -5,7 +5,7 @@ app.controller('QuestionThumbsCtrl', function QuestionThumbsCtrl($scope, $locati
     $scope.setAnswers = function () {
 
         $scope.previousView = function () {
-            $location.path("/questionsafety");
+            $location.path("/questionsmileys");
         };
 
         $location.path("/start");

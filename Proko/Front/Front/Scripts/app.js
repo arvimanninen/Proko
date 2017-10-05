@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var app = angular.module('app', ["ngRoute", "chart.js", angularDragula(angular)]);
+var app = angular.module('app', ["ngRoute", "chart.js"]);
 
 
 app.config(['$routeProvider', '$locationProvider',
@@ -18,9 +18,9 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questionbuttonslider.html',
                 controller: 'QuestionButtonSliderCtrl'
             })
-            .when('/questionsafety', {
-                templateUrl: 'views/questionsafety.html',
-                controller: 'QuestionSafetyCtrl'
+            .when('/questionsmileys', {
+                templateUrl: 'views/questionsmileys.html',
+                controller: 'QuestionSmileysCtrl'
             })
             .when('/questionthumbs', {
                 templateUrl: ' views/questionthumbs.html',

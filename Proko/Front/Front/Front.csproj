@@ -105,7 +105,7 @@
     <Content Include="Controllers\MonitoringCtrl.js" />
     <Content Include="Controllers\QuestionButtonSliderCtrl.js" />
     <Content Include="Controllers\QuestionThumbsCtrl.js" />
-    <Content Include="Controllers\QuestionSafetyCtrl.js" />
+    <Content Include="Controllers\QuestionSmileysCtrl.js" />
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
@@ -194,7 +194,7 @@
     <Content Include="views\monitoring-2.html" />
     <Content Include="views\monitoring.html" />
     <Content Include="views\questionbuttonslider.html" />
-    <Content Include="views\questionsafety.html" />
+    <Content Include="views\questionsmileys.html" />
     <Content Include="views\questionslider.html" />
     <Content Include="views\start.html" />
     <Content Include="Web.config" />
