@@ -22,6 +22,24 @@ BUTTON GROUPS
     height: 6 * $grid;
     display: flex;
     justify-content: space-between;
+
+    .left-span {
+        margin-left: -4 * $grid;
+    }
+
+    .right-span {
+        margin-right: -4 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        .left-span {
+            margin-left: -1 * $grid;
+        }
+
+        .right-span {
+            margin-right: -1 * $grid;
+        }
+    }
 }
 
 div.btn-group {
