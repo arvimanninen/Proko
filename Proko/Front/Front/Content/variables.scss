@@ -18,20 +18,20 @@ $warning-color: #ff0000;
 // button colors
 $button-text-color: #fff;
 
-$button-pos-color: #7DD181;
+$button-pos-color: lighten(#7DD181, 5%);
 $button-pos-border: darken($button-pos-color, 25%);
 $button-pos-hover: darken($button-pos-color, 5%);
-$button-pos-checked: darken($button-pos-color, 20%);
+$button-pos-checked: darken($button-pos-color, 25%);
 
-$button-neutral-color: #d7c8a8;
+$button-neutral-color: lighten(#d7c8a8, 5%);
 $button-neutral-border: darken($button-neutral-color, 25%);
 $button-neutral-hover: darken($button-neutral-color, 5%);
-$button-neutral-checked: darken($button-neutral-color, 20%);
+$button-neutral-checked: darken($button-neutral-color, 25%);
 
 $button-neg-color: lighten(#F06543, 10%);
 $button-neg-border: darken($button-neg-color, 25%);
 $button-neg-hover: darken($button-neg-color, 5%);
-$button-neg-checked: darken($button-neg-color, 20%);
+$button-neg-checked: darken($button-neg-color, 25%);
 
 // btn group border radius
 $btn-grp-radius-left: 2 * $grid 0 0 2 * $grid;
