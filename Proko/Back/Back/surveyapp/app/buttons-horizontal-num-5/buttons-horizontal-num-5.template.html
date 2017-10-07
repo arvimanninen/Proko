@@ -4,19 +4,19 @@
         <p class="lead q-text-9">{{ q.QuestionText }}</p>
         <p class="q-text-9b">(1 = surkeasti, 5 = erinomaisesti)</p>
         <div class="btn-group btn-numb-div to-center" data-toggle="buttons">
-            <label ng-attr-id="{{ q.ChosenQuestionIndex + '-1' }}" class="btn btn-default btn-number-l" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+            <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a1' }}" class="btn btn-default btn-number-l" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <input type="radio" name="options"> 1
             </label>
-            <label ng-attr-id="{{ q.ChosenQuestionIndex + '-2' }}" class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(2, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+            <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a2' }}" class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(2, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <input type="radio" name="options"> 2
             </label>
-            <label ng-attr-id="{{ q.ChosenQuestionIndex + '-3' }}" class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(3, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+            <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a3' }}" class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(3, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <input type="radio" name="options"> 3
             </label>
-            <label ng-attr-id="{{ q.ChosenQuestionIndex + '-4' }}" class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(4, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+            <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a4' }}" class="btn btn-default btn-number" ng-click="$ctrl.setAnswer(4, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <input type="radio" name="options"> 4
             </label>
-            <label ng-attr-id="{{ q.ChosenQuestionIndex + '-5' }}" class="btn btn-default btn-number-r" ng-click="$ctrl.setAnswer(5, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+            <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a5' }}" class="btn btn-default btn-number-r" ng-click="$ctrl.setAnswer(5, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <input type="radio" name="options"> 5
             </label>
         </div>

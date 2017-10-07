@@ -3,7 +3,7 @@
     var endText = document.getElementById("end-text");
     var postingIcon = document.getElementById("posting-icon");
     endText.style.visibility = "hidden";
-    that.postingText = "Lähetetään vastauksia, odota hetki..."
+    that.postingText = "Lähetetään vastauksia, odota hetki...";
 
     var postAnswers = DataFactory.postSurveyAnswers.save(AnswerService.getAnswers(), function () {
         $("#posting-status").remove();

@@ -23,6 +23,19 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         }
     };
     
+    var checkAnsweredAndActivate = function (currentAnswers) {
+        console.log("checkAnsweredAndActivate() started!");
+        for (var i = 0; i < currentAnswers.length; i++) {
+            var cqi = currentAnswers[i].ChosenQuestionIndex.toString();
+            var v = currentAnswers[i].Value.toString();
+            var element = "#cqi" + cqi + "-a" + v;
+            console.log("checkAnsweredAndActivate().ElementId:");
+            console.log(element);
+            //var currentElement = document.getElementById(elementId);
+            $(element).addClass("active");
+        }
+    };
+
     if (questionSetIndex >= 2) {
         backButton.style.visibility = "visible";
     } else {
@@ -31,21 +44,14 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
 
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
     var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
+    console.log("currentAnswers.length: ");
+    console.log(currentAnswers.length);
+    if (currentAnswers.length >= 1) {
+        checkAnsweredAndActivate(currentAnswers);
+    }
 
-    var checkAnsweredAndActivate = function () {
-        for(var i = 0; i < currentAnswers; i++) {
-            var cqi = currentAnswers[i].ChosenQuestionIndex.toString();
-            var i1 = i.toString();
-            var elementId = "#" + cgi + " " + i1;
-            var currentElement = angular.element( document.querySelector( elementId ) );
-            currentElement.addClass('active');
-        }
-    };
-        
 
-        
-        
-    };
+    
 
     that.setAnswer = function (value, questionSetIndex, chosenQuestionIndex, questionId, questionMethodId) {
         // Check if Answer exists
