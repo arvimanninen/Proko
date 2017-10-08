@@ -14,15 +14,8 @@
 }
 
 /*
-BUTTON GROUPS
+vertical button group
 **************************/
-
-.bar-rating {
-    width: 100%;
-    height: 6 * $grid;
-    display: flex;
-    justify-content: space-between;
-}
 
 div.btn-group {
     width: 100%;
@@ -54,19 +47,6 @@ div.btn-group {
     ////////////////
     // slider
     &.slider-div {
-        margin-top: 1 * $grid;
-
-        @include media-query($on-tablet) {
-            margin-top: 1 * $grid;
-        }
-
-        @include media-query($on-mobile) {
-            margin-top: 1 * $grid;
-        }
-
-        @include media-query($on-small-mobile) {
-            margin-top: 1 * $grid;
-        }
 
         label {
             background-color: $button-pos-color;
@@ -94,17 +74,6 @@ div.btn-group {
             &.slider-group-last {
                 border-radius: $btn-grp-radius-right;
             }
-
-            span {
-                width: 10 * $grid;
-                position: relative;
-                left: 0;
-                top: 8px;
-
-                @include media-query($on-small-mobile) {
-                    top: 5px;
-                }
-            }
         }
 
         input[type="radio"]:hover + label {
@@ -114,8 +83,18 @@ div.btn-group {
         input[type="radio"]:checked + label {
             background-color: $button-pos-checked;
         }
-    }
 
+        span {
+            width: 10 * $grid;
+            position: relative;
+            left: 0;
+            top: 8px;
+
+            @include media-query($on-small-mobile) {
+                top: 5px;
+            }
+        }
+    }
     /////////////
     //smiley
     &.smiley-div {
