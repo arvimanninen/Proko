@@ -10,5 +10,9 @@
   {
     "outputFile": "Content/frame.css",
     "inputFile": "Content/frame.scss"
+  },
+  {
+    "outputFile": "Content/monitoring-2.css",
+    "inputFile": "Content/monitoring-2.scss"
   }
 ]

@@ -73,6 +73,12 @@
       <DependentUpon>frame.css</DependentUpon>
     </Content>
     <Content Include="Content\jquery-ui.min.dragndroponly.css" />
+    <Content Include="Content\monitoring-2.css">
+      <DependentUpon>monitoring-2.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\monitoring-2.min.css">
+      <DependentUpon>monitoring-2.css</DependentUpon>
+    </Content>
     <Content Include="Content\monitoring.css" />
     <Content Include="Content\texture\brilliant.png" />
     <Content Include="Content\texture\squared_metal.png" />
@@ -316,6 +322,7 @@
     <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
     <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
     <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
+    <Content Include="Content\monitoring-2.scss" />
     <None Include="Properties\PublishProfiles\Front-testaus - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\prokof - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ProkoFrontTest - Web Deploy.pubxml" />
