@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+@import "variables.scss";
 
 // test
 .borders {
@@ -16,6 +16,13 @@
 /*
 vertical button group
 **************************/
+
+.bar-rating {
+    width: 100%;
+    height: 6 * $grid;
+    display: flex;
+    justify-content: space-between;
+}
 
 div.btn-group {
     width: 100%;

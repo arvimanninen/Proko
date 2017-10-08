@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('QuestionSafetyCtrl', function QuestionSafetyCtrl($scope, $location, answerService, safetyAnswerService) {
+app.controller('QuestionSmileysCtrl', function QuestionSafetyCtrl($scope, $location, answerService) {
     $scope.questionOne = "Asteikolla 1-5, minkä arvosanan antaisit työmaalla toteutetuista työturvallisuusratkaisuista?";
     $scope.questionTwo = "muihin sidosryhmiin?";
     $scope.setAnswers = function () {
