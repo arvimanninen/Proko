@@ -6,7 +6,7 @@
      }
      $scope.answerCount = count;
      $scope.pollData = answerAverages;
-     $scope.pollLabels = ['Aikataulutus (tilaaja)', 'Aikataulutus (muut)', 'Kommunikointi (tilaaja)', 'Kommunikointi (muut)', 'Työturvallisuusratkaisut', 'Säädösten noudattaminen'];
+     $scope.pollLabels = ['Kysymys 1', 'Kysymys 2', 'Kysymys 3'];
 
      $scope.pollSeries = ['Tyytyvaisyys'];
      $scope.options = {
@@ -15,7 +15,7 @@
                  ticks: {
                      max: 5,
                      min: 0.8,
-                     stepSize: 0.2
+                     stepSize: 1
                  }
              }]
          }

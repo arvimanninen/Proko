@@ -1,4 +1,9 @@
-﻿/*
-FONTS
-**************************/
+﻿.monitoring h4 {
+  margin: 32px 0 16px; }
+
+.monitoring .poll-results-div {
+  margin-bottom: 32px; }
+
+.monitoring .btn-nav-monitoring-div {
+  margin: 48px 0; }
 

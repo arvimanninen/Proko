@@ -1,5 +1,16 @@
 ﻿@import "variables.scss";
 
-/*
-FONTS
-**************************/
+.monitoring {
+
+    h4 {
+        margin: 8 * $grid 0 4 * $grid;
+    }
+
+    .poll-results-div {
+        margin-bottom: 8 * $grid;
+    }
+
+    .btn-nav-monitoring-div {
+        margin: 12 * $grid 0;
+    }
+}

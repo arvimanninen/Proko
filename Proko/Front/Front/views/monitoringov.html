@@ -1,18 +1,24 @@
-﻿<div class="container">
-    <div class="row">
-            <a class="btn btn-default btn-block" href="#start" role="button">Uusi kysely</a>
-            <br />
-            <p class="text-center">
-                Vastanneiden määrä: <br />
-                <h3 class="text-center">{{answerCount}}</h3>
-            </p>
-
-        <div class="col-sm-9">
-            <h3 class="text-center q-mon">Vastaajien tyytyväisyys aikataulutukseen asteikolla 1-5</h3>
-
-            <div class="poll-results" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
-                <canvas class="chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries" chart-options="options"></canvas>               
+﻿<div class="container-fluid">
+    <div class="row">          
+        <div class="col-xs-12 col-md-6 monitoring">
+            
+            <h4>Kysymys 1</h4>
+            <div class="poll-results-div" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
+                <canvas class="chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries" chart-options="options"></canvas>
             </div>
-
+        </div>
+        <div class="col-xs-12 col-md-6 monitoring">
+            <h4>Kysymys 2</h4>
+            <div class="poll-results-div" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
+                <canvas class="chart chart-line" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
+            </div>
+          
+        </div>
+        
+        <div class="col-xs-12">
+            <div class="btn-nav-monitoring-div">
+                <a class="btn btn-primary btn-lg btn-block" role="button" href="#start">Seuraava</a>
+            </div>
+        </div>
     </div> <!-- row div -->
 </div>
