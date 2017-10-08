@@ -19,8 +19,8 @@ body {
 #wrap {
     min-height: 100%;
     height: auto;
-    margin: 0 auto -55px;
-    padding: 0 0 55px;
+    margin: 0 auto -56px;
+    padding: 0 0 56px;
     color: $grey;
 }
 
@@ -101,7 +101,7 @@ h4 {
         margin: 3 * $grid 0 2 * $grid;
     }
 
-    @include media-query($on-tablet) {
+    @include media-query($on-mobile) {
         font-size: 4.5 * $grid;
         line-height: 5.5 * $grid;
         margin: 3 * $grid 0 2 * $grid;
@@ -146,24 +146,44 @@ HEADER & FOOTER
 
 header, footer {
     background-color: $header-color;
+    box-sizing: border-box;
 }
 
-.header-text, .footer-text {
-    color: $white;
-}
-
-.header-text {
-    margin-top: 15px;
-    margin-bottom: 19px;
+header {
+    height: 60px;
 }
 
 footer {
-    height: 55px;
+    height: 56px;
 }
 
-.footer-text {
-    margin-top: 17px;
+#header-text {
+    color: $white;
+    margin-top: 10px;
+
+    @include media-query($on-tablet) {
+        margin-top: 13px;
+    }
+
+    @include media-query($on-mobile) {
+        margin-top: 15px;
+    }
 }
+
+#footer-text {
+    color: $white;
+    margin-top: 14px;
+
+    @include media-query($on-tablet) {
+        margin-top: 16px;
+    }
+
+    @include media-query($on-mobile) {
+        margin-top: 18px;
+    }
+}
+
+
 
 /*
 GENERAL STYLES

@@ -27,7 +27,7 @@
     <div id="wrap">
         <header>
             <div class="container">
-                <h3 class="header-text text-center">Kysely</h3>
+                <h3 id="header-text">Kysely</h3>
             </div> <!--container div ends-->
         </header>
         <!-- begin page content -->
@@ -38,7 +38,7 @@
     </div><!-- wrap div ends -->
     <footer>
         <div class="container">
-            <h4 class="footer-text text-center">ISS Proko Oy</h4>
+            <h4 id="footer-text" class="text-center">ISS Proko Oy</h4>
         </div>
     </footer>
 
@@ -52,22 +52,33 @@
     <script src="Scripts/angular-route.min.js"></script>
     <!-- Chart.js and Angular Chart -->
     <script src="Scripts/Chart.min.js"></script>
-    
+    <script src="Scripts/angular-chart.js"> </script>
+    <!-- Angular version of Dragula.js-->
+    <!-- TODO: Download minified version of this and change (angular-dragula.min.js) -->
+    <script src="Scripts/angular-dragula.js"></script>
+
     <!-- App module -->
     <script src="Scripts/app.js"></script>
     <!-- Angular controllers -->
     <script src="Controllers/StartCtrl.js"></script>
+    <script src="Controllers/QuestionButtonsCtrl.js"></script>
     <script src="Controllers/QuestionSliderCtrl.js"></script>
     <script src="Controllers/QuestionButtonSliderCtrl.js"></script>
-    <script src="Controllers/QuestionSmileysCtrl.js"></script>
+    <script src="Controllers/QuestionDragDropCtrl.js"></script>
+    <script src="Controllers/QuestionDragDropSmileysCtrl.js"></script>
+    <script src="Controllers/QuestionSafetyCtrl.js"></script>
     <script src="Controllers/QuestionThumbsCtrl.js"></script>
+    <script src="Controllers/QuestionSliderThumbsCtrl.js"></script>
     <script src="Controllers/BarChartCtrl.js"></script>
     <script src="Controllers/MonitoringCtrl.js"></script>
     <script src="Controllers/Monitoring-2Ctrl.js"></script>
     <script src="Controllers/MonitoringOvCtrl.js"></script>
     <script src="Controllers/MonitoringBubblesCtrl.js"></script>
     <script src="Controllers/EndCtrl.js"></script>
-
+    <script src="Controllers/QuestionButtonSliderLinksCtrl.js"></script>
+    <script src="Controllers/QuestionButtonTestCtrl.js"></script>
+    <script src="Controllers/QuestionSingle3Ctrl.js"></script>
+    <script src="Controllers/QuestionSingle4Ctrl.js"></script>
     <!-- Angular services -->
     <script src="Services/answerService.js"></script>
     <script src="Services/storageService.js"></script>
