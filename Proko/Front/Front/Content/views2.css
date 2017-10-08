@@ -77,7 +77,7 @@ div.btn-group {
     div.btn-group.slider-div input[type="radio"]:hover + label {
       background-color: #6aca6f; }
     div.btn-group.slider-div input[type="radio"]:checked + label {
-      background-color: #3dab42; }
+      background-color: #36993b; }
   div.btn-group.smiley-div {
     display: flex;
     justify-content: space-between;
@@ -122,7 +122,7 @@ div.btn-group {
     div.btn-group.smiley-div input[type="radio"]:hover + label {
       background-color: #6aca6f; }
     div.btn-group.smiley-div input[type="radio"]:checked + label {
-      background-color: #3dab42; }
+      background-color: #36993b; }
   div.btn-group.thumbs-div {
     display: table; }
     div.btn-group.thumbs-div table {
@@ -226,15 +226,15 @@ div.btn-group {
     div.btn-group.thumbs-div input[type="radio"]:hover + label.thumb-down {
       background-color: #f2785b; }
     div.btn-group.thumbs-div input[type="radio"]:checked + label.thumb-down {
-      background-color: #ec3e14; }
+      background-color: #d53811; }
     div.btn-group.thumbs-div input[type="radio"]:hover + label.thumb-neutral {
       background-color: #cfbd97; }
     div.btn-group.thumbs-div input[type="radio"]:checked + label.thumb-neutral {
-      background-color: #b79c62; }
+      background-color: #af9151; }
     div.btn-group.thumbs-div input[type="radio"]:hover + label.thumb-up {
       background-color: #6aca6f; }
     div.btn-group.thumbs-div input[type="radio"]:checked + label.thumb-up {
-      background-color: #3dab42; }
+      background-color: #36993b; }
 
 .btns-five label {
   width: 20.2%; }

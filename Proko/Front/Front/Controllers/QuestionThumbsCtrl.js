@@ -1,5 +1,6 @@
 'use strict';
-app.controller('QuestionThumbsCtrl', function QuestionThumbsCtrl($scope, $location, answerService, safetyAnswerService) {
+
+app.controller('QuestionThumbsCtrl', function QuestionThumbsCtrl($scope, $location, answerService) {
     $scope.questionOne = "Asteikolla 1-5, minkä arvosanan antaisit työmaalla toteutetuista työturvallisuusratkaisuista?";
     $scope.questionTwo = "muihin sidosryhmiin?";
     $scope.setAnswers = function () {

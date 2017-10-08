@@ -30,9 +30,9 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'views/questiondragdropsmileys.html',
                 controller: 'QuestionDragDropSmileysCtrl'
             })
-            .when('/questionsafety', {
-                templateUrl: 'views/questionsafety.html',
-                controller: 'QuestionSafetyCtrl'
+            .when('/questionsmileys', {
+                templateUrl: 'views/questionsmileys.html',
+                controller: 'QuestionSmileysCtrl'
             })
             .when('/questionthumbs', {
                 templateUrl: ' views/questionthumbs.html',
@@ -57,10 +57,6 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/monitoringov', {
                 templateUrl: 'views/monitoringov.html',
                 controller: 'MonitoringOvCtrl'
-            })
-            .when('/monitoringbubbles', {
-                templateUrl: ' views/monitoringbubbles.html',
-                controller: 'MonitoringBubblesCtrl'
             })
             .when('/monitoringbubbles', {
                 templateUrl: ' views/monitoringbubbles.html',
