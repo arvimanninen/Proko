@@ -32,6 +32,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
             console.log("checkAnsweredAndActivate().ElementId:");
             console.log(element);
             //var currentElement = document.getElementById(elementId);
+
             $(element).addClass("active");
         }
     };
@@ -47,7 +48,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     console.log("currentAnswers.length: ");
     console.log(currentAnswers.length);
     if (currentAnswers.length >= 1) {
-        checkAnsweredAndActivate(currentAnswers);
+        angular.element(document).ready(checkAnsweredAndActivate(currentAnswers));
     }
 
 
