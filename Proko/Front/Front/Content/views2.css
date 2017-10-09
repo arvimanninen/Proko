@@ -76,7 +76,7 @@ div.btn-group {
     width: 85%; }
     @media screen and (max-width: 768px) {
       div.btn-group.smiley-div {
-        width: 90%; } }
+        width: 95%; } }
     @media screen and (max-width: 480px) {
       div.btn-group.smiley-div {
         width: 90%; } }
@@ -90,29 +90,57 @@ div.btn-group {
       border-radius: 50%; }
       @media screen and (max-width: 480px) {
         div.btn-group.smiley-div label {
+          height: 80px;
+          width: 80px; } }
+      @media screen and (max-width: 480px) {
+        div.btn-group.smiley-div label {
           height: 72px;
           width: 72px; } }
       @media screen and (max-width: 375px) {
         div.btn-group.smiley-div label {
           height: 64px;
           width: 64px; } }
+      div.btn-group.smiley-div label.smiley-neg {
+        background-color: #f48c72; }
+      div.btn-group.smiley-div label.smiley-middle-neg {
+        background-color: #EFC188; }
+      div.btn-group.smiley-div label.smiley-middle-pos {
+        background-color: #CBD68D; }
+      div.btn-group.smiley-div label.smiley-pos {
+        background-color: #7DD181; }
       div.btn-group.smiley-div label img {
         position: relative;
-        width: 96px;
-        height: 96px;
-        left: 4px;
-        top: 4px; }
+        width: 104px;
+        height: 104px;
+        left: 0;
+        top: 0; }
         @media screen and (max-width: 480px) {
+          div.btn-group.smiley-div label img {
+            width: 80px;
+            height: 80px; } }
+        @media screen and (max-width: 480px) {
+          div.btn-group.smiley-div label img {
+            width: 72px;
+            height: 72px; } }
+        @media screen and (max-width: 375px) {
           div.btn-group.smiley-div label img {
             width: 64px;
             height: 64px; } }
-        @media screen and (max-width: 375px) {
-          div.btn-group.smiley-div label img {
-            width: 56px;
-            height: 56px; } }
-    div.btn-group.smiley-div input[type="radio"]:hover + label {
+    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-neg {
+      background-color: #f2795a; }
+    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-neg {
+      background-color: #d63811; }
+    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-middle-neg {
+      background-color: #ecb572; }
+    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-middle-neg {
+      background-color: #da861d; }
+    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-middle-pos {
+      background-color: #c2cf7a; }
+    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-middle-pos {
+      background-color: #97a73c; }
+    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-pos {
       background-color: #6aca6f; }
-    div.btn-group.smiley-div input[type="radio"]:checked + label {
+    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-pos {
       background-color: #36993b; }
   div.btn-group.thumbs-div {
     display: table; }

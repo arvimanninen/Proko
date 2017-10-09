@@ -28,10 +28,20 @@ $button-pos-border: darken($button-pos-color, 25%);
 $button-pos-hover: darken($button-pos-color, 5%);
 $button-pos-checked: darken($button-pos-color, 25%);
 
+$button-middle-pos-color: #CBD68D;
+$button-middle-pos-border: darken($button-middle-pos-color, 25%);
+$button-middle-pos-hover: darken($button-middle-pos-color, 5%);
+$button-middle-pos-checked: darken($button-middle-pos-color, 25%);
+
 $button-neutral-color: #EDD892;
 $button-neutral-border: darken($button-neutral-color, 25%);
 $button-neutral-hover: darken($button-neutral-color, 5%);
 $button-neutral-checked: darken($button-neutral-color, 25%);
+
+$button-middle-neg-color: #EFC188;
+$button-middle-neg-border: darken($button-middle-neg-color, 25%);
+$button-middle-neg-hover: darken($button-middle-neg-color, 5%);
+$button-middle-neg-checked: darken($button-middle-neg-color, 25%);
 
 $button-neg-color: #f48c72;
 $button-neg-border: darken($button-neg-color, 25%);

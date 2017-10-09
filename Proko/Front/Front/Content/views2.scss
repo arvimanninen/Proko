@@ -112,7 +112,7 @@ div.btn-group {
         width: 85%;
 
         @include media-query($on-tablet) {
-            width: 90%;
+            width: 95%;
         }
 
         @include media-query($on-mobile) {
@@ -130,6 +130,11 @@ div.btn-group {
             border-radius: 50%;
 
             @include media-query($on-mobile) {
+                height: 20 * $grid;
+                width: 20 * $grid;
+            }
+
+            @include media-query($on-mobile) {
                 height: 18 * $grid;
                 width: 18 * $grid;
             }
@@ -139,30 +144,76 @@ div.btn-group {
                 width: 16 * $grid;
             }
 
+            &.smiley-neg {
+                background-color: $button-neg-color;
+            }
+
+            &.smiley-middle-neg {
+                background-color: $button-middle-neg-color;
+            }
+
+            &.smiley-middle-pos {
+                background-color: $button-middle-pos-color;
+            }
+
+            &.smiley-pos {
+                background-color: $button-pos-color;
+            }
+
+
             img {
                 position: relative;
-                width: 24 * $grid;
-                height: 24 * $grid;
-                left: $grid;
-                top: $grid;
+                width: 26 * $grid;
+                height: 26 * $grid;
+                left: 0;
+                top: 0;
 
                 @include media-query($on-mobile) {
-                    width: 16 * $grid;
-                    height: 16 * $grid;
+                    width: 20 * $grid;
+                    height: 20 * $grid;
+                }
+
+                @include media-query($on-mobile) {
+                    width: 18 * $grid;
+                    height: 18 * $grid;
                 }
 
                 @include media-query($on-small-mobile) {
-                    width: 14 * $grid;
-                    height: 14 * $grid;
+                    width: 16 * $grid;
+                    height: 16 * $grid;
                 }
             }
         }
 
-        input[type="radio"]:hover + label {
+        input[type="radio"]:hover + label.smiley-neg {
+            background-color: $button-neg-hover;
+        }
+
+        input[type="radio"]:checked + label.smiley-neg {
+            background-color: $button-neg-checked;
+        }
+
+        input[type="radio"]:hover + label.smiley-middle-neg {
+            background-color: $button-middle-neg-hover;
+        }
+
+        input[type="radio"]:checked + label.smiley-middle-neg {
+            background-color: $button-middle-neg-checked;
+        }
+
+        input[type="radio"]:hover + label.smiley-middle-pos {
+            background-color: $button-middle-pos-hover;
+        }
+
+        input[type="radio"]:checked + label.smiley-middle-pos {
+            background-color: $button-middle-pos-checked;
+        }
+
+        input[type="radio"]:hover + label.smiley-pos {
             background-color: $button-pos-hover;
         }
 
-        input[type="radio"]:checked + label {
+        input[type="radio"]:checked + label.smiley-pos {
             background-color: $button-pos-checked;
         }
     }
