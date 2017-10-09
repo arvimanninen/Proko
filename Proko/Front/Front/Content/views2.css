@@ -35,11 +35,44 @@ div.btn-group {
     position: relative;
     cursor: pointer;
     box-sizing: border-box; }
+    div.btn-group label.button-neg {
+      background-color: #f69f8a;
+      border: 1px solid #d63811; }
+    div.btn-group label.button-middle-neg {
+      background-color: #f2cd9e;
+      border: 1px solid #da861d; }
+    div.btn-group label.button-neutral {
+      background-color: #f1e0a8;
+      border: 1px solid #dbb125; }
+    div.btn-group label.button-middle-pos {
+      background-color: #d4dda0;
+      border: 1px solid #97a73c; }
+    div.btn-group label.button-pos {
+      background-color: #90d893;
+      border: 1px solid #36993b; }
+  div.btn-group input[type="radio"]:hover + label.button-neg {
+    background-color: #f48c72; }
+  div.btn-group input[type="radio"]:checked + label.button-neg {
+    background-color: #d63811; }
+  div.btn-group input[type="radio"]:hover + label.button-middle-neg {
+    background-color: #efc188; }
+  div.btn-group input[type="radio"]:checked + label.button-middle-neg {
+    background-color: #da861d; }
+  div.btn-group input[type="radio"]:hover + label.button-neutral {
+    background-color: #edd892; }
+  div.btn-group input[type="radio"]:checked + label.button-neutral {
+    background-color: #dbb125; }
+  div.btn-group input[type="radio"]:hover + label.button-middle-pos {
+    background-color: #cbd68d; }
+  div.btn-group input[type="radio"]:checked + label.button-middle-pos {
+    background-color: #97a73c; }
+  div.btn-group input[type="radio"]:hover + label.button-pos {
+    background-color: #7dd181; }
+  div.btn-group input[type="radio"]:checked + label.button-pos {
+    background-color: #36993b; }
   div.btn-group.slider-div {
     margin-top: 2px; }
     div.btn-group.slider-div label {
-      background-color: #7DD181;
-      border: 1px solid #36993b;
       border-radius: 0px;
       color: #fff;
       margin: 0 -6px 0 0;
@@ -57,10 +90,6 @@ div.btn-group {
         border-radius: 8px 0 0 8px; }
       div.btn-group.slider-div label.slider-group-last {
         border-radius: 0 8px 8px 0; }
-    div.btn-group.slider-div input[type="radio"]:hover + label {
-      background-color: #6aca6f; }
-    div.btn-group.slider-div input[type="radio"]:checked + label {
-      background-color: #36993b; }
     div.btn-group.slider-div span {
       width: 40px;
       position: relative;
@@ -87,7 +116,8 @@ div.btn-group {
       height: 104px;
       width: 104px;
       margin: 0;
-      border-radius: 50%; }
+      border-radius: 50%;
+      border: 0; }
       @media screen and (max-width: 480px) {
         div.btn-group.smiley-div label {
           height: 80px;
@@ -100,14 +130,6 @@ div.btn-group {
         div.btn-group.smiley-div label {
           height: 64px;
           width: 64px; } }
-      div.btn-group.smiley-div label.smiley-neg {
-        background-color: #f48c72; }
-      div.btn-group.smiley-div label.smiley-middle-neg {
-        background-color: #EFC188; }
-      div.btn-group.smiley-div label.smiley-middle-pos {
-        background-color: #CBD68D; }
-      div.btn-group.smiley-div label.smiley-pos {
-        background-color: #7DD181; }
       div.btn-group.smiley-div label img {
         position: relative;
         width: 104px;
@@ -126,22 +148,6 @@ div.btn-group {
           div.btn-group.smiley-div label img {
             width: 64px;
             height: 64px; } }
-    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-neg {
-      background-color: #f2795a; }
-    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-neg {
-      background-color: #d63811; }
-    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-middle-neg {
-      background-color: #ecb572; }
-    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-middle-neg {
-      background-color: #da861d; }
-    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-middle-pos {
-      background-color: #c2cf7a; }
-    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-middle-pos {
-      background-color: #97a73c; }
-    div.btn-group.smiley-div input[type="radio"]:hover + label.smiley-pos {
-      background-color: #6aca6f; }
-    div.btn-group.smiley-div input[type="radio"]:checked + label.smiley-pos {
-      background-color: #36993b; }
   div.btn-group.thumbs-div {
     display: table; }
     div.btn-group.thumbs-div table {
@@ -206,72 +212,51 @@ div.btn-group {
           div.btn-group.thumbs-div label img {
             width: 26px;
             height: 26px; } }
-      div.btn-group.thumbs-div label.thumb-down {
-        background-color: #f48c72;
-        border: 1px solid #d63811; }
-        div.btn-group.thumbs-div label.thumb-down img {
-          top: 6px;
-          left: 12px; }
-          @media screen and (max-width: 768px) {
-            div.btn-group.thumbs-div label.thumb-down img {
-              top: 5px;
-              left: 11px; } }
-          @media screen and (max-width: 480px) {
-            div.btn-group.thumbs-div label.thumb-down img {
-              top: 6px;
-              left: 11px; } }
-          @media screen and (max-width: 375px) {
-            div.btn-group.thumbs-div label.thumb-down img {
-              top: 5px;
-              left: 9px; } }
-      div.btn-group.thumbs-div label.thumb-neutral {
-        background-color: #EDD892;
-        border: 1px solid #dbb125; }
-        div.btn-group.thumbs-div label.thumb-neutral img {
-          top: 8px;
-          left: 12px; }
-          @media screen and (max-width: 768px) {
-            div.btn-group.thumbs-div label.thumb-neutral img {
-              top: 7px;
-              left: 12px; } }
-          @media screen and (max-width: 480px) {
-            div.btn-group.thumbs-div label.thumb-neutral img {
-              top: 7px;
-              left: 11px; } }
-          @media screen and (max-width: 375px) {
-            div.btn-group.thumbs-div label.thumb-neutral img {
-              top: 6px;
-              left: 9px; } }
-      div.btn-group.thumbs-div label.thumb-up {
-        background-color: #7DD181;
-        border: 1px solid #36993b; }
-        div.btn-group.thumbs-div label.thumb-up img {
-          top: 10px;
-          left: 12px; }
-          @media screen and (max-width: 480px) {
-            div.btn-group.thumbs-div label.thumb-up img {
-              top: 9px;
-              left: 12px; } }
-          @media screen and (max-width: 480px) {
-            div.btn-group.thumbs-div label.thumb-up img {
-              top: 9px;
-              left: 11px; } }
-          @media screen and (max-width: 375px) {
-            div.btn-group.thumbs-div label.thumb-up img {
-              top: 7px;
-              left: 8px; } }
-    div.btn-group.thumbs-div input[type="radio"]:hover + label.thumb-down {
-      background-color: #f2795a; }
-    div.btn-group.thumbs-div input[type="radio"]:checked + label.thumb-down {
-      background-color: #d63811; }
-    div.btn-group.thumbs-div input[type="radio"]:hover + label.thumb-neutral {
-      background-color: #e9d07c; }
-    div.btn-group.thumbs-div input[type="radio"]:checked + label.thumb-neutral {
-      background-color: #dbb125; }
-    div.btn-group.thumbs-div input[type="radio"]:hover + label.thumb-up {
-      background-color: #6aca6f; }
-    div.btn-group.thumbs-div input[type="radio"]:checked + label.thumb-up {
-      background-color: #36993b; }
+      div.btn-group.thumbs-div label.button-neg img {
+        top: 6px;
+        left: 12px; }
+        @media screen and (max-width: 768px) {
+          div.btn-group.thumbs-div label.button-neg img {
+            top: 5px;
+            left: 11px; } }
+        @media screen and (max-width: 480px) {
+          div.btn-group.thumbs-div label.button-neg img {
+            top: 6px;
+            left: 11px; } }
+        @media screen and (max-width: 375px) {
+          div.btn-group.thumbs-div label.button-neg img {
+            top: 5px;
+            left: 9px; } }
+      div.btn-group.thumbs-div label.button-neutral img {
+        top: 8px;
+        left: 12px; }
+        @media screen and (max-width: 768px) {
+          div.btn-group.thumbs-div label.button-neutral img {
+            top: 7px;
+            left: 12px; } }
+        @media screen and (max-width: 480px) {
+          div.btn-group.thumbs-div label.button-neutral img {
+            top: 7px;
+            left: 11px; } }
+        @media screen and (max-width: 375px) {
+          div.btn-group.thumbs-div label.button-neutral img {
+            top: 6px;
+            left: 9px; } }
+      div.btn-group.thumbs-div label.button-pos img {
+        top: 10px;
+        left: 12px; }
+        @media screen and (max-width: 480px) {
+          div.btn-group.thumbs-div label.button-pos img {
+            top: 9px;
+            left: 12px; } }
+        @media screen and (max-width: 480px) {
+          div.btn-group.thumbs-div label.button-pos img {
+            top: 9px;
+            left: 11px; } }
+        @media screen and (max-width: 375px) {
+          div.btn-group.thumbs-div label.button-pos img {
+            top: 7px;
+            left: 8px; } }
 
 .btns-five label {
   width: 20.2%; }

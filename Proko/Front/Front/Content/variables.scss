@@ -23,30 +23,30 @@ $warning-color: #ff0000;
 // button colors
 $button-text-color: #fff;
 
-$button-pos-color: #7DD181;
-$button-pos-border: darken($button-pos-color, 25%);
+$button-pos-color: lighten(#7DD181, 5%);
+$button-pos-border: darken($button-pos-color, 30%);
 $button-pos-hover: darken($button-pos-color, 5%);
-$button-pos-checked: darken($button-pos-color, 25%);
+$button-pos-checked: darken($button-pos-color, 30%);
 
-$button-middle-pos-color: #CBD68D;
-$button-middle-pos-border: darken($button-middle-pos-color, 25%);
+$button-middle-pos-color: lighten(#CBD68D, 5%);
+$button-middle-pos-border: darken($button-middle-pos-color, 30%);
 $button-middle-pos-hover: darken($button-middle-pos-color, 5%);
-$button-middle-pos-checked: darken($button-middle-pos-color, 25%);
+$button-middle-pos-checked: darken($button-middle-pos-color, 30%);
 
-$button-neutral-color: #EDD892;
-$button-neutral-border: darken($button-neutral-color, 25%);
+$button-neutral-color: lighten(#EDD892, 5%);
+$button-neutral-border: darken($button-neutral-color, 30%);
 $button-neutral-hover: darken($button-neutral-color, 5%);
-$button-neutral-checked: darken($button-neutral-color, 25%);
+$button-neutral-checked: darken($button-neutral-color, 30%);
 
-$button-middle-neg-color: #EFC188;
-$button-middle-neg-border: darken($button-middle-neg-color, 25%);
+$button-middle-neg-color: lighten(#EFC188, 5%);
+$button-middle-neg-border: darken($button-middle-neg-color, 30%);
 $button-middle-neg-hover: darken($button-middle-neg-color, 5%);
-$button-middle-neg-checked: darken($button-middle-neg-color, 25%);
+$button-middle-neg-checked: darken($button-middle-neg-color, 30%);
 
-$button-neg-color: #f48c72;
-$button-neg-border: darken($button-neg-color, 25%);
+$button-neg-color: lighten(#f48c72, 5%);
+$button-neg-border: darken($button-neg-color, 30%);
 $button-neg-hover: darken($button-neg-color, 5%);
-$button-neg-checked: darken($button-neg-color, 25%);
+$button-neg-checked: darken($button-neg-color, 30%);
 
 // btn group border radius
 $btn-grp-radius-left: 2 * $grid 0 0 2 * $grid;

@@ -49,6 +49,71 @@ div.btn-group {
         position: relative;
         cursor: pointer;
         box-sizing: border-box;
+
+        &.button-neg {
+            background-color: $button-neg-color;
+            border: 1px solid $button-neg-border;
+        }
+
+        &.button-middle-neg {
+            background-color: $button-middle-neg-color;
+            border: 1px solid $button-middle-neg-border;
+        }
+
+        &.button-neutral {
+            background-color: $button-neutral-color;
+            border: 1px solid $button-neutral-border;
+        }
+
+        &.button-middle-pos {
+            background-color: $button-middle-pos-color;
+            border: 1px solid $button-middle-pos-border;
+        }
+
+        &.button-pos {
+            background-color: $button-pos-color;
+            border: 1px solid $button-pos-border;
+        }
+    }
+
+    input[type="radio"]:hover + label.button-neg {
+        background-color: $button-neg-hover;
+    }
+
+    input[type="radio"]:checked + label.button-neg {
+        background-color: $button-neg-checked;
+    }
+
+    input[type="radio"]:hover + label.button-middle-neg {
+        background-color: $button-middle-neg-hover;
+    }
+
+    input[type="radio"]:checked + label.button-middle-neg {
+        background-color: $button-middle-neg-checked;
+    }
+
+    input[type="radio"]:hover + label.button-neutral {
+        background-color: $button-neutral-hover;
+    }
+
+    input[type="radio"]:checked + label.button-neutral {
+        background-color: $button-neutral-checked;
+    }
+
+    input[type="radio"]:hover + label.button-middle-pos {
+        background-color: $button-middle-pos-hover;
+    }
+
+    input[type="radio"]:checked + label.button-middle-pos {
+        background-color: $button-middle-pos-checked;
+    }
+
+    input[type="radio"]:hover + label.button-pos {
+        background-color: $button-pos-hover;
+    }
+
+    input[type="radio"]:checked + label.button-pos {
+        background-color: $button-pos-checked;
     }
     //// button types
     ////////////////
@@ -57,8 +122,8 @@ div.btn-group {
         margin-top: 0.5 * $grid;
 
         label {
-            background-color: $button-pos-color;
-            border: 1px solid $button-pos-border;
+            //background-color: $button-pos-color;
+            //border: 1px solid $button-pos-border;
             border-radius: 0px;
             color: $button-text-color;
             margin: 0 -6px 0 0;
@@ -82,14 +147,6 @@ div.btn-group {
             &.slider-group-last {
                 border-radius: $btn-grp-radius-right;
             }
-        }
-
-        input[type="radio"]:hover + label {
-            background-color: $button-pos-hover;
-        }
-
-        input[type="radio"]:checked + label {
-            background-color: $button-pos-checked;
         }
 
         span {
@@ -128,6 +185,7 @@ div.btn-group {
             width: 26 * $grid;
             margin: 0;
             border-radius: 50%;
+            border: 0;
 
             @include media-query($on-mobile) {
                 height: 20 * $grid;
@@ -143,23 +201,6 @@ div.btn-group {
                 height: 16 * $grid;
                 width: 16 * $grid;
             }
-
-            &.smiley-neg {
-                background-color: $button-neg-color;
-            }
-
-            &.smiley-middle-neg {
-                background-color: $button-middle-neg-color;
-            }
-
-            &.smiley-middle-pos {
-                background-color: $button-middle-pos-color;
-            }
-
-            &.smiley-pos {
-                background-color: $button-pos-color;
-            }
-
 
             img {
                 position: relative;
@@ -184,39 +225,8 @@ div.btn-group {
                 }
             }
         }
-
-        input[type="radio"]:hover + label.smiley-neg {
-            background-color: $button-neg-hover;
-        }
-
-        input[type="radio"]:checked + label.smiley-neg {
-            background-color: $button-neg-checked;
-        }
-
-        input[type="radio"]:hover + label.smiley-middle-neg {
-            background-color: $button-middle-neg-hover;
-        }
-
-        input[type="radio"]:checked + label.smiley-middle-neg {
-            background-color: $button-middle-neg-checked;
-        }
-
-        input[type="radio"]:hover + label.smiley-middle-pos {
-            background-color: $button-middle-pos-hover;
-        }
-
-        input[type="radio"]:checked + label.smiley-middle-pos {
-            background-color: $button-middle-pos-checked;
-        }
-
-        input[type="radio"]:hover + label.smiley-pos {
-            background-color: $button-pos-hover;
-        }
-
-        input[type="radio"]:checked + label.smiley-pos {
-            background-color: $button-pos-checked;
-        }
     }
+
     ////////////
     //thumbs
     &.thumbs-div {
@@ -307,9 +317,7 @@ div.btn-group {
                 }
             }
             // thumb down
-            &.thumb-down {
-                background-color: $button-neg-color;
-                border: 1px solid $button-neg-border;
+            &.button-neg {
 
                 img {
                     top: 1.5 * $grid;
@@ -332,9 +340,7 @@ div.btn-group {
                 }
             }
             // thumb neutral
-            &.thumb-neutral {
-                background-color: $button-neutral-color;
-                border: 1px solid $button-neutral-border;
+            &.button-neutral {
 
                 img {
                     top: 2 * $grid;
@@ -357,9 +363,7 @@ div.btn-group {
                 }
             }
             // thumb up
-            &.thumb-up {
-                background-color: $button-pos-color;
-                border: 1px solid $button-pos-border;
+            &.button-pos {
 
                 img {
                     top: 2.5 * $grid;
@@ -381,30 +385,6 @@ div.btn-group {
                     }
                 }
             }
-        }
-
-        input[type="radio"]:hover + label.thumb-down {
-            background-color: $button-neg-hover;
-        }
-
-        input[type="radio"]:checked + label.thumb-down {
-            background-color: $button-neg-checked;
-        }
-
-        input[type="radio"]:hover + label.thumb-neutral {
-            background-color: $button-neutral-hover;
-        }
-
-        input[type="radio"]:checked + label.thumb-neutral {
-            background-color: $button-neutral-checked;
-        }
-
-        input[type="radio"]:hover + label.thumb-up {
-            background-color: $button-pos-hover;
-        }
-
-        input[type="radio"]:checked + label.thumb-up {
-            background-color: $button-pos-checked;
         }
     }
 }
