@@ -1,9 +1,20 @@
-﻿.monitoring h4 {
-  margin: 32px 0 16px; }
+﻿.monitoring-bg {
+  background-color: rgba(125, 209, 129, 0.1); }
 
-.monitoring .poll-results-div {
-  margin-bottom: 32px; }
+.monitoring-div h4 {
+  margin: 16px 0 16px; }
 
-.monitoring .btn-nav-monitoring-div {
-  margin: 48px 0; }
+.monitoring-div .poll-results-div {
+  margin-bottom: 32px;
+  padding: 12px 8px 8px 0;
+  border-radius: 4px;
+  border: 1px solid #e6e6e6;
+  background-color: #FAFAFA; }
+  @media screen and (max-width: 480px) {
+    .monitoring-div .poll-results-div {
+      margin-bottom: 16px; } }
+
+.btn-nav-monitoring-div {
+  max-width: 240px;
+  margin: 48px auto; }
 

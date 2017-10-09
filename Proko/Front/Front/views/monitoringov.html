@@ -1,18 +1,25 @@
-﻿<div class="container-fluid">
-    <div class="row">          
-        <div class="col-xs-12 col-md-6 monitoring">
-            
+﻿<div class="container-fluid monitoring-bg">
+    <div class="row monitoring-div">   
+    
+        <div class="col-xs-12 col-md-6">
             <h4>Kysymys 1</h4>
-            <div class="poll-results-div" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
-                <canvas class="chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries" chart-options="options"></canvas>
+            <div class="poll-results-div">
+                <canvas class="chart chart-line" chart-data="pollData1" chart-labels="pollLabels1" chart-series="pollSeries1"></canvas>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6 monitoring">
+
+        <div class="col-xs-12 col-md-6">
             <h4>Kysymys 2</h4>
-            <div class="poll-results-div" style="border: 1px solid #ddd; padding: 10px 5px 0px;">
-                <canvas class="chart chart-line" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
+            <div class="poll-results-div">
+                <canvas class="chart-bar" chart-data="pollData2" chart-labels="pollLabels2" chart-series="pollSeries2" chart-options="options2"></canvas>
             </div>
-          
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <h4>Kysymys 3</h4>
+            <div class="poll-results-div">
+                <canvas class="chart-bar" chart-data="pollData3" chart-labels="pollLabels3" chart-series="pollSeries3" chart-options="options3"></canvas>
+            </div>
         </div>
         
         <div class="col-xs-12">

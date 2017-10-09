@@ -1,16 +1,29 @@
 ﻿@import "variables.scss";
 
-.monitoring {
+.monitoring-bg {
+    background-color: $monitoring-bg-color;
+}
+
+.monitoring-div {
 
     h4 {
-        margin: 8 * $grid 0 4 * $grid;
+        margin: 4 * $grid 0 4 * $grid;
     }
 
     .poll-results-div {
         margin-bottom: 8 * $grid;
-    }
+        padding: 3 * $grid 2 * $grid 2 * $grid 0;
+        border-radius: $grid;
+        border: 1px solid $result-border-color;
+        background-color: $result-color;
 
-    .btn-nav-monitoring-div {
-        margin: 12 * $grid 0;
+        @include media-query($on-mobile) {
+            margin-bottom: 4 * $grid;
+        }
     }
+}
+
+.btn-nav-monitoring-div {
+    max-width: 60 * $grid;
+    margin: 12 * $grid auto;
 }
