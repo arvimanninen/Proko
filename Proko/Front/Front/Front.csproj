@@ -124,12 +124,17 @@
     <Content Include="Controllers\QuestionSliderCtrl.js" />
     <Content Include="Controllers\StartCtrl.js" />
     <Content Include="Controllers\TestCtrl.js" />
+    <Content Include="Images\big-smile1.svg" />
+    <Content Include="Images\not-happy1.svg" />
+    <Content Include="Images\sad1.svg" />
+    <Content Include="Images\smile1.svg" />
     <Content Include="Images\smiley-neutral.svg" />
     <Content Include="Images\1f612.svg" />
     <Content Include="Images\smiley-angry.svg" />
     <Content Include="Images\smiley-happy.svg" />
     <Content Include="Images\smiley-little-sad.svg" />
     <Content Include="Images\soso-hands-white.png" />
+    <Content Include="Images\thumbs-both.png" />
     <Content Include="Images\thumbs-down-grey.png" />
     <Content Include="Images\thumbs-down-red.png" />
     <Content Include="Images\thumbs-down-white.png" />

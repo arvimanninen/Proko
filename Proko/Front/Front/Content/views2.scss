@@ -54,10 +54,11 @@ div.btn-group {
     ////////////////
     // slider
     &.slider-div {
+        margin-top: 0.5 * $grid;
 
         label {
             background-color: $button-pos-color;
-            border: 1.5px solid $button-pos-border;
+            border: 1px solid $button-pos-border;
             border-radius: 0px;
             color: $button-text-color;
             margin: 0 -6px 0 0;
@@ -202,8 +203,16 @@ div.btn-group {
                 }
 
                 td:not(:first-child) {
-                    width: 18%;
+                    width: 12%;
                     position: relative;
+
+                    @include media-query($on-mobile) {
+                        width: 16%;
+                    }
+
+                    @include media-query($on-mobile) {
+                        width: 18%;
+                    }
                 }
             }
         }
@@ -213,8 +222,8 @@ div.btn-group {
             position: relative;
             border-radius: $grid;
             color: $button-text-color;
-            width: 20 * $grid;
-            height: 16 * $grid;
+            width: 18 * $grid;
+            height: 14.4 * $grid;
 
             @include media-query($on-tablet) {
                 width: 15 * $grid;
@@ -222,18 +231,18 @@ div.btn-group {
             }
 
             @include media-query($on-mobile) {
-                width: 13 * $grid;
-                height: 10.4 * $grid;
+                width: 13.5 * $grid;
+                height: 10.8 * $grid;
             }
 
             @include media-query($on-small-mobile) {
-                width: 12 * $grid;
-                height: 9.6 * $grid;
+                width: 12.5 * $grid;
+                height: 10 * $grid;
             }
 
             img {
-                width: 12 * $grid;
-                height: 12 * $grid;
+                width: 10 * $grid;
+                height: 10 * $grid;
                 position: relative;
 
                 @include media-query($on-tablet) {
@@ -242,66 +251,81 @@ div.btn-group {
                 }
 
                 @include media-query($on-mobile) {
-                    width: 6 * $grid;
-                    height: 6 * $grid;
+                    width: 6.5 * $grid;
+                    height: 6.5 * $grid;
                 }
             }
             // thumb down
             &.thumb-down {
                 background-color: $button-neg-color;
-                border: 1.5px solid $button-neg-border;
+                border: 1px solid $button-neg-border;
 
                 img {
-                    top: $grid;
+                    top: 1.5 * $grid;
                     left: 3 * $grid;
 
+                    @include media-query($on-tablet) {
+                        top: 1.25 * $grid;
+                        left: 2.75 * $grid;
+                    }
+
                     @include media-query($on-mobile) {
-                        top: $grid;
-                        left: 2.5 * $grid;
+                        top: 1.5 * $grid;
+                        left: 2.75 * $grid;
                     }
 
                     @include media-query($on-small-mobile) {
-                        top: 0.5 * $grid;
-                        left: 2 * $grid;
+                        top: 1.25 * $grid;
+                        left: 2.25 * $grid;
                     }
                 }
             }
             // thumb neutral
             &.thumb-neutral {
                 background-color: $button-neutral-color;
-                border: 1.5px solid $button-neutral-border;
+                border: 1px solid $button-neutral-border;
 
                 img {
                     top: 2 * $grid;
                     left: 3 * $grid;
 
+                    @include media-query($on-tablet) {
+                        top: 1.75 * $grid;
+                        left: 3 * $grid;
+                    }
+
                     @include media-query($on-mobile) {
-                        top: 1.5 * $grid;
-                        left: 2.5 * $grid;
+                        top: 1.75 * $grid;
+                        left: 2.75 * $grid;
                     }
 
                     @include media-query($on-small-mobile) {
-                        top: $grid;
-                        left: 2 * $grid;
+                        top: 1.5 * $grid;
+                        left: 2.25 * $grid;
                     }
                 }
             }
             // thumb up
             &.thumb-up {
                 background-color: $button-pos-color;
-                border: 1.5px solid $button-pos-border;
+                border: 1px solid $button-pos-border;
 
                 img {
-                    top: 2 * $grid;
+                    top: 2.5 * $grid;
                     left: 3 * $grid;
 
                     @include media-query($on-mobile) {
-                        top: 1.5 * $grid;
-                        left: 2.5 * $grid;
+                        top: 2.25 * $grid;
+                        left: 3 * $grid;
+                    }
+
+                    @include media-query($on-mobile) {
+                        top: 2.25 * $grid;
+                        left: 2.75 * $grid;
                     }
 
                     @include media-query($on-small-mobile) {
-                        top: $grid;
+                        top: 1.75 * $grid;
                         left: 2 * $grid;
                     }
                 }
