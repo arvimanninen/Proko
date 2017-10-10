@@ -1,4 +1,4 @@
-﻿@model Back.Models.Answer
+﻿@model Back.Models.AnswerSet
 
 @{
     ViewBag.Title = "Delete";
@@ -8,31 +8,23 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Answer</h4>
+    <h4>AnswerSet</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.AnswerSet.AnswerSetID)
+            @Html.DisplayNameFor(model => model.AnswerBundle.AnswerBundleID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AnswerSet.AnswerSetID)
+            @Html.DisplayFor(model => model.AnswerBundle.AnswerBundleID)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Question.Text)
+            @Html.DisplayNameFor(model => model.QuestionMethod.Value)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Question.Text)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Value)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Value)
+            @Html.DisplayFor(model => model.QuestionMethod.Value)
         </dd>
 
     </dl>

@@ -10,116 +10,107 @@ using Back.Models;
 
 namespace Back.Controllers
 {
-    public class AnswersController : Controller
+    public class AnswerBundlesController : Controller
     {
         private MainDbContext db = new MainDbContext();
 
-        // GET: Answers
+        // GET: AnswerBundles
         public ActionResult Index()
         {
-            var answers = db.Answers.Include(a => a.AnswerSet).Include(a => a.Question);
-            return View(answers.ToList());
+            return View(db.AnswerBundles.ToList());
         }
 
-        // GET: Answers/Details/5
+        // GET: AnswerBundles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
+            AnswerBundle answerBundle = db.AnswerBundles.Find(id);
+            if (answerBundle == null)
             {
                 return HttpNotFound();
             }
-            return View(answer);
+            return View(answerBundle);
         }
 
-        // GET: Answers/Create
+        // GET: AnswerBundles/Create
         public ActionResult Create()
         {
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID");
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text");
             return View();
         }
 
-        // POST: Answers/Create
+        // POST: AnswerBundles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnswerID,Value,QuestionID,AnswerSetID")] Answer answer)
+        public ActionResult Create([Bind(Include = "AnswerBundleID,Date")] AnswerBundle answerBundle)
         {
             if (ModelState.IsValid)
             {
-                db.Answers.Add(answer);
+                db.AnswerBundles.Add(answerBundle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID", answer.AnswerSetID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            return View(answer);
+            return View(answerBundle);
         }
 
-        // GET: Answers/Edit/5
+        // GET: AnswerBundles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
+            AnswerBundle answerBundle = db.AnswerBundles.Find(id);
+            if (answerBundle == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID", answer.AnswerSetID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            return View(answer);
+            return View(answerBundle);
         }
 
-        // POST: Answers/Edit/5
+        // POST: AnswerBundles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnswerID,Value,QuestionID,AnswerSetID")] Answer answer)
+        public ActionResult Edit([Bind(Include = "AnswerBundleID,Date")] AnswerBundle answerBundle)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(answer).State = EntityState.Modified;
+                db.Entry(answerBundle).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID", answer.AnswerSetID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            return View(answer);
+            return View(answerBundle);
         }
 
-        // GET: Answers/Delete/5
+        // GET: AnswerBundles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
+            AnswerBundle answerBundle = db.AnswerBundles.Find(id);
+            if (answerBundle == null)
             {
                 return HttpNotFound();
             }
-            return View(answer);
+            return View(answerBundle);
         }
 
-        // POST: Answers/Delete/5
+        // POST: AnswerBundles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Answer answer = db.Answers.Find(id);
-            db.Answers.Remove(answer);
+            AnswerBundle answerBundle = db.AnswerBundles.Find(id);
+            db.AnswerBundles.Remove(answerBundle);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -14,6 +14,7 @@ namespace Back.Models
         public int QuestionMethodID { get; set; }
         [Index(IsUnique = true)]
         public int ChosenIndex { get; set; }
+        public string Title { get; set; }
         public virtual QuestionMethod QuestionMethod { get; set; }
         public virtual ICollection <ChosenQuestion> ChosenQuestions { get; set; }
     }

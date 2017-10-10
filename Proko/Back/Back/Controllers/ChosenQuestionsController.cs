@@ -10,116 +10,116 @@ using Back.Models;
 
 namespace Back.Controllers
 {
-    public class AnswersController : Controller
+    public class ChosenQuestionsController : Controller
     {
         private MainDbContext db = new MainDbContext();
 
-        // GET: Answers
+        // GET: ChosenQuestions
         public ActionResult Index()
         {
-            var answers = db.Answers.Include(a => a.AnswerSet).Include(a => a.Question);
-            return View(answers.ToList());
+            var chosenQuestions = db.ChosenQuestions.Include(c => c.Question).Include(c => c.QuestionSet);
+            return View(chosenQuestions.ToList());
         }
 
-        // GET: Answers/Details/5
+        // GET: ChosenQuestions/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
+            ChosenQuestion chosenQuestion = db.ChosenQuestions.Find(id);
+            if (chosenQuestion == null)
             {
                 return HttpNotFound();
             }
-            return View(answer);
+            return View(chosenQuestion);
         }
 
-        // GET: Answers/Create
+        // GET: ChosenQuestions/Create
         public ActionResult Create()
         {
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID");
             ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text");
+            ViewBag.QuestionSetID = new SelectList(db.QuestionSets, "QuestionSetID", "QuestionSetID");
             return View();
         }
 
-        // POST: Answers/Create
+        // POST: ChosenQuestions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnswerID,Value,QuestionID,AnswerSetID")] Answer answer)
+        public ActionResult Create([Bind(Include = "QuestionSetID,QuestionID,ChosenIndex")] ChosenQuestion chosenQuestion)
         {
             if (ModelState.IsValid)
             {
-                db.Answers.Add(answer);
+                db.ChosenQuestions.Add(chosenQuestion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID", answer.AnswerSetID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            return View(answer);
+            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", chosenQuestion.QuestionID);
+            ViewBag.QuestionSetID = new SelectList(db.QuestionSets, "QuestionSetID", "QuestionSetID", chosenQuestion.QuestionSetID);
+            return View(chosenQuestion);
         }
 
-        // GET: Answers/Edit/5
+        // GET: ChosenQuestions/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
+            ChosenQuestion chosenQuestion = db.ChosenQuestions.Find(id);
+            if (chosenQuestion == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID", answer.AnswerSetID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            return View(answer);
+            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", chosenQuestion.QuestionID);
+            ViewBag.QuestionSetID = new SelectList(db.QuestionSets, "QuestionSetID", "QuestionSetID", chosenQuestion.QuestionSetID);
+            return View(chosenQuestion);
         }
 
-        // POST: Answers/Edit/5
+        // POST: ChosenQuestions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnswerID,Value,QuestionID,AnswerSetID")] Answer answer)
+        public ActionResult Edit([Bind(Include = "QuestionSetID,QuestionID,ChosenIndex")] ChosenQuestion chosenQuestion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(answer).State = EntityState.Modified;
+                db.Entry(chosenQuestion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AnswerSetID = new SelectList(db.AnswerSets, "AnswerSetID", "AnswerSetID", answer.AnswerSetID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", answer.QuestionID);
-            return View(answer);
+            ViewBag.QuestionID = new SelectList(db.Questions, "QuestionID", "Text", chosenQuestion.QuestionID);
+            ViewBag.QuestionSetID = new SelectList(db.QuestionSets, "QuestionSetID", "QuestionSetID", chosenQuestion.QuestionSetID);
+            return View(chosenQuestion);
         }
 
-        // GET: Answers/Delete/5
+        // GET: ChosenQuestions/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
+            ChosenQuestion chosenQuestion = db.ChosenQuestions.Find(id);
+            if (chosenQuestion == null)
             {
                 return HttpNotFound();
             }
-            return View(answer);
+            return View(chosenQuestion);
         }
 
-        // POST: Answers/Delete/5
+        // POST: ChosenQuestions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Answer answer = db.Answers.Find(id);
-            db.Answers.Remove(answer);
+            ChosenQuestion chosenQuestion = db.ChosenQuestions.Find(id);
+            db.ChosenQuestions.Remove(chosenQuestion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

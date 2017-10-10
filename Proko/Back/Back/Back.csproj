@@ -205,10 +205,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerBundlesController.cs" />
     <Compile Include="Controllers\AnswersController.cs" />
+    <Compile Include="Controllers\AnswerSetsController.cs" />
+    <Compile Include="Controllers\ChosenQuestionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\QuestionMethodsController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\QuestionSetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +236,14 @@
     <Compile Include="Migrations\201709151325515_ExtendedDatabaseForNewFeatures.cs" />
     <Compile Include="Migrations\201709151325515_ExtendedDatabaseForNewFeatures.Designer.cs">
       <DependentUpon>201709151325515_ExtendedDatabaseForNewFeatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081338058_QsIDAndCIadded.cs" />
+    <Compile Include="Migrations\201710081338058_QsIDAndCIadded.Designer.cs">
+      <DependentUpon>201710081338058_QsIDAndCIadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.cs" />
+    <Compile Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.Designer.cs">
+      <DependentUpon>201710091744057_TitleAddedToQuestionSetModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -640,11 +653,31 @@
     <Content Include="Views\Answers\Details.cshtml" />
     <Content Include="Views\Answers\Edit.cshtml" />
     <Content Include="Views\Answers\Index.cshtml" />
+    <Content Include="Views\AnswerSets\Create.cshtml" />
+    <Content Include="Views\AnswerSets\Delete.cshtml" />
+    <Content Include="Views\AnswerSets\Details.cshtml" />
+    <Content Include="Views\AnswerSets\Edit.cshtml" />
+    <Content Include="Views\AnswerSets\Index.cshtml" />
+    <Content Include="Views\AnswerBundles\Create.cshtml" />
+    <Content Include="Views\AnswerBundles\Delete.cshtml" />
+    <Content Include="Views\AnswerBundles\Details.cshtml" />
+    <Content Include="Views\AnswerBundles\Edit.cshtml" />
+    <Content Include="Views\AnswerBundles\Index.cshtml" />
     <Content Include="Views\Questions\Create.cshtml" />
     <Content Include="Views\Questions\Delete.cshtml" />
     <Content Include="Views\Questions\Details.cshtml" />
     <Content Include="Views\Questions\Edit.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\ChosenQuestions\Create.cshtml" />
+    <Content Include="Views\ChosenQuestions\Delete.cshtml" />
+    <Content Include="Views\ChosenQuestions\Details.cshtml" />
+    <Content Include="Views\ChosenQuestions\Edit.cshtml" />
+    <Content Include="Views\ChosenQuestions\Index.cshtml" />
+    <Content Include="Views\QuestionSets\Create.cshtml" />
+    <Content Include="Views\QuestionSets\Delete.cshtml" />
+    <Content Include="Views\QuestionSets\Details.cshtml" />
+    <Content Include="Views\QuestionSets\Edit.cshtml" />
+    <Content Include="Views\QuestionSets\Index.cshtml" />
     <Content Include="Views\QuestionMethods\Create.cshtml" />
     <Content Include="Views\QuestionMethods\Delete.cshtml" />
     <Content Include="Views\QuestionMethods\Details.cshtml" />
@@ -675,6 +708,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709151325515_ExtendedDatabaseForNewFeatures.resx">
       <DependentUpon>201709151325515_ExtendedDatabaseForNewFeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081338058_QsIDAndCIadded.resx">
+      <DependentUpon>201710081338058_QsIDAndCIadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.resx">
+      <DependentUpon>201710091744057_TitleAddedToQuestionSetModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
