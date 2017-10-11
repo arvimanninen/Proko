@@ -153,7 +153,7 @@ div.btn-group {
     div.btn-group.thumbs-div table {
       width: 100%; }
       div.btn-group.thumbs-div table tr {
-        height: 80px; }
+        height: 72px; }
         @media screen and (max-width: 768px) {
           div.btn-group.thumbs-div table tr {
             height: 64px; } }
@@ -165,7 +165,16 @@ div.btn-group {
             height: 48px; } }
         div.btn-group.thumbs-div table tr td.thumbs-question {
           position: relative;
-          width: 46%; }
+          width: 58%; }
+          @media screen and (max-width: 768px) {
+            div.btn-group.thumbs-div table tr td.thumbs-question {
+              width: 55%; } }
+          @media screen and (max-width: 480px) {
+            div.btn-group.thumbs-div table tr td.thumbs-question {
+              width: 49%; } }
+          @media screen and (max-width: 375px) {
+            div.btn-group.thumbs-div table tr td.thumbs-question {
+              width: 46%; } }
           div.btn-group.thumbs-div table tr td.thumbs-question h4 {
             position: relative;
             text-align: left;
@@ -173,12 +182,15 @@ div.btn-group {
             padding: 0;
             top: -3px; }
         div.btn-group.thumbs-div table tr td:not(:first-child) {
-          width: 12%;
-          position: relative; }
+          position: relative;
+          width: 14%; }
+          @media screen and (max-width: 768px) {
+            div.btn-group.thumbs-div table tr td:not(:first-child) {
+              width: 15%; } }
           @media screen and (max-width: 480px) {
             div.btn-group.thumbs-div table tr td:not(:first-child) {
-              width: 16%; } }
-          @media screen and (max-width: 480px) {
+              width: 17%; } }
+          @media screen and (max-width: 375px) {
             div.btn-group.thumbs-div table tr td:not(:first-child) {
               width: 18%; } }
     div.btn-group.thumbs-div label {
@@ -186,8 +198,8 @@ div.btn-group {
       position: relative;
       border-radius: 4px;
       color: #fff;
-      width: 72px;
-      height: 57.6px; }
+      width: 68px;
+      height: 54.4px; }
       @media screen and (max-width: 768px) {
         div.btn-group.thumbs-div label {
           width: 60px;
@@ -201,9 +213,9 @@ div.btn-group {
           width: 50px;
           height: 40px; } }
       div.btn-group.thumbs-div label img {
-        width: 40px;
-        height: 40px;
-        position: relative; }
+        position: relative;
+        width: 36px;
+        height: 36px; }
         @media screen and (max-width: 768px) {
           div.btn-group.thumbs-div label img {
             width: 32px;
@@ -214,7 +226,7 @@ div.btn-group {
             height: 26px; } }
       div.btn-group.thumbs-div label.button-neg img {
         top: 6px;
-        left: 12px; }
+        left: 13px; }
         @media screen and (max-width: 768px) {
           div.btn-group.thumbs-div label.button-neg img {
             top: 5px;
@@ -229,7 +241,7 @@ div.btn-group {
             left: 9px; } }
       div.btn-group.thumbs-div label.button-neutral img {
         top: 8px;
-        left: 12px; }
+        left: 14px; }
         @media screen and (max-width: 768px) {
           div.btn-group.thumbs-div label.button-neutral img {
             top: 7px;
@@ -244,8 +256,8 @@ div.btn-group {
             left: 9px; } }
       div.btn-group.thumbs-div label.button-pos img {
         top: 10px;
-        left: 12px; }
-        @media screen and (max-width: 480px) {
+        left: 13px; }
+        @media screen and (max-width: 768px) {
           div.btn-group.thumbs-div label.button-pos img {
             top: 9px;
             left: 12px; } }
