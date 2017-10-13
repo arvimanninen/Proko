@@ -7,10 +7,6 @@ $transparent: rgba(255, 255, 255, 0);
 $grey: #333;
 $lightgrey: #cccccc;
 
-$monitoring-bg-color: rgba(125, 209, 129, 0.1);
-$result-border-color: #e6e6e6;
-$result-color: #FAFAFA;
-
 $body-bg-color: #FAFAFA;
 $header-color: #337ab7; //#4575B5;
 $footer-color: #808080;
@@ -58,8 +54,9 @@ $on-mobile: 480px;
 $on-small-mobile: 375px;
 
 // results
-
-$results-bg-color: #ffd800;
+$results-bg-color: #dddddd;
+$result-color: #FAFAFA;
+$result-border-color: #e6e6e6;
 
 
 

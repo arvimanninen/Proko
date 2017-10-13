@@ -33,7 +33,7 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
 
             // Configure all charts 
             ChartJsProvider.setOptions({
-                chartColors: ['#FF5252', '#FF8A80'],
+                chartColors: ['#34b754', '#b7b734', '#b73434', '#9634b7', '#3475b7'],
                 responsive: false
             });
             // Configure all line charts 
