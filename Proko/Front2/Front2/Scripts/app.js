@@ -1,10 +1,10 @@
 ﻿'use strict';
 
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'chart.js']);
 
 
-app.config(['$routeProvider', '$locationProvider',
-    function ($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
+    function ($routeProvider, $locationProvider, ChartJsProvider) {
         $routeProvider
             .when('/start', {
                 templateUrl: 'Views/start.html',
@@ -29,5 +29,15 @@ app.config(['$routeProvider', '$locationProvider',
             //TODO: reDirectTo: *errorpage*
             .otherwise({
                 redirectTo: '/start'
+            });
+
+            // Configure all charts 
+            ChartJsProvider.setOptions({
+                chartColors: ['#FF5252', '#FF8A80'],
+                responsive: false
+            });
+            // Configure all line charts 
+            ChartJsProvider.setOptions('line', {
+                showLines: true
             });
     }]);

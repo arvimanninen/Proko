@@ -1,16 +1,16 @@
 ﻿@import "variables.scss";
 
-.results-bg {
-    background-color: $monitoring-bg-color;
+.results-bg-div {
+    background-color: $results-bg-color;
 }
 
-.monitoring-div {
+.results-div {
 
     h4 {
         margin: 4 * $grid 0 4 * $grid;
     }
 
-    .poll-results-div {
+    .question-results-div {
         margin-bottom: 8 * $grid;
         padding: 3 * $grid 2 * $grid 2 * $grid 0;
         border-radius: $grid;

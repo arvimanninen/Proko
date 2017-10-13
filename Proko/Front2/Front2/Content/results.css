@@ -1,17 +1,17 @@
-﻿.results-bg {
-  background-color: rgba(125, 209, 129, 0.1); }
+﻿.results-bg-div {
+  background-color: #ffd800; }
 
-.monitoring-div h4 {
+.results-div h4 {
   margin: 16px 0 16px; }
 
-.monitoring-div .poll-results-div {
+.results-div .question-results-div {
   margin-bottom: 32px;
   padding: 12px 8px 8px 0;
   border-radius: 4px;
   border: 1px solid #e6e6e6;
   background-color: #FAFAFA; }
   @media screen and (max-width: 480px) {
-    .monitoring-div .poll-results-div {
+    .results-div .question-results-div {
       margin-bottom: 16px; } }
 
 .btn-nav-results-div {

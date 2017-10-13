@@ -57,6 +57,12 @@ $on-tablet: 768px;
 $on-mobile: 480px;
 $on-small-mobile: 375px;
 
+// results
+
+$results-bg-color: #ffd800;
+
+
+
 // mixins
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
