@@ -22,10 +22,15 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 templateUrl: 'Views/questionThumbs.html',
                 controller: 'questionThumbsCtrl'
             })
+            .when('/end', {
+                templateUrl: 'Views/end.html',
+                controller: 'endCtrl'
+            })
             .when('/results', {
                 templateUrl: 'Views/results.html',
                 controller: 'resultsCtrl'
-            })
+            })          
+
             //TODO: reDirectTo: *errorpage*
             .otherwise({
                 redirectTo: '/start'

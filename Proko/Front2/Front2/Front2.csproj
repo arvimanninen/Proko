@@ -89,6 +89,7 @@
     <Content Include="Content\views.min.css">
       <DependentUpon>views.css</DependentUpon>
     </Content>
+    <Content Include="Controllers\endCtrl.js" />
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
     <Content Include="Controllers\questionThumbsCtrl.js" />
@@ -926,6 +927,7 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Services\answerService.js" />
+    <Content Include="Views\end.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionSmileys.html" />
     <Content Include="Views\questionThumbs.html" />
