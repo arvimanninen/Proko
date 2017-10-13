@@ -22,6 +22,10 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 templateUrl: 'Views/questionThumbs.html',
                 controller: 'questionThumbsCtrl'
             })
+            .when('/textarea', {
+                templateUrl: 'Views/questionTextarea.html',
+                controller: 'questionTextareaCtrl'
+            })
             .when('/end', {
                 templateUrl: 'Views/end.html',
                 controller: 'endCtrl'

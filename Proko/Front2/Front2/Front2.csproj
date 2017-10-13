@@ -92,6 +92,7 @@
     <Content Include="Controllers\endCtrl.js" />
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
+    <Content Include="Controllers\questionTextareaCtrl.js" />
     <Content Include="Controllers\questionThumbsCtrl.js" />
     <Content Include="Controllers\resultsCtrl.js" />
     <Content Include="Controllers\startCtrl.js" />
@@ -930,6 +931,7 @@
     <Content Include="Views\end.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionSmileys.html" />
+    <Content Include="Views\questionTextarea.html" />
     <Content Include="Views\questionThumbs.html" />
     <Content Include="Views\results.html" />
     <Content Include="Views\start.html" />

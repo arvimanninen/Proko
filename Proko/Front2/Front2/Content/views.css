@@ -53,23 +53,28 @@ div.btn-group {
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
-    background-color: #d63811; }
+    background-color: #d63811;
+    border: 1px solid #666666; }
   div.btn-group input[type="radio"]:hover + label.button-middle-neg {
     background-color: #efc188; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #da861d; }
+    background-color: #da861d;
+    border: 1px solid #666666; }
   div.btn-group input[type="radio"]:hover + label.button-neutral {
     background-color: #edd892; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
-    background-color: #dbb125; }
+    background-color: #dbb125;
+    border: 1px solid #666666; }
   div.btn-group input[type="radio"]:hover + label.button-middle-pos {
     background-color: #cbd68d; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #97a73c; }
+    background-color: #97a73c;
+    border: 1px solid #666666; }
   div.btn-group input[type="radio"]:hover + label.button-pos {
     background-color: #7dd181; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
-    background-color: #36993b; }
+    background-color: #36993b;
+    border: 1px solid #666666; }
   div.btn-group.slider-div {
     margin-top: 2px; }
     div.btn-group.slider-div label {
@@ -269,6 +274,11 @@ div.btn-group {
           div.btn-group.thumbs-div label.button-pos img {
             top: 7px;
             left: 8px; } }
+  div.btn-group.feedback textarea {
+    width: 100%;
+    height: 120px;
+    border: 1.5px solid #cccccc;
+    background-color: #fff; }
 
 .btns-five label {
   width: 20.2%; }
