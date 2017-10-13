@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Content/variables.css",
+    "inputFile": "Content/variables.scss"
+  },
+  {
+    "outputFile": "Content/frame.css",
+    "inputFile": "Content/frame.scss"
+  },
+  {
+    "outputFile": "Content/views.css",
+    "inputFile": "Content/views.scss"
+  }
+]

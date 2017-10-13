@@ -1,0 +1,268 @@
+﻿@import "variables.scss";
+
+/* STYLES FOR:
+    body, container, header, footer, progress bar, navigation buttons
+*/
+
+html,
+body {
+    height: 100%;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+    background-color: $body-bg-color; /*url("texture/brilliant.png") rgba(48, 122, 21, 0.2);*/
+    font-size: 16px;
+}
+
+
+// for sticky footer
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -56px;
+    padding: 0 0 56px;
+    color: $grey;
+}
+
+/*
+FONTS
+**************************/
+
+h1 {
+    color: $grey;
+    font-size: 12 * $grid;
+    line-height: 14 * $grid;
+    margin: 4 * $grid 0 4 * $grid;
+    text-align: center;
+
+    @include media-query($on-tablet) {
+        font-size: 10 * $grid;
+        line-height: 12 * $grid;
+        margin: 3 * $grid 0 3 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        font-size: 8 * $grid;
+        line-height: 10 * $grid;
+        margin: 2.5 * $grid 0 2.5 * $grid;
+    }
+}
+
+h2 {
+    color: $grey;
+    font-size: 9 * $grid;
+    line-height: 12 * $grid;
+    margin: 3.5 * $grid 0 3 * $grid;
+    text-align: center;
+
+    @include media-query($on-tablet) {
+        font-size: 8 * $grid;
+        line-height: 10 * $grid;
+        margin: 3 * $grid 0 2.5 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        font-size: 6.5 * $grid;
+        line-height: 8 * $grid;
+        margin: 2.75 * $grid 0 2 * $grid;
+    }
+}
+
+h3 {
+    color: $grey;
+    font-size: 7 * $grid;
+    line-height: 9 * $grid;
+    margin: 3.5 * $grid 0 2.5 * $grid;
+    text-align: center;
+
+    @include media-query($on-tablet) {
+        font-size: 6 * $grid;
+        line-height: 8 * $grid;
+        margin: 3 * $grid 0 2 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        font-size: 5.5 * $grid;
+        line-height: 7 * $grid;
+        margin: 3 * $grid 0 2 * $grid;
+    }
+}
+
+h4 {
+    color: $grey;
+    font-size: 5.5 * $grid;
+    line-height: 6.6 * $grid;
+    margin: 3 * $grid 0 2 * $grid;
+    text-align: center;
+
+    @include media-query($on-tablet) {
+        font-size: 5 * $grid;
+        line-height: 6 * $grid;
+        margin: 3 * $grid 0 2 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        font-size: 4.25 * $grid;
+        line-height: 5 * $grid;
+        margin: 3 * $grid 0 2 * $grid;
+    }
+}
+
+h5 {
+    color: $grey;
+    font-size: 4 * $grid;
+    line-height: 5 * $grid;
+    margin: 1.5 * $grid 0 1.5 * $grid;
+    text-align: center;
+}
+
+h6 {
+    color: $grey;
+    font-size: 3.5 * $grid;
+    line-height: 4 * $grid;
+    margin: 1 * $grid 0 1 * $grid;
+    text-align: center;
+}
+
+.lead {
+    color: $grey;
+    font-size: 4.5 * $grid;
+    line-height: 6 * $grid;
+    margin: 3 * $grid 0 1.5 * $grid;
+    text-align: center;
+}
+
+p {
+    color: $grey;
+    font-size: 4 * $grid;
+    line-height: 5 * $grid;
+    margin: 2 * $grid 0 1 * $grid;
+    text-align: center;
+}
+
+/*
+HEADER & FOOTER
+**************************/
+
+header, footer {
+    background-color: $header-color;
+    box-sizing: border-box;
+}
+
+header {
+    height: 60px;
+}
+
+footer {
+    height: 56px;
+}
+
+#header-text {
+    color: $white;
+    text-align: center;
+    margin-top: 10px;
+
+    @include media-query($on-tablet) {
+        margin-top: 13px;
+    }
+
+    @include media-query($on-mobile) {
+        margin-top: 15px;
+    }
+}
+
+#footer-text {
+    color: $white;
+    text-align: center;
+    margin-top: 14px;
+
+    @include media-query($on-tablet) {
+        margin-top: 16px;
+    }
+
+    @include media-query($on-mobile) {
+        margin-top: 18px;
+    }
+}
+
+
+
+/*
+GENERAL STYLES
+**************************/
+
+span {
+    display: inline-block;
+}
+
+.container {
+    max-width: 680px;
+    padding: 0 15px;
+    max-height: 2200px;
+}
+
+.container .credit {
+    margin: 20px 0;
+}
+
+/*
+START VIEW
+**************************/
+
+.start-title {
+    margin: 24 * $grid auto 8 * $grid;
+
+    @include media-query($on-mobile) {
+        margin: 18 * $grid auto 7 * $grid;
+    }
+
+    @include media-query($on-small-mobile) {
+        margin: 14 * $grid auto 6 * $grid;
+    }
+}
+
+/*
+PROGRESS BAR
+**************************/
+
+.pr-bar-custom {
+    margin: 9 * $grid 0 12 * $grid;
+
+    @include media-query($on-tablet) {
+        margin: 7 * $grid 0 9 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        margin: 6 * $grid 0 8 * $grid;
+    }
+}
+
+/*
+NAVIGATION BUTTONS
+**************************/
+.btn-nav-div {
+    display: flex;
+    justify-content: center;
+    margin: 26 * $grid auto 14 * $grid;
+
+    @include media-query($on-tablet) {
+        margin: 22 * $grid auto 10 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        margin: 17 * $grid auto 8 * $grid;
+    }
+
+    & a.nav-btn-prev {
+        margin: 0 6 * $grid 0 0;
+    }
+
+    & a.nav-btn-next {
+        margin: 0 0 0 6 * $grid;
+    }
+}
+
+/*
+PADDINGS & MARGINS
+**************************/
+
