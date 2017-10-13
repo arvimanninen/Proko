@@ -7,7 +7,7 @@ app.controller('questionThumbsCtrl', function questionThumbsCtrl($scope, $locati
         };
 
         $scope.setAnswers = function () {
-            $location.path("/start");
+            $location.path("/results");
         };
 
 });

@@ -10,5 +10,9 @@
   {
     "outputFile": "Content/views.css",
     "inputFile": "Content/views.scss"
+  },
+  {
+    "outputFile": "Content/results.css",
+    "inputFile": "Content/results.scss"
   }
 ]

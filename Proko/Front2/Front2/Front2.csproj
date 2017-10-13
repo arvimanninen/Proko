@@ -71,6 +71,12 @@
     <Content Include="Content\frame.min.css">
       <DependentUpon>frame.css</DependentUpon>
     </Content>
+    <Content Include="Content\results.css">
+      <DependentUpon>results.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\results.min.css">
+      <DependentUpon>results.css</DependentUpon>
+    </Content>
     <Content Include="Content\variables.css">
       <DependentUpon>variables.scss</DependentUpon>
     </Content>
@@ -86,6 +92,7 @@
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
     <Content Include="Controllers\questionThumbsCtrl.js" />
+    <Content Include="Controllers\resultsCtrl.js" />
     <Content Include="Controllers\startCtrl.js" />
     <Content Include="Images\smiley-happy.svg" />
     <Content Include="Images\smiley-meh.svg" />
@@ -103,6 +110,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\views.scss" />
+    <Content Include="Content\results.scss" />
     <None Include="Properties\PublishProfiles\raksaprojekti - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -917,6 +925,7 @@
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionSmileys.html" />
     <Content Include="Views\questionThumbs.html" />
+    <Content Include="Views\results.html" />
     <Content Include="Views\start.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\version.json" />
