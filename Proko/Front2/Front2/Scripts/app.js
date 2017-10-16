@@ -46,7 +46,7 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 responsive: false
             });
             // Configure all line charts 
-            ChartJsProvider.setOptions('line', {
-                showLines: true
-            });
+            //ChartJsProvider.setOptions('bar', {
+            //    showLines: true
+            //});
     }]);

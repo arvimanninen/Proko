@@ -83,7 +83,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-neg {
         background-color: $button-neg-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-middle-neg {
@@ -92,7 +91,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-middle-neg {
         background-color: $button-middle-neg-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-neutral {
@@ -101,7 +99,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-neutral {
         background-color: $button-neutral-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-middle-pos {
@@ -110,7 +107,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-middle-pos {
         background-color: $button-middle-pos-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-pos {
@@ -119,7 +115,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-pos {
         background-color: $button-pos-checked;
-        border: 1px solid $button-border-checked;
     }
     //// button types
     ////////////////
@@ -406,6 +401,7 @@ div.btn-group {
             }
         }
     }
+
     // textarea
     &.feedback {
         textarea {
@@ -415,8 +411,7 @@ div.btn-group {
             background-color: $white;
         }
     }
-}
-//btn-group ends
+} // btn-group ends
 
 
 // different number of labels in row
@@ -427,3 +422,65 @@ div.btn-group {
         width: 20.4%;
     }
 }
+
+.btn-nav-onebtn-div {
+    max-width: 60 * $grid;
+    margin: 12 * $grid auto;
+}
+
+// modal & overlay
+
+.popup-div {
+    max-width: 70 * $grid;
+    margin: 16 * $grid auto;
+}
+
+.modal-box {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 50%;
+    background: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+
+    @include media-query($on-tablet) {
+        width: 64%;
+    }
+
+    @include media-query($on-mobile) {
+        width: 90%;
+    }
+
+    h4 {
+        margin: 4 * $grid 3 * $grid 2 * $grid;
+    }
+
+    .clearfix {
+        margin: 0 auto;
+        max-width: 80 * $grid;
+
+        a {
+            width: 26 * $grid;
+            margin: 4 * $grid;
+        }
+    }
+}
+
+
+
+.modal-overlay {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+

@@ -53,28 +53,23 @@ div.btn-group {
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
-    background-color: #d63811;
-    border: 1px solid #666666; }
+    background-color: #d63811; }
   div.btn-group input[type="radio"]:hover + label.button-middle-neg {
     background-color: #efc188; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #da861d;
-    border: 1px solid #666666; }
+    background-color: #da861d; }
   div.btn-group input[type="radio"]:hover + label.button-neutral {
     background-color: #edd892; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
-    background-color: #dbb125;
-    border: 1px solid #666666; }
+    background-color: #dbb125; }
   div.btn-group input[type="radio"]:hover + label.button-middle-pos {
     background-color: #cbd68d; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #97a73c;
-    border: 1px solid #666666; }
+    background-color: #97a73c; }
   div.btn-group input[type="radio"]:hover + label.button-pos {
     background-color: #7dd181; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
-    background-color: #36993b;
-    border: 1px solid #666666; }
+    background-color: #36993b; }
   div.btn-group.slider-div {
     margin-top: 2px; }
     div.btn-group.slider-div label {
@@ -285,4 +280,49 @@ div.btn-group {
   @media screen and (max-width: 480px) {
     .btns-five label {
       width: 20.4%; } }
+
+.btn-nav-onebtn-div {
+  max-width: 240px;
+  margin: 48px auto; }
+
+.popup-div {
+  max-width: 280px;
+  margin: 64px auto; }
+
+.modal-box {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 50%;
+  background: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box; }
+  @media screen and (max-width: 768px) {
+    .modal-box {
+      width: 64%; } }
+  @media screen and (max-width: 480px) {
+    .modal-box {
+      width: 90%; } }
+  .modal-box h4 {
+    margin: 16px 12px 8px; }
+  .modal-box .clearfix {
+    margin: 0 auto;
+    max-width: 320px; }
+    .modal-box .clearfix a {
+      width: 104px;
+      margin: 16px; }
+
+.modal-overlay {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3) !important; }
 

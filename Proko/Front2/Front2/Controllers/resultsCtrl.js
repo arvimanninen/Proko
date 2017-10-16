@@ -2,7 +2,13 @@
 
 app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
 
+    $scope.previousView = function () {
+        $location.path("/end");
+    };
 
+    $scope.toStart = function () {
+        $location.path("/start");
+    };
 
     $scope.answerCount = 20;
     $scope.pollData = [
