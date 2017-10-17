@@ -139,7 +139,7 @@ div.btn-group {
         height: 34px;
         margin-bottom: -1px; }
   div.btn-group.slider-div {
-    margin-top: 2px; }
+    margin: 2px 0 36px; }
     div.btn-group.slider-div label {
       border-radius: 0px;
       color: #fff;
@@ -169,7 +169,7 @@ div.btn-group {
   div.btn-group.smiley-div {
     display: flex;
     justify-content: space-between;
-    margin: 16px auto 56px;
+    margin: 16px auto 48px;
     width: 85%; }
     @media screen and (max-width: 768px) {
       div.btn-group.smiley-div {
@@ -217,7 +217,8 @@ div.btn-group {
             width: 64px;
             height: 64px; } }
   div.btn-group.thumbs-div {
-    display: table; }
+    display: table;
+    margin: 0 0 48px; }
     div.btn-group.thumbs-div table {
       width: 100%; }
       div.btn-group.thumbs-div table tr {
@@ -338,10 +339,18 @@ div.btn-group {
             top: 7px;
             left: 8px; } }
   div.btn-group.feedback textarea {
-    width: 100%;
+    display: block;
+    width: 70%;
+    margin: 4px auto 48px;
     height: 120px;
     border: 1.5px solid #cccccc;
     background-color: #fff; }
+    @media screen and (max-width: 768px) {
+      div.btn-group.feedback textarea {
+        width: 70%; } }
+    @media screen and (max-width: 480px) {
+      div.btn-group.feedback textarea {
+        width: 100%; } }
 
 .thanks-div {
   margin-top: 16vh; }

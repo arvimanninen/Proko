@@ -20,6 +20,7 @@ BUTTON GROUPS
     justify-content: space-between;
 }
 
+
 div.btn-group {
     width: 100%;
     /*margin: 4 * $grid 0 13 * $grid;
@@ -184,7 +185,6 @@ div.btn-group {
         display: flex;
         justify-content: space-between;
         //margin: 12 * $grid 0 8 * $grid;
-
         a {
             width: 28 * $grid;
             height: 12 * $grid;
@@ -227,7 +227,7 @@ div.btn-group {
     /////////////
     // slider
     &.slider-div {
-        margin-top: 0.5 * $grid;
+        margin: 0.5 * $grid 0 9 * $grid;
 
         label {
             border-radius: 0px;
@@ -271,7 +271,7 @@ div.btn-group {
     &.smiley-div {
         display: flex;
         justify-content: space-between;
-        margin: 4 * $grid auto 14 * $grid;
+        margin: 4 * $grid auto 12 * $grid;
         width: 85%;
 
         @include media-query($on-tablet) {
@@ -336,6 +336,7 @@ div.btn-group {
     //thumbs
     &.thumbs-div {
         display: table;
+        margin: 0 0 12 * $grid;
 
         table {
             width: 100%;
@@ -512,10 +513,20 @@ div.btn-group {
     // textarea
     &.feedback {
         textarea {
-            width: 100%;
+            display: block;
+            width: 70%;
+            margin: $grid auto 12 * $grid;
             height: 30 * $grid;
             border: 1.5px solid $lightgrey;
             background-color: $white;
+
+            @include media-query($on-tablet) {
+                width: 70%;
+            }
+
+            @include media-query($on-mobile) {
+                width: 100%;
+            }
         }
     }
 } // btn-group ends
