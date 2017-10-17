@@ -120,7 +120,7 @@ p {
 HEADER & FOOTER
 **************************/
 header, footer {
-  background-color: #337ab7;
+  background-color: #5c6d70;
   box-sizing: border-box; }
 
 header {
@@ -202,9 +202,12 @@ NAVIGATION BUTTONS
   @media screen and (max-width: 480px) {
     .btn-nav-div {
       margin: 68px auto 32px; } }
-  .btn-nav-div a.nav-btn-prev {
+  .btn-nav-div a {
+    box-sizing: border-box;
+    max-width: 112px; }
+  .btn-nav-div a:first-child {
     margin: 0 24px 0 0; }
-  .btn-nav-div a.nav-btn-next {
+  .btn-nav-div a:last-child {
     margin: 0 0 0 24px; }
 
 .onebtn-nav-div {

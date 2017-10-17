@@ -253,11 +253,16 @@ NAVIGATION BUTTONS
         margin: 17 * $grid auto 8 * $grid;
     }
 
-    & a.nav-btn-prev {
+    a {
+        box-sizing: border-box;
+        max-width: 28 * $grid;
+    }
+
+    & a:first-child {
         margin: 0 6 * $grid 0 0;
     }
 
-    & a.nav-btn-next {
+    & a:last-child {
         margin: 0 0 0 6 * $grid;
     }
 }

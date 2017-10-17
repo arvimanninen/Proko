@@ -22,7 +22,6 @@ BUTTON GROUPS
 
 div.btn-group {
     width: 100%;
-    display: block;
     margin: 4 * $grid 0 13 * $grid;
 
     @include media-query($on-tablet) {
@@ -49,7 +48,7 @@ div.btn-group {
         }
     }
 
-    label {
+    label, a {
         position: relative;
         cursor: pointer;
         box-sizing: border-box;
@@ -79,9 +78,24 @@ div.btn-group {
             border: 1px solid $button-pos-border;
         }
 
-        &.button-info {
-            background-color: $button-info-color;
-            border: 1px solid $button-info-border;
+        &.button-primary {
+            color: $button-primary-text-color;
+            background-color: $button-primary-color;
+            border: 1px solid $button-primary-border;
+
+            &:hover {
+                background-color: $button-primary-hover;
+            }
+
+            &:active {
+                background-color: $button-primary-checked;
+            }
+        }
+
+        &.button-secondary {
+            color: $button-secondary-color;
+            background-color: $button-secondary-bg-color;
+            border: 1px solid $button-secondary-border;
         }
     }
     // button hover & checked states
@@ -125,17 +139,52 @@ div.btn-group {
         background-color: $button-pos-checked;
     }
 
-    input[type="radio"]:hover + label.button-info {
-        background-color: $button-info-hover;
+    &.nav-btn-div a:hover,
+    input[type="radio"]:hover + label.button-primary {
+        background-color: $button-primary-hover;
     }
 
-    input[type="radio"]:checked + label.button-info {
-        background-color: $button-info-checked;
+    &.nav-btn-div a:checked,
+    input[type="radio"]:checked + label.button-primary {
+        background-color: $button-primary-checked;
+    }
+
+    &.language-btn-div a:hover,
+    input[type="radio"]:hover + label.button-secondary {
+        background-color: $button-secondary-hover;
+    }
+
+    &.language-btn-div a:checked,
+    input[type="radio"]:checked + label.button-secondary {
+        background-color: $button-secondary-checked;
     }
     //// button types
     /////////////
-    //language-div
-    &.language-div {
+    //nav buttons
+    &.nav-btn-div {
+        display: flex;
+        justify-content: space-between;
+        margin: 12 * $grid 0 8 * $grid;
+
+        a {
+            width: 28 * $grid;
+            height: 12 * $grid;
+            font-size: 4.5 * $grid;
+            line-height: 12 * $grid;
+            padding: 0 2 * $grid;
+            margin: 0 auto;
+            border-radius: 2 * $grid;
+            text-align: center;
+            text-decoration: none;
+            //text-transform: uppercase;
+            &.block-btn {
+                width: 40 * $grid;
+            }
+        }
+    }
+    /////////////
+    //language-btn-div
+    &.language-btn-div {
         max-width: 100 * $grid;
         display: flex;
         justify-content: space-between;

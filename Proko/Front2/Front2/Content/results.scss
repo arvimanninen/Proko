@@ -70,6 +70,7 @@
         max-width: 80 * $grid;
 
         a {
+            box-sizing: border-box;
             width: 26 * $grid;
             margin: 4 * $grid;
         }

@@ -15,7 +15,6 @@ BUTTON GROUPS
 
 div.btn-group {
   width: 100%;
-  display: block;
   margin: 16px 0 52px; }
   @media screen and (max-width: 768px) {
     div.btn-group {
@@ -33,28 +32,37 @@ div.btn-group {
     @media screen and (max-width: 480px) {
       div.btn-group.btns-five label {
         width: 20.4%; } }
-  div.btn-group label {
+  div.btn-group label, div.btn-group a {
     position: relative;
     cursor: pointer;
     box-sizing: border-box; }
-    div.btn-group label.button-neg {
+    div.btn-group label.button-neg, div.btn-group a.button-neg {
       background-color: #f69f8a;
       border: 1px solid #d63811; }
-    div.btn-group label.button-middle-neg {
+    div.btn-group label.button-middle-neg, div.btn-group a.button-middle-neg {
       background-color: #f2cd9e;
       border: 1px solid #da861d; }
-    div.btn-group label.button-neutral {
+    div.btn-group label.button-neutral, div.btn-group a.button-neutral {
       background-color: #f1e0a8;
       border: 1px solid #dbb125; }
-    div.btn-group label.button-middle-pos {
+    div.btn-group label.button-middle-pos, div.btn-group a.button-middle-pos {
       background-color: #d4dda0;
       border: 1px solid #97a73c; }
-    div.btn-group label.button-pos {
+    div.btn-group label.button-pos, div.btn-group a.button-pos {
       background-color: #90d893;
       border: 1px solid #36993b; }
-    div.btn-group label.button-info {
-      background-color: #EFF7FF;
-      border: 1px solid #56abff; }
+    div.btn-group label.button-primary, div.btn-group a.button-primary {
+      color: #ffffff;
+      background-color: #439775;
+      border: 1px solid #439775; }
+      div.btn-group label.button-primary:hover, div.btn-group a.button-primary:hover {
+        background-color: #33745a; }
+      div.btn-group label.button-primary:active, div.btn-group a.button-primary:active {
+        background-color: #142d23; }
+    div.btn-group label.button-secondary, div.btn-group a.button-secondary {
+      color: #439775;
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid #58b58f; }
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
@@ -75,22 +83,46 @@ div.btn-group {
     background-color: #7dd181; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
     background-color: #36993b; }
-  div.btn-group input[type="radio"]:hover + label.button-info {
-    background-color: #d6eaff; }
-  div.btn-group input[type="radio"]:checked + label.button-info {
-    background-color: #56abff; }
-  div.btn-group.language-div {
+  div.btn-group.nav-btn-div a:hover,
+  div.btn-group input[type="radio"]:hover + label.button-primary {
+    background-color: #33745a; }
+  div.btn-group.nav-btn-div a:checked,
+  div.btn-group input[type="radio"]:checked + label.button-primary {
+    background-color: #142d23; }
+  div.btn-group.language-btn-div a:hover,
+  div.btn-group input[type="radio"]:hover + label.button-secondary {
+    background-color: #9fd4bf; }
+  div.btn-group.language-btn-div a:checked,
+  div.btn-group input[type="radio"]:checked + label.button-secondary {
+    background-color: #58b58f; }
+  div.btn-group.nav-btn-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 0 32px; }
+    div.btn-group.nav-btn-div a {
+      width: 112px;
+      height: 48px;
+      font-size: 18px;
+      line-height: 48px;
+      padding: 0 8px;
+      margin: 0 auto;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none; }
+      div.btn-group.nav-btn-div a.block-btn {
+        width: 160px; }
+  div.btn-group.language-btn-div {
     max-width: 400px;
     display: flex;
     justify-content: space-between;
     margin: 32px auto 0; }
     @media screen and (max-width: 480px) {
-      div.btn-group.language-div {
+      div.btn-group.language-btn-div {
         margin: 16px auto 0; } }
-    div.btn-group.language-div label {
+    div.btn-group.language-btn-div label {
       padding: 6px;
       border-radius: 4px; }
-      div.btn-group.language-div label img {
+      div.btn-group.language-btn-div label img {
         width: 57.8px;
         height: 34px;
         margin-bottom: -1px; }
