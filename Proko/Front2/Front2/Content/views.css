@@ -1,14 +1,11 @@
 ﻿.borders {
   border: 1px solid red; }
 
-.center {
-  margin: 0 auto; }
-
-.text-center {
-  text-align: center; }
-
 /*
-vertical button group
+LANGUAGE
+**************************/
+/*
+BUTTON GROUPS
 **************************/
 .bar-rating {
   width: 100%;
@@ -55,6 +52,9 @@ div.btn-group {
     div.btn-group label.button-pos {
       background-color: #90d893;
       border: 1px solid #36993b; }
+    div.btn-group label.button-info {
+      background-color: #EFF7FF;
+      border: 1px solid #56abff; }
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
@@ -75,6 +75,25 @@ div.btn-group {
     background-color: #7dd181; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
     background-color: #36993b; }
+  div.btn-group input[type="radio"]:hover + label.button-info {
+    background-color: #d6eaff; }
+  div.btn-group input[type="radio"]:checked + label.button-info {
+    background-color: #56abff; }
+  div.btn-group.language-div {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 32px auto 0; }
+    @media screen and (max-width: 480px) {
+      div.btn-group.language-div {
+        margin: 16px auto 0; } }
+    div.btn-group.language-div label {
+      padding: 6px;
+      border-radius: 4px; }
+      div.btn-group.language-div label img {
+        width: 57.8px;
+        height: 34px;
+        margin-bottom: -1px; }
   div.btn-group.slider-div {
     margin-top: 2px; }
     div.btn-group.slider-div label {

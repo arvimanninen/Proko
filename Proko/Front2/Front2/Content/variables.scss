@@ -45,6 +45,13 @@ $button-neg-border: darken($button-neg-color, 30%);
 $button-neg-hover: darken($button-neg-color, 5%);
 $button-neg-checked: darken($button-neg-color, 30%);
 
+
+$button-info-color: #EFF7FF; //#63D2FF;
+$button-info-border: darken($button-info-color, 30%);
+$button-info-hover: darken($button-info-color, 5%);
+$button-info-checked: darken($button-info-color, 30%);
+
+
 // btn group border radius
 $btn-grp-radius-left: 2 * $grid 0 0 2 * $grid;
 $btn-grp-radius-right: 0 2 * $grid 2 * $grid 0;

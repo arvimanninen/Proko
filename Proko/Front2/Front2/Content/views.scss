@@ -5,16 +5,12 @@
     border: 1px solid red;
 }
 
-.center {
-    margin: 0 auto;
-}
-
-.text-center {
-    text-align: center;
-}
+/*
+LANGUAGE
+**************************/
 
 /*
-vertical button group
+BUTTON GROUPS
 **************************/
 
 .bar-rating {
@@ -44,7 +40,6 @@ div.btn-group {
     input[type="radio"] {
         display: none;
     }
-
     // different number of labels in row
     &.btns-five label {
         width: 20.2%;
@@ -82,6 +77,11 @@ div.btn-group {
         &.button-pos {
             background-color: $button-pos-color;
             border: 1px solid $button-pos-border;
+        }
+
+        &.button-info {
+            background-color: $button-info-color;
+            border: 1px solid $button-info-border;
         }
     }
     // button hover & checked states
@@ -124,8 +124,39 @@ div.btn-group {
     input[type="radio"]:checked + label.button-pos {
         background-color: $button-pos-checked;
     }
+
+    input[type="radio"]:hover + label.button-info {
+        background-color: $button-info-hover;
+    }
+
+    input[type="radio"]:checked + label.button-info {
+        background-color: $button-info-checked;
+    }
     //// button types
-    ////////////////
+    /////////////
+    //language-div
+    &.language-div {
+        max-width: 100 * $grid;
+        display: flex;
+        justify-content: space-between;
+        margin: 8 * $grid auto 0;
+
+        @include media-query($on-mobile) {
+            margin: 4 * $grid auto 0;
+        }
+
+        label {
+            padding: 1.5 * $grid;
+            border-radius: $grid;
+
+            img {
+                width: 57.8px;
+                height: 34px;
+                margin-bottom: -1px;
+            }
+        }
+    }
+    /////////////
     // slider
     &.slider-div {
         margin-top: 0.5 * $grid;
@@ -409,6 +440,7 @@ div.btn-group {
             }
         }
     }
+    /////////////
     // textarea
     &.feedback {
         textarea {
