@@ -2,17 +2,17 @@
     <div class="row results-div">
         
         <div class="col-xs-12">
-            <div class="popup-div">
-                <a class="btn btn-success btn-lg btn-block js-open-modal" role="button" data-modal-id="popup">Lunasta kuponki</a>
+            <div class="btn-group nav-btn-div popup-div">
+                <a class="button-tertiary block-btn js-open-modal" role="button" data-modal-id="popup">Käytä kuponki</a>
             </div>
 
             <div id="popup" class="modal-box">
-                <h3>Kupongin lunastus</h3>
+                <h3>Käytä kuponki</h3>
                 <h4>Näytä tämä näkymä, kun haluat lunastaa kupongin.</h4>
 
-                <div class="clearfix">
-                    <a class="btn btn-warning btn-lg pull-left js-modal-close" role="button">Peruuta</a>
-                    <a class="btn btn-success btn-lg pull-right js-modal-use" role="button">Käytä</a>
+                <div class="btn-group nav-btn-div popup-div">
+                    <a class="button-secondary js-modal-close" role="button">Peruuta</a>
+                    <a class="button-tertiary js-modal-use" role="button">Käytä</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
 
     </div> <!-- row div -->
 
-    <div class="onebtn-nav-div">
-        <a class="btn btn-primary btn-lg btn-block" role="button" ng-click="toStart()">Uusi Kysely</a>
+    <div class="btn-group nav-btn-div">
+        <a class="button-primary block-btn" ng-click="toStart()">Uusi kysely</a>
     </div>
 </div>

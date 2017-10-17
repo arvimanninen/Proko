@@ -7,7 +7,7 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
         var counterUsed = false;
 
         var appendthis = ("<div class='modal-overlay js-modal-close'></div>");
-        $('a[data-modal-id]').click(function (e) {
+        $("a[data-modal-id]").click(function (e) {
 
             if (counterUsed === false) {
 
@@ -29,11 +29,11 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
         $(".js-modal-use, .modal-overlay").click(function () {
             $(".modal-box, .modal-overlay").fadeOut(500, function () {
                 $(".modal-overlay").remove();
-                $(".popup-div a").html("Kuponki lunastettu")
-                    .removeClass("btn-success").addClass("disabled");
+                $(".js-open-modal").html("Kuponki käytetty")
+                    .removeClass("button-tertiary").addClass("disabled");
 
                 counterUsed = true;
-                console.log(counterUsed);
+                console.log("counter asetettu");
 
                 $("#popup").remove();
             });

@@ -32,12 +32,12 @@
 // modal & overlay
 
 .popup-div {
-    max-width: 60 * $grid;
     margin: 10 * $grid auto 4 * $grid;
 
     a.disabled {
         background-color: #999999;
         color: white;
+        cursor: default;
     }
 }
 
@@ -66,13 +66,20 @@
     }
 
     .clearfix {
-        margin: 0 auto;
+        margin: 0;
         max-width: 80 * $grid;
 
         a {
             box-sizing: border-box;
             width: 26 * $grid;
-            margin: 4 * $grid;
+        }
+
+        .js-modal-close {
+            margin: 0
+        }
+
+        .js-modal-use {
+            margin: 0;
         }
     }
 }

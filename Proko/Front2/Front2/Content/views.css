@@ -15,16 +15,19 @@ BUTTON GROUPS
 
 div.btn-group {
   width: 100%;
-  margin: 16px 0 52px; }
-  @media screen and (max-width: 768px) {
-    div.btn-group {
-      margin: 16px 0 48px; } }
-  @media screen and (max-width: 480px) {
-    div.btn-group {
-      margin: 16px 0 44px; } }
-  @media screen and (max-width: 375px) {
-    div.btn-group {
-      margin: 16px 0 40px; } }
+  /*margin: 4 * $grid 0 13 * $grid;
+
+    @include media-query($on-tablet) {
+        margin: 4 * $grid 0 12 * $grid;
+    }
+
+    @include media-query($on-mobile) {
+        margin: 4 * $grid 0 11 * $grid;
+    }
+
+    @include media-query($on-small-mobile) {
+        margin: 4 * $grid 0 10 * $grid;
+    }*/ }
   div.btn-group input[type="radio"] {
     display: none; }
   div.btn-group.btns-five label {
@@ -52,7 +55,7 @@ div.btn-group {
       background-color: #90d893;
       border: 1px solid #36993b; }
     div.btn-group label.button-primary, div.btn-group a.button-primary {
-      color: #ffffff;
+      color: #fff;
       background-color: #439775;
       border: 1px solid #439775; }
       div.btn-group label.button-primary:hover, div.btn-group a.button-primary:hover {
@@ -63,6 +66,18 @@ div.btn-group {
       color: #439775;
       background-color: rgba(255, 255, 255, 0);
       border: 1px solid #58b58f; }
+      div.btn-group label.button-secondary:hover, div.btn-group a.button-secondary:hover {
+        background-color: #c2e4d6; }
+      div.btn-group label.button-secondary:active, div.btn-group a.button-secondary:active {
+        background-color: #439775; }
+    div.btn-group label.button-tertiary, div.btn-group a.button-tertiary {
+      color: #fff;
+      background-color: #FF8966;
+      border: 1px solid #FF8966; }
+      div.btn-group label.button-tertiary:hover, div.btn-group a.button-tertiary:hover {
+        background-color: #ff6233; }
+      div.btn-group label.button-tertiary:active, div.btn-group a.button-tertiary:active {
+        background-color: #cc2f00; }
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
@@ -83,34 +98,31 @@ div.btn-group {
     background-color: #7dd181; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
     background-color: #36993b; }
-  div.btn-group.nav-btn-div a:hover,
+  div.btn-group a.button-primary:hover,
   div.btn-group input[type="radio"]:hover + label.button-primary {
     background-color: #33745a; }
-  div.btn-group.nav-btn-div a:checked,
+  div.btn-group a.button-primary:checked,
   div.btn-group input[type="radio"]:checked + label.button-primary {
     background-color: #142d23; }
-  div.btn-group.language-btn-div a:hover,
   div.btn-group input[type="radio"]:hover + label.button-secondary {
-    background-color: #9fd4bf; }
-  div.btn-group.language-btn-div a:checked,
+    background-color: #c2e4d6; }
   div.btn-group input[type="radio"]:checked + label.button-secondary {
-    background-color: #58b58f; }
+    background-color: #439775; }
   div.btn-group.nav-btn-div {
     display: flex;
-    justify-content: space-between;
-    margin: 48px 0 32px; }
+    justify-content: space-between; }
     div.btn-group.nav-btn-div a {
       width: 112px;
       height: 48px;
       font-size: 18px;
       line-height: 48px;
       padding: 0 8px;
-      margin: 0 auto;
       border-radius: 8px;
       text-align: center;
       text-decoration: none; }
       div.btn-group.nav-btn-div a.block-btn {
-        width: 160px; }
+        width: 160px;
+        margin: 0 auto; }
   div.btn-group.language-btn-div {
     max-width: 400px;
     display: flex;
