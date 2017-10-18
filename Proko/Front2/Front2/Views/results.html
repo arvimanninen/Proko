@@ -1,10 +1,26 @@
 ﻿<div class="container-fluid results-bg-div">
     <div class="row results-div">
+        
+        <div class="col-xs-12">
+            <div class="popup-div">
+                <a class="btn btn-success btn-lg btn-block js-open-modal" role="button" data-modal-id="popup">Lunasta kuponki</a>
+            </div>
+
+            <div id="popup" class="modal-box">
+                <h3>Kupongin lunastus</h3>
+                <h4>Näytä tämä näkymä, kun haluat lunastaa kupongin.</h4>
+
+                <div class="clearfix">
+                    <a class="btn btn-warning btn-lg pull-left js-modal-close" role="button">Peruuta</a>
+                    <a class="btn btn-success btn-lg pull-right js-modal-use" role="button">Käytä</a>
+                </div>
+            </div>
+        </div>
 
         <div class="col-xs-12 col-md-6">
             <div class="question-results-div">
                 <h4>Kysymys 1</h4>
-                <canvas class="chart chart-line" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
+                <canvas class="chart chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
             </div>
         </div>
 
@@ -22,10 +38,9 @@
             </div>
         </div>
 
-        <div class="col-xs-12">
-            <div class="btn-nav-results-div">
-                <a class="btn btn-success btn-lg btn-block" role="button" href="#start">Uusi kysely</a>
-            </div>
-        </div>
     </div> <!-- row div -->
+
+    <div class="onebtn-nav-div">
+        <a class="btn btn-primary btn-lg btn-block" role="button" ng-click="toStart()">Uusi Kysely</a>
+    </div>
 </div>

@@ -208,6 +208,10 @@ NAVIGATION BUTTONS
   .btn-nav-div a.nav-btn-next {
     margin: 0 0 0 24px; }
 
+.onebtn-nav-div {
+  max-width: 240px;
+  margin: 48px auto; }
+
 /*
 PADDINGS & MARGINS
 **************************/

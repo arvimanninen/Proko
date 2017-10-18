@@ -31,6 +31,11 @@ div.btn-group {
       margin: 16px 0 40px; } }
   div.btn-group input[type="radio"] {
     display: none; }
+  div.btn-group.btns-five label {
+    width: 20.2%; }
+    @media screen and (max-width: 480px) {
+      div.btn-group.btns-five label {
+        width: 20.4%; } }
   div.btn-group label {
     position: relative;
     cursor: pointer;
@@ -53,28 +58,23 @@ div.btn-group {
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
-    background-color: #d63811;
-    border: 1px solid #666666; }
+    background-color: #d63811; }
   div.btn-group input[type="radio"]:hover + label.button-middle-neg {
     background-color: #efc188; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #da861d;
-    border: 1px solid #666666; }
+    background-color: #da861d; }
   div.btn-group input[type="radio"]:hover + label.button-neutral {
     background-color: #edd892; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
-    background-color: #dbb125;
-    border: 1px solid #666666; }
+    background-color: #dbb125; }
   div.btn-group input[type="radio"]:hover + label.button-middle-pos {
     background-color: #cbd68d; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #97a73c;
-    border: 1px solid #666666; }
+    background-color: #97a73c; }
   div.btn-group input[type="radio"]:hover + label.button-pos {
     background-color: #7dd181; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
-    background-color: #36993b;
-    border: 1px solid #666666; }
+    background-color: #36993b; }
   div.btn-group.slider-div {
     margin-top: 2px; }
     div.btn-group.slider-div label {
@@ -280,9 +280,6 @@ div.btn-group {
     border: 1.5px solid #cccccc;
     background-color: #fff; }
 
-.btns-five label {
-  width: 20.2%; }
-  @media screen and (max-width: 480px) {
-    .btns-five label {
-      width: 20.4%; } }
+.thanks-div {
+  margin-top: 20vh; }
 

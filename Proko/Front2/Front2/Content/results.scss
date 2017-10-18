@@ -14,7 +14,7 @@
         //width: 100%;
         //height: 100%;
         margin: 6 * $grid 0 0;
-        padding: 0 2 * $grid 2 * $grid;
+        padding: 0 0 2 * $grid 2 * $grid;
         border-radius: $grid;
         border: 1px solid $result-border-color;
         background-color: $result-color;
@@ -30,7 +30,62 @@
     }
 }
 
-.btn-nav-results-div {
+
+// modal & overlay
+
+.popup-div {
     max-width: 60 * $grid;
-    margin: 12 * $grid auto;
+    margin: 10 * $grid auto 4 * $grid;
+
+    a.disabled {
+        background-color: #999999;
+        color: white;
+    }
+}
+
+.modal-box {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 50%;
+    background: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+
+    @include media-query($on-tablet) {
+        width: 64%;
+    }
+
+    @include media-query($on-mobile) {
+        width: 90%;
+    }
+
+    h4 {
+        margin: 4 * $grid 3 * $grid 2 * $grid;
+    }
+
+    .clearfix {
+        margin: 0 auto;
+        max-width: 80 * $grid;
+
+        a {
+            width: 26 * $grid;
+            margin: 4 * $grid;
+        }
+    }
+}
+
+.modal-overlay {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3) !important;
 }

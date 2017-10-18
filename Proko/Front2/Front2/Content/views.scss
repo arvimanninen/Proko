@@ -45,6 +45,15 @@ div.btn-group {
         display: none;
     }
 
+    // different number of labels in row
+    &.btns-five label {
+        width: 20.2%;
+
+        @include media-query($on-mobile) {
+            width: 20.4%;
+        }
+    }
+
     label {
         position: relative;
         cursor: pointer;
@@ -75,7 +84,6 @@ div.btn-group {
             border: 1px solid $button-pos-border;
         }
     }
-
     // button hover & checked states
     input[type="radio"]:hover + label.button-neg {
         background-color: $button-neg-hover;
@@ -83,7 +91,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-neg {
         background-color: $button-neg-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-middle-neg {
@@ -92,7 +99,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-middle-neg {
         background-color: $button-middle-neg-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-neutral {
@@ -101,7 +107,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-neutral {
         background-color: $button-neutral-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-middle-pos {
@@ -110,7 +115,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-middle-pos {
         background-color: $button-middle-pos-checked;
-        border: 1px solid $button-border-checked;
     }
 
     input[type="radio"]:hover + label.button-pos {
@@ -119,7 +123,6 @@ div.btn-group {
 
     input[type="radio"]:checked + label.button-pos {
         background-color: $button-pos-checked;
-        border: 1px solid $button-border-checked;
     }
     //// button types
     ////////////////
@@ -415,15 +418,8 @@ div.btn-group {
             background-color: $white;
         }
     }
-}
-//btn-group ends
+} // btn-group ends
 
-
-// different number of labels in row
-.btns-five label {
-    width: 20.2%;
-
-    @include media-query($on-mobile) {
-        width: 20.4%;
-    }
+.thanks-div {
+    margin-top: 20vh;
 }
