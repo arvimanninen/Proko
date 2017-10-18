@@ -276,10 +276,11 @@ div.btn-group {
         }
 
         span {
-            width: 10 * $grid;
+            font-size: 3 * $grid;
+            width: 100%;
             position: relative;
             left: 0;
-            top: 8px;
+            top: 5px;
 
             @include media-query($on-small-mobile) {
                 top: 5px;

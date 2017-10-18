@@ -934,6 +934,7 @@
     <Content Include="Services\answerService.js" />
     <Content Include="Views\end.html" />
     <Content Include="Views\questionButtonSlider.html" />
+    <Content Include="Views\questionRadioButton.html" />
     <Content Include="Views\questionSmileys.html" />
     <Content Include="Views\questionTextarea.html" />
     <Content Include="Views\questionThumbs.html" />

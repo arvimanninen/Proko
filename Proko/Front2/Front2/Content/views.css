@@ -72,12 +72,12 @@ div.btn-group {
         background-color: #337ab7; }
     div.btn-group label.button-tertiary, div.btn-group a.button-tertiary {
       color: #fff;
-      background-color: #FA9F42;
+      background-color: #26C485;
       transition: background-color .2s ease-out; }
       div.btn-group label.button-tertiary:hover, div.btn-group a.button-tertiary:hover {
-        background-color: #f98610; }
+        background-color: #1e9968; }
       div.btn-group label.button-tertiary:active, div.btn-group a.button-tertiary:active {
-        background-color: #9f5204; }
+        background-color: #0d442e; }
   div.btn-group input[type="radio"]:hover + label.button-neg {
     background-color: #f48c72; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
@@ -169,10 +169,11 @@ div.btn-group {
       div.btn-group.slider-div label.slider-group-last {
         border-radius: 0 8px 8px 0; }
     div.btn-group.slider-div span {
-      width: 40px;
+      font-size: 12px;
+      width: 100%;
       position: relative;
       left: 0;
-      top: 8px; }
+      top: 5px; }
       @media screen and (max-width: 375px) {
         div.btn-group.slider-div span {
           top: 5px; } }

@@ -8,7 +8,7 @@ $grey: #333333;
 $lightgrey: #cccccc;
 
 $body-bg-color: #FAFAFA;
-$header-color: #4C5B5C;
+$header-color: #393E41; //#064789; #2F4858; #4C5B5C;
 $footer-color: #808080;
 
 
@@ -53,7 +53,7 @@ $button-secondary-border: lighten($button-secondary-color, 10%);
 $button-secondary-hover: lighten($button-secondary-color, 40%);
 $button-secondary-checked: $button-secondary-color;
 
-$button-tertiary-color: #FA9F42; //#FF8966; //lighten(#439775, 20%);
+$button-tertiary-color: #26C485; //#FA9F42; //#FF8966; //lighten(#439775, 20%);
 $button-tertiary-text-color: #FF8966;
 $button-tertiary-border: #FA9F42; //#FF8966;
 $button-tertiary-hover: darken($button-tertiary-color, 10%);
