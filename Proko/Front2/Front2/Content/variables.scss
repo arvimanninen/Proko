@@ -41,21 +41,21 @@ $button-neg-hover: darken($button-neg-color, 5%);
 $button-neg-checked: darken($button-neg-color, 30%);
 
 
-$button-primary-color: #439775;
+$button-primary-color: #337ab7;//#439775;
 $button-primary-border: $button-primary-color;
 $button-primary-hover: darken($button-primary-color, 10%);
 $button-primary-checked: darken($button-primary-color, 30%);
 
-$button-secondary-color: #439775;
+$button-secondary-color: #337ab7;
 $button-secondary-text-color: #439775;
 $button-secondary-bg-color: rgba(255, 255, 255, 0);
 $button-secondary-border: lighten($button-secondary-color, 10%);
 $button-secondary-hover: lighten($button-secondary-color, 40%);
 $button-secondary-checked: $button-secondary-color;
 
-$button-tertiary-color: #FF8966; //lighten(#439775, 20%);
+$button-tertiary-color: #FA9F42; //#FF8966; //lighten(#439775, 20%);
 $button-tertiary-text-color: #FF8966;
-$button-tertiary-border: #FF8966;
+$button-tertiary-border: #FA9F42; //#FF8966;
 $button-tertiary-hover: darken($button-tertiary-color, 10%);
 $button-tertiary-checked: darken($button-tertiary-color, 30%);
 

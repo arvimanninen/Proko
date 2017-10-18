@@ -6,20 +6,27 @@
 }
 
 /*
-LANGUAGE
+OUTER SLIDER DIV
 **************************/
+
+.outer-slider-div {
+
+    .bar-rating {
+        width: 100%;
+        height: 6 * $grid;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 10 * $grid;
+
+        @include media-query($on-mobile) {
+            margin: 0 0 8 * $grid;
+        }
+    }
+}
 
 /*
 BUTTON GROUPS
 **************************/
-
-.bar-rating {
-    width: 100%;
-    height: 6 * $grid;
-    display: flex;
-    justify-content: space-between;
-}
-
 
 div.btn-group {
     width: 100%;
@@ -44,32 +51,38 @@ div.btn-group {
         &.button-neg {
             background-color: $button-neg-color;
             border: 1px solid $button-neg-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-middle-neg {
             background-color: $button-middle-neg-color;
             border: 1px solid $button-middle-neg-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-neutral {
             background-color: $button-neutral-color;
             border: 1px solid $button-neutral-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-middle-pos {
             background-color: $button-middle-pos-color;
             border: 1px solid $button-middle-pos-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-pos {
             background-color: $button-pos-color;
             border: 1px solid $button-pos-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-primary {
             color: $white;
             background-color: $button-primary-color;
             border: 1px solid $button-primary-border;
+            transition: background-color .2s ease-out;
 
             &:hover {
                 background-color: $button-primary-hover;
@@ -84,6 +97,7 @@ div.btn-group {
             color: $button-secondary-text-color;
             background-color: $button-secondary-bg-color;
             border: 1px solid $button-secondary-border;
+            transition: background-color .2s ease-out;
 
             &:hover {
                 background-color: $button-secondary-hover;
@@ -97,7 +111,8 @@ div.btn-group {
         &.button-tertiary {
             color: $white;
             background-color: $button-tertiary-color;
-            border: 1px solid $button-tertiary-border;
+            border: 1.5px solid $button-tertiary-border;
+            transition: background-color .2s ease-out;
 
             &:hover {
                 background-color: $button-tertiary-hover;
@@ -231,7 +246,7 @@ div.btn-group {
     /////////////
     // slider
     &.slider-div {
-        margin: 0.5 * $grid auto 10 * $grid;
+        margin: 0.5 * $grid auto 0;
 
         label {
             border-radius: 0px;
