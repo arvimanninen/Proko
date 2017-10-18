@@ -14,20 +14,7 @@ BUTTON GROUPS
   justify-content: space-between; }
 
 div.btn-group {
-  width: 100%;
-  /*margin: 4 * $grid 0 13 * $grid;
-
-    @include media-query($on-tablet) {
-        margin: 4 * $grid 0 12 * $grid;
-    }
-
-    @include media-query($on-mobile) {
-        margin: 4 * $grid 0 11 * $grid;
-    }
-
-    @include media-query($on-small-mobile) {
-        margin: 4 * $grid 0 10 * $grid;
-    }*/ }
+  width: 100%; }
   div.btn-group input[type="radio"] {
     display: none; }
   div.btn-group.btns-five label {
@@ -110,7 +97,7 @@ div.btn-group {
     background-color: #439775; }
   div.btn-group.nav-btn-div {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-around; }
     div.btn-group.nav-btn-div a {
       width: 112px;
       height: 48px;
@@ -123,14 +110,24 @@ div.btn-group {
       div.btn-group.nav-btn-div a.block-btn {
         width: 160px;
         margin: 0 auto; }
+    div.btn-group.nav-btn-div.nav-btn-margins {
+      margin: 80px 0 56px; }
+      @media screen and (max-width: 480px) {
+        div.btn-group.nav-btn-div.nav-btn-margins {
+          margin: 64px 0 48px; } }
+    div.btn-group.nav-btn-div.nav-btn-margins-small {
+      margin: 40px 0 56px; }
+      @media screen and (max-width: 480px) {
+        div.btn-group.nav-btn-div.nav-btn-margins-small {
+          margin: 24px 0 48px; } }
   div.btn-group.language-btn-div {
     max-width: 400px;
     display: flex;
     justify-content: space-between;
-    margin: 32px auto 0; }
+    margin: 40px auto 0; }
     @media screen and (max-width: 480px) {
       div.btn-group.language-btn-div {
-        margin: 16px auto 0; } }
+        margin: 24px auto 0; } }
     div.btn-group.language-btn-div label {
       padding: 6px;
       border-radius: 4px; }
@@ -139,7 +136,7 @@ div.btn-group {
         height: 34px;
         margin-bottom: -1px; }
   div.btn-group.slider-div {
-    margin: 2px 0 36px; }
+    margin: 2px auto 40px; }
     div.btn-group.slider-div label {
       border-radius: 0px;
       color: #fff;
@@ -168,16 +165,10 @@ div.btn-group {
           top: 5px; } }
   div.btn-group.smiley-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 16px auto 48px;
-    width: 85%; }
-    @media screen and (max-width: 768px) {
-      div.btn-group.smiley-div {
-        width: 95%; } }
+    width: 90%; }
     @media screen and (max-width: 480px) {
-      div.btn-group.smiley-div {
-        width: 90%; } }
-    @media screen and (max-width: 375px) {
       div.btn-group.smiley-div {
         width: 100%; } }
     div.btn-group.smiley-div label {
@@ -218,7 +209,7 @@ div.btn-group {
             height: 64px; } }
   div.btn-group.thumbs-div {
     display: table;
-    margin: 0 0 48px; }
+    margin: 8px 0 48px; }
     div.btn-group.thumbs-div table {
       width: 100%; }
       div.btn-group.thumbs-div table tr {
@@ -338,18 +329,18 @@ div.btn-group {
           div.btn-group.thumbs-div label.button-pos img {
             top: 7px;
             left: 8px; } }
-  div.btn-group.feedback textarea {
+  div.btn-group.textarea-div textarea {
     display: block;
     width: 70%;
-    margin: 4px auto 48px;
+    margin: 4px auto 40px;
     height: 120px;
     border: 1.5px solid #cccccc;
     background-color: #fff; }
     @media screen and (max-width: 768px) {
-      div.btn-group.feedback textarea {
+      div.btn-group.textarea-div textarea {
         width: 70%; } }
     @media screen and (max-width: 480px) {
-      div.btn-group.feedback textarea {
+      div.btn-group.textarea-div textarea {
         width: 100%; } }
 
 .thanks-div {

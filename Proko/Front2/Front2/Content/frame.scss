@@ -210,14 +210,10 @@ START VIEW
 **************************/
 
 .start-title {
-    margin: 14 * $grid auto 8 * $grid;
+    margin: 14 * $grid 0 8 * $grid;
 
     @include media-query($on-mobile) {
-        margin: 14 * $grid auto 7 * $grid;
-    }
-
-    @include media-query($on-small-mobile) {
-        margin: 12 * $grid auto 6 * $grid;
+        margin: 8 * $grid 0 6 * $grid;
     }
 }
 
@@ -240,37 +236,7 @@ PROGRESS BAR
 /*
 NAVIGATION BUTTONS
 **************************/
-.btn-nav-div {
-    display: flex;
-    justify-content: center;
-    margin: 26 * $grid auto 14 * $grid;
 
-    @include media-query($on-tablet) {
-        margin: 22 * $grid auto 10 * $grid;
-    }
-
-    @include media-query($on-mobile) {
-        margin: 17 * $grid auto 8 * $grid;
-    }
-
-    a {
-        box-sizing: border-box;
-        max-width: 28 * $grid;
-    }
-
-    & a:first-child {
-        margin: 0 6 * $grid 0 0;
-    }
-
-    & a:last-child {
-        margin: 0 0 0 6 * $grid;
-    }
-}
-
-.onebtn-nav-div {
-    max-width: 60 * $grid;
-    margin: 12 * $grid auto;
-}
 
 /*
 PADDINGS & MARGINS
