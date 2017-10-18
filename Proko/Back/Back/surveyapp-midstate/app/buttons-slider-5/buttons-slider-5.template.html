@@ -1,0 +1,39 @@
+<div class="container">
+
+    <progress-bar></progress-bar>
+    <div class="question" ng-repeat="q in $ctrl.currentQuestions">
+        <h4>{{ q.QuestionText }}</h4>
+    
+        <div class="bar-rating">
+            <span>Eri mielta</span>
+            <span>Samaa mielta</span>
+        </div>
+
+        <div class="btn-group slider-div btns-five">
+            <input type="radio" name="question-1" value="1" />
+            <label class="button-pos slider-group-first" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                <span></span>
+            </label>
+            <input type="radio" name="question-1" value="2" />
+            <label class="button-pos" ng-click="$ctrl.setAnswer(2, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                <span></span>
+            </label>
+            <input type="radio" name="question-1" value="3" />
+            <label class="button-pos" ng-click="$ctrl.setAnswer(3, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                <span></span>
+            </label>
+            <input type="radio" name="question-1" value="4" />
+            <label class="button-pos" ng-click="$ctrl.setAnswer(4, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                <span></span>
+            </label>
+            <input type="radio" name="question-1" value="5" />
+            <label class="button-pos slider-group-last" ng-click="$ctrl.setAnswer(5, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                <span></span>
+            </label>
+        </div>
+    </div>
+    <div class="btn-nav-div">
+        <a class="btn btn-primary btn-lg nav-btn-prev" role="button" ng-click="$ctrl.goBack()">Edellinen</a>
+        <a class="btn btn-primary btn-lg nav-btn-next" role="button">Seuraava</a>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿<div class="container">
+
+    <progress-bar></progress-bar>
+
+    <h4>Testi kysymys: Milta tuntuu tehda tata kyselya lorem ipsum sit dolor amet?</h4>
+
+    <div class="btn-group smiley-div">
+        <input type="radio" name="question-1" id="q-a1" value="1" />
+        <label for="q-a1" class="button-neg">
+            <img src="../Images/sad1.svg" alt="smiley angry" />
+        </label>
+        <input type="radio" name="question-1" id="q-a2" value="2" />
+        <label for="q-a2" class="button-middle-neg">
+            <img src="../Images/not-happy1.svg" alt="smiley little sad" />
+        </label>
+        <input type="radio" name="question-1" id="q-a3" value="3" />
+        <label for="q-a3" class="button-middle-pos">
+            <img src="../Images/smile1.svg" alt="smiley neutral" />
+        </label>
+        <input type="radio" name="question-1" id="q-a4" value="4" />
+        <label for="q-a4" class="button-pos">
+            <img src="../Images/big-smile1.svg" alt="smiley happy" />
+        </label>  
+    </div>
+
+    <div class="btn-nav-div">
+        <a class="btn btn-primary btn-lg nav-btn-prev" role="button" ng-click="previousView()">Edellinen</a>
+        <a class="btn btn-primary btn-lg nav-btn-next" role="button" ng-click="setAnswers()">Seuraava</a>
+    </div>
+</div>

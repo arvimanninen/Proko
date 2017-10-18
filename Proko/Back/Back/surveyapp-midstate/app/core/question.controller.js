@@ -22,7 +22,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
             $location.path(nextLocation);
         }
     };
-    /*
+    
     var checkAnsweredAndActivate = function (currentAnswers) {
         console.log("checkAnsweredAndActivate() started!");
         for (var i = 0; i < currentAnswers.length; i++) {
@@ -36,7 +36,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
             $(element).addClass("active");
         }
     };
-    */
+
     if (questionSetIndex >= 2) {
         backButton.style.visibility = "visible";
     } else {
@@ -47,11 +47,10 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
     console.log("currentAnswers.length: ");
     console.log(currentAnswers.length);
-    /*
     if (currentAnswers.length >= 1) {
         angular.element(document).ready(checkAnsweredAndActivate(currentAnswers));
     }
-    */
+
 
     
 

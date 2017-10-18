@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.Designer.cs">
       <DependentUpon>201710091744057_TitleAddedToQuestionSetModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.cs" />
+    <Compile Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.Designer.cs">
+      <DependentUpon>201710181045002_TextFeedbackAddedToAnswerBundle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -259,6 +263,7 @@
     <Compile Include="Models\QuestionDTO.cs" />
     <Compile Include="Models\QuestionMethod.cs" />
     <Compile Include="Models\QuestionSet.cs" />
+    <Compile Include="Models\TextFeedbackDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -495,6 +500,7 @@
     <Content Include="surveyapp\OldStuff\RemovedCtrlPatches.txt" />
     <Content Include="testgetallquestions.html" />
     <Content Include="testget.html" />
+    <Content Include="testposttextfeedback.html" />
     <Content Include="testpostsurveyanswers.html" />
     <Content Include="testpost.html" />
     <Content Include="Web.config" />
@@ -714,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.resx">
       <DependentUpon>201710091744057_TitleAddedToQuestionSetModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.resx">
+      <DependentUpon>201710181045002_TextFeedbackAddedToAnswerBundle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
