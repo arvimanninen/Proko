@@ -288,6 +288,36 @@ div.btn-group {
         }
     }
     /////////////
+    //radiobutton
+    &.radiobutton-div {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+
+        li {
+            display: block;
+            position: relative;
+            color: $grey;
+            float: left;
+            width: 100%;
+            height: 100%;
+
+            label {
+                display: block;
+                position: relative;
+                height: 65px;
+                line-height: 65px;
+                font-size: 65px;
+                padding: 25px 25px 25px 120px;
+                margin: 10px auto 10px;
+                z-index: 9;
+                cursor: pointer;
+                transition: all 0.2s ease-out;
+            }
+        }
+    }
+    /////////////
     //smiley
     &.smiley-div {
         display: flex;

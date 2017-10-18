@@ -7,6 +7,6 @@ app.controller('questionButtonSliderCtrl', function questionButtonSliderCtrl($sc
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionSmileys");
+        $location.path("/questionRadioButton");
     };
 });

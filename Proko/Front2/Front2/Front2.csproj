@@ -91,6 +91,7 @@
     </Content>
     <Content Include="Controllers\endCtrl.js" />
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
+    <Content Include="Controllers\questionRadioButtonCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
     <Content Include="Controllers\questionTextareaCtrl.js" />
     <Content Include="Controllers\questionThumbsCtrl.js" />
