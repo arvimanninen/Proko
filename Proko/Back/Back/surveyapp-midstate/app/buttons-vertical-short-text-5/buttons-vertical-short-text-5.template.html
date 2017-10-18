@@ -1,0 +1,28 @@
+<div class="container">
+    <progress-bar></progress-bar>
+    <div class="question" ng-repeat="q in $ctrl.currentQuestions">
+        <p class="lead text-center q-text-7">{{ q.QuestionText }}</p>
+        <div class="text-center">
+            <div class="btn-group-vertical" data-toggle="buttons">
+                <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a1' }}" class="btn btn-default" ng-click="$ctrl.setAnswer(5, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                    <input type="radio" name="options"> erittäin hyvin
+                </label>
+                <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a2' }}" class="btn btn-default" ng-click="$ctrl.setAnswer(4, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                    <input type="radio" name="options"> hyvin
+                </label>
+                <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a3' }}" class="btn btn-default" ng-click="$ctrl.setAnswer(3, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                    <input type="radio" name="options"> kohtalaisesti
+                </label>
+                <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a4' }}" class="btn btn-default" ng-click="$ctrl.setAnswer(2, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                    <input type="radio" name="options"> huonosti
+                </label>
+                <label ng-attr-id="{{ 'cqi' +  q.ChosenQuestionIndex + '-a5' }}" class="btn btn-default" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
+                    <input type="radio" name="options"> erittäin huonosti
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="btn-next-div">
+        <a id="back-button" class="btn btn-default btn-lg" ng-click="$ctrl.goBack()" role="button">Edellinen kysymys</a>
+    </div>
+</div>

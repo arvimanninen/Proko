@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Web API test</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        /*var testVariable = $.getJSON("api/QuestionsApi/1", function (data) {
+            console.log("GET successful!");
+            console.log(data);
+        }); */
+        console.log("testpage script started!");
+        // AnswerDTO object constructor
+        var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback) {
+            this.AnswerBundleID = nAnswerBundleID;
+            this.TextFeedback = nTextFeedback;
+        };
+
+        var newTextFeedback = new TextFeedbackDTO(10, "Vaihdettu feedbäkki");
+
+        console.log("newTextFeedback.AnswerBundleID: " + newTextFeedback.AnswerBundleID);
+        console.log("newTextFeedback.TextFeedback: " + newTextFeedback.TextFeedback);
+            
+        /*
+        $.post("api/postsurveyanswers", newAnswers,
+        function (data, status) {
+            console.log("Data: " + data + "\nStatus: " + status);
+        });
+        */
+        $.ajax({
+            url: "api/posttextfeedback",
+            type: 'POST',
+            data: JSON.stringify(newTextFeedback),
+            dataType: 'json',
+            contentType: 'application/json',
+            crossDomain: true,
+            cache: false,
+            success: function () { console.log("Success!") }
+        });
+    </script>
+</body>
+</html>

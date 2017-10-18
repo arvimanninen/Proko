@@ -98,6 +98,28 @@ namespace Back.ApiControllers
             return CreatedAtRoute("DefaultApi", new { id = answer.AnswerID }, answer);
         }
         */
+        [Route("api/posttextfeedback")]
+        [HttpPost]
+        public IHttpActionResult PostTextFeedback([FromBody] TextFeedbackDTO fbDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                Debug.WriteLine("ModelState not valid!");
+                return BadRequest(ModelState);
+            }
+            AnswerBundle bundle = db.AnswerBundles.Find(fbDto.AnswerBundleID);
+            if(bundle == null)
+            {
+                // TODO: CHANGE TO SOMETHING SENSIBLE?
+                return BadRequest();
+            }
+            bundle.TextFeedback = fbDto.TextFeedback;
+            // TODO: TRANSACTION MANAGEMENT!!!
+            db.Entry(bundle).State = EntityState.Modified;
+            db.SaveChanges();
+            return Ok();
+        }
+
         [Route("api/postsurveyanswers")]
         [HttpPost]
         public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
@@ -165,7 +187,7 @@ namespace Back.ApiControllers
                 Debug.WriteLine("currentSetId:" + currentSetId);
                 Debug.WriteLine("currentSetIndex:" + currentSetIndex);
             }
-            return Ok();
+            return Ok(bundle.AnswerBundleID);
         }
 
         // DELETE: api/AnswersApi/5
@@ -183,7 +205,7 @@ namespace Back.ApiControllers
 
             return Ok(answer);
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -192,10 +214,11 @@ namespace Back.ApiControllers
             }
             base.Dispose(disposing);
         }
-
+        
         private bool AnswerExists(int id)
         {
             return db.Answers.Count(e => e.AnswerID == id) > 0;
         }
+        
     }
 }
