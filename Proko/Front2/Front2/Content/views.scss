@@ -190,7 +190,7 @@ div.btn-group {
         justify-content: space-around;
 
         a {
-            width: 28 * $grid;
+            width: 32 * $grid;
             height: 12 * $grid;
             font-size: 4.5 * $grid;
             line-height: 12 * $grid;
@@ -198,9 +198,10 @@ div.btn-group {
             border-radius: 2 * $grid;
             text-align: center;
             text-decoration: none;
+            text-transform: uppercase;
 
             &.block-btn {
-                width: 40 * $grid;
+                width: 50 * $grid;
                 margin: 0 auto;
             }
         }
@@ -290,30 +291,94 @@ div.btn-group {
     /////////////
     //radiobutton
     &.radiobutton-div {
-        list-style: none;
-        margin: 0;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
         padding: 0;
-        overflow: auto;
 
-        li {
+        ul {
+            padding: 0;
+        }
+
+        ul li {
             display: block;
             position: relative;
+            list-style: none;
             color: $grey;
-            float: left;
-            width: 100%;
-            height: 100%;
+            margin: 0;
+            padding: 0;
 
             label {
                 display: block;
                 position: relative;
-                height: 65px;
-                line-height: 65px;
-                font-size: 65px;
-                padding: 25px 25px 25px 120px;
+                font: 'Open Sans', sans-serif;
+                font-weight: 400;
+                font-size: 5.5 * $grid;
+                line-height: 6.5 * $grid;
+                padding: 4 * $grid 4 * $grid 4 * $grid 16 * $grid;
                 margin: 10px auto 10px;
                 z-index: 9;
                 cursor: pointer;
-                transition: all 0.2s ease-out;
+                transition: color 0.2s linear;
+                border: 1px solid red;
+
+                @include media-query($on-tablet) {
+                    font-size: 5 * $grid;
+                    line-height: 6.5 * $grid;
+                }
+
+                @include media-query($on-mobile) {
+                    font-size: 4.5 * $grid;
+                    line-height: 6 * $grid;
+                }
+            }
+
+            &:hover label {
+                color: $button-pos-hover;
+            }
+
+            .check {
+                display: block;
+                position: absolute;
+                border: 5px solid #AAAAAA;
+                border-radius: 100%;
+                height: 8.25 * $grid;
+                width: 8.25 * $grid;
+                top: 11px;
+                left: 20px;
+                z-index: 5;
+                -webkit-transition: border .2s linear;
+                transition: border .2s linear;
+            }
+
+            &:hover .check {
+                border: 5px solid $button-pos-hover;
+            }
+
+            .check::before {
+                display: block;
+                position: absolute;
+                content: '';
+                border-radius: 100%;
+                height: 14px;
+                width: 14px;
+                top: 4px;
+                left: 4px;
+                margin: auto;
+                -webkit-transition: background 0.2s linear;
+                transition: background 0.2s linear;
+            }
+
+            input[type=radio]:checked ~ .check {
+                border: 5px solid $button-pos-checked;
+            }
+
+            input[type=radio]:checked ~ .check::before {
+                background: $button-pos-checked;
+            }
+
+            input[type=radio]:checked ~ label {
+                color: $button-pos-checked;
             }
         }
     }
