@@ -52,30 +52,35 @@ div.btn-group {
         &.button-neg {
             background-color: $button-neg-color;
             border: 1px solid $button-neg-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-neg {
             background-color: $button-middle-neg-color;
             border: 1px solid $button-middle-neg-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-neutral {
             background-color: $button-neutral-color;
             border: 1px solid $button-neutral-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-pos {
             background-color: $button-middle-pos-color;
             border: 1px solid $button-middle-pos-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-pos {
             background-color: $button-pos-color;
             border: 1px solid $button-pos-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
@@ -83,6 +88,7 @@ div.btn-group {
             color: $white;
             background-color: $button-primary-color;
             border: 1px solid $button-primary-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
 
             &:hover {
@@ -98,6 +104,7 @@ div.btn-group {
             color: $button-secondary-text-color;
             background-color: $button-secondary-bg-color;
             border: 1px solid $button-secondary-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
 
             &:hover {
@@ -112,7 +119,7 @@ div.btn-group {
         &.button-tertiary {
             color: $white;
             background-color: $button-tertiary-color;
-            //border: 1.5px solid $button-tertiary-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
 
             &:hover {
@@ -304,7 +311,6 @@ div.btn-group {
             display: block;
             position: relative;
             list-style: none;
-            color: $grey;
             margin: 0;
             padding: 0;
 
@@ -312,13 +318,15 @@ div.btn-group {
                 display: block;
                 position: relative;
                 font: 'Open Sans', sans-serif;
+                color: $grey;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
                 line-height: 6.5 * $grid;
                 padding: 4 * $grid 4 * $grid 4 * $grid 16 * $grid;
-                margin: 10px auto 10px;
+                margin: 2.5 * $grid auto 2.5 * $grid;
                 z-index: 9;
                 cursor: pointer;
+                -webkit-transition: color 0.2s linear;
                 transition: color 0.2s linear;
                 border: 1px solid red;
 
@@ -330,56 +338,58 @@ div.btn-group {
                 @include media-query($on-mobile) {
                     font-size: 4.5 * $grid;
                     line-height: 6 * $grid;
+                    padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 }
             }
 
             &:hover label {
-                color: $button-pos-hover;
+                //color: $button-pos-hover;
             }
 
             .check {
                 display: block;
                 position: absolute;
-                border: 5px solid #AAAAAA;
+                border: 2px solid $lightgrey;
                 border-radius: 100%;
-                height: 8.25 * $grid;
-                width: 8.25 * $grid;
-                top: 11px;
+                height: 5 * $grid;
+                width: 5 * $grid;
+                top: 20px;
                 left: 20px;
                 z-index: 5;
                 -webkit-transition: border .2s linear;
                 transition: border .2s linear;
+
+                @include media-query($on-mobile) {
+                    top: 16px;
+                    left: 20px;
+                }
             }
 
             &:hover .check {
                 border: 5px solid $button-pos-hover;
             }
-
-            .check::before {
+            /*.check::before {
                 display: block;
                 position: absolute;
                 content: '';
                 border-radius: 100%;
                 height: 14px;
                 width: 14px;
-                top: 4px;
-                left: 4px;
+                top: -2px;
+                left: -2px;
                 margin: auto;
                 -webkit-transition: background 0.2s linear;
                 transition: background 0.2s linear;
-            }
-
+            }*/
             input[type=radio]:checked ~ .check {
-                border: 5px solid $button-pos-checked;
+                border: 10px solid $button-pos-checked;
             }
-
-            input[type=radio]:checked ~ .check::before {
-                background: $button-pos-checked;
-            }
-
-            input[type=radio]:checked ~ label {
-                color: $button-pos-checked;
-            }
+            /*input[type=radio]:checked ~ .check::before {
+                background: $grey;
+            }*/
+            /*input[type=radio]:checked ~ label {
+                color: $grey;
+            }*/
         }
     }
     /////////////
