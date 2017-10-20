@@ -8,7 +8,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FAFAFA;
-  /*url("texture/brilliant.png") rgba(48, 122, 21, 0.2);*/
   font-size: 16px; }
 
 #wrap {
@@ -40,8 +39,8 @@ h1 {
 
 h2 {
   color: #333333;
-  font-size: 36px;
-  line-height: 48px;
+  font-size: 34px;
+  line-height: 42px;
   margin: 14px 0 12px;
   text-align: center; }
   @media screen and (max-width: 768px) {
@@ -75,18 +74,18 @@ h3 {
 h4 {
   color: #333333;
   font-size: 22px;
-  line-height: 26.4px;
+  line-height: 26px;
   margin: 12px 0 8px;
   text-align: center; }
   @media screen and (max-width: 768px) {
     h4 {
       font-size: 20px;
-      line-height: 24px;
+      line-height: 26px;
       margin: 12px 0 8px; } }
   @media screen and (max-width: 480px) {
     h4 {
-      font-size: 17px;
-      line-height: 20px;
+      font-size: 18px;
+      line-height: 24px;
       margin: 12px 0 8px; } }
 
 h5 {
@@ -121,7 +120,7 @@ p {
 HEADER & FOOTER
 **************************/
 header, footer {
-  background-color: #337ab7;
+  background-color: #393E41;
   box-sizing: border-box; }
 
 header {
@@ -163,20 +162,14 @@ span {
   padding: 0 15px;
   max-height: 2200px; }
 
-.container .credit {
-  margin: 20px 0; }
-
 /*
 START VIEW
 **************************/
 .start-title {
-  margin: 96px auto 32px; }
+  margin: 56px 0 32px; }
   @media screen and (max-width: 480px) {
     .start-title {
-      margin: 72px auto 28px; } }
-  @media screen and (max-width: 375px) {
-    .start-title {
-      margin: 56px auto 24px; } }
+      margin: 32px 0 24px; } }
 
 /*
 PROGRESS BAR
@@ -193,25 +186,6 @@ PROGRESS BAR
 /*
 NAVIGATION BUTTONS
 **************************/
-.btn-nav-div {
-  display: flex;
-  justify-content: center;
-  margin: 104px auto 56px; }
-  @media screen and (max-width: 768px) {
-    .btn-nav-div {
-      margin: 88px auto 40px; } }
-  @media screen and (max-width: 480px) {
-    .btn-nav-div {
-      margin: 68px auto 32px; } }
-  .btn-nav-div a.nav-btn-prev {
-    margin: 0 24px 0 0; }
-  .btn-nav-div a.nav-btn-next {
-    margin: 0 0 0 24px; }
-
-.onebtn-nav-div {
-  max-width: 240px;
-  margin: 48px auto; }
-
 /*
 PADDINGS & MARGINS
 **************************/

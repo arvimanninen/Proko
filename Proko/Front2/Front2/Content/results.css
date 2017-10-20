@@ -18,11 +18,11 @@
     height: 100%; }
 
 .popup-div {
-  max-width: 240px;
   margin: 40px auto 16px; }
   .popup-div a.disabled {
     background-color: #999999;
-    color: white; }
+    color: white;
+    cursor: default; }
 
 .modal-box {
   display: none;
@@ -44,11 +44,15 @@
   .modal-box h4 {
     margin: 16px 12px 8px; }
   .modal-box .clearfix {
-    margin: 0 auto;
+    margin: 0;
     max-width: 320px; }
     .modal-box .clearfix a {
-      width: 104px;
-      margin: 16px; }
+      box-sizing: border-box;
+      width: 104px; }
+    .modal-box .clearfix .js-modal-close {
+      margin: 0; }
+    .modal-box .clearfix .js-modal-use {
+      margin: 0; }
 
 .modal-overlay {
   opacity: 0;

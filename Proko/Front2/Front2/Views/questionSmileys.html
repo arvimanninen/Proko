@@ -1,55 +1,58 @@
 ﻿<div class="container">
 
     <div class="progress pr-bar-custom">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-            <span class="sr-only">30% Complete</span>
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
         </div>
     </div>
 
-    <h4>Testi kysymys: Milta tuntuu tehda tata kyselya lorem ipsum sit dolor amet?</h4>
+    <div class="outer-smiley-div">
+        <h4>Onko työturvallisuus otettu työmaalla hyvin huomioon?</h4>
 
-    <div class="btn-group smiley-div">
-        <input type="radio" name="question-1" id="q-a1" value="1" />
-        <label for="q-a1" class="button-neg">
-            <img src="../Images/smiley-sad.svg" alt="smiley angry" />
-        </label>
-        <input type="radio" name="question-1" id="q-a2" value="2" />
-        <label for="q-a2" class="button-middle-neg">
-            <img src="../Images/smiley-meh.svg" alt="smiley little sad" />
-        </label>
-        <input type="radio" name="question-1" id="q-a3" value="3" />
-        <label for="q-a3" class="button-middle-pos">
-            <img src="../Images/smiley-happy.svg" alt="smiley neutral" />
-        </label>
-        <input type="radio" name="question-1" id="q-a4" value="4" />
-        <label for="q-a4" class="button-pos">
-            <img src="../Images/smiley-very-happy.svg" alt="smiley happy" />
-        </label>
+        <div class="btn-group smiley-div">
+            <input id="q-a1" type="radio" name="question-1" value="1" />
+            <label for="q-a1" class="button-neg">
+                <img src="../Images/smiley-sad.svg" alt="smiley angry" />
+            </label>
+            <input id="q-a2" type="radio" name="question-1" value="2" />
+            <label for="q-a2" class="button-middle-neg">
+                <img src="../Images/smiley-meh.svg" alt="smiley little sad" />
+            </label>
+            <input id="q-a3" type="radio" name="question-1" value="3" />
+            <label for="q-a3" class="button-middle-pos">
+                <img src="../Images/smiley-happy.svg" alt="smiley neutral" />
+            </label>
+            <input id="q-a4" type="radio" name="question-1" value="4" />
+            <label for="q-a4" class="button-pos">
+                <img src="../Images/smiley-very-happy.svg" alt="smiley happy" />
+            </label>
+        </div>
+    </div>
+    
+    <div class="outer-smiley-div">
+        <h4>Onko työt aikataulutettu hyvin työmaalla?</h4>
+
+        <div class="btn-group smiley-div">
+            <input id="q-b1" type="radio" name="question-2" value="1" />
+            <label for="q-b1" class="button-neg">
+                <img src="../Images/smiley-sad.svg" alt="smiley angry" />
+            </label>
+            <input id="q-b2" type="radio" name="question-2" value="2" />
+            <label for="q-b2" class="button-middle-neg">
+                <img src="../Images/smiley-meh.svg" alt="smiley little sad" />
+            </label>
+            <input id="q-b3" type="radio" name="question-2" value="3" />
+            <label for="q-b3" class="button-middle-pos">
+                <img src="../Images/smiley-happy.svg" alt="smiley neutral" />
+            </label>
+            <input id="q-b4" type="radio" name="question-2" value="4" />
+            <label for="q-b4" class="button-pos">
+                <img src="../Images/smiley-very-happy.svg" alt="smiley happy" />
+            </label>
+        </div>
     </div>
 
-    <h4>Testi kysymys: Milta tuntuu tehda tata kyselya lorem ipsum sit dolor amet?</h4>
-
-    <div class="btn-group smiley-div">
-        <input type="radio" name="question-2" id="q-b1" value="1" />
-        <label for="q-b1" class="button-neg">
-            <img src="../Images/smiley-sad.svg" alt="smiley angry" />
-        </label>
-        <input type="radio" name="question-2" id="q-b2" value="2" />
-        <label for="q-b2" class="button-middle-neg">
-            <img src="../Images/smiley-meh.svg" alt="smiley little sad" />
-        </label>
-        <input type="radio" name="question-2" id="q-b3" value="3" />
-        <label for="q-b3" class="button-middle-pos">
-            <img src="../Images/smiley-happy.svg" alt="smiley neutral" />
-        </label>
-        <input type="radio" name="question-2" id="q-b4" value="4" />
-        <label for="q-b4" class="button-pos">
-            <img src="../Images/smiley-very-happy.svg" alt="smiley happy" />
-        </label>
-    </div>
-
-    <div class="btn-nav-div">
-        <a class="btn btn-primary btn-lg nav-btn-prev" role="button" ng-click="previousView()">Edellinen</a>
-        <a class="btn btn-primary btn-lg nav-btn-next" role="button" ng-click="setAnswers()">Seuraava</a>
+    <div class="btn-group nav-btn-div nav-btn-margins">
+        <a class="button-primary" ng-click="previousView()">Edellinen</a>
+        <a class="button-primary" ng-click="setAnswers()">Seuraava</a>
     </div>
 </div>

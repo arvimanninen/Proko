@@ -10,7 +10,7 @@ body {
     min-width: 320px;
     margin: 0;
     padding: 0;
-    background-color: $body-bg-color; /*url("texture/brilliant.png") rgba(48, 122, 21, 0.2);*/
+    background-color: $body-bg-color;
     font-size: 16px;
 }
 
@@ -50,8 +50,8 @@ h1 {
 
 h2 {
     color: $grey;
-    font-size: 9 * $grid;
-    line-height: 12 * $grid;
+    font-size: 8.5 * $grid;
+    line-height: 10.5 * $grid;
     margin: 3.5 * $grid 0 3 * $grid;
     text-align: center;
 
@@ -91,19 +91,19 @@ h3 {
 h4 {
     color: $grey;
     font-size: 5.5 * $grid;
-    line-height: 6.6 * $grid;
+    line-height: 6.5 * $grid;
     margin: 3 * $grid 0 2 * $grid;
     text-align: center;
 
     @include media-query($on-tablet) {
         font-size: 5 * $grid;
-        line-height: 6 * $grid;
+        line-height: 6.5 * $grid;
         margin: 3 * $grid 0 2 * $grid;
     }
 
     @include media-query($on-mobile) {
-        font-size: 4.25 * $grid;
-        line-height: 5 * $grid;
+        font-size: 4.5 * $grid;
+        line-height: 6 * $grid;
         margin: 3 * $grid 0 2 * $grid;
     }
 }
@@ -201,23 +201,15 @@ span {
     max-height: 2200px;
 }
 
-.container .credit {
-    margin: 20px 0;
-}
-
 /*
 START VIEW
 **************************/
 
 .start-title {
-    margin: 24 * $grid auto 8 * $grid;
+    margin: 14 * $grid 0 8 * $grid;
 
     @include media-query($on-mobile) {
-        margin: 18 * $grid auto 7 * $grid;
-    }
-
-    @include media-query($on-small-mobile) {
-        margin: 14 * $grid auto 6 * $grid;
+        margin: 8 * $grid 0 6 * $grid;
     }
 }
 
@@ -240,32 +232,7 @@ PROGRESS BAR
 /*
 NAVIGATION BUTTONS
 **************************/
-.btn-nav-div {
-    display: flex;
-    justify-content: center;
-    margin: 26 * $grid auto 14 * $grid;
 
-    @include media-query($on-tablet) {
-        margin: 22 * $grid auto 10 * $grid;
-    }
-
-    @include media-query($on-mobile) {
-        margin: 17 * $grid auto 8 * $grid;
-    }
-
-    & a.nav-btn-prev {
-        margin: 0 6 * $grid 0 0;
-    }
-
-    & a.nav-btn-next {
-        margin: 0 0 0 6 * $grid;
-    }
-}
-
-.onebtn-nav-div {
-    max-width: 60 * $grid;
-    margin: 12 * $grid auto;
-}
 
 /*
 PADDINGS & MARGINS

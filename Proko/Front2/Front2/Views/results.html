@@ -2,45 +2,45 @@
     <div class="row results-div">
         
         <div class="col-xs-12">
-            <div class="popup-div">
-                <a class="btn btn-success btn-lg btn-block js-open-modal" role="button" data-modal-id="popup">Lunasta kuponki</a>
+            <div class="btn-group nav-btn-div popup-div">
+                <a class="button-tertiary block-btn js-open-modal" role="button" data-modal-id="popup">Käytä kuponki</a>
             </div>
 
             <div id="popup" class="modal-box">
-                <h3>Kupongin lunastus</h3>
-                <h4>Näytä tämä näkymä, kun haluat lunastaa kupongin.</h4>
+                <h3>Käytä kuponki</h3>
+                <h4>Näytä tämä näkymä, kun haluat käyttää kupongin.</h4>
 
-                <div class="clearfix">
-                    <a class="btn btn-warning btn-lg pull-left js-modal-close" role="button">Peruuta</a>
-                    <a class="btn btn-success btn-lg pull-right js-modal-use" role="button">Käytä</a>
+                <div class="btn-group nav-btn-div popup-div">
+                    <a class="button-secondary js-modal-close" role="button">Peruuta</a>
+                    <a class="button-tertiary js-modal-use" role="button">Käytä</a>
                 </div>
             </div>
         </div>
 
         <div class="col-xs-12 col-md-6">
             <div class="question-results-div">
-                <h4>Kysymys 1</h4>
-                <canvas class="chart chart-bar" chart-data="pollData" chart-labels="pollLabels" chart-series="pollSeries"></canvas>
+                <h4>Työturvallisuus</h4>
+                <canvas class="chart chart-bar" chart-data="pollData1" chart-labels="pollLabels1" chart-series="pollSeries"></canvas>
             </div>
         </div>
 
         <div class="col-xs-12 col-md-6">       
             <div class="question-results-div">
-                <h4>Kysymys 2</h4>
+                <h4>Aikataulutus</h4>
                 <canvas class="chart-bar" chart-data="pollData2" chart-labels="pollLabels2" chart-series="pollSeries2" chart-options="options2"></canvas>
             </div>
         </div>
 
         <div class="col-xs-12 col-md-6">
             <div class="question-results-div">
-                <h4>Kysymys 3</h4>
+                <h4>Kommunikointi</h4>
                 <canvas class="chart-bar" chart-data="pollData3" chart-labels="pollLabels3" chart-series="pollSeries3" chart-options="options3"></canvas>
             </div>
         </div>
 
     </div> <!-- row div -->
 
-    <div class="onebtn-nav-div">
-        <a class="btn btn-primary btn-lg btn-block" role="button" ng-click="toStart()">Uusi Kysely</a>
+    <div class="btn-group nav-btn-div nav-btn-margins">
+        <a class="button-primary block-btn" ng-click="toStart()">Uusi kysely</a>
     </div>
 </div>

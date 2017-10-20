@@ -7,7 +7,7 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
         var counterUsed = false;
 
         var appendthis = ("<div class='modal-overlay js-modal-close'></div>");
-        $('a[data-modal-id]').click(function (e) {
+        $("a[data-modal-id]").click(function (e) {
 
             if (counterUsed === false) {
 
@@ -29,11 +29,11 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
         $(".js-modal-use, .modal-overlay").click(function () {
             $(".modal-box, .modal-overlay").fadeOut(500, function () {
                 $(".modal-overlay").remove();
-                $(".popup-div a").html("Kuponki lunastettu")
-                    .removeClass("btn-success").addClass("disabled");
+                $(".js-open-modal").html("Kuponki käytetty")
+                    .removeClass("button-tertiary").addClass("disabled");
 
                 counterUsed = true;
-                console.log(counterUsed);
+                console.log("counter asetettu");
 
                 $("#popup").remove();
             });
@@ -60,12 +60,26 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
     };
 
     $scope.answerCount = 20;
-    $scope.pollData = [
-        [65, 59, 80],
-        [28, 48, 40]
+
+    // data 1
+    $scope.pollData1 = [
+        [2, 8, 12, 14, 6]
     ];
-    $scope.pollLabels = ['Kysymys 1', 'Kysymys 2', 'Kysymys 3'];
-    $scope.pollSeries = ['Tyytyvaisyys', 'Toinen title'];
+    $scope.pollLabels1 = ['Eri mieltä', '', '', '', 'Samaa mieltä'];
+    //$scope.pollSeries = ['Tyytyvaisyys'];
+
+    // data 2
+    $scope.pollData2 = [
+        [5, 10, 12, 9]
+    ];
+    $scope.pollLabels2 = ['sad', 'not happy', 'happy', 'very happy'];
+
+    //data 3
+    $scope.pollData3 = [
+        [5, 15, 7]
+    ];
+    $scope.pollLabels3 = ['thumb down', 'neutral', 'thumb up'];
+
     $scope.options1 = {
         scales: {
             yAxes: [{

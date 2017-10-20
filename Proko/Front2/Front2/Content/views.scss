@@ -5,46 +5,36 @@
     border: 1px solid red;
 }
 
-.center {
-    margin: 0 auto;
-}
+/*
+OUTER SLIDER DIV
+**************************/
 
-.text-center {
-    text-align: center;
+.outer-slider-div {
+    margin-top: 4 * $grid;
+
+    .bar-rating {
+        width: 100%;
+        height: 6 * $grid;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 11 * $grid;
+
+        @include media-query($on-mobile) {
+            margin: 0 0 9 * $grid;
+        }
+    }
 }
 
 /*
-vertical button group
+BUTTON GROUPS
 **************************/
-
-.bar-rating {
-    width: 100%;
-    height: 6 * $grid;
-    display: flex;
-    justify-content: space-between;
-}
 
 div.btn-group {
     width: 100%;
-    display: block;
-    margin: 4 * $grid 0 13 * $grid;
-
-    @include media-query($on-tablet) {
-        margin: 4 * $grid 0 12 * $grid;
-    }
-
-    @include media-query($on-mobile) {
-        margin: 4 * $grid 0 11 * $grid;
-    }
-
-    @include media-query($on-small-mobile) {
-        margin: 4 * $grid 0 10 * $grid;
-    }
 
     input[type="radio"] {
         display: none;
     }
-
     // different number of labels in row
     &.btns-five label {
         width: 20.2%;
@@ -54,7 +44,7 @@ div.btn-group {
         }
     }
 
-    label {
+    label, a {
         position: relative;
         cursor: pointer;
         box-sizing: border-box;
@@ -62,26 +52,76 @@ div.btn-group {
         &.button-neg {
             background-color: $button-neg-color;
             border: 1px solid $button-neg-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-middle-neg {
             background-color: $button-middle-neg-color;
             border: 1px solid $button-middle-neg-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-neutral {
             background-color: $button-neutral-color;
             border: 1px solid $button-neutral-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-middle-pos {
             background-color: $button-middle-pos-color;
             border: 1px solid $button-middle-pos-border;
+            transition: background-color .2s ease-out;
         }
 
         &.button-pos {
             background-color: $button-pos-color;
             border: 1px solid $button-pos-border;
+            transition: background-color .2s ease-out;
+        }
+
+        &.button-primary {
+            color: $white;
+            background-color: $button-primary-color;
+            border: 1px solid $button-primary-border;
+            transition: background-color .2s ease-out;
+
+            &:hover {
+                background-color: $button-primary-hover;
+            }
+
+            &:active {
+                background-color: $button-primary-checked;
+            }
+        }
+
+        &.button-secondary {
+            color: $button-secondary-text-color;
+            background-color: $button-secondary-bg-color;
+            border: 1px solid $button-secondary-border;
+            transition: background-color .2s ease-out;
+
+            &:hover {
+                background-color: $button-secondary-hover;
+            }
+
+            &:active {
+                background-color: $button-secondary-checked;
+            }
+        }
+
+        &.button-tertiary {
+            color: $white;
+            background-color: $button-tertiary-color;
+            //border: 1.5px solid $button-tertiary-border;
+            transition: background-color .2s ease-out;
+
+            &:hover {
+                background-color: $button-tertiary-hover;
+            }
+
+            &:active {
+                background-color: $button-tertiary-checked;
+            }
         }
     }
     // button hover & checked states
@@ -124,11 +164,90 @@ div.btn-group {
     input[type="radio"]:checked + label.button-pos {
         background-color: $button-pos-checked;
     }
+
+    & a.button-primary:hover,
+    input[type="radio"]:hover + label.button-primary {
+        background-color: $button-primary-hover;
+    }
+
+    & a.button-primary:checked,
+    input[type="radio"]:checked + label.button-primary {
+        background-color: $button-primary-checked;
+    }
+
+    input[type="radio"]:hover + label.button-secondary {
+        background-color: $button-secondary-hover;
+    }
+
+    input[type="radio"]:checked + label.button-secondary {
+        background-color: $button-secondary-checked;
+    }
     //// button types
-    ////////////////
+    /////////////
+    //nav buttons
+    &.nav-btn-div {
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            width: 28 * $grid;
+            height: 12 * $grid;
+            font-size: 4.5 * $grid;
+            line-height: 12 * $grid;
+            padding: 0 2 * $grid;
+            border-radius: 2 * $grid;
+            text-align: center;
+            text-decoration: none;
+
+            &.block-btn {
+                width: 40 * $grid;
+                margin: 0 auto;
+            }
+        }
+
+        &.nav-btn-margins {
+            margin: 20 * $grid 0 14 * $grid;
+
+            @include media-query($on-mobile) {
+                margin: 16 * $grid 0 12 * $grid;
+            }
+        }
+
+        &.nav-btn-margins-small {
+            margin: 10 * $grid 0 14 * $grid;
+
+            @include media-query($on-mobile) {
+                margin: 6 * $grid 0 12 * $grid;
+            }
+        }
+    }
+    /////////////
+    //language-btn-div
+    &.language-btn-div {
+        max-width: 100 * $grid;
+        display: flex;
+        justify-content: space-between;
+        margin: 10 * $grid auto 0;
+
+        @include media-query($on-mobile) {
+            margin: 6 * $grid auto 0;
+        }
+
+        label {
+            padding: 1.5 * $grid;
+            border-radius: $grid;
+
+            img {
+                width: 57.8px;
+                height: 34px;
+                margin-bottom: -1px;
+            }
+        }
+    }
+    /////////////
     // slider
     &.slider-div {
-        margin-top: 0.5 * $grid;
+        margin: 1 * $grid auto 0;
 
         label {
             border-radius: 0px;
@@ -157,10 +276,11 @@ div.btn-group {
         }
 
         span {
-            width: 10 * $grid;
+            font-size: 3 * $grid;
+            width: 100%;
             position: relative;
             left: 0;
-            top: 8px;
+            top: 5px;
 
             @include media-query($on-small-mobile) {
                 top: 5px;
@@ -171,20 +291,13 @@ div.btn-group {
     //smiley
     &.smiley-div {
         display: flex;
-        justify-content: space-between;
-        margin: 4 * $grid auto 14 * $grid;
-        width: 85%;
-
-        @include media-query($on-tablet) {
-            width: 95%;
-        }
+        justify-content: space-around;
+        margin: 5 * $grid auto 14 * $grid;
+        width: 90%;
 
         @include media-query($on-mobile) {
-            width: 90%;
-        }
-
-        @include media-query($on-small-mobile) {
             width: 100%;
+            margin: 4 * $grid auto 12 * $grid;
         }
 
         label {
@@ -237,6 +350,7 @@ div.btn-group {
     //thumbs
     &.thumbs-div {
         display: table;
+        margin: 4 * $grid 0 12 * $grid;
 
         table {
             width: 100%;
@@ -409,17 +523,33 @@ div.btn-group {
             }
         }
     }
+    /////////////
     // textarea
-    &.feedback {
+    &.textarea-div {
         textarea {
-            width: 100%;
+            display: block;
+            width: 70%;
+            margin: 4 * $grid auto 10 * $grid;
             height: 30 * $grid;
             border: 1.5px solid $lightgrey;
             background-color: $white;
+
+            @include media-query($on-tablet) {
+                width: 70%;
+            }
+
+            @include media-query($on-mobile) {
+                width: 84%;
+                margin: 2 * $grid auto 10 * $grid;
+            }
+
+            @include media-query($on-small-mobile) {
+                width: 94%;
+            }
         }
     }
 } // btn-group ends
 
 .thanks-div {
-    margin-top: 20vh;
+    margin-top: 16vh;
 }
