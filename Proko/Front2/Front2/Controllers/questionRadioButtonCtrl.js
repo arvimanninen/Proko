@@ -7,6 +7,6 @@ app.controller('questionRadioButtonCtrl', function questionRadioButtonCtrl($scop
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionSmileys");
+        $location.path("/questionCheckbox");
     };
 });

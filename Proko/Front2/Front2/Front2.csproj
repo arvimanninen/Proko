@@ -91,6 +91,7 @@
     </Content>
     <Content Include="Controllers\endCtrl.js" />
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
+    <Content Include="Controllers\questionCheckboxCtrl.js" />
     <Content Include="Controllers\questionRadioButtonCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
     <Content Include="Controllers\questionTextareaCtrl.js" />
@@ -935,6 +936,7 @@
     <Content Include="Services\answerService.js" />
     <Content Include="Views\end.html" />
     <Content Include="Views\questionButtonSlider.html" />
+    <Content Include="Views\questionCheckbox.html" />
     <Content Include="Views\questionRadioButton.html" />
     <Content Include="Views\questionSmileys.html" />
     <Content Include="Views\questionTextarea.html" />

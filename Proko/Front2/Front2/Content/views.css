@@ -31,7 +31,8 @@ div.btn-group {
   div.btn-group label, div.btn-group a {
     position: relative;
     cursor: pointer;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    user-select: none; }
     div.btn-group label.button-neg, div.btn-group a.button-neg {
       background-color: #f69f8a;
       border: 1px solid #d63811;
@@ -191,7 +192,7 @@ div.btn-group {
     margin: 8px 0 0 10%;
     padding: 0;
     width: 80%; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       div.btn-group.radiobutton-div {
         width: 90%;
         margin: 0 0 0 5%; } }
@@ -271,6 +272,66 @@ div.btn-group {
         background: #36993b; }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ label {
         box-shadow: 0px 1px 1px 1px rgba(134, 206, 126, 0.4); }
+  div.btn-group.checkbox-div ul {
+    padding: 0; }
+  div.btn-group.checkbox-div ul li {
+    display: block;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    div.btn-group.checkbox-div ul li label {
+      display: block;
+      position: relative;
+      font: 'Open Sans', sans-serif;
+      color: #333333;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 26px;
+      margin: 8px auto 8px;
+      padding: 12px 12px 12px 52px;
+      border-radius: 6px;
+      box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
+      -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
+      transition: color 0.2s linear, box-shadow 0.2s, linear;
+      border: 1px solid green; }
+      @media screen and (max-width: 768px) {
+        div.btn-group.checkbox-div ul li label {
+          font-size: 20px;
+          line-height: 26px; } }
+      @media screen and (max-width: 480px) {
+        div.btn-group.checkbox-div ul li label {
+          font-size: 18px;
+          line-height: 24px; } }
+      div.btn-group.checkbox-div ul li label input[type=checkbox] {
+        position: absolute;
+        opacity: 0; }
+      div.btn-group.checkbox-div ul li label .check {
+        position: absolute;
+        top: 10px;
+        left: 4px;
+        height: 25px;
+        width: 25px;
+        background-color: #eee; }
+      div.btn-group.checkbox-div ul li label:hover input[type=checkbox] ~ .check {
+        background-color: #7dd181; }
+      div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check {
+        background-color: #36993b; }
+      div.btn-group.checkbox-div ul li label .check:after {
+        display: none;
+        position: absolute;
+        content: ""; }
+      div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check:after {
+        display: block; }
+      div.btn-group.checkbox-div ul li label .check:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg); }
   div.btn-group.smiley-div {
     display: flex;
     justify-content: space-around;

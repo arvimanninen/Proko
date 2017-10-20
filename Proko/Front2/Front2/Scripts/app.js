@@ -18,6 +18,10 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 templateUrl: 'Views/questionRadioButton.html',
                 controller: 'questionRadioButtonCtrl'
             })
+            .when('/questionCheckbox', {
+                templateUrl: 'Views/questionCheckbox.html',
+                controller: 'questionCheckboxCtrl'
+            })
             .when('/questionSmileys', {
                 templateUrl: 'Views/questionSmileys.html',
                 controller: 'questionSmileysCtrl'
