@@ -188,9 +188,17 @@ div.btn-group {
           top: 5px; } }
   div.btn-group.radiobutton-div {
     position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0; }
+    margin: 8px 0 0 10%;
+    padding: 0;
+    width: 80%; }
+    @media screen and (max-width: 480px) {
+      div.btn-group.radiobutton-div {
+        width: 90%;
+        margin: 0 0 0 5%; } }
+    @media screen and (max-width: 480px) {
+      div.btn-group.radiobutton-div {
+        width: 100%;
+        margin: 4px 0 0 0; } }
     div.btn-group.radiobutton-div ul {
       padding: 0; }
     div.btn-group.radiobutton-div ul li {
@@ -199,24 +207,11 @@ div.btn-group {
       list-style: none;
       margin: 0;
       padding: 0;
-      /*.check::before {
-                display: block;
-                position: absolute;
-                content: '';
-                border-radius: 100%;
-                height: 14px;
-                width: 14px;
-                top: -2px;
-                left: -2px;
-                margin: auto;
-                -webkit-transition: background 0.2s linear;
-                transition: background 0.2s linear;
+      /*&:hover .check {
+                border: 5px solid $middlegrey;
             }*/
-      /*input[type=radio]:checked ~ .check::before {
-                background: $grey;
-            }*/
-      /*input[type=radio]:checked ~ label {
-                color: $grey;
+      /*input[type=radio]:checked ~ .check {
+                border: 10px solid $button-pos-color;
             }*/ }
       div.btn-group.radiobutton-div ul li label {
         display: block;
@@ -226,13 +221,12 @@ div.btn-group {
         font-weight: 400;
         font-size: 22px;
         line-height: 26px;
-        padding: 16px 16px 16px 64px;
-        margin: 10px auto 10px;
-        z-index: 9;
-        cursor: pointer;
-        -webkit-transition: color 0.2s linear;
-        transition: color 0.2s linear;
-        border: 1px solid red; }
+        margin: 8px auto 8px;
+        padding: 12px 12px 12px 64px;
+        border-radius: 6px;
+        box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
+        -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
+        transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
           div.btn-group.radiobutton-div ul li label {
             font-size: 20px;
@@ -241,27 +235,42 @@ div.btn-group {
           div.btn-group.radiobutton-div ul li label {
             font-size: 18px;
             line-height: 24px;
-            padding: 12px 12px 12px 56px; } }
+            margin: 4px auto 4px;
+            padding: 8px 8px 8px 56px; } }
+      div.btn-group.radiobutton-div ul li:hover label {
+        box-shadow: 1px 1px 1px 1px rgba(204, 204, 204, 0.4); }
       div.btn-group.radiobutton-div ul li .check {
         display: block;
         position: absolute;
-        border: 2px solid #cccccc;
+        border: 1.5px solid #808080;
         border-radius: 100%;
         height: 20px;
         width: 20px;
-        top: 20px;
+        top: 16px;
         left: 20px;
         z-index: 5;
         -webkit-transition: border .2s linear;
         transition: border .2s linear; }
         @media screen and (max-width: 480px) {
           div.btn-group.radiobutton-div ul li .check {
-            top: 16px;
+            top: 12px;
             left: 20px; } }
-      div.btn-group.radiobutton-div ul li:hover .check {
-        border: 5px solid #7dd181; }
-      div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check {
-        border: 10px solid #36993b; }
+      div.btn-group.radiobutton-div ul li .check::before {
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 13.5px;
+        width: 13.5px;
+        top: 2px;
+        left: 2px;
+        margin: auto;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear; }
+      div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check::before {
+        background: #36993b; }
+      div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ label {
+        box-shadow: 1px 1px 1px 1px rgba(204, 204, 204, 0.4); }
   div.btn-group.smiley-div {
     display: flex;
     justify-content: space-around;

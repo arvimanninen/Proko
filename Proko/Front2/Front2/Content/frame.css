@@ -159,6 +159,7 @@ span {
   display: inline-block; }
 
 .container {
+  position: relative;
   max-width: 680px;
   padding: 0 15px;
   max-height: 2200px; }
