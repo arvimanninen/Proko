@@ -306,7 +306,7 @@ div.btn-group {
 
         @include media-query($on-tablet) {
             width: 90%;
-            margin: 0 0 0 5%;
+            margin: 2 * $grid 0 0 5%;
         }
 
         @include media-query($on-mobile) {
@@ -328,14 +328,13 @@ div.btn-group {
             label {
                 display: block;
                 position: relative;
-                font: 'Open Sans', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 color: $grey;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
                 line-height: 6.5 * $grid;
                 margin: 2 * $grid auto 2 * $grid;
-                padding: 3 * $grid 3 * $grid 3 * $grid 16 * $grid;
-                border-radius: 1.5 * $grid;
+                padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 box-shadow: 0 0 0 0 rgba(204,204,204,0);
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
@@ -349,31 +348,35 @@ div.btn-group {
                     font-size: 4.5 * $grid;
                     line-height: 6 * $grid;
                     margin: 1 * $grid auto 1 * $grid;
-                    padding: 2 * $grid 2 * $grid 2 * $grid 14 * $grid;
+                    padding: 2 * $grid 2 * $grid 2 * $grid 12 * $grid;
                 }
             }
-
-            &:hover label {
+            /*&:hover label {
                 box-shadow: 0px 1px 1px 1px rgba(204,204,204,0.4);
-            }
-
+            }*/
             .check {
                 display: block;
                 position: absolute;
-                border: 1.5px solid $middlegrey;
+                background-color: $lightgrey;
+                // border: 1.5px solid $lightgrey;
                 border-radius: 100%;
-                height: 5 * $grid;
-                width: 5 * $grid;
-                top: 16px;
-                left: 20px;
+                height: 20px;
+                width: 20px;
+                top: 14px;
+                left: 17px;
                 z-index: 5;
-                -webkit-transition: border .2s linear;
-                transition: border .2s linear;
+                -webkit-transition: background-color .2s linear;
+                transition: background-color .2s linear;
 
                 @include media-query($on-mobile) {
-                    top: 12px;
-                    left: 20px;
+                    top: 9px;
+                    left: 14px;
                 }
+            }
+
+
+            &:hover .check {
+                background-color: $button-pos-hover;
             }
             /*&:hover .check {
                 border: 5px solid $middlegrey;
@@ -382,30 +385,53 @@ div.btn-group {
                 display: block;
                 position: absolute;
                 content: '';
+                background-color: rgba(255, 255, 255, 0);
                 border-radius: 100%;
-                height: 13.5px;
-                width: 13.5px;
-                top: 2px;
-                left: 2px;
+                height: 9px;
+                width: 9px;
+                top: 5.5px;
+                left: 5.5px;
                 margin: auto;
                 -webkit-transition: all 0.2s linear;
                 transition: all 0.2s linear;
-            }
-            /*input[type=radio]:checked ~ .check {
-                border: 10px solid $button-pos-color;
-            }*/
-            input[type=radio]:checked ~ .check::before {
-                background: $button-pos-checked;
+
+                @include media-query($on-mobile) {
+                    top: 5px;
+                    left: 5px;
+                }
             }
 
-            input[type=radio]:checked ~ label {
-                box-shadow: 0px 1px 1px 1px rgba(134, 206, 126, .4);
+            input[type=radio]:checked ~ .check::before {
+                background-color: rgba(255, 255, 255, 1);
             }
+
+            input[type=radio]:checked ~ .check {
+                background-color: $button-pos-checked;
+            }
+            /*input[type=radio]:checked ~ label {
+                box-shadow: 0px 1px 1px 1px rgba(134, 206, 126, .4);
+            }*/
         }
     }
     /////////////
     //checkbox
     &.checkbox-div {
+        position: relative;
+        margin: 2 * $grid 0 0 10%;
+        padding: 0;
+        width: 80%;
+
+        @include media-query($on-tablet) {
+            width: 90%;
+            margin: 2 * $grid 0 0 5%;
+        }
+
+        @include media-query($on-mobile) {
+            width: 100%;
+            margin: $grid 0 0 0;
+        }
+
+
         ul {
             padding: 0;
         }
@@ -420,18 +446,17 @@ div.btn-group {
             label {
                 display: block;
                 position: relative;
-                font: 'Open Sans', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 color: $grey;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
                 line-height: 6.5 * $grid;
                 margin: 2 * $grid auto 2 * $grid;
-                padding: 3 * $grid 3 * $grid 3 * $grid 13 * $grid;
+                padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
                 box-shadow: 0 0 0 0 rgba(204,204,204,0);
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
-                border: 1px solid green;
 
                 @include media-query($on-tablet) {
                     font-size: 5 * $grid;
@@ -441,6 +466,8 @@ div.btn-group {
                 @include media-query($on-mobile) {
                     font-size: 4.5 * $grid;
                     line-height: 6 * $grid;
+                    margin: 1 * $grid auto 1 * $grid;
+                    padding: 2 * $grid 2 * $grid 2 * $grid 12 * $grid;
                 }
 
                 input[type=checkbox] {
@@ -450,11 +477,16 @@ div.btn-group {
 
                 .check {
                     position: absolute;
-                    top: 10px;
-                    left: 4px;
-                    height: 25px;
-                    width: 25px;
-                    background-color: #eee;
+                    top: 14px;
+                    left: 16px;
+                    height: 20px;
+                    width: 20px;
+                    background-color: $lightgrey;
+
+                    @include media-query($on-mobile) {
+                        top: 9px;
+                        left: 13px;
+                    }
                 }
 
                 &:hover input[type=checkbox] ~ .check {
@@ -464,6 +496,7 @@ div.btn-group {
                 & input[type=checkbox]:checked ~ .check {
                     background-color: $button-pos-checked;
                 }
+
 
                 .check:after {
                     display: none;
@@ -476,12 +509,12 @@ div.btn-group {
                 }
 
                 .check:after {
-                    left: 9px;
-                    top: 5px;
-                    width: 5px;
-                    height: 10px;
+                    left: 6.5px;
+                    top: 2.5px;
+                    width: 7px;
+                    height: 11px;
                     border: solid white;
-                    border-width: 0 3px 3px 0;
+                    border-width: 0 2px 2px 0;
                     -webkit-transform: rotate(45deg);
                     transform: rotate(45deg);
                 }
