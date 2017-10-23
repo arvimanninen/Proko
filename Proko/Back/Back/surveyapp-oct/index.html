@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Iss Proko - Rakennushankekysely</title>
+    <!-- Bootstrap css-->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Own modifications css-->
+    <link href="core/styles/variables.min.css" rel="stylesheet">
+    <link href="core/styles/frame.min.css" rel="stylesheet">
+    <link href="core/styles/views.min.css" rel="stylesheet">
+    <link href="core/styles/results.min.css" rel="stylesheet">
+
+    <!-- TODO: UPDATE HTML5SHIV AND RESPOND -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9] -->
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--[endif]-->
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <h3 id="header-text">Kysely</h3>
+            </div> <!--container div ends-->
+        </header>
+        <!-- begin page content -->
+        <div ng-view>
+
+
+        </div> <!-- page content div ends-->
+    </div><!-- wrap div ends -->
+    <footer>
+        <div class="container">
+            <h4 id="footer-text">ISS Proko Oy</h4>
+        </div>
+    </footer>
+
+    <!-- jQuery  -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AngularJS-->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <!-- Chart.js and Angular Chart -->
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
+
+    <!-- App module and config -->
+    <script src="module.js"></script>
+    <script src="config.js"></script>
+
+    <!-- Angular services and factories-->
+    <script src="core/data.factory.js"></script>
+    <script src="core/question.service.js"></script>
+    <script src="core/answer.service.js"></script>
+    <script src="core/run.service.js"></script>
+
+    <!-- Angular controllers and components -->
+    <script src="core/question.controller.js"></script>
+
+    <script src="start/start.component.js"></script>
+    <script src="start/start.controller.js"></script>
+
+    <!-- Angular controllers -->
+    <!--<script src="Controllers/startCtrl.js"></script>
+    <script src="Controllers/questionButtonSliderCtrl.js"></script>
+    <script src="Controllers/questionSmileysCtrl.js"></script>
+    <script src="Controllers/questionThumbsCtrl.js"></script>
+    <script src="Controllers/questionTextareaCtrl.js"></script>
+    <script src="Controllers/endCtrl.js"></script>
+    <script src="Controllers/resultsCtrl.js"></script>-->
+
+    <!-- Angular services -->
+    <!--<script src="Services/answerService.js"></script>
+    <script src="Services/storageService.js"></script>
+    <script src="Services/safetyAnswerService.js"></script>-->
+</body>
+</html>
