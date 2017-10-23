@@ -38,6 +38,7 @@ namespace Back.ApiControllers
                               QuestionID = chosenquestion.QuestionID,
                               QuestionMethodID = questionmethod.QuestionMethodID,
                               QuestionSetIndex = chosenquestion.QuestionSet.ChosenIndex,
+                              QuestionSetTitle = chosenquestion.QuestionSet.Title,
                               ChosenQuestionIndex = chosenquestion.ChosenIndex,
                               QuestionText = chosenquestion.Question.Text,
                               QuestionMethodValue = questionmethod.Value
@@ -47,6 +48,8 @@ namespace Back.ApiControllers
             
             List<QuestionDTO> cleanDtos = rawDtos.ToList();
             
+            // CHECKS THAT QuestionSetIndexES AND ChosenQuestionIndexES ARE IN LINEARLY ASCENDING ORDER WITHOUT GAPS
+
             int setIndex = 1;
             int questionIndex = 1;
             

@@ -249,6 +249,14 @@
     <Compile Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.Designer.cs">
       <DependentUpon>201710181045002_TextFeedbackAddedToAnswerBundle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710191246455_TitleInQuestionSetRenamedAsMainQuestion.cs" />
+    <Compile Include="Migrations\201710191246455_TitleInQuestionSetRenamedAsMainQuestion.Designer.cs">
+      <DependentUpon>201710191246455_TitleInQuestionSetRenamedAsMainQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710191259252_LastMigrationReversed.cs" />
+    <Compile Include="Migrations\201710191259252_LastMigrationReversed.Designer.cs">
+      <DependentUpon>201710191259252_LastMigrationReversed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -723,6 +731,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.resx">
       <DependentUpon>201710181045002_TextFeedbackAddedToAnswerBundle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710191246455_TitleInQuestionSetRenamedAsMainQuestion.resx">
+      <DependentUpon>201710191246455_TitleInQuestionSetRenamedAsMainQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710191259252_LastMigrationReversed.resx">
+      <DependentUpon>201710191259252_LastMigrationReversed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
