@@ -2,6 +2,6 @@
     $scope.title = "start view";
     $scope.formatAndGo = function () {
         //answerService.format();
-        $location.path("/questionButtonSlider");
+        $location.path("/questionRadioButton");
     };
 });

@@ -5,6 +5,6 @@
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionSmileys");
+        $location.path("/questionButtonSlider");
     };
 });

@@ -3,10 +3,10 @@
 app.controller('questionButtonSliderCtrl', function questionButtonSliderCtrl($scope, $location) {
 
     $scope.previousView = function () {
-        $location.path("/start");
+        $location.path("/questionCheckbox");
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionRadioButton");
+        $location.path("/questionSmileys");
     };
 });
