@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FAFAFA;
+  font-family: 'Cabin', sans-serif;
   font-size: 16px; }
 
 #wrap {
@@ -120,7 +121,7 @@ p {
 HEADER & FOOTER
 **************************/
 header, footer {
-  background-color: #393E41;
+  background-color: #605F5E;
   box-sizing: border-box; }
 
 header {
@@ -158,6 +159,7 @@ span {
   display: inline-block; }
 
 .container {
+  position: relative;
   max-width: 680px;
   padding: 0 15px;
   max-height: 2200px; }

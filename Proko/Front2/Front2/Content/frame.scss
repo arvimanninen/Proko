@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: $body-bg-color;
+    font-family: 'Cabin', sans-serif;
     font-size: 16px;
 }
 
@@ -196,6 +197,7 @@ span {
 }
 
 .container {
+    position: relative;
     max-width: 680px;
     padding: 0 15px;
     max-height: 2200px;

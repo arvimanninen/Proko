@@ -2,7 +2,7 @@
 app.controller('questionSmileysCtrl', function questionSmileysCtrl($scope, $location) {
 
         $scope.previousView = function () {
-            $location.path("/questionButtonSlider");
+            $location.path("/questionCheckbox");
         };
 
         $scope.setAnswers = function () {
