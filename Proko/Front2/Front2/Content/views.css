@@ -245,10 +245,10 @@ div.btn-group {
         position: absolute;
         background-color: #cccccc;
         border-radius: 100%;
-        height: 20px;
-        width: 20px;
+        height: 21px;
+        width: 21px;
         top: 14px;
-        left: 17px;
+        left: 16px;
         z-index: 5;
         -webkit-transition: background-color .2s linear;
         transition: background-color .2s linear; }
@@ -264,10 +264,10 @@ div.btn-group {
         content: '';
         background-color: rgba(255, 255, 255, 0);
         border-radius: 100%;
-        height: 9px;
-        width: 9px;
-        top: 5.5px;
-        left: 5.5px;
+        height: 11px;
+        width: 11px;
+        top: 5px;
+        left: 5px;
         margin: auto;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear; }
@@ -329,15 +329,15 @@ div.btn-group {
           opacity: 0; }
         div.btn-group.checkbox-div ul li label .check {
           position: absolute;
+          height: 21px;
+          width: 21px;
           top: 14px;
           left: 16px;
-          height: 20px;
-          width: 20px;
           background-color: #cccccc; }
           @media screen and (max-width: 480px) {
             div.btn-group.checkbox-div ul li label .check {
               top: 9px;
-              left: 13px; } }
+              left: 14px; } }
         div.btn-group.checkbox-div ul li label:hover input[type=checkbox] ~ .check {
           background-color: #7dd181; }
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check {
