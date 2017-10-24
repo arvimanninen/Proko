@@ -6,16 +6,15 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/', {
                 template: '<start></start>'
             })
-            /*
+            
             .when('/start', {
                 template: '<start></start>'
             })
-            .when('/test', {
-                template: '<test></test>'
+            
+            .when('/buttons-slider', {
+                template: '<buttons-slider></buttons-slider>'
             })
-            .when('/buttons-horizontal-num-5', {
-                template: '<buttons-horizontal-num-5></buttons-horizontal-num-5>'
-            })
+            /*
             .when('/buttons-horizontal-short-blank-5', {
                 template: '<buttons-horizontal-short-blank-5></buttons-horizontal-short-blank-5>'
             })

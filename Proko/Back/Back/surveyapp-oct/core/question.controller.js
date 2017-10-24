@@ -2,7 +2,7 @@
 
 app.controller('QuestionCtrl', function ($location, $route, $templateCache, AnswerService, QuestionService, RunService) {
     var that = this;
-    var backButton = document.getElementById("back-button");
+    //var backButton = document.getElementById("back-button");
     var questionSetIndex = RunService.getQuestionSetIndex();
     var maxSetIndex = RunService.getQuestionSetCount();
     console.log("questionSetIndex: " + questionSetIndex);
@@ -37,11 +37,11 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         }
     };
     */
-    if (questionSetIndex >= 2) {
+    /*if (questionSetIndex >= 2) {
         backButton.style.visibility = "visible";
     } else {
         backButton.style.visibility = "hidden";
-    }
+    }*/
 
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
     var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
@@ -90,12 +90,14 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
             // $location.path(QuestionService.getQmvBySetIndex(questionSetIndex));
         }
     };
+    /*
     that.goBack = function () {
         questionSetIndex--;
         RunService.decreaseQuestionSetIndex();
         nextQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
         changeLocation(currentQmv, nextQmv, questionSetIndex, maxSetIndex);
     };
+    */
 });
 
 

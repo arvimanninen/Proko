@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
+app.controller('ResultsCtrl', function ($scope, $location) {
 
     //modal
     $(function () {
