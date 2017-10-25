@@ -18,6 +18,7 @@ OUTER SLIDER DIV
         display: flex;
         justify-content: space-between;
         margin: 0 0 11 * $grid;
+        color: $white;
 
         @include media-query($on-mobile) {
             margin: 0 0 9 * $grid;
@@ -256,7 +257,7 @@ div.btn-group {
     /////////////
     // slider
     &.slider-div {
-        margin: 1 * $grid auto 0;
+        margin: 2 * $grid auto 0;
 
         label {
             border-radius: 0px;
@@ -268,11 +269,7 @@ div.btn-group {
             height: 11 * $grid;
 
             @include media-query($on-mobile) {
-                height: 11 * $grid;
-            }
-
-            @include media-query($on-small-mobile) {
-                height: 10 * $grid;
+                height: 13 * $grid;
             }
             //border-radius for 1st and last btn
             &.slider-group-first {
@@ -328,26 +325,26 @@ div.btn-group {
             label {
                 display: block;
                 position: relative;
-                font-family: 'Open Sans', sans-serif;
-                color: $grey;
+                font-family: 'Roboto', sans-serif;
+                color: $white;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
-                line-height: 6.5 * $grid;
+                line-height: 7 * $grid;
                 margin: 2 * $grid auto 2 * $grid;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
+                border-radius: 1.5 * $grid;
                 box-shadow: 0 0 0 0 rgba(204,204,204,0);
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
-                //border: 1px solid red;
+
                 @include media-query($on-tablet) {
                     font-size: 5 * $grid;
                     line-height: 6.5 * $grid;
                 }
-
-                @include media-query($on-mobile) {
+                /*@include media-query($on-mobile) {
                     margin: 1 * $grid auto 1 * $grid;
                     padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }
+                }*/
             }
             /*&:hover label {
                 box-shadow: 0px 1px 1px 1px rgba(204,204,204,0.4);
@@ -360,7 +357,7 @@ div.btn-group {
                 border-radius: 100%;
                 height: 21px;
                 width: 21px;
-                top: 13px;
+                top: 15px;
                 left: 14px;
                 z-index: 5;
                 -webkit-transition: background-color .2s linear;
@@ -374,11 +371,9 @@ div.btn-group {
 
 
             &:hover .check {
-                background-color: $button-pos-hover;
+                background-color: $button-tertiary-hover-alt;
             }
-            /*&:hover .check {
-                border: 5px solid $middlegrey;
-            }*/
+
             .check::before {
                 display: block;
                 position: absolute;
@@ -404,11 +399,14 @@ div.btn-group {
             }
 
             input[type=radio]:checked ~ .check {
-                background-color: $button-pos-checked;
+                background-color: $button-tertiary-color;
             }
-            /*input[type=radio]:checked ~ label {
-                box-shadow: 0px 1px 1px 1px rgba(134, 206, 126, .4);
-            }*/
+
+            input[type=radio]:checked ~ label {
+                //background-color: $almost-white;
+                //box-shadow: inset 0 0 1px 1px rgba(144, 216, 147, 0.3);
+                //box-shadow: inset 0 0 1px 1px rgba(204,204,204,0.2);
+            }
         }
     }
     /////////////
@@ -444,11 +442,11 @@ div.btn-group {
             label {
                 display: block;
                 position: relative;
-                font-family: 'Open Sans', sans-serif;
-                color: $grey;
+                font-family: 'Roboto', sans-serif;
+                color: $white;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
-                line-height: 6.5 * $grid;
+                line-height: 7 * $grid;
                 margin: 2 * $grid auto 2 * $grid;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
@@ -460,12 +458,10 @@ div.btn-group {
                     font-size: 5 * $grid;
                     line-height: 6.5 * $grid;
                 }
-
-                @include media-query($on-mobile) {
+                /*@include media-query($on-mobile) {
                     margin: 1 * $grid auto 1 * $grid;
                     padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }
-
+                }*/
                 input[type=checkbox] {
                     position: absolute;
                     opacity: 0;
@@ -475,7 +471,7 @@ div.btn-group {
                     position: absolute;
                     height: 21px;
                     width: 21px;
-                    top: 13px;
+                    top: 15px;
                     left: 14px;
                     background-color: $lightgrey;
 
@@ -486,11 +482,11 @@ div.btn-group {
                 }
 
                 &:hover input[type=checkbox] ~ .check {
-                    background-color: $button-pos-hover;
+                    background-color: $button-tertiary-hover-alt;
                 }
 
                 & input[type=checkbox]:checked ~ .check {
-                    background-color: $button-pos-checked;
+                    background-color: $button-tertiary-color;
                 }
 
 
@@ -505,8 +501,8 @@ div.btn-group {
                 }
 
                 .check:after {
-                    left: 6.5px;
-                    top: 2.5px;
+                    left: 7px;
+                    top: 3px;
                     width: 7px;
                     height: 11px;
                     border: solid white;
@@ -580,7 +576,7 @@ div.btn-group {
     //thumbs
     &.thumbs-div {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         width: 60%;
         margin: 4 * $grid auto 12 * $grid;
         //border: 1px solid red;
@@ -598,7 +594,7 @@ div.btn-group {
             color: $button-text-color;
             width: 21 * $grid;
             height: 14 * $grid;
-            //margin: 0 4 * $grid;
+            margin: 0 4 * $grid;
             /*@include media-query($on-tablet) {
                 width: 15 * $grid;
                 height: 12 * $grid;
@@ -606,7 +602,7 @@ div.btn-group {
             @include media-query($on-mobile) {
                 width: 17.25 * $grid;
                 height: 11.5 * $grid;
-                //margin: 0 2 * $grid;
+                margin: 0 2 * $grid;
             }
             /*@include media-query($on-small-mobile) {
                 width: 12.5 * $grid;
@@ -634,7 +630,7 @@ div.btn-group {
         textarea {
             display: block;
             width: 70%;
-            margin: 4 * $grid auto 10 * $grid;
+            margin: 3 * $grid auto 10 * $grid;
             height: 30 * $grid;
             border: 1.5px solid $lightgrey;
             background-color: $white;

@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: $body-bg-color;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
@@ -23,6 +23,39 @@ body {
     margin: 0 auto -56px;
     padding: 0 0 56px;
     color: $grey;
+    background-color: $container-bg-color;
+}
+
+.container {
+    position: relative;
+    max-width: 680px;
+    padding: 0 15px;
+    max-height: 2200px;
+}
+
+.container-custom {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container-custom {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-custom {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-custom {
+        width: 1170px;
+    }
 }
 
 /*
@@ -42,11 +75,11 @@ h1 {
         margin: 3 * $grid 0 3 * $grid;
     }
 
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 8 * $grid;
         line-height: 10 * $grid;
         margin: 2.5 * $grid 0 2.5 * $grid;
-    }
+    }*/
 }
 
 h2 {
@@ -62,11 +95,11 @@ h2 {
         margin: 3 * $grid 0 2.5 * $grid;
     }
 
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 6.5 * $grid;
         line-height: 8 * $grid;
         margin: 2.75 * $grid 0 2 * $grid;
-    }
+    }*/
 }
 
 h3 {
@@ -82,17 +115,17 @@ h3 {
         margin: 3 * $grid 0 2 * $grid;
     }
 
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 5.5 * $grid;
         line-height: 7 * $grid;
         margin: 3 * $grid 0 2 * $grid;
-    }
+    }*/
 }
 
 h4 {
     color: $grey;
     font-size: 5.5 * $grid;
-    line-height: 6.5 * $grid;
+    line-height: 7 * $grid;
     margin: 3 * $grid 0 2 * $grid;
     text-align: center;
 
@@ -101,12 +134,11 @@ h4 {
         line-height: 6.5 * $grid;
         margin: 3 * $grid 0 2 * $grid;
     }
-
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 4.5 * $grid;
         line-height: 6 * $grid;
         margin: 3 * $grid 0 2 * $grid;
-    }
+    }*/
 }
 
 h5 {
@@ -120,7 +152,7 @@ h5 {
 h6 {
     color: $grey;
     font-size: 3.5 * $grid;
-    line-height: 4 * $grid;
+    line-height: 4.5 * $grid;
     margin: 1 * $grid 0 1 * $grid;
     text-align: center;
 }
@@ -141,14 +173,25 @@ p {
     text-align: center;
 }
 
+h1, h2, h3, h4, 
+h5, h6, .lead, p {
+    color: $white;
+    font-weight: 400;
+}
+
+.font-strong {
+    font-weight: 500;
+}
+
 /*
 HEADER & FOOTER
 **************************/
 
-header, footer {
+header, footer, header .container, footer .container {
     background-color: $header-color;
     box-sizing: border-box;
 }
+
 
 header {
     height: 60px;
@@ -168,7 +211,7 @@ footer {
     }
 
     @include media-query($on-mobile) {
-        margin-top: 15px;
+        //margin-top: 15px;
     }
 }
 
@@ -182,26 +225,26 @@ footer {
     }
 
     @include media-query($on-mobile) {
-        margin-top: 18px;
+        //margin-top: 18px;
     }
 }
-
-
 
 /*
 GENERAL STYLES
 **************************/
 
-span {
-    display: inline-block;
+.progress-bar-success {
+    background-color: $button-tertiary-color;
+    background-image: none;
 }
 
-.container {
-    position: relative;
-    max-width: 680px;
-    padding: 0 15px;
-    max-height: 2200px;
-}
+/*
+GENERAL STYLES
+**************************/
+
+
+
+
 
 /*
 START VIEW
