@@ -2,6 +2,7 @@
 
 app.service('AnswerService', function () {
     var surveyAnswers = [];
+    // TODO: UPDATE AnswerDTO
     var AnswerDTO = function (nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID) {
         this.Value = nValue;
         this.QuestionSetIndex = nQuestionSetIndex;

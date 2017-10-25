@@ -355,6 +355,9 @@
     <Content Include="surveyapp-oct\end\end.controller.js" />
     <Content Include="surveyapp-oct\end\end.template.html" />
     <Content Include="surveyapp-oct\index.html" />
+    <Content Include="surveyapp-oct\next-prev-buttons\next-prev-buttons.component.js" />
+    <Content Include="surveyapp-oct\next-prev-buttons\next-prev-buttons.controller.js" />
+    <Content Include="surveyapp-oct\next-prev-buttons\next-prev-buttons.template.html" />
     <Content Include="surveyapp-oct\node_modules\angular-chart.js\angular-chart.js" />
     <Content Include="surveyapp-oct\node_modules\angular-chart.js\dist\angular-chart.js" />
     <Content Include="surveyapp-oct\node_modules\angular-chart.js\dist\angular-chart.min.js" />

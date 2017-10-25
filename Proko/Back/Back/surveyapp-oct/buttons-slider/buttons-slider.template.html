@@ -1,9 +1,11 @@
 ﻿<div class="container">
-
+    <!--
     <div class="progress pr-bar-custom">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
         </div>
     </div>
+    -->
+    <progress-bar></progress-bar>
 
     <h4>Arvioi seuraavia väittämiä:</h4>
 
@@ -11,16 +13,16 @@
         <h4>{{ q.QuestionText }}</h4>
 
         <div class="btn-group slider-div btns-five">
-            <input id="q-a1" type="radio" name="question-1" value="1" />
-            <label for="q-a1" class="button-neg slider-group-first"></label>
-            <input id="q-a2" type="radio" name="question-1" value="2" />
-            <label for="q-a2" class="button-middle-neg"></label>
-            <input id="q-a3" type="radio" name="question-1" value="3" />
-            <label for="q-a3" class="button-neutral"></label>
-            <input id="q-a4" type="radio" name="question-1" value="4" />
-            <label for="q-a4" class="button-middle-pos"></label>
-            <input id="q-a5" type="radio" name="question-1" value="5" />
-            <label for="q-a5" class="button-pos slider-group-last"></label>
+            <input id="q{{ q.ChosenQuestionIndex }}-a1" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="1" />
+            <label for="q{{ q.ChosenQuestionIndex }}-a1" class="button-neg slider-group-first" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)"></label>
+            <input id="q{{ q.ChosenQuestionIndex }}-a2" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="2" />
+            <label for="q{{ q.ChosenQuestionIndex }}-a2" class="button-middle-neg" ng-click="$ctrl.setAnswer(2, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)"></label>
+            <input id="q{{ q.ChosenQuestionIndex }}-a3" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="3" />
+            <label for="q{{ q.ChosenQuestionIndex }}-a3" class="button-neutral" ng-click="$ctrl.setAnswer(3, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)"></label>
+            <input id="q{{ q.ChosenQuestionIndex }}-a4" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="4" />
+            <label for="q{{ q.ChosenQuestionIndex }}-a4" class="button-middle-pos" ng-click="$ctrl.setAnswer(4, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)"></label>
+            <input id="q{{ q.ChosenQuestionIndex }}-a5" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="5" />
+            <label for="q{{ q.ChosenQuestionIndex }}-a5" class="button-pos slider-group-last" ng-click="$ctrl.setAnswer(5, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)"></label>
         </div>
 
         <div class="bar-rating">
@@ -30,9 +32,10 @@
 
     </div>
 
-    
+    <next-prev-buttons></next-prev-buttons>
+    <!--
     <div class="btn-group nav-btn-div nav-btn-margins-small">
-        <a class="button-primary" ng-click="previousView()">Edellinen</a>
-        <a class="button-primary" ng-click="setAnswers()">Seuraava</a>
-    </div>
+        <a class="button-primary" ng-click="$ctrl.goTo(-1)">Edellinen</a>
+        <a class="button-primary" ng-click="$ctrl.goTo(1)">Seuraava</a>
+    </div>-->
 </div>
