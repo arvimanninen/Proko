@@ -11,7 +11,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: $body-bg-color;
-    font-family: 'Cabin', sans-serif;
+    //font-family: 'Cabin', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
@@ -42,11 +43,11 @@ h1 {
         margin: 3 * $grid 0 3 * $grid;
     }
 
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 8 * $grid;
         line-height: 10 * $grid;
         margin: 2.5 * $grid 0 2.5 * $grid;
-    }
+    }*/
 }
 
 h2 {
@@ -62,11 +63,11 @@ h2 {
         margin: 3 * $grid 0 2.5 * $grid;
     }
 
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 6.5 * $grid;
         line-height: 8 * $grid;
         margin: 2.75 * $grid 0 2 * $grid;
-    }
+    }*/
 }
 
 h3 {
@@ -82,17 +83,17 @@ h3 {
         margin: 3 * $grid 0 2 * $grid;
     }
 
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 5.5 * $grid;
         line-height: 7 * $grid;
         margin: 3 * $grid 0 2 * $grid;
-    }
+    }*/
 }
 
 h4 {
     color: $grey;
     font-size: 5.5 * $grid;
-    line-height: 6.5 * $grid;
+    line-height: 7 * $grid;
     margin: 3 * $grid 0 2 * $grid;
     text-align: center;
 
@@ -101,12 +102,11 @@ h4 {
         line-height: 6.5 * $grid;
         margin: 3 * $grid 0 2 * $grid;
     }
-
-    @include media-query($on-mobile) {
+    /*@include media-query($on-mobile) {
         font-size: 4.5 * $grid;
         line-height: 6 * $grid;
         margin: 3 * $grid 0 2 * $grid;
-    }
+    }*/
 }
 
 h5 {
@@ -120,7 +120,7 @@ h5 {
 h6 {
     color: $grey;
     font-size: 3.5 * $grid;
-    line-height: 4 * $grid;
+    line-height: 4.5 * $grid;
     margin: 1 * $grid 0 1 * $grid;
     text-align: center;
 }
@@ -139,6 +139,15 @@ p {
     line-height: 5 * $grid;
     margin: 2 * $grid 0 1 * $grid;
     text-align: center;
+}
+
+h1, h2, h3, h4, 
+h5, h6, .lead, p {
+    font-weight: 400;
+}
+
+.font-strong {
+    font-weight: 500;
 }
 
 /*

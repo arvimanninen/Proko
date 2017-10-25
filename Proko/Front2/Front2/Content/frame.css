@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FAFAFA;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px; }
 
 #wrap {
@@ -26,67 +26,67 @@ h1 {
   font-size: 48px;
   line-height: 56px;
   margin: 16px 0 16px;
-  text-align: center; }
+  text-align: center;
+  /*@include media-query($on-mobile) {
+        font-size: 8 * $grid;
+        line-height: 10 * $grid;
+        margin: 2.5 * $grid 0 2.5 * $grid;
+    }*/ }
   @media screen and (max-width: 768px) {
     h1 {
       font-size: 40px;
       line-height: 48px;
       margin: 12px 0 12px; } }
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 32px;
-      line-height: 40px;
-      margin: 10px 0 10px; } }
 
 h2 {
   color: #333333;
   font-size: 34px;
   line-height: 42px;
   margin: 14px 0 12px;
-  text-align: center; }
+  text-align: center;
+  /*@include media-query($on-mobile) {
+        font-size: 6.5 * $grid;
+        line-height: 8 * $grid;
+        margin: 2.75 * $grid 0 2 * $grid;
+    }*/ }
   @media screen and (max-width: 768px) {
     h2 {
       font-size: 32px;
       line-height: 40px;
       margin: 12px 0 10px; } }
-  @media screen and (max-width: 480px) {
-    h2 {
-      font-size: 26px;
-      line-height: 32px;
-      margin: 11px 0 8px; } }
 
 h3 {
   color: #333333;
   font-size: 28px;
   line-height: 36px;
   margin: 14px 0 10px;
-  text-align: center; }
+  text-align: center;
+  /*@include media-query($on-mobile) {
+        font-size: 5.5 * $grid;
+        line-height: 7 * $grid;
+        margin: 3 * $grid 0 2 * $grid;
+    }*/ }
   @media screen and (max-width: 768px) {
     h3 {
       font-size: 24px;
       line-height: 32px;
       margin: 12px 0 8px; } }
-  @media screen and (max-width: 480px) {
-    h3 {
-      font-size: 22px;
-      line-height: 28px;
-      margin: 12px 0 8px; } }
 
 h4 {
   color: #333333;
   font-size: 22px;
-  line-height: 26px;
+  line-height: 28px;
   margin: 12px 0 8px;
-  text-align: center; }
+  text-align: center;
+  /*@include media-query($on-mobile) {
+        font-size: 4.5 * $grid;
+        line-height: 6 * $grid;
+        margin: 3 * $grid 0 2 * $grid;
+    }*/ }
   @media screen and (max-width: 768px) {
     h4 {
       font-size: 20px;
       line-height: 26px;
-      margin: 12px 0 8px; } }
-  @media screen and (max-width: 480px) {
-    h4 {
-      font-size: 18px;
-      line-height: 24px;
       margin: 12px 0 8px; } }
 
 h5 {
@@ -99,7 +99,7 @@ h5 {
 h6 {
   color: #333333;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 18px;
   margin: 4px 0 4px;
   text-align: center; }
 
@@ -116,6 +116,13 @@ p {
   line-height: 20px;
   margin: 8px 0 4px;
   text-align: center; }
+
+h1, h2, h3, h4,
+h5, h6, .lead, p {
+  font-weight: 400; }
+
+.font-strong {
+  font-weight: 500; }
 
 /*
 HEADER & FOOTER
