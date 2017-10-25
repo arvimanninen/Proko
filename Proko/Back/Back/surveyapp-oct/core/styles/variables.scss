@@ -1,0 +1,83 @@
+﻿//grid
+$grid: 4px;
+
+//colors
+$white: #fff;
+$transparent: rgba(255, 255, 255, 0);
+$grey: #333333;
+$lightgrey: #cccccc;
+
+$body-bg-color: #FAFAFA;
+$header-color: #393E41; //#064789; #2F4858; #4C5B5C;
+$footer-color: #808080;
+
+
+// button colors
+$button-text-color: #fff;
+
+$button-pos-color: lighten(#7DD181, 5%);
+$button-pos-border: darken($button-pos-color, 30%);
+$button-pos-hover: darken($button-pos-color, 5%);
+$button-pos-checked: darken($button-pos-color, 30%);
+
+$button-middle-pos-color: lighten(#CBD68D, 5%);
+$button-middle-pos-border: darken($button-middle-pos-color, 30%);
+$button-middle-pos-hover: darken($button-middle-pos-color, 5%);
+$button-middle-pos-checked: darken($button-middle-pos-color, 30%);
+
+$button-neutral-color: lighten(#EDD892, 5%);
+$button-neutral-border: darken($button-neutral-color, 30%);
+$button-neutral-hover: darken($button-neutral-color, 5%);
+$button-neutral-checked: darken($button-neutral-color, 30%);
+
+$button-middle-neg-color: lighten(#EFC188, 5%);
+$button-middle-neg-border: darken($button-middle-neg-color, 30%);
+$button-middle-neg-hover: darken($button-middle-neg-color, 5%);
+$button-middle-neg-checked: darken($button-middle-neg-color, 30%);
+
+$button-neg-color: lighten(#f48c72, 5%);
+$button-neg-border: darken($button-neg-color, 30%);
+$button-neg-hover: darken($button-neg-color, 5%);
+$button-neg-checked: darken($button-neg-color, 30%);
+
+
+$button-primary-color: #337ab7;//#439775;
+$button-primary-border: $button-primary-color;
+$button-primary-hover: darken($button-primary-color, 10%);
+$button-primary-checked: darken($button-primary-color, 30%);
+
+$button-secondary-color: #337ab7;
+$button-secondary-text-color: #337ab7;
+$button-secondary-bg-color: rgba(255, 255, 255, 0);
+$button-secondary-border: lighten($button-secondary-color, 10%);
+$button-secondary-hover: lighten($button-secondary-color, 40%);
+$button-secondary-checked: $button-secondary-color;
+
+$button-tertiary-color: #26C485; //#FA9F42; //#FF8966; //lighten(#439775, 20%);
+$button-tertiary-text-color: #FF8966;
+$button-tertiary-border: #FA9F42; //#FF8966;
+$button-tertiary-hover: darken($button-tertiary-color, 10%);
+$button-tertiary-checked: darken($button-tertiary-color, 30%);
+
+// btn group border radius
+$btn-grp-radius-left: 2 * $grid 0 0 2 * $grid;
+$btn-grp-radius-right: 0 2 * $grid 2 * $grid 0;
+
+// devices
+$on-tablet: 768px;
+$on-mobile: 480px;
+$on-small-mobile: 375px;
+
+// results
+$results-bg-color: #f2f2f2;
+$result-color: #FAFAFA;
+$result-border-color: #e6e6e6;
+
+
+
+// mixins
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
