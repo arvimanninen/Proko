@@ -7,9 +7,9 @@ body {
   min-width: 320px;
   margin: 0;
   padding: 0;
-  background-color: #FAFAFA;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #DFE0E2; }
 
 #wrapper {
   min-height: 100%;
@@ -17,13 +17,14 @@ body {
   margin: 0 auto -56px;
   padding: 0 0 56px;
   color: #fff;
-  background-color: #FAFAFA; }
+  background-color: #DFE0E2; }
 
 .container {
   position: relative;
   max-width: 680px;
   padding: 0 15px;
-  max-height: 2200px; }
+  max-height: 2200px;
+  background-color: #FAFAFA; }
 
 .container-custom {
   padding-right: 15px;

@@ -136,10 +136,10 @@ div.btn-group {
         width: 200px;
         margin: 0 auto; }
     div.btn-group.nav-btn-div.nav-btn-margins {
-      margin: 80px 0 56px; }
+      margin: 80px 0 64px; }
       @media screen and (max-width: 480px) {
         div.btn-group.nav-btn-div.nav-btn-margins {
-          margin: 48px 0 48px; } }
+          margin: 48px 0 56px; } }
     div.btn-group.nav-btn-div.nav-btn-margins-small {
       margin: 40px 0 56px; }
       @media screen and (max-width: 480px) {
@@ -218,7 +218,7 @@ div.btn-group {
         font-weight: 400;
         font-size: 22px;
         line-height: 28px;
-        margin: 8px auto 8px;
+        margin: 4px auto 4px;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
         box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
@@ -237,16 +237,16 @@ div.btn-group {
         position: absolute;
         background-color: #cccccc;
         border-radius: 100%;
-        height: 21px;
-        width: 21px;
-        top: 15px;
-        left: 14px;
+        height: 26px;
+        width: 26px;
+        top: 12px;
+        left: 12px;
         z-index: 5;
         -webkit-transition: background-color .2s linear;
         transition: background-color .2s linear; }
         @media screen and (max-width: 480px) {
           div.btn-group.radiobutton-div ul li .check {
-            top: 14px;
+            top: 11px;
             left: 12px; } }
       div.btn-group.radiobutton-div ul li:hover .check {
         background-color: #98ebca; }
@@ -256,17 +256,17 @@ div.btn-group {
         content: '';
         background-color: rgba(255, 255, 255, 0);
         border-radius: 100%;
-        height: 11px;
-        width: 11px;
-        top: 5px;
-        left: 5px;
+        height: 10px;
+        width: 10px;
+        top: 8px;
+        left: 8px;
         margin: auto;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear; }
         @media screen and (max-width: 480px) {
           div.btn-group.radiobutton-div ul li .check::before {
-            top: 5px;
-            left: 5px; } }
+            top: 6px;
+            left: 6px; } }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check::before {
         background-color: white; }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check {
@@ -319,14 +319,14 @@ div.btn-group {
           opacity: 0; }
         div.btn-group.checkbox-div ul li label .check {
           position: absolute;
-          height: 21px;
-          width: 21px;
-          top: 15px;
-          left: 14px;
+          height: 26px;
+          width: 26px;
+          top: 12px;
+          left: 12px;
           background-color: #cccccc; }
           @media screen and (max-width: 480px) {
             div.btn-group.checkbox-div ul li label .check {
-              top: 14px;
+              top: 11px;
               left: 12px; } }
         div.btn-group.checkbox-div ul li label:hover input[type=checkbox] ~ .check {
           background-color: #98ebca; }
@@ -339,12 +339,12 @@ div.btn-group {
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check:after {
           display: block; }
         div.btn-group.checkbox-div ul li label .check:after {
-          left: 7px;
+          left: 8px;
           top: 3px;
-          width: 7px;
-          height: 11px;
+          width: 10px;
+          height: 15px;
           border: solid white;
-          border-width: 0 2px 2px 0;
+          border-width: 0 3px 3px 0;
           -webkit-transform: rotate(45deg);
           transform: rotate(45deg); }
   div.btn-group.smiley-div {
@@ -434,23 +434,25 @@ div.btn-group {
             height: 26px;
             top: 9px;
             left: 19px; } }
-  div.btn-group.textarea-div textarea {
-    display: block;
-    width: 70%;
-    margin: 12px auto 40px;
-    height: 120px;
-    border: 1.5px solid #cccccc;
-    background-color: #fff; }
-    @media screen and (max-width: 768px) {
-      div.btn-group.textarea-div textarea {
-        width: 70%; } }
-    @media screen and (max-width: 480px) {
-      div.btn-group.textarea-div textarea {
-        width: 84%;
-        margin: 8px auto 40px; } }
-    @media screen and (max-width: 375px) {
-      div.btn-group.textarea-div textarea {
-        width: 94%; } }
+  div.btn-group.textarea-div {
+    margin: 0 0 16px; }
+    div.btn-group.textarea-div textarea {
+      display: block;
+      width: 70%;
+      height: 120px;
+      margin: 12px auto 0;
+      border: 1.5px solid #cccccc;
+      background-color: #fff; }
+      @media screen and (max-width: 768px) {
+        div.btn-group.textarea-div textarea {
+          width: 70%; } }
+      @media screen and (max-width: 480px) {
+        div.btn-group.textarea-div textarea {
+          width: 84%;
+          margin: 8px auto 40px; } }
+      @media screen and (max-width: 375px) {
+        div.btn-group.textarea-div textarea {
+          width: 94%; } }
 
 .thanks-div {
   margin-top: 16vh; }
