@@ -1,12 +1,28 @@
 ﻿'use strict';
 app.controller('questionSmileysCtrl', function questionSmileysCtrl($scope, $location) {
 
-        $scope.previousView = function () {
-            $location.path("/questionButtonSlider");
-        };
+    $(document).ready(function () {
+        var wrapperHeight = $("#wrapper").height();
+        var containerHeight = $(".container").height();
+        var navbtnHeight = wrapperHeight - containerHeight;
+        console.log(navbtnHeight);
+        $(".nav-btn-div").css("margin-top", navbtnHeight);
+    });
 
-        $scope.setAnswers = function () {
-            $location.path("/questionThumbs");
-        };
+    $(window).resize(function () {
+        var wrapperHeight = $("#wrapper").height();
+        var containerHeight = $(".container").height();
+        var navbtnHeight = wrapperHeight - containerHeight;
+        console.log(navbtnHeight);
+        $(".nav-btn-div").css("margin-top", navbtnHeight);
+    });
+
+    $scope.previousView = function () {
+        $location.path("/questionButtonSlider");
+    };
+
+    $scope.setAnswers = function () {
+        $location.path("/questionThumbs");
+    };
 
 });

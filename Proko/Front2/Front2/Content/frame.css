@@ -11,13 +11,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px; }
 
-#wrap {
+#wrapper {
   min-height: 100%;
   height: auto;
   margin: 0 auto -56px;
   padding: 0 0 56px;
-  color: #333333;
-  background-color: #81807e; }
+  color: #fff;
+  background-color: #FAFAFA; }
 
 .container {
   position: relative;
@@ -144,7 +144,6 @@ p {
 
 h1, h2, h3, h4,
 h5, h6, .lead, p {
-  color: #fff;
   font-weight: 400; }
 
 .font-strong {
@@ -153,7 +152,7 @@ h5, h6, .lead, p {
 /*
 HEADER & FOOTER
 **************************/
-header, footer, header .container, footer .container {
+header, footer, header .container-fluid, footer .container-fluid {
   background-color: #605F5E;
   box-sizing: border-box; }
 

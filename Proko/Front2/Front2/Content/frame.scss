@@ -17,13 +17,13 @@ body {
 
 
 // for sticky footer
-#wrap {
+#wrapper {
     min-height: 100%;
     height: auto;
     margin: 0 auto -56px;
     padding: 0 0 56px;
-    color: $grey;
-    background-color: $container-bg-color;
+    color: $white;
+    background-color: $body-bg-color;
 }
 
 .container {
@@ -175,7 +175,6 @@ p {
 
 h1, h2, h3, h4, 
 h5, h6, .lead, p {
-    color: $white;
     font-weight: 400;
 }
 
@@ -187,7 +186,7 @@ h5, h6, .lead, p {
 HEADER & FOOTER
 **************************/
 
-header, footer, header .container, footer .container {
+header, footer, header .container-fluid, footer .container-fluid {
     background-color: $header-color;
     box-sizing: border-box;
 }

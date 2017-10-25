@@ -12,7 +12,7 @@ OUTER SLIDER DIV
     display: flex;
     justify-content: space-between;
     margin: 0 0 44px;
-    color: #fff; }
+    color: #333333; }
     @media screen and (max-width: 480px) {
       .outer-slider-div .bar-rating {
         margin: 0 0 36px; } }
@@ -120,7 +120,8 @@ div.btn-group {
     background-color: #3b87c8; }
   div.btn-group.nav-btn-div {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    box-sizing: border-box; }
     div.btn-group.nav-btn-div a {
       width: 128px;
       height: 48px;
@@ -138,7 +139,7 @@ div.btn-group {
       margin: 80px 0 56px; }
       @media screen and (max-width: 480px) {
         div.btn-group.nav-btn-div.nav-btn-margins {
-          margin: 64px 0 48px; } }
+          margin: 48px 0 48px; } }
     div.btn-group.nav-btn-div.nav-btn-margins-small {
       margin: 40px 0 56px; }
       @media screen and (max-width: 480px) {
@@ -213,7 +214,7 @@ div.btn-group {
         display: block;
         position: relative;
         font-family: 'Roboto', sans-serif;
-        color: #fff;
+        color: #333333;
         font-weight: 400;
         font-size: 22px;
         line-height: 28px;
@@ -295,7 +296,7 @@ div.btn-group {
         display: block;
         position: relative;
         font-family: 'Roboto', sans-serif;
-        color: #fff;
+        color: #333333;
         font-weight: 400;
         font-size: 22px;
         line-height: 28px;
@@ -404,7 +405,7 @@ div.btn-group {
         width: 90%; } }
     div.btn-group.thumbs-div label {
       border-radius: 4px;
-      color: #fff;
+      color: #333333;
       width: 84px;
       height: 56px;
       margin: 0 16px;

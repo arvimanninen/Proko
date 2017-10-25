@@ -18,7 +18,7 @@ OUTER SLIDER DIV
         display: flex;
         justify-content: space-between;
         margin: 0 0 11 * $grid;
-        color: $white;
+        color: $grey;
 
         @include media-query($on-mobile) {
             margin: 0 0 9 * $grid;
@@ -197,6 +197,7 @@ div.btn-group {
     &.nav-btn-div {
         display: flex;
         justify-content: space-around;
+        box-sizing: border-box;
 
         a {
             width: 32 * $grid;
@@ -219,7 +220,7 @@ div.btn-group {
             margin: 20 * $grid 0 14 * $grid;
 
             @include media-query($on-mobile) {
-                margin: 16 * $grid 0 12 * $grid;
+                margin: 12 * $grid 0 12 * $grid;
             }
         }
 
@@ -326,7 +327,7 @@ div.btn-group {
                 display: block;
                 position: relative;
                 font-family: 'Roboto', sans-serif;
-                color: $white;
+                color: $grey;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
                 line-height: 7 * $grid;
@@ -443,7 +444,7 @@ div.btn-group {
                 display: block;
                 position: relative;
                 font-family: 'Roboto', sans-serif;
-                color: $white;
+                color: $grey;
                 font-weight: 400;
                 font-size: 5.5 * $grid;
                 line-height: 7 * $grid;
@@ -591,7 +592,7 @@ div.btn-group {
         label {
             //position: relative;
             border-radius: $grid;
-            color: $button-text-color;
+            color: $grey;
             width: 21 * $grid;
             height: 14 * $grid;
             margin: 0 4 * $grid;
