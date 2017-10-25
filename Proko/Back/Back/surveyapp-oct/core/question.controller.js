@@ -3,14 +3,13 @@
 app.controller('QuestionCtrl', function ($location, $route, $templateCache, AnswerService, QuestionService, RunService) {
     var that = this;
     //var backButton = document.getElementById("back-button");
-    var questionSetIndex = RunService.getQuestionSetIndex();
-    var maxSetIndex = RunService.getQuestionSetCount();
-    console.log("questionSetIndex: " + questionSetIndex);
-    var currentQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
-    var nextQmv;
     
     
-
+    //var currentQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
+    //var nextQmv;
+    
+    
+    /*
     var changeLocation = function (currentLocation, nextLocation, index, maximumIndex) {
         if (index > maximumIndex) {
             $location.path("/end");
@@ -22,6 +21,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
             $location.path(nextLocation);
         }
     };
+    */
     /*
     var checkAnsweredAndActivate = function (currentAnswers) {
         console.log("checkAnsweredAndActivate() started!");
@@ -42,19 +42,17 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     } else {
         backButton.style.visibility = "hidden";
     }*/
-
-    that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
-    var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
-    console.log("currentAnswers.length: ");
-    console.log(currentAnswers.length);
+    //var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
+    //console.log("currentAnswers.length: ");
+    //console.log(currentAnswers.length);
     /*
     if (currentAnswers.length >= 1) {
         angular.element(document).ready(checkAnsweredAndActivate(currentAnswers));
     }
     */
-
-    
-
+    var questionSetIndex = RunService.getQuestionSetIndex();
+    console.log("questionSetIndex: " + questionSetIndex);
+    that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
     that.setAnswer = function (value, questionSetIndex, chosenQuestionIndex, questionId, questionMethodId) {
         // Check if Answer exists
         var answerIndex = AnswerService.getAnswerIndex(questionSetIndex, chosenQuestionIndex);
@@ -78,26 +76,10 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
             console.log("allAnswers.[" + i + "].QuestionMethodID" + allAnswers[i].QuestionMethodID);
             console.log("**************");
         }
-        
-        var answerCountInSet = AnswerService.getAnswerCountByQuestionSetIndex(questionSetIndex);
-        var questionCountInSet = QuestionService.getQuestionCountBySetIndex(questionSetIndex);
 
-        if (answerCountInSet === questionCountInSet) {
-            questionSetIndex++;
-            RunService.increaseQuestionSetIndex();
-            nextQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
-            changeLocation(currentQmv, nextQmv, questionSetIndex, maxSetIndex);
-            // $location.path(QuestionService.getQmvBySetIndex(questionSetIndex));
-        }
+
     };
-    /*
-    that.goBack = function () {
-        questionSetIndex--;
-        RunService.decreaseQuestionSetIndex();
-        nextQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
-        changeLocation(currentQmv, nextQmv, questionSetIndex, maxSetIndex);
-    };
-    */
+
 });
 
 

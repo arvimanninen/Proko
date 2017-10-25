@@ -1,4 +1,5 @@
-﻿app.controller('EndCtrl', function (AnswerService, DataFactory) {
+﻿'use strict';
+app.controller('EndCtrl', function (AnswerService, DataFactory) {
     var that = this;
     var endText = document.getElementById("end-text");
     var postingIcon = document.getElementById("posting-icon");
