@@ -17,6 +17,9 @@ OUTER SLIDER DIV
       .outer-slider-div .bar-rating {
         margin: 0 0 36px; } }
 
+.outer-textarea-div {
+  margin-top: 10vh; }
+
 /*
 BUTTON GROUPS
 **************************/
@@ -35,8 +38,8 @@ div.btn-group {
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-neg, div.btn-group a.button-middle-neg {
-      background-color: #f4c49e;
-      border: 1px solid #e07119;
+      background-color: #f3c9a0;
+      border: 1px solid #de7c1c;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-neutral, div.btn-group a.button-neutral {
@@ -45,8 +48,8 @@ div.btn-group {
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-pos, div.btn-group a.button-middle-pos {
-      background-color: #c4dda2;
-      border: 1px solid #7ba83e;
+      background-color: #cddea3;
+      border: 1px solid #8bab3d;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-pos, div.btn-group a.button-pos {
@@ -88,17 +91,17 @@ div.btn-group {
   div.btn-group input[type="radio"]:checked + label.button-neg {
     background-color: #df3b11; }
   div.btn-group input[type="radio"]:hover + label.button-middle-neg {
-    background-color: #f1b687; }
+    background-color: #f0bc89; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #e07119; }
+    background-color: #de7c1c; }
   div.btn-group input[type="radio"]:hover + label.button-neutral {
     background-color: #edd892; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
     background-color: #dbb125; }
   div.btn-group input[type="radio"]:hover + label.button-middle-pos {
-    background-color: #b8d68f; }
+    background-color: #c3d790; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #7ba83e; }
+    background-color: #8bab3d; }
   div.btn-group input[type="radio"]:hover + label.button-pos {
     background-color: #85d488; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
@@ -176,7 +179,7 @@ div.btn-group {
           height: 52px; } }
       div.btn-group.slider-div label.slider-group-first {
         border-radius: 8px 0 0 8px;
-        border: 1px solid #e07119; }
+        border: 1px solid #de7c1c; }
       div.btn-group.slider-div label.slider-group-last {
         border-radius: 0 8px 8px 0; }
     div.btn-group.slider-div span {
@@ -208,10 +211,7 @@ div.btn-group {
       position: relative;
       list-style: none;
       margin: 0;
-      padding: 0;
-      /*&:hover label {
-                box-shadow: 0px 1px 1px 1px rgba(204,204,204,0.4);
-            }*/ }
+      padding: 0; }
       div.btn-group.radiobutton-div ul li label {
         display: block;
         position: relative;
@@ -225,11 +225,7 @@ div.btn-group {
         border-radius: 6px;
         box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
-        transition: color 0.2s linear, box-shadow 0.2s, linear;
-        /*@include media-query($on-mobile) {
-                    margin: 1 * $grid auto 1 * $grid;
-                    padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }*/ }
+        transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
           div.btn-group.radiobutton-div ul li label {
             font-size: 20px;
@@ -307,11 +303,7 @@ div.btn-group {
         border-radius: 6px;
         box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
-        transition: color 0.2s linear, box-shadow 0.2s, linear;
-        /*@include media-query($on-mobile) {
-                    margin: 1 * $grid auto 1 * $grid;
-                    padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }*/ }
+        transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
           div.btn-group.checkbox-div ul li label {
             font-size: 20px;
@@ -397,61 +389,40 @@ div.btn-group {
   div.btn-group.thumbs-div {
     display: flex;
     justify-content: center;
-    width: 60%;
     margin: 16px auto 48px; }
-    @media screen and (max-width: 768px) {
-      div.btn-group.thumbs-div {
-        width: 70%; } }
-    @media screen and (max-width: 480px) {
-      div.btn-group.thumbs-div {
-        width: 90%; } }
     div.btn-group.thumbs-div label {
       border-radius: 4px;
       color: #333333;
       width: 84px;
-      height: 56px;
-      margin: 0 16px;
-      /*@include media-query($on-tablet) {
-                width: 15 * $grid;
-                height: 12 * $grid;
-            }*/
-      /*@include media-query($on-small-mobile) {
-                width: 12.5 * $grid;
-                height: 10 * $grid;
-            }*/ }
-      @media screen and (max-width: 480px) {
-        div.btn-group.thumbs-div label {
-          width: 69px;
-          height: 46px;
-          margin: 0 8px; } }
+      height: 56px; }
+      div.btn-group.thumbs-div label.button-neutral {
+        margin: 0 32px; }
+        @media screen and (max-width: 480px) {
+          div.btn-group.thumbs-div label.button-neutral {
+            margin: 0 16px; } }
       div.btn-group.thumbs-div label img {
         position: relative;
         width: 36px;
         height: 36px;
         top: 9px;
         left: 22px; }
-        @media screen and (max-width: 480px) {
-          div.btn-group.thumbs-div label img {
-            width: 26px;
-            height: 26px;
-            top: 9px;
-            left: 19px; } }
   div.btn-group.textarea-div {
-    margin: 0 0 16px; }
+    margin: 0; }
     div.btn-group.textarea-div textarea {
       display: block;
       width: 70%;
-      height: 120px;
+      height: 144px;
       margin: 12px auto 0;
       border: 1.5px solid #cccccc;
-      background-color: #fff; }
+      background-color: #fff;
+      color: #333333; }
       @media screen and (max-width: 768px) {
         div.btn-group.textarea-div textarea {
           width: 70%; } }
       @media screen and (max-width: 480px) {
         div.btn-group.textarea-div textarea {
           width: 84%;
-          margin: 8px auto 40px; } }
+          margin: 8px auto 0; } }
       @media screen and (max-width: 375px) {
         div.btn-group.textarea-div textarea {
           width: 94%; } }

@@ -9,7 +9,7 @@ app.controller('questionTextareaCtrl', function questionTextareaCtrl($scope, $lo
         if ((navbtnHeight) < 64) {
             navbtnHeight = 52
         } else {
-            navbtnHeight = navbtnHeight - 12;
+            navbtnHeight = navbtnHeight - 42;
         }
         console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);

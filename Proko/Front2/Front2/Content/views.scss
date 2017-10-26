@@ -26,6 +26,10 @@ OUTER SLIDER DIV
     }
 }
 
+.outer-textarea-div {
+    margin-top: 10vh;
+}
+
 /*
 BUTTON GROUPS
 **************************/
@@ -344,19 +348,12 @@ div.btn-group {
                     font-size: 5 * $grid;
                     line-height: 6.5 * $grid;
                 }
-                /*@include media-query($on-mobile) {
-                    margin: 1 * $grid auto 1 * $grid;
-                    padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }*/
             }
-            /*&:hover label {
-                box-shadow: 0px 1px 1px 1px rgba(204,204,204,0.4);
-            }*/
+
             .check {
                 display: block;
                 position: absolute;
                 background-color: $lightgrey;
-                // border: 1.5px solid $lightgrey;
                 border-radius: 100%;
                 height: 26px;
                 width: 26px;
@@ -405,11 +402,6 @@ div.btn-group {
                 background-color: $button-tertiary-color;
             }
 
-            input[type=radio]:checked ~ label {
-                //background-color: $almost-white;
-                //box-shadow: inset 0 0 1px 1px rgba(144, 216, 147, 0.3);
-                //box-shadow: inset 0 0 1px 1px rgba(204,204,204,0.2);
-            }
         }
     }
     /////////////
@@ -461,10 +453,7 @@ div.btn-group {
                     font-size: 5 * $grid;
                     line-height: 6.5 * $grid;
                 }
-                /*@include media-query($on-mobile) {
-                    margin: 1 * $grid auto 1 * $grid;
-                    padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }*/
+
                 input[type=checkbox] {
                     position: absolute;
                     opacity: 0;
@@ -580,37 +569,22 @@ div.btn-group {
     &.thumbs-div {
         display: flex;
         justify-content: center;
-        width: 60%;
         margin: 4 * $grid auto 12 * $grid;
-        //border: 1px solid red;
-        @include media-query($on-tablet) {
-            width: 70%;
-        }
-
-        @include media-query($on-mobile) {
-            width: 90%;
-        }
 
         label {
-            //position: relative;
             border-radius: $grid;
             color: $grey;
             width: 21 * $grid;
             height: 14 * $grid;
-            margin: 0 4 * $grid;
-            /*@include media-query($on-tablet) {
-                width: 15 * $grid;
-                height: 12 * $grid;
-            }*/
-            @include media-query($on-mobile) {
-                width: 17.25 * $grid;
-                height: 11.5 * $grid;
-                margin: 0 2 * $grid;
+
+            &.button-neutral {
+                margin: 0 8 * $grid;
+
+                @include media-query($on-mobile) {
+                    margin: 0 4 * $grid;
+                }
             }
-            /*@include media-query($on-small-mobile) {
-                width: 12.5 * $grid;
-                height: 10 * $grid;
-            }*/
+
             img {
                 position: relative;
                 width: 9 * $grid;
@@ -618,27 +592,22 @@ div.btn-group {
                 top: 9px;
                 left: 22px;
 
-                @include media-query($on-mobile) {
-                    width: 6.5 * $grid;
-                    height: 6.5 * $grid;
-                    top: 9px;
-                    left: 19px;
-                }
             }
         }
     }
     /////////////
     // textarea
     &.textarea-div {
-        margin: 0 0 4 * $grid;
+        margin: 0;
 
         textarea {
             display: block;
             width: 70%;
-            height: 30 * $grid;
+            height: 36 * $grid;
             margin: 3 * $grid auto 0;
             border: 1.5px solid $lightgrey;
             background-color: $white;
+            color: $grey;
 
             @include media-query($on-tablet) {
                 width: 70%;
@@ -646,7 +615,7 @@ div.btn-group {
 
             @include media-query($on-mobile) {
                 width: 84%;
-                margin: 2 * $grid auto 10 * $grid;
+                margin: 2 * $grid auto 0;
             }
 
             @include media-query($on-small-mobile) {
