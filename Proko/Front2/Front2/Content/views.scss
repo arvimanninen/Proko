@@ -36,14 +36,6 @@ div.btn-group {
     input[type="radio"] {
         display: none;
     }
-    // different number of labels in row
-    &.btns-five label {
-        width: 20.2%;
-
-        @include media-query($on-mobile) {
-            width: 20.4%;
-        }
-    }
 
     label, a {
         position: relative;
@@ -259,6 +251,14 @@ div.btn-group {
     // slider
     &.slider-div {
         margin: 2 * $grid auto 0;
+        // different number of labels in row
+        &.btns-five label {
+            width: 20.2%;
+
+            @include media-query($on-mobile) {
+                width: 20.4%;
+            }
+        }
 
         label {
             border-radius: 0px;
@@ -268,6 +268,7 @@ div.btn-group {
             text-align: center;
             font-size: 20px;
             height: 11 * $grid;
+            border-left: none;
 
             @include media-query($on-mobile) {
                 height: 13 * $grid;
@@ -275,6 +276,7 @@ div.btn-group {
             //border-radius for 1st and last btn
             &.slider-group-first {
                 border-radius: $btn-grp-radius-left;
+                border: 1px solid $button-middle-neg-border;
             }
 
             &.slider-group-last {
@@ -390,8 +392,8 @@ div.btn-group {
                 transition: all 0.2s linear;
 
                 @include media-query($on-mobile) {
-                    top: 6px;
-                    left: 6px;
+                    top: 8px;
+                    left: 8px;
                 }
             }
 
