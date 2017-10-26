@@ -7,6 +7,12 @@ app.controller('questionButtonSliderCtrl', function questionButtonSliderCtrl($sc
         var containerHeight = $(".container").height();
         var navbtnHeight = wrapperHeight - containerHeight;
         console.log(navbtnHeight);
+        if ((navbtnHeight) < 64) {
+            navbtnHeight = 52
+        } else {
+            navbtnHeight = navbtnHeight - 12;
+        }
+        console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
 

@@ -3,9 +3,13 @@
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();
-        var navbtnHeight = wrapperHeight - containerHeight;
+        var navbtnHeight = wrapperHeight - containerHeight; 
         console.log(navbtnHeight);
-        //$(".container").css("padding-bottom", navbtnHeight);
+        if (navbtnHeight < 64) {
+            navbtnHeight = 52
+        } else {
+            navbtnHeight = navbtnHeight - 12;
+        }
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
 

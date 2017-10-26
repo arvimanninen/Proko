@@ -12,7 +12,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    background-color: $body-bg-color;
+    background-color: $container-bg-color;
 }
 
 
@@ -23,7 +23,6 @@ body {
     margin: 0 auto -56px;
     padding: 0 0 56px;
     color: $white;
-    background-color: $body-bg-color;
 }
 
 .container {
