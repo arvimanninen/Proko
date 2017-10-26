@@ -104,14 +104,14 @@ h2 {
 
 h3 {
     color: $grey;
-    font-size: 7 * $grid;
-    line-height: 9 * $grid;
+    font-size: 6 * $grid;
+    line-height: 8 * $grid;
     margin: 3.5 * $grid 0 2.5 * $grid;
     text-align: center;
 
     @include media-query($on-tablet) {
-        font-size: 6 * $grid;
-        line-height: 8 * $grid;
+        font-size: 5.5 * $grid;
+        line-height: 7.25 * $grid;
         margin: 3 * $grid 0 2 * $grid;
     }
 

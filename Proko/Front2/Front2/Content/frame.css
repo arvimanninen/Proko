@@ -82,8 +82,8 @@ h2 {
 
 h3 {
   color: #333333;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 32px;
   margin: 14px 0 10px;
   text-align: center;
   /*@include media-query($on-mobile) {
@@ -93,8 +93,8 @@ h3 {
     }*/ }
   @media screen and (max-width: 768px) {
     h3 {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 22px;
+      line-height: 29px;
       margin: 12px 0 8px; } }
 
 h4 {

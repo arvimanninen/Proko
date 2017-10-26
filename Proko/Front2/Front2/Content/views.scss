@@ -9,6 +9,103 @@
 OUTER SLIDER DIV
 **************************/
 
+#outer-language-div {
+
+    .select {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 62 * $grid;
+        height: 10 * $grid;
+        margin: 8 * $grid auto;
+
+        include media-query($on-mobile) {
+            margin: 4 * $grid auto;
+        }
+    }
+
+    .option {
+        padding: 0 30px 0 10px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        background: #333;
+        border-top: 1px solid #222;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        pointer-events: none;
+        order: 2;
+        z-index: 1;
+        transition: background .2s ease-in;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 0;
+        font-family: 'Roboto', sans-serif;
+        color: $white;
+        font-weight: 400;
+        font-size: 5 * $grid;
+        line-height: 6.5 * $grid;
+    }
+
+    .option:hover {
+        background: #666;
+    }
+
+    .select:focus .option {
+        position: relative;
+        pointer-events: all;
+    }
+
+    input {
+        opacity: 0;
+        position: absolute;
+        left: -99999px;
+    }
+
+    input:checked + label {
+        order: 1;
+        z-index: 2;
+        background: #666;
+        border-top: none;
+        position: relative;
+    }
+
+    input:checked + label:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid white;
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 2.5px);
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    input:checked + label:before {
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        content: '';
+        background: #666;
+    }
+}
+
+
+
+
+
+
+
+/*
+OUTER SLIDER DIV
+**************************/
+
 .outer-slider-div {
     margin-top: 4 * $grid;
 
@@ -241,62 +338,17 @@ div.btn-group {
         }
 
         label {
-            padding: 1.5 * $grid;
             border-radius: $grid;
+            padding: 2.5 * $grid;
+
+            @include media-query($on-small-mobile) {
+                padding: 1.5 * $grid;
+            }
 
             img {
                 width: 57.8px;
                 height: 34px;
                 margin-bottom: -1px;
-            }
-        }
-    }
-    /////////////
-    // slider
-    &.slider-div {
-        margin: 2 * $grid auto 0;
-        // different number of labels in row
-        &.btns-five label {
-            width: 20.2%;
-
-            @include media-query($on-mobile) {
-                width: 20.4%;
-            }
-        }
-
-        label {
-            border-radius: 0px;
-            color: $button-text-color;
-            margin: 0 -6px 0 0;
-            padding: 0;
-            text-align: center;
-            font-size: 20px;
-            height: 11 * $grid;
-            border-left: none;
-
-            @include media-query($on-mobile) {
-                height: 13 * $grid;
-            }
-            //border-radius for 1st and last btn
-            &.slider-group-first {
-                border-radius: $btn-grp-radius-left;
-                border: 1px solid $button-middle-neg-border;
-            }
-
-            &.slider-group-last {
-                border-radius: $btn-grp-radius-right;
-            }
-        }
-
-        span {
-            font-size: 3 * $grid;
-            width: 100%;
-            position: relative;
-            left: 0;
-            top: 5px;
-
-            @include media-query($on-small-mobile) {
-                top: 5px;
             }
         }
     }
@@ -401,7 +453,6 @@ div.btn-group {
             input[type=radio]:checked ~ .check {
                 background-color: $button-tertiary-color;
             }
-
         }
     }
     /////////////
@@ -506,6 +557,55 @@ div.btn-group {
         }
     }
     /////////////
+    // slider
+    &.slider-div {
+        margin: 2 * $grid auto 0;
+        // different number of labels in row
+        &.btns-five label {
+            width: 20.2%;
+
+            @include media-query($on-mobile) {
+                width: 20.4%;
+            }
+        }
+
+        label {
+            border-radius: 0px;
+            color: $button-text-color;
+            margin: 0 -6px 0 0;
+            padding: 0;
+            text-align: center;
+            font-size: 20px;
+            height: 11 * $grid;
+            border-left: none;
+
+            @include media-query($on-mobile) {
+                height: 13 * $grid;
+            }
+            //border-radius for 1st and last btn
+            &.slider-group-first {
+                border-radius: $btn-grp-radius-left;
+                border: 1px solid $button-middle-neg-border;
+            }
+
+            &.slider-group-last {
+                border-radius: $btn-grp-radius-right;
+            }
+        }
+
+        span {
+            font-size: 3 * $grid;
+            width: 100%;
+            position: relative;
+            left: 0;
+            top: 5px;
+
+            @include media-query($on-small-mobile) {
+                top: 5px;
+            }
+        }
+    }
+    /////////////
     //smiley
     &.smiley-div {
         display: flex;
@@ -591,7 +691,6 @@ div.btn-group {
                 height: 9 * $grid;
                 top: 9px;
                 left: 22px;
-
             }
         }
     }
