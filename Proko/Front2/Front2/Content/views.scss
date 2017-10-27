@@ -48,35 +48,35 @@ div.btn-group {
         user-select: none;
 
         &.button-neg {
-            background-color: $button-neg-color;
+            background-color: $button-neg-base-color;
             border: 1px solid $button-neg-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-neg {
-            background-color: $button-middle-neg-color;
+            background-color: $button-middle-neg-base-color;
             border: 1px solid $button-middle-neg-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-neutral {
-            background-color: $button-neutral-color;
+            background-color: $button-neutral-base-color;
             border: 1px solid $button-neutral-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-pos {
-            background-color: $button-middle-pos-color;
+            background-color: $button-middle-pos-base-color;
             border: 1px solid $button-middle-pos-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-pos {
-            background-color: $button-pos-color;
+            background-color: $button-pos-base-color;
             border: 1px solid $button-pos-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
@@ -130,7 +130,6 @@ div.btn-group {
         }
     }
     // button checked states
-
     input[type="radio"]:checked + label.button-neg {
         background-color: $button-neg-checked;
     }
@@ -318,7 +317,6 @@ div.btn-group {
                 margin: auto;
                 -webkit-transition: all 0.2s linear;
                 transition: all 0.2s linear;
-
             }
 
             input[type=radio]:checked ~ .check::before {
@@ -453,6 +451,26 @@ div.btn-group {
             @include media-query($on-mobile) {
                 height: 13 * $grid;
             }
+
+            /*&.button-neg {
+                background-color: $button-neg-bg-color-lighten;
+            }
+
+            &.button-middle-neg {
+                background-color: $button-middle-neg-bg-color-lighten;
+            }
+
+            &.button-neutral {
+                background-color: $button-neutral-bg-color-lighten;
+            }
+
+            &.button-middle-pos {
+                background-color: $button-middle-pos-bg-color-lighten;
+            }
+
+            &.button-pos {
+                background-color: $button-pos-bg-color-lighten;
+            }*/
             //border-radius for 1st and last btn
             &.slider-group-first {
                 border-radius: $btn-grp-radius-left;
@@ -593,8 +611,8 @@ div.btn-group {
             }
         }
     }
-} // btn-group ends
-
-.thanks-div {
-    margin-top: 16vh;
 }
+    // btn-group ends
+    .thanks-div {
+        margin-top: 16vh;
+    }
