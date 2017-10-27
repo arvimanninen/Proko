@@ -14,11 +14,11 @@ $container-bg-color: #FAFAFA;
 $header-color: #605F5E; //#064789; #2F4858; #4C5B5C;
 $footer-color: #808080;
 
+$label-grey-border: rgba(204, 204, 204, 0.4);
+$label-green-border: rgba(38, 196, 133, 0.2);
 
 // button colors
 $button-text-color: #fff;
-$button-grey-border: rgba(204, 204, 204, 0.4);
-$button-green-border: rgba(38, 196, 133, 0.2);
 
 $button-pos-base-color: #8ed791; //#7DD181;
 $button-pos-bg-color: lighten($button-pos-base-color, 8%);

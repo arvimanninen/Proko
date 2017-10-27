@@ -222,7 +222,7 @@ div.btn-group {
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check::before {
         background-color: white; }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check {
-        background-color: #26C485; }
+        background-color: #359739; }
   div.btn-group.checkbox-div {
     position: relative;
     margin: 8px 0 0 10%;
@@ -277,7 +277,7 @@ div.btn-group {
               top: 9px;
               left: 10px; } }
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check {
-          background-color: #26C485; }
+          background-color: #359739; }
         div.btn-group.checkbox-div ul li label .check:after {
           display: none;
           position: absolute;

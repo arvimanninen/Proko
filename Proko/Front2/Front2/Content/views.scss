@@ -275,7 +275,7 @@ div.btn-group {
                 margin: 2 * $grid auto;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
-                box-shadow: 0 0 3px 1px $button-grey-border;
+                box-shadow: 0 0 3px 1px $label-grey-border;
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
 
@@ -324,7 +324,7 @@ div.btn-group {
             }
 
             input[type=radio]:checked ~ .check {
-                background-color: $button-tertiary-color;
+                background-color: $button-pos-checked;
             }
         }
     }
@@ -369,7 +369,7 @@ div.btn-group {
                 margin: 2 * $grid auto;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
-                box-shadow: 0 0 2px 1px $button-grey-border;
+                box-shadow: 0 0 2px 1px $label-grey-border;
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
 
@@ -398,7 +398,7 @@ div.btn-group {
                 }
 
                 & input[type=checkbox]:checked ~ .check {
-                    background-color: $button-tertiary-color;
+                    background-color: $button-pos-checked;
                 }
 
 
