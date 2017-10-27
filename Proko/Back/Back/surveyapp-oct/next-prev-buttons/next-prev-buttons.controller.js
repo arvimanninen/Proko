@@ -4,7 +4,7 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
     var changeLocation = function (currentLocation, nextLocation, index) {
         var maximumIndex = RunService.getQuestionSetCount();
         if (index > maximumIndex) {
-            $location.path("/end");
+            $location.path("/text-area");
         } else if (currentLocation === nextLocation) {
             var currentPageTemplate = $route.current.templateUrl;
             $templateCache.remove(currentPageTemplate);
@@ -16,6 +16,7 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
 
     that.goTo = function (direction) {
         var questionSetIndex = RunService.getQuestionSetIndex();
+        var maxSetIndex = RunService.getQuestionSetCount();
         var currentQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
         var nextQmv;
         var aCount = AnswerService.getAnswerCountByQuestionSetIndex(questionSetIndex);
@@ -33,6 +34,7 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
                     questionSetIndex--;
                     RunService.decreaseQuestionSetIndex();
                 }
+
                 nextQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
                 changeLocation(currentQmv, nextQmv, questionSetIndex);
             } else {

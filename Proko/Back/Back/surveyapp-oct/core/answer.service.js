@@ -2,7 +2,12 @@
 
 app.service('AnswerService', function () {
     var surveyAnswers = [];
+    var textFeedback = "";
     // TODO: UPDATE AnswerDTO
+    var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback) {
+        this.AnswerBundleID = nAnswerBundleID;
+        this.TextFeedback = nTextFeedback;
+    };
     var AnswerDTO = function (nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID) {
         this.Value = nValue;
         this.QuestionSetIndex = nQuestionSetIndex;
@@ -41,6 +46,7 @@ app.service('AnswerService', function () {
         var sa = new AnswerDTO(nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID);
         surveyAnswers.push(sa);
     };
+
     var replaceAnswer = function (answerIndex, nValue, questionId, questionMethodId) {
         if(surveyAnswers[answerIndex].QuestionID === questionId && surveyAnswers[answerIndex].QuestionMethodID === questionMethodId) {
             surveyAnswers[answerIndex].Value = nValue;
@@ -68,8 +74,17 @@ app.service('AnswerService', function () {
         return -1;
     };
 
+    var getTextFeedback = function () {
+        return textFeedback;
+    };
+
+    var setTextFeedback = function (feedback) {
+        textFeedback = feedback.toString();
+    };
+
     var reset = function () {
         surveyAnswers.length = 0;
+        textFeedback = "";
     };
 
     return {
@@ -80,6 +95,8 @@ app.service('AnswerService', function () {
         setAnswer: setAnswer,
         getAnswerIndex: getAnswerIndex,
         replaceAnswer: replaceAnswer,
+        getTextFeedback: getTextFeedback,
+        setTextFeedback: setTextFeedback,
         reset: reset
     };
 });
