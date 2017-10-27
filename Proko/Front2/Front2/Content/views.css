@@ -33,23 +33,23 @@ div.btn-group {
     box-sizing: border-box;
     user-select: none; }
     div.btn-group label.button-neg, div.btn-group a.button-neg {
-      background-color: #f48c72;
+      background-color: #f7ab98;
       border: 1px solid #be320f;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-neg, div.btn-group a.button-middle-neg {
-      background-color: #EEB177;
-      border: 1px solid #b56417;
+      background-color: #f1c18e;
+      border: 1px solid #b56917;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-neutral, div.btn-group a.button-neutral {
-      background-color: #ead07b;
+      background-color: #eed891;
       border: 1px solid #b08d1c;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-pos, div.btn-group a.button-middle-pos {
-      background-color: #C1D385;
-      border: 1px solid #788c33;
+      background-color: #ceda97;
+      border: 1px solid #7c8c32;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-pos, div.btn-group a.button-pos {
@@ -89,11 +89,11 @@ div.btn-group {
   div.btn-group input[type="radio"]:checked + label.button-neg {
     background-color: #be320f; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #b56417; }
+    background-color: #b56917; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
     background-color: #b08d1c; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #788c33; }
+    background-color: #7c8c32; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
     background-color: #359739; }
   div.btn-group a.button-primary:hover,
@@ -308,32 +308,23 @@ div.btn-group {
       text-align: center;
       font-size: 20px;
       height: 44px;
-      border-left: none;
-      /*&.button-neg {
-                background-color: $button-neg-bg-color-lighten;
-            }
-
-            &.button-middle-neg {
-                background-color: $button-middle-neg-bg-color-lighten;
-            }
-
-            &.button-neutral {
-                background-color: $button-neutral-bg-color-lighten;
-            }
-
-            &.button-middle-pos {
-                background-color: $button-middle-pos-bg-color-lighten;
-            }
-
-            &.button-pos {
-                background-color: $button-pos-bg-color-lighten;
-            }*/ }
+      border-left: none; }
       @media screen and (max-width: 480px) {
         div.btn-group.slider-div label {
           height: 52px; } }
+      div.btn-group.slider-div label.button-neg {
+        background-color: #f8b3a1; }
+      div.btn-group.slider-div label.button-middle-neg {
+        background-color: #f2c697; }
+      div.btn-group.slider-div label.button-neutral {
+        background-color: #efdb9a; }
+      div.btn-group.slider-div label.button-middle-pos {
+        background-color: #d1dc9e; }
+      div.btn-group.slider-div label.button-pos {
+        background-color: #b4e4b6; }
       div.btn-group.slider-div label.slider-group-first {
         border-radius: 8px 0 0 8px;
-        border: 1px solid #b56417; }
+        border: 1px solid #b56917; }
       div.btn-group.slider-div label.slider-group-last {
         border-radius: 0 8px 8px 0; }
     div.btn-group.slider-div span {
