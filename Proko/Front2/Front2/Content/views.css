@@ -12,10 +12,13 @@ OUTER SLIDER DIV
     display: flex;
     justify-content: space-between;
     margin: 0 0 44px;
-    color: #fff; }
+    color: #333333; }
     @media screen and (max-width: 480px) {
       .outer-slider-div .bar-rating {
         margin: 0 0 36px; } }
+
+.outer-textarea-div {
+  margin-top: 10vh; }
 
 /*
 BUTTON GROUPS
@@ -24,39 +27,34 @@ div.btn-group {
   width: 100%; }
   div.btn-group input[type="radio"] {
     display: none; }
-  div.btn-group.btns-five label {
-    width: 20.2%; }
-    @media screen and (max-width: 480px) {
-      div.btn-group.btns-five label {
-        width: 20.4%; } }
   div.btn-group label, div.btn-group a {
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
     user-select: none; }
     div.btn-group label.button-neg, div.btn-group a.button-neg {
-      background-color: #f8b3a1;
-      border: 1px solid #ed3f13;
+      background-color: #f7a793;
+      border: 1px solid #df3b11;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-neg, div.btn-group a.button-middle-neg {
-      background-color: #f5d8b5;
-      border: 1px solid #e3922e;
+      background-color: #f3c9a0;
+      border: 1px solid #de7c1c;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-neutral, div.btn-group a.button-neutral {
-      background-color: #f4e8be;
-      border: 1px solid #dfb93a;
+      background-color: #f1e0a8;
+      border: 1px solid #dbb125;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-pos, div.btn-group a.button-middle-pos {
-      background-color: #dce3b3;
-      border: 1px solid #a8ba43;
+      background-color: #cddea3;
+      border: 1px solid #8bab3d;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-pos, div.btn-group a.button-pos {
-      background-color: #a3dea6;
-      border: 1px solid #3dab42;
+      background-color: #97da9b;
+      border: 1px solid #39a03e;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-primary, div.btn-group a.button-primary {
@@ -89,25 +87,25 @@ div.btn-group {
       div.btn-group label.button-tertiary:active, div.btn-group a.button-tertiary:active {
         background-color: #0d442e; }
   div.btn-group input[type="radio"]:hover + label.button-neg {
-    background-color: #f69f8a; }
+    background-color: #f5947b; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
-    background-color: #ed3f13; }
+    background-color: #df3b11; }
   div.btn-group input[type="radio"]:hover + label.button-middle-neg {
-    background-color: #f2cd9e; }
+    background-color: #f0bc89; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #e3922e; }
+    background-color: #de7c1c; }
   div.btn-group input[type="radio"]:hover + label.button-neutral {
-    background-color: #f1e0a8; }
+    background-color: #edd892; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
-    background-color: #dfb93a; }
+    background-color: #dbb125; }
   div.btn-group input[type="radio"]:hover + label.button-middle-pos {
-    background-color: #d4dda0; }
+    background-color: #c3d790; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #a8ba43; }
+    background-color: #8bab3d; }
   div.btn-group input[type="radio"]:hover + label.button-pos {
-    background-color: #90d893; }
+    background-color: #85d488; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
-    background-color: #3dab42; }
+    background-color: #39a03e; }
   div.btn-group a.button-primary:hover,
   div.btn-group input[type="radio"]:hover + label.button-primary {
     background-color: #2d6da3; }
@@ -120,7 +118,8 @@ div.btn-group {
     background-color: #3b87c8; }
   div.btn-group.nav-btn-div {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    box-sizing: border-box; }
     div.btn-group.nav-btn-div a {
       width: 128px;
       height: 48px;
@@ -135,10 +134,10 @@ div.btn-group {
         width: 200px;
         margin: 0 auto; }
     div.btn-group.nav-btn-div.nav-btn-margins {
-      margin: 80px 0 56px; }
+      margin: 80px 0 64px; }
       @media screen and (max-width: 480px) {
         div.btn-group.nav-btn-div.nav-btn-margins {
-          margin: 64px 0 48px; } }
+          margin: 48px 0 56px; } }
     div.btn-group.nav-btn-div.nav-btn-margins-small {
       margin: 40px 0 56px; }
       @media screen and (max-width: 480px) {
@@ -153,38 +152,15 @@ div.btn-group {
       div.btn-group.language-btn-div {
         margin: 24px auto 0; } }
     div.btn-group.language-btn-div label {
-      padding: 6px;
-      border-radius: 4px; }
+      border-radius: 4px;
+      padding: 10px; }
+      @media screen and (max-width: 375px) {
+        div.btn-group.language-btn-div label {
+          padding: 6px; } }
       div.btn-group.language-btn-div label img {
         width: 57.8px;
         height: 34px;
         margin-bottom: -1px; }
-  div.btn-group.slider-div {
-    margin: 8px auto 0; }
-    div.btn-group.slider-div label {
-      border-radius: 0px;
-      color: #fff;
-      margin: 0 -6px 0 0;
-      padding: 0;
-      text-align: center;
-      font-size: 20px;
-      height: 44px; }
-      @media screen and (max-width: 480px) {
-        div.btn-group.slider-div label {
-          height: 52px; } }
-      div.btn-group.slider-div label.slider-group-first {
-        border-radius: 8px 0 0 8px; }
-      div.btn-group.slider-div label.slider-group-last {
-        border-radius: 0 8px 8px 0; }
-    div.btn-group.slider-div span {
-      font-size: 12px;
-      width: 100%;
-      position: relative;
-      left: 0;
-      top: 5px; }
-      @media screen and (max-width: 375px) {
-        div.btn-group.slider-div span {
-          top: 5px; } }
   div.btn-group.radiobutton-div {
     position: relative;
     margin: 8px 0 0 10%;
@@ -205,28 +181,21 @@ div.btn-group {
       position: relative;
       list-style: none;
       margin: 0;
-      padding: 0;
-      /*&:hover label {
-                box-shadow: 0px 1px 1px 1px rgba(204,204,204,0.4);
-            }*/ }
+      padding: 0; }
       div.btn-group.radiobutton-div ul li label {
         display: block;
         position: relative;
         font-family: 'Roboto', sans-serif;
-        color: #fff;
+        color: #333333;
         font-weight: 400;
         font-size: 22px;
         line-height: 28px;
-        margin: 8px auto 8px;
+        margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
+        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
-        transition: color 0.2s linear, box-shadow 0.2s, linear;
-        /*@include media-query($on-mobile) {
-                    margin: 1 * $grid auto 1 * $grid;
-                    padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }*/ }
+        transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
           div.btn-group.radiobutton-div ul li label {
             font-size: 20px;
@@ -236,17 +205,17 @@ div.btn-group {
         position: absolute;
         background-color: #cccccc;
         border-radius: 100%;
-        height: 21px;
-        width: 21px;
-        top: 15px;
-        left: 14px;
+        height: 30px;
+        width: 30px;
+        top: 10px;
+        left: 10px;
         z-index: 5;
         -webkit-transition: background-color .2s linear;
         transition: background-color .2s linear; }
         @media screen and (max-width: 480px) {
           div.btn-group.radiobutton-div ul li .check {
-            top: 14px;
-            left: 12px; } }
+            top: 9px;
+            left: 10px; } }
       div.btn-group.radiobutton-div ul li:hover .check {
         background-color: #98ebca; }
       div.btn-group.radiobutton-div ul li .check::before {
@@ -255,17 +224,13 @@ div.btn-group {
         content: '';
         background-color: rgba(255, 255, 255, 0);
         border-radius: 100%;
-        height: 11px;
-        width: 11px;
-        top: 5px;
-        left: 5px;
+        height: 14px;
+        width: 14px;
+        top: 8px;
+        left: 8px;
         margin: auto;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear; }
-        @media screen and (max-width: 480px) {
-          div.btn-group.radiobutton-div ul li .check::before {
-            top: 5px;
-            left: 5px; } }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check::before {
         background-color: white; }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check {
@@ -295,20 +260,16 @@ div.btn-group {
         display: block;
         position: relative;
         font-family: 'Roboto', sans-serif;
-        color: #fff;
+        color: #333333;
         font-weight: 400;
         font-size: 22px;
         line-height: 28px;
-        margin: 8px auto 8px;
+        margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
+        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
-        transition: color 0.2s linear, box-shadow 0.2s, linear;
-        /*@include media-query($on-mobile) {
-                    margin: 1 * $grid auto 1 * $grid;
-                    padding: 3 * $grid 3 * $grid 3 * $grid 12 * $grid;
-                }*/ }
+        transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
           div.btn-group.checkbox-div ul li label {
             font-size: 20px;
@@ -318,15 +279,15 @@ div.btn-group {
           opacity: 0; }
         div.btn-group.checkbox-div ul li label .check {
           position: absolute;
-          height: 21px;
-          width: 21px;
-          top: 15px;
-          left: 14px;
+          height: 30px;
+          width: 30px;
+          top: 10px;
+          left: 10px;
           background-color: #cccccc; }
           @media screen and (max-width: 480px) {
             div.btn-group.checkbox-div ul li label .check {
-              top: 14px;
-              left: 12px; } }
+              top: 9px;
+              left: 10px; } }
         div.btn-group.checkbox-div ul li label:hover input[type=checkbox] ~ .check {
           background-color: #98ebca; }
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check {
@@ -338,14 +299,47 @@ div.btn-group {
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check:after {
           display: block; }
         div.btn-group.checkbox-div ul li label .check:after {
-          left: 7px;
-          top: 3px;
-          width: 7px;
-          height: 11px;
+          left: 10px;
+          top: 4px;
+          width: 10px;
+          height: 17px;
           border: solid white;
-          border-width: 0 2px 2px 0;
+          border-width: 0 3px 3px 0;
           -webkit-transform: rotate(45deg);
           transform: rotate(45deg); }
+  div.btn-group.slider-div {
+    margin: 8px auto 0; }
+    div.btn-group.slider-div.btns-five label {
+      width: 20.2%; }
+      @media screen and (max-width: 480px) {
+        div.btn-group.slider-div.btns-five label {
+          width: 20.4%; } }
+    div.btn-group.slider-div label {
+      border-radius: 0px;
+      color: #fff;
+      margin: 0 -6px 0 0;
+      padding: 0;
+      text-align: center;
+      font-size: 20px;
+      height: 44px;
+      border-left: none; }
+      @media screen and (max-width: 480px) {
+        div.btn-group.slider-div label {
+          height: 52px; } }
+      div.btn-group.slider-div label.slider-group-first {
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #de7c1c; }
+      div.btn-group.slider-div label.slider-group-last {
+        border-radius: 0 8px 8px 0; }
+    div.btn-group.slider-div span {
+      font-size: 12px;
+      width: 100%;
+      position: relative;
+      left: 0;
+      top: 5px; }
+      @media screen and (max-width: 375px) {
+        div.btn-group.slider-div span {
+          top: 5px; } }
   div.btn-group.smiley-div {
     display: flex;
     justify-content: space-around;
@@ -394,62 +388,43 @@ div.btn-group {
   div.btn-group.thumbs-div {
     display: flex;
     justify-content: center;
-    width: 60%;
     margin: 16px auto 48px; }
-    @media screen and (max-width: 768px) {
-      div.btn-group.thumbs-div {
-        width: 70%; } }
-    @media screen and (max-width: 480px) {
-      div.btn-group.thumbs-div {
-        width: 90%; } }
     div.btn-group.thumbs-div label {
       border-radius: 4px;
-      color: #fff;
+      color: #333333;
       width: 84px;
-      height: 56px;
-      margin: 0 16px;
-      /*@include media-query($on-tablet) {
-                width: 15 * $grid;
-                height: 12 * $grid;
-            }*/
-      /*@include media-query($on-small-mobile) {
-                width: 12.5 * $grid;
-                height: 10 * $grid;
-            }*/ }
-      @media screen and (max-width: 480px) {
-        div.btn-group.thumbs-div label {
-          width: 69px;
-          height: 46px;
-          margin: 0 8px; } }
+      height: 56px; }
+      div.btn-group.thumbs-div label.button-neutral {
+        margin: 0 32px; }
+        @media screen and (max-width: 480px) {
+          div.btn-group.thumbs-div label.button-neutral {
+            margin: 0 16px; } }
       div.btn-group.thumbs-div label img {
         position: relative;
         width: 36px;
         height: 36px;
         top: 9px;
         left: 22px; }
-        @media screen and (max-width: 480px) {
-          div.btn-group.thumbs-div label img {
-            width: 26px;
-            height: 26px;
-            top: 9px;
-            left: 19px; } }
-  div.btn-group.textarea-div textarea {
-    display: block;
-    width: 70%;
-    margin: 12px auto 40px;
-    height: 120px;
-    border: 1.5px solid #cccccc;
-    background-color: #fff; }
-    @media screen and (max-width: 768px) {
-      div.btn-group.textarea-div textarea {
-        width: 70%; } }
-    @media screen and (max-width: 480px) {
-      div.btn-group.textarea-div textarea {
-        width: 84%;
-        margin: 8px auto 40px; } }
-    @media screen and (max-width: 375px) {
-      div.btn-group.textarea-div textarea {
-        width: 94%; } }
+  div.btn-group.textarea-div {
+    margin: 0; }
+    div.btn-group.textarea-div textarea {
+      display: block;
+      width: 70%;
+      height: 144px;
+      margin: 12px auto 0;
+      border: 1.5px solid #cccccc;
+      background-color: #fff;
+      color: #333333; }
+      @media screen and (max-width: 768px) {
+        div.btn-group.textarea-div textarea {
+          width: 70%; } }
+      @media screen and (max-width: 480px) {
+        div.btn-group.textarea-div textarea {
+          width: 84%;
+          margin: 8px auto 0; } }
+      @media screen and (max-width: 375px) {
+        div.btn-group.textarea-div textarea {
+          width: 94%; } }
 
 .thanks-div {
   margin-top: 16vh; }

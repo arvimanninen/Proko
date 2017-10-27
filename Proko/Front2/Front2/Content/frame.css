@@ -7,23 +7,23 @@ body {
   min-width: 320px;
   margin: 0;
   padding: 0;
-  background-color: #FAFAFA;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #FAFAFA; }
 
-#wrap {
+#wrapper {
   min-height: 100%;
   height: auto;
   margin: 0 auto -56px;
   padding: 0 0 56px;
-  color: #333333;
-  background-color: #81807e; }
+  color: #fff; }
 
 .container {
   position: relative;
   max-width: 680px;
   padding: 0 15px;
-  max-height: 2200px; }
+  max-height: 2200px;
+  background-color: #FAFAFA; }
 
 .container-custom {
   padding-right: 15px;
@@ -82,8 +82,8 @@ h2 {
 
 h3 {
   color: #333333;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 32px;
   margin: 14px 0 10px;
   text-align: center;
   /*@include media-query($on-mobile) {
@@ -93,8 +93,8 @@ h3 {
     }*/ }
   @media screen and (max-width: 768px) {
     h3 {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 22px;
+      line-height: 29px;
       margin: 12px 0 8px; } }
 
 h4 {
@@ -144,7 +144,6 @@ p {
 
 h1, h2, h3, h4,
 h5, h6, .lead, p {
-  color: #fff;
   font-weight: 400; }
 
 .font-strong {
@@ -153,7 +152,7 @@ h5, h6, .lead, p {
 /*
 HEADER & FOOTER
 **************************/
-header, footer, header .container, footer .container {
+header, footer, header .container-fluid, footer .container-fluid {
   background-color: #605F5E;
   box-sizing: border-box; }
 
