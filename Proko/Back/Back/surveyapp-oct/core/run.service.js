@@ -29,7 +29,7 @@ app.service('RunService', function () {
             alert("Virheellinen arvo @ RunService.setGoneBack()");
         }
     };
-
+    
     var reset = function () {
         questionSetIndex = 1;
         questionSetCount = 0;

@@ -6,19 +6,19 @@
         <h4>{{ q.QuestionText }}</h4>
         <div class="btn-group smiley-div">
             <input id="q{{ q.ChosenQuestionIndex }}-a1" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="1" />
-            <label for="q{{ q.ChosenQuestionIndex }}-a1" class="button-neg">
+            <label for="q{{ q.ChosenQuestionIndex }}-a1" class="button-neg" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <img src="core/images/smiley-sad.svg" alt="smiley angry" />
             </label>
             <input id="q{{ q.ChosenQuestionIndex }}-a2" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="2" />
-            <label for="q{{ q.ChosenQuestionIndex }}-a2" class="button-middle-neg">
+            <label for="q{{ q.ChosenQuestionIndex }}-a2" class="button-middle-neg" ng-click="$ctrl.setAnswer(2, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <img src="core/images/smiley-meh.svg" alt="smiley little sad" />
             </label>
             <input id="q{{ q.ChosenQuestionIndex }}-a3" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="3" />
-            <label for="q{{ q.ChosenQuestionIndex }}-a3" class="button-middle-pos">
+            <label for="q{{ q.ChosenQuestionIndex }}-a3" class="button-middle-pos" ng-click="$ctrl.setAnswer(3, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <img src="core/images/smiley-happy.svg" alt="smiley neutral" />
             </label>
             <input id="q{{ q.ChosenQuestionIndex }}-a4" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="4" />
-            <label for="q{{ q.ChosenQuestionIndex }}-a4" class="button-pos">
+            <label for="q{{ q.ChosenQuestionIndex }}-a4" class="button-pos" ng-click="$ctrl.setAnswer(4, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
                 <img src="core/images/smiley-very-happy.svg" alt="smiley happy" />
             </label>
         </div>
