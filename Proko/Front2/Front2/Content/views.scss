@@ -129,41 +129,22 @@ div.btn-group {
             }
         }
     }
-    // button hover & checked states
-    input[type="radio"]:hover + label.button-neg {
-        background-color: $button-neg-hover;
-    }
+    // button checked states
 
     input[type="radio"]:checked + label.button-neg {
         background-color: $button-neg-checked;
-    }
-
-    input[type="radio"]:hover + label.button-middle-neg {
-        background-color: $button-middle-neg-hover;
     }
 
     input[type="radio"]:checked + label.button-middle-neg {
         background-color: $button-middle-neg-checked;
     }
 
-    input[type="radio"]:hover + label.button-neutral {
-        background-color: $button-neutral-hover;
-    }
-
     input[type="radio"]:checked + label.button-neutral {
         background-color: $button-neutral-checked;
     }
 
-    input[type="radio"]:hover + label.button-middle-pos {
-        background-color: $button-middle-pos-hover;
-    }
-
     input[type="radio"]:checked + label.button-middle-pos {
         background-color: $button-middle-pos-checked;
-    }
-
-    input[type="radio"]:hover + label.button-pos {
-        background-color: $button-pos-hover;
     }
 
     input[type="radio"]:checked + label.button-pos {
@@ -295,7 +276,7 @@ div.btn-group {
                 margin: 2 * $grid auto;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
-                box-shadow: 0 0 2px 1px $button-grey-border;
+                box-shadow: 0 0 3px 1px $button-grey-border;
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
 
@@ -322,11 +303,6 @@ div.btn-group {
                     top: 9px;
                     left: 10px;
                 }
-            }
-
-
-            &:hover .check {
-                background-color: $button-tertiary-hover-alt;
             }
 
             .check::before {
@@ -421,10 +397,6 @@ div.btn-group {
                         top: 9px;
                         left: 10px;
                     }
-                }
-
-                &:hover input[type=checkbox] ~ .check {
-                    background-color: $button-tertiary-hover-alt;
                 }
 
                 & input[type=checkbox]:checked ~ .check {

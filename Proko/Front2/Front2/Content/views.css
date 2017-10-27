@@ -86,24 +86,14 @@ div.btn-group {
         background-color: #1e9968; }
       div.btn-group label.button-tertiary:active, div.btn-group a.button-tertiary:active {
         background-color: #0d442e; }
-  div.btn-group input[type="radio"]:hover + label.button-neg {
-    background-color: #f5947b; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
     background-color: #df3b11; }
-  div.btn-group input[type="radio"]:hover + label.button-middle-neg {
-    background-color: #f0bc89; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
     background-color: #de7c1c; }
-  div.btn-group input[type="radio"]:hover + label.button-neutral {
-    background-color: #edd892; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
     background-color: #dbb125; }
-  div.btn-group input[type="radio"]:hover + label.button-middle-pos {
-    background-color: #c3d790; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
     background-color: #8bab3d; }
-  div.btn-group input[type="radio"]:hover + label.button-pos {
-    background-color: #85d488; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
     background-color: #39a03e; }
   div.btn-group a.button-primary:hover,
@@ -193,7 +183,7 @@ div.btn-group {
         margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
+        box-shadow: 0 0 3px 1px rgba(204, 204, 204, 0.4);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
         transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
@@ -216,8 +206,6 @@ div.btn-group {
           div.btn-group.radiobutton-div ul li .check {
             top: 9px;
             left: 10px; } }
-      div.btn-group.radiobutton-div ul li:hover .check {
-        background-color: #98ebca; }
       div.btn-group.radiobutton-div ul li .check::before {
         display: block;
         position: absolute;
@@ -267,7 +255,7 @@ div.btn-group {
         margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
+        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.4);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
         transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
@@ -288,8 +276,6 @@ div.btn-group {
             div.btn-group.checkbox-div ul li label .check {
               top: 9px;
               left: 10px; } }
-        div.btn-group.checkbox-div ul li label:hover input[type=checkbox] ~ .check {
-          background-color: #98ebca; }
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check {
           background-color: #26C485; }
         div.btn-group.checkbox-div ul li label .check:after {
