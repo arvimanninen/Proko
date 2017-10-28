@@ -63,21 +63,17 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
 
     // data 1
     $scope.pollData1 = [
-        [2, 8, 12, 14, 6]
+        [5, 8, 12, 14, 9]
     ];
     $scope.pollLabels1 = ['Eri mieltä', '', '', '', 'Samaa mieltä'];
     //$scope.pollSeries = ['Tyytyvaisyys'];
 
     // data 2
     $scope.pollData2 = [
-        [5, 10, 12, 9]
+        [5, 10, 12, 9, 8]
     ];
-    $scope.pollLabels2 = ['sad', 'not happy', 'happy', 'very happy'];
+    $scope.pollLabels2 = ['Eri mieltä', '', '', '', 'Samaa mieltä'];
 
-    //data 3
-    $scope.pollData3 = [
-        [5, 15, 7]
-    ];
     $scope.pollLabels3 = ['thumb down', 'neutral', 'thumb up'];
 
     $scope.options1 = {
