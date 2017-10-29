@@ -4,10 +4,7 @@ app.service('AnswerService', function () {
     var surveyAnswers = [];
     var textFeedback = "";
     // TODO: UPDATE AnswerDTO
-    var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback) {
-        this.AnswerBundleID = nAnswerBundleID;
-        this.TextFeedback = nTextFeedback;
-    };
+    
     var AnswerDTO = function (nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID) {
         this.Value = nValue;
         this.QuestionSetIndex = nQuestionSetIndex;

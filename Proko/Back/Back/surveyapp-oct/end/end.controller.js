@@ -7,11 +7,29 @@ app.controller('EndCtrl', function (AnswerService, DataFactory) {
     postingSuccess.style.visibility = "hidden";
     that.postingText = "Lähetetään vastauksia, odota hetki...";
 
-    var postAnswers = DataFactory.postSurveyAnswers.save(AnswerService.getAnswers(), function () {
-        $("#posting-status").remove();
-        postingSuccess.style.visibility = "visible";
+    var postAnswers = DataFactory.postSurveyAnswers.save(AnswerService.getAnswers(), function (bundle) {
+        var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback) {
+            this.AnswerBundleID = nAnswerBundleID;
+            this.TextFeedback = nTextFeedback;
+        };
+        console.log("bundle.AnswerBundleID: " + bundle.AnswerBundleID);
+        
+        var bundleId = bundle.AnswerBundleID;
+        var textFb = AnswerService.getTextFeedback();
+        console.log("textFb: " + textFb);
+        var textFbDto = new TextFeedbackDTO(bundleId, textFb);
+        
+        var postFeedback = DataFactory.postTextFeedback.save(textFbDto, function () {
+            $("#posting-status").remove();
+            postingSuccess.style.visibility = "visible"
+        // THIS LAUNCHES IN CASE OF TEXT FEEDBACK POSTING ERROR
+        }, function () {
+            postingIcon.src = "core/images/warning.gif";
+            that.postingText = "Vapaaehtoisen palautteen lähettäminen epäonnistui! Voit halutessasi sulkea selaimen ja tehdä testin uudestaan.";
+        });
+        
     }, function () {
-        // THIS LAUNCHES IN CASE OF POSTING ERROR
+        // THIS LAUNCHES IN CASE OF ANSWER POSTING ERROR
         postingIcon.src = "core/images/warning.gif";
         that.postingText = "Vastausten lähettäminen epäonnistui! Voit halutessasi sulkea selaimen ja tehdä testin uudestaan.";
     });

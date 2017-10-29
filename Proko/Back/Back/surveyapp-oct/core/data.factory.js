@@ -5,7 +5,8 @@ app.factory('DataFactory', function ($resource) {
 
     return {
         getChosenQuestions: $resource('../api/getchosenquestions'),
-        postSurveyAnswers: $resource('../api/postsurveyanswers')
+        postSurveyAnswers: $resource('../api/postsurveyanswers'),
+        postTextFeedback: $resource('../api/posttextfeedback')
     };
 
 });
