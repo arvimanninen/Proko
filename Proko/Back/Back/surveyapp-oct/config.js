@@ -21,12 +21,12 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/text-area', {
                 template: '<text-area></text-area>'
             })
-
-            /*
             .when('/end', {
                 template: '<end></end>'
             })
-            */
+            .when('/results', {
+                template: '<results></results>'
+            })
             .otherwise({
                 template: '<error></error>'
             })

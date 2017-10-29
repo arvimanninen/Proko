@@ -3,9 +3,9 @@
     var textFb = document.getElementById("text-fb");
     textFb.value = AnswerService.getTextFeedback();
     
-    
-    that.goTo = function (direction) {
+    that.goToEndOrBack = function (direction) {
         AnswerService.setTextFeedback(textFb.value);
+        console.log("AnswerService.getTextFeedback:" + AnswerService.getTextFeedback());
         if (direction === -1) {
             RunService.decreaseQuestionSetIndex();
             var lastQmv = QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex());

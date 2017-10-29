@@ -187,7 +187,9 @@ namespace Back.ApiControllers
                 Debug.WriteLine("currentSetId:" + currentSetId);
                 Debug.WriteLine("currentSetIndex:" + currentSetIndex);
             }
-            return Ok(bundle.AnswerBundleID);
+            int answerBundleId = bundle.AnswerBundleID;
+            Debug.WriteLine("answerBundleId: " + answerBundleId);
+            return Ok(bundle);
         }
 
         // DELETE: api/AnswersApi/5
