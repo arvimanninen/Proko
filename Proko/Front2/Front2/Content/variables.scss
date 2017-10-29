@@ -14,39 +14,43 @@ $container-bg-color: #FAFAFA;
 $header-color: #605F5E; //#064789; #2F4858; #4C5B5C;
 $footer-color: #808080;
 
+$label-grey-border: rgba(204, 204, 204, 0.4);
+$label-green-border: rgba(38, 196, 133, 0.2);
 
 // button colors
 $button-text-color: #fff;
-$button-grey-border: rgba(204, 204, 204, 0.2);
-$button-green-border: rgba(38, 196, 133, 0.2);
 
-$button-pos-color: lighten(#7DD181, 7%);
-$button-pos-border: darken($button-pos-color, 30%);
-$button-pos-hover: darken($button-pos-color, 5%);
-$button-pos-checked: darken($button-pos-color, 30%);
-$button-pos-dark: darken($button-pos-color, 40%);
+$button-pos-base-color: #8ed791; //#7DD181;
+$button-pos-bg-color: lighten($button-pos-base-color, 8%);
+$button-pos-bg-color-lighten: lighten($button-pos-base-color, 10%);
+$button-pos-border: darken($button-pos-base-color, 30%);
+$button-pos-checked: darken($button-pos-base-color, 30%);
 
-$button-middle-pos-color: lighten(#CDDEA3, 0%);
-$button-middle-pos-border: darken($button-middle-pos-color, 30%);
-$button-middle-pos-hover: darken($button-middle-pos-color, 5%);
-$button-middle-pos-checked: darken($button-middle-pos-color, 30%);
+$button-middle-pos-base-color: #C5D384; //#CDDEA3;
+$button-middle-pos-bg-color: lighten($button-middle-pos-base-color, 5%);
+$button-middle-pos-bg-color-lighten: lighten($button-middle-pos-base-color, 7%);
+$button-middle-pos-border: darken($button-middle-pos-base-color, 30%);
+$button-middle-pos-checked: darken($button-middle-pos-base-color, 30%);
 
-$button-neutral-color: lighten(#EDD892, 5%);
-$button-neutral-border: darken($button-neutral-color, 30%);
-$button-neutral-hover: darken($button-neutral-color, 5%);
-$button-neutral-checked: darken($button-neutral-color, 30%);
+$button-neutral-base-color: #ead07b; //#EDD892;
+$button-neutral-bg-color: lighten($button-neutral-base-color, 5%);
+$button-neutral-bg-color-lighten: lighten($button-neutral-base-color, 7%);
+$button-neutral-border: darken($button-neutral-base-color, 30%);
+$button-neutral-checked: darken($button-neutral-base-color, 30%);
 
-$button-middle-neg-color: lighten(#F3C9A0, 0%);
-$button-middle-neg-border: darken($button-middle-neg-color, 30%);
-$button-middle-neg-hover: darken($button-middle-neg-color, 5%);
-$button-middle-neg-checked: darken($button-middle-neg-color, 30%);
+$button-middle-neg-base-color: #EEB577; //#F3C9A0;
+$button-middle-neg-bg-color: lighten($button-middle-neg-base-color, 5%);
+$button-middle-neg-bg-color-lighten: lighten($button-middle-neg-base-color, 7%);
+$button-middle-neg-border: darken($button-middle-neg-base-color, 30%);
+$button-middle-neg-checked: darken($button-middle-neg-base-color, 30%);
 
-$button-neg-color: lighten(#f48c72, 7%);
-$button-neg-border: darken($button-neg-color, 30%);
-$button-neg-hover: darken($button-neg-color, 5%);
-$button-neg-checked: darken($button-neg-color, 30%);
+$button-neg-base-color: #f48c72;
+$button-neg-bg-color: lighten($button-neg-base-color, 8%);
+$button-neg-bg-color-lighten: lighten($button-neg-base-color, 10%);
+$button-neg-border: darken($button-neg-base-color, 30%);
+$button-neg-checked: darken($button-neg-base-color, 30%);
 
-
+//non-answer buttons
 $button-primary-color: lighten(#337ab7, 5%);//#439775;
 $button-primary-border: $button-primary-color;
 $button-primary-hover: darken($button-primary-color, 10%);

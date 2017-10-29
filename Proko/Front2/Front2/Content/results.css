@@ -1,5 +1,8 @@
-﻿.results-bg-div {
-  background-color: #f2f2f2; }
+﻿.results-bg-div .answerers {
+  margin: 40px 0 24px; }
+
+.answerers {
+  margin: 24px; }
 
 .results-div h4 {
   margin: 16px 0 16px; }

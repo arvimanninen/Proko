@@ -33,28 +33,28 @@ div.btn-group {
     box-sizing: border-box;
     user-select: none; }
     div.btn-group label.button-neg, div.btn-group a.button-neg {
-      background-color: #f7a793;
-      border: 1px solid #df3b11;
+      background-color: #f7ab98;
+      border: 1px solid #be320f;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-neg, div.btn-group a.button-middle-neg {
-      background-color: #f3c9a0;
-      border: 1px solid #de7c1c;
+      background-color: #f1c18e;
+      border: 1px solid #b56917;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-neutral, div.btn-group a.button-neutral {
-      background-color: #f1e0a8;
-      border: 1px solid #dbb125;
+      background-color: #eed891;
+      border: 1px solid #b08d1c;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-pos, div.btn-group a.button-middle-pos {
-      background-color: #cddea3;
-      border: 1px solid #8bab3d;
+      background-color: #ceda97;
+      border: 1px solid #7c8c32;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-pos, div.btn-group a.button-pos {
-      background-color: #97da9b;
-      border: 1px solid #39a03e;
+      background-color: #8ed791;
+      border: 1px solid #359739;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-primary, div.btn-group a.button-primary {
@@ -86,26 +86,16 @@ div.btn-group {
         background-color: #1e9968; }
       div.btn-group label.button-tertiary:active, div.btn-group a.button-tertiary:active {
         background-color: #0d442e; }
-  div.btn-group input[type="radio"]:hover + label.button-neg {
-    background-color: #f5947b; }
   div.btn-group input[type="radio"]:checked + label.button-neg {
-    background-color: #df3b11; }
-  div.btn-group input[type="radio"]:hover + label.button-middle-neg {
-    background-color: #f0bc89; }
+    background-color: #be320f; }
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
-    background-color: #de7c1c; }
-  div.btn-group input[type="radio"]:hover + label.button-neutral {
-    background-color: #edd892; }
+    background-color: #b56917; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
-    background-color: #dbb125; }
-  div.btn-group input[type="radio"]:hover + label.button-middle-pos {
-    background-color: #c3d790; }
+    background-color: #b08d1c; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
-    background-color: #8bab3d; }
-  div.btn-group input[type="radio"]:hover + label.button-pos {
-    background-color: #85d488; }
+    background-color: #7c8c32; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
-    background-color: #39a03e; }
+    background-color: #359739; }
   div.btn-group a.button-primary:hover,
   div.btn-group input[type="radio"]:hover + label.button-primary {
     background-color: #2d6da3; }
@@ -193,7 +183,7 @@ div.btn-group {
         margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
+        box-shadow: 0 0 3px 1px rgba(204, 204, 204, 0.4);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
         transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
@@ -216,8 +206,6 @@ div.btn-group {
           div.btn-group.radiobutton-div ul li .check {
             top: 9px;
             left: 10px; } }
-      div.btn-group.radiobutton-div ul li:hover .check {
-        background-color: #98ebca; }
       div.btn-group.radiobutton-div ul li .check::before {
         display: block;
         position: absolute;
@@ -234,7 +222,7 @@ div.btn-group {
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check::before {
         background-color: white; }
       div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check {
-        background-color: #26C485; }
+        background-color: #359739; }
   div.btn-group.checkbox-div {
     position: relative;
     margin: 8px 0 0 10%;
@@ -267,7 +255,7 @@ div.btn-group {
         margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.2);
+        box-shadow: 0 0 2px 1px rgba(204, 204, 204, 0.4);
         -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
         transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
@@ -288,10 +276,8 @@ div.btn-group {
             div.btn-group.checkbox-div ul li label .check {
               top: 9px;
               left: 10px; } }
-        div.btn-group.checkbox-div ul li label:hover input[type=checkbox] ~ .check {
-          background-color: #98ebca; }
         div.btn-group.checkbox-div ul li label input[type=checkbox]:checked ~ .check {
-          background-color: #26C485; }
+          background-color: #359739; }
         div.btn-group.checkbox-div ul li label .check:after {
           display: none;
           position: absolute;
@@ -326,9 +312,19 @@ div.btn-group {
       @media screen and (max-width: 480px) {
         div.btn-group.slider-div label {
           height: 52px; } }
+      div.btn-group.slider-div label.button-neg {
+        background-color: #f8b3a1; }
+      div.btn-group.slider-div label.button-middle-neg {
+        background-color: #f2c697; }
+      div.btn-group.slider-div label.button-neutral {
+        background-color: #efdb9a; }
+      div.btn-group.slider-div label.button-middle-pos {
+        background-color: #d1dc9e; }
+      div.btn-group.slider-div label.button-pos {
+        background-color: #b4e4b6; }
       div.btn-group.slider-div label.slider-group-first {
         border-radius: 8px 0 0 8px;
-        border: 1px solid #de7c1c; }
+        border: 1px solid #b56917; }
       div.btn-group.slider-div label.slider-group-last {
         border-radius: 0 8px 8px 0; }
     div.btn-group.slider-div span {

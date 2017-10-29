@@ -48,35 +48,35 @@ div.btn-group {
         user-select: none;
 
         &.button-neg {
-            background-color: $button-neg-color;
+            background-color: $button-neg-bg-color;
             border: 1px solid $button-neg-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-neg {
-            background-color: $button-middle-neg-color;
+            background-color: $button-middle-neg-bg-color;
             border: 1px solid $button-middle-neg-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-neutral {
-            background-color: $button-neutral-color;
+            background-color: $button-neutral-bg-color;
             border: 1px solid $button-neutral-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-pos {
-            background-color: $button-middle-pos-color;
+            background-color: $button-middle-pos-bg-color;
             border: 1px solid $button-middle-pos-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-pos {
-            background-color: $button-pos-color;
+            background-color: $button-pos-base-color;
             border: 1px solid $button-pos-border;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
@@ -129,41 +129,21 @@ div.btn-group {
             }
         }
     }
-    // button hover & checked states
-    input[type="radio"]:hover + label.button-neg {
-        background-color: $button-neg-hover;
-    }
-
+    // button checked states
     input[type="radio"]:checked + label.button-neg {
         background-color: $button-neg-checked;
-    }
-
-    input[type="radio"]:hover + label.button-middle-neg {
-        background-color: $button-middle-neg-hover;
     }
 
     input[type="radio"]:checked + label.button-middle-neg {
         background-color: $button-middle-neg-checked;
     }
 
-    input[type="radio"]:hover + label.button-neutral {
-        background-color: $button-neutral-hover;
-    }
-
     input[type="radio"]:checked + label.button-neutral {
         background-color: $button-neutral-checked;
     }
 
-    input[type="radio"]:hover + label.button-middle-pos {
-        background-color: $button-middle-pos-hover;
-    }
-
     input[type="radio"]:checked + label.button-middle-pos {
         background-color: $button-middle-pos-checked;
-    }
-
-    input[type="radio"]:hover + label.button-pos {
-        background-color: $button-pos-hover;
     }
 
     input[type="radio"]:checked + label.button-pos {
@@ -295,7 +275,7 @@ div.btn-group {
                 margin: 2 * $grid auto;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
-                box-shadow: 0 0 2px 1px $button-grey-border;
+                box-shadow: 0 0 3px 1px $label-grey-border;
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
 
@@ -324,11 +304,6 @@ div.btn-group {
                 }
             }
 
-
-            &:hover .check {
-                background-color: $button-tertiary-hover-alt;
-            }
-
             .check::before {
                 display: block;
                 position: absolute;
@@ -342,7 +317,6 @@ div.btn-group {
                 margin: auto;
                 -webkit-transition: all 0.2s linear;
                 transition: all 0.2s linear;
-
             }
 
             input[type=radio]:checked ~ .check::before {
@@ -350,7 +324,7 @@ div.btn-group {
             }
 
             input[type=radio]:checked ~ .check {
-                background-color: $button-tertiary-color;
+                background-color: $button-pos-checked;
             }
         }
     }
@@ -395,7 +369,7 @@ div.btn-group {
                 margin: 2 * $grid auto;
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
-                box-shadow: 0 0 2px 1px $button-grey-border;
+                box-shadow: 0 0 2px 1px $label-grey-border;
                 -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
                 transition: color 0.2s linear, box-shadow 0.2s, linear;
 
@@ -423,12 +397,8 @@ div.btn-group {
                     }
                 }
 
-                &:hover input[type=checkbox] ~ .check {
-                    background-color: $button-tertiary-hover-alt;
-                }
-
                 & input[type=checkbox]:checked ~ .check {
-                    background-color: $button-tertiary-color;
+                    background-color: $button-pos-checked;
                 }
 
 
@@ -480,6 +450,26 @@ div.btn-group {
 
             @include media-query($on-mobile) {
                 height: 13 * $grid;
+            }
+
+            &.button-neg {
+                background-color: $button-neg-bg-color-lighten;
+            }
+
+            &.button-middle-neg {
+                background-color: $button-middle-neg-bg-color-lighten;
+            }
+
+            &.button-neutral {
+                background-color: $button-neutral-bg-color-lighten;
+            }
+
+            &.button-middle-pos {
+                background-color: $button-middle-pos-bg-color-lighten;
+            }
+
+            &.button-pos {
+                background-color: $button-pos-bg-color-lighten;
             }
             //border-radius for 1st and last btn
             &.slider-group-first {
@@ -621,8 +611,8 @@ div.btn-group {
             }
         }
     }
-} // btn-group ends
-
-.thanks-div {
-    margin-top: 16vh;
 }
+    // btn-group ends
+    .thanks-div {
+        margin-top: 16vh;
+    }
