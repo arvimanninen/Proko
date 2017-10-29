@@ -1,11 +1,15 @@
 ﻿
 'use strict';
-app.controller('EndCtrl', function (AnswerService, DataFactory) {
+app.controller('EndCtrl', function ($location, AnswerService, DataFactory) {
     var that = this;
     var postingSuccess = document.getElementById("posting-success");
     var postingIcon = document.getElementById("posting-icon");
     postingSuccess.style.visibility = "hidden";
     that.postingText = "Lähetetään vastauksia, odota hetki...";
+    that.goToResults = function () {
+        $location.path("/results");
+    };
+
 
     var postAnswers = DataFactory.postSurveyAnswers.save(AnswerService.getAnswers(), function (bundle) {
         var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback) {
@@ -27,7 +31,6 @@ app.controller('EndCtrl', function (AnswerService, DataFactory) {
             postingIcon.src = "core/images/warning.gif";
             that.postingText = "Vapaaehtoisen palautteen lähettäminen epäonnistui! Voit halutessasi sulkea selaimen ja tehdä testin uudestaan.";
         });
-        
     }, function () {
         // THIS LAUNCHES IN CASE OF ANSWER POSTING ERROR
         postingIcon.src = "core/images/warning.gif";

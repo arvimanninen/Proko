@@ -4,7 +4,6 @@
 
     <div class="outer-smiley-div" ng-repeat="q in $ctrl.currentQuestions">
         <h4>{{ q.QuestionText }}</h4>
-
         <div class="btn-group smiley-div">
             <input id="q{{ q.ChosenQuestionIndex }}-a1" type="radio" name="question-{{ q.ChosenQuestionIndex }}" value="1" />
             <label for="q{{ q.ChosenQuestionIndex }}-a1" class="button-neg" ng-click="$ctrl.setAnswer(1, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)">
