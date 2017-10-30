@@ -1,7 +1,10 @@
 ﻿'use strict';
 
 app.controller('ResultsCtrl', function ($scope, $location) {
-
+    var that = this;
+    this.goToStart = function () {
+        $location.path("/start");
+    };
     //modal
     $(function () {
         var counterUsed = false;
@@ -50,14 +53,6 @@ app.controller('ResultsCtrl', function ($scope, $location) {
 
     }); //modal ends
 
-
-    $scope.toStart = function () {
-        $location.path("/end");
-    };
-
-    $scope.toStart = function () {
-        $location.path("/start");
-    };
 
     $scope.answerCount = 20;
 

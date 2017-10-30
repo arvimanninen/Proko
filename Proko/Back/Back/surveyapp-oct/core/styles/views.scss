@@ -18,11 +18,16 @@ OUTER SLIDER DIV
         display: flex;
         justify-content: space-between;
         margin: 0 0 11 * $grid;
+        color: $grey;
 
         @include media-query($on-mobile) {
             margin: 0 0 9 * $grid;
         }
     }
+}
+
+.outer-textarea-div {
+    margin-top: 10vh;
 }
 
 /*
@@ -35,47 +40,45 @@ div.btn-group {
     input[type="radio"] {
         display: none;
     }
-    // different number of labels in row
-    &.btns-five label {
-        width: 20.2%;
-
-        @include media-query($on-mobile) {
-            width: 20.4%;
-        }
-    }
 
     label, a {
         position: relative;
         cursor: pointer;
         box-sizing: border-box;
+        user-select: none;
 
         &.button-neg {
-            background-color: $button-neg-color;
+            background-color: $button-neg-bg-color;
             border: 1px solid $button-neg-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-neg {
-            background-color: $button-middle-neg-color;
+            background-color: $button-middle-neg-bg-color;
             border: 1px solid $button-middle-neg-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-neutral {
-            background-color: $button-neutral-color;
+            background-color: $button-neutral-bg-color;
             border: 1px solid $button-neutral-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-middle-pos {
-            background-color: $button-middle-pos-color;
+            background-color: $button-middle-pos-bg-color;
             border: 1px solid $button-middle-pos-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
         &.button-pos {
-            background-color: $button-pos-color;
+            background-color: $button-pos-base-color;
             border: 1px solid $button-pos-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
         }
 
@@ -83,6 +86,7 @@ div.btn-group {
             color: $white;
             background-color: $button-primary-color;
             border: 1px solid $button-primary-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
 
             &:hover {
@@ -98,6 +102,7 @@ div.btn-group {
             color: $button-secondary-text-color;
             background-color: $button-secondary-bg-color;
             border: 1px solid $button-secondary-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
 
             &:hover {
@@ -112,7 +117,7 @@ div.btn-group {
         &.button-tertiary {
             color: $white;
             background-color: $button-tertiary-color;
-            //border: 1.5px solid $button-tertiary-border;
+            -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
 
             &:hover {
@@ -124,41 +129,21 @@ div.btn-group {
             }
         }
     }
-    // button hover & checked states
-    input[type="radio"]:hover + label.button-neg {
-        background-color: $button-neg-hover;
-    }
-
+    // button checked states
     input[type="radio"]:checked + label.button-neg {
         background-color: $button-neg-checked;
-    }
-
-    input[type="radio"]:hover + label.button-middle-neg {
-        background-color: $button-middle-neg-hover;
     }
 
     input[type="radio"]:checked + label.button-middle-neg {
         background-color: $button-middle-neg-checked;
     }
 
-    input[type="radio"]:hover + label.button-neutral {
-        background-color: $button-neutral-hover;
-    }
-
     input[type="radio"]:checked + label.button-neutral {
         background-color: $button-neutral-checked;
     }
 
-    input[type="radio"]:hover + label.button-middle-pos {
-        background-color: $button-middle-pos-hover;
-    }
-
     input[type="radio"]:checked + label.button-middle-pos {
         background-color: $button-middle-pos-checked;
-    }
-
-    input[type="radio"]:hover + label.button-pos {
-        background-color: $button-pos-hover;
     }
 
     input[type="radio"]:checked + label.button-pos {
@@ -188,9 +173,10 @@ div.btn-group {
     &.nav-btn-div {
         display: flex;
         justify-content: space-around;
+        box-sizing: border-box;
 
         a {
-            width: 28 * $grid;
+            width: 32 * $grid;
             height: 12 * $grid;
             font-size: 4.5 * $grid;
             line-height: 12 * $grid;
@@ -198,18 +184,19 @@ div.btn-group {
             border-radius: 2 * $grid;
             text-align: center;
             text-decoration: none;
+            text-transform: uppercase;
 
             &.block-btn {
-                width: 40 * $grid;
+                width: 50 * $grid;
                 margin: 0 auto;
             }
         }
 
         &.nav-btn-margins {
-            margin: 20 * $grid 0 14 * $grid;
+            margin: 20 * $grid 0 16 * $grid;
 
             @include media-query($on-mobile) {
-                margin: 16 * $grid 0 12 * $grid;
+                margin: 12 * $grid 0 14 * $grid;
             }
         }
 
@@ -234,8 +221,12 @@ div.btn-group {
         }
 
         label {
-            padding: 1.5 * $grid;
             border-radius: $grid;
+            padding: 2.5 * $grid;
+
+            @include media-query($on-small-mobile) {
+                padding: 1.5 * $grid;
+            }
 
             img {
                 width: 57.8px;
@@ -245,9 +236,207 @@ div.btn-group {
         }
     }
     /////////////
+    //radiobutton
+    &.radiobutton-div {
+        position: relative;
+        margin: 2 * $grid 0 0 10%;
+        padding: 0;
+        width: 80%;
+
+        @include media-query($on-tablet) {
+            width: 90%;
+            margin: 2 * $grid 0 0 5%;
+        }
+
+        @include media-query($on-mobile) {
+            width: 100%;
+            margin: $grid 0 0 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        ul li {
+            display: block;
+            position: relative;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            label {
+                display: block;
+                position: relative;
+                font-family: 'Roboto', sans-serif;
+                color: $grey;
+                font-weight: 400;
+                font-size: 5.5 * $grid;
+                line-height: 7 * $grid;
+                margin: 2 * $grid auto;
+                padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
+                border-radius: 1.5 * $grid;
+                box-shadow: 0 0 3px 1px $label-grey-border;
+                -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
+                transition: color 0.2s linear, box-shadow 0.2s, linear;
+
+                @include media-query($on-tablet) {
+                    font-size: 5 * $grid;
+                    line-height: 6.5 * $grid;
+                }
+            }
+
+            .check {
+                display: block;
+                position: absolute;
+                background-color: $lightgrey;
+                border-radius: 100%;
+                height: 30px;
+                width: 30px;
+                top: 10px;
+                left: 10px;
+                z-index: 5;
+                -webkit-transition: background-color .2s linear;
+                transition: background-color .2s linear;
+
+                @include media-query($on-mobile) {
+                    top: 9px;
+                    left: 10px;
+                }
+            }
+
+            .check::before {
+                display: block;
+                position: absolute;
+                content: '';
+                background-color: rgba(255, 255, 255, 0);
+                border-radius: 100%;
+                height: 14px;
+                width: 14px;
+                top: 8px;
+                left: 8px;
+                margin: auto;
+                -webkit-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+            }
+
+            input[type=radio]:checked ~ .check::before {
+                background-color: rgba(255, 255, 255, 1);
+            }
+
+            input[type=radio]:checked ~ .check {
+                background-color: $button-pos-checked;
+            }
+        }
+    }
+    /////////////
+    //checkbox
+    &.checkbox-div {
+        position: relative;
+        margin: 2 * $grid 0 0 10%;
+        padding: 0;
+        width: 80%;
+
+        @include media-query($on-tablet) {
+            width: 90%;
+            margin: 2 * $grid 0 0 5%;
+        }
+
+        @include media-query($on-mobile) {
+            width: 100%;
+            margin: $grid 0 0 0;
+        }
+
+
+        ul {
+            padding: 0;
+        }
+
+        ul li {
+            display: block;
+            position: relative;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            label {
+                display: block;
+                position: relative;
+                font-family: 'Roboto', sans-serif;
+                color: $grey;
+                font-weight: 400;
+                font-size: 5.5 * $grid;
+                line-height: 7 * $grid;
+                margin: 2 * $grid auto;
+                padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
+                border-radius: 1.5 * $grid;
+                box-shadow: 0 0 2px 1px $label-grey-border;
+                -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
+                transition: color 0.2s linear, box-shadow 0.2s, linear;
+
+                @include media-query($on-tablet) {
+                    font-size: 5 * $grid;
+                    line-height: 6.5 * $grid;
+                }
+
+                input[type=checkbox] {
+                    position: absolute;
+                    opacity: 0;
+                }
+
+                .check {
+                    position: absolute;
+                    height: 30px;
+                    width: 30px;
+                    top: 10px;
+                    left: 10px;
+                    background-color: $lightgrey;
+
+                    @include media-query($on-mobile) {
+                        top: 9px;
+                        left: 10px;
+                    }
+                }
+
+                & input[type=checkbox]:checked ~ .check {
+                    background-color: $button-pos-checked;
+                }
+
+
+                .check:after {
+                    display: none;
+                    position: absolute;
+                    content: "";
+                }
+
+                input[type=checkbox]:checked ~ .check:after {
+                    display: block;
+                }
+
+                .check:after {
+                    left: 10px;
+                    top: 4px;
+                    width: 10px;
+                    height: 17px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    /////////////
     // slider
     &.slider-div {
-        margin: 1 * $grid auto 0;
+        margin: 2 * $grid auto 0;
+        // different number of labels in row
+        &.btns-five label {
+            width: 20.2%;
+
+            @include media-query($on-mobile) {
+                width: 20.4%;
+            }
+        }
 
         label {
             border-radius: 0px;
@@ -257,17 +446,35 @@ div.btn-group {
             text-align: center;
             font-size: 20px;
             height: 11 * $grid;
+            border-left: none;
 
             @include media-query($on-mobile) {
-                height: 11 * $grid;
+                height: 13 * $grid;
             }
 
-            @include media-query($on-small-mobile) {
-                height: 10 * $grid;
+            &.button-neg {
+                background-color: $button-neg-bg-color-lighten;
+            }
+
+            &.button-middle-neg {
+                background-color: $button-middle-neg-bg-color-lighten;
+            }
+
+            &.button-neutral {
+                background-color: $button-neutral-bg-color-lighten;
+            }
+
+            &.button-middle-pos {
+                background-color: $button-middle-pos-bg-color-lighten;
+            }
+
+            &.button-pos {
+                background-color: $button-pos-bg-color-lighten;
             }
             //border-radius for 1st and last btn
             &.slider-group-first {
                 border-radius: $btn-grp-radius-left;
+                border: 1px solid $button-middle-neg-border;
             }
 
             &.slider-group-last {
@@ -307,7 +514,7 @@ div.btn-group {
             border-radius: 50%;
             border: 0;
 
-            @include media-query($on-mobile) {
+            @include media-query($on-tablet) {
                 height: 20 * $grid;
                 width: 20 * $grid;
             }
@@ -329,7 +536,7 @@ div.btn-group {
                 left: 0;
                 top: 0;
 
-                @include media-query($on-mobile) {
+                @include media-query($on-tablet) {
                     width: 20 * $grid;
                     height: 20 * $grid;
                 }
@@ -349,190 +556,46 @@ div.btn-group {
     ////////////
     //thumbs
     &.thumbs-div {
-        display: table;
-        margin: 4 * $grid 0 12 * $grid;
-
-        table {
-            width: 100%;
-
-            tr {
-                height: 18 * $grid;
-
-                @include media-query($on-tablet) {
-                    height: 16 * $grid;
-                }
-
-                @include media-query($on-mobile) {
-                    height: 14 * $grid;
-                }
-
-                @include media-query($on-small-mobile) {
-                    height: 12 * $grid;
-                }
-
-                td.thumbs-question {
-                    position: relative;
-                    width: 58%;
-
-                    @include media-query($on-tablet) {
-                        width: 55%;
-                    }
-
-                    @include media-query($on-mobile) {
-                        width: 49%;
-                    }
-
-                    @include media-query($on-small-mobile) {
-                        width: 46%;
-                    }
-
-                    h4 {
-                        position: relative;
-                        text-align: left;
-                        margin: 0;
-                        padding: 0;
-                        top: -3px;
-                    }
-                }
-
-                td:not(:first-child) {
-                    position: relative;
-                    width: 14%;
-                    //border: 1px solid red;
-                    @include media-query($on-tablet) {
-                        width: 15%;
-                    }
-
-                    @include media-query($on-mobile) {
-                        width: 17%;
-                    }
-
-                    @include media-query($on-small-mobile) {
-                        width: 18%;
-                    }
-                }
-            }
-        }
+        display: flex;
+        justify-content: center;
+        margin: 4 * $grid auto 12 * $grid;
 
         label {
-            float: right;
-            position: relative;
             border-radius: $grid;
-            color: $button-text-color;
-            width: 17 * $grid;
-            height: 13.6 * $grid;
+            color: $grey;
+            width: 21 * $grid;
+            height: 14 * $grid;
 
-            @include media-query($on-tablet) {
-                width: 15 * $grid;
-                height: 12 * $grid;
-            }
+            &.button-neutral {
+                margin: 0 8 * $grid;
 
-            @include media-query($on-mobile) {
-                width: 13.5 * $grid;
-                height: 10.8 * $grid;
-            }
-
-            @include media-query($on-small-mobile) {
-                width: 12.5 * $grid;
-                height: 10 * $grid;
+                @include media-query($on-mobile) {
+                    margin: 0 4 * $grid;
+                }
             }
 
             img {
                 position: relative;
                 width: 9 * $grid;
                 height: 9 * $grid;
-
-                @include media-query($on-tablet) {
-                    width: 8 * $grid;
-                    height: 8 * $grid;
-                }
-
-                @include media-query($on-mobile) {
-                    width: 6.5 * $grid;
-                    height: 6.5 * $grid;
-                }
-            }
-            // thumb down
-            &.button-neg {
-
-                img {
-                    top: 1.5 * $grid;
-                    left: 3.25 * $grid;
-
-                    @include media-query($on-tablet) {
-                        top: 1.25 * $grid;
-                        left: 2.75 * $grid;
-                    }
-
-                    @include media-query($on-mobile) {
-                        top: 1.5 * $grid;
-                        left: 2.75 * $grid;
-                    }
-
-                    @include media-query($on-small-mobile) {
-                        top: 1.25 * $grid;
-                        left: 2.25 * $grid;
-                    }
-                }
-            }
-            // thumb neutral
-            &.button-neutral {
-
-                img {
-                    top: 2 * $grid;
-                    left: 3.5 * $grid;
-
-                    @include media-query($on-tablet) {
-                        top: 1.75 * $grid;
-                        left: 3 * $grid;
-                    }
-
-                    @include media-query($on-mobile) {
-                        top: 1.75 * $grid;
-                        left: 2.75 * $grid;
-                    }
-
-                    @include media-query($on-small-mobile) {
-                        top: 1.5 * $grid;
-                        left: 2.25 * $grid;
-                    }
-                }
-            }
-            // thumb up
-            &.button-pos {
-
-                img {
-                    top: 2.5 * $grid;
-                    left: 3.25 * $grid;
-
-                    @include media-query($on-tablet) {
-                        top: 2.25 * $grid;
-                        left: 3 * $grid;
-                    }
-
-                    @include media-query($on-mobile) {
-                        top: 2.25 * $grid;
-                        left: 2.75 * $grid;
-                    }
-
-                    @include media-query($on-small-mobile) {
-                        top: 1.75 * $grid;
-                        left: 2 * $grid;
-                    }
-                }
+                top: 9px;
+                left: 22px;
             }
         }
     }
     /////////////
     // textarea
     &.textarea-div {
+        margin: 0;
+
         textarea {
             display: block;
             width: 70%;
-            margin: 4 * $grid auto 10 * $grid;
-            height: 30 * $grid;
+            height: 36 * $grid;
+            margin: 3 * $grid auto 0;
             border: 1.5px solid $lightgrey;
             background-color: $white;
+            color: $grey;
 
             @include media-query($on-tablet) {
                 width: 70%;
@@ -540,7 +603,7 @@ div.btn-group {
 
             @include media-query($on-mobile) {
                 width: 84%;
-                margin: 2 * $grid auto 10 * $grid;
+                margin: 2 * $grid auto 0;
             }
 
             @include media-query($on-small-mobile) {
@@ -548,8 +611,8 @@ div.btn-group {
             }
         }
     }
-} // btn-group ends
-
-.thanks-div {
-    margin-top: 16vh;
 }
+    // btn-group ends
+    .thanks-div {
+        margin-top: 16vh;
+    }
