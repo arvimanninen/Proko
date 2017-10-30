@@ -61,31 +61,61 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
 
     $scope.answerCount = 20;
 
-    // data 1
-    $scope.pollData1 = [
-        [5, 8, 12, 14, 9]
+    // chart 1
+    $scope.labels1 = ["Viikko 40", "Viikko 41", "Viikko 42", "Viikko 43", "Viikko 43"];
+    $scope.series1 = ['Series A'];
+    $scope.data1 = [
+        [2.2, 2.8, 2.5, 3.3, 3.6]
     ];
-    $scope.pollLabels1 = ['Eri mieltä', '', '', '', 'Samaa mieltä'];
-    //$scope.pollSeries = ['Tyytyvaisyys'];
-
-    // data 2
-    $scope.pollData2 = [
-        [5, 10, 12, 9, 8]
-    ];
-    $scope.pollLabels2 = ['Eri mieltä', '', '', '', 'Samaa mieltä'];
-
-    $scope.pollLabels3 = ['thumb down', 'neutral', 'thumb up'];
-
+    $scope.onClick = function (points, evt) {
+        console.log(points, evt);
+    };
+    $scope.datasetOverride1 = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
     $scope.options1 = {
         scales: {
-            yAxes: [{
-                ticks: {
-                    max: 5,
-                    min: 0,
-                    stepSize: 1
+            yAxes: [
+                {
+                    id: 'y-axis-1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    ticks: {
+                        min: 0,
+                        max: 5,
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
                 }
-            }]
+            ]
         }
     };
 
+    // chart 2
+    $scope.labels2 = ["Viikko 40", "Viikko 41", "Viikko 42", "Viikko 43", "Viikko 43"];
+    $scope.series2 = ['Series A'];
+    $scope.data2 = [
+        [2.2, 2.8, 3.5, 2.3, 3.0]
+    ];
+    $scope.onClick = function (points, evt) {
+        console.log(points, evt);
+    };
+    $scope.datasetOverride2 = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+    $scope.options2 = {
+        scales: {
+            yAxes: [
+                {
+                    id: 'y-axis-1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    ticks: {
+                        min: 0,
+                        max: 5,
+                        beginAtZero: true,
+                        stepSize: 1
+                    }
+                }
+            ]
+        }
+    };
 });
