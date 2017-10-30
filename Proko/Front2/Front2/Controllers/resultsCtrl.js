@@ -92,27 +92,42 @@ app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
 
     // chart 2
     $scope.labels2 = ["Viikko 40", "Viikko 41", "Viikko 42", "Viikko 43", "Viikko 43"];
-    $scope.series2 = ['Series A'];
+    $scope.series2 = ['Rakennusmiehet', 'Pomot', '3. Ryhmä'];
     $scope.data2 = [
-        [2.2, 2.8, 3.5, 2.3, 3.0]
+        [2.2, 2.8, 3.5, 2.3, 3.0],
+        [1.2, 3.8, 2.5, 3.3, 3.7],
+        [2, 1.7, 2, 2, 1]
     ];
     $scope.onClick = function (points, evt) {
         console.log(points, evt);
     };
-    $scope.datasetOverride2 = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+    $scope.datasetOverride2 = [{ yAxisID: 'y-axis-1' }];
     $scope.options2 = {
+        legend: {
+            display: true,
+            position: 'bottom'
+        },
+        elements: {
+            line: {
+                fill: false
+            }
+        },
         scales: {
             yAxes: [
                 {
                     id: 'y-axis-1',
-                    type: 'linear',
                     display: true,
+                    type: 'linear',                   
                     position: 'left',
                     ticks: {
                         min: 0,
                         max: 5,
                         beginAtZero: true,
                         stepSize: 1
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Label tähän'
                     }
                 }
             ]
