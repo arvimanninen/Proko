@@ -26,6 +26,6 @@
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionButtonSlider");
+        $location.path("/questionRangeSlider");
     };
 });

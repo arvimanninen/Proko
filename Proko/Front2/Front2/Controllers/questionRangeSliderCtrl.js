@@ -24,13 +24,8 @@ app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scop
     //    $(".nav-btn-div").css("margin-top", navbtnHeight);
     //});
 
-
-    $('input[type="range"]').rangeslider({
-
-        // Feature detection the default is `true`.
-        // Set this to `false` if you want to use
-        // the polyfill also in Browsers which support
-        // the native <input type="range"> element.
+    // slider 1
+    $("#rangeslider1 input[type='range']").rangeslider({
         polyfill: false,
 
         // Default CSS classes
@@ -42,15 +37,39 @@ app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scop
         handleClass: 'rangeslider__handle',
 
         // Callback function
-        onInit: function () {
-            
-        },
+        onInit: function () {},
 
         // Callback function
         onSlide: function (position, value) {
-            var color = "hsl(" + value + ", 48%, 60%)";
-            //console.log(color);
-            $(".rangeslider__fill").css("background-color", color);
+            const color = "hsl(" + value + ", 48%, 60%)";
+            $("#rangeslider1 input[type='range'] ~ .rangeslider div:first-child")
+                .css("background-color", color);
+        },
+
+        // Callback function
+        onSlideEnd: function (position, value) { }
+    });
+
+    // slide 2
+    $("#rangeslider2 input[type='range']").rangeslider({
+        polyfill: false,
+
+        // Default CSS classes
+        rangeClass: 'rangeslider',
+        disabledClass: 'rangeslider--disabled',
+        horizontalClass: 'rangeslider--horizontal',
+        verticalClass: 'rangeslider--vertical',
+        fillClass: 'rangeslider__fill',
+        handleClass: 'rangeslider__handle',
+
+        // Callback function
+        onInit: function () {},
+
+        // Callback function
+        onSlide: function (position, value) {
+            const color = "hsl(" + value + ", 48%, 60%)";
+            $("#rangeslider2 input[type='range'] ~ .rangeslider div:first-child")
+                .css("background-color", color);
         },
 
         // Callback function
@@ -62,10 +81,10 @@ app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scop
 
 
     $scope.previousView = function () {
-        $location.path("/questionThumbs");
+        $location.path("/questionCheckbox");
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionTextarea");
+        $location.path("/questionButtonSlider");
     };
 });

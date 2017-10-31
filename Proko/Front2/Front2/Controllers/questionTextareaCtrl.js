@@ -24,7 +24,7 @@ app.controller('questionTextareaCtrl', function questionTextareaCtrl($scope, $lo
     //});
 
     $scope.previousView = function () {
-        $location.path("/questionRangeSlider");
+        $location.path("/questionThumbs");
     };
 
     $scope.setAnswers = function () {

@@ -13,7 +13,7 @@ OUTER SLIDER DIV
     margin: 4 * $grid 0 11 * $grid;
 
     @include media-query($on-mobile) {
-        margin: 0 0 9 * $grid;
+        margin: 4 * $grid 0 9 * $grid;
     }
 
     .buttonslider-scale {
@@ -624,6 +624,11 @@ div.btn-group {
 }
 
 .outer-rangeslider-div {
+    margin: 6 * $grid auto 11 * $grid;
+
+    @include media-query($on-mobile) {
+        margin: 6 * $grid auto 13 * $grid;
+    }
 
     h4 {
         margin-bottom: 6 * $grid;
@@ -640,15 +645,6 @@ div.btn-group {
 
     .rangeslider__fill {
         background-color: hsl(61, 48%, 60%);
-    }
-
-    .rangeslider__ruler {
-        cursor: pointer;
-        font-size: .7em;
-        margin: 20px 3px 0 3px;
-        position: relative;
-        top: 100%;
-        text-align: justify;
     }
 
     .rangeslider-scale {

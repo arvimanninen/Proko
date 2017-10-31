@@ -25,7 +25,7 @@ app.controller('questionButtonSliderCtrl', function questionButtonSliderCtrl($sc
     //});
 
     $scope.previousView = function () {
-        $location.path("/questionCheckbox");
+        $location.path("/questionRangeSlider");
     };
 
     $scope.setAnswers = function () {

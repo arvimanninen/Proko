@@ -28,7 +28,7 @@ app.controller('questionThumbsCtrl', function questionThumbsCtrl($scope, $locati
     };
 
     $scope.setAnswers = function () {
-        $location.path("/questionRangeSlider");
+        $location.path("/questionTextarea");
     };
 
 });
