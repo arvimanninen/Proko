@@ -9,20 +9,21 @@
 OUTER SLIDER DIV
 **************************/
 
-.outer-slider-div {
-    margin-top: 4 * $grid;
+.outer-buttonslider-div {
+    margin: 4 * $grid 0 11 * $grid;
 
-    .bar-rating {
+    @include media-query($on-mobile) {
+        margin: 0 0 9 * $grid;
+    }
+
+    .buttonslider-scale {
         width: 100%;
         height: 6 * $grid;
         display: flex;
         justify-content: space-between;
-        margin: 0 0 11 * $grid;
+        margin: 0 auto;
         color: $grey;
 
-        @include media-query($on-mobile) {
-            margin: 0 0 9 * $grid;
-        }
     }
 }
 
@@ -623,7 +624,64 @@ div.btn-group {
 }
 
 .outer-rangeslider-div {
+
+    h4 {
+        margin-bottom: 6 * $grid;
+    }
+
     .rangeslider {
-        margin: 6 * $grid 0;
+        width: 80%;
+        margin: 3 * $grid auto;
+
+        @include media-query($on-mobile) {
+            width: 90%;
+        }
+    }
+
+    .rangeslider__fill {
+        background-color: hsl(61, 48%, 60%);
+    }
+
+    .rangeslider__ruler {
+        cursor: pointer;
+        font-size: .7em;
+        margin: 20px 3px 0 3px;
+        position: relative;
+        top: 100%;
+        text-align: justify;
+    }
+
+    .rangeslider-scale {
+        width: 80%;
+        height: 6 * $grid;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        color: $grey;
+
+        span {
+            width: 25 * $grid;
+
+            &:first-child {
+                text-align: left;
+            }
+
+            &:nth-child(2) {
+                text-align: center;
+
+                @include media-query($on-small-mobile) {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+
+
+        @include media-query($on-mobile) {
+            width: 90%;
+        }
     }
 }

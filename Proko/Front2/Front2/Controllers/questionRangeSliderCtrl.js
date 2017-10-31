@@ -24,12 +24,39 @@ app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scop
     //    $(".nav-btn-div").css("margin-top", navbtnHeight);
     //});
 
-    // Initialize a new plugin instance for all
-    // e.g. $('input[type="range"]') elements.
 
     $('input[type="range"]').rangeslider({
-        polyfill: false
+
+        // Feature detection the default is `true`.
+        // Set this to `false` if you want to use
+        // the polyfill also in Browsers which support
+        // the native <input type="range"> element.
+        polyfill: false,
+
+        // Default CSS classes
+        rangeClass: 'rangeslider',
+        disabledClass: 'rangeslider--disabled',
+        horizontalClass: 'rangeslider--horizontal',
+        verticalClass: 'rangeslider--vertical',
+        fillClass: 'rangeslider__fill',
+        handleClass: 'rangeslider__handle',
+
+        // Callback function
+        onInit: function () {
+            
+        },
+
+        // Callback function
+        onSlide: function (position, value) {
+            var color = "hsl(" + value + ", 48%, 60%)";
+            //console.log(color);
+            $(".rangeslider__fill").css("background-color", color);
+        },
+
+        // Callback function
+        onSlideEnd: function (position, value) { }
     });
+
 
 
 
