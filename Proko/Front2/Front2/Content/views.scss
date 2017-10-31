@@ -636,6 +636,7 @@ div.btn-group {
 
     .rangeslider {
         width: 80%;
+        background-color: hsl(61, 48%, 60%);
         margin: 3 * $grid auto;
 
         @include media-query($on-mobile) {
@@ -644,7 +645,7 @@ div.btn-group {
     }
 
     .rangeslider__fill {
-        background-color: hsl(61, 48%, 60%);
+        background-color: rgba(255, 255, 255, 0); //hsl(61, 48%, 60%);
     }
 
     .rangeslider-scale {

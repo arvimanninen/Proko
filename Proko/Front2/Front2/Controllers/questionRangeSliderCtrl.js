@@ -42,7 +42,7 @@ app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scop
         // Callback function
         onSlide: function (position, value) {
             const color = "hsl(" + value + ", 48%, 60%)";
-            $("#rangeslider1 input[type='range'] ~ .rangeslider div:first-child")
+            $("#rangeslider1 input[type='range'] ~ .rangeslider")
                 .css("background-color", color);
         },
 
@@ -68,7 +68,7 @@ app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scop
         // Callback function
         onSlide: function (position, value) {
             const color = "hsl(" + value + ", 48%, 60%)";
-            $("#rangeslider2 input[type='range'] ~ .rangeslider div:first-child")
+            $("#rangeslider2 input[type='range'] ~ .rangeslider")
                 .css("background-color", color);
         },
 
