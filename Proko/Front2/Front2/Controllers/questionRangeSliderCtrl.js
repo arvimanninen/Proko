@@ -1,15 +1,16 @@
 ﻿'use strict';
 
-app.controller('questionTextareaCtrl', function questionTextareaCtrl($scope, $location) {
+app.controller('questionRangeSliderCtrl', function questionRangeSliderCtrl($scope, $location) {
 
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();
         var navbtnHeight = wrapperHeight - containerHeight;
-        if ((navbtnHeight) < 64) {
-            navbtnHeight = 52
+        console.log(navbtnHeight);
+        if (navbtnHeight < 64) {
+            navbtnHeight = 52;
         } else {
-            navbtnHeight = navbtnHeight - 42;
+            navbtnHeight = navbtnHeight - 12;
         }
         console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);
@@ -23,12 +24,21 @@ app.controller('questionTextareaCtrl', function questionTextareaCtrl($scope, $lo
     //    $(".nav-btn-div").css("margin-top", navbtnHeight);
     //});
 
+    // Initialize a new plugin instance for all
+    // e.g. $('input[type="range"]') elements.
+
+    $('input[type="range"]').rangeslider({
+        polyfill: false
+    });
+
+
+
+
     $scope.previousView = function () {
-        $location.path("/questionRangeSlider");
+        $location.path("/questionThumbs");
     };
 
     $scope.setAnswers = function () {
-        $location.path("/end");
+        $location.path("/questionTextarea");
     };
-
 });

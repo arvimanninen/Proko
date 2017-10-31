@@ -71,6 +71,7 @@
     <Content Include="Content\frame.min.css">
       <DependentUpon>frame.css</DependentUpon>
     </Content>
+    <Content Include="Content\rangeslider.css" />
     <Content Include="Content\results.css">
       <DependentUpon>results.scss</DependentUpon>
     </Content>
@@ -93,6 +94,7 @@
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionCheckboxCtrl.js" />
     <Content Include="Controllers\questionRadioButtonCtrl.js" />
+    <Content Include="Controllers\questionRangeSliderCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
     <Content Include="Controllers\questionTextareaCtrl.js" />
     <Content Include="Controllers\questionThumbsCtrl.js" />
@@ -934,11 +936,13 @@
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\rangeslider.min.js" />
     <Content Include="Services\answerService.js" />
     <Content Include="Views\end.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionCheckbox.html" />
     <Content Include="Views\questionRadioButton.html" />
+    <Content Include="Views\questionRangeSlider.html" />
     <Content Include="Views\questionSmileys.html" />
     <Content Include="Views\questionTextarea.html" />
     <Content Include="Views\questionThumbs.html" />

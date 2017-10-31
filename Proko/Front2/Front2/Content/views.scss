@@ -616,7 +616,14 @@ div.btn-group {
         }
     }
 }
-    // btn-group ends
-    .thanks-div {
-        margin-top: 16vh;
+
+// btn-group ends
+.thanks-div {
+    margin-top: 16vh;
+}
+
+.outer-rangeslider-div {
+    .rangeslider {
+        margin: 6 * $grid 0;
     }
+}
