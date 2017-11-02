@@ -108,8 +108,11 @@
     <Content Include="Images\smiley-meh.svg" />
     <Content Include="Images\smiley-sad.svg" />
     <Content Include="Images\smiley-very-happy.svg" />
+    <Content Include="Images\thumb-down-b.png" />
+    <Content Include="Images\thumb-neutral-b.png" />
     <Content Include="Images\thumb-neutral.png" />
     <Content Include="Images\thumb-down.png" />
+    <Content Include="Images\thumb-up-b.png" />
     <Content Include="Images\thumb-up.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
