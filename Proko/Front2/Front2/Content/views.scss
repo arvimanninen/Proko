@@ -191,6 +191,11 @@ div.btn-group {
                 width: 50 * $grid;
                 margin: 0 auto;
             }
+
+            &.block-btn-xl {
+                width: 66 * $grid;
+                margin: 0 auto;
+            }
         }
 
         &.nav-btn-margins {

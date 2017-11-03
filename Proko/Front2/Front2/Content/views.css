@@ -43,8 +43,8 @@ div.btn-group {
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-neutral, div.btn-group a.button-neutral {
-      background-color: #f5efb6;
-      border: 1px solid #c59f21;
+      background-color: #eed891;
+      border: 1px solid #b08d1c;
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     div.btn-group label.button-middle-pos, div.btn-group a.button-middle-pos {
@@ -91,7 +91,7 @@ div.btn-group {
   div.btn-group input[type="radio"]:checked + label.button-middle-neg {
     background-color: #b56917; }
   div.btn-group input[type="radio"]:checked + label.button-neutral {
-    background-color: #d9ca1f; }
+    background-color: #b08d1c; }
   div.btn-group input[type="radio"]:checked + label.button-middle-pos {
     background-color: #7c8c32; }
   div.btn-group input[type="radio"]:checked + label.button-pos {
@@ -122,6 +122,9 @@ div.btn-group {
       text-transform: uppercase; }
       div.btn-group.nav-btn-div a.block-btn {
         width: 200px;
+        margin: 0 auto; }
+      div.btn-group.nav-btn-div a.block-btn-xl {
+        width: 264px;
         margin: 0 auto; }
     div.btn-group.nav-btn-div.nav-btn-margins {
       margin: 80px 0 64px; }
@@ -312,15 +315,15 @@ div.btn-group {
         div.btn-group.slider-div label {
           height: 52px; } }
       div.btn-group.slider-div label.button-neg {
-        background-color: #f7ab98; }
+        background-color: #f8b3a1; }
       div.btn-group.slider-div label.button-middle-neg {
-        background-color: #f1c18e; }
+        background-color: #f2c697; }
       div.btn-group.slider-div label.button-neutral {
-        background-color: #f5efb6; }
+        background-color: #efdb9a; }
       div.btn-group.slider-div label.button-middle-pos {
-        background-color: #ceda97; }
+        background-color: #d1dc9e; }
       div.btn-group.slider-div label.button-pos {
-        background-color: #ace2ae; }
+        background-color: #b4e4b6; }
       div.btn-group.slider-div label.slider-group-first {
         border-radius: 8px 0 0 8px;
         border: 1px solid #b56917; }

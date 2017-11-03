@@ -27,8 +27,13 @@ app.controller('questionButtonSliderCtrl', function questionButtonSliderCtrl($sc
     $scope.previousView = function () {
         $location.path("/questionRangeSlider");
     };
-
     $scope.setAnswers = function () {
         $location.path("/questionSmileys");
+    };
+    $scope.question1 = function () {
+        $location.path("/question1");
+    };
+    $scope.squestion2 = function () {
+        $location.path("/question3");
     };
 });

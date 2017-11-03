@@ -942,6 +942,8 @@
     <Content Include="Scripts\rangeslider.min.js" />
     <Content Include="Services\answerService.js" />
     <Content Include="Views\end.html" />
+    <Content Include="Views\question1.html" />
+    <Content Include="Views\question2.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionCheckbox.html" />
     <Content Include="Views\questionRadioButton.html" />

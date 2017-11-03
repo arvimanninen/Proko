@@ -26,8 +26,13 @@ app.controller('questionRadioButtonCtrl', function questionRadioButtonCtrl($scop
     $scope.previousView = function () {
         $location.path("/start");
     };
-
     $scope.setAnswers = function () {
         $location.path("/questionCheckbox");
+    };
+    $scope.start = function () {
+        $location.path("/start");
+    };
+    $scope.question2 = function () {
+        $location.path("/question2");
     };
 });
