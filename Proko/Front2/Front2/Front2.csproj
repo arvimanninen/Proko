@@ -71,6 +71,7 @@
     <Content Include="Content\frame.min.css">
       <DependentUpon>frame.css</DependentUpon>
     </Content>
+    <Content Include="Content\rangeslider.css" />
     <Content Include="Content\results.css">
       <DependentUpon>results.scss</DependentUpon>
     </Content>
@@ -93,6 +94,7 @@
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionCheckboxCtrl.js" />
     <Content Include="Controllers\questionRadioButtonCtrl.js" />
+    <Content Include="Controllers\questionRangeSliderCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
     <Content Include="Controllers\questionTextareaCtrl.js" />
     <Content Include="Controllers\questionThumbsCtrl.js" />
@@ -106,8 +108,11 @@
     <Content Include="Images\smiley-meh.svg" />
     <Content Include="Images\smiley-sad.svg" />
     <Content Include="Images\smiley-very-happy.svg" />
+    <Content Include="Images\thumb-down-b.png" />
+    <Content Include="Images\thumb-neutral-b.png" />
     <Content Include="Images\thumb-neutral.png" />
     <Content Include="Images\thumb-down.png" />
+    <Content Include="Images\thumb-up-b.png" />
     <Content Include="Images\thumb-up.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-chart.js" />
@@ -115,6 +120,7 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\chartjs-directive.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="compilerconfig.json" />
@@ -933,11 +939,15 @@
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\rangeslider.min.js" />
     <Content Include="Services\answerService.js" />
     <Content Include="Views\end.html" />
+    <Content Include="Views\question1.html" />
+    <Content Include="Views\question2.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionCheckbox.html" />
     <Content Include="Views\questionRadioButton.html" />
+    <Content Include="Views\questionRangeSlider.html" />
     <Content Include="Views\questionSmileys.html" />
     <Content Include="Views\questionTextarea.html" />
     <Content Include="Views\questionThumbs.html" />

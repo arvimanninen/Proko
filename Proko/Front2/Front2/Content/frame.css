@@ -15,8 +15,7 @@ body {
   min-height: 100%;
   height: auto;
   margin: 0 auto -56px;
-  padding: 0 0 56px;
-  color: #fff; }
+  padding: 0 0 56px; }
 
 .container {
   position: relative;
@@ -154,7 +153,8 @@ HEADER & FOOTER
 **************************/
 header, footer, header .container-fluid, footer .container-fluid {
   background-color: #605F5E;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #fff; }
 
 header {
   height: 60px; }

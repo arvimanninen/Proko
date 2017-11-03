@@ -7,8 +7,6 @@
 .results-div .question-results-div {
   margin: 24px 0 0;
   padding: 0 0 8px 8px;
-  border-radius: 4px;
-  border: 1px solid #e6e6e6;
   background-color: #FAFAFA; }
   @media screen and (max-width: 480px) {
     .results-div .question-results-div {

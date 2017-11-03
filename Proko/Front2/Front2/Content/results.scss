@@ -9,9 +9,6 @@
 
 }
 
-div.canvas-div {
-    //width: 100%;
-}
 
 .results-div {
 
@@ -22,8 +19,8 @@ div.canvas-div {
     .question-results-div {
         margin: 6 * $grid 0 0;
         padding: 0 0 2 * $grid 2 * $grid;
-        border-radius: $grid;
-        border: 1px solid $result-border-color;
+        //border-radius: $grid;
+        //border: 1px solid $result-border-color;
         background-color: $result-color;
 
         @include media-query($on-mobile) {
