@@ -91,8 +91,11 @@
       <DependentUpon>views.css</DependentUpon>
     </Content>
     <Content Include="Controllers\endCtrl.js" />
+    <Content Include="Controllers\question1Ctrl.js" />
+    <Content Include="Controllers\question2Ctrl.js" />
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionCheckboxCtrl.js" />
+    <Content Include="Controllers\questionnaireResultsCtrl.js" />
     <Content Include="Controllers\questionRadioButtonCtrl.js" />
     <Content Include="Controllers\questionRangeSliderCtrl.js" />
     <Content Include="Controllers\questionSmileysCtrl.js" />
@@ -946,6 +949,7 @@
     <Content Include="Views\question2.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionCheckbox.html" />
+    <Content Include="Views\questionnaireResults.html" />
     <Content Include="Views\questionRadioButton.html" />
     <Content Include="Views\questionRangeSlider.html" />
     <Content Include="Views\questionSmileys.html" />

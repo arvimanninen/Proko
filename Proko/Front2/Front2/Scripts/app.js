@@ -48,11 +48,15 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
             })
             .when('/question1', {
                 templateUrl: 'Views/question1.html',
-                controller: 'questionRadioButtonCtrl'
+                controller: 'question1Ctrl'
             })
             .when('/question2', {
                 templateUrl: 'Views/question2.html',
-                controller: 'questionButtonSliderCtrl'
+                controller: 'question2Ctrl'
+            })
+            .when('/questionnaireResults', {
+                templateUrl: 'Views/questionnaireResults.html',
+                controller: 'questionnaireResultsCtrl'
             }) 
 
             //TODO: reDirectTo: *errorpage*
