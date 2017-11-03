@@ -98,27 +98,7 @@ namespace Back.ApiControllers
             return CreatedAtRoute("DefaultApi", new { id = answer.AnswerID }, answer);
         }
         */
-        [Route("api/posttextfeedback")]
-        [HttpPost]
-        public IHttpActionResult PostTextFeedback([FromBody] TextFeedbackDTO fbDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                Debug.WriteLine("ModelState not valid!");
-                return BadRequest(ModelState);
-            }
-            AnswerBundle bundle = db.AnswerBundles.Find(fbDto.AnswerBundleID);
-            if(bundle == null)
-            {
-                // TODO: CHANGE TO SOMETHING SENSIBLE?
-                return BadRequest();
-            }
-            bundle.TextFeedback = fbDto.TextFeedback;
-            // TODO: TRANSACTION MANAGEMENT!!!
-            db.Entry(bundle).State = EntityState.Modified;
-            db.SaveChanges();
-            return Ok();
-        }
+        
 
         [Route("api/postsurveyanswers")]
         [HttpPost]
@@ -187,10 +167,34 @@ namespace Back.ApiControllers
                 Debug.WriteLine("currentSetId:" + currentSetId);
                 Debug.WriteLine("currentSetIndex:" + currentSetIndex);
             }
-            int answerBundleId = bundle.AnswerBundleID;
-            Debug.WriteLine("answerBundleId: " + answerBundleId);
+
+            Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
             return Ok(bundle);
         }
+
+        [Route("api/posttextfeedback")]
+        [HttpPost]
+        public IHttpActionResult PostTextFeedback([FromBody] TextFeedbackDTO fbDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                Debug.WriteLine("ModelState not valid!");
+                return BadRequest(ModelState);
+            }
+            AnswerBundle bundle = db.AnswerBundles.Find(fbDto.AnswerBundleID);
+            if (bundle == null)
+            {
+                // TODO: CHANGE TO SOMETHING SENSIBLE?
+                return BadRequest();
+            }
+            bundle.TextFeedback = fbDto.TextFeedback;
+            // TODO: TRANSACTION MANAGEMENT!!!
+            db.Entry(bundle).State = EntityState.Modified;
+            db.SaveChanges();
+            return Ok();
+        }
+
+
 
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]
