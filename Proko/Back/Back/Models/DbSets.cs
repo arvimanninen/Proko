@@ -28,5 +28,6 @@ namespace Back.Models
         public DbSet<Answer> Answers { get; set; }
         public DbSet<AnswerSet> AnswerSets { get; set; }
         public DbSet<AnswerBundle> AnswerBundles { get; set; }
+        public DbSet<AnswererType> AnswererTypes { get; set; }
     }
 }
