@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Web API test</title>
+</head>
+<body>
+    <p>API status: <strong><span id="api-status"></span></strong></p> <br />
+    
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        console.log("testget script started!");
+        var apiStatus = document.getElementById("api-status");
+        apiStatus.innerHTML = "Loading...";
+        $.getJSON("api/getanswerstocurrentquestions", function () {
+            console.log("API call launched");
+        })
+        .done(function (data) {
+            console.log("API call works!");
+            apiStatus.innerHTML = "API call successful!";
+            /*
+            public class AnswerResultDTO
+            {
+                public int QuestionID { get; set; }
+                public DateTime AnswerBundleDate { get; set; }
+                public int AnswerValue { get; set; }
+                public string AnswererTypeID { get; set; }
+                public string AnswererTypeName { get; set; }
+            }
+            */
+            for (var i = 0; i < data.length; i++) {
+                console.log("");
+                console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
+                console.log("data[" + i + "].AnswerBundleDate: " + data[i].AnswerBundleDate);
+                console.log("data[" + i + "].AnswerValue:" + data[i].QuestionSetTitle);
+                console.log("data[" + i + "].AnswererTypeName: " + data[i].QuestionID);
+                console.log("data[" + i + "].AnswererTypeID: " + data[i].AnswererTypeID);
+            }
+        })
+        .fail(function () {
+            console.log("API call doesn't work!");
+            apiStatus = "API call failed!";
+        });
+    </script>
+</body>
+</html>
