@@ -269,6 +269,7 @@
     <Compile Include="Models\AnswerBundle.cs" />
     <Compile Include="Models\AnswerDTO.cs" />
     <Compile Include="Models\AnswererType.cs" />
+    <Compile Include="Models\AnswerResultDTO.cs" />
     <Compile Include="Models\AnswerSet.cs" />
     <Compile Include="Models\ChosenQuestion.cs" />
     <Compile Include="Models\DbSets.cs" />
@@ -1367,6 +1368,7 @@
     <Content Include="surveyapp\node_modules\jquery\src\var\toString.js" />
     <Content Include="surveyapp\node_modules\jquery\src\wrap.js" />
     <Content Include="surveyapp\OldStuff\RemovedCtrlPatches.txt" />
+    <Content Include="testgetanswerstocurrentquestions.html" />
     <Content Include="testgetallquestions.html" />
     <Content Include="testget.html" />
     <Content Include="testposttextfeedback.html" />

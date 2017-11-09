@@ -194,7 +194,28 @@ namespace Back.ApiControllers
             return Ok();
         }
 
+        [Route("api/getanswerresultsstocurrentquestions")]
+        [HttpGet]
+        public IHttpActionResult GetAnswerResultsToCurrentQuestions()
+        {
+            var rawResults = from cq in db.ChosenQuestions
+                             join a in db.Answers
+                             on cq.QuestionID equals a.QuestionID
+                             orderby cq.QuestionSet.ChosenIndex ascending, cq.ChosenIndex ascending
+                             select new AnswerResultDTO
+                             {
+                                 QuestionID = a.QuestionID,
+                                 AnswerValue = a.Value,
+                                 AnswererTypeID = a.AnswerSet.AnswerBundle.AnswererTypeID,
+                                 AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
+                                 AnswerBundleDate = a.AnswerSet.AnswerBundle.Date,
+                             };
 
+            List<AnswerResultDTO> results = rawResults.ToList();
+            Debug.WriteLine("results.Count: " + results.Count);
+            return Ok(results);
+        }  
+                          
 
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]
