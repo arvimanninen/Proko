@@ -13,8 +13,8 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
         series: ['Rakennusmiehet', 'Sähköasentajat', 'LVI asentajat', 'Putkimiehet'],
         data: [[50, 70, 47, 80, 81], [85, 79, 69, 92, 98], [76, 60, 80, 68, 72], [68, 60, 79, 100, 96]],
         options: {
-            fill: false, lineTension: 0,
-            pointRadius: 0,
+            fill: false,
+            lineTension: 0,
             legend: {
                 display: true,
                 position: 'bottom',
@@ -41,7 +41,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Tyytyväisyyden määrä',
+                            labelString: 'Tyytyväisyys',
                         }
                     }
                 ]
