@@ -64,13 +64,13 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 redirectTo: '/start'
             });
 
-            // Configure all charts 
             ChartJsProvider.setOptions({
-                chartColors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
-                responsive: false
+                global: {
+                    colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
+                    defaultFontColor: '#333333',
+                    defaultFontFamily: 'Roboto',
+                    defaultFontSize: 13
+                }
             });
-            // Configure all line charts 
-            //ChartJsProvider.setOptions('bar', {
-            //    showLines: true
-            //});
+
     }]);
