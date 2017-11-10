@@ -133,6 +133,8 @@ namespace Back.ApiControllers
             // CREATE AnswerBundle bundle
             AnswerBundle bundle = new AnswerBundle();
             bundle.Date = DateTime.Now;
+            // NEW: CHECK IF WORKS
+            bundle.AnswererTypeID = typeDto.AnswererTypeID;
             // TODO: TRANSACTION MANAGEMENT
             db.AnswerBundles.Add(bundle);
             db.SaveChanges();
@@ -215,7 +217,29 @@ namespace Back.ApiControllers
             Debug.WriteLine("results.Count: " + results.Count);
             return Ok(results);
         }  
-                          
+
+        [Route("api/getchosenanswerertypes")]
+        [HttpGet]
+        public IHttpActionResult GetChosenAnswererTypes()
+        {
+            var rawTypes = from at in db.AnswererTypes
+                           where at.Chosen == true
+                           select new AnswererTypeDTO
+                           {
+                               AnswererTypeID = at.AnswererTypeID,
+                               Name = at.Name
+                           };
+            List<AnswererTypeDTO> types = rawTypes.ToList();
+            if(types.Count >= 1)
+            {
+                return Ok(types);
+            }
+            else
+            {
+                Debug.WriteLine("Answerer types not chosen!");
+                return NotFound();
+            }
+        }
 
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]
