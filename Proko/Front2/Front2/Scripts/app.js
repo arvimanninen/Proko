@@ -69,7 +69,19 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                     colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
                     defaultFontColor: '#333333',
                     defaultFontFamily: 'Roboto',
-                    defaultFontSize: 13
+                    defaultFontSize: 14,
+                    elements: {
+                        line: {
+                            fill: false
+                        }
+                    },
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    },
+                    tooltips: {
+                        enabled: false
+                    }
                 }
             });
 

@@ -8,25 +8,11 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
 
     $scope.answerCount = 20;
 
-    Chart.defaults.global.elements.line.fill = false;
-
-    $scope.chart = {
+    $scope.chart1 = {
     labels: ["Viikko 40", "Viikko 41", "Viikko 42", "Viikko 43", "Viikko 43"],
     series: ['Rakennusmiehet', 'Sähköasentajat', 'LVI asentajat', 'Putkimiehet'],
     data: [[50, 70, 47, 80, 81], [85, 79, 69, 92, 98], [76, 60, 80, 68, 72], [68, 60, 79, 100, 96]],
-    options: {
-        fill: false,
-        lineTension: 0,
-        legend: {
-            display: true,
-            position: 'bottom',
-
-        },
-        elements: {
-            line: {
-                fill: false
-            }
-        },
+    options: {       
         scales: {
             yAxes: [
                 {
@@ -47,9 +33,6 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
                     }
                 }
                 ]
-            },
-            tooltips: {
-                enabled: false
             }
         }
     }
