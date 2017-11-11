@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('questionThumbsCtrl', function questionThumbsCtrl($scope, $location) {
+app.controller('question3Ctrl', function question3Ctrl($scope, $location) {
 
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
@@ -16,7 +16,7 @@ app.controller('questionThumbsCtrl', function questionThumbsCtrl($scope, $locati
     });
 
     $scope.previousView = function () {
-        $location.path("/question3");
+        $location.path("/question2");
     };
 
     $scope.setAnswers = function () {
