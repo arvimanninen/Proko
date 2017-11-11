@@ -54,6 +54,10 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 templateUrl: 'Views/question2.html',
                 controller: 'question2Ctrl'
             })
+            .when('/question3', {
+                templateUrl: 'Views/question3.html',
+                controller: 'question3Ctrl'
+            })
             .when('/questionnaireResults', {
                 templateUrl: 'Views/questionnaireResults.html',
                 controller: 'questionnaireResultsCtrl'

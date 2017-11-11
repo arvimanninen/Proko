@@ -81,6 +81,6 @@ app.controller('question2Ctrl', function question2Ctrl($scope, $location) {
     };
 
     $scope.nextView = function () {
-        $location.path("/questionnaireResults");
+        $location.path("/question3");
     };
 });

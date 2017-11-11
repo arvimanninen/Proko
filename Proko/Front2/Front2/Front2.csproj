@@ -93,6 +93,7 @@
     <Content Include="Controllers\endCtrl.js" />
     <Content Include="Controllers\question1Ctrl.js" />
     <Content Include="Controllers\question2Ctrl.js" />
+    <Content Include="Controllers\question3Ctrl.js" />
     <Content Include="Controllers\questionButtonSliderCtrl.js" />
     <Content Include="Controllers\questionCheckboxCtrl.js" />
     <Content Include="Controllers\questionnaireResultsCtrl.js" />
@@ -947,6 +948,7 @@
     <Content Include="Views\end.html" />
     <Content Include="Views\question1.html" />
     <Content Include="Views\question2.html" />
+    <Content Include="Views\question3.html" />
     <Content Include="Views\questionButtonSlider.html" />
     <Content Include="Views\questionCheckbox.html" />
     <Content Include="Views\questionnaireResults.html" />
