@@ -36,5 +36,6 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
             }
         }
     }
+   
 
 });
