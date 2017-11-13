@@ -85,6 +85,9 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                     },
                     tooltips: {
                         enabled: false
+                    },
+                    hover: {
+                        mode: null
                     }
                 }
             });
