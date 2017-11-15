@@ -275,7 +275,10 @@
     <Compile Include="Models\AnswererType.cs" />
     <Compile Include="Models\AnswererTypeDTO.cs" />
     <Compile Include="Models\AnswerResultDTO.cs" />
+    <Compile Include="Models\AnswerResultTemp.cs" />
+    <Compile Include="Models\AnswersAndBundleExtrasDTO.cs" />
     <Compile Include="Models\AnswerSet.cs" />
+    <Compile Include="Models\AnswerBundleExtrasDTO.cs" />
     <Compile Include="Models\ChosenQuestion.cs" />
     <Compile Include="Models\DbSets.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -284,7 +287,6 @@
     <Compile Include="Models\QuestionDTO.cs" />
     <Compile Include="Models\QuestionMethod.cs" />
     <Compile Include="Models\QuestionSet.cs" />
-    <Compile Include="Models\TextFeedbackDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1374,10 +1376,10 @@
     <Content Include="surveyapp\node_modules\jquery\src\var\toString.js" />
     <Content Include="surveyapp\node_modules\jquery\src\wrap.js" />
     <Content Include="surveyapp\OldStuff\RemovedCtrlPatches.txt" />
-    <Content Include="testgetanswerstocurrentquestions.html" />
+    <Content Include="testgetresultstocq.html" />
     <Content Include="testgetallquestions.html" />
     <Content Include="testget.html" />
-    <Content Include="testposttextfeedback.html" />
+    <Content Include="testpostbundleextras.html" />
     <Content Include="testpostsurveyanswers.html" />
     <Content Include="testpost.html" />
     <Content Include="Web.config" />

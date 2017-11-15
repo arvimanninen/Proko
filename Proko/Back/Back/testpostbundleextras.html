@@ -13,12 +13,13 @@
         }); */
         console.log("testpage script started!");
         // AnswerDTO object constructor
-        var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback) {
+        var TextFeedbackDTO = function (nAnswerBundleID, nTextFeedback, nAnswererType) {
             this.AnswerBundleID = nAnswerBundleID;
             this.TextFeedback = nTextFeedback;
+            this.AnswererTypeID = nAnswererTypeID;
         };
 
-        var newTextFeedback = new TextFeedbackDTO(10, "Vaihdettu feedbäkki");
+        var newTextFeedback = new TextFeedbackDTO(10, "Vaihdettu feedbäkki", 1);
 
         console.log("newTextFeedback.AnswerBundleID: " + newTextFeedback.AnswerBundleID);
         console.log("newTextFeedback.TextFeedback: " + newTextFeedback.TextFeedback);
