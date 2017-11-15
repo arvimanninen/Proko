@@ -54,6 +54,10 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 templateUrl: 'Views/question2.html',
                 controller: 'question2Ctrl'
             })
+            .when('/question3', {
+                templateUrl: 'Views/question3.html',
+                controller: 'question3Ctrl'
+            })
             .when('/questionnaireResults', {
                 templateUrl: 'Views/questionnaireResults.html',
                 controller: 'questionnaireResultsCtrl'
@@ -69,7 +73,22 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                     colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
                     defaultFontColor: '#333333',
                     defaultFontFamily: 'Roboto',
-                    defaultFontSize: 13
+                    defaultFontSize: 14,
+                    elements: {
+                        line: {
+                            fill: false
+                        }
+                    },
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    },
+                    tooltips: {
+                        enabled: false
+                    },
+                    hover: {
+                        mode: null
+                    }
                 }
             });
 
