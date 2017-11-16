@@ -1,40 +1,76 @@
 ﻿'use strict';
 
 app.service('ResultService', function () {
-    var answerResults = [];
-    // TODO: UPDATE AnswerDTO
+    var results = [];
 
-    var AnswerResultDTO = function (nQuestionID, nAnswerBundleDate, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
+    var Result = function (nQuestionID, nAnswerBundleDateMs, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
         this.QuestionID = nQuestionID;
-        this.AnswerBundleDate = nAnswerBundleDate;
+        this.AnswerBundleDate = new Date(nAnswerBundleDateMs);
         this.AnswerValue = nAnswerValue;
         this.AnswererTypeID = nAnswererTypeID;
         this.AnswererTypeName = nAnswererTypeName;
     };
 
-    var getAnswerResults = function () {
-        return answerResults;
+    var getResults = function () {
+        return results;
     };
 
-    var setAnswerResults = function (results) {
-        answerResults = results;
-    }
+    var setResults = function (resultDtos) {
+        for (var i = 0; i < resultDtos.length; i++) {
+            var nr = new Result(resultDtos[i].QuestionID, resultDtos[i].AnswerBundleDateMs, 
+                resultDtos[i].AnswerValue, resultDtos[i].AnswererTypeID, resultsDtos[i].AnswererTypeName);
+            results.push(nr);
+        }
+    };
+
+    var getAvgs = function (questionId, answererTypeId) {
+        var now = new Date();
+        var weeks = [now, now, now, now, now, now]; // 6
+        var answerMasses = [0, 0, 0, 0, 0]; // 5
+        var answerCounts = [0, 0, 0, 0, 0]; // 5
+        var avgs = [0.0, 0.0, 0.0, 0.0, 0.0]; // 5
+        var calculateWeeks = function() {
+            var daysSinceNow = 0;
+            var daysInWeek = 7;
+            for (var i = 0; i < weeks.length; i++) {
+                if (daysSinceNow >= daysInWeek) {
+                    weeks[i].setDate(weeks[i].getDate() - daysSinceNow);
+                }
+                daysSinceNow = daysSinceNow + daysInWeek;
+            }
+        };
+        var calculateSources = function() {
+            for (var r = 0; r < results.length; r++) {
+                if (results[r].QuestionID === questionId && results[r].AnswererTypeID === answererTypeId) {
+                    for (var w = 0; w < weeks.length - 1; w++) {
+                        if (results[r].AnswerBundleDate <= weeks[w] 
+                            && results[r].AnswerBundleDate > weeks[w + 1]) {
+                            answerMasses[w] = answerMasses[w] + results[w].AnswerValue;
+                            answerCounts[w]++;
+                        }
+                    }
+                }
+            }
+        };
+        var calculateAvgs = function() {
+            for (var i = 0; i < answerMasses.length; i++) {
+                avgs[i] = answerMasses[i] / answerCounts[i];
+            }
+        };
+        calculateWeeks();
+        calculateSources();
+        calculateAvgs();
+        return avgs;
+    };
 
     var reset = function () {
-        surveyAnswers.length = 0;
-        textFeedback = "";
+        results.length = 0;
     };
     // TODO: UPDATE THIS
     return {
-        getAnswer: getAnswer,
-        getAnswers: getAnswers,
-        getAnswerCountByQuestionSetIndex: getAnswerCountByQuestionSetIndex,
-        getAnswersBySetIndex: getAnswersBySetIndex,
-        setAnswer: setAnswer,
-        getAnswerIndex: getAnswerIndex,
-        replaceAnswer: replaceAnswer,
-        getTextFeedback: getTextFeedback,
-        setTextFeedback: setTextFeedback,
+        getResults: getResults,
+        setResults: setResults,
+        getAvgs: getAvgs,
         reset: reset
     };
 });

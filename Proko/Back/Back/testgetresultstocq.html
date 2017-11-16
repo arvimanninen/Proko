@@ -36,6 +36,8 @@
                 console.log("data[" + i + "].AnswerValue:" + data[i].AnswerValue);
                 console.log("data[" + i + "].AnswererTypeName: " + data[i].AnswererTypeName);
                 console.log("data[" + i + "].AnswererTypeID: " + data[i].AnswererTypeID);
+                var bd = new Date(data[i].AnswerBundleDateMs);
+                console.log("data[" + i + "].AnswerBundleDateMs as Date(): " + bd);
             }
         })
         .fail(function () {

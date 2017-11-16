@@ -183,30 +183,7 @@ namespace Back.ApiControllers
             Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
             return Ok();
         }
-        /*
-        [Route("api/postbundleextras")]
-        [HttpPost]
-        public IHttpActionResult PostTextFeedback([FromBody] AnswerBundleExtrasDTO abeDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                Debug.WriteLine("ModelState not valid!");
-                return BadRequest(ModelState);
-            }
-            AnswerBundle bundle = db.AnswerBundles.Find(abeDto.AnswerBundleID);
-            if (bundle == null)
-            {
-                // TODO: CHANGE TO SOMETHING SENSIBLE?
-                return BadRequest();
-            }
-            bundle.TextFeedback = abeDto.TextFeedback;
-            bundle.AnswererTypeID = abeDto.AnswererTypeID;
-            // TODO: TRANSACTION MANAGEMENT!!!
-            db.Entry(bundle).State = EntityState.Modified;
-            db.SaveChanges();
-            return Ok();
-        }
-        */
+
         // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
         public static long ConvertToUnixTime(DateTime datetime)
         {
@@ -238,22 +215,6 @@ namespace Back.ApiControllers
                           AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
                           AnswerBundleDate = a.AnswerSet.AnswerBundle.Date
                       };
-
-                      
-            /*
-            var rawResultTemps = from cq in db.ChosenQuestions
-                             join a in db.Answers
-                             on cq.QuestionID equals a.QuestionID
-                             orderby cq.QuestionSet.ChosenIndex ascending, cq.ChosenIndex ascending
-                             select new AnswerResultTemp
-                             {
-                                 QuestionID = a.QuestionID,
-                                 AnswerValue = a.Value,
-                                 AnswererTypeID = a.AnswerSet.AnswerBundle.AnswererTypeID,
-                                 AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
-                                 AnswerBundleDate = a.AnswerSet.AnswerBundle.Date
-                             };
-            */
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
             foreach (AnswerResultTemp rt in resultTemps)
