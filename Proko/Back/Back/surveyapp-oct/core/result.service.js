@@ -23,12 +23,12 @@ app.service('ResultService', function () {
         }
     };
 
-    var getAvgs = function (questionId, answererTypeId) {
+    var getAverages = function (questionId, answererTypeId) {
         var now = new Date();
         var weeks = [now, now, now, now, now, now]; // 6
         var answerMasses = [0, 0, 0, 0, 0]; // 5
         var answerCounts = [0, 0, 0, 0, 0]; // 5
-        var avgs = [0.0, 0.0, 0.0, 0.0, 0.0]; // 5
+        var averages = [0.0, 0.0, 0.0, 0.0, 0.0]; // 5
         var calculateWeeks = function() {
             var daysSinceNow = 0;
             var daysInWeek = 7;
@@ -52,15 +52,15 @@ app.service('ResultService', function () {
                 }
             }
         };
-        var calculateAvgs = function() {
+        var calculateAverages = function() {
             for (var i = 0; i < answerMasses.length; i++) {
-                avgs[i] = answerMasses[i] / answerCounts[i];
+                averages[i] = answerMasses[i] / answerCounts[i];
             }
         };
         calculateWeeks();
         calculateSources();
-        calculateAvgs();
-        return avgs;
+        calculateAverages();
+        return averages;
     };
 
     var reset = function () {
@@ -70,7 +70,7 @@ app.service('ResultService', function () {
     return {
         getResults: getResults,
         setResults: setResults,
-        getAvgs: getAvgs,
+        getAverages: getAverages,
         reset: reset
     };
 });
