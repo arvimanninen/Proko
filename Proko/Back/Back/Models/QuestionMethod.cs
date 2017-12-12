@@ -12,9 +12,7 @@ namespace Back.Models
         [Required]
         public string Value { get; set; }
         [Required]
-        public virtual int ScaleMin { get; set; }
-        [Required]
-        public virtual int ScaleMax { get; set; }
+        public int ScaleMax { get; set; }
         public virtual ICollection <QuestionSet> QuestionSets { get; set; }
         public virtual ICollection <AnswerSet> AnswerSets { get; set; }
     }

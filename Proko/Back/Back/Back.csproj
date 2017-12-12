@@ -267,6 +267,10 @@
     <Compile Include="Migrations\201711051441268_ChosenAddedToAnswererType.Designer.cs">
       <DependentUpon>201711051441268_ChosenAddedToAnswererType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712121717379_ScaleMinRemovedFromQuestionMethod.cs" />
+    <Compile Include="Migrations\201712121717379_ScaleMinRemovedFromQuestionMethod.Designer.cs">
+      <DependentUpon>201712121717379_ScaleMinRemovedFromQuestionMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -1829,6 +1833,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711051441268_ChosenAddedToAnswererType.resx">
       <DependentUpon>201711051441268_ChosenAddedToAnswererType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121717379_ScaleMinRemovedFromQuestionMethod.resx">
+      <DependentUpon>201712121717379_ScaleMinRemovedFromQuestionMethod.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
