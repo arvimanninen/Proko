@@ -231,12 +231,13 @@ namespace Back.ApiControllers
             int absoluteScaleMax = -2;
             foreach(AnswerResultTemp art in resultTemps)
             {
+                Debug.WriteLine("art.AnswerScaleMax: " + art.AnswerScaleMax);
                 if(art.AnswerScaleMax > absoluteScaleMax)
                 {
                     absoluteScaleMax = art.AnswerScaleMax;
                 }
             }
-
+            Debug.WriteLine("absoluteScaleMax: " + absoluteScaleMax);
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
             foreach (AnswerResultTemp rt in resultTemps)
             {
