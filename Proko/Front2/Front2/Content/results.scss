@@ -2,11 +2,17 @@
 
 .results-bg-div {
     //background-color: $results-bg-color;
-
     .answerers {
         margin: 10 * $grid 0 6 * $grid;
     }
 
+    .results-title {
+        margin-top: 8 * $grid;
+
+        @include media-query($on-mobile) {
+            margin-top: 6 * $grid;
+        }
+    }
 }
 
 
@@ -31,8 +37,11 @@
         canvas {
             width: 100%;
             height: 100%;
-        }
 
+            @include media-query($on-mobile) {
+                height: 500px;
+            }
+        }
     }
 }
 

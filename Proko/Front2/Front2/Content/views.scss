@@ -10,10 +10,10 @@ OUTER SLIDER DIV
 **************************/
 
 .outer-buttonslider-div {
-    margin: 4 * $grid 0 11 * $grid;
+    margin: 4 * $grid 0 12 * $grid;
 
     @include media-query($on-mobile) {
-        margin: 4 * $grid 0 9 * $grid;
+        margin: 4 * $grid 0 12 * $grid;
     }
 
     .buttonslider-scale {
@@ -24,6 +24,19 @@ OUTER SLIDER DIV
         margin: 0 auto;
         color: $grey;
 
+        span {
+            width: 16 * $grid;
+            height: 11 * $grid;
+            //margin-bottom: 2 * $grid;
+            
+            &:first-child {
+                text-align: left;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
     }
 }
 
