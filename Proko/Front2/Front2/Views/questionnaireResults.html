@@ -1,27 +1,31 @@
 ﻿<div class="container-fluid results-bg-div">
     <div class="row results-div">
 
-        <div class="col-xs-12 col-md-6">
-            <div class="question-results-div">
-                <h4>Työturvallisuuden kehitys</h4>
-                <canvas class="chart chart-line"
-                        chart-data="chart1.data"
-                        chart-labels="chart1.labels"
-                        chart-options="chart1.options"
-                        chart-series="chart1.series"></canvas>
-            </div>
-        </div>
+    <div class="col-xs-12">
+        <h3 class="results-title">Vastusten tuloksia</h3>
+    </div>
 
-        <div class="col-xs-12 col-md-6">
-            <div class="question-results-div">
-                <h4>Checkbox kysymys</h4>
-                <canvas class="chart chart-bar"
-                        chart-data="chart2.data"
-                        chart-labels="chart2.labels"
-                        chart-options="chart2.options"
-                        chart-series="chart2.series"></canvas>
-            </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="question-results-div">
+            <h4>Työturvallisuus on otettu työmaalla hyvin huomioon</h4>
+            <canvas class="chart chart-line"
+                    chart-labels="chart1.labels"
+                    chart-series="chart1.series"
+                    chart-data="chart1.data"                      
+                    chart-options="chart1.options"></canvas>
         </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <div class="question-results-div">
+            <h4>Työt on aikataulutettu työmaalla hyvin</h4>
+            <canvas class="chart chart-line"
+                    chart-labels="chart2.labels" 
+                    chart-series="chart2.series"
+                    chart-data="chart2.data"                    
+                    chart-options="chart2.options"></canvas>
+        </div>
+    </div>
 
 
     </div> <!-- row div -->

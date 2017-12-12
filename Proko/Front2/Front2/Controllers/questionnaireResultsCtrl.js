@@ -9,8 +9,8 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
     $scope.answerCount = 20;
 
     $scope.chart1 = {
-        labels: ['Viikko 40', 'Viikko 41', 'Viikko 42', 'Viikko 43', 'Viikko 43'],
-        series: ['Eri mieltä', 'Ei osaa sanoa', 'Samaa mieltä'],
+        labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
+        series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
         data: [[50, 70, 47, 80, 81], [85, 79, 69, 92, 98], [76, 60, 80, 68, 72], [68, 60, 79, 100, 96]],
         options: {
             scales: {
@@ -25,11 +25,10 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
                             min: 0,
                             max: 120,
                             beginAtZero: true,
-                            stepSize: 20
+                            stepSize: 30
                         },
                         scaleLabel: {
-                            display: true,
-                            labelString: 'Tyytyväisyys',
+                            display: false
                         }
                     }
                 ]
@@ -38,9 +37,9 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
     }
 
     $scope.chart2 = {
-        labels: [''],
-        series: ['Vaihtoehto 1', 'Vaihtoehto 2', 'Vaihtoehto 3', 'Vaihtoehto 4', 'Vaihtoehto 5'],
-        data: [[50], [40], [26], [69], [46]],
+        labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
+        series: ['Rakennusmi', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
+        data: [[50, 70, 47, 80, 81], [85, 79, 69, 92, 98], [76, 60, 80, 68, 72], [68, 60, 79, 100, 96]],
         legend: {
             display: false
         },
@@ -56,11 +55,14 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
                         type: 'linear',
                         position: 'left',
                         ticks: {
-                            beginAtZero: true
+                            display: false,
+                            min: 0,
+                            max: 120,
+                            beginAtZero: true,
+                            stepSize: 30
                         },
                         scaleLabel: {
-                            display: true,
-                            labelString: 'Vastaajien määrä',
+                            display: false
                         }
                     }
                 ]
