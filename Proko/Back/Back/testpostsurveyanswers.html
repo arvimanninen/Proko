@@ -20,22 +20,49 @@
             this.Value = nValue;
             this.QuestionMethodID = nQuestionMethodID;
         };
+        var AnswerBundleExtrasDTO = function (nAnswererTypeID, nTextFeedback) {
+            this.AnswererTypeID = nAnswererTypeID;
+            this.TextFeedback = nTextFeedback;
+        };
+        var AnswersAndBundleExtrasDTO = function (nAnswerBundleExtrasDto) {
+            this.AnswerDtos = [];
+            this.AnswerBundleExtrasDto = nAnswerBundleExtrasDto;
+        };
 
-        var newAnswers = [new AnswerDTO(2, 2, 2, 3, 3),
-            new AnswerDTO(5, 1, 1, 4, 5),
-            new AnswerDTO(7, 1, 2, 4, 2),
-            new AnswerDTO(3, 2, 1, 1, 1)];
-
-        for (var i = 0; i < newAnswers.length; i++) {
-            console.log("newAnswers[" + i + "].QuestionID: " + newAnswers[i].QuestionID);
-            console.log("newAnswers[" + i + "].Value: " + newAnswers[i].Value);
-            console.log("newAnswers[" + i + "].ChosenQuestionIndex: " + newAnswers[i].ChosenQuestionIndex);
-            console.log("newAnswers[" + i + "].QuestionSetIndex: " + newAnswers[i].QuestionSetIndex);
-            console.log("newAnswers[" + i + "].QuestionMethodID: " + newAnswers[i].QuestionID);
-        }
-        
+        var as = [new AnswerDTO(2, 2, 1, 3, 7),
+            new AnswerDTO(5, 1, 2, 4, 8)];
+        var e = new AnswerBundleExtrasDTO(2, "jeejeejee!");
         /*
-        $.post("api/postsurveyanswers", newAnswers,
+        this.addAnswers = function (a) {
+                
+        */
+        var answersAndExtras = new AnswersAndBundleExtrasDTO(e);
+        for (var i = 0; i < as.length; i++) {
+            answersAndExtras.AnswerDtos.push(as[i]);
+        }
+
+        console.log("answersAndExtras.AnswerDtos[].length: " +
+            answersAndExtras.AnswerDtos.length);
+
+            /*
+            public class AnswerBundleExtrasDTO
+    {
+        public int AnswererTypeID { get; set; }
+        public string TextFeedback { get; set; }
+    }
+            */
+
+        for (var i = 0; i < answersAndExtras.AnswerDtos.length; i++) {
+            console.log("answersAndExtras.AnswerDtos[" + i + "].QuestionID: " + answersAndExtras.AnswerDtos[i].QuestionID);
+            console.log("answersAndExtras.AnswerDtos[" + i + "].Value: " + answersAndExtras.AnswerDtos[i].Value);
+            console.log("answersAndExtras.AnswerDtos[" + i + "].ChosenQuestionIndex: " + answersAndExtras.AnswerDtos[i].ChosenQuestionIndex);
+            console.log("answersAndExtras.AnswerDtos[" + i + "].QuestionSetIndex: " + answersAndExtras.AnswerDtos[i].QuestionSetIndex);
+            console.log("answersAndExtras.AnswerDtos[" + i + "].QuestionMethodID: " + answersAndExtras.AnswerDtos[i].QuestionMethodID);
+        }
+        console.log("answersAndExtras.AnswerBundleExtrasDto.AnswererTypeID: " + answersAndExtras.AnswerBundleExtrasDto.AnswererTypeID);
+        console.log("answersAndExtras.AnswerBundleExtrasDto.TextFeedback: " + answersAndExtras.AnswerBundleExtrasDto.TextFeedback);
+        /*
+        $.post("api/postsurveyanswers", a,
         function (data, status) {
             console.log("Data: " + data + "\nStatus: " + status);
         });
@@ -43,7 +70,7 @@
         $.ajax({
             url: "api/postsurveyanswers",
             type: 'POST',
-            data: JSON.stringify(newAnswers),
+            data: JSON.stringify(answersAndExtras),
             dataType: 'json',
             contentType: 'application/json',
             crossDomain: true,

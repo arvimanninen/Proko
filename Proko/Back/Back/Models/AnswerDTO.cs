@@ -14,7 +14,6 @@ namespace Back.Models
         public int ChosenQuestionIndex { get; set; }
         public int QuestionID { get; set; }
         public int QuestionMethodID { get; set; }
-        public int AnswererTypeName { get; set; }
         // public string AnswererTypeName {get; set; }
         
     }

@@ -13,11 +13,11 @@
         console.log("testget script started!");
         var apiStatus = document.getElementById("api-status");
         apiStatus.innerHTML = "Loading...";
-        $.getJSON("api/getanswerstocurrentquestions", function () {
+        $.getJSON("api/getresultstocq", function () {
             console.log("API call launched");
         })
         .done(function (data) {
-            console.log("API call works!");
+            console.log("API call successful!");
             apiStatus.innerHTML = "API call successful!";
             /*
             public class AnswerResultDTO
@@ -32,16 +32,26 @@
             for (var i = 0; i < data.length; i++) {
                 console.log("");
                 console.log("data[" + i + "].QuestionID: " + data[i].QuestionID);
-                console.log("data[" + i + "].AnswerBundleDate: " + data[i].AnswerBundleDate);
-                console.log("data[" + i + "].AnswerValue:" + data[i].QuestionSetTitle);
-                console.log("data[" + i + "].AnswererTypeName: " + data[i].QuestionID);
+                console.log("data[" + i + "].AnswerBundleDateMs: " + data[i].AnswerBundleDateMs);
+                console.log("data[" + i + "].AnswerValue:" + data[i].AnswerValue);
+                console.log("data[" + i + "].AnswererTypeName: " + data[i].AnswererTypeName);
                 console.log("data[" + i + "].AnswererTypeID: " + data[i].AnswererTypeID);
+                var bd = new Date(data[i].AnswerBundleDateMs);
+                console.log("data[" + i + "].AnswerBundleDateMs as Date(): " + bd);
             }
         })
         .fail(function () {
-            console.log("API call doesn't work!");
+            console.log("API call failed!");
             apiStatus = "API call failed!";
         });
+        /* public class AnswerResultDTO
+        {
+            public int QuestionID { get; set; }
+            public double AnswerBundleDateMs { get; set; }
+            public int AnswerValue { get; set; }
+            public int AnswererTypeID { get; set; }
+            public string AnswererTypeName { get; set; }
+            }*/
     </script>
 </body>
 </html>

@@ -102,21 +102,30 @@ namespace Back.ApiControllers
 
         [Route("api/postsurveyanswers")]
         [HttpPost]
-        public IHttpActionResult PostSurveyAnswers([FromBody] List<AnswerDTO> surveyAnswerDtos)
+        public IHttpActionResult PostSurveyAnswers([FromBody] AnswersAndBundleExtrasDTO abe)
         {
-            Debug.WriteLine("surveyAnswerDtos<AnswerDTO>.Count: " + surveyAnswerDtos.Count);
-
-
             if (!ModelState.IsValid)
             {
                 Debug.WriteLine("ModelState not valid!");
                 return BadRequest(ModelState);
             }
-            if (surveyAnswerDtos.Count == 0)
+
+            List<AnswerDTO> answerDtos = abe.AnswerDtos.ToList();
+            int answererTypeId = abe.AnswerBundleExtrasDto.AnswererTypeID;
+            string textFb = abe.AnswerBundleExtrasDto.TextFeedback;
+
+
+            Debug.WriteLine("answerDtos<AnswerDTO>.Count: " + answerDtos.Count);
+            Debug.WriteLine("answererTypeId: " + answererTypeId);
+            Debug.WriteLine("textFb: " + textFb);
+
+
+            
+            if (answerDtos.Count == 0)
             {
                 return BadRequest();
             }
-            var rawSortedDtos = from sa in surveyAnswerDtos
+            var rawSortedDtos = from sa in answerDtos
                                 orderby sa.QuestionSetIndex, sa.ChosenQuestionIndex
                                 select sa;
                                 
@@ -133,8 +142,9 @@ namespace Back.ApiControllers
             // CREATE AnswerBundle bundle
             AnswerBundle bundle = new AnswerBundle();
             bundle.Date = DateTime.Now;
+            bundle.AnswererTypeID = answererTypeId;
+            bundle.TextFeedback = textFb;
             // NEW: CHECK IF WORKS
-            bundle.AnswererTypeID = typeDto.AnswererTypeID;
             // TODO: TRANSACTION MANAGEMENT
             db.AnswerBundles.Add(bundle);
             db.SaveChanges();
@@ -146,7 +156,7 @@ namespace Back.ApiControllers
             
             foreach (AnswerDTO aDto in cleanSortedDtos)
             {
-                // IF NEW QuestionMethodID IN surveyAnswerDtos,
+                // IF NEW QuestionMethodID IN answerDtos,
                 // NEW AnswerSet IS CREATED
                 if(aDto.QuestionSetIndex != currentSetIndex)
                 {
@@ -171,50 +181,54 @@ namespace Back.ApiControllers
             }
 
             Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
-            return Ok(bundle);
-        }
-
-        [Route("api/posttextfeedback")]
-        [HttpPost]
-        public IHttpActionResult PostTextFeedback([FromBody] TextFeedbackDTO fbDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                Debug.WriteLine("ModelState not valid!");
-                return BadRequest(ModelState);
-            }
-            AnswerBundle bundle = db.AnswerBundles.Find(fbDto.AnswerBundleID);
-            if (bundle == null)
-            {
-                // TODO: CHANGE TO SOMETHING SENSIBLE?
-                return BadRequest();
-            }
-            bundle.TextFeedback = fbDto.TextFeedback;
-            // TODO: TRANSACTION MANAGEMENT!!!
-            db.Entry(bundle).State = EntityState.Modified;
-            db.SaveChanges();
             return Ok();
         }
 
-        [Route("api/getanswerresultsstocurrentquestions")]
-        [HttpGet]
-        public IHttpActionResult GetAnswerResultsToCurrentQuestions()
+        // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
+        public static long ConvertToUnixTime(DateTime datetime)
         {
-            var rawResults = from cq in db.ChosenQuestions
-                             join a in db.Answers
-                             on cq.QuestionID equals a.QuestionID
-                             orderby cq.QuestionSet.ChosenIndex ascending, cq.ChosenIndex ascending
-                             select new AnswerResultDTO
-                             {
-                                 QuestionID = a.QuestionID,
-                                 AnswerValue = a.Value,
-                                 AnswererTypeID = a.AnswerSet.AnswerBundle.AnswererTypeID,
-                                 AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
-                                 AnswerBundleDate = a.AnswerSet.AnswerBundle.Date,
-                             };
+            DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
-            List<AnswerResultDTO> results = rawResults.ToList();
+            return (long)(datetime - sTime).TotalMilliseconds;
+        }
+
+        [Route("api/getresultstocq")]
+        [HttpGet]
+        public IHttpActionResult GetResultsToCq()
+        {
+            var rawCqIdsWithDupl = from cq in db.ChosenQuestions
+                                   orderby cq.QuestionID
+                                   select cq.QuestionID;
+            List<int> cqIdsWithDupl = rawCqIdsWithDupl.ToList();
+            Debug.WriteLine("cqIdsWithDupl.Count: "  + cqIdsWithDupl.Count);
+            List<int> cqIds = cqIdsWithDupl.Distinct().ToList();
+            Debug.WriteLine("cqIds.Count: " + cqIds.Count);
+            var rawResultTemps = from id in cqIds
+                      join a in db.Answers
+                      on id equals a.QuestionID
+                      orderby id ascending
+                      select new AnswerResultTemp
+                      {
+                          QuestionID = a.QuestionID,
+                          AnswerValue = a.Value,
+                          AnswererTypeID = a.AnswerSet.AnswerBundle.AnswererTypeID,
+                          AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
+                          AnswerBundleDate = a.AnswerSet.AnswerBundle.Date
+                      };
+            List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
+            List<AnswerResultDTO> results = new List<AnswerResultDTO>();
+            foreach (AnswerResultTemp rt in resultTemps)
+            {
+                AnswerResultDTO nr = new AnswerResultDTO();
+                nr.QuestionID = rt.QuestionID;
+                nr.AnswerValue = rt.AnswerValue;
+                nr.AnswererTypeID = rt.AnswererTypeID;
+                nr.AnswererTypeName = rt.AnswererTypeName;
+                nr.AnswerBundleDateMs = ConvertToUnixTime(rt.AnswerBundleDate);
+                results.Add(nr);
+            }
             Debug.WriteLine("results.Count: " + results.Count);
+
             return Ok(results);
         }  
 
