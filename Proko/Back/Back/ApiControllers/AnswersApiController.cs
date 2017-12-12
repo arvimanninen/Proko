@@ -191,6 +191,14 @@ namespace Back.ApiControllers
 
             return (long)(datetime - sTime).TotalMilliseconds;
         }
+        public static double ScaleAnswerValue(int value, int currentMax, int absoluteMax) 
+        {
+            if(value == 1)
+            {
+                return value;
+            }
+            return absoluteMax / currentMax * value;
+        }
 
         [Route("api/getresultstocq")]
         [HttpGet]
@@ -203,6 +211,7 @@ namespace Back.ApiControllers
             Debug.WriteLine("cqIdsWithDupl.Count: "  + cqIdsWithDupl.Count);
             List<int> cqIds = cqIdsWithDupl.Distinct().ToList();
             Debug.WriteLine("cqIds.Count: " + cqIds.Count);
+
             var rawResultTemps = from id in cqIds
                       join a in db.Answers
                       on id equals a.QuestionID
@@ -211,17 +220,29 @@ namespace Back.ApiControllers
                       {
                           QuestionID = a.QuestionID,
                           AnswerValue = a.Value,
+                          AnswerScaleMax = a.AnswerSet.QuestionMethod.ScaleMax,
                           AnswererTypeID = a.AnswerSet.AnswerBundle.AnswererTypeID,
                           AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
                           AnswerBundleDate = a.AnswerSet.AnswerBundle.Date
                       };
+
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
+
+            int absoluteScaleMax = -2;
+            foreach(AnswerResultTemp art in resultTemps)
+            {
+                if(art.AnswerScaleMax > absoluteScaleMax)
+                {
+                    absoluteScaleMax = art.AnswerScaleMax;
+                }
+            }
+
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
             foreach (AnswerResultTemp rt in resultTemps)
             {
                 AnswerResultDTO nr = new AnswerResultDTO();
                 nr.QuestionID = rt.QuestionID;
-                nr.AnswerValue = rt.AnswerValue;
+                nr.AnswerValue = ScaleAnswerValue(rt.AnswerValue, rt.AnswerScaleMax, absoluteScaleMax);
                 nr.AnswererTypeID = rt.AnswererTypeID;
                 nr.AnswererTypeName = rt.AnswererTypeName;
                 nr.AnswerBundleDateMs = ConvertToUnixTime(rt.AnswerBundleDate);
