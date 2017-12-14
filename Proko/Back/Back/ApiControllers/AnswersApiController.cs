@@ -191,13 +191,17 @@ namespace Back.ApiControllers
 
             return (long)(datetime - sTime).TotalMilliseconds;
         }
-        public static double ScaleAnswerValue(int value, int currentMax, int absoluteMax) 
+        public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
         {
+            // PREVENTS WRONG SCALING WHEN VALUE
             if(value == 1)
             {
-                return value;
+                return 1;
             }
-            return absoluteMax / currentMax * value;
+            double valueD = Convert.ToDouble(value);
+            double currentMaxD = Convert.ToDouble(currentMax);
+            double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
+            return scaledValueD;
         }
 
         [Route("api/getresultstocq")]
@@ -228,13 +232,13 @@ namespace Back.ApiControllers
 
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
 
-            int absoluteScaleMax = -2;
+            double absoluteScaleMax = -2;
             foreach(AnswerResultTemp art in resultTemps)
             {
                 Debug.WriteLine("art.AnswerScaleMax: " + art.AnswerScaleMax);
                 if(art.AnswerScaleMax > absoluteScaleMax)
                 {
-                    absoluteScaleMax = art.AnswerScaleMax;
+                    absoluteScaleMax = Convert.ToDouble(art.AnswerScaleMax);
                 }
             }
             Debug.WriteLine("absoluteScaleMax: " + absoluteScaleMax);
