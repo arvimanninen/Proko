@@ -3,8 +3,31 @@
 app.service('AnswerService', function () {
     var surveyAnswers = [];
     var textFeedback = "";
+    var answererTypeId = 0;
     // TODO: UPDATE AnswerDTO
-    
+    /*
+    public class AnswerDTO
+    {
+        public int Value { get; set; }
+        public int QuestionSetIndex { get; set; }
+        public int ChosenQuestionIndex { get; set; }
+        public int QuestionID { get; set; }
+        public int QuestionMethodID { get; set; }
+        // public string AnswererTypeName {get; set; }
+        
+    }
+    public class AnswerBundleExtrasDTO
+    {
+        public int AnswererTypeID { get; set; }
+        public string TextFeedback { get; set; }
+    }
+    public class AnswersAndBundleExtrasDTO
+    {
+        public List<AnswerDTO> AnswerDtos { get; set; }
+        public AnswerBundleExtrasDTO AnswerBundleExtrasDto { get; set; }
+    }
+
+    */
     var AnswerDTO = function (nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID) {
         this.Value = nValue;
         this.QuestionSetIndex = nQuestionSetIndex;
@@ -12,6 +35,15 @@ app.service('AnswerService', function () {
         this.QuestionID = nQuestionID;
         this.QuestionMethodID = nQuestionMethodID;
     };
+    var AnswerBundleExtrasDTO = function (nAnswererTypeID, nTextFeedback) {
+        this.AnswererTypeID = nAnswererTypeID;
+        this.TextFeedback = nTextFeedback;
+    };
+    var AnswersAndBundleExtrasDTO = function (nAnswerDtos, nBundleExtrasDto) {
+        this.AnswerDtos = [];
+        this.AnswerBundleExtrasDtos = nBundleExtrasDto;
+    };
+
     var getAnswer = function (index) {
         return surveyAnswers[index];
     };
@@ -79,9 +111,19 @@ app.service('AnswerService', function () {
         textFeedback = feedback.toString();
     };
 
+    var setAnswererTypeId = function (atId) {
+        answererTypeId = atId;
+    };
+
     var reset = function () {
         surveyAnswers.length = 0;
         textFeedback = "";
+        answererTypeId = 0;
+    };
+
+    var getAnswersAndBundleExtras = function () {
+        var abe = new AnswerBundleExtrasDTO(answererTypeId, textFeedback);
+        return abe;
     };
 
     return {
@@ -94,6 +136,7 @@ app.service('AnswerService', function () {
         replaceAnswer: replaceAnswer,
         getTextFeedback: getTextFeedback,
         setTextFeedback: setTextFeedback,
+        setAnswererTypeId: setAnswererTypeId,
         reset: reset
     };
 });
