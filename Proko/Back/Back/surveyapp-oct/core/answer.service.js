@@ -2,8 +2,7 @@
 
 app.service('AnswerService', function () {
     var surveyAnswers = [];
-    var textFeedback = "";
-    var answererTypeId = 0;
+    
     // TODO: UPDATE AnswerDTO
     /*
     public class AnswerDTO
@@ -47,9 +46,11 @@ app.service('AnswerService', function () {
     var getAnswer = function (index) {
         return surveyAnswers[index];
     };
+
     var getAnswers = function () {
         return surveyAnswers;
     };
+
     var getAnswerCountByQuestionSetIndex = function (index) {
         var aCount = 0;
         for (var i = 0; i < surveyAnswers.length; i++) {
@@ -102,30 +103,9 @@ app.service('AnswerService', function () {
         }
         return -1;
     };
-
-    var getTextFeedback = function () {
-        return textFeedback;
-    };
-
-    var setTextFeedback = function (feedback) {
-        textFeedback = feedback.toString();
-    };
-
-    var setAnswererTypeId = function (atId) {
-        answererTypeId = atId;
-    };
-
     var reset = function () {
         surveyAnswers.length = 0;
-        textFeedback = "";
-        answererTypeId = 0;
     };
-
-    var getAnswersAndBundleExtras = function () {
-        var abe = new AnswerBundleExtrasDTO(answererTypeId, textFeedback);
-        return abe;
-    };
-
     return {
         getAnswer: getAnswer,
         getAnswers: getAnswers,
@@ -134,9 +114,6 @@ app.service('AnswerService', function () {
         setAnswer: setAnswer,
         getAnswerIndex: getAnswerIndex,
         replaceAnswer: replaceAnswer,
-        getTextFeedback: getTextFeedback,
-        setTextFeedback: setTextFeedback,
-        setAnswererTypeId: setAnswererTypeId,
         reset: reset
     };
 });
