@@ -1,18 +1,26 @@
 ﻿'use strict';
 app.service('AnswersAndBundleExtrasService', function () {
-    var answersAndBundleExtras;
-    var AnswersAndBundleExtrasDTO = function (nAnswers, nExtras) {
+    var answersAndBundleExtras = null;
+    var AnswersAndBundleExtrasDTO = function (nAnswerDtos, nExtrasDto) {
         this.AnswerDtos = [];
-        this.AnswerBundleExtrasDto = nExtras;
-        for (var i = 0; i < nAnswers.length; i++) {
-            AnswerDtos.push(nAnswers[i]);
+        this.AnswerBundleExtrasDto = nExtrasDto;
+        for (var i = 0; i < nAnswerDtos.length; i++) {
+            this.AnswerDtos.push(nAnswerDtos[i]);
         }
     };
     var getAnswersAndBundleExtras = function () {
         return answersAndBundleExtras;
     };
-    var setAnswersAndBundleExtras = function (answers, extras) {
-        answersAndBundleExtras = new AnswersAndBundleExtrasDTO(answers, extras);
+    var setAnswersAndBundleExtras = function (answerDtos, extrasDto) {
+        answersAndBundleExtras = new AnswersAndBundleExtrasDTO(answerDtos, extrasDto);
+    };
+    var reset = function () {
+        answersAndBundleExtras = null;
+    };
+    return {
+        getAnswersAndBundleExtras: getAnswersAndBundleExtras,
+        setAnswersAndBundleExtras: setAnswersAndBundleExtras,
+        reset: reset
     };
     /*
     public class AnswersAndBundleExtrasDTO

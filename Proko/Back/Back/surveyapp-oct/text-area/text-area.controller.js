@@ -1,11 +1,11 @@
-﻿app.controller('TextAreaCtrl', function ($location, QuestionService, AnswerService, RunService) {
+﻿app.controller('TextAreaCtrl', function ($location, QuestionService, AnswerBundleExtrasService, RunService) {
     var that = this;
     var textFb = document.getElementById("text-fb");
-    textFb.value = AnswerService.getTextFeedback();
+    textFb.value = AnswerBundleExtrasService.getTextFeedback();
     
     that.goToEndOrBack = function (direction) {
-        AnswerService.setTextFeedback(textFb.value);
-        console.log("AnswerService.getTextFeedback:" + AnswerService.getTextFeedback());
+        AnswerBundleExtrasService.setTextFeedback(textFb.value);
+        console.log("AnswerService.getTextFeedback:" + AnswerBundleExtrasService.getTextFeedback());
         if (direction === -1) {
             RunService.decreaseQuestionSetIndex();
             var lastQmv = QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex());

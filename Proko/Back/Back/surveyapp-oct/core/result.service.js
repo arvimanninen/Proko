@@ -18,7 +18,7 @@ app.service('ResultService', function () {
     var setResults = function (resultDtos) {
         for (var i = 0; i < resultDtos.length; i++) {
             var nr = new Result(resultDtos[i].QuestionID, resultDtos[i].AnswerBundleDateMs, 
-                resultDtos[i].AnswerValue, resultDtos[i].AnswererTypeID, resultsDtos[i].AnswererTypeName);
+                resultDtos[i].AnswerValue, resultDtos[i].AnswererTypeID, resultDtos[i].AnswererTypeName);
             results.push(nr);
         }
     };

@@ -108,10 +108,10 @@ app.service('AnswerService', function () {
     };
     return {
         getAnswer: getAnswer,
+        setAnswer: setAnswer,
         getAnswers: getAnswers,
         getAnswerCountByQuestionSetIndex: getAnswerCountByQuestionSetIndex,
         getAnswersBySetIndex: getAnswersBySetIndex,
-        setAnswer: setAnswer,
         getAnswerIndex: getAnswerIndex,
         replaceAnswer: replaceAnswer,
         reset: reset

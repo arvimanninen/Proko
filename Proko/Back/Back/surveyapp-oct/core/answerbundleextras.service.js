@@ -1,7 +1,8 @@
 ﻿'use strict';
 app.service('AnswerBundleExtrasService', function () {
     var textFeedback = "";
-    var answererTypeId = 0;
+    // TODO: CHANGE THIS!!!!
+    var answererTypeId = 1;
     /*
     public class AnswerBundleExtrasDTO
     {
@@ -29,5 +30,17 @@ app.service('AnswerBundleExtrasService', function () {
     var getAnswerBundleExtras = function () {
         var abe = new AnswerBundleExtrasDTO(answererTypeId, textFeedback);
         return abe;
+    };
+    var reset = function () {
+        textFeedback = "";
+        answererTypeId = -1;
+    };
+
+    return {
+        getTextFeedback: getTextFeedback,
+        setTextFeedback: setTextFeedback,
+        getAnswererTypeId: getAnswererTypeId,
+        setAnswererTypeId: setAnswererTypeId,
+        getAnswerBundleExtras: getAnswerBundleExtras
     };
 });
