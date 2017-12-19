@@ -8,10 +8,12 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
 
     $scope.answerCount = 20;
 
+    //$("#canvas1").parentNode.style.height = '400px';
+
     $scope.chart1 = {
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
         series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
-        data: [[50, 70, 47, 80, 81], [85, 79, 69, 92, 98], [76, 60, 80, 68, 72], [68, 60, 79, 100, 96]],
+        data: [[3.4, 3.1, 3.7, 4.5, 4.0], [2.2, 3.0, 3.4, 3.1, 3.7], [3.6, 3.2, 4.0, 3.7, 4.3], [2.5, 2.4, 3.0, 2.8, 3.2]],
         options: {
             scales: {
                 yAxes: [
@@ -23,23 +25,24 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
                         ticks: {
                             display: false,
                             min: 0,
-                            max: 120,
+                            max: 5,
                             beginAtZero: true,
-                            stepSize: 30
+                            stepSize: 1.25
                         },
                         scaleLabel: {
-                            display: false
+                            display: true,
+                            labelString: "Tyytyväisyys"
                         }
                     }
                 ]
             }
         }
-    }
+    };
 
     $scope.chart2 = {
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
         series: ['Rakennusmi', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
-        data: [[50, 70, 47, 80, 81], [85, 79, 69, 92, 98], [76, 60, 80, 68, 72], [68, 60, 79, 100, 96]],
+        data: [[2.4, 3.1, 3.0, 2.6, 3.0], [3.2, 3.0, 2.8, 2.7, 3.4], [1.6, 2.2, 3.0, 2.7, 2.4], [2.5, 2.4, 2.8, 2.8, 3.0]],
         legend: {
             display: false
         },
@@ -57,18 +60,19 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
                         ticks: {
                             display: false,
                             min: 0,
-                            max: 120,
+                            max: 5,
                             beginAtZero: true,
-                            stepSize: 30
+                            stepSize: 1.25
                         },
                         scaleLabel: {
-                            display: false
+                            display: true,
+                            labelString: "Tyytyväisyys"
                         }
                     }
                 ]
             }
         }
-    }
+    };
    
 
 });
