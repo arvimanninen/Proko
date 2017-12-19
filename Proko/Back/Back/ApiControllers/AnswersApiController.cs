@@ -191,6 +191,18 @@ namespace Back.ApiControllers
 
             return (long)(datetime - sTime).TotalMilliseconds;
         }
+        public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
+        {
+            // PREVENTS WRONG SCALING WHEN VALUE
+            if(value == 1)
+            {
+                return 1;
+            }
+            double valueD = Convert.ToDouble(value);
+            double currentMaxD = Convert.ToDouble(currentMax);
+            double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
+            return scaledValueD;
+        }
 
         [Route("api/getresultstocq")]
         [HttpGet]
@@ -203,6 +215,7 @@ namespace Back.ApiControllers
             Debug.WriteLine("cqIdsWithDupl.Count: "  + cqIdsWithDupl.Count);
             List<int> cqIds = cqIdsWithDupl.Distinct().ToList();
             Debug.WriteLine("cqIds.Count: " + cqIds.Count);
+
             var rawResultTemps = from id in cqIds
                       join a in db.Answers
                       on id equals a.QuestionID
@@ -211,17 +224,30 @@ namespace Back.ApiControllers
                       {
                           QuestionID = a.QuestionID,
                           AnswerValue = a.Value,
+                          AnswerScaleMax = a.AnswerSet.QuestionMethod.ScaleMax,
                           AnswererTypeID = a.AnswerSet.AnswerBundle.AnswererTypeID,
                           AnswererTypeName = a.AnswerSet.AnswerBundle.AnswererType.Name,
                           AnswerBundleDate = a.AnswerSet.AnswerBundle.Date
                       };
+
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
+
+            double absoluteScaleMax = -2;
+            foreach(AnswerResultTemp art in resultTemps)
+            {
+                Debug.WriteLine("art.AnswerScaleMax: " + art.AnswerScaleMax);
+                if(art.AnswerScaleMax > absoluteScaleMax)
+                {
+                    absoluteScaleMax = Convert.ToDouble(art.AnswerScaleMax);
+                }
+            }
+            Debug.WriteLine("absoluteScaleMax: " + absoluteScaleMax);
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
             foreach (AnswerResultTemp rt in resultTemps)
             {
                 AnswerResultDTO nr = new AnswerResultDTO();
                 nr.QuestionID = rt.QuestionID;
-                nr.AnswerValue = rt.AnswerValue;
+                nr.AnswerValue = ScaleAnswerValue(rt.AnswerValue, rt.AnswerScaleMax, absoluteScaleMax);
                 nr.AnswererTypeID = rt.AnswererTypeID;
                 nr.AnswererTypeName = rt.AnswererTypeName;
                 nr.AnswerBundleDateMs = ConvertToUnixTime(rt.AnswerBundleDate);

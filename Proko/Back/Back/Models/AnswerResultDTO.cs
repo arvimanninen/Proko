@@ -9,7 +9,7 @@ namespace Back.Models
     {
          public int QuestionID { get; set; }
          public long AnswerBundleDateMs { get; set; }
-         public int AnswerValue { get; set; }
+         public double AnswerValue { get; set; }
          public int AnswererTypeID { get; set; }
          public string AnswererTypeName { get; set; }
     }
