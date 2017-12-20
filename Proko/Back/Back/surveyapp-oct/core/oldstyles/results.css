@@ -1,28 +1,24 @@
 ﻿.results-bg-div .answerers {
   margin: 40px 0 24px; }
 
-.results-bg-div .results-title {
-  margin-top: 32px; }
-  @media screen and (max-width: 480px) {
-    .results-bg-div .results-title {
-      margin-top: 24px; } }
+.answerers {
+  margin: 24px; }
 
 .results-div h4 {
   margin: 16px 0 16px; }
 
 .results-div .question-results-div {
-  margin: 24px 0;
+  margin: 24px 0 0;
   padding: 0 0 8px 8px;
+  border-radius: 4px;
+  border: 1px solid #e6e6e6;
   background-color: #FAFAFA; }
   @media screen and (max-width: 480px) {
     .results-div .question-results-div {
-      margin: 16px 0;
-      padding: 0 0 8px 0; } }
-  .results-div .question-results-div #canvas1 {
-    height: 400px; }
+      margin-bottom: 16px; } }
   .results-div .question-results-div canvas {
     width: 100%;
-    height: 400px; }
+    height: 100%; }
 
 .popup-div {
   margin: 40px auto 16px; }

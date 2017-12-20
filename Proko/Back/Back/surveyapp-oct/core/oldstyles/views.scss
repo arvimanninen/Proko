@@ -9,33 +9,19 @@
 OUTER SLIDER DIV
 **************************/
 
-.outer-buttonslider-div {
-    margin: 4 * $grid 0 12 * $grid;
+.outer-slider-div {
+    margin-top: 4 * $grid;
 
-    @include media-query($on-mobile) {
-        margin: 4 * $grid 0 12 * $grid;
-    }
-
-    .buttonslider-scale {
+    .bar-rating {
         width: 100%;
         height: 6 * $grid;
         display: flex;
         justify-content: space-between;
-        margin: 0 auto;
+        margin: 0 0 11 * $grid;
         color: $grey;
 
-        span {
-            width: 16 * $grid;
-            height: 11 * $grid;
-            //margin-bottom: 2 * $grid;
-            
-            &:first-child {
-                text-align: left;
-            }
-
-            &:last-child {
-                text-align: right;
-            }
+        @include media-query($on-mobile) {
+            margin: 0 0 9 * $grid;
         }
     }
 }
@@ -204,11 +190,6 @@ div.btn-group {
                 width: 50 * $grid;
                 margin: 0 auto;
             }
-
-            &.block-btn-xl {
-                width: 66 * $grid;
-                margin: 0 auto;
-            }
         }
 
         &.nav-btn-margins {
@@ -295,57 +276,55 @@ div.btn-group {
                 padding: 3 * $grid 3 * $grid 3 * $grid 14 * $grid;
                 border-radius: 1.5 * $grid;
                 box-shadow: 0 0 3px 1px $label-grey-border;
+                -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
+                transition: color 0.2s linear, box-shadow 0.2s, linear;
 
                 @include media-query($on-tablet) {
                     font-size: 5 * $grid;
                     line-height: 6.5 * $grid;
                 }
+            }
 
-                input[type=radio] {
-                    position: absolute;
-                    opacity: 0;
-                }
+            .check {
+                display: block;
+                position: absolute;
+                background-color: $lightgrey;
+                border-radius: 100%;
+                height: 30px;
+                width: 30px;
+                top: 10px;
+                left: 10px;
+                z-index: 5;
+                -webkit-transition: background-color .2s linear;
+                transition: background-color .2s linear;
 
-                .check {
-                    position: absolute;
-                    height: 30px;
-                    width: 30px;
-                    top: 11px;
+                @include media-query($on-mobile) {
+                    top: 9px;
                     left: 10px;
-                    border-radius: 50%;
-                    background-color: $lightgrey;
-                    -webkit-transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-                    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-
-                    @include media-query($on-mobile) {
-                        top: 9px;
-                        left: 10px;
-                    }
                 }
+            }
 
-                & input[type=radio]:checked ~ .check {
-                    background-color: $button-pos-checked;
-                }
+            .check::before {
+                display: block;
+                position: absolute;
+                content: '';
+                background-color: rgba(255, 255, 255, 0);
+                border-radius: 100%;
+                height: 14px;
+                width: 14px;
+                top: 8px;
+                left: 8px;
+                margin: auto;
+                -webkit-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+            }
 
+            input[type=radio]:checked ~ .check::before {
+                background-color: rgba(255, 255, 255, 1);
+            }
 
-                .check:after {
-                    display: none;
-                    position: absolute;
-                    content: "";
-                }
-
-                input[type=radio]:checked ~ .check:after {
-                    display: block;
-                }
-
-                .check:after {
-                    left: 8px;
-                    top: 8px;
-                    width: 14px;
-                    height: 14px;
-                    border: 7px solid white;
-                    border-radius: 50%;
-                }
+            input[type=radio]:checked ~ .check {
+                background-color: $button-pos-checked;
             }
         }
     }
@@ -411,8 +390,6 @@ div.btn-group {
                     top: 10px;
                     left: 10px;
                     background-color: $lightgrey;
-                    -webkit-transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-                    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
 
                     @include media-query($on-mobile) {
                         top: 9px;
@@ -635,68 +612,7 @@ div.btn-group {
         }
     }
 }
-
-// btn-group ends
-.thanks-div {
-    margin-top: 16vh;
-}
-
-.outer-rangeslider-div {
-    margin: 6 * $grid auto 11 * $grid;
-
-    @include media-query($on-mobile) {
-        margin: 6 * $grid auto 13 * $grid;
+    // btn-group ends
+    .thanks-div {
+        margin-top: 16vh;
     }
-
-    h4 {
-        margin-bottom: 6 * $grid;
-    }
-
-    .rangeslider {
-        width: 80%;
-        background-color: hsl(60, 48%, 60%);
-        margin: 3 * $grid auto;
-
-        @include media-query($on-mobile) {
-            width: 90%;
-        }
-    }
-
-    .rangeslider__fill {
-        background-color: rgba(255, 255, 255, 0); //hsl(61, 48%, 60%);
-    }
-
-    .rangeslider-scale {
-        width: 80%;
-        height: 6 * $grid;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        color: $grey;
-
-        span {
-            width: 25 * $grid;
-
-            &:first-child {
-                text-align: left;
-            }
-
-            &:nth-child(2) {
-                text-align: center;
-
-                @include media-query($on-small-mobile) {
-                    display: none;
-                }
-            }
-
-            &:last-child {
-                text-align: right;
-            }
-        }
-
-
-        @include media-query($on-mobile) {
-            width: 90%;
-        }
-    }
-}

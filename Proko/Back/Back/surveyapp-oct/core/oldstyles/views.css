@@ -4,25 +4,18 @@
 /*
 OUTER SLIDER DIV
 **************************/
-.outer-buttonslider-div {
-  margin: 16px 0 48px; }
-  @media screen and (max-width: 480px) {
-    .outer-buttonslider-div {
-      margin: 16px 0 48px; } }
-  .outer-buttonslider-div .buttonslider-scale {
+.outer-slider-div {
+  margin-top: 16px; }
+  .outer-slider-div .bar-rating {
     width: 100%;
     height: 24px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 0 0 44px;
     color: #333333; }
-    .outer-buttonslider-div .buttonslider-scale span {
-      width: 64px;
-      height: 44px; }
-      .outer-buttonslider-div .buttonslider-scale span:first-child {
-        text-align: left; }
-      .outer-buttonslider-div .buttonslider-scale span:last-child {
-        text-align: right; }
+    @media screen and (max-width: 480px) {
+      .outer-slider-div .bar-rating {
+        margin: 0 0 36px; } }
 
 .outer-textarea-div {
   margin-top: 10vh; }
@@ -130,9 +123,6 @@ div.btn-group {
       div.btn-group.nav-btn-div a.block-btn {
         width: 200px;
         margin: 0 auto; }
-      div.btn-group.nav-btn-div a.block-btn-xl {
-        width: 264px;
-        margin: 0 auto; }
     div.btn-group.nav-btn-div.nav-btn-margins {
       margin: 80px 0 64px; }
       @media screen and (max-width: 480px) {
@@ -193,43 +183,46 @@ div.btn-group {
         margin: 8px auto;
         padding: 12px 12px 12px 56px;
         border-radius: 6px;
-        box-shadow: 0 0 3px 1px rgba(204, 204, 204, 0.4); }
+        box-shadow: 0 0 3px 1px rgba(204, 204, 204, 0.4);
+        -webkit-transition: color 0.2s linear, box-shadow 0.3s, linear;
+        transition: color 0.2s linear, box-shadow 0.2s, linear; }
         @media screen and (max-width: 768px) {
           div.btn-group.radiobutton-div ul li label {
             font-size: 20px;
             line-height: 26px; } }
-        div.btn-group.radiobutton-div ul li label input[type=radio] {
-          position: absolute;
-          opacity: 0; }
-        div.btn-group.radiobutton-div ul li label .check {
-          position: absolute;
-          height: 30px;
-          width: 30px;
-          top: 11px;
-          left: 10px;
-          border-radius: 50%;
-          background-color: #cccccc;
-          -webkit-transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-          transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out; }
-          @media screen and (max-width: 480px) {
-            div.btn-group.radiobutton-div ul li label .check {
-              top: 9px;
-              left: 10px; } }
-        div.btn-group.radiobutton-div ul li label input[type=radio]:checked ~ .check {
-          background-color: #359739; }
-        div.btn-group.radiobutton-div ul li label .check:after {
-          display: none;
-          position: absolute;
-          content: ""; }
-        div.btn-group.radiobutton-div ul li label input[type=radio]:checked ~ .check:after {
-          display: block; }
-        div.btn-group.radiobutton-div ul li label .check:after {
-          left: 8px;
-          top: 8px;
-          width: 14px;
-          height: 14px;
-          border: 7px solid white;
-          border-radius: 50%; }
+      div.btn-group.radiobutton-div ul li .check {
+        display: block;
+        position: absolute;
+        background-color: #cccccc;
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        top: 10px;
+        left: 10px;
+        z-index: 5;
+        -webkit-transition: background-color .2s linear;
+        transition: background-color .2s linear; }
+        @media screen and (max-width: 480px) {
+          div.btn-group.radiobutton-div ul li .check {
+            top: 9px;
+            left: 10px; } }
+      div.btn-group.radiobutton-div ul li .check::before {
+        display: block;
+        position: absolute;
+        content: '';
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 100%;
+        height: 14px;
+        width: 14px;
+        top: 8px;
+        left: 8px;
+        margin: auto;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear; }
+      div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check::before {
+        background-color: white; }
+      div.btn-group.radiobutton-div ul li input[type=radio]:checked ~ .check {
+        background-color: #359739; }
   div.btn-group.checkbox-div {
     position: relative;
     margin: 8px 0 0 10%;
@@ -278,9 +271,7 @@ div.btn-group {
           width: 30px;
           top: 10px;
           left: 10px;
-          background-color: #cccccc;
-          -webkit-transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-          transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out; }
+          background-color: #cccccc; }
           @media screen and (max-width: 480px) {
             div.btn-group.checkbox-div ul li label .check {
               top: 9px;
@@ -433,42 +424,4 @@ div.btn-group {
 
 .thanks-div {
   margin-top: 16vh; }
-
-.outer-rangeslider-div {
-  margin: 24px auto 44px; }
-  @media screen and (max-width: 480px) {
-    .outer-rangeslider-div {
-      margin: 24px auto 52px; } }
-  .outer-rangeslider-div h4 {
-    margin-bottom: 24px; }
-  .outer-rangeslider-div .rangeslider {
-    width: 80%;
-    background-color: #caca68;
-    margin: 12px auto; }
-    @media screen and (max-width: 480px) {
-      .outer-rangeslider-div .rangeslider {
-        width: 90%; } }
-  .outer-rangeslider-div .rangeslider__fill {
-    background-color: rgba(255, 255, 255, 0); }
-  .outer-rangeslider-div .rangeslider-scale {
-    width: 80%;
-    height: 24px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    color: #333333; }
-    .outer-rangeslider-div .rangeslider-scale span {
-      width: 100px; }
-      .outer-rangeslider-div .rangeslider-scale span:first-child {
-        text-align: left; }
-      .outer-rangeslider-div .rangeslider-scale span:nth-child(2) {
-        text-align: center; }
-        @media screen and (max-width: 375px) {
-          .outer-rangeslider-div .rangeslider-scale span:nth-child(2) {
-            display: none; } }
-      .outer-rangeslider-div .rangeslider-scale span:last-child {
-        text-align: right; }
-    @media screen and (max-width: 480px) {
-      .outer-rangeslider-div .rangeslider-scale {
-        width: 90%; } }
 

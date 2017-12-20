@@ -1,7 +1,7 @@
 'use strict';
 console.log("app.config started!");
-app.config(['$routeProvider', '$locationProvider',    
-    function ($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
+    function ($routeProvider, $locationProvider, ChartJsProvider) {
         $routeProvider
             .when('/', {
                 template: '<start></start>'
@@ -29,6 +29,30 @@ app.config(['$routeProvider', '$locationProvider',
             })
             .otherwise({
                 template: '<error></error>'
-            })
+            });
+
+        ChartJsProvider.setOptions({
+            global: {
+                colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
+                defaultFontColor: '#333333',
+                defaultFontFamily: 'Roboto',
+                defaultFontSize: 14,
+                elements: {
+                    line: {
+                        fill: false
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                tooltips: {
+                    enabled: true
+                },
+                hover: {
+                    mode: null
+                }
+            }
+        });  
     }
 ]);

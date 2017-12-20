@@ -342,6 +342,15 @@
     <Content Include="surveyapp-oct\core\answerbundleextras.service.js" />
     <Content Include="surveyapp-oct\core\answersandbundleextras.service.js" />
     <Content Include="surveyapp-oct\core\result.service.js" />
+    <Content Include="surveyapp-oct\core\styles\frame.css" />
+    <Content Include="surveyapp-oct\core\styles\frame.min.css" />
+    <Content Include="surveyapp-oct\core\styles\rangeslider.css" />
+    <Content Include="surveyapp-oct\core\styles\results.css" />
+    <Content Include="surveyapp-oct\core\styles\results.min.css" />
+    <Content Include="surveyapp-oct\core\styles\variables.css" />
+    <Content Include="surveyapp-oct\core\styles\variables.min.css" />
+    <Content Include="surveyapp-oct\core\styles\views.css" />
+    <Content Include="surveyapp-oct\core\styles\views.min.css" />
     <Content Include="surveyapp-oct\error\error.component.js" />
     <Content Include="surveyapp-oct\error\error.controller.js" />
     <Content Include="surveyapp-oct\error\error.template.html" />
@@ -369,14 +378,14 @@
     <Content Include="surveyapp-oct\core\images\thumb-up.png" />
     <Content Include="surveyapp-oct\core\images\warning.gif" />
     <Content Include="surveyapp-oct\core\storage.service.js" />
-    <Content Include="surveyapp-oct\core\styles\frame.css" />
-    <Content Include="surveyapp-oct\core\styles\frame.min.css" />
-    <Content Include="surveyapp-oct\core\styles\results.css" />
-    <Content Include="surveyapp-oct\core\styles\results.min.css" />
-    <Content Include="surveyapp-oct\core\styles\variables.css" />
-    <Content Include="surveyapp-oct\core\styles\variables.min.css" />
-    <Content Include="surveyapp-oct\core\styles\views.css" />
-    <Content Include="surveyapp-oct\core\styles\views.min.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\frame.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\frame.min.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\results.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\results.min.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\variables.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\variables.min.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\views.css" />
+    <Content Include="surveyapp-oct\core\oldstyles\views.min.css" />
     <Content Include="surveyapp-oct\core\data.factory.js" />
     <Content Include="surveyapp-oct\core\question.controller.js" />
     <Content Include="surveyapp-oct\core\question.service.js" />
@@ -1574,10 +1583,10 @@
     <Content Include="Views\QuestionMethods\Details.cshtml" />
     <Content Include="Views\QuestionMethods\Edit.cshtml" />
     <Content Include="Views\QuestionMethods\Index.cshtml" />
-    <Content Include="surveyapp-oct\core\styles\frame.scss" />
-    <Content Include="surveyapp-oct\core\styles\results.scss" />
-    <Content Include="surveyapp-oct\core\styles\variables.scss" />
-    <Content Include="surveyapp-oct\core\styles\views.scss" />
+    <Content Include="surveyapp-oct\core\oldstyles\frame.scss" />
+    <Content Include="surveyapp-oct\core\oldstyles\results.scss" />
+    <Content Include="surveyapp-oct\core\oldstyles\variables.scss" />
+    <Content Include="surveyapp-oct\core\oldstyles\views.scss" />
     <Content Include="surveyapp-oct\node_modules\angular-chart.js\.codeclimate.yml" />
     <Content Include="surveyapp-oct\node_modules\angular-chart.js\.dockerignore" />
     <Content Include="surveyapp-oct\node_modules\angular-chart.js\.editorconfig" />
@@ -1789,6 +1798,10 @@
     <Content Include="surveyapp-oct\node_modules\moment\package.json" />
     <Content Include="surveyapp-oct\node_modules\moment\README.md" />
     <Content Include="surveyapp-oct\package.json" />
+    <Content Include="surveyapp-oct\core\styles\frame.scss" />
+    <Content Include="surveyapp-oct\core\styles\results.scss" />
+    <Content Include="surveyapp-oct\core\styles\variables.scss" />
+    <Content Include="surveyapp-oct\core\styles\views.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
