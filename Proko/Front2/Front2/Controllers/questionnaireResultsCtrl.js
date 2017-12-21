@@ -13,7 +13,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
     $scope.chart1 = {
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
         series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
-        data: [[3.4, 3.1, 3.7, 4.5, 4.0], [2.2, 3.0, 3.4, 3.1, 3.7], [3.6, 3.2, 4.0, 3.7, 4.3], [2.5, 2.4, 3.0, 2.8, 3.2]],
+        data: [[3.4, 3.9, 3.7, 4.5, 4.0], [2.2, 3.0, 3.4, 3.1, 3.7], [3.1, 3.2, 3.0, 3.7, 4.3], [2.5, 2.4, 3.0, 2.8, 3.2]],
         options: {
             scales: {
                 yAxes: [
@@ -41,8 +41,8 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
 
     $scope.chart2 = {
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
-        series: ['Rakennusmi', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
-        data: [[2.4, 3.1, 3.0, 2.6, 3.0], [3.2, 3.0, 2.8, 2.7, 3.4], [1.6, 2.2, 3.0, 2.7, 2.4], [2.5, 2.4, 2.8, 2.8, 3.0]],
+        series: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
+        data: [[1.6, 2.2, 2.5, 2.7, 2.4], [2.9, 3.1, 3.6, 3.6, 3.8], [2.5, 2.4, 2.2, 2.8, 3.0], [3.2, 3.0, 3.0, 3.3, 3.4]],
         legend: {
             display: false
         },
