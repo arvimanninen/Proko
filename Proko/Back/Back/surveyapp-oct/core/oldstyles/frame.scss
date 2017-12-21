@@ -22,7 +22,7 @@ body {
     height: auto;
     margin: 0 auto -56px;
     padding: 0 0 56px;
-    //color: $white;
+    color: $white;
 }
 
 .container {
@@ -189,7 +189,6 @@ HEADER & FOOTER
 header, footer, header .container-fluid, footer .container-fluid {
     background-color: $header-color;
     box-sizing: border-box;
-    color: $white;
 }
 
 

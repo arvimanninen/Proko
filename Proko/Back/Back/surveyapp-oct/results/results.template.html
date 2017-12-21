@@ -1,47 +1,36 @@
 ﻿<div class="container-fluid results-bg-div">
     <div class="row results-div">
-        
-        <div class="col-xs-12">           
 
-            <div class="btn-group nav-btn-div popup-div">
-                <a class="button-tertiary block-btn js-open-modal" role="button" data-modal-id="popup">Käytä kuponki</a>
+        <div class="col-xs-12">
+            <h3 class="results-title">Vastusten tuloksia</h3>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <div class="question-results-div">
+                <h4>Työturvallisuus on otettu työmaalla hyvin huomioon</h4>
+                <canvas width="10" height="6" class="chart chart-line"
+                        chart-labels="$ctrl.chart1.labels"
+                        chart-series="$ctrl.chart1.series"
+                        chart-data="$ctrl.chart1.data"
+                        chart-options="$ctrl.chart1.options"></canvas>
             </div>
+        </div>
 
-            <div id="popup" class="modal-box">
-                <h3>Käytä kuponki</h3>
-                <h4>Näytä tämä näkymä, kun haluat käyttää kupongin.</h4>
-
-                <div class="btn-group nav-btn-div popup-div">
-                    <a class="button-secondary js-modal-close" role="button">Peruuta</a>
-                    <a class="button-tertiary js-modal-use" role="button">Käytä</a>
-                </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="question-results-div">
+                <h4>Työt on aikataulutettu työmaalla hyvin</h4>
+                <canvas width="10" height="6" class="chart chart-line"
+                        chart-labels="$ctrl.chart2.labels"
+                        chart-series="$ctrl.chart2.series"
+                        chart-data="$ctrl.chart2.data"
+                        chart-options="$ctrl.chart2.options"></canvas>
             </div>
-
-            <h3 class="answerers">Vastaajia tällä viikolla: 34</h3>
-
         </div>
 
-        <div class="col-xs-12 col-md-6 canvas-div">
-            <h4>Työturvallisuus otettu työmaalla hyvin huomioon</h4>
-            <canvas class="chart chart-bar" chart-data="pollData1" chart-labels="pollLabels1" chart-series="pollSeries"
-                    style="
-                    margin-left: -20px; 
-                    width: 100%;
-                    "></canvas>
-        </div>
-
-        <div class="col-xs-12 col-md-6">       
-            <h4>Työt on aikataulutettu työmaalla hyvin</h4>
-            <canvas class="chart-bar" chart-data="pollData2" chart-labels="pollLabels2" chart-series="pollSeries2" chart-options="options2"
-                    style="
-                    margin-left: -20px; 
-                    width: 100%;
-                    "></canvas>
-        </div>
 
     </div> <!-- row div -->
 
     <div class="btn-group nav-btn-div nav-btn-margins">
-        <a class="button-primary block-btn" ng-click="$ctrl.goToStart()">Uusi kysely</a>
+        <a class="button-primary block-btn" ng-click="$ctrl.toStart()">Alkuun</a>
     </div>
 </div>
