@@ -16,6 +16,8 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
         function () {
             var resultDtos = DataFactory.getResultsToCq.query(function () {
                 ResultService.setResults(resultDtos);
+                // Ensimmäinen kysymys
+
                 $("#posting-status").remove();
                 postingSuccess.style.visibility = "visible";
             // THIS LAUNCHES IN OF RESULT QUERYING ERROR

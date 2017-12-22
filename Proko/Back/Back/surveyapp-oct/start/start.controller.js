@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService, AnswerService, RunService) {
+app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService, AnswerService, AnswererTypeService, RunService) {
     console.log("StartCtrl started");
     var that = this;
     QuestionService.reset();
@@ -13,36 +13,53 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
 
     startButton.style.visibility = "hidden";
     that.loadingText = "Kysymyksiä ladataan...";
-       
+    var showErrorMessage = function () {
+        that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
+        lt.style.color = "red";
+        loadingIcon.src = "core/images/warning.gif";
+    };
+
+
     var rawQs = DataFactory.getChosenQuestions.query(function () {
-        console.log("All get!");
-        console.log("rawQs.length" + rawQs.length);
+        if (rawQs.length === 0) {
+            showErrorMessage();
+        } else {
+            console.log("All cq get!");
+            console.log("rawQs.length: " + rawQs.length);
+            QuestionService.setQuestions(rawQs);
+            RunService.setQuestionSetCount(QuestionService.getSetCount());
+            var answererTypeDtos = DataFactory.getChosenAnswererTypes.query(function () {
+                if (answererTypeDtos.length === 0) {
+                    showErrorMessage();
+                } else {
+                    console.log("All at get!");
+                    console.log("answererTypeDtos.length: " + answererTypeDtos.length);
+                    AnswererTypeService.setAnswererTypes(answererTypeDtos);
+                    that.loadingText = "Kysymykset ladattu!";
+                    lt.style.color = "green";
+                    loadingIcon.src = "core/images/success.gif";
+                    startButton.style.visibility = "visible";
+                    console.log("QuestionService.getQuestion(0).QuestionMethodValue" + QuestionService.getQuestion(0).QuestionMethodValue);
+                }
+                //TODO: REMOVE UNNECESSARY FUNCTIONS
+            }, function() {
+                showErrorMessage();
+            });
+        }
+    }, function () {
+        // WHEN GET FAILS, THIS FUNCTION LAUNCHES
+        showErrorMessage();
+    });
+            
+        
         /*for (var i = 0; i < rawQs.length; i++) {
             console.log("rawQs[" + i + "].QuestionID: " + rawQs[i].QuestionID);
             console.log("rawQs[" + i + "].ChosenIndex: " + rawQs[i].ChosenIndex);
             console.log("rawQs[" + i + "].Text: " + rawQs[i].Text);
             console.log("rawQs[" + i + "].QuestionMethodValue: " + rawQs[i].QuestionMethodValue);
         }*/
-        if (rawQs.length === 0) {
-            that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
-            lt.style.color = "red";
-            loadingIcon.src = "core/images/warning.gif";
-        } else {
             // $("#loading-icon").remove();
-            QuestionService.setQuestions(rawQs);
-            RunService.setQuestionSetCount(QuestionService.getSetCount());
-            that.loadingText = "Kysymykset ladattu!";
-            lt.style.color = "green";
-            loadingIcon.src = "core/images/success.gif";
-            startButton.style.visibility = "visible";
-            console.log("QuestionService.getQuestion(0).QuestionMethodValue" + QuestionService.getQuestion(0).QuestionMethodValue);
-        }
-    }, function () {
-        // WHEN GET FAILS, THIS FUNCTION LAUNCHES
-        that.loadingText = "Virhe kysymysten lataamisessa! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
-        loadingIcon.src = "core/images/warning.gif";
-        lt.style.color = "red";
-    });
+    
 
     that.startSurvey = function () {
         $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex()));
