@@ -18,8 +18,6 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
         lt.style.color = "red";
         loadingIcon.src = "core/images/warning.gif";
     };
-
-
     var rawQs = DataFactory.getChosenQuestions.query(function () {
         if (rawQs.length === 0) {
             showErrorMessage();
