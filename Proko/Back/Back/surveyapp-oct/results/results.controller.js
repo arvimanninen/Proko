@@ -16,7 +16,10 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
 
     var question1 = QuestionService.getQuestion(0);
     var question2 = QuestionService.getQuestion(1);
+    console.log("question1.QuestionID: " + question1.QuestionID);
+    console.log("question2.QuestionID: " + question2.QuestionID);
     var answererTypes = AnswererTypeService.getAnswererTypes();
+    console.log("answererTypes.length: " + answererTypes.length);
     var averageResultSets1 = [];
     var averageResultSets2 = [];
     for (var i = 0; i < answererTypes.length; i++) {
