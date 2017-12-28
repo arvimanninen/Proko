@@ -26,6 +26,7 @@ app.service('ResultService', function () {
     var getAverages = function (questionId, answererTypeId) {
         var now = new Date();
         var weeks = [now, now, now, now, now, now]; // 6
+        console.log("weeks.length: " + weeks.length);
         var answerMasses = [0, 0, 0, 0, 0]; // 5
         var answerCounts = [0, 0, 0, 0, 0]; // 5
         var averages = [0.0, 0.0, 0.0, 0.0, 0.0]; // 5
@@ -58,6 +59,10 @@ app.service('ResultService', function () {
             }
         };
         calculateWeeks();
+        for (var i = 0; i < weeks.length; i++) {
+            console.log("weeks[" + i + "]: " + weeks[i]);
+        }
+
         calculateSources();
         calculateAverages();
         return averages;

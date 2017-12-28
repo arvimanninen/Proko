@@ -1,12 +1,38 @@
 ﻿'use strict';
 
-app.controller('ResultsCtrl', function ($location) {
+app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService) {
     var that = this;
     that.toStart = function () {
         $location.path("/start");
     };
 
-    that.answerCount = 20;
+    var AverageResultSet = function (nAnswererTypeName, nAverages) {
+        this.answererTypeName = nAnswererTypeName;
+        this.averages = [];
+        for (var i = 0; i < nAverages.length; i++) {
+            this.averages.push(nAverages[i]);
+        }
+    };
+
+    var question1 = QuestionService.getQuestion(0);
+    var question2 = QuestionService.getQuestion(1);
+    var answererTypes = AnswererTypeService.getAnswererTypes();
+    var averageResultSets1 = [];
+    var averageResultSets2 = [];
+    for (var i = 0; i < answererTypes.length; i++) {
+        var avgs1 = ResultService.getAverages(question1.QuestionID, answererTypes[i].AnswererTypeID);
+        var avgs2 = ResultService.getAverages(question2.QuestionID, answererTypes[i].AnswererTypeID);
+        for (var k = 0; k < avgs1.length; k++) {
+            console.log(i + ".avgs1[" + k + "]: " + avgs1[k]);
+            console.log(i + ".avgs2[" + k + "]: " + avgs2[k]);
+        }
+        var ars1 = new AverageResultSet(answererTypes[i].AnswererTypeName, avgs1);
+        var ars2 = new AverageResultSet(answererTypes[i].AnswererTypeName, avgs2);
+        averageResultSets1.push(ars1);
+        averageResultSets2.push(ars2);
+    }
+    
+
 
     //$("#canvas1").parentNode.style.height = '400px';
 
