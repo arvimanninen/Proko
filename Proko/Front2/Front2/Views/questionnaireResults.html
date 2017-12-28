@@ -11,19 +11,52 @@
             <canvas width="10" height="6" class="chart chart-line"
                     chart-labels="chart1.labels"
                     chart-series="chart1.series"
-                    chart-data="chart1.data"                      
+                    chart-data="chart1.data" 
+                    chart-colors="chart1.colors" 
                     chart-options="chart1.options"></canvas>
         </div>
     </div>
 
     <div class="col-xs-12 col-md-6">
         <div class="question-results-div">
-            <h4>Työt on aikataulutettu työmaalla hyvin</h4>
-            <canvas width="10" height="6" class="chart chart-line"
-                    chart-labels="chart2.labels" 
-                    chart-series="chart2.series"
-                    chart-data="chart2.data"                    
-                    chart-options="chart2.options"></canvas>
+            <h4>Kuinka tyytyväinen olet töiden aikataulutukseen?</h4>
+            <canvas class="chart chart-doughnut"                 
+                    chart-data="chart2.data" 
+                    chart-colors="chart2.colors"
+                    ></canvas>
+            <div class="outer-smiley-div">
+                <div class="btn-group smiley-div">
+                    <div>
+                        <input id="q-a1" type="radio" name="question-1" disabled />
+                        <label for="q-a1" class="button-neg">
+                            <img src="../Images/smiley-sad.svg" alt="smiley angry" />
+                        </label>
+                        <h4>1</h4>
+                    </div>
+                    <div>
+                        <input id="q-a2" type="radio" name="question-1" disabled />
+                        <label for="q-a2" class="button-middle-neg">
+                            <img src="../Images/smiley-meh.svg" alt="smiley little sad" />
+                        </label>
+                        <h4>9</h4>
+                    </div>
+                    <div>
+                        <input id="q-a3" type="radio" name="question-1" disabled />
+                        <label for="q-a3" class="button-middle-pos">
+                            <img src="../Images/smiley-happy.svg" alt="smiley neutral" />
+                        </label>
+                        <h4>5</h4>
+                    </div>
+                    <div>
+                        <input id="q-a4" type="radio" name="question-1" disabled />
+                        <label for="q-a4" class="button-pos">
+                            <img src="../Images/smiley-very-happy.svg" alt="smiley happy" />
+                        </label>
+                        <h4>11</h4>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
