@@ -14,6 +14,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
         series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
         data: [[3.4, 3.9, 3.7, 4.5, 4.0], [2.2, 3.0, 3.4, 3.1, 3.7], [3.1, 3.2, 3.0, 3.7, 4.3], [2.5, 2.4, 3.0, 2.8, 3.2]],
+        colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
         options: {
             scales: {
                 yAxes: [
@@ -40,15 +41,12 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
     };
 
     $scope.chart2 = {
-        labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
-        series: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
-        data: [[1.6, 2.2, 2.5, 2.7, 2.4], [2.9, 3.1, 3.6, 3.6, 3.8], [2.5, 2.4, 2.2, 2.8, 3.0], [3.2, 3.0, 3.0, 3.3, 3.4]],
-        legend: {
-            display: false
-        },
+        labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
+        data: [1, 9, 5, 11],
+        colors: ['#f7ab98', '#f1c18e', '#ceda97','#8ed791'],
         options: {
             legend: {
-                display: true
+                display: false
             },
             scales: {
                 yAxes: [
