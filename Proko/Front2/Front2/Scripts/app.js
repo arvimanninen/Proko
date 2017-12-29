@@ -70,7 +70,7 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
 
             ChartJsProvider.setOptions({
                 global: {
-                    //colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
+                    colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
                     defaultFontColor: '#333333',
                     defaultFontFamily: 'Roboto',
                     defaultFontSize: 14,
@@ -80,7 +80,7 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                         }
                     },
                     legend: {
-                        display: true,
+                        display: false,
                         position: 'bottom'
                     },
                     tooltips: {

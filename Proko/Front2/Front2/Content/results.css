@@ -23,6 +23,11 @@
   .results-div .question-results-div canvas {
     width: 100%;
     height: 400px; }
+  .results-div .question-results-div .piechart {
+    width: 64%;
+    margin: 0 auto; }
+  .results-div .question-results-div .results-smiley {
+    margin-bottom: 0; }
 
 .popup-div {
   margin: 40px auto 16px; }
