@@ -6,6 +6,13 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         $location.path("/start");
     };
 
+    var question1 = QuestionService.getQuestion(0);
+    var question2 = QuestionService.getQuestion(1);
+    var question1Average = ResultService.getAverage(question1.QuestionID);
+    var question2Average = ResultService.getAverage(question2.QuestionID);
+    console.log("question1Average: " + question1Average);
+    console.log("question2Average: " + question2Average);
+    /*
     var AverageResultSet = function (nAnswererTypeName, nAverages) {
         this.answererTypeName = nAnswererTypeName;
         this.averages = [];
@@ -16,7 +23,10 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
 
     var question1 = QuestionService.getQuestion(0);
     var question2 = QuestionService.getQuestion(1);
+    console.log("question1.QuestionID: " + question1.QuestionID);
+    console.log("question2.QuestionID: " + question2.QuestionID);
     var answererTypes = AnswererTypeService.getAnswererTypes();
+    console.log("answererTypes.length: " + answererTypes.length);
     var averageResultSets1 = [];
     var averageResultSets2 = [];
     for (var i = 0; i < answererTypes.length; i++) {
@@ -31,7 +41,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         averageResultSets1.push(ars1);
         averageResultSets2.push(ars2);
     }
-    
+    */
 
 
     //$("#canvas1").parentNode.style.height = '400px';

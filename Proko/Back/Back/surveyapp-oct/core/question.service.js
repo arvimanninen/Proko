@@ -15,7 +15,11 @@ app.service('QuestionService', function () {
     */
     
     var getQuestion = function (index) {
-        return questions[index];
+        if (index < questions.length) {
+            return questions[index];
+        } else {
+            return -1;
+        }
     };
 
     var getQuestions = function () {
