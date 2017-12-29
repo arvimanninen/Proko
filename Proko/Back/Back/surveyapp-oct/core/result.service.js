@@ -29,14 +29,51 @@ app.service('ResultService', function () {
         }
     };
 
-    var getAverages = function (questionId, answererTypeId) {
+    // TODO: TEST THIS!
+    var getAveragesForAll = function (questionId) {
+        var totalMass = 0.0;
+        var totalCount = 0.0;
+        var average = 0.0;
+        var masses = [0.0, 0.0, 0.0, 0.0, 0.0];
+        var counts = [0.0, 0.0, 0.0, 0.0, 0.0];
+        var averages = [0.0, 0.0, 0.0, 0.0, 0.0];
+        var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
+        // CALCULATE RIGHT DATE POINTS
+        var daysSinceNow = 0;
+        for (var m = 0; m < weeks.length; m++) {
+            datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
+            daysSinceNow = daysSinceNow + 7;
+        }
+
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].QuestionID === questionId) {
+                // datePoints.length or datePoints.length - 1 ????
+                for (var k = 0; k < datePoints.length; k++) {
+                    // TODO: CHECK ARE THESE STATEMENTS RIGHT!
+                    if(results[i].AnswerBundleDate <= datePoints[m] &&
+                        results[i].AnswerBundleDate < datePoints[m + 1]) {
+                        
+                    }
+                }
+                totalmass = mass + results[i].AnswerValue;
+                count++;
+            }
+        }
+        
+        console.log("mass: " + mass);
+        console.log("count: " + count);
+        average = mass / count;
+        return average;
+    };
+
+    var getAveragesForSingle = function (questionId, answererTypeId) {
         // TODO: CORRECT THIS!
         var now = new Date();
         var weeks = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()]; // 6
         var daysSinceNow = 0;
         for (var m = 0; m < weeks.length; m++) {
             weeks[m].setDate(weeks[m].getDate() - daysSinceNow);
-            daysSinceNow += 7;
+            daysSinceNow = daysSinceNow + 7;
         }
         // weeks[0].setDate(weeks[0].getDate() - 7);
         console.log("weeks.length: " + weeks.length);
@@ -58,6 +95,9 @@ app.service('ResultService', function () {
                             answerCounts[w]++;
                         }
                     }*/
+                    // var usedResults = [];
+                    // usedResults.push(r);
+                    // RemoveUsedResults
                     
                 }
             }
@@ -80,6 +120,7 @@ app.service('ResultService', function () {
     return {
         getResults: getResults,
         setResults: setResults,
+        getAverage: getAverage,
         getAverages: getAverages,
         reset: reset
     };
