@@ -3,12 +3,6 @@
 app.service('ResultService', function () {
     var results = [];
 
-    Date.prototype.removeDays = function (days) {
-        var d = new Date(this.valueOf());
-        d.setDate(d.getDate() - days);
-        return d;
-    };
-
     var Result = function (nQuestionID, nAnswerBundleDateMs, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
         this.QuestionID = nQuestionID;
         this.AnswerBundleDate = new Date(nAnswerBundleDateMs);
@@ -40,7 +34,7 @@ app.service('ResultService', function () {
         var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
         // CALCULATE RIGHT DATE POINTS
         var daysSinceNow = 0;
-        for (var m = 0; m < weeks.length; m++) {
+        for (var m = 0; m < datePoints.length; m++) {
             datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
             daysSinceNow = daysSinceNow + 7;
         }
@@ -48,24 +42,44 @@ app.service('ResultService', function () {
         for (var i = 0; i < results.length; i++) {
             if (results[i].QuestionID === questionId) {
                 // datePoints.length or datePoints.length - 1 ????
-                for (var k = 0; k < datePoints.length; k++) {
+                for (var k = 0; k < datePoints.length - 1; k++) {
                     // TODO: CHECK ARE THESE STATEMENTS RIGHT!
-                    if(results[i].AnswerBundleDate <= datePoints[m] &&
-                        results[i].AnswerBundleDate < datePoints[m + 1]) {
-                        
+                    if (results[i].AnswerBundleDate <= datePoints[k] &&
+                        results[i].AnswerBundleDate > datePoints[k + 1]) {
+                        console.log("Fits to current datePoints scope!");
+                        console.log("results[" + i + "].AnswerBundleDate: " + results[i].AnswerBundleDate);
+                        console.log("datePoints[" + k + "]: " + datePoints[k]);
+                        console.log("datePoints[" + k + "+ 1]: " + datePoints[k + 1]);
+                        console.log("masses[" + k + "] before: " + masses[k]);
+                        console.log("counts[" + k + "] before: " + counts[k]);
+                        console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue);
+                        masses[k] = masses[k] + results[i].AnswerValue;
+                        counts[k]++;
+                        console.log("masses[" + k + "] after: " + masses[k]);
+                        console.log("counts[" + k + "] after: " + counts[k]);
                     }
                 }
-                totalmass = mass + results[i].AnswerValue;
-                count++;
             }
         }
-        
-        console.log("mass: " + mass);
-        console.log("count: " + count);
-        average = mass / count;
-        return average;
-    };
 
+        if (masses.length === counts.length) {
+            for (var q = 0; q < masses.length; q++) {
+                if (masses[q] >= 1 && counts[q] >= 1) {
+                    averages[q] = masses[q] / counts[q];
+                }
+                console.log("masses[" + q + "]: " + masses[q]);
+                console.log("counts[" + q + "]: " + counts[q]);
+                console.log("averages[" + q + "]: " + averages[q]);
+
+            }
+        } else {
+            alert("Error in ResultService.getAveragesForAll()!");
+            console.log("masses.length and counts.length are NOT same!");
+        }
+        
+        return averages;
+    };
+    /*
     var getAveragesForSingle = function (questionId, answererTypeId) {
         // TODO: CORRECT THIS!
         var now = new Date();
@@ -94,7 +108,7 @@ app.service('ResultService', function () {
                             answerMasses[w] = answerMasses[w] + results[w].AnswerValue;
                             answerCounts[w]++;
                         }
-                    }*/
+                    }
                     // var usedResults = [];
                     // usedResults.push(r);
                     // RemoveUsedResults
@@ -102,7 +116,8 @@ app.service('ResultService', function () {
                 }
             }
             console.log("rightResults: " + rightResults);
-        };
+};
+        
         var calculateAverages = function() {
             for (var i = 0; i < answerMasses.length; i++) {
                 averages[i] = answerMasses[i] / answerCounts[i];
@@ -112,16 +127,17 @@ app.service('ResultService', function () {
         calculateAverages();
         return averages;
     };
-
+    */
     var reset = function () {
         results.length = 0;
     };
+    
     // TODO: UPDATE THIS
     return {
         getResults: getResults,
         setResults: setResults,
-        getAverage: getAverage,
-        getAverages: getAverages,
+        getAveragesForAll: getAveragesForAll,
+    //    getAveragesForSingle: getAveragesForSingle,
         reset: reset
     };
 });

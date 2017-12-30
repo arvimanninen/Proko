@@ -8,8 +8,8 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
 
     var question1 = QuestionService.getQuestion(0);
     var question2 = QuestionService.getQuestion(1);
-    var question1Average = ResultService.getAverage(question1.QuestionID);
-    var question2Average = ResultService.getAverage(question2.QuestionID);
+    var question1Average = ResultService.getAveragesForAll(question1.QuestionID);
+    var question2Average = ResultService.getAveragesForAll(question2.QuestionID);
     console.log("question1Average: " + question1Average);
     console.log("question2Average: " + question2Average);
     /*
