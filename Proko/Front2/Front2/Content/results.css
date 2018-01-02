@@ -28,6 +28,12 @@
     margin: 0 auto; }
   .results-div .question-results-div .results-smiley {
     margin-bottom: 0; }
+  .results-div .question-results-div .chart-doughnut {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
 
 .popup-div {
   margin: 40px auto 16px; }
