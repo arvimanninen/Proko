@@ -2,6 +2,7 @@
 
 app.service('ResultService', function () {
     var results = [];
+    var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
 
     var Result = function (nQuestionID, nAnswerBundleDateMs, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
         this.QuestionID = nQuestionID;
@@ -31,7 +32,6 @@ app.service('ResultService', function () {
         var masses = [0.0, 0.0, 0.0, 0.0, 0.0];
         var counts = [0.0, 0.0, 0.0, 0.0, 0.0];
         var averages = [0.0, 0.0, 0.0, 0.0, 0.0];
-        var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
         // CALCULATE RIGHT DATE POINTS
         var daysSinceNow = 0;
         for (var m = 0; m < datePoints.length; m++) {
@@ -128,6 +128,10 @@ app.service('ResultService', function () {
         return averages;
     };
     */
+    var getDatePoints = function () {
+        return datePoints;
+    };
+
     var reset = function () {
         results.length = 0;
     };
@@ -137,6 +141,7 @@ app.service('ResultService', function () {
         getResults: getResults,
         setResults: setResults,
         getAveragesForAll: getAveragesForAll,
+        getDatePoints: getDatePoints,
     //    getAveragesForSingle: getAveragesForSingle,
         reset: reset
     };

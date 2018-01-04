@@ -7,11 +7,22 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     };
 
     var question1 = QuestionService.getQuestion(0);
-    var question2 = QuestionService.getQuestion(1);
-    var question1Average = ResultService.getAveragesForAll(question1.QuestionID);
-    var question2Average = ResultService.getAveragesForAll(question2.QuestionID);
-    console.log("question1Average: " + question1Average);
-    console.log("question2Average: " + question2Average);
+    // var question2 = QuestionService.getQuestion(1);
+    var question1Averages = ResultService.getAveragesForAll(question1.QuestionID);
+    var dps = ResultService.getDatePoints();
+
+    //var question2Average = ResultService.getAveragesForAll(question2.QuestionID);
+    for (var i = 0; i < question1Averages.length; i++) {
+        console.log("question1Averages[" + i + "]: " + question1Averages[i]);
+    }
+
+    var getDayAndMonthString = function (dateObject) {
+        var day = dateObject.getDate();
+        var month = dateObject.getMonth() + 1;
+        var str = day + "." + month + ".";
+        console.log("str: " + str);
+        return str;
+    };
     /*
     var AverageResultSet = function (nAnswererTypeName, nAverages) {
         this.answererTypeName = nAnswererTypeName;
@@ -47,9 +58,11 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     //$("#canvas1").parentNode.style.height = '400px';
 
     that.chart1 = {
-        labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
-        series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
-        data: [[3.4, 3.1, 3.7, 4.5, 4.0], [2.2, 3.0, 3.4, 3.1, 3.7], [3.6, 3.2, 4.0, 3.7, 4.3], [2.5, 2.4, 3.0, 2.8, 3.2]],
+        labels: [getDayAndMonthString(dps[0]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[4])],
+        //series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
+        series: ['Testiseries'], // THIS DOESN'T WORK!
+        // TODO: CHANGE THIS TO question1Averages
+        data: [question1Averages[0], question1Averages[1], question1Averages[2], question1Averages[3], question1Averages[4]],
         options: {
             scales: {
                 yAxes: [

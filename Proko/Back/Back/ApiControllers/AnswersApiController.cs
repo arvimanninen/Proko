@@ -231,7 +231,7 @@ namespace Back.ApiControllers
                       };
 
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
-
+            // TODO: CHANGE absoliteScaleMax TO ALWAYS 5
             double absoluteScaleMax = -2;
             foreach(AnswerResultTemp art in resultTemps)
             {
