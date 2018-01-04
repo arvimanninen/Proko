@@ -12,6 +12,13 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
         data: [[2.4, 3.2, 3.7, 3.3, 4.0]],
         colors: ['#8ed791'],
+        datasetOverride: [
+            {
+                pointRadius: 4,
+                pointHoverRadius: 4,
+                pointHoverBorderColor: "#ffffff",
+            }
+        ],
         options: {
             scales: {
                 yAxes: [
@@ -39,8 +46,22 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
 
     $scope.chart2 = {
         labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
-        data: [1, 9, 5, 11],
-        colors: ['#f7ab98', '#f1c18e', '#ceda97','#8ed791'],
+        data: [3, 5, 7, 11],
+        colors: [
+            {
+                backgroundColor: '#f7ab98',
+                pointBackgroundColor: '#f7ab98'
+            }, {
+                backgroundColor: '#f1c18e',
+                pointBackgroundColor: '#f1c18e'
+            }, {
+                backgroundColor: '#ceda97',
+                pointBackgroundColor: '#ceda97'
+            }, {
+                backgroundColor: '#8ed791',
+                pointBackgroundColor: '#8ed791'
+            }
+        ],
         options: {
             legend: {
                 display: false
@@ -71,7 +92,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
 
     $scope.chart3 = {
         labels: ['Vaihtoehto 1', 'Vaihtoehto 2', 'Vaihtoehto 3', 'Vaihtoehto 4'],
-        data: [3, 9, 7, 1],
+        data: [2, 6, 7, 1],
         colors: ['rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)'],
         options: {
             scales: {
