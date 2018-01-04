@@ -6,9 +6,51 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
         $location.path("/start");
     };
 
-    $scope.answerCount = 20;
-
     $scope.chart1 = {
+        labels: ['Rakennusmies', 'Sähkömies', 'LVI-asentaja', 'Putkimies'],
+        data: [10, 4, 7, 2],
+        colors: ['rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)'],
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        min: 0,
+                        mirror: true,
+                        fontSize: 18,
+                        padding: -10
+                    },
+                    categoryPercentage: 1
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        display: false,
+                        beginAtZero: true,
+                        min: 0
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            },
+            title: {
+                display: false
+            },
+            barShowStroke: false,
+            barStrokeWidth: 10,
+            barValueSpacing: 10
+        }
+    };
+
+
+    $scope.chart2 = {
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
         data: [[2.4, 3.2, 3.7, 3.3, 4.0]],
         colors: ['#8ed791'],
@@ -16,7 +58,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
             {
                 pointRadius: 4,
                 pointHoverRadius: 4,
-                pointHoverBorderColor: "#ffffff",
+                pointHoverBorderColor: "#ffffff"
             }
         ],
         options: {
@@ -44,7 +86,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
         }
     };
 
-    $scope.chart2 = {
+    $scope.chart3 = {
         labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
         data: [3, 5, 7, 11],
         colors: [
@@ -89,47 +131,7 @@ app.controller('questionnaireResultsCtrl', function questionnaireResultsCtrl($sc
             }
         }
     };
-
-    $scope.chart3 = {
-        labels: ['Vaihtoehto 1', 'Vaihtoehto 2', 'Vaihtoehto 3', 'Vaihtoehto 4'],
-        data: [2, 6, 7, 1],
-        colors: ['rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)'],
-        options: {
-            scales: {
-                yAxes: [{
-                    gridLines: {
-                        display: false,
-                        drawBorder: false
-                    },
-                    ticks: {
-                        min: 0,
-                        mirror: true,
-                        fontSize: 18,
-                        padding: -10
-                    }
-                }],
-                xAxes: [{
-                    gridLines: {
-                        display: false,
-                        drawBorder: false
-                    },
-                    ticks: {
-                        display: false,
-                        min: 0
-                    }
-                }]
-            },
-            legend: {
-                display: false
-            },
-            title: {
-                display: false,
-            },
-            barShowStroke: false,
-            barStrokeWidth: 10,
-            barValueSpacing: 0
-        }
-    };
+  
 
     $scope.chartxx = {
         labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
