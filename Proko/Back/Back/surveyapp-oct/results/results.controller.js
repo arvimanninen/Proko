@@ -5,9 +5,18 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     that.toStart = function () {
         $location.path("/start");
     };
-
+    /*
+    // COPIED TO CTRL
     var question1 = QuestionService.getQuestion(0);
     // var question2 = QuestionService.getQuestion(1);
+    
+    
+
+    
+
+    
+
+    // COPIED TO CTRL
     var question1Averages = ResultService.getAveragesForAll(question1.QuestionID);
     var dps = ResultService.getDatePoints();
 
@@ -32,6 +41,8 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         }
     };
 
+
+    // TODO: MOVE TO ResultChartLineAllCtrl
     var question1 = QuestionService.getQuestion(0);
     var question2 = QuestionService.getQuestion(1);
     console.log("question1.QuestionID: " + question1.QuestionID);
@@ -52,17 +63,18 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         averageResultSets1.push(ars1);
         averageResultSets2.push(ars2);
     }
-    */
+    
 
 
     //$("#canvas1").parentNode.style.height = '400px';
 
+    // COPIED TO CTRL
     that.chart1 = {
-        labels: [getDayAndMonthString(dps[0]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[4])],
+        labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
         //series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
         series: ['Testiseries'], // THIS DOESN'T WORK!
         // TODO: CHANGE THIS TO question1Averages
-        data: [question1Averages[0], question1Averages[1], question1Averages[2], question1Averages[3], question1Averages[4]],
+        data: [question1Averages[4], question1Averages[3], question1Averages[2], question1Averages[1], question1Averages[0]],
         options: {
             scales: {
                 yAxes: [
@@ -122,5 +134,6 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
             }
         }
     };
+    */
 
 });

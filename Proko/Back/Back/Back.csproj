@@ -357,6 +357,12 @@
     <Content Include="surveyapp-oct\error\error.template.html" />
     <Content Include="surveyapp-oct\module.js" />
     <Content Include="surveyapp-oct\buttons-slider\buttons-slider.component.js" />
+    <Content Include="surveyapp-oct\result-chart-line-single\result-chart-line-single.component.js" />
+    <Content Include="surveyapp-oct\result-chart-line-single\result-chart-line-single.controller.js" />
+    <Content Include="surveyapp-oct\result-chart-line-single\result-chart-line-single.template.html" />
+    <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.component.js" />
+    <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.controller.js" />
+    <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.template.html" />
     <Content Include="surveyapp-oct\results\results.template.html" />
     <Content Include="surveyapp-oct\Vanhat viewit\buttons-slider.template.html" />
     <Content Include="surveyapp-oct\buttons-smileys\buttons-smileys.component.js" />
