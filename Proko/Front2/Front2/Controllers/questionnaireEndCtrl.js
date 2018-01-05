@@ -1,13 +1,13 @@
 ﻿'use strict';
 
-app.controller('question3Ctrl', function question3Ctrl($scope, $location) {
+app.controller('questionnaireEndCtrl', function questionnaireEndCtrl($scope, $location) {
 
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();
         var navbtnHeight = wrapperHeight - containerHeight;
-        if ((navbtnHeight) < 64) {
-            navbtnHeight = 52
+        if (navbtnHeight < 64) {
+            navbtnHeight = 52;
         } else {
             navbtnHeight = navbtnHeight - 12;
         }
@@ -15,12 +15,8 @@ app.controller('question3Ctrl', function question3Ctrl($scope, $location) {
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
 
-    $scope.previousView = function () {
-        $location.path("/question2");
-    };
-
-    $scope.setAnswers = function () {
-        $location.path("/questionnaireEnd");
+    $scope.end = function () {
+        $location.path("/questionnaireResults");
     };
 
 });
