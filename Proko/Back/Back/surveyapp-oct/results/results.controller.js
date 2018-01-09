@@ -5,12 +5,19 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     that.toStart = function () {
         $location.path("/start");
     };
+    that.componentNames = ["result-chart-line-single", "result-chart-line-single"];
+
+    
     /*
     // COPIED TO CTRL
     var question1 = QuestionService.getQuestion(0);
     // var question2 = QuestionService.getQuestion(1);
-    
-    
+    // var question3 = QuestionService.getQuestion(2);
+    // 
+    // if(question1.QuestionMethodValue === blabla) {
+        
+    }
+
 
     
 
