@@ -1,8 +1,9 @@
 ﻿'use strict';
 
-app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererTypeService, ResultService) {
+app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererTypeService, ResultService, RunResultsService) {
     var that = this;
-    var question1 = QuestionService.getQuestion(0);
+
+    var currentQuestion = QuestionService.getQuestion();
     var question1Averages = ResultService.getAveragesForAll(question1.QuestionID);
     var dps = ResultService.getDatePoints();
 

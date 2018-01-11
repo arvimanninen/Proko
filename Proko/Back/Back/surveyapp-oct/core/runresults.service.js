@@ -1,25 +1,31 @@
 ﻿' use strict';
 app.service('RunResultsService', function () {
-    var resultCount = 0;
-    var currentResultCount = 0;
+    // first index = 0
+    var maxChartIndex = -1;
+    var currentChartIndex = 0;
 
-    var getResultCount = function () {
-        return resultCount;
+    var getMaxChartIndex = function () {
+        return maxChartIndex;
     };
-    var setResultCount = function (nResultCount) {
-        resultCount = nResultCount;
+    var setMaxChartIndex = function (nMaxChartIndex) {
+        maxChartIndex = nMaxChartIndex;
     };
-    var getCurrentResultCount = function () {
-        return currentResultCount;
+    var getCurrentChartIndex = function () {
+        return currentChartIndex;
     };
-    var setCurrentResultCount = function (nCurrentResultCount) {
-        currentResultCount = nCurrentResultCount;
+    var setCurrentChartIndex = function (nCurrentChartIndex) {
+        currentChartIndex = nCurrentChartIndex;
+    };
+    var reset = function () {
+        maxChartIndex = -1;
+        currentChartIndex = 0;
     };
 
     return {
-        getResultCount: getResultCount,
-        setResultCount: setResultCount,
-        getCurrentResultCount: getCurrentResultCount,
-        setCurrentResultCount: setCurrentResultCount
+        getMaxChartIndex: getMaxChartIndex,
+        setMaxChartIndex: setMaxChartIndex,
+        getCurrentChartIndex: getCurrentChartIndex,
+        setCurrentChartIndex: setCurrentChartIndex,
+        reset: reset
     };
 });

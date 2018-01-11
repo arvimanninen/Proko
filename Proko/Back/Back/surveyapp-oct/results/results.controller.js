@@ -1,28 +1,60 @@
 ﻿'use strict';
 
-app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService) {
+app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService, RunResultsService) {
     var that = this;
     that.toStart = function () {
         $location.path("/start");
     };
-    that.componentNames = ["result-chart-line-single", "result-chart-line-single"];
+    // CHART INDEXES - 0,1,2 - THREE CHARTS TOTAL
+    var allQuestions = QuestionService.getQuestions();
+    var maxChartIndex = allQuestions.length - 1;
+    RunResultsService.setMaxChartIndex(maxChartIndex);
+    // var questions = [];
+    that.componentNames = [];
+    for (var i = 0; i <= maxChartIndex; i++) {
+        //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
+        var qmv = allQuestions[i].QuestionMethodValue;
+        console.log("qmv - index[" + i + "]:" + qmv);
+        if (qmv === "buttons-smileys") {
+            that.componentNames.push("result-chart-pie");
+        } else if (qmv === "buttons-slider") {
+            that.componentNames.push("result-chart-bar");
+        } else {
+            that.componentNames.push("result-chart-line-single");
+        }
+    }
+
+    for (var k = 0; k < that.componentNames.length; k++) {
+        console.log("that.componentNames[" + k + "]: " + that.componentNames[k]);
+    }
+
+    /*
+    for (var i = 0; i <= maxChartIndex; i++) {
+        chartQuestions.push(QuestionService.getQuestion(i));
+    }
+    console.log("chartQuestions.length: " + chartQuestions.length);
+    that.componentNames = [];
+    for (var k = 0; k < chartQuestions.length; k++) {
+        var componentName = "";
+        if()
+
+    }
+    */
+
+    
+
+
+    
+
+    
+
+    
+
+
+    
 
     
     /*
-    // COPIED TO CTRL
-    var question1 = QuestionService.getQuestion(0);
-    // var question2 = QuestionService.getQuestion(1);
-    // var question3 = QuestionService.getQuestion(2);
-    // 
-    // if(question1.QuestionMethodValue === blabla) {
-        
-    }
-
-
-    
-
-    
-
     // COPIED TO CTRL
     var question1Averages = ResultService.getAveragesForAll(question1.QuestionID);
     var dps = ResultService.getDatePoints();
@@ -39,6 +71,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         console.log("str: " + str);
         return str;
     };
+    */
     /*
     var AverageResultSet = function (nAnswererTypeName, nAverages) {
         this.answererTypeName = nAnswererTypeName;
