@@ -1,6 +1,7 @@
-﻿// 'use strict';
+﻿// TODO: TEST AND ENABLE
+// 'use strict';
 
-// SOURCE: https://stackoverflow.com/questions/27574333/dynamic-tag-generation-in-angular
+// FROM: https://stackoverflow.com/questions/27574333/dynamic-tag-generation-in-angular
 app.directive('dynamicElement', function ($compile) {
     return {
         restrict: 'E',

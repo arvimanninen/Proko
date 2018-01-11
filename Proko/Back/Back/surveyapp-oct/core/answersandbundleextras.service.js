@@ -1,6 +1,7 @@
 ﻿'use strict';
 app.service('AnswersAndBundleExtrasService', function () {
     var answersAndBundleExtras = null;
+
     var AnswersAndBundleExtrasDTO = function (nAnswerDtos, nExtrasDto) {
         this.AnswerDtos = [];
         this.AnswerBundleExtrasDto = nExtrasDto;
@@ -17,6 +18,7 @@ app.service('AnswersAndBundleExtrasService', function () {
     var reset = function () {
         answersAndBundleExtras = null;
     };
+
     return {
         getAnswersAndBundleExtras: getAnswersAndBundleExtras,
         setAnswersAndBundleExtras: setAnswersAndBundleExtras,

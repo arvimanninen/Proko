@@ -344,7 +344,7 @@
     <Content Include="surveyapp-oct\core\answersandbundleextras.service.js" />
     <Content Include="surveyapp-oct\core\dynamic-element.directive.js" />
     <Content Include="surveyapp-oct\core\result.service.js" />
-    <Content Include="surveyapp-oct\core\resultrun.service.js" />
+    <Content Include="surveyapp-oct\core\runresults.service.js" />
     <Content Include="surveyapp-oct\core\styles\frame.css" />
     <Content Include="surveyapp-oct\core\styles\frame.min.css" />
     <Content Include="surveyapp-oct\core\styles\rangeslider.css" />

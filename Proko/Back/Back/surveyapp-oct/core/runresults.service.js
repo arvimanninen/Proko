@@ -1,5 +1,5 @@
 ﻿' use strict';
-app.service('ResultRunService', function () {
+app.service('RunResultsService', function () {
     var resultCount = 0;
     var currentResultCount = 0;
 

@@ -24,7 +24,7 @@ app.service('ResultService', function () {
         }
     };
 
-    // TODO: TEST THIS!
+    
     var getAveragesForAll = function (questionId) {
         var totalMass = 0.0;
         var totalCount = 0.0;
@@ -43,7 +43,6 @@ app.service('ResultService', function () {
             if (results[i].QuestionID === questionId) {
                 // datePoints.length or datePoints.length - 1 ????
                 for (var k = 0; k < datePoints.length - 1; k++) {
-                    // TODO: CHECK ARE THESE STATEMENTS RIGHT!
                     if (results[i].AnswerBundleDate <= datePoints[k] &&
                         results[i].AnswerBundleDate > datePoints[k + 1]) {
                         console.log("Fits to current datePoints scope!");
