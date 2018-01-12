@@ -16,9 +16,9 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         var qmv = allQuestions[i].QuestionMethodValue;
         console.log("qmv - index[" + i + "]:" + qmv);
         if (qmv === "buttons-smileys") {
-            that.componentNames.push("result-chart-pie");
+            that.componentNames.push("result-chart-line-single");
         } else if (qmv === "buttons-slider") {
-            that.componentNames.push("result-chart-bar");
+            that.componentNames.push("result-chart-line-single");
         } else {
             that.componentNames.push("result-chart-line-single");
         }
