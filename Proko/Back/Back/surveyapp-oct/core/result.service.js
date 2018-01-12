@@ -3,6 +3,7 @@
 app.service('ResultService', function () {
     var results = [];
     var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
+    var datePointsModified = false;
 
     var Result = function (nQuestionID, nAnswerBundleDateMs, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
         this.QuestionID = nQuestionID;
@@ -34,28 +35,30 @@ app.service('ResultService', function () {
         var averages = [0.0, 0.0, 0.0, 0.0, 0.0];
         // CALCULATE RIGHT DATE POINTS
         var daysSinceNow = 0;
-        for (var m = 0; m < datePoints.length; m++) {
-            datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
-            daysSinceNow = daysSinceNow + 7;
+        if (datePointsModified === false) {
+            for (var m = 0; m < datePoints.length; m++) {
+                datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
+                daysSinceNow = daysSinceNow + 7;
+            }
+            datePointsModified = true;
         }
-
         for (var i = 0; i < results.length; i++) {
             if (results[i].QuestionID === questionId) {
-                // datePoints.length or datePoints.length - 1 ????
                 for (var k = 0; k < datePoints.length - 1; k++) {
                     if (results[i].AnswerBundleDate <= datePoints[k] &&
                         results[i].AnswerBundleDate > datePoints[k + 1]) {
-                        console.log("Fits to current datePoints scope!");
+                        /*console.log("Fits to current datePoints scope!");
                         console.log("results[" + i + "].AnswerBundleDate: " + results[i].AnswerBundleDate);
                         console.log("datePoints[" + k + "]: " + datePoints[k]);
                         console.log("datePoints[" + k + "+ 1]: " + datePoints[k + 1]);
                         console.log("masses[" + k + "] before: " + masses[k]);
                         console.log("counts[" + k + "] before: " + counts[k]);
                         console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue);
+                        */
                         masses[k] = masses[k] + results[i].AnswerValue;
                         counts[k]++;
-                        console.log("masses[" + k + "] after: " + masses[k]);
-                        console.log("counts[" + k + "] after: " + counts[k]);
+                        // console.log("masses[" + k + "] after: " + masses[k]);
+                        // console.log("counts[" + k + "] after: " + counts[k]);*/
                     }
                 }
             }
@@ -133,6 +136,12 @@ app.service('ResultService', function () {
 
     var reset = function () {
         results.length = 0;
+        // TODO: TEST THIS
+        datePoints.length = 0;
+        datePointsModified = false;
+        for (var i = 0; i < 6; i++) {
+            datePoints.push(new Date());
+        }
     };
     
     // TODO: UPDATE THIS
