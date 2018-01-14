@@ -7,10 +7,15 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     };
     // CHART INDEXES - 0,1,2 - THREE CHARTS TOTAL
     var allQuestions = QuestionService.getQuestions();
+    console.log("allQuestions.length: " + allQuestions.length);
+    // TODO: REMOVE NEXT!!!!;
+    // allQuestions = [QuestionService.getQuestions(0)];
+
     var maxChartIndex = allQuestions.length - 1;
     RunResultsService.setMaxChartIndex(maxChartIndex);
     // var questions = [];
     that.componentNames = [];
+    // TAKE = -mark off?
     for (var i = 0; i <= maxChartIndex; i++) {
         //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
         var qmv = allQuestions[i].QuestionMethodValue;

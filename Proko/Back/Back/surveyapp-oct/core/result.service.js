@@ -65,6 +65,7 @@ app.service('ResultService', function () {
         }
 
         if (masses.length === counts.length) {
+            // < OR <=
             for (var q = 0; q < masses.length; q++) {
                 if (masses[q] >= 1 && counts[q] >= 1) {
                     averages[q] = masses[q] / counts[q];
