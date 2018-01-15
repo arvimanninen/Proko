@@ -4,6 +4,7 @@ app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererT
     var that = this;
     var chartIndex = RunResultsService.getCurrentChartIndex();
     var maxChartIndex = RunResultsService.getMaxChartIndex();
+
     if (maxChartIndex < 0) {
         console.log("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
         alert("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
@@ -14,12 +15,14 @@ app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererT
     }
     console.log("ResultChartLineSingleCtrl.chartIndex: " + chartIndex);
     console.log("ResultChartLineSingleCtrl.maxChartIndex: " + maxChartIndex);
+
     var question = QuestionService.getQuestion(chartIndex);
     var questionId = question.QuestionID;
     console.log("ResultChartLineSingleCtrl.question.QuestionID: " + question.QuestionID);
     that.questionText = question.QuestionText;
     var questionAverages = ResultService.getAveragesForAll(question.QuestionID);
     var dps = ResultService.getDatePoints();
+
     if (questionAverages.length !== 5) {
         console.log("Invalid questionAverages.length @ ResultChartlineSingleCtrl!")
         alert("Invalid questionAverages.length @ ResultChartlineSingleCtrl!");
@@ -44,6 +47,7 @@ app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererT
 
     chartIndex++;
     RunResultsService.setCurrentChartIndex(chartIndex);
+
     that.chart1 = {
         labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
         //series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],

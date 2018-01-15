@@ -39,17 +39,20 @@ app.service('ResultService', function () {
             for (var m = 0; m < datePoints.length; m++) {
                 datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
                 daysSinceNow = daysSinceNow + 7;
+                console.log("datePoints[" + m + "]:" + datePoints[m]);
             }
             datePointsModified = true;
         }
         for (var i = 0; i < results.length; i++) {
             if (results[i].QuestionID === questionId) {
                 for (var k = 0; k < datePoints.length - 1; k++) {
+                    // JUST MODIFIED FOR TESTING, <= && > CHANGED TO < && =>
                     if (results[i].AnswerBundleDate <= datePoints[k] &&
                         results[i].AnswerBundleDate > datePoints[k + 1]) {
-                        /*console.log("Fits to current datePoints scope!");
+                        console.log("k: " + k);
+                        console.log("Fits to current datePoints scope!");
                         console.log("results[" + i + "].AnswerBundleDate: " + results[i].AnswerBundleDate);
-                        console.log("datePoints[" + k + "]: " + datePoints[k]);
+                        /*console.log("datePoints[" + k + "]: " + datePoints[k]);
                         console.log("datePoints[" + k + "+ 1]: " + datePoints[k + 1]);
                         console.log("masses[" + k + "] before: " + masses[k]);
                         console.log("counts[" + k + "] before: " + counts[k]);

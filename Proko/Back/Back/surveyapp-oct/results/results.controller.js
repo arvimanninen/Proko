@@ -10,12 +10,19 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     console.log("allQuestions.length: " + allQuestions.length);
     // TODO: REMOVE NEXT!!!!;
     // allQuestions = [QuestionService.getQuestions(0)];
-
-    var maxChartIndex = allQuestions.length - 1;
+    
+    var maxChartIndex = 0;
     RunResultsService.setMaxChartIndex(maxChartIndex);
     // var questions = [];
-    that.componentNames = [];
+    
+
+
+
+
+    that.componentNames = ["result-chart-line-single"];
+    
     // TAKE = -mark off?
+    /*
     for (var i = 0; i <= maxChartIndex; i++) {
         //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
         var qmv = allQuestions[i].QuestionMethodValue;
@@ -28,7 +35,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
             that.componentNames.push("result-chart-line-single");
         }
     }
-
+    */
     for (var k = 0; k < that.componentNames.length; k++) {
         console.log("that.componentNames[" + k + "]: " + that.componentNames[k]);
     }

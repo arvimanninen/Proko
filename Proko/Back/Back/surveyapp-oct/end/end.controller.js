@@ -15,6 +15,7 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
     var postAnswersAndExtras = DataFactory.postSurveyAnswers.save(AnswersAndBundleExtrasService.getAnswersAndBundleExtras(),
         function () {
             var resultDtos = DataFactory.getResultsToCq.query(function () {
+                console.log("resultDtos.length: " + resultDtos.length);
                 ResultService.setResults(resultDtos);
                 // Ensimmäinen kysymys
 
