@@ -5,37 +5,39 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     that.toStart = function () {
         $location.path("/start");
     };
-    // CHART INDEXES - 0,1,2 - THREE CHARTS TOTAL
+    // FOR PRODUCTION
     var allQuestions = QuestionService.getQuestions();
-    console.log("allQuestions.length: " + allQuestions.length);
-    // TODO: REMOVE NEXT!!!!;
-    // allQuestions = [QuestionService.getQuestions(0)];
-    
-    var maxChartIndex = 0;
+    // console.log("allQuestions.length: " + allQuestions.length);
+    // FOR TESTING
+    // var firstThreeQuestions = [QuestionService.getQuestion(0), QuestionService.getQuestion(1), QuestionService.getQuestion(2)];
+    // FOR PRODUCTION
+    var maxChartIndex = allQuestions.length - 1;
+    // FOR TESTING
+    // var maxChartIndex = firstThreeQuestions.length - 1;
     RunResultsService.setMaxChartIndex(maxChartIndex);
     // var questions = [];
     
-
-
-
-
-    that.componentNames = ["result-chart-line-single"];
+    var getComponentNames = function (questions) {
+        var componentNames = [];
+        for (var i = 0; i < questions.length; i++) {
+            //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
+            var qmv = questions[i].QuestionMethodValue;
+            console.log("qmv - index[" + i + "]:" + qmv);
+            if (qmv === "buttons-smileys") {
+                componentNames.push("result-chart-line-single");
+            } else if (qmv === "buttons-slider") {
+                componentNames.push("result-chart-line-single");
+            } else {
+                componentNames.push("result-chart-line-single");
+            }
+        }
+        return componentNames;
+    }
+    // TODO: CHANGE firstThreeQuestions -> allQuestions FOR PRODUCTION
+    that.componentNames = getComponentNames(allQuestions);
     
     // TAKE = -mark off?
-    /*
-    for (var i = 0; i <= maxChartIndex; i++) {
-        //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
-        var qmv = allQuestions[i].QuestionMethodValue;
-        console.log("qmv - index[" + i + "]:" + qmv);
-        if (qmv === "buttons-smileys") {
-            that.componentNames.push("result-chart-line-single");
-        } else if (qmv === "buttons-slider") {
-            that.componentNames.push("result-chart-line-single");
-        } else {
-            that.componentNames.push("result-chart-line-single");
-        }
-    }
-    */
+
     for (var k = 0; k < that.componentNames.length; k++) {
         console.log("that.componentNames[" + k + "]: " + that.componentNames[k]);
     }
