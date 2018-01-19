@@ -62,24 +62,24 @@ app.service('ResultService', function () {
             referenceValues.push(scaleValueToFive(k, targetMaxValue));
             resultCounts.push(0);
         }
-        console.log("referenceValues.length: " + referenceValues.length);
-        console.log("resultCounts.length: " + resultCounts.length);
+        // console.log("referenceValues.length: " + referenceValues.length);
+        // console.log("resultCounts.length: " + resultCounts.length);
 
-        for (var t = 0; t < referenceValues.length; t++) {
+        /*for (var t = 0; t < referenceValues.length; t++) {
             console.log("referenceValues[" + t + "]: " + referenceValues[t]);
             
-        }
+        }*/
 
         for (var i = 0; i < results.length; i++) {
             if (results[i].QuestionID === questionId) {
-                console.log("results[" + i + "].QuestionID matches questionId: " + questionId);
+                // console.log("results[" + i + "].QuestionID matches questionId: " + questionId);
                 for (var m = 0; m < referenceValues.length; m++) {
-                    console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue)
-                    console.log("referenceValues[" + m + "]: " + referenceValues[m]);
+                    // console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue)
+                    // console.log("referenceValues[" + m + "]: " + referenceValues[m]);
                     // TODO: CHANGE == TO ===?
                     if (results[i].AnswerValue == referenceValues[m]) {
                         resultCounts[m]++;
-                        console.log("resultCounts[" + m + "]++!. New count: " + resultCounts[m]);
+                        // console.log("resultCounts[" + m + "]++!. New count: " + resultCounts[m]);
                     }
                 }
             }

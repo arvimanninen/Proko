@@ -1,10 +1,30 @@
 ﻿'use strict';
 
-app.controller('ResultChartPieCtrl', function ($location, QuestionService, AnswererTypeService, ResultService) {
+app.controller('ResultChartPieCtrl', function (QuestionService, ResultService, RunResultsService) {
     var that = this;
+    var chartIndex = RunResultsService.getCurrentChartIndex();
+    var maxChartIndex = RunResultsService.getMaxChartIndex();
+
+    if (maxChartIndex < 0) {
+        console.log("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
+        alert("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
+    }
+    if (chartIndex > maxChartIndex) {
+        console.log("Invalid chartIndex @ ResultChartLineSingleCtrl!");
+        alert("Invalid chartIndex @ ResultChartLineSingleCtrl!");
+    }
+
+    var question = QuestionService.getQuestion(chartIndex);
+    var maxResultValue = 4;
+    that.questionText = question.QuestionText;
+    var resultCounts = ResultService.getResultCounts(question.QuestionID, maxResultValue);
+
+    chartIndex++;
+    RunResultsService.setCurrentChartIndex(chartIndex);
+
     that.pieChart = {
         labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
-        data: [3, 5, 7, 11],
+        data: [resultCounts[0], resultCounts[1], resultCounts[2], resultCounts[3]],
         colors: [
             {
                 backgroundColor: '#f7ab98',
