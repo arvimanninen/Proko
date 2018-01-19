@@ -24,7 +24,72 @@ app.service('ResultService', function () {
             results.push(nr);
         }
     };
+    
+        /*
+        public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
+        {
+            // PREVENTS WRONG SCALING WHEN VALUE
+            if(value == 1)
+            {
+                return 1;
+            }
+            double valueD = Convert.ToDouble(value);
+            double currentMaxD = Convert.ToDouble(currentMax);
+            double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
+            return scaledValueD;
+        }
+        */
+    var getResultCounts = function (questionId, targetMaxValue) {
+        if ($.isNumeric(questionId) === false) {
+            console.log("ResultService.getResultCounts.questionId is not numeric!");
+            alert("ResultService.getResultCounts.questionId is not numeric!");
+        }
+        if ($.isNumeric(targetMaxValue) === false) {
+            console.log("ResultService.getResultCounts.targetMaxValue is not numeric!");
+            alert("ResultService.getResultCounts.targetMaxValue is not numeric!");
+        }
 
+        var scaleValueToFive = function (value, maxValue) {
+            if (value === 1) {
+                return 1.0;
+            }
+            return (5 / maxValue) * value;
+        };
+
+        var referenceValues = [];
+        var resultCounts = [];
+        for (var k = 1; k <= targetMaxValue; k++) {
+            referenceValues.push(scaleValueToFive(k, targetMaxValue));
+            resultCounts.push(0);
+        }
+        console.log("referenceValues.length: " + referenceValues.length);
+        console.log("resultCounts.length: " + resultCounts.length);
+
+        for (var t = 0; t < referenceValues.length; t++) {
+            console.log("referenceValues[" + t + "]: " + referenceValues[t]);
+            
+        }
+
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].QuestionID === questionId) {
+                console.log("results[" + i + "].QuestionID matches questionId: " + questionId);
+                for (var m = 0; m < referenceValues.length; m++) {
+                    console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue)
+                    console.log("referenceValues[" + m + "]: " + referenceValues[m]);
+                    // TODO: CHANGE == TO ===?
+                    if (results[i].AnswerValue == referenceValues[m]) {
+                        resultCounts[m]++;
+                        console.log("resultCounts[" + m + "]++!. New count: " + resultCounts[m]);
+                    }
+                }
+            }
+        }
+        console.log("all result counts calculated!");
+        for (var g = 0; g < resultCounts.length; g++) {
+            console.log("resultCounts[" + g + "]: " + resultCounts[g]);
+        }
+        return resultCounts;
+    };
     
     var getAveragesForAll = function (questionId) {
         var totalMass = 0.0;
@@ -155,6 +220,7 @@ app.service('ResultService', function () {
         setResults: setResults,
         getAveragesForAll: getAveragesForAll,
         getDatePoints: getDatePoints,
+        getResultCounts: getResultCounts,
     //    getAveragesForSingle: getAveragesForSingle,
         reset: reset
     };

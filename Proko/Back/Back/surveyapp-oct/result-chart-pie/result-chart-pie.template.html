@@ -1,10 +1,44 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
-
-</body>
-</html>
+﻿<div class="col-xs-12 col-sm-6 col-lg-4">
+    <div class="question-results-div">
+        <h4>Onko työturvallisuus otettu työmaalla hyvin huomioon?</h4>
+        <div class="piechart">
+            <canvas class="chart chart-doughnut"
+                    chart-labels="$ctrl.pieChart.labels"
+                    chart-data="$ctrl.pieChart.data"
+                    chart-colors="$ctrl.pieChart.colors"
+                    chart-options="$ctrl.pieChart.options"></canvas>
+        </div>
+        <div class="outer-smiley-div">
+            <div class="btn-group smiley-div results-smiley">
+                <div>
+                    <input id="q-a1" type="radio" name="question-1" disabled />
+                    <label for="q-a1" class="button-neg">
+                        <img src="core/images/smiley-sad.svg" alt="smiley angry" />
+                    </label>
+                    <h4>3</h4>
+                </div>
+                <div>
+                    <input id="q-a2" type="radio" name="question-1" disabled />
+                    <label for="q-a2" class="button-middle-neg">
+                        <img src="core/images/smiley-meh.svg" alt="smiley little sad" />
+                    </label>
+                    <h4>5</h4>
+                </div>
+                <div>
+                    <input id="q-a3" type="radio" name="question-1" disabled />
+                    <label for="q-a3" class="button-middle-pos">
+                        <img src="core/images/smiley-happy.svg" alt="smiley neutral" />
+                    </label>
+                    <h4>7</h4>
+                </div>
+                <div>
+                    <input id="q-a4" type="radio" name="question-1" disabled />
+                    <label for="q-a4" class="button-pos">
+                        <img src="core/images/smiley-very-happy.svg" alt="smiley happy" />
+                    </label>
+                    <h4>11</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

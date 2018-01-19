@@ -8,8 +8,10 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     // FOR PRODUCTION
     var allQuestions = QuestionService.getQuestions();
     // console.log("allQuestions.length: " + allQuestions.length);
+
     // FOR TESTING
     // var firstThreeQuestions = [QuestionService.getQuestion(0), QuestionService.getQuestion(1), QuestionService.getQuestion(2)];
+    var firstQuestion = [QuestionService.getQuestion(0)];
     // FOR PRODUCTION
     var maxChartIndex = allQuestions.length - 1;
     // FOR TESTING
@@ -23,8 +25,8 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
             //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
             var qmv = questions[i].QuestionMethodValue;
             console.log("qmv - index[" + i + "]:" + qmv);
-            if (qmv === "buttons-smileys") {
-                componentNames.push("result-chart-line-single");
+            if (qmv === "buttons-smileys" || qmv === "buttons-thumbs") {
+                componentNames.push("result-chart-pie");
             } else if (qmv === "buttons-slider") {
                 componentNames.push("result-chart-line-single");
             } else {
@@ -34,8 +36,8 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         return componentNames;
     }
     // TODO: CHANGE firstThreeQuestions -> allQuestions FOR PRODUCTION
-    that.componentNames = getComponentNames(allQuestions);
-    
+    that.componentNames = ["result-chart-pie"];
+    var resultCounts = ResultService.getResultCounts(firstQuestion[0].QuestionID, 4);
     // TAKE = -mark off?
 
     for (var k = 0; k < that.componentNames.length; k++) {
