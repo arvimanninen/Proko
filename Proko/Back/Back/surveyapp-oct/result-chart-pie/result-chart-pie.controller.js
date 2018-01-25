@@ -17,14 +17,15 @@ app.controller('ResultChartPieCtrl', function (QuestionService, ResultService, R
     var question = QuestionService.getQuestion(chartIndex);
     var maxResultValue = 4;
     that.questionText = question.QuestionText;
-    var resultCounts = ResultService.getResultCounts(question.QuestionID, maxResultValue);
+    that.ci = chartIndex;
+    that.resultCounts = ResultService.getResultCounts(question.QuestionID, maxResultValue);
 
     chartIndex++;
     RunResultsService.setCurrentChartIndex(chartIndex);
 
-    that.pieChart = {
+    that.chart3 = {
         labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
-        data: [resultCounts[0], resultCounts[1], resultCounts[2], resultCounts[3]],
+        data: [that.resultCounts[0], that.resultCounts[1], that.resultCounts[2], that.resultCounts[3]],
         colors: [
             {
                 backgroundColor: '#f7ab98',
@@ -48,17 +49,21 @@ app.controller('ResultChartPieCtrl', function (QuestionService, ResultService, R
                 yAxes: [
                     {
                         id: 'y-axis-1',
+                        // CHANGED TO FALSE
                         display: false,
                         type: 'linear',
                         position: 'left',
                         ticks: {
+                            // CHANGED TO FALSE AND BACK TO TRUE
                             display: false,
                             min: 0,
                             max: 5,
+                            // mirror: false ADDED
                             beginAtZero: true,
                             stepSize: 1.25
                         },
                         scaleLabel: {
+                            // CHANGED TO FALSE AND BACK TO TRUE
                             display: true,
                             labelString: "Tyytyväisyys"
                         }
@@ -67,4 +72,6 @@ app.controller('ResultChartPieCtrl', function (QuestionService, ResultService, R
             }
         }
     };
+
+    
 });

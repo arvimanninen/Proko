@@ -43,11 +43,11 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                     }
                 },
                 legend: {
-                    display: true,
+                    display: false,
                     position: 'bottom'
                 },
                 tooltips: {
-                    enabled: true
+                    enabled: false
                 },
                 hover: {
                     mode: null
