@@ -47,7 +47,47 @@ app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererT
 
     chartIndex++;
     RunResultsService.setCurrentChartIndex(chartIndex);
+    /*
 
+    */
+
+    that.chart1 = {
+        labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
+        data: [ [questionAverages[4], questionAverages[3], questionAverages[2], questionAverages[1], questionAverages[0]] ],
+        colors: ['#8ed791'],
+        datasetOverride: [
+            {
+                pointRadius: 4,
+                pointHoverRadius: 4,
+                pointHoverBorderColor: "#ffffff"
+            }
+        ],
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                        id: 'y-axis-1',
+                        display: true,
+                        type: 'linear',
+                        position: 'left',
+                        ticks: {
+                            display: false,
+                            min: 0,
+                            max: 5,
+                            beginAtZero: true,
+                            stepSize: 1.25
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Tyytyväisyys"
+                        }
+                    }
+                ]
+            }
+        }
+    };
+
+    /*
     that.chart1 = {
         labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
         //series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
@@ -77,4 +117,5 @@ app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererT
             }
         }
     };
+    */
 });
