@@ -1,5 +1,7 @@
 ﻿'use strict';
 
+// TODO: NEEDS LOT OF PERFORMANCE TWEAKING
+
 app.service('ResultService', function () {
     var results = [];
     var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
@@ -39,6 +41,17 @@ app.service('ResultService', function () {
             return scaledValueD;
         }
         */
+
+    var getResultCountByAnswererTypeId = function (answererTypeId) {
+        var resultCount = 0;
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].AnswererTypeID === answererTypeId) {
+                resultCount++;
+            }
+        }
+        return resultCount;
+    };
+
     var getResultCounts = function (questionId, targetMaxValue) {
         if ($.isNumeric(questionId) === false) {
             console.log("ResultService.getResultCounts.questionId is not numeric!");
@@ -221,6 +234,7 @@ app.service('ResultService', function () {
         getAveragesForAll: getAveragesForAll,
         getDatePoints: getDatePoints,
         getResultCounts: getResultCounts,
+        getResultCountByAnswererTypeId: getResultCountByAnswererTypeId,
     //    getAveragesForSingle: getAveragesForSingle,
         reset: reset
     };

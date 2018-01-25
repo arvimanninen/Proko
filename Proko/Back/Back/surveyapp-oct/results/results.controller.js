@@ -26,14 +26,14 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
             var qmv = questions[i].QuestionMethodValue;
             console.log("qmv - index[" + i + "]:" + qmv);
             if (qmv === "buttons-smileys") {
-                componentNames.push("result-chart-pie");
+                componentNames.push("result-chart-bar");
             } else {
                 componentNames.push("result-chart-line-single");
             }
         }
         return componentNames;
     };
-    // TODO: CHANGE firstThreeQuestions -> allQuestions FOR PRODUCTION
+
     that.componentNames = getComponentNames(allChosenQuestions);
     /*var resultCounts = ResultService.getResultCounts(QuestionService.getQuestion(4).QuestionID, 4);
     // TAKE = -mark off?
