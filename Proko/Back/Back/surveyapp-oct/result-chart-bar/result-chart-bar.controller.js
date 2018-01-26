@@ -34,7 +34,8 @@ app.controller('ResultChartBarCtrl', function (AnswererTypeService, ResultServic
                         min: 0,
                         mirror: true,
                         fontSize: 18,
-                        padding: -10
+                        // CHANGED FROM -10 TO 10
+                        padding: 10
                     },
                     categoryPercentage: 1
                 }],
