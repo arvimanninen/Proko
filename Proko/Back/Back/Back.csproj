@@ -332,9 +332,9 @@
     <Content Include="surveyapp-oct\buttons-checkbox\buttons-checkbox.component.js" />
     <Content Include="surveyapp-oct\buttons-checkbox\buttons-checkbox.controller.js" />
     <Content Include="surveyapp-oct\buttons-checkbox\buttons-checkbox.template.html" />
-    <Content Include="surveyapp-oct\buttons-radio\buttons-radio.component.js" />
-    <Content Include="surveyapp-oct\buttons-radio\buttons-radio.controller.js" />
-    <Content Include="surveyapp-oct\buttons-radio\buttons-radio.template.html" />
+    <Content Include="surveyapp-oct\answerer-buttons-radio\answerer-buttons-radio.component.js" />
+    <Content Include="surveyapp-oct\answerer-buttons-radio\answerer-buttons-radio.controller.js" />
+    <Content Include="surveyapp-oct\answerer-buttons-radio\answerer-buttons-radio.template.html" />
     <Content Include="surveyapp-oct\buttons-slider\buttons-slider.template.html" />
     <Content Include="surveyapp-oct\buttons-smileys\buttons-smileys.template.html" />
     <Content Include="surveyapp-oct\buttons-thumbs\buttons-thumbs.template.html" />

@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-app.controller('ButtonsRadioCtrl', function ($scope, $location) {
-
+app.controller('AnswererButtonsRadioCtrl', function (AnswererTypeService, AnswerBundleExtrasService, QuestionService, RunService) {
+    var that = this;
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();       
@@ -15,6 +15,13 @@ app.controller('ButtonsRadioCtrl', function ($scope, $location) {
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
 
+    that.answererTypes = AnswererTypeService.getAnswererTypes();
+    that.setAnswererType = function (answererTypeId) {
+        AnswerBundleExtrasService.setAnswererType(answererTypeId);
+    };
+    that.goToMainQuestions = function () {
+        $location.path(QuestionService.getQmvBySetIndex( RunService.getQuestionSetIndex() ));
+    };
     //$(window).resize(function () {
     //    var wrapperHeight = $("#wrapper").height();
     //    var containerHeight = $(".container").height();
@@ -23,11 +30,4 @@ app.controller('ButtonsRadioCtrl', function ($scope, $location) {
     //    $(".nav-btn-div").css("margin-top", navbtnHeight);
     //});
 
-    $scope.previousView = function () {
-        $location.path("/start");
-    };
-
-    $scope.setAnswers = function () {
-        $location.path("/questionCheckbox");
-    };
 });

@@ -60,6 +60,6 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     
 
     that.startSurvey = function () {
-        $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex()));
+        $location.path("/answerer-buttons-radio");
     };
 });
