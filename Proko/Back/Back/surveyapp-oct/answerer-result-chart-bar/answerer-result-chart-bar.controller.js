@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('ResultChartBarCtrl', function (AnswererTypeService, ResultService) {
+app.controller('AnswererResultChartBarCtrl', function (AnswererTypeService, ResultService) {
     var that = this;
 
     var answererTypes = AnswererTypeService.getAnswererTypes();
@@ -14,10 +14,6 @@ app.controller('ResultChartBarCtrl', function (AnswererTypeService, ResultServic
 
     console.log("ResultChartBarCtrl names.length: " + names.length);
     console.log("ResultChartBarCtrl resultCounts.length: " + resultCounts.length);
-    if (names.length !== resultCounts.length) {
-        console.log("names and resultCounts length don't match @ ResultChartBarCtrl");
-        alert("names and resultCounts length don't match @ ResultChartBarCtrl");
-    }
 
     that.chart1 = {
         labels: names,

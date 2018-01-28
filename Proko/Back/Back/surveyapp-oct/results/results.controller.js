@@ -20,13 +20,13 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     // var questions = [];
     
     var getComponentNames = function (questions) {
-        var componentNames = [];
+        var componentNames = ["answerer-result-chart-bar"];
         for (var i = 0; i < questions.length; i++) {
             //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
             var qmv = questions[i].QuestionMethodValue;
             console.log("qmv - index[" + i + "]:" + qmv);
             if (qmv === "buttons-smileys") {
-                componentNames.push("result-chart-bar");
+                componentNames.push("result-chart-pie");
             } else {
                 componentNames.push("result-chart-line-single");
             }

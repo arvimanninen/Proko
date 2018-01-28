@@ -359,9 +359,9 @@
     <Content Include="surveyapp-oct\error\error.template.html" />
     <Content Include="surveyapp-oct\module.js" />
     <Content Include="surveyapp-oct\buttons-slider\buttons-slider.component.js" />
-    <Content Include="surveyapp-oct\result-chart-bar\result-chart-bar.component.js" />
-    <Content Include="surveyapp-oct\result-chart-bar\result-chart-bar.controller.js" />
-    <Content Include="surveyapp-oct\result-chart-bar\result-chart-bar.template.html" />
+    <Content Include="surveyapp-oct\answerer-result-chart-bar\answerer-result-chart-bar.component.js" />
+    <Content Include="surveyapp-oct\answerer-result-chart-bar\answerer-result-chart-bar.controller.js" />
+    <Content Include="surveyapp-oct\answerer-result-chart-bar\answerer-result-chart-bar.template.html" />
     <Content Include="surveyapp-oct\result-chart-line-single\result-chart-line-single.component.js" />
     <Content Include="surveyapp-oct\result-chart-line-single\result-chart-line-single.controller.js" />
     <Content Include="surveyapp-oct\result-chart-line-single\result-chart-line-single.template.html" />

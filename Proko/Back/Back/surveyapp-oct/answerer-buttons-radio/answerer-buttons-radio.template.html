@@ -1,9 +1,6 @@
 ﻿<div class="container">
     
-    <div class="progress pr-bar-custom">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-        </div>
-    </div>
+    <progress-bar></progress-bar>
 
     <div class="outer-radiobutton-div">
         <h3>Mikä on ammattinimikkeesi?</h3>
@@ -11,8 +8,8 @@
         <div class="btn-group radiobutton-div">
             <ul>
                 <li ng-repeat="at in $ctrl.answererTypes">
-                    <label for="{{ at.AnswererTypeID }}" ng-click="$ctrl.setAnswererType(at.AnswererTypeID)">
-                        <input id="{{ at.AnswererTypeID }}" type="radio" name="answerer-type-question" value="{{ at.Name }}" />
+                    <label for="at-{{ at.AnswererTypeID }}" ng-click="$ctrl.setAnswererType(at.AnswererTypeID)">
+                        <input id="at-{{ at.AnswererTypeID }}" type="radio" name="answerer-type" value="{{ at.Name }}" />
                         {{ at.Name }}
                         <span class="check"></span>
                     </label>
