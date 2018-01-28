@@ -9,10 +9,10 @@
         <h3>Mikä on ammattinimikkeesi?</h3>
 
         <div class="btn-group radiobutton-div">
-            <ul ng-repeat="at in $ctrl.answererTypes">
-                <li>
+            <ul>
+                <li ng-repeat="at in $ctrl.answererTypes">
                     <label for="{{ at.AnswererTypeID }}" ng-click="$ctrl.setAnswererType(at.AnswererTypeID)">
-                        <input id="{{ at.AnswererTypeID }}" type="radio" name="{{ at.Name }}" value="{{ at.Name }}" />
+                        <input id="{{ at.AnswererTypeID }}" type="radio" name="answerer-type-question" value="{{ at.Name }}" />
                         {{ at.Name }}
                         <span class="check"></span>
                     </label>

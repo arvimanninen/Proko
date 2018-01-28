@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('AnswererButtonsRadioCtrl', function (AnswererTypeService, AnswerBundleExtrasService, QuestionService, RunService) {
+app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeService, AnswerBundleExtrasService, QuestionService, RunService) {
     var that = this;
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
@@ -17,7 +17,7 @@ app.controller('AnswererButtonsRadioCtrl', function (AnswererTypeService, Answer
 
     that.answererTypes = AnswererTypeService.getAnswererTypes();
     that.setAnswererType = function (answererTypeId) {
-        AnswerBundleExtrasService.setAnswererType(answererTypeId);
+        AnswerBundleExtrasService.setAnswererTypeId(answererTypeId);
     };
     that.goToMainQuestions = function () {
         $location.path(QuestionService.getQmvBySetIndex( RunService.getQuestionSetIndex() ));

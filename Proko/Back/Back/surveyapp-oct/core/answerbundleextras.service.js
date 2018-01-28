@@ -26,6 +26,7 @@ app.service('AnswerBundleExtrasService', function () {
     };
     var setAnswererTypeId = function (atId) {
         answererTypeId = atId;
+        console.log("AnswerBundleExtrasService.answererTypeId changed!. New answererTypeId: " + answererTypeId);
     };
     var getAnswerBundleExtras = function () {
         var abe = new AnswerBundleExtrasDTO(answererTypeId, textFeedback);
