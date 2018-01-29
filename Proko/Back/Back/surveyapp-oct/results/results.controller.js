@@ -27,7 +27,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         }
         return rowCount;
     };
-
+    /*
     var provideQuestions = function (allQuestions, neededQuestionIndexes) {
         var neededQuestions = [];
         for (var i = 0; i < neededQuestionIndexes.length; i++) {
@@ -35,7 +35,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         }
         return neededQuestions;
     };
-
+    
     var oneChosenQuestion = provideQuestions(allChosenQuestions, [0]);
     var twoChosenQuestions = provideQuestions(allChosenQuestions, [0, 1]);
     var threeChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2]);
@@ -54,29 +54,24 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     console.log("rowCountForSix: " + rowCountForSix);
     console.log("rowCountForSeven: " + rowCountForSeven);
     console.log("rowCountForAll: " + rowCountForAll);
-    
-    
+    */
+    var maxRowIndex = calculateRowCount(allChosenQuestions) - 1;
     var maxChartIndex = allChosenQuestions.length - 1;
    
     RunResultsService.setMaxChartIndex(maxChartIndex);
+    RunResultsService.setMaxRowIndex(maxRowIndex);
     // var questions = [];
     
-    var getComponentNames = function (questions) {
-        var componentNames = ["answerer-result-chart-bar"];
-        for (var i = 0; i < questions.length; i++) {
+    var getRowNames = function (count) {
+        var rowNames = ["answerer-result-chart-bar"];
+        for (var i = 0; i < count; i++) {
             //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
-            var qmv = questions[i].QuestionMethodValue;
-            console.log("qmv - index[" + i + "]:" + qmv);
-            if (qmv === "buttons-smileys") {
-                componentNames.push("result-chart-pie");
-            } else {
-                componentNames.push("result-chart-line-single");
-            }
+            rowNames.push("result-row");
         }
-        return componentNames;
+        return rowNames;
     };
 
-    that.componentNames = getComponentNames(allChosenQuestions);
+    that.componentNames = getRowNames(rowCount);
     /*var resultCounts = ResultService.getResultCounts(QuestionService.getQuestion(4).QuestionID, 4);
     // TAKE = -mark off?
 

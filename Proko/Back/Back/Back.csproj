@@ -368,6 +368,9 @@
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.component.js" />
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.controller.js" />
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.template.html" />
+    <Content Include="surveyapp-oct\result-row\result-row.controller.js" />
+    <Content Include="surveyapp-oct\result-row\result-row.component.js" />
+    <Content Include="surveyapp-oct\result-row\result-row.template.html" />
     <Content Include="surveyapp-oct\results\results.template.html" />
     <Content Include="surveyapp-oct\Vanhat viewit\buttons-slider.template.html" />
     <Content Include="surveyapp-oct\buttons-smileys\buttons-smileys.component.js" />
