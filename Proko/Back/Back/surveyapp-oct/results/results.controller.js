@@ -5,17 +5,16 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     that.toStart = function () {
         $location.path("/start");
     };
-    // FOR PRODUCTION
     var allQuestions = QuestionService.getQuestions();
     var chartsPerRow = 3;
     RunResultsService.setChartsPerRow(chartsPerRow);
     // console.log("allQuestions.length: " + allQuestions.length);
-    var calculateRowCount = function (questions, componentsPerRow) {
+    var calculateRowCount = function (componentCount, componentsPerRow) {
         var rowCount = 1;
-        if (questions.length <= componentsPerRow) {
+        if (componentCount <= componentsPerRow) {
             return rowCount;
         } else {
-            rowCount = questions.length / componentsPerRow;
+            rowCount = componentCount / componentsPerRow;
         }
         console.log("ResultsCtrl.calculateRowCount().(rowCount % componentsPerRow" + rowCount % componentsPerRow);
         if (rowCount % componentsPerRow > 0) {
@@ -26,6 +25,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
                 rowCount = roundedRowCount;
             }
         }
+        console.log("rowCount: " + rowCount);
         return rowCount;
     };
     /*
@@ -57,8 +57,10 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     console.log("rowCountForSeven: " + rowCountForSeven);
     console.log("rowCountForAll: " + rowCountForAll);
     */
-    var maxRowIndex = calculateRowCount(allQuestions, chartsPerRow) - 1;
     var maxChartIndex = allQuestions.length - 1;
+    // + 1 BECAUSE OF HARD CODED FIRST ITEM IN getRowNames().rowNames[]
+    var maxRowIndex = calculateRowCount(allQuestions.length + 1, chartsPerRow) - 1;
+    
    
     RunResultsService.setMaxChartIndex(maxChartIndex);
     RunResultsService.setMaxRowIndex(maxRowIndex);
@@ -73,7 +75,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         return rowNames;
     };
 
-    that.componentNames = getRowNames(rowCount);
+    that.rowNames = getRowNames(maxRowIndex + 1);
     /*var resultCounts = ResultService.getResultCounts(QuestionService.getQuestion(4).QuestionID, 4);
     // TAKE = -mark off?
 

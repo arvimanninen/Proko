@@ -4,7 +4,7 @@ app.controller('ResultRowCtrl', function (RunResultsService, QuestionService) {
     var that = this;
     var rowIndex = RunResultsService.getCurrentRowIndex();
     var maxRowIndex = RunResultsService.getMaxRowIndex();
-    var chartIndex = RunResultsService.getCurrentChartIndex();
+    var chartIndexRow = RunResultsService.getChartIndexRow();
     var maxChartIndex = RunResultsService.getMaxChartIndex();
 
     if (maxRowIndex < 0) {
@@ -17,11 +17,17 @@ app.controller('ResultRowCtrl', function (RunResultsService, QuestionService) {
     }
     
     var chartsPerRow = RunResultsService.getChartsPerRow();
-    if (maxChartIndex - chartIndex < chartsPerRow) {
-        chartsPerRow = maxChartIndex - chartIndex;
+    if (maxChartIndex - chartIndexRow < chartsPerRow) {
+        chartsPerRow = maxChartIndex - chartIndexRow;
     }
+    console.log("********");
+    console.log("ResultRowCtrl.rowIndex: " + rowIndex);
+    console.log("ResultRowCtrl.maxRowIndex: " + maxRowIndex);
+    console.log("ResultRowCtrl.chartIndexRow: " + chartIndexRow);
+    console.log("ResultRowCtrl.maxChartIndex: " + maxChartIndex);
+    console.log("ResultRowCtrl.chartsPerRow: " + chartsPerRow);
     var currentQuestions = [];
-    for (var i = chartIndex; i < chartIndex + chartsPerRow; i++) {
+    for (var i = chartIndexRow; i < chartIndexRow + chartsPerRow; i++) {
         var cq = QuestionService.getQuestion(i);
         currentQuestions.push(cq);
     }
@@ -41,8 +47,12 @@ app.controller('ResultRowCtrl', function (RunResultsService, QuestionService) {
         return chartNames;
     };
 
-    that.componentNames = getComponentNames(currentQuestions);
-
     rowIndex++;
     RunResultsService.setCurrentRowIndex(rowIndex);
+    chartIndexRow = chartIndexRow + chartsPerRow;
+    RunResultsService.setChartIndexRow(chartIndexRow);
+
+    that.chartNames = getChartNames(currentQuestions);
+
+    
 });

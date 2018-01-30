@@ -8,6 +8,7 @@ app.service('RunResultsService', function () {
     var currentRowIndex = 0;
 
     var chartsPerRow = 0;
+    var chartIndexRow = 0;
 
     var getMaxChartIndex = function () {
         return maxChartIndex;
@@ -39,6 +40,12 @@ app.service('RunResultsService', function () {
     var setChartsPerRow = function (nChartsPerRow) {
         chartsPerRow = nChartsPerRow;
     };
+    var getChartIndexRow = function () {
+        return chartIndexRow;
+    };
+    var setChartIndexRow = function (nChartIndexRow) {
+        chartIndexRow = nChartIndexRow;
+    };
     var reset = function () {
         maxChartIndex = -1;
         currentChartIndex = 0;
@@ -52,10 +59,14 @@ app.service('RunResultsService', function () {
         setMaxChartIndex: setMaxChartIndex,
         getCurrentChartIndex: getCurrentChartIndex,
         setCurrentChartIndex: setCurrentChartIndex,
+        getMaxRowIndex: getMaxRowIndex,
+        setMaxRowIndex: setMaxRowIndex,
         getCurrentRowIndex: getCurrentRowIndex,
         setCurrentRowIndex: setCurrentRowIndex,
         getChartsPerRow: getChartsPerRow,
         setChartsPerRow: setChartsPerRow,
+        getChartIndexRow: getChartIndexRow,
+        setChartIndexRow: setChartIndexRow,
         reset: reset
     };
 });
