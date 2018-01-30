@@ -7,6 +7,8 @@ app.service('RunResultsService', function () {
     var maxRowIndex = -1;
     var currentRowIndex = 0;
 
+    var chartsPerRow = 0;
+
     var getMaxChartIndex = function () {
         return maxChartIndex;
     };
@@ -31,11 +33,18 @@ app.service('RunResultsService', function () {
     var setCurrentRowIndex = function (nCurrentRowIndex) {
         currentRowIndex = nCurrentRowIndex;
     };
+    var getChartsPerRow = function () {
+        return chartsPerRow;
+    };
+    var setChartsPerRow = function (nChartsPerRow) {
+        chartsPerRow = nChartsPerRow;
+    };
     var reset = function () {
         maxChartIndex = -1;
         currentChartIndex = 0;
         maxRowIndex = -1;
         currentRowIndex = 0;
+        chartsPerRow = 0;
     };
 
     return {
@@ -45,6 +54,8 @@ app.service('RunResultsService', function () {
         setCurrentChartIndex: setCurrentChartIndex,
         getCurrentRowIndex: getCurrentRowIndex,
         setCurrentRowIndex: setCurrentRowIndex,
+        getChartsPerRow: getChartsPerRow,
+        setChartsPerRow: setChartsPerRow,
         reset: reset
     };
 });

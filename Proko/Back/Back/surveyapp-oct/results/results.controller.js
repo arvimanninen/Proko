@@ -6,13 +6,14 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         $location.path("/start");
     };
     // FOR PRODUCTION
-    var allChosenQuestions = QuestionService.getQuestions();
+    var allQuestions = QuestionService.getQuestions();
+    var chartsPerRow = 3;
+    RunResultsService.setChartsPerRow(chartsPerRow);
     // console.log("allQuestions.length: " + allQuestions.length);
-    var calculateRowCount = function (questions) {
-        var componentsPerRow = 3;
-        var rowCount = 0;
+    var calculateRowCount = function (questions, componentsPerRow) {
+        var rowCount = 1;
         if (questions.length <= componentsPerRow) {
-            return 1;
+            return rowCount;
         } else {
             rowCount = questions.length / componentsPerRow;
         }
@@ -28,6 +29,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         return rowCount;
     };
     /*
+    // FOR TESTING calculateRowCount():
     var provideQuestions = function (allQuestions, neededQuestionIndexes) {
         var neededQuestions = [];
         for (var i = 0; i < neededQuestionIndexes.length; i++) {
@@ -55,8 +57,8 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     console.log("rowCountForSeven: " + rowCountForSeven);
     console.log("rowCountForAll: " + rowCountForAll);
     */
-    var maxRowIndex = calculateRowCount(allChosenQuestions) - 1;
-    var maxChartIndex = allChosenQuestions.length - 1;
+    var maxRowIndex = calculateRowCount(allQuestions, chartsPerRow) - 1;
+    var maxChartIndex = allQuestions.length - 1;
    
     RunResultsService.setMaxChartIndex(maxChartIndex);
     RunResultsService.setMaxRowIndex(maxRowIndex);
