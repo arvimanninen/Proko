@@ -28,35 +28,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         console.log("rowCount: " + rowCount);
         return rowCount;
     };
-    /*
-    // FOR TESTING calculateRowCount():
-    var provideQuestions = function (allQuestions, neededQuestionIndexes) {
-        var neededQuestions = [];
-        for (var i = 0; i < neededQuestionIndexes.length; i++) {
-            neededQuestions.push(allQuestions[neededQuestionIndexes[i]]);
-        }
-        return neededQuestions;
-    };
     
-    var oneChosenQuestion = provideQuestions(allChosenQuestions, [0]);
-    var twoChosenQuestions = provideQuestions(allChosenQuestions, [0, 1]);
-    var threeChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2]);
-    var sixChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2, 3, 4, 5]);
-    var sevenChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2, 3, 4, 5, 6]);
-
-    var rowCountForOne = calculateRowCount(oneChosenQuestion);
-    var rowCountForTwo = calculateRowCount(twoChosenQuestions);
-    var rowCountForThree = calculateRowCount(threeChosenQuestions);
-    var rowCountForSix = calculateRowCount(sixChosenQuestions);
-    var rowCountForSeven = calculateRowCount(sevenChosenQuestions);
-    var rowCountForAll = calculateRowCount(allChosenQuestions);
-    console.log("rowCountForOne: " + rowCountForOne);
-    console.log("rowCountForTwo: " + rowCountForTwo);
-    console.log("rowCountForThree: " + rowCountForThree);
-    console.log("rowCountForSix: " + rowCountForSix);
-    console.log("rowCountForSeven: " + rowCountForSeven);
-    console.log("rowCountForAll: " + rowCountForAll);
-    */
     var maxChartIndex = allQuestions.length - 1;
     // + 1 BECAUSE OF HARD CODED FIRST ITEM IN getRowNames().rowNames[]
     var maxRowIndex = calculateRowCount(allQuestions.length + 1, chartsPerRow) - 1;
@@ -67,7 +39,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     // var questions = [];
     
     var getRowNames = function (count) {
-        var rowNames = ["answerer-result-chart-bar"];
+        var rowNames = [];
         for (var i = 0; i < count; i++) {
             //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
             rowNames.push("result-row");
@@ -100,7 +72,35 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
 
 
     
+    /*
+    // FOR TESTING calculateRowCount():
+    var provideQuestions = function (allQuestions, neededQuestionIndexes) {
+        var neededQuestions = [];
+        for (var i = 0; i < neededQuestionIndexes.length; i++) {
+            neededQuestions.push(allQuestions[neededQuestionIndexes[i]]);
+        }
+        return neededQuestions;
+    };
+    
+    var oneChosenQuestion = provideQuestions(allChosenQuestions, [0]);
+    var twoChosenQuestions = provideQuestions(allChosenQuestions, [0, 1]);
+    var threeChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2]);
+    var sixChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2, 3, 4, 5]);
+    var sevenChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2, 3, 4, 5, 6]);
 
+    var rowCountForOne = calculateRowCount(oneChosenQuestion);
+    var rowCountForTwo = calculateRowCount(twoChosenQuestions);
+    var rowCountForThree = calculateRowCount(threeChosenQuestions);
+    var rowCountForSix = calculateRowCount(sixChosenQuestions);
+    var rowCountForSeven = calculateRowCount(sevenChosenQuestions);
+    var rowCountForAll = calculateRowCount(allChosenQuestions);
+    console.log("rowCountForOne: " + rowCountForOne);
+    console.log("rowCountForTwo: " + rowCountForTwo);
+    console.log("rowCountForThree: " + rowCountForThree);
+    console.log("rowCountForSix: " + rowCountForSix);
+    console.log("rowCountForSeven: " + rowCountForSeven);
+    console.log("rowCountForAll: " + rowCountForAll);
+    */
     
 
     

@@ -32,10 +32,10 @@ app.controller('ResultRowCtrl', function (RunResultsService, QuestionService) {
         currentQuestions.push(cq);
     }
 
-    var getChartNames = function (questions) {
+    var getChartNames = function (questions, rowIndex) {
+        var chartNames = [];
         for (var i = 0; i < questions.length; i++) {
             //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
-            var chartNames = [];
             var qmv = questions[i].QuestionMethodValue;
             console.log("qmv - index[" + i + "]:" + qmv);
             if (qmv === "buttons-smileys") {
@@ -46,13 +46,14 @@ app.controller('ResultRowCtrl', function (RunResultsService, QuestionService) {
         }
         return chartNames;
     };
-
+    
     rowIndex++;
     RunResultsService.setCurrentRowIndex(rowIndex);
     chartIndexRow = chartIndexRow + chartsPerRow;
     RunResultsService.setChartIndexRow(chartIndexRow);
+    that.chartNames = getChartNames(currentQuestions, rowIndex);
 
-    that.chartNames = getChartNames(currentQuestions);
+    
 
     
 });
