@@ -4,18 +4,8 @@ app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultSe
     var that = this;
     var chartIndex = $attrs.questionindex;
     //var chartIndex = that.questionindex;
-    var maxChartIndex = RunResultsService.getMaxChartIndex();
-
-    if (maxChartIndex < 0) {
-        console.log("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
-        alert("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
-    }
-    if (chartIndex > maxChartIndex) {
-        console.log("Invalid chartIndex @ ResultChartLineSingleCtrl!");
-        alert("Invalid chartIndex @ ResultChartLineSingleCtrl!");
-    }
+    
     console.log("ResultChartPieCtrl.chartIndex: " + chartIndex);
-    console.log("ResultChartPieCtrl.maxChartIndex: " + maxChartIndex);
 
     var question = QuestionService.getQuestion(chartIndex);
     var maxResultValue = 4;
@@ -23,8 +13,7 @@ app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultSe
     that.ci = chartIndex;
     that.resultCounts = ResultService.getResultCounts(question.QuestionID, maxResultValue);
 
-    chartIndex++;
-    RunResultsService.setCurrentChartIndex(chartIndex);
+    
 
     that.chart3 = {
         labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],

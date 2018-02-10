@@ -5,19 +5,6 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
     //var chartIndex = RunResultsService.getCurrentChartIndex();
     var chartIndex = $attrs.questionindex;
     
-    var maxChartIndex = RunResultsService.getMaxChartIndex();
-
-    if (maxChartIndex < 0) {
-        console.log("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
-        alert("Invalid maxChartIndex @ ResultChartLineSingleCtrl!");
-    }
-    if (chartIndex > maxChartIndex) {
-        console.log("Invalid chartIndex @ ResultChartLineSingleCtrl!");
-        alert("Invalid chartIndex @ ResultChartLineSingleCtrl!");
-    }
-    console.log("ResultChartLineSingleCtrl.chartIndex: " + chartIndex);
-    console.log("ResultChartLineSingleCtrl.maxChartIndex: " + maxChartIndex);
-
     var question = QuestionService.getQuestion(chartIndex);
     var questionId = question.QuestionID;
     console.log("ResultChartLineSingleCtrl.question.QuestionID: " + question.QuestionID);
@@ -47,8 +34,6 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
         console.log("questionAverages[" + i + "]: " + questionAverages[i]);
     }
 
-    chartIndex++;
-    RunResultsService.setCurrentChartIndex(chartIndex);
     /*
 
     */
