@@ -1,8 +1,10 @@
 ﻿'use strict';
 
-app.controller('ResultChartLineSingleCtrl', function (QuestionService, AnswererTypeService, ResultService, RunResultsService) {
+app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, AnswererTypeService, ResultService, RunResultsService) {
     var that = this;
-    var chartIndex = RunResultsService.getCurrentChartIndex();
+    //var chartIndex = RunResultsService.getCurrentChartIndex();
+    var chartIndex = $attrs.questionindex;
+    
     var maxChartIndex = RunResultsService.getMaxChartIndex();
 
     if (maxChartIndex < 0) {

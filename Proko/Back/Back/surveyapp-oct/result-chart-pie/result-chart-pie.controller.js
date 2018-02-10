@@ -1,8 +1,9 @@
 ﻿'use strict';
 
-app.controller('ResultChartPieCtrl', function (QuestionService, ResultService, RunResultsService) {
+app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultService, RunResultsService) {
     var that = this;
-    var chartIndex = RunResultsService.getCurrentChartIndex();
+    var chartIndex = $attrs.questionindex;
+    //var chartIndex = that.questionindex;
     var maxChartIndex = RunResultsService.getMaxChartIndex();
 
     if (maxChartIndex < 0) {
@@ -13,6 +14,8 @@ app.controller('ResultChartPieCtrl', function (QuestionService, ResultService, R
         console.log("Invalid chartIndex @ ResultChartLineSingleCtrl!");
         alert("Invalid chartIndex @ ResultChartLineSingleCtrl!");
     }
+    console.log("ResultChartPieCtrl.chartIndex: " + chartIndex);
+    console.log("ResultChartPieCtrl.maxChartIndex: " + maxChartIndex);
 
     var question = QuestionService.getQuestion(chartIndex);
     var maxResultValue = 4;

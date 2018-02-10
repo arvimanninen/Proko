@@ -5,10 +5,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     that.toStart = function () {
         $location.path("/start");
     };
-    var allQuestions = QuestionService.getQuestions();
-    var chartsPerRow = 3;
-    RunResultsService.setChartsPerRow(chartsPerRow);
-    // console.log("allQuestions.length: " + allQuestions.length);
+    /*
     var calculateRowCount = function (componentCount, componentsPerRow) {
         var rowCount = 1;
         if (componentCount <= componentsPerRow) {
@@ -28,16 +25,6 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         console.log("rowCount: " + rowCount);
         return rowCount;
     };
-    
-    var maxChartIndex = allQuestions.length - 1;
-    // + 1 BECAUSE OF HARD CODED FIRST ITEM IN getRowNames().rowNames[]
-    var maxRowIndex = calculateRowCount(allQuestions.length + 1, chartsPerRow) - 1;
-    
-   
-    RunResultsService.setMaxChartIndex(maxChartIndex);
-    RunResultsService.setMaxRowIndex(maxRowIndex);
-    // var questions = [];
-    
     var getRowNames = function (count) {
         var rowNames = [];
         for (var i = 0; i < count; i++) {
@@ -46,8 +33,40 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         }
         return rowNames;
     };
+    */
+    var allQuestions = QuestionService.getQuestions();
+    // var chartsPerRow = 3;
+    // RunResultsService.setChartsPerRow(chartsPerRow);
+    // console.log("allQuestions.length: " + allQuestions.length);
+    
+    var maxChartIndex = allQuestions.length - 1;
+    // + 1 BECAUSE OF HARD CODED FIRST ITEM IN getRowNames().rowNames[]
+    // var maxRowIndex = calculateRowCount(allQuestions.length + 1, chartsPerRow) - 1;
+    
+   
+    RunResultsService.setMaxChartIndex(maxChartIndex);
+    // RunResultsService.setMaxRowIndex(maxRowIndex);
+    // var questions = [];
+    //console.log("ResultsCtrl.maxRowIndex: " + maxRowIndex);
+    console.log("ResultsCtrl.maxChartIndex " + maxChartIndex);
+    var getChartNames = function (questions) {
+        var chartNames = [];
+        for (var i = 0; i < questions.length; i++) {
+            //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
+            var qmv = questions[i].QuestionMethodValue;
+            console.log("qmv - index[" + i + "]:" + qmv);
+            if (qmv === "buttons-smileys") {
+                chartNames.push("result-chart-pie");
+            } else {
+                chartNames.push("result-chart-line-single");
+            }
+        }
+        return chartNames;
+    };
 
-    that.rowNames = getRowNames(maxRowIndex + 1);
+
+
+    that.chartNames = getChartNames(allQuestions);
     /*var resultCounts = ResultService.getResultCounts(QuestionService.getQuestion(4).QuestionID, 4);
     // TAKE = -mark off?
 
