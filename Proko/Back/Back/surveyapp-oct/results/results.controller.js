@@ -65,8 +65,9 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     };
 
 
-
+    that.chartsPerRow = 3;
     that.chartNames = getChartNames(allQuestions);
+    that.firstChartName = "answerer-result-chart-bar";
     /*var resultCounts = ResultService.getResultCounts(QuestionService.getQuestion(4).QuestionID, 4);
     // TAKE = -mark off?
 

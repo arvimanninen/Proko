@@ -7,9 +7,12 @@
     </div> <!-- row div -->
     
     <div class="row results-div">
-        <answerer-result-chart-bar></answerer-result-chart-bar>
-        <dynamic-element components="$ctrl.chartNames"></dynamic-element>
+        <!--<answerer-result-chart-bar></answerer-result-chart-bar>
+        <dynamic-element components="$ctrl.chartNames"></dynamic-element>-->
     </div>
+
+    <dynamic-chart-row chartsperrow="$ctrl.chartsPerRow" chartcomponents="$ctrl.chartNames" firstchartcomponent="$ctrl.firstChartName"></dynamic-chart-row>
+    
     <div class="btn-group nav-btn-div nav-btn-margins">
         <a class="button-primary block-btn" ng-click="$ctrl.toStart()">Alkuun</a>
     </div>
