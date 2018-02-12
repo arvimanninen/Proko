@@ -2,135 +2,105 @@
 
 app.controller('resultsCtrl', function resultsCtrl($scope, $location) {
 
-    //modal
-    $(function () {
-        var counterUsed = false;
-
-        var appendthis = ("<div class='modal-overlay js-modal-close'></div>");
-        $("a[data-modal-id]").click(function (e) {
-
-            if (counterUsed === false) {
-
-                e.preventDefault();
-                $("body").append(appendthis);
-                $(".modal-overlay").fadeTo(500, 0.7);
-                //$(".js-modalbox").fadeIn(500);
-                var modalBox = $(this).attr('data-modal-id');
-                $('#' + modalBox).fadeIn($(this).data());
-            }
-        });
-
-        $(".js-modal-close, .modal-overlay").click(function () {
-            $(".modal-box, .modal-overlay").fadeOut(500, function () {
-                $(".modal-overlay").remove();
-            });
-        });
-
-        $(".js-modal-use, .modal-overlay").click(function () {
-            $(".modal-box, .modal-overlay").fadeOut(500, function () {
-                $(".modal-overlay").remove();
-                $(".js-open-modal").html("Kuponki käytetty")
-                    .removeClass("button-tertiary").addClass("disabled");
-
-                counterUsed = true;
-                console.log("counter asetettu");
-
-                $("#popup").remove();
-            });
-        });
-
-        $(window).resize(function () {
-            $(".modal-box").css({
-                top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
-                left: ($(window).width() - $(".modal-box").outerWidth()) / 2
-            });
-        });
-
-        $(window).resize();
-
-    }); //modal ends
-
-
-    $scope.toStart = function () {
-        $location.path("/end");
-    };
-
     $scope.toStart = function () {
         $location.path("/start");
     };
 
-    $scope.answerCount = 20;
-
-    // chart 1
-    $scope.labels1 = ["Viikko 40", "Viikko 41", "Viikko 42", "Viikko 43", "Viikko 43"];
-    $scope.series1 = ['Series A'];
-    $scope.data1 = [
-        [2.2, 2.8, 2.5, 3.3, 3.6]
-    ];
-    $scope.onClick = function (points, evt) {
-        console.log(points, evt);
-    };
-    $scope.datasetOverride1 = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
-    $scope.options1 = {
-        scales: {
-            yAxes: [
-                {
-                    id: 'y-axis-1',
-                    type: 'linear',
-                    display: true,
-                    position: 'left',
-                    ticks: {
-                        min: 0,
-                        max: 5,
-                        beginAtZero: true,
-                        stepSize: 1
-                    }
-                }
-            ]
-        }
-    };
-
-    // chart 2
-    $scope.labels2 = ["Viikko 40", "Viikko 41", "Viikko 42", "Viikko 43", "Viikko 43"];
-    $scope.series2 = ['Rakennusmiehet', 'Pomot', '3. Ryhmä'];
-    $scope.data2 = [
-        [2.2, 2.8, 3.5, 2.3, 3.0],
-        [1.2, 3.8, 2.5, 3.3, 3.7],
-        [2, 1.7, 2, 2, 1]
-    ];
-    $scope.onClick = function (points, evt) {
-        console.log(points, evt);
-    };
-    $scope.datasetOverride2 = [{ yAxisID: 'y-axis-1' }];
-    $scope.options2 = {
-        legend: {
-            display: true,
-            position: 'bottom'
-        },
-        elements: {
-            line: {
-                fill: false
-            }
-        },
-        scales: {
-            yAxes: [
-                {
-                    id: 'y-axis-1',
-                    display: true,
-                    type: 'linear',                   
-                    position: 'left',
-                    ticks: {
-                        min: 0,
-                        max: 5,
-                        beginAtZero: true,
-                        stepSize: 1
+    $scope.chart1 = {
+        labels: ['Rakennusmies', 'Sähkömies', 'LVI-asentaja', 'Putkimies'],
+        data: [8, 4, 5, 2],
+        colors: ['rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)', 'rgba(142,215,145,0.35)'],
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
                     },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Label tähän'
+                    ticks: {
+                        min: 0,
+                        mirror: true,
+                        fontSize: 18,
+                        padding: -10
+                    },
+                    categoryPercentage: 1
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        display: false,
+                        beginAtZero: true,
+                        min: 0
                     }
-                }
-            ]
+                }]
+            },
+            legend: {
+                display: false
+            },
+            title: {
+                display: false
+            }
         }
     };
+
+
+    $scope.chart2 = {
+        labels: ['20.11.', '27.11.', '4.12.', '11.12.', '18.12.'],
+        data: [[2.4, 3.2, 3.7, 3.3, 4.0]],
+        colors: ['#8ed791'],
+        datasetOverride: [
+            {
+                pointRadius: 4,
+                pointHoverRadius: 4,
+                pointHoverBorderColor: "#ffffff"
+            }
+        ],
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                        id: 'y-axis-1',
+                        display: true,
+                        type: 'linear',
+                        position: 'left',
+                        ticks: {
+                            display: false,
+                            min: 0,
+                            max: 5,
+                            beginAtZero: true,
+                            stepSize: 1.25
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Tyytyväisyys"
+                        }
+                    }
+                ]
+            }
+        }
+    };
+
+    $scope.chart3 = {
+        data: [3, 5, 7, 11],
+        colors: [
+            {
+                backgroundColor: '#f7ab98',
+                pointBackgroundColor: '#f7ab98'
+            }, {
+                backgroundColor: '#f1c18e',
+                pointBackgroundColor: '#f1c18e'
+            }, {
+                backgroundColor: '#ceda97',
+                pointBackgroundColor: '#ceda97'
+            }, {
+                backgroundColor: '#8ed791',
+                pointBackgroundColor: '#8ed791'
+            }
+        ]
+    };
+
+
 });
