@@ -342,6 +342,7 @@
     <Content Include="surveyapp-oct\core\answerbundleextras.service.js" />
     <Content Include="surveyapp-oct\core\answerertype.service.js" />
     <Content Include="surveyapp-oct\core\answersandbundleextras.service.js" />
+    <Content Include="surveyapp-oct\core\dynamic-chart-row.directive.js" />
     <Content Include="surveyapp-oct\core\dynamic-element.directive.js" />
     <Content Include="surveyapp-oct\core\images\thumb-down-b.png" />
     <Content Include="surveyapp-oct\core\images\thumb-neutral-b.png" />
