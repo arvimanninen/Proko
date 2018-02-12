@@ -50,6 +50,19 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         angular.element(document).ready(checkAnsweredAndActivate(currentAnswers));
     }
     */
+    $(document).ready(function () {
+        var wrapperHeight = $("#wrapper").height();
+        var containerHeight = $(".container").height();
+        var navbtnHeight = wrapperHeight - containerHeight;
+        if ((navbtnHeight) < 64) {
+            navbtnHeight = 52
+        } else {
+            navbtnHeight = navbtnHeight - 12;
+        }
+        console.log(navbtnHeight);
+        $(".nav-btn-div").css("margin-top", navbtnHeight);
+    });
+
     var questionSetIndex = RunService.getQuestionSetIndex();
     console.log("questionSetIndex: " + questionSetIndex);
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);

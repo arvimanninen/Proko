@@ -4,7 +4,7 @@
 
     <h3>Arvioi seuraavia väittämiä:</h3>
 
-    <div class="outer-slider-div" ng-repeat="q in $ctrl.currentQuestions">
+    <div class="outer-buttonslider-div" ng-repeat="q in $ctrl.currentQuestions">
         <h4>{{ q.QuestionText }}</h4>
 
         <div class="btn-group slider-div btns-five">
@@ -20,7 +20,7 @@
             <label for="q{{ q.ChosenQuestionIndex }}-a5" class="button-pos slider-group-last" ng-click="$ctrl.setAnswer(5, q.QuestionSetIndex, q.ChosenQuestionIndex, q.QuestionID, q.QuestionMethodID)"></label>
         </div>
 
-        <div class="bar-rating">
+        <div class="buttonslider-scale">
             <span>Eri mieltä</span>
             <span>Samaa mieltä</span>
         </div>

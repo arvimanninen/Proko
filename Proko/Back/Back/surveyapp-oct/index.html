@@ -8,23 +8,22 @@
     <title>Iss Proko - Rakennushankekysely</title>
     <!-- Bootstrap css-->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/rangeslider.js/dist/rangeslider.css" rel="stylesheet">
     <!-- Own modifications css-->
     <link href="core/styles/variables.min.css" rel="stylesheet">
     <link href="core/styles/frame.min.css" rel="stylesheet">
     <link href="core/styles/views.min.css" rel="stylesheet">
     <link href="core/styles/results.min.css" rel="stylesheet">
 
-    <!-- TODO: UPDATE HTML5SHIV AND RESPOND -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9] -->
-
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <!--[endif]-->
 </head>
 <body>
-    <div id="wrap">
+    <div id="wrapper">
         <header>
             <div class="container-fluid">
                 <h3 id="header-text">Kysely</h3>
@@ -51,15 +50,16 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/angular-resource/angular-resource.min.js"></script>
-    <!-- Chart.js and Angular Chart -->
+    <!-- Chart.js, Angular Chart and Rangeslider.js -->
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="node_modules/rangeslider.js/dist/rangeslider.min.js"></script>
 
     <!-- App module and config -->
     <script src="module.js"></script>
     <script src="config.js"></script>
 
-    <!-- Angular services and factories-->
+    <!-- Angular services, factories and directives -->
     <script src="core/data.factory.js"></script>
     <script src="core/question.service.js"></script>
     <script src="core/answer.service.js"></script>
@@ -68,9 +68,10 @@
     <script src="core/answerbundleextras.service.js"></script>
     <script src="core/answersandbundleextras.service.js"></script>
     <script src="core/answerertype.service.js"></script>
+    <script src="core/dynamic-element.directive.js"></script>
+    <script src="core/runresults.service.js"></script>
 
     <!-- Angular controllers and components -->
-    <script src="core/question.controller.js"></script>
 
     <script src="progress-bar/progress-bar.controller.js"></script>
     <script src="progress-bar/progress-bar.component.js"></script>
@@ -84,6 +85,7 @@
     <script src="error/error.controller.js"></script>
     <script src="error/error.component.js"></script>
 
+    <script src="core/question.controller.js"></script>
     <!-- Three components below using question.controller -->
     <script src="buttons-slider/buttons-slider.component.js"></script>
     <script src="buttons-smileys/buttons-smileys.component.js"></script>
@@ -97,6 +99,22 @@
 
     <script src="results/results.controller.js"></script>
     <script src="results/results.component.js"></script>
+
+    <script src="result-chart-line-single/result-chart-line-single.controller.js"></script>
+    <script src="result-chart-line-single/result-chart-line-single.component.js"></script>
+
+    <script src="result-chart-pie/result-chart-pie.controller.js"></script>
+    <script src="result-chart-pie/result-chart-pie.component.js"></script>
+
+    <script src="answerer-result-chart-bar/answerer-result-chart-bar.controller.js"></script>
+    <script src="answerer-result-chart-bar/answerer-result-chart-bar.component.js"></script>
+
+    <script src="answerer-buttons-radio/answerer-buttons-radio.controller.js"></script>
+    <script src="answerer-buttons-radio/answerer-buttons-radio.component.js"></script>
+
+    <script src="result-row/result-row.controller.js"></script>
+    <script src="result-row/result-row.component.js"></script>
+
 
 </body>
 </html>

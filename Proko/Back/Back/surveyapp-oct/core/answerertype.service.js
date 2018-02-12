@@ -4,6 +4,15 @@ app.service('AnswererTypeService', function () {
     var getAnswererTypes = function () {
         return answererTypes;
     };
+    /*
+    public class AnswererTypeDTO
+    {
+        public int AnswererTypeID { get; set; }
+        public string Name { get; set; }
+    }
+
+    */
+
     var setAnswererTypes = function (answererTypeDtos) {
         for (var i = 0; i < answererTypeDtos.length; i++) {
             answererTypes.push(answererTypeDtos[i]);

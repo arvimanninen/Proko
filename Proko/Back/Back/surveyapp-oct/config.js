@@ -27,6 +27,9 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
             .when('/results', {
                 template: '<results></results>'
             })
+            .when('/answerer-buttons-radio', {
+                template: '<answerer-buttons-radio></answerer-buttons-radio>'
+            })
             .otherwise({
                 template: '<error></error>'
             });
@@ -43,11 +46,11 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                     }
                 },
                 legend: {
-                    display: true,
+                    display: false,
                     position: 'bottom'
                 },
                 tooltips: {
-                    enabled: true
+                    enabled: false
                 },
                 hover: {
                     mode: null

@@ -1,13 +1,135 @@
 ﻿'use strict';
 
-app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService) {
+app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService, RunResultsService) {
     var that = this;
     that.toStart = function () {
         $location.path("/start");
     };
+    /*
+    var calculateRowCount = function (componentCount, componentsPerRow) {
+        var rowCount = 1;
+        if (componentCount <= componentsPerRow) {
+            return rowCount;
+        } else {
+            rowCount = componentCount / componentsPerRow;
+        }
+        console.log("ResultsCtrl.calculateRowCount().(rowCount % componentsPerRow" + rowCount % componentsPerRow);
+        if (rowCount % componentsPerRow > 0) {
+            var roundedRowCount = Math.round(rowCount);
+            if (roundedRowCount - rowCount < 0) {
+                rowCount = roundedRowCount + 1;
+            } else {
+                rowCount = roundedRowCount;
+            }
+        }
+        console.log("rowCount: " + rowCount);
+        return rowCount;
+    };
+    var getRowNames = function (count) {
+        var rowNames = [];
+        for (var i = 0; i < count; i++) {
+            //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
+            rowNames.push("result-row");
+        }
+        return rowNames;
+    };
+    */
+    var allQuestions = QuestionService.getQuestions();
+    // var chartsPerRow = 3;
+    // RunResultsService.setChartsPerRow(chartsPerRow);
+    // console.log("allQuestions.length: " + allQuestions.length);
+    
+    var maxChartIndex = allQuestions.length - 1;
+    // + 1 BECAUSE OF HARD CODED FIRST ITEM IN getRowNames().rowNames[]
+    // var maxRowIndex = calculateRowCount(allQuestions.length + 1, chartsPerRow) - 1;
+    
+   
+    RunResultsService.setMaxChartIndex(maxChartIndex);
+    // RunResultsService.setMaxRowIndex(maxRowIndex);
+    // var questions = [];
+    //console.log("ResultsCtrl.maxRowIndex: " + maxRowIndex);
+    console.log("ResultsCtrl.maxChartIndex " + maxChartIndex);
+    var getChartNames = function (questions) {
+        var chartNames = [];
+        for (var i = 0; i < questions.length; i++) {
+            //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
+            var qmv = questions[i].QuestionMethodValue;
+            console.log("qmv - index[" + i + "]:" + qmv);
+            if (qmv === "buttons-smileys") {
+                chartNames.push("result-chart-pie");
+            } else {
+                chartNames.push("result-chart-line-single");
+            }
+        }
+        return chartNames;
+    };
 
-    var question1 = QuestionService.getQuestion(0);
-    // var question2 = QuestionService.getQuestion(1);
+
+
+    that.chartNames = getChartNames(allQuestions);
+    /*var resultCounts = ResultService.getResultCounts(QuestionService.getQuestion(4).QuestionID, 4);
+    // TAKE = -mark off?
+
+    for (var k = 0; k < that.componentNames.length; k++) {
+        console.log("that.componentNames[" + k + "]: " + that.componentNames[k]);
+    }
+
+    
+    for (var i = 0; i <= maxChartIndex; i++) {
+        chartQuestions.push(QuestionService.getQuestion(i));
+    }
+    console.log("chartQuestions.length: " + chartQuestions.length);
+    that.componentNames = [];
+    for (var k = 0; k < chartQuestions.length; k++) {
+        var componentName = "";
+        if()
+
+    }
+    */
+
+    
+
+
+    
+    /*
+    // FOR TESTING calculateRowCount():
+    var provideQuestions = function (allQuestions, neededQuestionIndexes) {
+        var neededQuestions = [];
+        for (var i = 0; i < neededQuestionIndexes.length; i++) {
+            neededQuestions.push(allQuestions[neededQuestionIndexes[i]]);
+        }
+        return neededQuestions;
+    };
+    
+    var oneChosenQuestion = provideQuestions(allChosenQuestions, [0]);
+    var twoChosenQuestions = provideQuestions(allChosenQuestions, [0, 1]);
+    var threeChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2]);
+    var sixChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2, 3, 4, 5]);
+    var sevenChosenQuestions = provideQuestions(allChosenQuestions, [0, 1, 2, 3, 4, 5, 6]);
+
+    var rowCountForOne = calculateRowCount(oneChosenQuestion);
+    var rowCountForTwo = calculateRowCount(twoChosenQuestions);
+    var rowCountForThree = calculateRowCount(threeChosenQuestions);
+    var rowCountForSix = calculateRowCount(sixChosenQuestions);
+    var rowCountForSeven = calculateRowCount(sevenChosenQuestions);
+    var rowCountForAll = calculateRowCount(allChosenQuestions);
+    console.log("rowCountForOne: " + rowCountForOne);
+    console.log("rowCountForTwo: " + rowCountForTwo);
+    console.log("rowCountForThree: " + rowCountForThree);
+    console.log("rowCountForSix: " + rowCountForSix);
+    console.log("rowCountForSeven: " + rowCountForSeven);
+    console.log("rowCountForAll: " + rowCountForAll);
+    */
+    
+
+    
+
+
+    
+
+    
+    /*
+    // COPIED TO CTRL
     var question1Averages = ResultService.getAveragesForAll(question1.QuestionID);
     var dps = ResultService.getDatePoints();
 
@@ -23,6 +145,7 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         console.log("str: " + str);
         return str;
     };
+    */
     /*
     var AverageResultSet = function (nAnswererTypeName, nAverages) {
         this.answererTypeName = nAnswererTypeName;
@@ -32,6 +155,8 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         }
     };
 
+
+    // TODO: MOVE TO ResultChartLineAllCtrl
     var question1 = QuestionService.getQuestion(0);
     var question2 = QuestionService.getQuestion(1);
     console.log("question1.QuestionID: " + question1.QuestionID);
@@ -52,17 +177,18 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
         averageResultSets1.push(ars1);
         averageResultSets2.push(ars2);
     }
-    */
+    
 
 
     //$("#canvas1").parentNode.style.height = '400px';
 
+    // COPIED TO CTRL
     that.chart1 = {
-        labels: [getDayAndMonthString(dps[0]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[4])],
+        labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
         //series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
         series: ['Testiseries'], // THIS DOESN'T WORK!
         // TODO: CHANGE THIS TO question1Averages
-        data: [question1Averages[0], question1Averages[1], question1Averages[2], question1Averages[3], question1Averages[4]],
+        data: [question1Averages[4], question1Averages[3], question1Averages[2], question1Averages[1], question1Averages[0]],
         options: {
             scales: {
                 yAxes: [
@@ -122,5 +248,6 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
             }
         }
     };
+    */
 
 });

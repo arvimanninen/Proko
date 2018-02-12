@@ -1,0 +1,25 @@
+﻿<div class="container">
+    
+    <progress-bar></progress-bar>
+
+    <div class="outer-radiobutton-div">
+        <h3>Mikä on ammattinimikkeesi?</h3>
+
+        <div class="btn-group radiobutton-div">
+            <ul>
+                <li ng-repeat="at in $ctrl.answererTypes">
+                    <label for="at-{{ at.AnswererTypeID }}" ng-click="$ctrl.setAnswererType(at.AnswererTypeID)">
+                        <input id="at-{{ at.AnswererTypeID }}" type="radio" name="answerer-type" value="{{ at.Name }}" />
+                        {{ at.Name }}
+                        <span class="check"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btn-group nav-btn-div nav-btn-margins">
+        <a class="button-primary" ng-click="$ctrl.goToMainQuestions()">Seuraava</a>
+    </div>
+
+</div>

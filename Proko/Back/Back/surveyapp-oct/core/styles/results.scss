@@ -24,95 +24,126 @@
 
     .question-results-div {
         margin: 6 * $grid 0;
-        padding: 0 0 2 * $grid 2 * $grid;
-        //border-radius: $grid;
-        //border: 1px solid $result-border-color;
+        padding: 2 * $grid;
         background-color: $result-color;
 
         @include media-query($on-mobile) {
-            margin: 4 * $grid 0;
+            margin: 5 * $grid 0;
             padding: 0 0 2 * $grid 0;
         }
 
-        #canvas1 {
-            height: 400px;
+        .smiley-div {
+
+            label {
+                height: 18 * $grid;
+                width: 18 * $grid;
+
+                @include media-query($on-small-mobile) {
+                    height: 16 * $grid;
+                    width: 16 * $grid;
+                }
+            }
+
+            img {
+                width: 18 * $grid;
+                height: 18 * $grid;
+
+                @include media-query($on-small-mobile) {
+                    width: 16 * $grid;
+                    height: 16 * $grid;
+                }
+            }
         }
 
-        canvas {
-            width: 100%;
-            height: 400px;
+            canvas {
+                width: 100%;
+                height: 400px;
 
-            @include media-query($on-mobile) {
-                //height: 500px;
+                @include media-query($on-mobile) {
+                    //height: 500px;
+                }
+            }
+
+            .piechart {
+                width: 64%;
+                margin: 0 auto;
+            }
+
+            .results-smiley {
+                margin-bottom: 0;
+            }
+
+            .chart-doughnut {
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
             }
         }
     }
-}
+    // modal & overlay
+    .popup-div {
+        margin: 10 * $grid auto 4 * $grid;
 
-
-// modal & overlay
-
-.popup-div {
-    margin: 10 * $grid auto 4 * $grid;
-
-    a.disabled {
-        background-color: #999999;
-        color: white;
-        cursor: default;
-    }
-}
-
-.modal-box {
-    display: none;
-    position: absolute;
-    z-index: 1000;
-    width: 50%;
-    background: white;
-    border-bottom: 1px solid #aaa;
-    border-radius: 4px;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-clip: padding-box;
-
-    @include media-query($on-tablet) {
-        width: 64%;
+        a.disabled {
+            background-color: #999999;
+            color: white;
+            cursor: default;
+        }
     }
 
-    @include media-query($on-mobile) {
-        width: 90%;
-    }
+    .modal-box {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        width: 50%;
+        background: white;
+        border-bottom: 1px solid #aaa;
+        border-radius: 4px;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-clip: padding-box;
 
-    h4 {
-        margin: 4 * $grid 3 * $grid 2 * $grid;
-    }
-
-    .clearfix {
-        margin: 0;
-        max-width: 80 * $grid;
-
-        a {
-            box-sizing: border-box;
-            width: 26 * $grid;
+        @include media-query($on-tablet) {
+            width: 64%;
         }
 
-        .js-modal-close {
-            margin: 0
+        @include media-query($on-mobile) {
+            width: 90%;
         }
 
-        .js-modal-use {
+        h4 {
+            margin: 4 * $grid 3 * $grid 2 * $grid;
+        }
+
+        .clearfix {
             margin: 0;
+            max-width: 80 * $grid;
+
+            a {
+                box-sizing: border-box;
+                width: 26 * $grid;
+            }
+
+            .js-modal-close {
+                margin: 0
+            }
+
+            .js-modal-use {
+                margin: 0;
+            }
         }
     }
-}
 
-.modal-overlay {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 900;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3) !important;
-}
+    .modal-overlay {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3) !important;
+    }

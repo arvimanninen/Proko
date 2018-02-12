@@ -1,8 +1,11 @@
 ﻿'use strict';
 
+// TODO: NEEDS LOT OF PERFORMANCE TWEAKING
+
 app.service('ResultService', function () {
     var results = [];
     var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
+    var datePointsModified = false;
 
     var Result = function (nQuestionID, nAnswerBundleDateMs, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
         this.QuestionID = nQuestionID;
@@ -23,8 +26,84 @@ app.service('ResultService', function () {
             results.push(nr);
         }
     };
+    
+        /*
+        public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
+        {
+            // PREVENTS WRONG SCALING WHEN VALUE
+            if(value == 1)
+            {
+                return 1;
+            }
+            double valueD = Convert.ToDouble(value);
+            double currentMaxD = Convert.ToDouble(currentMax);
+            double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
+            return scaledValueD;
+        }
+        */
 
-    // TODO: TEST THIS!
+    var getResultCountByAnswererTypeId = function (answererTypeId) {
+        var resultCount = 0;
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].AnswererTypeID === answererTypeId) {
+                resultCount++;
+            }
+        }
+        return resultCount;
+    };
+
+    var getResultCounts = function (questionId, targetMaxValue) {
+        if ($.isNumeric(questionId) === false) {
+            console.log("ResultService.getResultCounts.questionId is not numeric!");
+            alert("ResultService.getResultCounts.questionId is not numeric!");
+        }
+        if ($.isNumeric(targetMaxValue) === false) {
+            console.log("ResultService.getResultCounts.targetMaxValue is not numeric!");
+            alert("ResultService.getResultCounts.targetMaxValue is not numeric!");
+        }
+
+        var scaleValueToFive = function (value, maxValue) {
+            if (value === 1) {
+                return 1.0;
+            }
+            return (5 / maxValue) * value;
+        };
+
+        var referenceValues = [];
+        var resultCounts = [];
+        for (var k = 1; k <= targetMaxValue; k++) {
+            referenceValues.push(scaleValueToFive(k, targetMaxValue));
+            resultCounts.push(0);
+        }
+        // console.log("referenceValues.length: " + referenceValues.length);
+        // console.log("resultCounts.length: " + resultCounts.length);
+
+        /*for (var t = 0; t < referenceValues.length; t++) {
+            console.log("referenceValues[" + t + "]: " + referenceValues[t]);
+            
+        }*/
+
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].QuestionID === questionId) {
+                // console.log("results[" + i + "].QuestionID matches questionId: " + questionId);
+                for (var m = 0; m < referenceValues.length; m++) {
+                    // console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue)
+                    // console.log("referenceValues[" + m + "]: " + referenceValues[m]);
+                    // TODO: CHANGE == TO ===?
+                    if (results[i].AnswerValue == referenceValues[m]) {
+                        resultCounts[m]++;
+                        // console.log("resultCounts[" + m + "]++!. New count: " + resultCounts[m]);
+                    }
+                }
+            }
+        }
+        console.log("all result counts calculated!");
+        for (var g = 0; g < resultCounts.length; g++) {
+            console.log("resultCounts[" + g + "]: " + resultCounts[g]);
+        }
+        return resultCounts;
+    };
+    
     var getAveragesForAll = function (questionId) {
         var totalMass = 0.0;
         var totalCount = 0.0;
@@ -33,19 +112,23 @@ app.service('ResultService', function () {
         var counts = [0.0, 0.0, 0.0, 0.0, 0.0];
         var averages = [0.0, 0.0, 0.0, 0.0, 0.0];
         // CALCULATE RIGHT DATE POINTS
-        var daysSinceNow = 0;
-        for (var m = 0; m < datePoints.length; m++) {
-            datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
-            daysSinceNow = daysSinceNow + 7;
+        var daysSinceNow = -1;
+        if (datePointsModified === false) {
+            for (var m = 0; m < datePoints.length; m++) {
+                // TODO: TEST THIS!
+                datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
+                daysSinceNow = daysSinceNow + 7;
+                console.log("datePoints[" + m + "]:" + datePoints[m]);
+            }
+            datePointsModified = true;
         }
-
         for (var i = 0; i < results.length; i++) {
             if (results[i].QuestionID === questionId) {
-                // datePoints.length or datePoints.length - 1 ????
                 for (var k = 0; k < datePoints.length - 1; k++) {
-                    // TODO: CHECK ARE THESE STATEMENTS RIGHT!
                     if (results[i].AnswerBundleDate <= datePoints[k] &&
                         results[i].AnswerBundleDate > datePoints[k + 1]) {
+                        /*
+                        console.log("k: " + k);
                         console.log("Fits to current datePoints scope!");
                         console.log("results[" + i + "].AnswerBundleDate: " + results[i].AnswerBundleDate);
                         console.log("datePoints[" + k + "]: " + datePoints[k]);
@@ -53,10 +136,11 @@ app.service('ResultService', function () {
                         console.log("masses[" + k + "] before: " + masses[k]);
                         console.log("counts[" + k + "] before: " + counts[k]);
                         console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue);
+                        */
                         masses[k] = masses[k] + results[i].AnswerValue;
                         counts[k]++;
-                        console.log("masses[" + k + "] after: " + masses[k]);
-                        console.log("counts[" + k + "] after: " + counts[k]);
+                        // console.log("masses[" + k + "] after: " + masses[k]);
+                        // console.log("counts[" + k + "] after: " + counts[k]);*/
                     }
                 }
             }
@@ -76,7 +160,7 @@ app.service('ResultService', function () {
             alert("Error in ResultService.getAveragesForAll()!");
             console.log("masses.length and counts.length are NOT same!");
         }
-        
+        // averages.reverse();
         return averages;
     };
     /*
@@ -134,6 +218,12 @@ app.service('ResultService', function () {
 
     var reset = function () {
         results.length = 0;
+        // TODO: TEST THIS
+        datePoints.length = 0;
+        datePointsModified = false;
+        for (var i = 0; i < 6; i++) {
+            datePoints.push(new Date());
+        }
     };
     
     // TODO: UPDATE THIS
@@ -142,6 +232,8 @@ app.service('ResultService', function () {
         setResults: setResults,
         getAveragesForAll: getAveragesForAll,
         getDatePoints: getDatePoints,
+        getResultCounts: getResultCounts,
+        getResultCountByAnswererTypeId: getResultCountByAnswererTypeId,
     //    getAveragesForSingle: getAveragesForSingle,
         reset: reset
     };

@@ -3,6 +3,19 @@
 app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtrasService,
     AnswersAndBundleExtrasService, DataFactory, ResultService) {
     var that = this;
+    $(document).ready(function () {
+        var wrapperHeight = $("#wrapper").height();
+        var containerHeight = $(".container").height();
+        var navbtnHeight = wrapperHeight - containerHeight;
+        if ((navbtnHeight) < 64) {
+            navbtnHeight = 52
+        } else {
+            navbtnHeight = navbtnHeight - 12;
+        }
+        console.log(navbtnHeight);
+        $(".nav-btn-div").css("margin-top", navbtnHeight);
+    });
+
     var postingSuccess = document.getElementById("posting-success");
     var postingIcon = document.getElementById("posting-icon");
     postingSuccess.style.visibility = "hidden";
@@ -15,6 +28,7 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
     var postAnswersAndExtras = DataFactory.postSurveyAnswers.save(AnswersAndBundleExtrasService.getAnswersAndBundleExtras(),
         function () {
             var resultDtos = DataFactory.getResultsToCq.query(function () {
+                console.log("resultDtos.length: " + resultDtos.length);
                 ResultService.setResults(resultDtos);
                 // Ensimmäinen kysymys
 

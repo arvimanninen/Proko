@@ -3,15 +3,16 @@
 app.service('QuestionService', function () {
     var questions = [];
     /*
-    var QuestionDTO = function (nQuestionID, nQuestionSetIndex,
-        nChosenQuestionIndex, nQuestionText, nQuestionMethodValue) {
-        this.QuestionID = nQuestionID;
-        this.QuestionMethodID = nQuestionMethodID
-        this.QuestionSetIndex = nQuestionSetIndex;
-        this.ChosenQuestionIndex = nChosenQuestionIndex;
-        this.QuestionText = nQuestionText;
-        this.QuestionMethodValue = nQuestionMethodValue;
-    };
+    QuestionDTO - updated 2018-02-11
+                          {
+                              QuestionID = chosenquestion.QuestionID,
+                              QuestionMethodID = questionmethod.QuestionMethodID,
+                              QuestionSetIndex = chosenquestion.QuestionSet.ChosenIndex,
+                              QuestionSetTitle = chosenquestion.QuestionSet.Title,
+                              ChosenQuestionIndex = chosenquestion.ChosenIndex,
+                              QuestionText = chosenquestion.Question.Text,
+                              QuestionMethodValue = questionmethod.Value
+                          };
     */
     
     var getQuestion = function (index) {
