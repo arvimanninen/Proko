@@ -1,7 +1,7 @@
 ﻿
 'use strict';
 app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtrasService,
-    AnswersAndBundleExtrasService, DataFactory, ResultService) {
+    AnswersAndBundleExtrasService, DataFactory, ResultService, RunService) {
     var that = this;
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
@@ -15,12 +15,17 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
         console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
+    if (RunService.getRouteButtonsUsed() === false) {
+        $location.path("/error");
+    }
+    RunService.setRouteButtonsUsed(false);
 
     var postingSuccess = document.getElementById("posting-success");
     var postingIcon = document.getElementById("posting-icon");
     postingSuccess.style.visibility = "hidden";
     that.postingText = "Lähetetään vastauksia, odota hetki...";
     that.goToResults = function () {
+        RunService.setRouteButtonsUsed(true);
         $location.path("/results");
     };
     AnswersAndBundleExtrasService.setAnswersAndBundleExtras(AnswerService.getAnswers(),
@@ -30,7 +35,6 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
             var resultDtos = DataFactory.getResultsToCq.query(function () {
                 console.log("resultDtos.length: " + resultDtos.length);
                 ResultService.setResults(resultDtos);
-                // Ensimmäinen kysymys
 
                 $("#posting-status").remove();
                 postingSuccess.style.visibility = "visible";

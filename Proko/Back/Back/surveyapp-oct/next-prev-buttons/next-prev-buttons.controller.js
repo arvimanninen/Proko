@@ -26,6 +26,7 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
             console.log("aCount: " + aCount);
             console.log("qCount: " + qCount);
             if (direction === 1 || direction === -1) {
+                RunService.setRouteButtonsUsed(true);
                 if (direction === 1) {
                     questionSetIndex++;
                     RunService.increaseQuestionSetIndex();

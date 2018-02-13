@@ -2,7 +2,7 @@
 app.service('AnswerBundleExtrasService', function () {
     var textFeedback = "";
     // TODO: CHANGE THIS!!!!
-    var answererTypeId = -1;
+    var answererTypeId = 1;
     /*
     public class AnswerBundleExtrasDTO
     {

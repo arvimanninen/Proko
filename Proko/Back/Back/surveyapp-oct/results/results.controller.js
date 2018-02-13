@@ -1,10 +1,16 @@
 ﻿'use strict';
 
-app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService, RunResultsService) {
+app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService,
+    RunResultsService, RunService) {
     var that = this;
     that.toStart = function () {
         $location.path("/start");
     };
+    if (RunService.getRouteButtonsUsed() === false) {
+        $location.path("/error");
+    }
+    RunService.setRouteButtonsUsed(false);
+
     /*
     var calculateRowCount = function (componentCount, componentsPerRow) {
         var rowCount = 1;

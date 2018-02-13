@@ -2,6 +2,7 @@
 app.service('RunService', function () {
     var questionSetIndex = 1;
     var questionSetCount = 0;
+    var routeButtonsUsed = false;
     //var goneBack = false;
 
     var getQuestionSetIndex = function () {
@@ -19,21 +20,21 @@ app.service('RunService', function () {
     var setQuestionSetCount = function (count) {
         questionSetCount = count;
     }
-    var getGoneBack = function() {
-        return goneBack;
+    var getRouteButtonsUsed = function() {
+        return routeButtonsUsed;
     };
-    var setGoneBack = function (newValue) {
-        if (newValue === true || newValue === false) {
-            goneBack = newValue;
+    var setRouteButtonsUsed = function (nRouteButtonsUsed) {
+        if (nRouteButtonsUsed === true || nRouteButtonsUsed === false) {
+           routeButtonsUsed = nRouteButtonsUsed;
         } else {
-            alert("Virheellinen arvo @ RunService.setGoneBack()");
+            alert("Incorrect value @ RunService.setRouteButtonsUsed()");
         }
     };
     
     var reset = function () {
         questionSetIndex = 1;
         questionSetCount = 0;
-        //goneBack = false;
+        routeButtonsUsed = false;
     };
 
     return {
@@ -42,8 +43,8 @@ app.service('RunService', function () {
         decreaseQuestionSetIndex: decreaseQuestionSetIndex,
         getQuestionSetCount: getQuestionSetCount,
         setQuestionSetCount: setQuestionSetCount,
-        /*getGoneBack: getGoneBack,
-        setGoneBack: setGoneBack,*/
+        getRouteButtonsUsed: getRouteButtonsUsed,
+        setRouteButtonsUsed: setRouteButtonsUsed,
         reset: reset
     };
 });

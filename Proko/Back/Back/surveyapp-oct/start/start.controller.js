@@ -67,6 +67,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     
 
     that.startSurvey = function () {
+        RunService.setRouteButtonsUsed(true);
         $location.path("/answerer-buttons-radio");
     };
 });

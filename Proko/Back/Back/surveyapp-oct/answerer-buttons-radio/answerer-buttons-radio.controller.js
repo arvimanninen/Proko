@@ -2,6 +2,7 @@
 
 app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeService, AnswerBundleExtrasService, QuestionService, RunService) {
     var that = this;
+
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();       
@@ -15,12 +16,24 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
 
+    if (RunService.getRouteButtonsUsed() !== true) {
+        $location.path("/error");
+    }
+    RunService.setRouteButtonsUsed(false);
+
+    var answererTypeChosen = false;
     that.answererTypes = AnswererTypeService.getAnswererTypes();
     that.setAnswererType = function (answererTypeId) {
         AnswerBundleExtrasService.setAnswererTypeId(answererTypeId);
+        answererTypeChosen = true;
     };
     that.goToMainQuestions = function () {
-        $location.path(QuestionService.getQmvBySetIndex( RunService.getQuestionSetIndex() ));
+        if (answererTypeChosen === true) {
+            RunService.setRouteButtonsUsed(true);
+            $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex()));
+        } else {
+            console.log("AnswererButtonsRadioCtrl.answererTypeChosen === false!");
+        }
     };
     //$(window).resize(function () {
     //    var wrapperHeight = $("#wrapper").height();

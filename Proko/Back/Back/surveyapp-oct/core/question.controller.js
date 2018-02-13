@@ -62,7 +62,10 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
-
+    if (RunService.getRouteButtonsUsed() === false) {
+        $location.path("/error");
+    }
+    RunService.setRouteButtonsUsed(false);
     var questionSetIndex = RunService.getQuestionSetIndex();
     console.log("questionSetIndex: " + questionSetIndex);
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
