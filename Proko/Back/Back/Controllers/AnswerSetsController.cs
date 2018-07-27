@@ -39,7 +39,7 @@ namespace Back.Controllers
         // GET: AnswerSets/Create
         public ActionResult Create()
         {
-            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "AnswerBundleID");
+            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "TextFeedback");
             ViewBag.QuestionMethodID = new SelectList(db.QuestionMethods, "QuestionMethodID", "Value");
             return View();
         }
@@ -58,7 +58,7 @@ namespace Back.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "AnswerBundleID", answerSet.AnswerBundleID);
+            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "TextFeedback", answerSet.AnswerBundleID);
             ViewBag.QuestionMethodID = new SelectList(db.QuestionMethods, "QuestionMethodID", "Value", answerSet.QuestionMethodID);
             return View(answerSet);
         }
@@ -75,7 +75,7 @@ namespace Back.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "AnswerBundleID", answerSet.AnswerBundleID);
+            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "TextFeedback", answerSet.AnswerBundleID);
             ViewBag.QuestionMethodID = new SelectList(db.QuestionMethods, "QuestionMethodID", "Value", answerSet.QuestionMethodID);
             return View(answerSet);
         }
@@ -93,7 +93,7 @@ namespace Back.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "AnswerBundleID", answerSet.AnswerBundleID);
+            ViewBag.AnswerBundleID = new SelectList(db.AnswerBundles, "AnswerBundleID", "TextFeedback", answerSet.AnswerBundleID);
             ViewBag.QuestionMethodID = new SelectList(db.QuestionMethods, "QuestionMethodID", "Value", answerSet.QuestionMethodID);
             return View(answerSet);
         }

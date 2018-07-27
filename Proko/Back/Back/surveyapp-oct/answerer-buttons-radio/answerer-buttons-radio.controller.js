@@ -30,7 +30,7 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
     that.goToMainQuestions = function () {
         if (answererTypeChosen === true) {
             RunService.setRouteButtonsUsed(true);
-            $location.path(QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex()));
+            $location.path(QuestionService.getQuestionMethodValueBySetIndex(RunService.getQuestionSetIndex()));
         } else {
             console.log("AnswererButtonsRadioCtrl.answererTypeChosen === false!");
         }

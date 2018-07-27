@@ -32,7 +32,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
             console.log("All cq get!");
             console.log("rawQs.length: " + rawQs.length);
             QuestionService.setQuestions(rawQs);
-            RunService.setQuestionSetCount(QuestionService.getSetCount());
+            RunService.setQuestionSetCount(QuestionService.getQuestionSetCount());
             var answererTypeDtos = DataFactory.getChosenAnswererTypes.query(function () {
                 if (answererTypeDtos.length === 0) {
                     showErrorMessage();

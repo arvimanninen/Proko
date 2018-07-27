@@ -51,11 +51,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -221,15 +221,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AnswerBundlesController.cs" />
     <Compile Include="Controllers\AnswersController.cs" />
     <Compile Include="Controllers\AnswerSetsController.cs" />
-    <Compile Include="Controllers\ChosenQuestionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\QuestionMethodsController.cs" />
-    <Compile Include="Controllers\QuestionsController.cs" />
-    <Compile Include="Controllers\QuestionSetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1272,41 +1267,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Answers\Create.cshtml" />
-    <Content Include="Views\Answers\Delete.cshtml" />
-    <Content Include="Views\Answers\Details.cshtml" />
-    <Content Include="Views\Answers\Edit.cshtml" />
-    <Content Include="Views\Answers\Index.cshtml" />
-    <Content Include="Views\AnswerSets\Create.cshtml" />
-    <Content Include="Views\AnswerSets\Delete.cshtml" />
-    <Content Include="Views\AnswerSets\Details.cshtml" />
-    <Content Include="Views\AnswerSets\Edit.cshtml" />
-    <Content Include="Views\AnswerSets\Index.cshtml" />
-    <Content Include="Views\AnswerBundles\Create.cshtml" />
-    <Content Include="Views\AnswerBundles\Delete.cshtml" />
-    <Content Include="Views\AnswerBundles\Details.cshtml" />
-    <Content Include="Views\AnswerBundles\Edit.cshtml" />
-    <Content Include="Views\AnswerBundles\Index.cshtml" />
-    <Content Include="Views\Questions\Create.cshtml" />
-    <Content Include="Views\Questions\Delete.cshtml" />
-    <Content Include="Views\Questions\Details.cshtml" />
-    <Content Include="Views\Questions\Edit.cshtml" />
-    <Content Include="Views\Questions\Index.cshtml" />
-    <Content Include="Views\ChosenQuestions\Create.cshtml" />
-    <Content Include="Views\ChosenQuestions\Delete.cshtml" />
-    <Content Include="Views\ChosenQuestions\Details.cshtml" />
-    <Content Include="Views\ChosenQuestions\Edit.cshtml" />
-    <Content Include="Views\ChosenQuestions\Index.cshtml" />
-    <Content Include="Views\QuestionSets\Create.cshtml" />
-    <Content Include="Views\QuestionSets\Delete.cshtml" />
-    <Content Include="Views\QuestionSets\Details.cshtml" />
-    <Content Include="Views\QuestionSets\Edit.cshtml" />
-    <Content Include="Views\QuestionSets\Index.cshtml" />
-    <Content Include="Views\QuestionMethods\Create.cshtml" />
-    <Content Include="Views\QuestionMethods\Delete.cshtml" />
-    <Content Include="Views\QuestionMethods\Details.cshtml" />
-    <Content Include="Views\QuestionMethods\Edit.cshtml" />
-    <Content Include="Views\QuestionMethods\Index.cshtml" />
     <Content Include="surveyapp-oct\core\oldstyles\frame.scss" />
     <Content Include="surveyapp-oct\core\oldstyles\results.scss" />
     <Content Include="surveyapp-oct\core\oldstyles\variables.scss" />
@@ -1531,6 +1491,16 @@
     <Content Include="surveyapp-oct\node_modules\rangeslider.js\README.md" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Answers\Create.cshtml" />
+    <Content Include="Views\Answers\Delete.cshtml" />
+    <Content Include="Views\Answers\Details.cshtml" />
+    <Content Include="Views\Answers\Edit.cshtml" />
+    <Content Include="Views\Answers\Index.cshtml" />
+    <Content Include="Views\AnswerSets\Create.cshtml" />
+    <Content Include="Views\AnswerSets\Delete.cshtml" />
+    <Content Include="Views\AnswerSets\Details.cshtml" />
+    <Content Include="Views\AnswerSets\Edit.cshtml" />
+    <Content Include="Views\AnswerSets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

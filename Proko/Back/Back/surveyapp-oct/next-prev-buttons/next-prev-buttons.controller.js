@@ -17,7 +17,7 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
     that.goTo = function (direction) {
         var questionSetIndex = RunService.getQuestionSetIndex();
         var maxSetIndex = RunService.getQuestionSetCount();
-        var currentQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
+        var currentQmv = QuestionService.getQuestionMethodValueBySetIndex(questionSetIndex);
         var nextQmv;
         var aCount = AnswerService.getAnswerCountByQuestionSetIndex(questionSetIndex);
         var qCount = QuestionService.getQuestionCountBySetIndex(questionSetIndex);
@@ -36,7 +36,7 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
                     RunService.decreaseQuestionSetIndex();
                 }
 
-                nextQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
+                nextQmv = QuestionService.getQuestionMethodValueBySetIndex(questionSetIndex);
                 changeLocation(currentQmv, nextQmv, questionSetIndex);
             } else {
                 alert("Error at go(direction)!");

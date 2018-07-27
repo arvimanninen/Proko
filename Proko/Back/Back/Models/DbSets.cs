@@ -12,7 +12,7 @@ namespace Back.Models
     {
         public MainDbContext() : base("BackContext")
         {
-            // ENABLE THESE FOR DROPPING CURRENT DB AND RECREATING (EMPTY) DB
+            // ENABLE THESE TO DROP CURRENT DB AND RECREATING (EMPTY) DB
             // Database.SetInitializer(new DropCreateDatabaseAlways<MainDbContext>());
             // Database.Initialize(false);
         }

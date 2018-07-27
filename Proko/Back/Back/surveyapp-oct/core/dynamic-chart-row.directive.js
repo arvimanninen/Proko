@@ -65,9 +65,7 @@ app.directive('dynamicChartRow', function ($compile) {
                             chartComponents.shift();
                         }
                         rowElement.appendChild(chartElement);
-                        if (firstChartInArray === true) {
-                            firstChartInArray = false;
-                        }
+                        firstChartInArray = false;
                     } else {
                         break;
                     }

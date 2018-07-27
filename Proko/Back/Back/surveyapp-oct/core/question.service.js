@@ -36,7 +36,7 @@ app.service('QuestionService', function () {
         }
         return qs;
     };
-    var getQmvBySetIndex = function (index) {
+    var getQuestionMethodValueBySetIndex = function (index) {
         for (var i = 0; i < questions.length; i++) {
             if (questions[i].QuestionSetIndex === index) {
                 return questions[i].QuestionMethodValue;
@@ -54,7 +54,7 @@ app.service('QuestionService', function () {
         return qCount;
     };
 
-    var getSetCount = function () {
+    var getQuestionSetCount = function () {
         var sc = 0;
         var qsi;
         for (var i = 0; i < questions.length; i++) {
@@ -86,8 +86,8 @@ app.service('QuestionService', function () {
         getQuestions: getQuestions,
         getQuestionCountBySetIndex: getQuestionCountBySetIndex,
         getQuestionsBySetIndex: getQuestionsBySetIndex,
-        getQmvBySetIndex: getQmvBySetIndex,
-        getSetCount: getSetCount,
+        getQuestionMethodValueBySetIndex: getQuestionMethodValueBySetIndex,
+        getQuestionSetCount: getQuestionSetCount,
         setQuestions: setQuestions,
         reset: reset
     };

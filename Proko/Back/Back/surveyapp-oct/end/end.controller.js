@@ -32,7 +32,7 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
         AnswerBundleExtrasService.getAnswerBundleExtras());
     var postAnswersAndExtras = DataFactory.postSurveyAnswers.save(AnswersAndBundleExtrasService.getAnswersAndBundleExtras(),
         function () {
-            var resultDtos = DataFactory.getResultsToCq.query(function () {
+            var resultDtos = DataFactory.getResultsToChosenQuestions.query(function () {
                 console.log("resultDtos.length: " + resultDtos.length);
                 ResultService.setResults(resultDtos);
 

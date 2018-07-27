@@ -20,7 +20,7 @@
         console.log("AnswerService.getTextFeedback:" + AnswerBundleExtrasService.getTextFeedback());
         if (direction === -1) {
             RunService.decreaseQuestionSetIndex();
-            var lastQmv = QuestionService.getQmvBySetIndex(RunService.getQuestionSetIndex());
+            var lastQmv = QuestionService.getQuestionMethodValueBySetIndex(RunService.getQuestionSetIndex());
             $location.path(lastQmv);
         } else if (direction === 1) {
             $location.path("/end");

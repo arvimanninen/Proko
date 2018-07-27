@@ -5,7 +5,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     //var backButton = document.getElementById("back-button");
     
     
-    //var currentQmv = QuestionService.getQmvBySetIndex(questionSetIndex);
+    //var currentQmv = QuestionService.getQuestionMethodValueBySetIndex(questionSetIndex);
     //var nextQmv;
     
     

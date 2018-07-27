@@ -104,6 +104,7 @@ namespace Back.ApiControllers
         [HttpPost]
         public IHttpActionResult PostSurveyAnswers([FromBody] AnswersAndBundleExtrasDTO abe)
         {
+            
             if (!ModelState.IsValid)
             {
                 Debug.WriteLine("ModelState not valid!");
@@ -140,49 +141,53 @@ namespace Back.ApiControllers
                 Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionMethodID: " + cleanSortedDtos[i].QuestionMethodID);
             }
             // CREATE AnswerBundle bundle
-            AnswerBundle bundle = new AnswerBundle();
-            bundle.Date = DateTime.Now;
-            bundle.AnswererTypeID = answererTypeId;
-            bundle.TextFeedback = textFb;
-            // NEW: CHECK IF WORKS
-            // TODO: TRANSACTION MANAGEMENT
-            db.AnswerBundles.Add(bundle);
-            db.SaveChanges();
-
-            // ADD AnswerSets TO bundle
-           // int currentQmId = -2;
-            int currentSetId = -2;
-            int currentSetIndex = -2;
             
-            foreach (AnswerDTO aDto in cleanSortedDtos)
-            {
-                // IF NEW QuestionMethodID IN answerDtos,
-                // NEW AnswerSet IS CREATED
-                if(aDto.QuestionSetIndex != currentSetIndex)
-                {
-                    // currentQmId = aDto.QuestionMethodID;
-                    currentSetIndex = aDto.QuestionSetIndex;
-                    AnswerSet newSet = new AnswerSet();
-                    newSet.QuestionMethodID = aDto.QuestionMethodID;
-                    newSet.AnswerBundleID = bundle.AnswerBundleID;
-                    db.AnswerSets.Add(newSet);
-                    db.SaveChanges();
-                    currentSetId = newSet.AnswerSetID;
-                }
-                db.Answers.Add(new Answer
-                {
-                    Value = aDto.Value,
-                    QuestionID = aDto.QuestionID,
-                    AnswerSetID = currentSetId
-                });
-                db.SaveChanges();
-                Debug.WriteLine("currentSetId:" + currentSetId);
-                Debug.WriteLine("currentSetIndex:" + currentSetIndex);
-            }
+                    AnswerBundle bundle = new AnswerBundle();
+                    bundle.Date = DateTime.Now;
+                    bundle.AnswererTypeID = answererTypeId;
+                    bundle.TextFeedback = textFb;
+                    // NEW: CHECK IF WORKS
+                    // TODO: TRANSACTION MANAGEMENT
+                    db.AnswerBundles.Add(bundle);
 
-            Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
-            return Ok();
-        }
+                    db.SaveChanges();
+
+                    // ADD AnswerSets TO bundle
+                    // int currentQmId = -2;
+                    int currentSetId = -2;
+                    int currentSetIndex = -2;
+
+                    foreach (AnswerDTO aDto in cleanSortedDtos)
+                    {
+                        // IF NEW QuestionMethodID IN answerDtos,
+                        // NEW AnswerSet IS CREATED
+                        if (aDto.QuestionSetIndex != currentSetIndex)
+                        {
+                            // currentQmId = aDto.QuestionMethodID;
+                            currentSetIndex = aDto.QuestionSetIndex;
+                            AnswerSet newSet = new AnswerSet();
+                            newSet.QuestionMethodID = aDto.QuestionMethodID;
+                            newSet.AnswerBundleID = bundle.AnswerBundleID;
+                            db.AnswerSets.Add(newSet);
+                            db.SaveChanges();
+                            currentSetId = newSet.AnswerSetID;
+                        }
+                        db.Answers.Add(new Answer
+                        {
+                            Value = aDto.Value,
+                            QuestionID = aDto.QuestionID,
+                            AnswerSetID = currentSetId
+                        });
+                        db.SaveChanges();
+                        Debug.WriteLine("currentSetId:" + currentSetId);
+                        Debug.WriteLine("currentSetIndex:" + currentSetIndex);
+                    }
+                    
+                    Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
+                    return Ok();
+                }
+                
+        
 
         // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
         public static long ConvertToUnixTime(DateTime datetime)
