@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 app.service('AnswerService', function () {
-    var surveyAnswers = [];
+    var answers = [];
     
     // TODO: UPDATE AnswerDTO
     /*
@@ -44,17 +44,17 @@ app.service('AnswerService', function () {
     };
 
     var getAnswer = function (index) {
-        return surveyAnswers[index];
+        return answers[index];
     };
 
     var getAnswers = function () {
-        return surveyAnswers;
+        return answers;
     };
 
     var getAnswerCountByQuestionSetIndex = function (index) {
         var aCount = 0;
-        for (var i = 0; i < surveyAnswers.length; i++) {
-            if (surveyAnswers[i].QuestionSetIndex === index) {
+        for (var i = 0; i < answers.length; i++) {
+            if (answers[i].QuestionSetIndex === index) {
                 aCount++;
             }
         }
@@ -64,9 +64,9 @@ app.service('AnswerService', function () {
 
     var getAnswersBySetIndex = function (setIndex) {
         var ans = [];
-        for (var i = 0; i < surveyAnswers.length; i++) {
-            if (surveyAnswers[i].QuestionSetIndex === setIndex) {
-                ans.push(surveyAnswers[i]);
+        for (var i = 0; i < answers.length; i++) {
+            if (answers[i].QuestionSetIndex === setIndex) {
+                ans.push(answers[i]);
             }
         }
         return ans;
@@ -74,12 +74,12 @@ app.service('AnswerService', function () {
 
     var setAnswer = function (nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID) {
         var sa = new AnswerDTO(nValue, nQuestionSetIndex, nChosenQuestionIndex, nQuestionID, nQuestionMethodID);
-        surveyAnswers.push(sa);
+        answers.push(sa);
     };
 
     var replaceAnswer = function (answerIndex, nValue, questionId, questionMethodId) {
-        if(surveyAnswers[answerIndex].QuestionID === questionId && surveyAnswers[answerIndex].QuestionMethodID === questionMethodId) {
-            surveyAnswers[answerIndex].Value = nValue;
+        if(answers[answerIndex].QuestionID === questionId && answers[answerIndex].QuestionMethodID === questionMethodId) {
+            answers[answerIndex].Value = nValue;
         } else {
             alert("Kysymyksen korvaaminen ei onnistunut, tuntematon virhe!");
         }
@@ -89,8 +89,8 @@ app.service('AnswerService', function () {
         var ai = [];
         var correctIndex = [];
 
-        for (var i = 0; i < surveyAnswers.length; i++) {
-            if (surveyAnswers[i].QuestionSetIndex === setIndex && surveyAnswers[i].ChosenQuestionIndex === questionIndex) {
+        for (var i = 0; i < answers.length; i++) {
+            if (answers[i].QuestionSetIndex === setIndex && answers[i].ChosenQuestionIndex === questionIndex) {
                 correctIndex.push(i);
             }
         }
@@ -104,7 +104,7 @@ app.service('AnswerService', function () {
         return -1;
     };
     var reset = function () {
-        surveyAnswers.length = 0;
+        answers.length = 0;
     };
     return {
         getAnswer: getAnswer,

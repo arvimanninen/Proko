@@ -19,12 +19,6 @@ namespace Back.ApiControllers
     {
         private MainDbContext db = new MainDbContext();
 
-        // GET: api/AnswersApi
-        public IQueryable<Answer> GetAnswers()
-        {
-            return db.Answers;
-        }
-
         // GET: api/AnswersApi/5
         [ResponseType(typeof(Answer))]
         public IHttpActionResult GetAnswer(int id)
