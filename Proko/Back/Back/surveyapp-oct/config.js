@@ -10,13 +10,13 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 template: '<start></start>'
             })
             .when('/buttons-slider', {
-                template: '<buttons-slider></buttons-slider>'
+                template: '<qm-buttons-slider></qm-buttons-slider>'
             })
             .when('/buttons-smileys', {
-                template: '<buttons-smileys></buttons-smileys>'
+                template: '<qm-buttons-smileys></qm-buttons-smileys>'
             })
             .when('/buttons-thumbs', {
-                template: '<buttons-thumbs></buttons-thumbs>'
+                template: '<qm-buttons-thumbs></qm-buttons-thumbs>'
             })
             .when('/text-area', {
                 template: '<text-area></text-area>'
