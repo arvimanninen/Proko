@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('ButtonsCheckboxCtrl', function ($scope, $location) {
+app.controller('QmButtonsCheckboxCtrl', function ($scope, $location) {
 
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();

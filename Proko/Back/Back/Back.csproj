@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -339,15 +340,15 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="surveyapp-oct\buttons-checkbox\buttons-checkbox.component.js" />
-    <Content Include="surveyapp-oct\buttons-checkbox\buttons-checkbox.controller.js" />
-    <Content Include="surveyapp-oct\buttons-checkbox\buttons-checkbox.template.html" />
+    <Content Include="surveyapp-oct\qm-buttons-checkbox\qm-buttons-checkbox.component.js" />
+    <Content Include="surveyapp-oct\qm-buttons-checkbox\qm-buttons-checkbox.controller.js" />
+    <Content Include="surveyapp-oct\qm-buttons-checkbox\qm-buttons-checkbox.template.html" />
     <Content Include="surveyapp-oct\answerer-buttons-radio\answerer-buttons-radio.component.js" />
     <Content Include="surveyapp-oct\answerer-buttons-radio\answerer-buttons-radio.controller.js" />
     <Content Include="surveyapp-oct\answerer-buttons-radio\answerer-buttons-radio.template.html" />
-    <Content Include="surveyapp-oct\buttons-slider\buttons-slider.template.html" />
-    <Content Include="surveyapp-oct\buttons-smileys\buttons-smileys.template.html" />
-    <Content Include="surveyapp-oct\buttons-thumbs\buttons-thumbs.template.html" />
+    <Content Include="surveyapp-oct\qm-buttons-slider\qm-buttons-slider.template.html" />
+    <Content Include="surveyapp-oct\qm-buttons-smileys\qm-buttons-smileys.template.html" />
+    <Content Include="surveyapp-oct\qm-buttons-thumbs\qm-buttons-thumbs.template.html" />
     <Content Include="surveyapp-oct\config.js" />
     <Content Include="surveyapp-oct\core\answerbundleextras.service.js" />
     <Content Include="surveyapp-oct\core\answerertype.service.js" />
@@ -372,7 +373,7 @@
     <Content Include="surveyapp-oct\error\error.controller.js" />
     <Content Include="surveyapp-oct\error\error.template.html" />
     <Content Include="surveyapp-oct\module.js" />
-    <Content Include="surveyapp-oct\buttons-slider\buttons-slider.component.js" />
+    <Content Include="surveyapp-oct\qm-buttons-slider\qm-buttons-slider.component.js" />
     <Content Include="surveyapp-oct\answerer-result-chart-bar\answerer-result-chart-bar.component.js" />
     <Content Include="surveyapp-oct\answerer-result-chart-bar\answerer-result-chart-bar.controller.js" />
     <Content Include="surveyapp-oct\answerer-result-chart-bar\answerer-result-chart-bar.template.html" />
@@ -392,8 +393,8 @@
     <Content Include="surveyapp-oct\sliders-range\sliders-range.component.js" />
     <Content Include="surveyapp-oct\sliders-range\sliders-range.controller.js" />
     <Content Include="surveyapp-oct\sliders-range\sliders-range.template.html" />
-    <Content Include="surveyapp-oct\buttons-smileys\buttons-smileys.component.js" />
-    <Content Include="surveyapp-oct\buttons-thumbs\buttons-thumbs.component.js" />
+    <Content Include="surveyapp-oct\qm-buttons-smileys\qm-buttons-smileys.component.js" />
+    <Content Include="surveyapp-oct\qm-buttons-thumbs\qm-buttons-thumbs.component.js" />
     <Content Include="surveyapp-oct\core\answer.service.js" />
     <Content Include="surveyapp-oct\core\images\flag-of-Estonia.png" />
     <Content Include="surveyapp-oct\core\images\flag-of-Finland.png" />
