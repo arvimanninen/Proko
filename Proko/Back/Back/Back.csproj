@@ -386,9 +386,6 @@
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.controller.js" />
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.template.html" />
     <Content Include="surveyapp-oct\results\results.template.html" />
-    <Content Include="surveyapp-oct\sliders-range\sliders-range.component.js" />
-    <Content Include="surveyapp-oct\sliders-range\sliders-range.controller.js" />
-    <Content Include="surveyapp-oct\sliders-range\sliders-range.template.html" />
     <Content Include="surveyapp-oct\qm-buttons-smileys\qm-buttons-smileys.component.js" />
     <Content Include="surveyapp-oct\qm-buttons-thumbs\qm-buttons-thumbs.component.js" />
     <Content Include="surveyapp-oct\core\answer.service.js" />
