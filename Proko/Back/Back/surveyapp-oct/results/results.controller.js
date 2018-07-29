@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService,
-    RunResultsService, RunService) {
+    RunService) {
     var that = this;
     that.toStart = function () {
         $location.path("/start");
@@ -50,7 +50,6 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     // var maxRowIndex = calculateRowCount(allQuestions.length + 1, chartsPerRow) - 1;
     
    
-    RunResultsService.setMaxChartIndex(maxChartIndex);
     // RunResultsService.setMaxRowIndex(maxRowIndex);
     // var questions = [];
     //console.log("ResultsCtrl.maxRowIndex: " + maxRowIndex);
@@ -58,7 +57,6 @@ app.controller('ResultsCtrl', function ($location, QuestionService, AnswererType
     var getChartNames = function (questions) {
         var chartNames = [];
         for (var i = 0; i < questions.length; i++) {
-            //var qmv = QuestionService.getQuestion(i).QuestionMethodValue;
             var qmv = questions[i].QuestionMethodValue;
             console.log("qmv - index[" + i + "]:" + qmv);
             if (qmv === "buttons-smileys") {

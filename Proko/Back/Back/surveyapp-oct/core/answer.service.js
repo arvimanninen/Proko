@@ -103,9 +103,11 @@ app.service('AnswerService', function () {
         }
         return -1;
     };
+
     var reset = function () {
         answers.length = 0;
     };
+
     return {
         getAnswer: getAnswer,
         setAnswer: setAnswer,

@@ -359,7 +359,6 @@
     <Content Include="surveyapp-oct\core\images\thumb-neutral-b.png" />
     <Content Include="surveyapp-oct\core\images\thumb-up-b.png" />
     <Content Include="surveyapp-oct\core\result.service.js" />
-    <Content Include="surveyapp-oct\core\runresults.service.js" />
     <Content Include="surveyapp-oct\core\styles\frame.css" />
     <Content Include="surveyapp-oct\core\styles\frame.min.css" />
     <Content Include="surveyapp-oct\core\styles\rangeslider.css" />
@@ -386,9 +385,6 @@
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.component.js" />
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.controller.js" />
     <Content Include="surveyapp-oct\result-chart-pie\result-chart-pie.template.html" />
-    <Content Include="surveyapp-oct\result-row\result-row.controller.js" />
-    <Content Include="surveyapp-oct\result-row\result-row.component.js" />
-    <Content Include="surveyapp-oct\result-row\result-row.template.html" />
     <Content Include="surveyapp-oct\results\results.template.html" />
     <Content Include="surveyapp-oct\sliders-range\sliders-range.component.js" />
     <Content Include="surveyapp-oct\sliders-range\sliders-range.controller.js" />

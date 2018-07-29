@@ -2,54 +2,7 @@
 
 app.controller('QuestionCtrl', function ($location, $route, $templateCache, AnswerService, QuestionService, RunService) {
     var that = this;
-    //var backButton = document.getElementById("back-button");
     
-    
-    //var currentQmv = QuestionService.getQuestionMethodValueBySetIndex(questionSetIndex);
-    //var nextQmv;
-    
-    
-    /*
-    var changeLocation = function (currentLocation, nextLocation, index, maximumIndex) {
-        if (index > maximumIndex) {
-            $location.path("/end");
-        } else if (currentLocation === nextLocation) {
-            var currentPageTemplate = $route.current.templateUrl;
-            $templateCache.remove(currentPageTemplate);
-            $route.reload();
-        } else {
-            $location.path(nextLocation);
-        }
-    };
-    */
-    /*
-    var checkAnsweredAndActivate = function (currentAnswers) {
-        console.log("checkAnsweredAndActivate() started!");
-        for (var i = 0; i < currentAnswers.length; i++) {
-            var cqi = currentAnswers[i].ChosenQuestionIndex.toString();
-            var v = currentAnswers[i].Value.toString();
-            var element = "#cqi" + cqi + "-a" + v;
-            console.log("checkAnsweredAndActivate().ElementId:");
-            console.log(element);
-            //var currentElement = document.getElementById(elementId);
-
-            $(element).addClass("active");
-        }
-    };
-    */
-    /*if (questionSetIndex >= 2) {
-        backButton.style.visibility = "visible";
-    } else {
-        backButton.style.visibility = "hidden";
-    }*/
-    //var currentAnswers = AnswerService.getAnswersBySetIndex(questionSetIndex);
-    //console.log("currentAnswers.length: ");
-    //console.log(currentAnswers.length);
-    /*
-    if (currentAnswers.length >= 1) {
-        angular.element(document).ready(checkAnsweredAndActivate(currentAnswers));
-    }
-    */
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();
@@ -62,6 +15,7 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
+
     if (RunService.getRouteButtonsUsed() === false) {
         $location.path("/error");
     }

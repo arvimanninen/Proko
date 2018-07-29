@@ -1,9 +1,10 @@
 ﻿'use strict';
 app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionService,
     AnswerService, AnswererTypeService, RunService, ResultService, AnswerBundleExtrasService,
-    AnswersAndBundleExtrasService, RunResultsService) {
+    AnswersAndBundleExtrasService) {
     console.log("StartCtrl started");
     var that = this;
+
     QuestionService.reset();
     AnswerService.reset();
     RunService.reset();
@@ -11,7 +12,6 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     AnswerBundleExtrasService.reset();
     AnswersAndBundleExtrasService.reset();
     AnswererTypeService.reset();
-    RunResultsService.reset();
 
     var startButton = document.getElementById("start-button");
     // NAMED lt INSTEAD OF loadingText FOR AVOIDING CONFUSION WITH that.loadingText

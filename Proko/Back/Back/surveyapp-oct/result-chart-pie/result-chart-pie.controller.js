@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultService, RunResultsService) {
+app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultService) {
     var that = this;
     var chartIndex = $attrs.questionindex;
     //var chartIndex = that.questionindex;

@@ -1,8 +1,7 @@
 ﻿'use strict';
 
-app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, AnswererTypeService, ResultService, RunResultsService) {
+app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, AnswererTypeService, ResultService) {
     var that = this;
-    //var chartIndex = RunResultsService.getCurrentChartIndex();
     var chartIndex = $attrs.questionindex;
     
     var question = QuestionService.getQuestion(chartIndex);
