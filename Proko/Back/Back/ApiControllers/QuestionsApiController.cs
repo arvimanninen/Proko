@@ -17,14 +17,14 @@ namespace Back.ApiControllers
     public class QuestionsApiController : ApiController
     {
         private MainDbContext db = new MainDbContext();
-
+        /*
         // GET: api/QuestionsApi
         public IQueryable<Question> GetQuestions()
         {
             return db.Questions;
         }
         
-       
+        */
         [Route("api/getchosenquestions")]
         [HttpGet]
         public IHttpActionResult GetChosenQuestions()
@@ -117,7 +117,7 @@ namespace Back.ApiControllers
         
         
 
-
+        /*
         // GET: api/QuestionsApi/5
         [ResponseType(typeof(Question))]
         public IHttpActionResult GetQuestion(int id)
@@ -213,5 +213,7 @@ namespace Back.ApiControllers
         {
             return db.Questions.Count(e => e.QuestionID == id) > 0;
         }
+    */
     }
+    
 }

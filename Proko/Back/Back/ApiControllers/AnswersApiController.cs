@@ -18,7 +18,7 @@ namespace Back.ApiControllers
     public class AnswersApiController : ApiController
     {
         private MainDbContext db = new MainDbContext();
-
+        /*
         // GET: api/AnswersApi/5
         [ResponseType(typeof(Answer))]
         public IHttpActionResult GetAnswer(int id)
@@ -182,7 +182,7 @@ namespace Back.ApiControllers
                 }
                 
         
-
+        /*
         // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
         public static long ConvertToUnixTime(DateTime datetime)
         {
@@ -190,6 +190,7 @@ namespace Back.ApiControllers
 
             return (long)(datetime - sTime).TotalMilliseconds;
         }
+        
         public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
         {
             // PREVENTS WRONG SCALING WHEN VALUE
@@ -202,11 +203,33 @@ namespace Back.ApiControllers
             double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
             return scaledValueD;
         }
-
+        */
+        
         [Route("api/getresultstocq")]
         [HttpGet]
         public IHttpActionResult GetResultsToCq()
         {
+            double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD)
+            {
+                // PREVENTS WRONG SCALING WHEN VALUE
+                if (value == 1)
+                {
+                    return 1;
+                }
+                double valueD = Convert.ToDouble(value);
+                double currentMaxD = Convert.ToDouble(currentMax);
+                double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
+                return scaledValueD;
+            }
+
+            // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
+            long ConvertToUnixTime(DateTime datetime)
+            {
+                DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+                return (long)(datetime - sTime).TotalMilliseconds;
+            }
+
             var rawCqIdsWithDupl = from cq in db.ChosenQuestions
                                    orderby cq.QuestionID
                                    select cq.QuestionID;
@@ -241,6 +264,7 @@ namespace Back.ApiControllers
                 }
             }
             Debug.WriteLine("absoluteScaleMax: " + absoluteScaleMax);
+            Debug.WriteLine("******");
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
             foreach (AnswerResultTemp rt in resultTemps)
             {
@@ -250,6 +274,10 @@ namespace Back.ApiControllers
                 nr.AnswererTypeID = rt.AnswererTypeID;
                 nr.AnswererTypeName = rt.AnswererTypeName;
                 nr.AnswerBundleDateMs = ConvertToUnixTime(rt.AnswerBundleDate);
+                Debug.WriteLine("nr.AnswerValue: " + nr.AnswerValue);
+                Debug.WriteLine("rt.AnswerValue: " + rt.AnswerValue);
+                Debug.WriteLine("rt.AnswerScaleMax: " + rt.AnswerScaleMax);
+                Debug.WriteLine("******");
                 results.Add(nr);
             }
             Debug.WriteLine("results.Count: " + results.Count);
@@ -279,7 +307,7 @@ namespace Back.ApiControllers
                 return NotFound();
             }
         }
-
+        /*
         // DELETE: api/AnswersApi/5
         [ResponseType(typeof(Answer))]
         public IHttpActionResult DeleteAnswer(int id)
@@ -309,6 +337,6 @@ namespace Back.ApiControllers
         {
             return db.Answers.Count(e => e.AnswerID == id) > 0;
         }
-        
+        */
     }
 }
