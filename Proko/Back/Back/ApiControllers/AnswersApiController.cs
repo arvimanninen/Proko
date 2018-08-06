@@ -205,9 +205,9 @@ namespace Back.ApiControllers
         }
         */
         
-        [Route("api/getresultstocq")]
+        [Route("api/getresultstochosenquestions")]
         [HttpGet]
-        public IHttpActionResult GetResultsToCq()
+        public IHttpActionResult GetResultsToChosenQuestions()
         {
             double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD)
             {
