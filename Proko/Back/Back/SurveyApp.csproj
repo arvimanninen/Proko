@@ -1,0 +1,1586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1400388-A9F2-45CF-BA4F-9D91164D6D29}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Back</RootNamespace>
+    <AssemblyName>Back</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.3\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.3\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.7.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiControllers\AnswersApiController.cs" />
+    <Compile Include="ApiControllers\QuestionsApiController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswersController.cs" />
+    <Compile Include="Controllers\AnswerSetsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707281503558_Initial.cs" />
+    <Compile Include="Migrations\201707281503558_Initial.Designer.cs">
+      <DependentUpon>201707281503558_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071228521_ChosenIndexUnique.cs" />
+    <Compile Include="Migrations\201709071228521_ChosenIndexUnique.Designer.cs">
+      <DependentUpon>201709071228521_ChosenIndexUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071237427_UniqueQIDandQMIDCombo.cs" />
+    <Compile Include="Migrations\201709071237427_UniqueQIDandQMIDCombo.Designer.cs">
+      <DependentUpon>201709071237427_UniqueQIDandQMIDCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081209596_UniqueQIDandQMIDComboRemoved.cs" />
+    <Compile Include="Migrations\201709081209596_UniqueQIDandQMIDComboRemoved.Designer.cs">
+      <DependentUpon>201709081209596_UniqueQIDandQMIDComboRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709151325515_ExtendedDatabaseForNewFeatures.cs" />
+    <Compile Include="Migrations\201709151325515_ExtendedDatabaseForNewFeatures.Designer.cs">
+      <DependentUpon>201709151325515_ExtendedDatabaseForNewFeatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710081338058_QsIDAndCIadded.cs" />
+    <Compile Include="Migrations\201710081338058_QsIDAndCIadded.Designer.cs">
+      <DependentUpon>201710081338058_QsIDAndCIadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.cs" />
+    <Compile Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.Designer.cs">
+      <DependentUpon>201710091744057_TitleAddedToQuestionSetModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.cs" />
+    <Compile Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.Designer.cs">
+      <DependentUpon>201710181045002_TextFeedbackAddedToAnswerBundle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710191246455_TitleInQuestionSetRenamedAsMainQuestion.cs" />
+    <Compile Include="Migrations\201710191246455_TitleInQuestionSetRenamedAsMainQuestion.Designer.cs">
+      <DependentUpon>201710191246455_TitleInQuestionSetRenamedAsMainQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710191259252_LastMigrationReversed.cs" />
+    <Compile Include="Migrations\201710191259252_LastMigrationReversed.Designer.cs">
+      <DependentUpon>201710191259252_LastMigrationReversed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031405105_AnswererTypeAdded.cs" />
+    <Compile Include="Migrations\201711031405105_AnswererTypeAdded.Designer.cs">
+      <DependentUpon>201711031405105_AnswererTypeAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711051441268_ChosenAddedToAnswererType.cs" />
+    <Compile Include="Migrations\201711051441268_ChosenAddedToAnswererType.Designer.cs">
+      <DependentUpon>201711051441268_ChosenAddedToAnswererType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712121717379_ScaleMinRemovedFromQuestionMethod.cs" />
+    <Compile Include="Migrations\201712121717379_ScaleMinRemovedFromQuestionMethod.Designer.cs">
+      <DependentUpon>201712121717379_ScaleMinRemovedFromQuestionMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\AnswerBundle.cs" />
+    <Compile Include="Models\AnswerDTO.cs" />
+    <Compile Include="Models\AnswererType.cs" />
+    <Compile Include="Models\AnswererTypeDTO.cs" />
+    <Compile Include="Models\AnswerResultDTO.cs" />
+    <Compile Include="Models\AnswerResultTemp.cs" />
+    <Compile Include="Models\AnswersAndBundleExtrasDTO.cs" />
+    <Compile Include="Models\AnswerSet.cs" />
+    <Compile Include="Models\AnswerBundleExtrasDTO.cs" />
+    <Compile Include="Models\ChosenQuestion.cs" />
+    <Compile Include="Models\DbSets.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\QuestionDTO.cs" />
+    <Compile Include="Models\QuestionMethod.cs" />
+    <Compile Include="Models\QuestionSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="clientapp\qm-buttons-checkbox\qm-buttons-checkbox.component.js" />
+    <Content Include="clientapp\qm-buttons-checkbox\qm-buttons-checkbox.controller.js" />
+    <Content Include="clientapp\qm-buttons-checkbox\qm-buttons-checkbox.template.html" />
+    <Content Include="clientapp\answerer-buttons-radio\answerer-buttons-radio.component.js" />
+    <Content Include="clientapp\answerer-buttons-radio\answerer-buttons-radio.controller.js" />
+    <Content Include="clientapp\answerer-buttons-radio\answerer-buttons-radio.template.html" />
+    <Content Include="clientapp\qm-buttons-slider\qm-buttons-slider.template.html" />
+    <Content Include="clientapp\qm-buttons-smileys\qm-buttons-smileys.template.html" />
+    <Content Include="clientapp\qm-buttons-thumbs\qm-buttons-thumbs.template.html" />
+    <Content Include="clientapp\config.js" />
+    <Content Include="clientapp\core\answerbundleextras.service.js" />
+    <Content Include="clientapp\core\answerertype.service.js" />
+    <Content Include="clientapp\core\answersandbundleextras.service.js" />
+    <Content Include="clientapp\core\dynamic-chart-row.directive.js" />
+    <Content Include="clientapp\core\dynamic-element.directive.js" />
+    <Content Include="clientapp\core\images\thumb-down-b.png" />
+    <Content Include="clientapp\core\images\thumb-neutral-b.png" />
+    <Content Include="clientapp\core\images\thumb-up-b.png" />
+    <Content Include="clientapp\core\result.service.js" />
+    <Content Include="clientapp\core\styles\frame.css" />
+    <Content Include="clientapp\core\styles\frame.min.css" />
+    <Content Include="clientapp\core\styles\rangeslider.css" />
+    <Content Include="clientapp\core\styles\results.css" />
+    <Content Include="clientapp\core\styles\results.min.css" />
+    <Content Include="clientapp\core\styles\variables.css" />
+    <Content Include="clientapp\core\styles\variables.min.css" />
+    <Content Include="clientapp\core\styles\views.css" />
+    <Content Include="clientapp\core\styles\views.min.css" />
+    <Content Include="clientapp\error\error.component.js" />
+    <Content Include="clientapp\error\error.controller.js" />
+    <Content Include="clientapp\error\error.template.html" />
+    <Content Include="clientapp\module.js" />
+    <Content Include="clientapp\qm-buttons-slider\qm-buttons-slider.component.js" />
+    <Content Include="clientapp\answerer-result-chart-bar\answerer-result-chart-bar.component.js" />
+    <Content Include="clientapp\answerer-result-chart-bar\answerer-result-chart-bar.controller.js" />
+    <Content Include="clientapp\answerer-result-chart-bar\answerer-result-chart-bar.template.html" />
+    <Content Include="clientapp\node_modules\rangeslider.js\dist\rangeslider.css" />
+    <Content Include="clientapp\node_modules\rangeslider.js\dist\rangeslider.js" />
+    <Content Include="clientapp\node_modules\rangeslider.js\dist\rangeslider.min.js" />
+    <Content Include="clientapp\result-chart-line-single\result-chart-line-single.component.js" />
+    <Content Include="clientapp\result-chart-line-single\result-chart-line-single.controller.js" />
+    <Content Include="clientapp\result-chart-line-single\result-chart-line-single.template.html" />
+    <Content Include="clientapp\result-chart-pie\result-chart-pie.component.js" />
+    <Content Include="clientapp\result-chart-pie\result-chart-pie.controller.js" />
+    <Content Include="clientapp\result-chart-pie\result-chart-pie.template.html" />
+    <Content Include="clientapp\results\results.template.html" />
+    <Content Include="clientapp\qm-buttons-smileys\qm-buttons-smileys.component.js" />
+    <Content Include="clientapp\qm-buttons-thumbs\qm-buttons-thumbs.component.js" />
+    <Content Include="clientapp\core\answer.service.js" />
+    <Content Include="clientapp\core\images\flag-of-Estonia.png" />
+    <Content Include="clientapp\core\images\flag-of-Finland.png" />
+    <Content Include="clientapp\core\images\flag-of-Poland.png" />
+    <Content Include="clientapp\core\images\flag-of-United-Kingdom.png" />
+    <Content Include="clientapp\core\images\loading.gif" />
+    <Content Include="clientapp\core\images\smiley-happy.svg" />
+    <Content Include="clientapp\core\images\smiley-meh.svg" />
+    <Content Include="clientapp\core\images\smiley-sad.svg" />
+    <Content Include="clientapp\core\images\smiley-very-happy.svg" />
+    <Content Include="clientapp\core\images\success.gif" />
+    <Content Include="clientapp\core\images\thumb-down.png" />
+    <Content Include="clientapp\core\images\thumb-neutral.png" />
+    <Content Include="clientapp\core\images\thumb-up.png" />
+    <Content Include="clientapp\core\images\warning.gif" />
+    <Content Include="clientapp\core\storage.service.js" />
+    <Content Include="clientapp\core\oldstyles\frame.css" />
+    <Content Include="clientapp\core\oldstyles\frame.min.css" />
+    <Content Include="clientapp\core\oldstyles\results.css" />
+    <Content Include="clientapp\core\oldstyles\results.min.css" />
+    <Content Include="clientapp\core\oldstyles\variables.css" />
+    <Content Include="clientapp\core\oldstyles\variables.min.css" />
+    <Content Include="clientapp\core\oldstyles\views.css" />
+    <Content Include="clientapp\core\oldstyles\views.min.css" />
+    <Content Include="clientapp\core\data.factory.js" />
+    <Content Include="clientapp\core\question.controller.js" />
+    <Content Include="clientapp\core\question.service.js" />
+    <Content Include="clientapp\core\run.service.js" />
+    <Content Include="clientapp\end\end.component.js" />
+    <Content Include="clientapp\end\end.controller.js" />
+    <Content Include="clientapp\end\end.template.html" />
+    <Content Include="clientapp\index.html" />
+    <Content Include="clientapp\next-prev-buttons\next-prev-buttons.component.js" />
+    <Content Include="clientapp\next-prev-buttons\next-prev-buttons.controller.js" />
+    <Content Include="clientapp\next-prev-buttons\next-prev-buttons.template.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\angular-chart.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\dist\angular-chart.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\dist\angular-chart.min.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\amd.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\amd.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\app.css" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\app.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\bubble.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\bubble.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\charts.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\charts.template.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\commonjs.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\commonjs.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\dataset-override.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\dataset-override.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\scatter.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\scatter.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\smoothscroll.min.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\stacked-bars.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\tables.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\tabs.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\ticks.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\webpack.commonjs.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\webpack.config.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\xy.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\examples\xy.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\gulpfile.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\29-tabs.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\29-tabs.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\29-tabs.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\51-pie-update-colours.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\51-pie-update-colours.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\51-pie-update-colours.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\54-not-enough-colours.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\54-not-enough-colours.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\54-not-enough-colours.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\57-hex-colours.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\57-hex-colours.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\57-hex-colours.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\bubble.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\bubble.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\bubble.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\charts.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\charts.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\charts.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\configure-line-chart.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\configure-line-chart.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\configure-line-chart.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\coverage.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\custom-directive.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\custom-directive.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\custom-directive.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\dataset-override.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\dataset-override.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\dataset-override.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\horizontal-bar-chart.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\horizontal-bar-chart.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\horizontal-bar-chart.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\options-override.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\options-override.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\options-override.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\scatter.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\scatter.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\fixtures\scatter.png" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\index.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\support\setup.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\test.integration.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\test.unit.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\dist\Chart.bundle.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\dist\Chart.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\dist\Chart.min.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\gulpfile.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\karma.conf.ci.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\karma.conf.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\karma.coverage.conf.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\AnimationCallbacks\progress-bar.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\bar-horizontal.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\bar-multi-axis.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\bar-stacked.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\bar.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\bubble.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\combo-bar-line.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\data_label_combo-bar-line.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\different-point-sizes.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\doughnut.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-cubicInterpolationMode.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-customTooltips.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-legend.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-logarithmic.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-multi-axis.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-multiline-labels.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-non-numeric-y.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-skip-points.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-stacked-area.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-stepped.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line-x-axis-filter.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\line.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\pie-customTooltips.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\pie.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\polar-area.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\radar-skip-points.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\radar.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\scatter-logX.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\scatter-multi-axis.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\scatter.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\timeScale\combo-time-scale.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\timeScale\line-time-point-data.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\timeScale\line-time-scale.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\samples\tooltip-hooks.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\chart.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.Bar.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.Bubble.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.Doughnut.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.Line.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.PolarArea.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.Radar.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\charts\Chart.Scatter.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\controllers\controller.bar.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\controllers\controller.bubble.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\controllers\controller.doughnut.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\controllers\controller.line.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\controllers\controller.polarArea.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\controllers\controller.radar.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.animation.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.canvasHelpers.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.controller.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.datasetController.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.element.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.helpers.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.layoutService.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.legend.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.plugin.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.scale.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.scaleService.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.title.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\core\core.tooltip.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\elements\element.arc.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\elements\element.line.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\elements\element.point.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\elements\element.rectangle.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\scales\scale.category.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\scales\scale.linear.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\scales\scale.linearbase.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\scales\scale.logarithmic.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\scales\scale.radialLinear.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\src\scales\scale.time.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\controller.bar.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\controller.bubble.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\controller.doughnut.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\controller.line.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\controller.polarArea.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\controller.radar.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.element.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.helpers.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.layoutService.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.legend.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.plugin.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.scaleService.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.title.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\core.tooltip.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\defaultConfig.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\element.arc.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\element.line.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\element.point.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\element.rectangle.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\mockContext.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\scale.category.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\scale.linear.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\scale.logarithmic.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\scale.radialLinear.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\test\scale.time.tests.js" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\gradient.html" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\gradient.js" />
+    <Content Include="clientapp\node_modules\angular-resource\angular-resource.js" />
+    <Content Include="clientapp\node_modules\angular-resource\angular-resource.min.js" />
+    <Content Include="clientapp\node_modules\angular-resource\index.js" />
+    <Content Include="clientapp\node_modules\angular-route\angular-route.js" />
+    <Content Include="clientapp\node_modules\angular-route\angular-route.min.js" />
+    <Content Include="clientapp\node_modules\angular-route\index.js" />
+    <Content Include="clientapp\node_modules\angular\angular-csp.css" />
+    <Content Include="clientapp\node_modules\angular\angular.js" />
+    <Content Include="clientapp\node_modules\angular\angular.min.js" />
+    <Content Include="clientapp\node_modules\angular\index.js" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\js\npm.js" />
+    <Content Include="clientapp\node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="clientapp\node_modules\bootstrap\Gruntfile.js" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\change-version.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\affix.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\alert.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\button.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\carousel.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\collapse.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\dropdown.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\modal.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\popover.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\scrollspy.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\tab.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\tooltip.js" />
+    <Content Include="clientapp\node_modules\bootstrap\js\transition.js" />
+    <Content Include="clientapp\node_modules\chart.js\dist\Chart.bundle.js" />
+    <Content Include="clientapp\node_modules\chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="clientapp\node_modules\chart.js\dist\Chart.js" />
+    <Content Include="clientapp\node_modules\chart.js\dist\Chart.min.js" />
+    <Content Include="clientapp\node_modules\chart.js\gulpfile.js" />
+    <Content Include="clientapp\node_modules\chart.js\karma.conf.ci.js" />
+    <Content Include="clientapp\node_modules\chart.js\karma.conf.js" />
+    <Content Include="clientapp\node_modules\chart.js\karma.coverage.conf.js" />
+    <Content Include="clientapp\node_modules\chart.js\samples\AnimationCallbacks\progress-bar.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\bar-horizontal.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\bar-multi-axis.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\bar-stacked.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\bar.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\bubble.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\combo-bar-line.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\data_label_combo-bar-line.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\different-point-sizes.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\doughnut.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-cubicInterpolationMode.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-customTooltips.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-legend.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-logarithmic.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-multi-axis.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-multiline-labels.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-non-numeric-y.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-skip-points.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-stacked-area.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-stepped.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line-x-axis-filter.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\line.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\pie-customTooltips.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\pie.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\polar-area.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\radar-skip-points.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\radar.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\scatter-logX.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\scatter-multi-axis.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\scatter.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\timeScale\combo-time-scale.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\timeScale\line-time-point-data.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\timeScale\line-time-scale.html" />
+    <Content Include="clientapp\node_modules\chart.js\samples\tooltip-hooks.html" />
+    <Content Include="clientapp\node_modules\chart.js\src\chart.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.Bar.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.Bubble.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.Doughnut.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.Line.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.PolarArea.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.Radar.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\charts\Chart.Scatter.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\controllers\controller.bar.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\controllers\controller.bubble.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\controllers\controller.doughnut.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\controllers\controller.line.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\controllers\controller.polarArea.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\controllers\controller.radar.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.animation.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.canvasHelpers.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.controller.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.datasetController.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.element.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.helpers.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.layoutService.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.legend.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.plugin.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.scale.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.scaleService.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.title.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\core\core.tooltip.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\elements\element.arc.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\elements\element.line.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\elements\element.point.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\elements\element.rectangle.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\scales\scale.category.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\scales\scale.linear.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\scales\scale.linearbase.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\scales\scale.logarithmic.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\scales\scale.radialLinear.js" />
+    <Content Include="clientapp\node_modules\chart.js\src\scales\scale.time.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\controller.bar.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\controller.bubble.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\controller.doughnut.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\controller.line.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\controller.polarArea.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\controller.radar.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.element.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.helpers.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.layoutService.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.legend.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.plugin.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.scaleService.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.title.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\core.tooltip.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\defaultConfig.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\element.arc.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\element.line.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\element.point.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\element.rectangle.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\mockContext.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\scale.category.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\scale.linear.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\scale.logarithmic.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\scale.radialLinear.tests.js" />
+    <Content Include="clientapp\node_modules\chart.js\test\scale.time.tests.js" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\color-string.js" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\test\basic.js" />
+    <Content Include="clientapp\node_modules\chartjs-color\index.js" />
+    <Content Include="clientapp\node_modules\color-convert\conversions.js" />
+    <Content Include="clientapp\node_modules\color-convert\index.js" />
+    <Content Include="clientapp\node_modules\color-convert\test\basic.js" />
+    <Content Include="clientapp\node_modules\color-convert\test\speed.js" />
+    <Content Include="clientapp\node_modules\color-name\index.js" />
+    <Content Include="clientapp\node_modules\color-name\test.js" />
+    <Content Include="clientapp\node_modules\jquery\AUTHORS.txt" />
+    <Content Include="clientapp\node_modules\jquery\dist\core.js" />
+    <Content Include="clientapp\node_modules\jquery\dist\jquery.js" />
+    <Content Include="clientapp\node_modules\jquery\dist\jquery.min.js" />
+    <Content Include="clientapp\node_modules\jquery\dist\jquery.slim.js" />
+    <Content Include="clientapp\node_modules\jquery\dist\jquery.slim.min.js" />
+    <Content Include="clientapp\node_modules\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="clientapp\node_modules\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="clientapp\node_modules\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="clientapp\node_modules\jquery\LICENSE.txt" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\jsonp.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\load.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\parseXML.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\script.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\var\location.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\var\nonce.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\var\rquery.js" />
+    <Content Include="clientapp\node_modules\jquery\src\ajax\xhr.js" />
+    <Content Include="clientapp\node_modules\jquery\src\attributes.js" />
+    <Content Include="clientapp\node_modules\jquery\src\attributes\attr.js" />
+    <Content Include="clientapp\node_modules\jquery\src\attributes\classes.js" />
+    <Content Include="clientapp\node_modules\jquery\src\attributes\prop.js" />
+    <Content Include="clientapp\node_modules\jquery\src\attributes\support.js" />
+    <Content Include="clientapp\node_modules\jquery\src\attributes\val.js" />
+    <Content Include="clientapp\node_modules\jquery\src\callbacks.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\access.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\DOMEval.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\init.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\nodeName.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\parseHTML.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\ready.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\readyException.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\stripAndCollapse.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\support.js" />
+    <Content Include="clientapp\node_modules\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\addGetHookIf.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\adjustCSS.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\curCSS.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\showHide.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\support.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\var\cssExpand.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\var\getStyles.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\var\rmargin.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="clientapp\node_modules\jquery\src\css\var\swap.js" />
+    <Content Include="clientapp\node_modules\jquery\src\data.js" />
+    <Content Include="clientapp\node_modules\jquery\src\data\Data.js" />
+    <Content Include="clientapp\node_modules\jquery\src\data\var\acceptData.js" />
+    <Content Include="clientapp\node_modules\jquery\src\data\var\dataPriv.js" />
+    <Content Include="clientapp\node_modules\jquery\src\data\var\dataUser.js" />
+    <Content Include="clientapp\node_modules\jquery\src\deferred.js" />
+    <Content Include="clientapp\node_modules\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="clientapp\node_modules\jquery\src\deprecated.js" />
+    <Content Include="clientapp\node_modules\jquery\src\dimensions.js" />
+    <Content Include="clientapp\node_modules\jquery\src\effects.js" />
+    <Content Include="clientapp\node_modules\jquery\src\effects\animatedSelector.js" />
+    <Content Include="clientapp\node_modules\jquery\src\effects\Tween.js" />
+    <Content Include="clientapp\node_modules\jquery\src\event.js" />
+    <Content Include="clientapp\node_modules\jquery\src\event\ajax.js" />
+    <Content Include="clientapp\node_modules\jquery\src\event\alias.js" />
+    <Content Include="clientapp\node_modules\jquery\src\event\focusin.js" />
+    <Content Include="clientapp\node_modules\jquery\src\event\support.js" />
+    <Content Include="clientapp\node_modules\jquery\src\event\trigger.js" />
+    <Content Include="clientapp\node_modules\jquery\src\exports\amd.js" />
+    <Content Include="clientapp\node_modules\jquery\src\exports\global.js" />
+    <Content Include="clientapp\node_modules\jquery\src\jquery.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\getAll.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\support.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="clientapp\node_modules\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="clientapp\node_modules\jquery\src\offset.js" />
+    <Content Include="clientapp\node_modules\jquery\src\queue.js" />
+    <Content Include="clientapp\node_modules\jquery\src\queue\delay.js" />
+    <Content Include="clientapp\node_modules\jquery\src\selector-native.js" />
+    <Content Include="clientapp\node_modules\jquery\src\selector-sizzle.js" />
+    <Content Include="clientapp\node_modules\jquery\src\selector.js" />
+    <Content Include="clientapp\node_modules\jquery\src\serialize.js" />
+    <Content Include="clientapp\node_modules\jquery\src\traversing.js" />
+    <Content Include="clientapp\node_modules\jquery\src\traversing\findFilter.js" />
+    <Content Include="clientapp\node_modules\jquery\src\traversing\var\dir.js" />
+    <Content Include="clientapp\node_modules\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="clientapp\node_modules\jquery\src\traversing\var\siblings.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\arr.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\class2type.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\concat.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\document.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\documentElement.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\fnToString.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\getProto.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\hasOwn.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\indexOf.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\pnum.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\push.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\rcssNum.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\slice.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\support.js" />
+    <Content Include="clientapp\node_modules\jquery\src\var\toString.js" />
+    <Content Include="clientapp\node_modules\jquery\src\wrap.js" />
+    <Content Include="clientapp\node_modules\moment\ender.js" />
+    <Content Include="clientapp\node_modules\moment\locale\af.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar-dz.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar-kw.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar-ly.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar-ma.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar-sa.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar-tn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ar.js" />
+    <Content Include="clientapp\node_modules\moment\locale\az.js" />
+    <Content Include="clientapp\node_modules\moment\locale\be.js" />
+    <Content Include="clientapp\node_modules\moment\locale\bg.js" />
+    <Content Include="clientapp\node_modules\moment\locale\bm.js" />
+    <Content Include="clientapp\node_modules\moment\locale\bn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\bo.js" />
+    <Content Include="clientapp\node_modules\moment\locale\br.js" />
+    <Content Include="clientapp\node_modules\moment\locale\bs.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ca.js" />
+    <Content Include="clientapp\node_modules\moment\locale\cs.js" />
+    <Content Include="clientapp\node_modules\moment\locale\cv.js" />
+    <Content Include="clientapp\node_modules\moment\locale\cy.js" />
+    <Content Include="clientapp\node_modules\moment\locale\da.js" />
+    <Content Include="clientapp\node_modules\moment\locale\de-at.js" />
+    <Content Include="clientapp\node_modules\moment\locale\de-ch.js" />
+    <Content Include="clientapp\node_modules\moment\locale\de.js" />
+    <Content Include="clientapp\node_modules\moment\locale\dv.js" />
+    <Content Include="clientapp\node_modules\moment\locale\el.js" />
+    <Content Include="clientapp\node_modules\moment\locale\en-au.js" />
+    <Content Include="clientapp\node_modules\moment\locale\en-ca.js" />
+    <Content Include="clientapp\node_modules\moment\locale\en-gb.js" />
+    <Content Include="clientapp\node_modules\moment\locale\en-ie.js" />
+    <Content Include="clientapp\node_modules\moment\locale\en-nz.js" />
+    <Content Include="clientapp\node_modules\moment\locale\eo.js" />
+    <Content Include="clientapp\node_modules\moment\locale\es-do.js" />
+    <Content Include="clientapp\node_modules\moment\locale\es-us.js" />
+    <Content Include="clientapp\node_modules\moment\locale\es.js" />
+    <Content Include="clientapp\node_modules\moment\locale\et.js" />
+    <Content Include="clientapp\node_modules\moment\locale\eu.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fa.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fi.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fo.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fr-ca.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fr-ch.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fr.js" />
+    <Content Include="clientapp\node_modules\moment\locale\fy.js" />
+    <Content Include="clientapp\node_modules\moment\locale\gd.js" />
+    <Content Include="clientapp\node_modules\moment\locale\gl.js" />
+    <Content Include="clientapp\node_modules\moment\locale\gom-latn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\gu.js" />
+    <Content Include="clientapp\node_modules\moment\locale\he.js" />
+    <Content Include="clientapp\node_modules\moment\locale\hi.js" />
+    <Content Include="clientapp\node_modules\moment\locale\hr.js" />
+    <Content Include="clientapp\node_modules\moment\locale\hu.js" />
+    <Content Include="clientapp\node_modules\moment\locale\hy-am.js" />
+    <Content Include="clientapp\node_modules\moment\locale\id.js" />
+    <Content Include="clientapp\node_modules\moment\locale\is.js" />
+    <Content Include="clientapp\node_modules\moment\locale\it.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ja.js" />
+    <Content Include="clientapp\node_modules\moment\locale\jv.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ka.js" />
+    <Content Include="clientapp\node_modules\moment\locale\kk.js" />
+    <Content Include="clientapp\node_modules\moment\locale\km.js" />
+    <Content Include="clientapp\node_modules\moment\locale\kn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ko.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ky.js" />
+    <Content Include="clientapp\node_modules\moment\locale\lb.js" />
+    <Content Include="clientapp\node_modules\moment\locale\lo.js" />
+    <Content Include="clientapp\node_modules\moment\locale\lt.js" />
+    <Content Include="clientapp\node_modules\moment\locale\lv.js" />
+    <Content Include="clientapp\node_modules\moment\locale\me.js" />
+    <Content Include="clientapp\node_modules\moment\locale\mi.js" />
+    <Content Include="clientapp\node_modules\moment\locale\mk.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ml.js" />
+    <Content Include="clientapp\node_modules\moment\locale\mr.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ms-my.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ms.js" />
+    <Content Include="clientapp\node_modules\moment\locale\my.js" />
+    <Content Include="clientapp\node_modules\moment\locale\nb.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ne.js" />
+    <Content Include="clientapp\node_modules\moment\locale\nl-be.js" />
+    <Content Include="clientapp\node_modules\moment\locale\nl.js" />
+    <Content Include="clientapp\node_modules\moment\locale\nn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\pa-in.js" />
+    <Content Include="clientapp\node_modules\moment\locale\pl.js" />
+    <Content Include="clientapp\node_modules\moment\locale\pt-br.js" />
+    <Content Include="clientapp\node_modules\moment\locale\pt.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ro.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ru.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sd.js" />
+    <Content Include="clientapp\node_modules\moment\locale\se.js" />
+    <Content Include="clientapp\node_modules\moment\locale\si.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sk.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sl.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sq.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sr-cyrl.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sr.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ss.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sv.js" />
+    <Content Include="clientapp\node_modules\moment\locale\sw.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ta.js" />
+    <Content Include="clientapp\node_modules\moment\locale\te.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tet.js" />
+    <Content Include="clientapp\node_modules\moment\locale\th.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tl-ph.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tlh.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tr.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tzl.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tzm-latn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\tzm.js" />
+    <Content Include="clientapp\node_modules\moment\locale\uk.js" />
+    <Content Include="clientapp\node_modules\moment\locale\ur.js" />
+    <Content Include="clientapp\node_modules\moment\locale\uz-latn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\uz.js" />
+    <Content Include="clientapp\node_modules\moment\locale\vi.js" />
+    <Content Include="clientapp\node_modules\moment\locale\x-pseudo.js" />
+    <Content Include="clientapp\node_modules\moment\locale\yo.js" />
+    <Content Include="clientapp\node_modules\moment\locale\zh-cn.js" />
+    <Content Include="clientapp\node_modules\moment\locale\zh-hk.js" />
+    <Content Include="clientapp\node_modules\moment\locale\zh-tw.js" />
+    <Content Include="clientapp\node_modules\moment\min\locales.js" />
+    <Content Include="clientapp\node_modules\moment\min\locales.min.js" />
+    <Content Include="clientapp\node_modules\moment\min\moment-with-locales.js" />
+    <Content Include="clientapp\node_modules\moment\min\moment-with-locales.min.js" />
+    <Content Include="clientapp\node_modules\moment\min\moment.min.js" />
+    <Content Include="clientapp\node_modules\moment\moment.js" />
+    <Content Include="clientapp\node_modules\moment\package.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\check-overflow.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\date-from-array.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\from-anything.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\from-array.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\from-object.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\from-string-and-array.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\from-string-and-format.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\from-string.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\local.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\parsing-flags.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\utc.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\create\valid.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\abs.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\add-subtract.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\as.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\bubble.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\clone.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\constructor.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\create.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\duration.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\get.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\humanize.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\iso-string.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\prototype.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\duration\valid.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\format\format.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\base-config.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\calendar.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\constructor.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\en.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\formats.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\invalid.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\lists.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\locale.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\locales.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\ordinal.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\pre-post-format.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\prototype.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\relative.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\locale\set.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\add-subtract.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\calendar.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\clone.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\compare.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\constructor.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\creation-data.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\diff.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\format.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\from.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\get-set.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\locale.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\min-max.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\moment.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\now.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\prototype.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\start-end-of.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\to-type.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\to.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\moment\valid.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\parse\regex.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\parse\token.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\aliases.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\constants.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\day-of-month.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\day-of-week.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\day-of-year.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\hour.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\millisecond.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\minute.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\month.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\offset.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\priorities.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\quarter.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\second.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\timestamp.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\timezone.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\units.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\week-calendar-utils.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\week-year.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\week.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\units\year.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\abs-ceil.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\abs-floor.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\abs-round.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\compare-arrays.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\defaults.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\deprecate.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\extend.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\has-own-prop.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\hooks.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\index-of.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-array.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-date.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-function.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-number.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-object-empty.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-object.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\is-undefined.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\keys.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\map.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\mod.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\some.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\to-int.js" />
+    <Content Include="clientapp\node_modules\moment\src\lib\utils\zero-fill.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\af.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar-dz.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar-kw.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar-ly.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar-ma.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar-sa.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar-tn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ar.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\az.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\be.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\bg.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\bm.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\bn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\bo.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\br.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\bs.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ca.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\cs.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\cv.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\cy.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\da.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\de-at.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\de-ch.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\de.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\dv.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\el.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\en-au.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\en-ca.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\en-gb.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\en-ie.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\en-nz.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\eo.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\es-do.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\es-us.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\es.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\et.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\eu.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fa.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fi.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fo.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fr-ca.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fr-ch.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fr.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\fy.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\gd.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\gl.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\gom-latn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\gu.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\he.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\hi.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\hr.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\hu.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\hy-am.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\id.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\is.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\it.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ja.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\jv.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ka.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\kk.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\km.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\kn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ko.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ky.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\lb.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\lo.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\lt.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\lv.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\me.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\mi.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\mk.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ml.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\mr.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ms-my.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ms.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\my.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\nb.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ne.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\nl-be.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\nl.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\nn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\pa-in.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\pl.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\pt-br.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\pt.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ro.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ru.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sd.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\se.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\si.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sk.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sl.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sq.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sr-cyrl.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sr.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ss.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sv.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\sw.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ta.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\te.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tet.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\th.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tl-ph.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tlh.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tr.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tzl.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tzm-latn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\tzm.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\uk.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\ur.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\uz-latn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\uz.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\vi.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\x-pseudo.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\yo.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\zh-cn.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\zh-hk.js" />
+    <Content Include="clientapp\node_modules\moment\src\locale\zh-tw.js" />
+    <Content Include="clientapp\node_modules\moment\src\moment.js" />
+    <Content Include="clientapp\progress-bar\progress-bar.component.js" />
+    <Content Include="clientapp\progress-bar\progress-bar.controller.js" />
+    <Content Include="clientapp\progress-bar\progress-bar.template.html" />
+    <Content Include="clientapp\results\results.component.js" />
+    <Content Include="clientapp\results\results.controller.js" />
+    <Content Include="clientapp\start\start.component.js" />
+    <Content Include="clientapp\start\start.controller.js" />
+    <Content Include="clientapp\start\start.template.html" />
+    <Content Include="clientapp\text-area\text-area.component.js" />
+    <Content Include="clientapp\text-area\text-area.controller.js" />
+    <Content Include="clientapp\text-area\text-area.template.html" />
+    <Content Include="testgetresultstocurrentquestions.html" />
+    <Content Include="testgetallquestions.html" />
+    <Content Include="testget.html" />
+    <Content Include="testpostbundleextras.html" />
+    <Content Include="testpostsurveyanswers.html" />
+    <Content Include="testpost.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="clientapp\core\oldstyles\frame.scss" />
+    <Content Include="clientapp\core\oldstyles\results.scss" />
+    <Content Include="clientapp\core\oldstyles\variables.scss" />
+    <Content Include="clientapp\core\oldstyles\views.scss" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.codeclimate.yml" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.dockerignore" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.editorconfig" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.jscsrc" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.jshintignore" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.jshintrc" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.node-version" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.npmignore" />
+    <Content Include="clientapp\node_modules\angular-chart.js\.travis.yml" />
+    <Content Include="clientapp\node_modules\angular-chart.js\bower.json" />
+    <Content Include="clientapp\node_modules\angular-chart.js\CONTRIBUTING.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\dist\angular-chart.js.tar.gz" />
+    <Content Include="clientapp\node_modules\angular-chart.js\dist\angular-chart.min.js.map" />
+    <Content Include="clientapp\node_modules\angular-chart.js\Dockerfile" />
+    <Content Include="clientapp\node_modules\angular-chart.js\ISSUE_TEMPLATE.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\LICENSE" />
+    <Content Include="clientapp\node_modules\angular-chart.js\package.json" />
+    <Content Include="clientapp\node_modules\angular-chart.js\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\README.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\test\mocha.opts" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\.bower.json" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\.editorconfig" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\.eslintignore" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\.eslintrc" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\.npmignore" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\bower.json" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\composer.json" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\config.jshintrc" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\CONTRIBUTING.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\00-Getting-Started.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\01-Chart-Configuration.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\02-Scales.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\03-Line-Chart.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\04-Bar-Chart.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\05-Radar-Chart.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\06-Polar-Area-Chart.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\07-Pie-Doughnut-Chart.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\08-Bubble-Chart.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\09-Advanced.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\docs\10-Notes.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\LICENSE.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\MAINTAINING.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\package.json" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\README.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\scripts\release.sh" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\bower_components\chart.js\thankyou.md" />
+    <Content Include="clientapp\node_modules\angular-chart.js\tmp\Dockerfile-alpine" />
+    <Content Include="clientapp\node_modules\angular-resource\angular-resource.min.js.map" />
+    <Content Include="clientapp\node_modules\angular-resource\bower.json" />
+    <Content Include="clientapp\node_modules\angular-resource\LICENSE.md" />
+    <Content Include="clientapp\node_modules\angular-resource\package.json" />
+    <Content Include="clientapp\node_modules\angular-resource\README.md" />
+    <Content Include="clientapp\node_modules\angular-route\angular-route.min.js.map" />
+    <Content Include="clientapp\node_modules\angular-route\bower.json" />
+    <Content Include="clientapp\node_modules\angular-route\LICENSE.md" />
+    <Content Include="clientapp\node_modules\angular-route\package.json" />
+    <Content Include="clientapp\node_modules\angular-route\README.md" />
+    <Content Include="clientapp\node_modules\angular\angular.min.js.gzip" />
+    <Content Include="clientapp\node_modules\angular\angular.min.js.map" />
+    <Content Include="clientapp\node_modules\angular\bower.json" />
+    <Content Include="clientapp\node_modules\angular\LICENSE.md" />
+    <Content Include="clientapp\node_modules\angular\package.json" />
+    <Content Include="clientapp\node_modules\angular\README.md" />
+    <Content Include="clientapp\node_modules\bootstrap\CHANGELOG.md" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="clientapp\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="clientapp\node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="clientapp\node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="clientapp\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="clientapp\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\.jshintrc" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\configBridge.json" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="clientapp\node_modules\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="clientapp\node_modules\bootstrap\less\alerts.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\badges.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\bootstrap.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\breadcrumbs.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\button-groups.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\buttons.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\carousel.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\close.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\code.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\component-animations.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\dropdowns.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\forms.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\glyphicons.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\grid.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\input-groups.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\jumbotron.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\labels.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\list-group.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\media.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\alerts.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\buttons.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\center-block.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\forms.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\gradients.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\grid.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\image.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\labels.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\list-group.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\opacity.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\pagination.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\panels.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\resize.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\size.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\table-row.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\modals.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\navbar.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\navs.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\normalize.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\pager.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\pagination.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\panels.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\popovers.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\print.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\progress-bars.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\responsive-embed.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\responsive-utilities.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\scaffolding.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\tables.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\theme.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\thumbnails.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\tooltip.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\type.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\utilities.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\variables.less" />
+    <Content Include="clientapp\node_modules\bootstrap\less\wells.less" />
+    <Content Include="clientapp\node_modules\bootstrap\LICENSE" />
+    <Content Include="clientapp\node_modules\bootstrap\package.json" />
+    <Content Include="clientapp\node_modules\bootstrap\README.md" />
+    <Content Include="clientapp\node_modules\chart.js\.editorconfig" />
+    <Content Include="clientapp\node_modules\chart.js\.eslintignore" />
+    <Content Include="clientapp\node_modules\chart.js\.eslintrc" />
+    <Content Include="clientapp\node_modules\chart.js\.npmignore" />
+    <Content Include="clientapp\node_modules\chart.js\bower.json" />
+    <Content Include="clientapp\node_modules\chart.js\composer.json" />
+    <Content Include="clientapp\node_modules\chart.js\config.jshintrc" />
+    <Content Include="clientapp\node_modules\chart.js\CONTRIBUTING.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\00-Getting-Started.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\01-Chart-Configuration.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\02-Scales.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\03-Line-Chart.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\04-Bar-Chart.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\05-Radar-Chart.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\06-Polar-Area-Chart.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\07-Pie-Doughnut-Chart.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\08-Bubble-Chart.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\09-Advanced.md" />
+    <Content Include="clientapp\node_modules\chart.js\docs\10-Notes.md" />
+    <Content Include="clientapp\node_modules\chart.js\LICENSE.md" />
+    <Content Include="clientapp\node_modules\chart.js\MAINTAINING.md" />
+    <Content Include="clientapp\node_modules\chart.js\package.json" />
+    <Content Include="clientapp\node_modules\chart.js\README.md" />
+    <Content Include="clientapp\node_modules\chart.js\scripts\release.sh" />
+    <Content Include="clientapp\node_modules\chart.js\thankyou.md" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\.travis.yml" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\CHANGELOG.md" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\LICENSE" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\package.json" />
+    <Content Include="clientapp\node_modules\chartjs-color-string\README.md" />
+    <Content Include="clientapp\node_modules\chartjs-color\CHANGELOG.md" />
+    <Content Include="clientapp\node_modules\chartjs-color\LICENSE" />
+    <Content Include="clientapp\node_modules\chartjs-color\package.json" />
+    <Content Include="clientapp\node_modules\chartjs-color\README.md" />
+    <Content Include="clientapp\node_modules\color-convert\.travis.yml" />
+    <Content Include="clientapp\node_modules\color-convert\CHANGELOG.md" />
+    <Content Include="clientapp\node_modules\color-convert\component.json" />
+    <Content Include="clientapp\node_modules\color-convert\LICENSE" />
+    <Content Include="clientapp\node_modules\color-convert\package.json" />
+    <Content Include="clientapp\node_modules\color-convert\README.md" />
+    <Content Include="clientapp\node_modules\color-name\.eslintrc.json" />
+    <Content Include="clientapp\node_modules\color-name\.npmignore" />
+    <Content Include="clientapp\node_modules\color-name\LICENSE" />
+    <Content Include="clientapp\node_modules\color-name\package.json" />
+    <Content Include="clientapp\node_modules\color-name\README.md" />
+    <Content Include="clientapp\node_modules\jquery\bower.json" />
+    <Content Include="clientapp\node_modules\jquery\dist\jquery.min.map" />
+    <Content Include="clientapp\node_modules\jquery\dist\jquery.slim.min.map" />
+    <Content Include="clientapp\node_modules\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="clientapp\node_modules\jquery\package.json" />
+    <Content Include="clientapp\node_modules\jquery\README.md" />
+    <Content Include="clientapp\node_modules\jquery\src\.eslintrc.json" />
+    <Content Include="clientapp\node_modules\moment\CHANGELOG.md" />
+    <Content Include="clientapp\node_modules\moment\LICENSE" />
+    <Content Include="clientapp\node_modules\moment\package.json" />
+    <Content Include="clientapp\node_modules\moment\README.md" />
+    <Content Include="clientapp\package.json" />
+    <Content Include="clientapp\core\styles\frame.scss" />
+    <Content Include="clientapp\core\styles\results.scss" />
+    <Content Include="clientapp\core\styles\variables.scss" />
+    <Content Include="clientapp\core\styles\views.scss" />
+    <Content Include="clientapp\node_modules\rangeslider.js\LICENSE.md" />
+    <Content Include="clientapp\node_modules\rangeslider.js\package.json" />
+    <Content Include="clientapp\node_modules\rangeslider.js\README.md" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Answers\Create.cshtml" />
+    <Content Include="Views\Answers\Delete.cshtml" />
+    <Content Include="Views\Answers\Details.cshtml" />
+    <Content Include="Views\Answers\Edit.cshtml" />
+    <Content Include="Views\Answers\Index.cshtml" />
+    <Content Include="Views\AnswerSets\Create.cshtml" />
+    <Content Include="Views\AnswerSets\Delete.cshtml" />
+    <Content Include="Views\AnswerSets\Details.cshtml" />
+    <Content Include="Views\AnswerSets\Edit.cshtml" />
+    <Content Include="Views\AnswerSets\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707281503558_Initial.resx">
+      <DependentUpon>201707281503558_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071228521_ChosenIndexUnique.resx">
+      <DependentUpon>201709071228521_ChosenIndexUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071237427_UniqueQIDandQMIDCombo.resx">
+      <DependentUpon>201709071237427_UniqueQIDandQMIDCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081209596_UniqueQIDandQMIDComboRemoved.resx">
+      <DependentUpon>201709081209596_UniqueQIDandQMIDComboRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709151325515_ExtendedDatabaseForNewFeatures.resx">
+      <DependentUpon>201709151325515_ExtendedDatabaseForNewFeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710081338058_QsIDAndCIadded.resx">
+      <DependentUpon>201710081338058_QsIDAndCIadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091744057_TitleAddedToQuestionSetModel.resx">
+      <DependentUpon>201710091744057_TitleAddedToQuestionSetModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710181045002_TextFeedbackAddedToAnswerBundle.resx">
+      <DependentUpon>201710181045002_TextFeedbackAddedToAnswerBundle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710191246455_TitleInQuestionSetRenamedAsMainQuestion.resx">
+      <DependentUpon>201710191246455_TitleInQuestionSetRenamedAsMainQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710191259252_LastMigrationReversed.resx">
+      <DependentUpon>201710191259252_LastMigrationReversed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031405105_AnswererTypeAdded.resx">
+      <DependentUpon>201711031405105_AnswererTypeAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711051441268_ChosenAddedToAnswererType.resx">
+      <DependentUpon>201711051441268_ChosenAddedToAnswererType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121717379_ScaleMinRemovedFromQuestionMethod.resx">
+      <DependentUpon>201712121717379_ScaleMinRemovedFromQuestionMethod.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="clientapp\node_modules\moment\moment.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5972</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5972/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:5972/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -9,7 +9,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Web.Http.Cors;
 using Back.Models;
 
 
@@ -136,50 +135,50 @@ namespace Back.ApiControllers
             }
             // CREATE AnswerBundle bundle
             
-                    AnswerBundle bundle = new AnswerBundle();
-                    bundle.Date = DateTime.Now;
-                    bundle.AnswererTypeID = answererTypeId;
-                    bundle.TextFeedback = textFb;
-                    // NEW: CHECK IF WORKS
-                    // TODO: TRANSACTION MANAGEMENT
-                    db.AnswerBundles.Add(bundle);
+            AnswerBundle bundle = new AnswerBundle();
+            bundle.Date = DateTime.Now;
+            bundle.AnswererTypeID = answererTypeId;
+            bundle.TextFeedback = textFb;
+            // NEW: CHECK IF WORKS
+            // TODO: TRANSACTION MANAGEMENT
+            db.AnswerBundles.Add(bundle);
 
+            db.SaveChanges();
+
+            // ADD AnswerSets TO bundle
+            // int currentQmId = -2;
+            int currentSetId = -2;
+            int currentSetIndex = -2;
+
+            foreach (AnswerDTO aDto in cleanSortedDtos)
+            {
+                // IF NEW QuestionMethodID IN answerDtos,
+                // NEW AnswerSet IS CREATED
+                if (aDto.QuestionSetIndex != currentSetIndex)
+                {
+                    // currentQmId = aDto.QuestionMethodID;
+                    currentSetIndex = aDto.QuestionSetIndex;
+                    AnswerSet newSet = new AnswerSet();
+                    newSet.QuestionMethodID = aDto.QuestionMethodID;
+                    newSet.AnswerBundleID = bundle.AnswerBundleID;
+                    db.AnswerSets.Add(newSet);
                     db.SaveChanges();
-
-                    // ADD AnswerSets TO bundle
-                    // int currentQmId = -2;
-                    int currentSetId = -2;
-                    int currentSetIndex = -2;
-
-                    foreach (AnswerDTO aDto in cleanSortedDtos)
-                    {
-                        // IF NEW QuestionMethodID IN answerDtos,
-                        // NEW AnswerSet IS CREATED
-                        if (aDto.QuestionSetIndex != currentSetIndex)
-                        {
-                            // currentQmId = aDto.QuestionMethodID;
-                            currentSetIndex = aDto.QuestionSetIndex;
-                            AnswerSet newSet = new AnswerSet();
-                            newSet.QuestionMethodID = aDto.QuestionMethodID;
-                            newSet.AnswerBundleID = bundle.AnswerBundleID;
-                            db.AnswerSets.Add(newSet);
-                            db.SaveChanges();
-                            currentSetId = newSet.AnswerSetID;
-                        }
-                        db.Answers.Add(new Answer
-                        {
-                            Value = aDto.Value,
-                            QuestionID = aDto.QuestionID,
-                            AnswerSetID = currentSetId
-                        });
-                        db.SaveChanges();
-                        Debug.WriteLine("currentSetId:" + currentSetId);
-                        Debug.WriteLine("currentSetIndex:" + currentSetIndex);
-                    }
-                    
-                    Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
-                    return Ok();
+                    currentSetId = newSet.AnswerSetID;
                 }
+                db.Answers.Add(new Answer
+                {
+                    Value = aDto.Value,
+                    QuestionID = aDto.QuestionID,
+                    AnswerSetID = currentSetId
+                });
+                db.SaveChanges();
+                Debug.WriteLine("currentSetId:" + currentSetId);
+                Debug.WriteLine("currentSetIndex:" + currentSetIndex);
+            }
+                    
+            Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
+            return Ok();
+        }
                 
         
         /*

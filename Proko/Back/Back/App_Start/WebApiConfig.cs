@@ -21,7 +21,6 @@ namespace Back
 
             // Web API routes
             // TODO: REMOVE CORS IF UNNECESSARY (PROBABLY IS)
-            config.EnableCors();
             config.MapHttpAttributeRoutes();
 
             

@@ -13,7 +13,7 @@
         console.log("testget script started!");
         var apiStatus = document.getElementById("api-status");
         apiStatus.innerHTML = "Loading...";
-        $.getJSON("api/getresultstocq", function () {
+        $.getJSON("api/getresultstocurrentquestions", function () {
             console.log("API call launched");
         })
         .done(function (data) {
