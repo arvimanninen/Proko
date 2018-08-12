@@ -1,5 +1,5 @@
 # Dynamic survey application for construction companies
-Dynamic survey app, which main purpose is to increase customer satisfaction in construction projects. The target user group is (regular) construction workers. Part of the Digitalization In Customer Interaction (DICIA)-research project, which is an co-op of Haaga-Helia University of Applied Sciences, Aalto University, University of Helsinki, and few Finnish companies. Project is mainly funded by TEKES (The Finnish Funding Agency for Technology and Innovation). TEKES merged with Finpro (government-owned corporation for promotion of export) in 2018 and is now known as Business Finland. 
+Dynamic survey app, which main purpose is to increase customer satisfaction in construction projects. In practice, the application is made for collecing data about various issues in construction projects from construction workers. Application is part of the Digitalization In Customer Interaction (DICIA)-research project, which is an co-op of Haaga-Helia University of Applied Sciences, Aalto University, University of Helsinki, and few Finnish companies. Project is mainly funded by TEKES (The Finnish Funding Agency for Technology and Innovation). TEKES merged with Finpro (government-owned corporation for promotion of export) in 2018 and is now known as Business Finland. 
 
 ## Features
 - Unlimited amount of question sets with unlimited amount of questions, based on database data
@@ -30,19 +30,18 @@ Dynamic survey app, which main purpose is to increase customer satisfaction in c
 
 ## Paths
 ### Client-app
-Root: 
-/SurveyApp/clientapp/
+Root/SurveyApp/clientapp/
 
-AngularJS app module initialization:
+AngularJS app module initialization
 /SurveyApp/clientapp/module.js
 
-AngularJS app module configuration:
+AngularJS app module configuration
 /SurveyApp/clientapp/config.js
 
 Components: 
 /SurveyApp/clientapp/*componentname*/
 
-Shared AngularJS assets: 
+Shared AngularJS assets
 /SurveyApp/clientapp/core/*assetname*.*assettype*.js
 
 Images
@@ -51,7 +50,36 @@ Images
 CSS/SCSS styles
 /SurveyApp/clientapp/core/styles/
 
+### Back-end
+Root
+/SurveyApp/
 
+Configuration files
+/SurveyApp/App_Start/
+
+REST API controllers
+/SurveyApp/ApiControllers/
+
+Data model classes
+/SurveyApp/Models/
+
+Data model initilialization
+/SurveyApp/Models/DbSets.cs
+
+### Setup
+
+Coming soon...
+
+### Getting started
+
+Coming soon...
+
+### Team (main roles)
+Arvi Manninen 
+Software architecture, software logic (JavaScript/AngularJS, C#/ASP.NET), database design and implementation (Entity Framework, code-first approach).
+
+Ilkka Alakarhu
+User interface design and implementation (HTML, CSS/SCSS), usability testing, project management.
 
 
 
