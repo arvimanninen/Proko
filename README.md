@@ -1,5 +1,5 @@
 # Dynamic survey application for construction companies
-Dynamic questionnaire app, which main purpose is to increase customer satisfaction in construction projects. Part of the Digitalization In Customer Interaction (DICIA)-research project, which is an co-op of Haaga-Helia University of Applied Sciences, Aalto University, University of Helsinki, and few Finnish companies. Target user group is (regular) construction workers.
+Dynamic survey app, which main purpose is to increase customer satisfaction in construction projects. The target user group is (regular) construction workers. Part of the Digitalization In Customer Interaction (DICIA)-research project, which is an co-op of Haaga-Helia University of Applied Sciences, Aalto University, University of Helsinki, and few Finnish companies. Project is mainly funded by TEKES (The Finnish Funding Agency for Technology and Innovation). TEKES merged with Finpro (government-owned corporation for promotion of export) in 2018 and is now known as Business Finland. 
 
 ## Features
 - Unlimited amount of question sets with unlimited amount of questions, based on database data
@@ -27,6 +27,38 @@ Dynamic questionnaire app, which main purpose is to increase customer satisfacti
 - ASP.NET Web API 2 - https://msdn.microsoft.com/en-us/library/dn448365(v=vs.118).aspx - Framework for creating RESTful services
 - Entity Framework (6.1.3+)- https://msdn.microsoft.com/en-us/library/aa937723(v=vs.113).aspx - Object-relational data mapper
 - NuGet - https://www.nuget.org/ - Package manager
+
+## Paths
+### Client-app
+Root: 
+/SurveyApp/clientapp/
+
+AngularJS app module initialization:
+/SurveyApp/clientapp/module.js
+
+AngularJS app module configuration:
+/SurveyApp/clientapp/config.js
+
+Components: 
+/SurveyApp/clientapp/*componentname*/
+
+Shared AngularJS assets: 
+/SurveyApp/clientapp/core/*assetname*.*assettype*.js
+
+Images
+/SurveyApp/clientapp/core/images/
+
+CSS/SCSS styles
+/SurveyApp/clientapp/core/styles/
+
+
+
+
+
+
+
+
+
 
 
 
