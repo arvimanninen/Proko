@@ -73,9 +73,7 @@ Data model initilialization: \
 
 ### Setup
 
-- Clone GitHub repository to your computer
-- run command "npm install" in Client app root folder
-- Open 
+Coming soon...
 
 ### Getting started
 
@@ -86,6 +84,8 @@ Coming soon...
 Coming soon...
 
 ### Known bugs and issues
+
+Coming soon...
 
 ### Live demo
 
