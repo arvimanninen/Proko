@@ -47,12 +47,12 @@ Components: \
 SurveyApp/SurveyApp/clientapp/*component-name*/
 
 Shared AngularJS assets: \
-SurveyApp/SurveyApp/clientapp/core/*assetname*.*assettype*.js
+SurveyApp/SurveyApp/clientapp/core/*asset-name*.*assettype*.js
 
 Images: \
 SurveyApp/SurveyApp/clientapp/core/images/
 
-CSS/SCSS styles: \
+CSS/SCSS stylesheets: \
 SurveyApp/SurveyApp/clientapp/core/styles/
 
 ### Back-end
