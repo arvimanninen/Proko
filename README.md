@@ -35,7 +35,7 @@ The application is part of the Digitalization In Customer Interaction (DICIA)-re
 ## Paths
 ### Client-app
 Root: \
-/SurveyApp/clientapp/
+SurveyApp/SurveyApp/clientapp/
 
 AngularJS app module initialization: \
 /SurveyApp/clientapp/module.js
@@ -44,7 +44,7 @@ AngularJS app module configuration: \
 /SurveyApp/clientapp/config.js
 
 Components: \
-	/SurveyApp/clientapp/*componentname*/
+	/SurveyApp/clientapp/*component-name*/
 
 Shared AngularJS assets: \
 	/SurveyApp/clientapp/core/*assetname*.*assettype*.js
@@ -57,7 +57,7 @@ CSS/SCSS styles: \
 
 ### Back-end
 Root: \
-	/SurveyApp/
+	/SurveyApp/SurveyApp/
 
 Configuration files: \
 	/SurveyApp/App_Start/
@@ -73,7 +73,10 @@ Data model initilialization: \
 
 ### Setup
 
-Coming soon...
+- Run command "npm install" in Client app root folder
+- Open /Surveyapp/SurveyApp.sln in Visual Studio
+- Install dependencies with NuGet, if not installed automatically
+- Comment out all code in /SurveyApp/SurveyApp/Models/DbSets.cs "public MainDbContext() : base("BackContext")" -function
 
 ### Getting started
 
