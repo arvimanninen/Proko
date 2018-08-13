@@ -38,38 +38,38 @@ Root: \
 SurveyApp/SurveyApp/clientapp/
 
 AngularJS app module initialization: \
-/SurveyApp/clientapp/module.js
+SurveyApp/SurveyApp/clientapp/module.js
 
 AngularJS app module configuration: \
-/SurveyApp/clientapp/config.js
+SurveyApp/SurveyApp/clientapp/config.js
 
 Components: \
-	/SurveyApp/clientapp/*component-name*/
+SurveyApp/SurveyApp/clientapp/*component-name*/
 
 Shared AngularJS assets: \
-	/SurveyApp/clientapp/core/*assetname*.*assettype*.js
+SurveyApp/SurveyApp/clientapp/core/*assetname*.*assettype*.js
 
 Images: \
-	/SurveyApp/clientapp/core/images/
+SurveyApp/SurveyApp/clientapp/core/images/
 
 CSS/SCSS styles: \
-	/SurveyApp/clientapp/core/styles/
+SurveyApp/SurveyApp/clientapp/core/styles/
 
 ### Back-end
 Root: \
-	/SurveyApp/SurveyApp/
+/SurveyApp/SurveyApp/
 
 Configuration files: \
-	/SurveyApp/App_Start/
+SurveyApp/SurveyApp/App_Start/
 
 REST API controllers: \
-	/SurveyApp/ApiControllers/
+SurveyApp/SurveyApp/ApiControllers/
 
 Data model classes: \
-	/SurveyApp/Models/
+SurveyApp/SurveyApp/Models/
 
 Data model initilialization: \
-	/SurveyApp/Models/DbSets.cs
+SurveyApp/SurveyApp/Models/DbSets.cs
 
 ### Setup
 
@@ -96,10 +96,10 @@ Coming soon...
 
 ### Team (main roles)
 Arvi Manninen \
-Software architecture, software logic (JavaScript/AngularJS, C#/ASP.NET), database design and implementation (Entity Framework, code-first approach).
+Software architecture, program logic (JavaScript/AngularJS, C#/ASP.NET), database design and implementation (Entity Framework, code-first approach).
 
 Ilkka Alakarhu \
-User interface design and implementation (HTML, CSS/SCSS), usability testing, project management.
+User interface design and implementation (HTML, CSS/SCSS, Bootstrap), usability testing, project management.
 
 
 
