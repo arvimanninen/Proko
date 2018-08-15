@@ -86,15 +86,15 @@ Prerequisite: Database is created.
 
 2. Add needed question methods to the QuestionMethods table. string Value must match with question method component routing names in client app's configuration file \
 
-Example:
-```
-.when('/qm-buttons-smileys', {
-	template: '<qm-buttons-smileys></qm-buttons-smileys>'
-})
-```
--> Value must be "buttons-smileys" or "/buttons-smileys"
+	Example:
+	```
+	.when('/qm-buttons-smileys', {
+		template: '<qm-buttons-smileys></qm-buttons-smileys>'
+	})
+	```
+	-> Value must be "buttons-smileys" or "/buttons-smileys"
 
-int ScaleMax tells what is the maximum scale value for particular QuestionMethod. Minimum scale value is always 1. For example, if QuestionMethod has answering scale with four options, the ScaleMax should be 4.
+	int ScaleMax tells what is the maximum scale value for particular QuestionMethod. Minimum scale value is always 1. For example, 	if QuestionMethod has answering scale with four options, the ScaleMax should be 4.
 
 3. Add some questions to the Questions-table. string Text is the question as text.
 
@@ -102,10 +102,9 @@ int ScaleMax tells what is the maximum scale value for particular QuestionMethod
 
 5. Add chosen questions to the ChosenQuestions table. int QuestionSetID tells which QuestionSet the particular ChosenQuestion is related to. int QuestionID tells which Question the particular ChosenQuestion is related to. int ChosenIndex tells the showing order of ChosenQuestions within the related QuestionSet.
 
-
-
-
 ### Usage
+
+Coming soon...
 
 ### Known issues and bugs
 
