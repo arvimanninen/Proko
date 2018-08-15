@@ -1,5 +1,5 @@
 # Dynamic survey application for construction companies
-Dynamic survey app, which main purpose is to increase customer satisfaction in construction projects. In practice, the application is made for collecing data about various issues in construction projects from construction workers. 
+Dynamic survey app, which main purpose is to increase customer satisfaction in construction projects. In practice, the application is made for collecting data about various issues in construction projects from construction workers. 
 
 ## Features
 - Unlimited amount of question sets with unlimited amount of questions, based on database data
@@ -80,15 +80,37 @@ SurveyApp/SurveyApp/Models/DbSets.cs
 
 ### Getting started
 
-Coming soon...
+Prerequisite: Database is created.
+
+1. Add needed QuestionMethods to the QuestionMethods table. string Value must match with question method component routing names in client app's configuration file \
+
+Example:
+```
+.when('/qm-buttons-smileys', {
+	template: '<qm-buttons-smileys></qm-buttons-smileys>'
+})
+```
+-> Value must be "buttons-smileys" or "/buttons-smileys"
+
+int ScaleMax tells what is the maximum scale value for particular QuestionMethod. Minimum scale value is always 1. For example, if QuestionMethod has answering scale with four options, the ScaleMax should be 4.
+
+2. Add some questions to the Questions table. string Text is the question as text.
+
+3. Add needed question sets to the QuestionSets table. One QuestionSet means one view, which can include many ChosenQuestions. QuestionMethodID tells which QuestionMethod is used in ChosenQuestions related to the particular QuestionSet. int ChosenIndex tells the showing order of QuestionSets in client app
+
+4. Coming soon...
+
+
+
 
 ### Usage
 
-Coming soon...
+### Known issues and bugs
 
-### Known bugs and issues
-
-Coming soon...
+- Slow algorithms in some functions, especially in Results average calculations. Move to the server-side?
+- Transaction management missing
+- Satisfactory line graphs show satisfactory as 1, if no answers in particular week, should be using last week's satisfactory results if no answers in that week.
+- Satisfactory line graphs show current date as current date + one day
 
 ### Live demo
 
