@@ -82,7 +82,9 @@ SurveyApp/SurveyApp/Models/DbSets.cs
 
 Prerequisite: Database is created.
 
-1. Add needed QuestionMethods to the QuestionMethods table. string Value must match with question method component routing names in client app's configuration file \
+1. Add answerer types to AnswererTypes-table. string Name tells the AnswererType name in text, bool Chosen tells if the AnswererType is in use, and chosable in client app.
+
+2. Add needed question methods to the QuestionMethods table. string Value must match with question method component routing names in client app's configuration file \
 
 Example:
 ```
@@ -94,11 +96,11 @@ Example:
 
 int ScaleMax tells what is the maximum scale value for particular QuestionMethod. Minimum scale value is always 1. For example, if QuestionMethod has answering scale with four options, the ScaleMax should be 4.
 
-2. Add some questions to the Questions table. string Text is the question as text.
+3. Add some questions to the Questions-table. string Text is the question as text.
 
-3. Add needed question sets to the QuestionSets table. One QuestionSet means one view, which can include many ChosenQuestions. QuestionMethodID tells which QuestionMethod is used in ChosenQuestions related to the particular QuestionSet. int ChosenIndex tells the showing order of QuestionSets in client app
+4. Add question sets to the QuestionSets-table. One QuestionSet means one view, which can include many ChosenQuestions. int QuestionMethodID tells which QuestionMethod is used in ChosenQuestions related to the particular QuestionSet. int ChosenIndex tells the showing order of QuestionSets (one QuestionSet = one view) in client app
 
-4. Coming soon...
+5. Add chosen questions to the ChosenQuestions table. int QuestionSetID tells which QuestionSet the particular ChosenQuestion is related to. int QuestionID tells which Question the particular ChosenQuestion is related to. int ChosenIndex tells the showing order of ChosenQuestions within the related QuestionSet.
 
 
 
