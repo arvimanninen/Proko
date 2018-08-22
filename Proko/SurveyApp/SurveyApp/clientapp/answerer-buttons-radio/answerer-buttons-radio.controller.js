@@ -5,7 +5,7 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
 
     var that = this;
 
-    // View adjustments
+    // Template adjustments
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();       
@@ -45,7 +45,7 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
     };
 
     // that.goToMainQuestions()
-    // - Function executes when user clicks next button
+    // - Function executes when user clicks the button where function is binded
     // - If answerer type is chosen, routeButtonsUsed in RunService is set to true
     //   and user is moved to the first question set view
     // - If answerer type is not chosen, error message is shown in console
