@@ -20,7 +20,6 @@ namespace Back
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 
             // Web API routes
-            // TODO: REMOVE CORS IF UNNECESSARY (PROBABLY IS)
             config.MapHttpAttributeRoutes();
 
             

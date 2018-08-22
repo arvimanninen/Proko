@@ -1,8 +1,13 @@
 ﻿
 'use strict';
+
+// EndCtrl
+// - Controller for end -component
 app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtrasService,
     AnswersAndBundleExtrasService, DataFactory, ResultService, RunService) {
+
     var that = this;
+
     $(document).ready(function () {
         var wrapperHeight = $("#wrapper").height();
         var containerHeight = $(".container").height();
@@ -15,6 +20,7 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
         console.log(navbtnHeight);
         $(".nav-btn-div").css("margin-top", navbtnHeight);
     });
+
     if (RunService.getRouteButtonsUsed() === false) {
         $location.path("/error");
     }
@@ -28,6 +34,7 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
         RunService.setRouteButtonsUsed(true);
         $location.path("/results");
     };
+
     AnswersAndBundleExtrasService.setAnswersAndBundleExtras(AnswerService.getAnswers(),
         AnswerBundleExtrasService.getAnswerBundleExtras());
     var postAnswersAndExtras = DataFactory.postSurveyAnswers.save(AnswersAndBundleExtrasService.getAnswersAndBundleExtras(),
