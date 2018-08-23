@@ -69,19 +69,12 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
         // - In case of question query error, error message is showed
         showErrorMessage();
     });
-            
-        
-        /*for (var i = 0; i < rawQs.length; i++) {
-            console.log("rawQs[" + i + "].QuestionID: " + rawQs[i].QuestionID);
-            console.log("rawQs[" + i + "].ChosenIndex: " + rawQs[i].ChosenIndex);
-            console.log("rawQs[" + i + "].Text: " + rawQs[i].Text);
-            console.log("rawQs[" + i + "].QuestionMethodValue: " + rawQs[i].QuestionMethodValue);
-        }*/
-            // $("#loading-icon").remove();
-    
-
+    // that.startSurvey()
+    // - Function is executed when user clicks the button which is binded to it
+    // - routeButtonsUsed variable in RunService is set as true, so route button checkup passes
     that.startSurvey = function () {
         RunService.setRouteButtonsUsed(true);
         $location.path("/answerer-buttons-radio");
     };
+
 });
