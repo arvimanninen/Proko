@@ -2,10 +2,13 @@
 
 app.controller('ResultsCtrl', function ($location, QuestionService, AnswererTypeService, ResultService,
     RunService) {
+
     var that = this;
+
     that.toStart = function () {
         $location.path("/start");
     };
+
     if (RunService.getRouteButtonsUsed() === false) {
         $location.path("/error");
     }
