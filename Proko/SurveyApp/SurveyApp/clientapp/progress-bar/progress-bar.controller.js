@@ -4,13 +4,12 @@
 
 app.controller('ProgressBarCtrl', function (RunService) {
     var that = this;
+
     var prBar = document.getElementById("pr-bar");
     that.progress = 0;
- 
     var currentStep = RunService.getQuestionSetIndex() - 1;
     var maxSteps = RunService.getQuestionSetCount();
     var progressPerStep = 100 / maxSteps;
-    // Current progress is calculated with
     var currentProgress = currentStep * progressPerStep;
     console.log("progressBar.currentProgress: " + currentProgress);
 
