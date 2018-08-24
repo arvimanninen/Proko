@@ -38,7 +38,7 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
     // - Function executes when user clicks answerer type chosing button
     // - chosen answerer type is set to AnswerBundleExtrasService according to answererTypeId
     // - answererTypeChosen is set to true, so route button checkup passes
-    // @param {Int} answererTypeId
+    // @param {Number} answererTypeId
     that.setAnswererType = function (answererTypeId) {
         AnswerBundleExtrasService.setAnswererTypeId(answererTypeId);
         answererTypeChosen = true;
