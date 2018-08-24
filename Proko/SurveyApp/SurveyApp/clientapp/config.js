@@ -1,7 +1,9 @@
 'use strict';
-console.log("app.config started!");
+// config
+// - Configuration for "app" Angular application module
 app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
     function ($routeProvider, $locationProvider, ChartJsProvider) {
+        // - Routing
         $routeProvider
             .when('/', {
                 template: '<start></start>'
@@ -34,6 +36,8 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                 template: '<error></error>'
             });
 
+        // Angular-Chart.js/Chart.js options
+        // - Global options for charts used in application  
         ChartJsProvider.setOptions({
             global: {
                 colors: ['#8ed791', '#d7d78e', '#d78e8e', '#c58ed7', '#8eb3d7'],
