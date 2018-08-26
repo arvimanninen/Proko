@@ -1,6 +1,16 @@
 ﻿// TODO: TEST AND ENABLE
 'use strict';
-
+// dynamicChartRow
+// - Creates dynamic chart row based on chart count per row (chartsperrow),
+//   chart component names (chartcomponents) and optional first chart component name (firstchartcomponent).
+// - Example: chartsperrow = 3, chartcomponents = [A, B, C, D, E, F, G], firstchartcomponent = H
+// - dynamicChartRow directive is replaced with components:
+//   H A B
+//   C D E
+//   F G
+// @param {Number} chartsperrow
+// @param {Array<String>} chartcomponents
+// @param {String} firstchartcomponent
 app.directive('dynamicChartRow', function ($compile) {
     return {
         restrict: 'E',
@@ -10,6 +20,13 @@ app.directive('dynamicChartRow', function ($compile) {
             firstchartcomponent: '=firstchartcomponent'
         },
         link: function ($scope, $element) {
+
+            // calculateRowCount()
+            // - Function calculates correct row count based on component count (componentCount) and
+            //   target number of components in row, and returns the row count (rowCount).
+            //   @param {Number} componentCount
+            //   @param {Number} componentsPerRow
+            //   @return {Number} rowCount
             var calculateRowCount = function (componentCount, componentsPerRow) {
                 var rowCount = 1;
                 if (componentCount <= componentsPerRow) {
@@ -29,11 +46,12 @@ app.directive('dynamicChartRow', function ($compile) {
                 console.log("rowCount: " + rowCount);
                 return rowCount;
             };
-
-            console.log("dynamic-chart-row started!");
+            
             var chartsPerRow = $scope.chartsperrow; // TODO: angular.isNumber
             var chartComponents = angular.isFunction($scope.chartcomponents) ? $scope.chartcomponents() : [];
             var firstChartComponent = $scope.firstchartcomponent;
+            // If firstChartComponent is not null (loose definition - null, undefined, NaN etc),
+            // firstChartComponent is added as first component in chartComponents
             if (firstChartComponent != null) {
                 chartComponents.unshift(firstChartComponent);
             }
@@ -51,6 +69,7 @@ app.directive('dynamicChartRow', function ($compile) {
             var chartIndex = 0;
             var rowElements = [];
             var firstChartInArray = true;
+            // row element creation starts
             for (var i = 0; i < rowCount; i++) {
                 var rowElement = document.createElement("div");
                 rowElement.setAttribute("class", "row results-div");
