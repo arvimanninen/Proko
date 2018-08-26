@@ -1,14 +1,12 @@
 ﻿<div class="container-fluid results-bg-div">
+
     <div class="row results-div">
         <div class="col-xs-12">
             <h3 class="results-title">Vastusten tuloksia</h3>
         </div>    
-        <!--<dynamic-element components="$ctrl.componentNames"></dynamic-element>-->
-    </div> <!-- row div -->
+    </div>
     
     <div class="row results-div">
-        <!--<answerer-result-chart-bar></answerer-result-chart-bar>
-        <dynamic-element components="$ctrl.chartNames"></dynamic-element>-->
     </div>
 
     <dynamic-chart-row chartsperrow="$ctrl.chartsPerRow" chartcomponents="$ctrl.chartNames" firstchartcomponent="$ctrl.firstChartName"></dynamic-chart-row>
@@ -16,4 +14,5 @@
     <div class="btn-group nav-btn-div nav-btn-margins">
         <a class="button-primary block-btn" ng-click="$ctrl.toStart()">Alkuun</a>
     </div>
+
 </div>

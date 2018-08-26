@@ -71,7 +71,6 @@ app.directive('dynamicChartRow', function ($compile) {
                     }
                 }
                 $compile(rowElement)($scope);
-                // $compile(rowElement)($scope);
                 rowElements.push(rowElement);
             }
             $element.replaceWith(rowElements);

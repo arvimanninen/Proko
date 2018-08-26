@@ -1721,7 +1721,6 @@
     <Content Include="clientapp\core\answerertype.service.js" />
     <Content Include="clientapp\core\answersandbundleextras.service.js" />
     <Content Include="clientapp\core\dynamic-chart-row.directive.js" />
-    <Content Include="clientapp\core\dynamic-element.directive.js" />
     <Content Include="clientapp\core\images\thumb-down-b.png" />
     <Content Include="clientapp\core\images\thumb-neutral-b.png" />
     <Content Include="clientapp\core\images\thumb-up-b.png" />
