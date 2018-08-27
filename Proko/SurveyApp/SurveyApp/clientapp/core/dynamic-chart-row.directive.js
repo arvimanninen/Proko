@@ -1,13 +1,14 @@
-﻿// TODO: TEST AND ENABLE
-'use strict';
+﻿'use strict';
 // dynamicChartRow
 // - Creates dynamic chart row based on chart count per row (chartsperrow),
 //   chart component names (chartcomponents) and optional first chart component name (firstchartcomponent).
 // - Example: chartsperrow = 3, chartcomponents = [A, B, C, D, E, F, G], firstchartcomponent = H
-// - dynamicChartRow directive is replaced with components:
+// - dynamic-chart-row (dynamicChartRow in JS) HTML element is replaced with elements:
 //   H A B
 //   C D E
 //   F G
+// - Every element gets questionindex HTML attribute based on their index number,
+//   so in example above, attributes are H questionindex = 0, A questionindex = 1 etc.
 // @param {Number} chartsperrow
 // @param {Array<String>} chartcomponents
 // @param {String} firstchartcomponent
@@ -69,29 +70,42 @@ app.directive('dynamicChartRow', function ($compile) {
             var chartIndex = 0;
             var rowElements = [];
             var firstChartInArray = true;
-            // row element creation starts
+            // - Iterates all rows
             for (var i = 0; i < rowCount; i++) {
+                // - Row element creation and setting correct class attribute to the row element
                 var rowElement = document.createElement("div");
                 rowElement.setAttribute("class", "row results-div");
+                // - Iterates all charts that will be added to current row
                 for (var j = 0; j < chartsPerRow; j++) {
                     if (chartIndex < chartComponents.length) {
+                        // - Chart element creation based on component name
                         var chartElement = document.createElement(chartComponents[chartIndex]);
-                        // SIC! == ===
+                        // - If there is no optional first chart component injected, 
+                        //   or current chart component isn't first in chartComponents,
+                        //   questionindex-attribute is set to chartElement, using chartIndex as
+                        //   a attribute value.
                         if (firstChartComponent == null || firstChartInArray === false) {
                             chartElement.setAttribute("questionindex", chartIndex);
                             chartIndex++;
                         } else {
+                        // - Else, first item in chartComponents-array is removed.
                             chartComponents.shift();
                         }
+                        // - chartElement is added to rowElement as its child
                         rowElement.appendChild(chartElement);
+                        // - firstChartInArray is always false after the first
+                        //   row iteration
                         firstChartInArray = false;
                     } else {
                         break;
                     }
                 }
+                // Compiles rowElement
                 $compile(rowElement)($scope);
                 rowElements.push(rowElement);
             }
+            // - After all rows with child chart elements (rowElements array) are created and compiled,
+            //   dynamic-chart-row HTML element is replaced with rowElements
             $element.replaceWith(rowElements);
         }
     };
