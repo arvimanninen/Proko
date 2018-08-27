@@ -1,24 +1,35 @@
 ﻿'use strict';
 
 // TODO: NEEDS LOT OF PERFORMANCE TWEAKING
-
+// ResultService
+// - Client-side data storage/service for results
 app.service('ResultService', function () {
     var results = [];
     var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
     var datePointsModified = false;
 
+    // - Object constructor
     var Result = function (nQuestionID, nAnswerBundleDateMs, nAnswerValue, nAnswererTypeID, nAnswererTypeName) {
         this.QuestionID = nQuestionID;
+        // Converts Unix time format (milliseconds since 1.1.1970) to JavaScript Date format
         this.AnswerBundleDate = new Date(nAnswerBundleDateMs);
         this.AnswerValue = nAnswerValue;
         this.AnswererTypeID = nAnswererTypeID;
         this.AnswererTypeName = nAnswererTypeName;
     };
 
+    // getResults()
+    // - Function returns all objects in ResultService.results[] as an array
+    // @return {Array<Result>} results
     var getResults = function () {
         return results;
     };
 
+    // setResults()
+    // - Function gets array (resultDtos) of ResultDTO-objects (check server-side code) as an 
+    //   parameter. ResultDTO:s are converted as Result-objects and added to the ResultService.results[]
+    //   in the same order as they are in resultDtos[].
+    // @param {Array<ResultDTO>} resultDtos
     var setResults = function (resultDtos) {
         for (var i = 0; i < resultDtos.length; i++) {
             var nr = new Result(resultDtos[i].QuestionID, resultDtos[i].AnswerBundleDateMs, 
@@ -26,22 +37,14 @@ app.service('ResultService', function () {
             results.push(nr);
         }
     };
-    
-        /*
-        public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
-        {
-            // PREVENTS WRONG SCALING WHEN VALUE
-            if(value == 1)
-            {
-                return 1;
-            }
-            double valueD = Convert.ToDouble(value);
-            double currentMaxD = Convert.ToDouble(currentMax);
-            double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
-            return scaledValueD;
-        }
-        */
 
+    // getResultCountByAnswererTypeId()
+    // - Function gets answerer type id (answererTypeId) as a parameter,
+    //   calculates the number of results in ResultService.results[]
+    //   where AnswererTypeID === answererTypeId, and returns the
+    //   outcome of the calculation.
+    // @param {Number} answererTypeId
+    // @return {Number} resultCount
     var getResultCountByAnswererTypeId = function (answererTypeId) {
         var resultCount = 0;
         for (var i = 0; i < results.length; i++) {
@@ -56,10 +59,12 @@ app.service('ResultService', function () {
         if ($.isNumeric(questionId) === false) {
             console.log("ResultService.getResultCounts.questionId is not numeric!");
             alert("ResultService.getResultCounts.questionId is not numeric!");
+            return -1;
         }
         if ($.isNumeric(targetMaxValue) === false) {
             console.log("ResultService.getResultCounts.targetMaxValue is not numeric!");
             alert("ResultService.getResultCounts.targetMaxValue is not numeric!");
+            return -1;
         }
 
         var scaleValueToFive = function (value, maxValue) {

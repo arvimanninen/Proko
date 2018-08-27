@@ -1,6 +1,6 @@
 ﻿'use strict';
 // AnswerService
-// - Client-side data model for answers
+// - Client-side storage for answers
 app.service('AnswerService', function () {
     var answers = [];
 
@@ -121,7 +121,7 @@ app.service('AnswerService', function () {
     };
 
     // reset()
-    // - Function will set AnswerService to default state
+    // - Function sets AnswerService to the default state
     var reset = function () {
         answers.length = 0;
     };

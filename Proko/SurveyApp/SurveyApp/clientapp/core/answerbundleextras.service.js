@@ -1,6 +1,6 @@
 ﻿'use strict';
 // AnswerBundleExtrasService
-// - Local data model for written feedback (textFeedback) and answerer type (answererTypeId)
+// - Client-side storage for written feedback (textFeedback) and answerer type (answererTypeId)
 app.service('AnswerBundleExtrasService', function () {
     var textFeedback = "";
     // TODO: CHANGE THIS!!!!

@@ -1,6 +1,6 @@
 ﻿'use strict';
 // AnswersAndBundleExtrasService
-// - Client-side data model for answers and bundle extras (answerer type, written feedback)
+// - Client-side storage for answers and bundle extras (answerer type, written feedback)
 // - Used for sending data to REST API in correct format
 app.service('AnswersAndBundleExtrasService', function () {
     var answersAndBundleExtras = null;
