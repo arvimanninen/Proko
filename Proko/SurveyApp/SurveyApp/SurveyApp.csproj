@@ -1766,7 +1766,6 @@
     <Content Include="clientapp\core\images\thumb-neutral.png" />
     <Content Include="clientapp\core\images\thumb-up.png" />
     <Content Include="clientapp\core\images\warning.gif" />
-    <Content Include="clientapp\core\storage.service.js" />
     <Content Include="clientapp\core\oldstyles\frame.css" />
     <Content Include="clientapp\core\oldstyles\frame.min.css" />
     <Content Include="clientapp\core\oldstyles\results.css" />

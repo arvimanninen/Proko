@@ -8,7 +8,6 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
     // changeLocation()
     // - Function gets current location (currentLocation)
     //    , next location (nextLocation) and next question set index (index) as parameters
-    // as parameters
     // - Maximum question set index (maximumIndex) is got from RunService
     // - If next question set index is larger as maximumIndex, view is changed
     //   to text-area -view (written feedback view)

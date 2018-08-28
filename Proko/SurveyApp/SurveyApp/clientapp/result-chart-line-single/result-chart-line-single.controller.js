@@ -1,12 +1,12 @@
 ﻿'use strict';
-
+// ResultChartLineSingleCtrl
+// - Controller for resultChartLineSingle -component
 app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, AnswererTypeService, ResultService) {
     var that = this;
     var chartIndex = $attrs.questionindex;
     
     var question = QuestionService.getQuestion(chartIndex);
     var questionId = question.QuestionID;
-    console.log("ResultChartLineSingleCtrl.question.QuestionID: " + question.QuestionID);
     that.questionText = question.QuestionText;
     var questionAverages = ResultService.getAveragesForAll(question.QuestionID);
     var dps = ResultService.getDatePoints();
@@ -24,18 +24,12 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
         var day = dateObject.getDate();
         var month = dateObject.getMonth() + 1;
         var str = day + "." + month + ".";
-        console.log("str: " + str);
         return str;
     };
 
-    //var question2Average = ResultService.getAveragesForAll(question2.QuestionID);
     for (var i = 0; i < questionAverages.length; i++) {
         console.log("questionAverages[" + i + "]: " + questionAverages[i]);
     }
-
-    /*
-
-    */
 
     that.chart1 = {
         labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
@@ -72,36 +66,4 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
             }
         }
     };
-
-    /*
-    that.chart1 = {
-        labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
-        //series: ['Rakennusmies', 'Sähkömies', 'LVI asentaja', 'Putkimies'],
-        series: ['Testiseries'], // THIS DOESN'T WORK!
-        data: [questionAverages[4], questionAverages[3], questionAverages[2], questionAverages[1], questionAverages[0]],
-        options: {
-            scales: {
-                yAxes: [
-                    {
-                        id: 'y-axis-1',
-                        display: true,
-                        type: 'linear',
-                        position: 'left',
-                        ticks: {
-                            display: false,
-                            min: 0,
-                            max: 5,
-                            beginAtZero: true,
-                            stepSize: 1.25
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Tyytyväisyys"
-                        }
-                    }
-                ]
-            }
-        }
-    };
-    */
 });
