@@ -39,7 +39,7 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
         console.log("questionAverages[" + i + "]: " + questionAverages[i]);
     }
 
-    // Chart options for Angular-Chart.js/Chart.js chart
+    // - Chart options for Angular-Chart.js/Chart.js chart
     that.chart1 = {
         labels: [getDayAndMonthString(dps[4]), getDayAndMonthString(dps[3]), getDayAndMonthString(dps[2]), getDayAndMonthString(dps[1]), getDayAndMonthString(dps[0])],
         data: [ [questionAverages[4], questionAverages[3], questionAverages[2], questionAverages[1], questionAverages[0]] ],

@@ -2,19 +2,19 @@
 
 app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultService) {
     var that = this;
-    var chartIndex = $attrs.questionindex;
-    //var chartIndex = that.questionindex;
-    
-    console.log("ResultChartPieCtrl.chartIndex: " + chartIndex);
 
+    // - Attribute from HTML template
+    var chartIndex = $attrs.questionindex;
+    
     var question = QuestionService.getQuestion(chartIndex);
+    // TODO: CHANGE TO DYNAMIC VALUE
     var maxResultValue = 4;
     that.questionText = question.QuestionText;
     that.ci = chartIndex;
+    // - Gets result counts for each result value (minimum = always 1)
     that.resultCounts = ResultService.getResultCounts(question.QuestionID, maxResultValue);
 
-    
-
+    // - Chart options for Angular-Chart.js/Chart.js chart
     that.chart3 = {
         labels: ['Rakennusmies', 'Sähköasentaja', 'LVI asentaja', 'Putkimies'],
         data: [that.resultCounts[0], that.resultCounts[1], that.resultCounts[2], that.resultCounts[3]],
