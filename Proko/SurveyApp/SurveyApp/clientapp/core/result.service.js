@@ -2,7 +2,6 @@
 
 // ResultService
 // - Client-side data storage/data service for results
-// TODO: NEEDS LOT OF PERFORMANCE TWEAKING
 app.service('ResultService', function () {
     var results = [];
     var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
@@ -120,6 +119,18 @@ app.service('ResultService', function () {
         return resultCounts;
     };
 
+    // getAveragesForAll()
+    // TODO: CHANGE NAME TO getFourWeekAverages()
+    // - Function gets question id (questionId) as a parameter, and
+    //   calculates five date points if not calculated already:
+    //   today, seven days from today, 14 from today etc.
+    // - Then function calculates average answer results based on questionId and
+    //   calculated date points. Function returns an array with five decimal numerals:
+    //   - averages[0]: Today to 7 days from today: average answer result value
+    //   - averages[1]: 8 days from today - 15 days from today:average answer result value
+    //     etc.
+    // @param {Number} questionId
+    // @return {Array<Number>} averages
     var getAveragesForAll = function (questionId) {
         var totalMass = 0.0;
         var totalCount = 0.0;
@@ -127,44 +138,44 @@ app.service('ResultService', function () {
         var masses = [0.0, 0.0, 0.0, 0.0, 0.0];
         var counts = [0.0, 0.0, 0.0, 0.0, 0.0];
         var averages = [0.0, 0.0, 0.0, 0.0, 0.0];
-        // CALCULATE RIGHT DATE POINTS
         var daysSinceNow = -1;
+
+        // - Date point calculation, if not already calculated
         if (datePointsModified === false) {
             for (var m = 0; m < datePoints.length; m++) {
-                // TODO: TEST THIS!
                 datePoints[m].setDate(datePoints[m].getDate() - daysSinceNow);
                 daysSinceNow = daysSinceNow + 7;
-                console.log("datePoints[" + m + "]:" + datePoints[m]);
             }
             datePointsModified = true;
         }
+
+        // - Finding results from ResultService.results[] based on questionId.
         for (var i = 0; i < results.length; i++) {
             if (results[i].QuestionID === questionId) {
+                // - When ResultService.results[i].QuestionID === questionId
+                //   ResultService.datePoints[] is iterated through for checking if
+                //   AnswerBundleDate of the current result is between 
+                //   ResultService.datePoints[k] and ResultService.datePoints[k + 1].
                 for (var k = 0; k < datePoints.length - 1; k++) {
                     if (results[i].AnswerBundleDate <= datePoints[k] &&
-                        results[i].AnswerBundleDate > datePoints[k + 1]) {
-                        /*
-                        console.log("k: " + k);
-                        console.log("Fits to current datePoints scope!");
-                        console.log("results[" + i + "].AnswerBundleDate: " + results[i].AnswerBundleDate);
-                        console.log("datePoints[" + k + "]: " + datePoints[k]);
-                        console.log("datePoints[" + k + "+ 1]: " + datePoints[k + 1]);
-                        console.log("masses[" + k + "] before: " + masses[k]);
-                        console.log("counts[" + k + "] before: " + counts[k]);
-                        console.log("results[" + i + "].AnswerValue: " + results[i].AnswerValue);
-                        */
+                       results[i].AnswerBundleDate > datePoints[k + 1]) {
+                        // - If date point condition check is true, AnswerValue of
+                        //   the result is added to masses[k] and counts[k] is
+                        //   increased by 1. Values are later used for calculating
+                        //   average result values.
                         masses[k] = masses[k] + results[i].AnswerValue;
                         counts[k]++;
-                        // console.log("masses[" + k + "] after: " + masses[k]);
-                        // console.log("counts[" + k + "] after: " + counts[k]);*/
                     }
                 }
             }
         }
 
+        // - Length check for exposing possible bugs. If lengths are not same,
+        //   error message is showed and returned averages[] has zero values (0.0).
         if (masses.length === counts.length) {
             for (var q = 0; q < masses.length; q++) {
                 if (masses[q] >= 1 && counts[q] >= 1) {
+                    // - Averages are calculated
                     averages[q] = masses[q] / counts[q];
                 }
                 console.log("masses[" + q + "]: " + masses[q]);
@@ -176,17 +187,20 @@ app.service('ResultService', function () {
             alert("Error in ResultService.getAveragesForAll()!");
             console.log("masses.length and counts.length are NOT same!");
         }
-        // averages.reverse();
         return averages;
     };
-    
+
+    // getDatePoints()
+    // - Function returns all dates in ResultService.datePoints[] as an array
+    // @return {Array<Date>} datePoints
     var getDatePoints = function () {
         return datePoints;
     };
 
+    // reset()
+    // - Function sets ResultService to the default state
     var reset = function () {
         results.length = 0;
-        // TODO: TEST THIS
         datePoints.length = 0;
         datePointsModified = false;
         for (var i = 0; i < 6; i++) {
@@ -194,7 +208,6 @@ app.service('ResultService', function () {
         }
     };
     
-    // TODO: UPDATE THIS
     return {
         getResults: getResults,
         setResults: setResults,
@@ -202,7 +215,6 @@ app.service('ResultService', function () {
         getDatePoints: getDatePoints,
         getResultCounts: getResultCounts,
         getResultCountByAnswererTypeId: getResultCountByAnswererTypeId,
-    //    getAveragesForSingle: getAveragesForSingle,
         reset: reset
     };
 });
