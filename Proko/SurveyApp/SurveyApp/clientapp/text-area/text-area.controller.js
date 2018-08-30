@@ -35,8 +35,8 @@ app.controller('TextAreaCtrl', function ($location, QuestionService, AnswerBundl
     // @param {Number} direction
 
     that.goToEndOrBack = function (direction) {
+        // - Text feedback is set to AnswerBundleExtrasService
         AnswerBundleExtrasService.setTextFeedback(textFb.value);
-        console.log("AnswerService.getTextFeedback:" + AnswerBundleExtrasService.getTextFeedback());
         if (direction === -1) {
             RunService.decreaseQuestionSetIndex();
             var lastQmv = QuestionService.getQuestionMethodValueBySetIndex(RunService.getQuestionSetIndex());
