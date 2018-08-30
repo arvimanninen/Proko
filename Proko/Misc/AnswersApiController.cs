@@ -17,23 +17,93 @@ namespace Back.ApiControllers
     public class AnswersApiController : ApiController
     {
         private MainDbContext db = new MainDbContext();
+        /*
+        // GET: api/AnswersApi/5
+        [ResponseType(typeof(Answer))]
+        public IHttpActionResult GetAnswer(int id)
+        {
+            Answer answer = db.Answers.Find(id);
+            if (answer == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(answer);
+        }
+
+        // PUT: api/AnswersApi/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutAnswer(int id, Answer answer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != answer.AnswerID)
+            {
+                return BadRequest();
+            }
+
+            db.Entry(answer).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AnswerExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // POST: api/AnswersApi
+        // TODO: Narrow allowed headers
+        // TODO: Make EnableCors as an editable field (from back management app)
+        // TODO: EnableCors!
+        // [EnableCors(origins: "http://prokof.azurewebsites.net", headers: "*", methods: "post")]
+        /*
+        [ResponseType(typeof(Answer))]
+        public IHttpActionResult PostAnswer([FromBody] AnswerDTO answerdto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //System.Diagnostics.Debug.WriteLine("answer.AnswerID: " + answer.AnswerID);
+            //System.Diagnostics.Debug.WriteLine("answer.QuestionID: " + answer.QuestionID);
+            //System.Diagnostics.Debug.WriteLine("answer.UserID: " + answer.UserID);
+            //System.Diagnostics.Debug.WriteLine("answer.Value: " + answer.Value);
+
+            
+            db.Answers.Add(answer);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = answer.AnswerID }, answer);
+        }
+        */
         
-        // PostSurveyAnswers()
-        // - Function gets AnswersAndBundleExtrasDTO abe-object as function parameter and saves
-        //   its content to the database
-        // @param {AnswersAndBundleExtrasDTO} abe
+
         [Route("api/postsurveyanswers")]
         [HttpPost]
         public IHttpActionResult PostSurveyAnswers([FromBody] AnswersAndBundleExtrasDTO abe)
         {
-            // Model state check. If State is not valid, BadRequest will be returned with ModelState.
+            
             if (!ModelState.IsValid)
             {
                 Debug.WriteLine("ModelState not valid!");
                 return BadRequest(ModelState);
             }
 
-            // Unpacking abe-object
             List<AnswerDTO> answerDtos = abe.AnswerDtos.ToList();
             int answererTypeId = abe.AnswerBundleExtrasDto.AnswererTypeID;
             string textFb = abe.AnswerBundleExtrasDto.TextFeedback;
@@ -44,43 +114,46 @@ namespace Back.ApiControllers
             Debug.WriteLine("textFb: " + textFb);
 
 
-            // - If there is no answerDtos, BadRequest will be returned.
+            
             if (answerDtos.Count == 0)
             {
                 return BadRequest();
             }
-
-            // - Sorting answerDtos by QuestionSetIndex and ChosenQuestionIndex (in this order)
             var rawSortedDtos = from sa in answerDtos
                                 orderby sa.QuestionSetIndex, sa.ChosenQuestionIndex
                                 select sa;
-            
-            // - Converting IOrderedEnumerable as list 
+                                
             List<AnswerDTO> cleanSortedDtos = rawSortedDtos.ToList();
-            
-            // Creating AnswerBundle bundle
-            AnswerBundle bundle = new AnswerBundle();
 
-            // Adding variables to bundle
+            for (int i = 0; i < cleanSortedDtos.Count; i++)
+            {
+                Debug.WriteLine("cleanSortedDtos[" + i + "].Value: " + cleanSortedDtos[i].Value);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionSetIndex: " + cleanSortedDtos[i].QuestionSetIndex);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].ChosenQuestionIndex: " + cleanSortedDtos[i].ChosenQuestionIndex);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionID: " + cleanSortedDtos[i].QuestionID);
+                Debug.WriteLine("cleanSortedDtos[" + i + "].QuestionMethodID: " + cleanSortedDtos[i].QuestionMethodID);
+            }
+            // CREATE AnswerBundle bundle
+            
+            AnswerBundle bundle = new AnswerBundle();
             bundle.Date = DateTime.Now;
             bundle.AnswererTypeID = answererTypeId;
             bundle.TextFeedback = textFb;
-
-            // Adding bundle is to the database
+            // NEW: CHECK IF WORKS
+            // TODO: TRANSACTION MANAGEMENT
             db.AnswerBundles.Add(bundle);
 
-            // - Saving database changes
-            // TODO: TRANSACTION MANAGEMENT
             db.SaveChanges();
 
-            // - Creating helper variables
+            // ADD AnswerSets TO bundle
+            // int currentQmId = -2;
             int currentSetId = -2;
             int currentSetIndex = -2;
 
             foreach (AnswerDTO aDto in cleanSortedDtos)
             {
-                // - If new QuestionMethodID in answerDtos,
-                //   new AnswerSet is created and saved to the database
+                // IF NEW QuestionMethodID IN answerDtos,
+                // NEW AnswerSet IS CREATED
                 if (aDto.QuestionSetIndex != currentSetIndex)
                 {
                     // currentQmId = aDto.QuestionMethodID;
@@ -99,23 +172,42 @@ namespace Back.ApiControllers
                     AnswerSetID = currentSetId
                 });
                 db.SaveChanges();
+                Debug.WriteLine("currentSetId:" + currentSetId);
+                Debug.WriteLine("currentSetIndex:" + currentSetIndex);
             }
                     
+            Debug.WriteLine("answerBundleId: " + bundle.AnswerBundleID);
             return Ok();
-
         }
+                
+        
+        /*
+        // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
+        public static long ConvertToUnixTime(DateTime datetime)
+        {
+            DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
-        // GetResultsToChosenQuestions()
-        // - Function returns results (AnswerResultDTO) to questions that are currently chosen
-        //   (= that are in database's ChosenQuestions-table) and returns them in a List.
-        // @return {List<AnswerResultDTO>} results
+            return (long)(datetime - sTime).TotalMilliseconds;
+        }
+        
+        public static double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD) 
+        {
+            // PREVENTS WRONG SCALING WHEN VALUE
+            if(value == 1)
+            {
+                return 1;
+            }
+            double valueD = Convert.ToDouble(value);
+            double currentMaxD = Convert.ToDouble(currentMax);
+            double scaledValueD = (absoluteMaxD / currentMaxD) * valueD;
+            return scaledValueD;
+        }
+        */
+        
         [Route("api/getresultstochosenquestions")]
         [HttpGet]
         public IHttpActionResult GetResultsToChosenQuestions()
         {
-            // GetResultsToChosenQuestions.ScaleAnswerValue()
-            // - Gets target value, value's current maximum value and target maximum value
-            //   as parameters, and scale them 
             double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD)
             {
                 // PREVENTS WRONG SCALING WHEN VALUE
@@ -160,15 +252,18 @@ namespace Back.ApiControllers
                       };
 
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
+            // TODO: CHANGE absoliteScaleMax TO ALWAYS 5
             double absoluteScaleMax = -2;
             foreach(AnswerResultTemp art in resultTemps)
             {
+                Debug.WriteLine("art.AnswerScaleMax: " + art.AnswerScaleMax);
                 if(art.AnswerScaleMax > absoluteScaleMax)
                 {
                     absoluteScaleMax = Convert.ToDouble(art.AnswerScaleMax);
                 }
             }
-
+            Debug.WriteLine("absoluteScaleMax: " + absoluteScaleMax);
+            Debug.WriteLine("******");
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
             foreach (AnswerResultTemp rt in resultTemps)
             {
@@ -178,11 +273,15 @@ namespace Back.ApiControllers
                 nr.AnswererTypeID = rt.AnswererTypeID;
                 nr.AnswererTypeName = rt.AnswererTypeName;
                 nr.AnswerBundleDateMs = ConvertToUnixTime(rt.AnswerBundleDate);
+                Debug.WriteLine("nr.AnswerValue: " + nr.AnswerValue);
+                Debug.WriteLine("rt.AnswerValue: " + rt.AnswerValue);
+                Debug.WriteLine("rt.AnswerScaleMax: " + rt.AnswerScaleMax);
+                Debug.WriteLine("******");
                 results.Add(nr);
             }
+            Debug.WriteLine("results.Count: " + results.Count);
 
             return Ok(results);
-
         }  
 
         [Route("api/getchosenanswerertypes")]
