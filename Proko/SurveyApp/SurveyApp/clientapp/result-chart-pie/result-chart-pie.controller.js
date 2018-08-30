@@ -1,5 +1,6 @@
 ﻿'use strict';
-
+// ResultChartPieCtrl
+// - Controller for resultChartPie -component
 app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultService) {
     var that = this;
 

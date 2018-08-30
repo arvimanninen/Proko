@@ -7,7 +7,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
 
     var that = this;
 
-    // Reseting all services to default state
+    // Reseting all services to the default state
     QuestionService.reset();
     AnswerService.reset();
     RunService.reset();

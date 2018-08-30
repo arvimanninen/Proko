@@ -35,8 +35,8 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
     that.answererTypes = AnswererTypeService.getAnswererTypes();
 
     // that.setAnswererType()
-    // - Function executes when user clicks answerer type chosing button
-    // - chosen answerer type is set to AnswerBundleExtrasService according to answererTypeId
+    // - Function is executed when user clicks answerer type chosing button.
+    //   Chosen answerer type is set to AnswerBundleExtrasService according to answererTypeId
     // - answererTypeChosen is set to true, so route button checkup passes
     // @param {Number} answererTypeId
     that.setAnswererType = function (answererTypeId) {
@@ -45,7 +45,7 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
     };
 
     // that.goToMainQuestions()
-    // - Function executes when user clicks the button where function is binded
+    // - Function is executed when user clicks the button which function is binded.
     // - If answerer type is chosen, routeButtonsUsed in RunService is set to true
     //   and user is moved to the first question set view
     // - If answerer type is not chosen, error message is shown in console
@@ -55,6 +55,7 @@ app.controller('AnswererButtonsRadioCtrl', function ($location, AnswererTypeServ
             RunService.setRouteButtonsUsed(true);
             $location.path(QuestionService.getQuestionMethodValueBySetIndex(RunService.getQuestionSetIndex()));
         } else {
+            alert("Vastaajatyyppiä ei valittu.");
             console.log("AnswererButtonsRadioCtrl.answererTypeChosen === false!");
         }
     };

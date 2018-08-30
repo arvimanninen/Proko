@@ -10,7 +10,7 @@ app.controller('AnswererResultChartBarCtrl', function (AnswererTypeService, Resu
     var names = [];
     var resultCounts = [];
 
-    // Get result counts by answerer type and  names for each answerer types
+    // Get result counts by answerer type and names for each answerer types
     for (var i = 0; i < answererTypes.length; i++) {
         var rc = ResultService.getResultCountByAnswererTypeId(answererTypes[i].AnswererTypeID);
         resultCounts.push(rc);
@@ -20,9 +20,7 @@ app.controller('AnswererResultChartBarCtrl', function (AnswererTypeService, Resu
     console.log("ResultChartBarCtrl names.length: " + names.length);
     console.log("ResultChartBarCtrl resultCounts.length: " + resultCounts.length);
 
-
-    // that.chart1 (object)
-    // - Chart data for view bindings (Chart.js/Angular-Chart.js)
+    // - Options for chart (Angular-Chart.js/Chart.js)
     that.chart1 = {
         labels: names,
         data: resultCounts,

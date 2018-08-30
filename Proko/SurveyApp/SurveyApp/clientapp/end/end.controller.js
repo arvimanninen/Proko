@@ -36,10 +36,9 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
     that.postingText = "Lähetetään vastauksia, odota hetki...";
 
     // that.goToResults()
-    // - Function executes when user clicks the button where the function is binded to
+    // - Function is executed when user clicks the button which function is binded in template.
     // - routeButtonsUsed in RunService is set to true and the view is changed to
     //   the results view
-    //   TODO: ADD ERROR MESSAGE TO TEMPLATE
     that.goToResults = function () {
         RunService.setRouteButtonsUsed(true);
         $location.path("/results");
@@ -50,11 +49,11 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
     AnswersAndBundleExtrasService.setAnswersAndBundleExtras(AnswerService.getAnswers(),
         AnswerBundleExtrasService.getAnswerBundleExtras());
 
-    // - AnswersAndBundleExtrasDTO is sended to the REST API (HTTP POST)
+    // - AnswersAndBundleExtrasDTO is posted to the REST API (HTTP POST)
     var postAnswersAndExtras = DataFactory.postSurveyAnswers.save(AnswersAndBundleExtrasService.getAnswersAndBundleExtras(),
         function () {
             // - Results to the questions currently used in client application
-            //   are queryed from the REST API (HTTP GET)
+            //   are queried from the REST API (HTTP GET)
             var resultDtos = DataFactory.getResultsToChosenQuestions.query(function () {
                 console.log("resultDtos.length: " + resultDtos.length);
                 ResultService.setResults(resultDtos);
