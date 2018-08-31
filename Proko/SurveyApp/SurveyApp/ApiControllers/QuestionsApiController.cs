@@ -17,47 +17,44 @@ namespace Back.ApiControllers
     public class QuestionsApiController : ApiController
     {
         private MainDbContext db = new MainDbContext();
-        /*
-        // GET: api/QuestionsApi
-        public IQueryable<Question> GetQuestions()
-        {
-            return db.Questions;
-        }
-        
-        */
+
+        /// <summary>
+        /// The method returns all questions which are included in db.ChosenQuestions -table.
+        /// </summary>
+        /// <returns>
+        /// The method returns List<QuestionDTO>.
+        /// </returns>
         [Route("api/getchosenquestions")]
         [HttpGet]
         public IHttpActionResult GetChosenQuestions()
         {
-            var rawDtos = from chosenquestion in db.ChosenQuestions
-                          join questionmethod in db.QuestionMethods
-                          on chosenquestion.QuestionSet.QuestionMethodID equals questionmethod.QuestionMethodID
-                          orderby chosenquestion.QuestionSet.ChosenIndex ascending, chosenquestion.ChosenIndex ascending
+            // Querying questions.
+            var rawDtos = from cq in db.ChosenQuestions
+                          join cm in db.QuestionMethods
+                          on cq.QuestionSet.QuestionMethodID equals cm.QuestionMethodID
+                          orderby cq.QuestionSet.ChosenIndex ascending, cq.ChosenIndex ascending
                           select new QuestionDTO
                           {
-                              QuestionID = chosenquestion.QuestionID,
-                              QuestionMethodID = questionmethod.QuestionMethodID,
-                              QuestionSetIndex = chosenquestion.QuestionSet.ChosenIndex,
-                              QuestionSetTitle = chosenquestion.QuestionSet.Title,
-                              ChosenQuestionIndex = chosenquestion.ChosenIndex,
-                              QuestionText = chosenquestion.Question.Text,
-                              QuestionMethodValue = questionmethod.Value
+                              QuestionID = cq.QuestionID,
+                              QuestionMethodID = cm.QuestionMethodID,
+                              QuestionSetIndex = cq.QuestionSet.ChosenIndex,
+                              QuestionSetTitle = cq.QuestionSet.Title,
+                              ChosenQuestionIndex = cq.ChosenIndex,
+                              QuestionText = cq.Question.Text,
+                              QuestionMethodValue = cm.Value
                           };
             
-            
-            
+            // Converting IQueryable to List
             List<QuestionDTO> cleanDtos = rawDtos.ToList();
             
-            // CHECKS THAT QuestionSetIndexES AND ChosenQuestionIndexES ARE IN LINEARLY ASCENDING ORDER WITHOUT GAPS
-
+            // Helper variables for validation
             int setIndex = 1;
             int questionIndex = 1;
-            
-            for(int i = 0; i < cleanDtos.Count; i++)
+
+            // Validation checkup for checking that cleanDtos.QuestionSetIndex:es and 
+            // ChosenQuestionIndex:es are in linearly ascending order without gaps.
+            for (int i = 0; i < cleanDtos.Count; i++)
             {
-                Debug.WriteLine("setIndex " + i + ": " + setIndex);
-                Debug.WriteLine("questionIndex " + i + ": " + questionIndex);
-                Debug.WriteLine("cleanDtos iteration: " + i);
                 if(cleanDtos[i].QuestionSetIndex != setIndex)
                 {
                     if(cleanDtos[i].QuestionSetIndex == setIndex + 1)
@@ -68,43 +65,25 @@ namespace Back.ApiControllers
                     else
                     {
                         Debug.WriteLine("setIndex error!");
-                        Debug.WriteLine("cleanDtos[" + i + "].QuestionSetIndex: " + cleanDtos[i].QuestionSetIndex);
-                        Debug.WriteLine("cleanDtos[" + i + "].ChosenQuestionIndex: " + cleanDtos[i].ChosenQuestionIndex);
                         // TODO: CHANGE THIS TO SOMETHING SENSIBLE
                         return NotFound();
                     }
                 }
                 if(cleanDtos[i].ChosenQuestionIndex != questionIndex)
                 {
-                    if(cleanDtos[i].ChosenQuestionIndex == questionIndex + 1)
+                    if (cleanDtos[i].ChosenQuestionIndex == questionIndex + 1)
                     {
                         questionIndex = cleanDtos[i].ChosenQuestionIndex;
                     }
                     else
                     {
-                        
                         Debug.WriteLine("questionIndex error!");
-                        Debug.WriteLine("cleanDtos[" + i + "].QuestionSetIndex: " + cleanDtos[i].QuestionSetIndex);
-                        Debug.WriteLine("cleanDtos[" + i + "].ChosenQuestionIndex: " + cleanDtos[i].ChosenQuestionIndex);
                         // TODO: CHANGE THIS TO SOMETHING SENSIBLE
                         return NotFound();
                     }
                 }
             }
             
-            /*
-            foreach(QuestionDTO d in cleanDtos)
-            {
-                Debug.WriteLine("");
-                Debug.WriteLine("cleanDtos.QuestionSetIndex: " + d.QuestionSetIndex);
-                Debug.WriteLine("cleanDtos.ChosenQuestionIndex:  " + d.ChosenQuestionIndex);
-                Debug.WriteLine("--------");
-                Debug.WriteLine("cleanDtos.QuestionID: " + d.QuestionID);
-                Debug.WriteLine("cleanDtos.QuestionMethodID: " + d.QuestionMethodID);
-                Debug.WriteLine("cleanDtos.QuestionText: " + d.QuestionText);
-                Debug.WriteLine("cleanDtos.QuestionMethodValue: " + d.QuestionMethodValue);
-            }
-            */
             if(cleanDtos.Count >= 1)
             {
                 return Ok(cleanDtos);
@@ -114,106 +93,5 @@ namespace Back.ApiControllers
                 return NotFound();
             }
         }
-        
-        
-
-        /*
-        // GET: api/QuestionsApi/5
-        [ResponseType(typeof(Question))]
-        public IHttpActionResult GetQuestion(int id)
-        {
-            Question question = db.Questions.Find(id);
-            Debug.WriteLine("question.QuestionID" + question.QuestionID);
-            Debug.WriteLine("question.Text" + question.Text);
-            if (question == null)
-            {
-                Debug.WriteLine("question is null!");
-                return NotFound();
-            }
-
-            return Ok(question);
-        }
-
-        // PUT: api/QuestionsApi/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutQuestion(int id, Question question)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != question.QuestionID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(question).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!QuestionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/QuestionsApi
-        [ResponseType(typeof(Question))]
-        public IHttpActionResult PostQuestion(Question question)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Questions.Add(question);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = question.QuestionID }, question);
-        }
-
-        // DELETE: api/QuestionsApi/5
-        [ResponseType(typeof(Question))]
-        public IHttpActionResult DeleteQuestion(int id)
-        {
-            Question question = db.Questions.Find(id);
-            if (question == null)
-            {
-                return NotFound();
-            }
-
-            db.Questions.Remove(question);
-            db.SaveChanges();
-
-            return Ok(question);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool QuestionExists(int id)
-        {
-            return db.Questions.Count(e => e.QuestionID == id) > 0;
-        }
-    */
-    }
-    
+    }    
 }
