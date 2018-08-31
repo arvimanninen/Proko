@@ -7,6 +7,14 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
 
     var that = this;
 
+    // showErrorMessage()
+    // - Function is executed in case of error in data receiving
+    var showErrorMessage = function () {
+        that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
+        lt.style.color = "red";
+        loadingIcon.src = "core/images/warning.gif";
+    };
+
     // Reseting all services to the default state
     QuestionService.reset();
     AnswerService.reset();
@@ -19,18 +27,11 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     var startButton = document.getElementById("start-button");
     var lt = document.getElementById("loading-text");
     var loadingIcon = document.getElementById("loading-icon");
+
     // startButton visibility is hidden until all needed data is received from REST API
     startButton.style.visibility = "hidden";
     // startButton default loading text
     that.loadingText = "Kysymyksiä ladataan...";
-
-    // showErrorMessage()
-    // - Function is executed in case of error in data receiving
-    var showErrorMessage = function () {
-        that.loadingText = "Kysymyksiä ei löydy! Voit sulkea selaimen ja yrittää halutessasi uudestaan";
-        lt.style.color = "red";
-        loadingIcon.src = "core/images/warning.gif";
-    };
 
     // Chosen questions are queryed from REST API (HTTP GET)
     var rawQs = DataFactory.getChosenQuestions.query(function () {

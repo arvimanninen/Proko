@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // result
 // - Component which is used for showing visualized result data to user.
 //   View component.

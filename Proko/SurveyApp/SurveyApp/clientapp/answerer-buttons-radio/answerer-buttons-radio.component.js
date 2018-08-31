@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // answererButtonsRadio 
 // - Component for choosing answerer type. Used as a view.
 // - Dependencies (components and directives): progressBar.

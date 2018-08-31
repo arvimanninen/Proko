@@ -1,7 +1,7 @@
 ﻿'use strict';
+
 // NextPrevButtonsCtrl
 // - Controller for nextPrevButtons -component
-
 app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCache, RunService, QuestionService, AnswerService) {
     var that = this;
 
@@ -32,20 +32,19 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
     };
 
     // that.goTo()
-    // - Function is executed when user clicks a button where function is binded to.
-    // - Function gets needed information from Services to local variables
+    // - Function is executed when user clicks a button which function is binded to.
+    //   Function gets needed information from Services to local variables
     // - Amounts of answers (aCount) and questions (qCount) in current question set
-    //   are checked just in case
+    //   are checked just in case.
     // - direction parameter value should be either 1 (next) or -1 (previous)
     // - If conditions pass, questionSetIndex is either increased by 1 or decreased by 1
     //   and information is updated to RunService with its functions. If the conditions
-    //   won't pass, error message is shown in browser's console
-    // - TODO: ADD ERROR MESSAGE TO TEMPLATE
+    //   won't pass, error message is shown in browser's console.
     // - Then next question method value, which defines the next view's path
-    //   is got from QuestionService
+    //   is got from QuestionService.
     // - Necessary variables (currentQmv, nextQmv, questionSetIndex) are passed
     //   to the changeLocation function as parameters. changeLocation() does
-    //   the view change
+    //   the view change.
     // @param {Number} direction
     that.goTo = function (direction) {
         var questionSetIndex = RunService.getQuestionSetIndex();
@@ -54,10 +53,8 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
         var nextQmv;
         var aCount = AnswerService.getAnswerCountByQuestionSetIndex(questionSetIndex);
         var qCount = QuestionService.getQuestionCountBySetIndex(questionSetIndex);
+
         if (aCount === qCount) {
-            console.log("aCount and qCount are SAME");
-            console.log("aCount: " + aCount);
-            console.log("qCount: " + qCount);
             if (direction === 1 || direction === -1) {
                 RunService.setRouteButtonsUsed(true);
                 if (direction === 1) {
@@ -68,16 +65,15 @@ app.controller('NextPrevButtonsCtrl', function ($location, $route, $templateCach
                     questionSetIndex--;
                     RunService.decreaseQuestionSetIndex();
                 }
-
                 nextQmv = QuestionService.getQuestionMethodValueBySetIndex(questionSetIndex);
                 changeLocation(currentQmv, nextQmv, questionSetIndex);
             } else {
                 alert("Error at go(direction)!");
             }
         } else {
-            console.log("aCount and qCount are NOT SAME");
-            console.log("aCount: " + aCount);
-            console.log("qCount: " + qCount);
+            alert("Ole hyvä ja vastaa kaikkiin kysymyksiin ensin.");
         }
+
     };
+
 });

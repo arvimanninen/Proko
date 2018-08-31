@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // progressBar
 // - Component which is used for showing progress of the survey
 //   to the user.

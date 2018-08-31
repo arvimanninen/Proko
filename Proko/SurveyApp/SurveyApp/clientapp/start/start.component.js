@@ -1,4 +1,5 @@
 'use strict';
+
 // start
 // - Component which is the first view component when app is launched.
 //   View component.

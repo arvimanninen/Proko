@@ -1,27 +1,10 @@
 ﻿'use strict';
+
 // ResultChartLineSingleCtrl
 // - Controller for resultChartLineSingle -component
 app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, AnswererTypeService, ResultService) {
-    var that = this;
-    // - Attribute from HTML template
-    var chartIndex = $attrs.questionindex;
-    var question = QuestionService.getQuestion(chartIndex);
-    var questionId = question.QuestionID;
-    that.questionText = question.QuestionText;
-    // - Gets five week averages based on question.QuestionID for chart
-    var questionAverages = ResultService.getAveragesForAll(question.QuestionID);
-    // - Gets dates for constructing date strings for chart
-    var dps = ResultService.getDatePoints();
 
-    // - Checks that questionAverages[] and dps[] have correct length
-    if (questionAverages.length !== 5) {
-        console.log("Invalid questionAverages.length @ ResultChartlineSingleCtrl!")
-        alert("Invalid questionAverages.length @ ResultChartlineSingleCtrl!");
-    }
-    if (dps.length !== 6) {
-        console.log("Invalid dps.length @ ResultChartLineSingleCtrl!");
-        alert("Invalid dps.length @ ResultChartLineSingleCtrl!");
-    }
+    var that = this;
 
     // getDayAndMonthString()
     // - Function gets Date object (dateObject) as a parameter, 
@@ -35,8 +18,25 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
         return str;
     };
 
-    for (var i = 0; i < questionAverages.length; i++) {
-        console.log("questionAverages[" + i + "]: " + questionAverages[i]);
+    // - Attribute from HTML template
+    var chartIndex = $attrs.questionindex;
+
+    var question = QuestionService.getQuestion(chartIndex);
+    var questionId = question.QuestionID;
+    // - Gets five week averages based on question.QuestionID for chart
+    var questionAverages = ResultService.getAveragesForAll(question.QuestionID);
+    // - Gets dates for constructing date strings for chart
+    var dps = ResultService.getDatePoints();
+    that.questionText = question.QuestionText;
+
+    // - Checks that questionAverages[] and dps[] have correct length
+    if (questionAverages.length !== 5) {
+        console.log("Invalid questionAverages.length @ ResultChartlineSingleCtrl!")
+        alert("Invalid questionAverages.length @ ResultChartlineSingleCtrl!");
+    }
+    if (dps.length !== 6) {
+        console.log("Invalid dps.length @ ResultChartLineSingleCtrl!");
+        alert("Invalid dps.length @ ResultChartLineSingleCtrl!");
     }
 
     // - Chart options for Angular-Chart.js/Chart.js chart
@@ -75,4 +75,5 @@ app.controller('ResultChartLineSingleCtrl', function ($attrs, QuestionService, A
             }
         }
     };
+
 });

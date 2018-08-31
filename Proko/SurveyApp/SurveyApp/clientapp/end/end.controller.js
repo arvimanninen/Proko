@@ -1,5 +1,4 @@
-﻿
-'use strict';
+﻿'use strict';
 
 // EndCtrl
 // - Controller for end -component
@@ -32,17 +31,8 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
 
     var postingSuccess = document.getElementById("posting-success");
     var postingIcon = document.getElementById("posting-icon");
-    postingSuccess.style.visibility = "hidden";
     that.postingText = "Lähetetään vastauksia, odota hetki...";
-
-    // that.goToResults()
-    // - Function is executed when user clicks the button which function is binded in template.
-    // - routeButtonsUsed in RunService is set to true and the view is changed to
-    //   the results view
-    that.goToResults = function () {
-        RunService.setRouteButtonsUsed(true);
-        $location.path("/results");
-    };
+    postingSuccess.style.visibility = "hidden";
 
     // - AnswersAndBundleExtrasDTO object is added to AnswerAndBundleExtrasService
     // based on data in AnswerService and AnswerBundleExtrasService
@@ -73,4 +63,14 @@ app.controller('EndCtrl', function ($location, AnswerService, AnswerBundleExtras
             that.postingText = "Vastausten lähettäminen epäonnistui! Voit halutessasi sulkea selaimen ja tehdä kyselyn uudestaan.";
         }
     );
+
+    // that.goToResults()
+    // - Function is executed when user clicks the button which function is binded in template.
+    // - routeButtonsUsed in RunService is set to true and the view is changed to
+    //   the results view
+    that.goToResults = function () {
+        RunService.setRouteButtonsUsed(true);
+        $location.path("/results");
+    };
+
 });

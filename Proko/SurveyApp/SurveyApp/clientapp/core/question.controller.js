@@ -1,8 +1,10 @@
 ﻿'use strict';
+
 // QuestionCtrl
 // - Controller used by qmButtonsSmileys, qmButtonsSlider and qmButtonThumbs -components
 // TODO: RENAME AS QuestionMethodCtrl OR QmCtrl
 app.controller('QuestionCtrl', function ($location, $route, $templateCache, AnswerService, QuestionService, RunService) {
+
     var that = this;
 
     // Template adjustments
@@ -24,11 +26,13 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         $location.path("/error");
     }
     RunService.setRouteButtonsUsed(false);
+
     // Gets current questionSetIndex
     var questionSetIndex = RunService.getQuestionSetIndex();
-    console.log("questionSetIndex: " + questionSetIndex);
-    // Gets question based on questionSetIndex
+
+    // Current questions based on questionSetIndex
     that.currentQuestions = QuestionService.getQuestionsBySetIndex(questionSetIndex);
+
     // that.setAnswer()
     // - Function is executed when user clicks answering button or other answer method in UI.
     // - Function gets answerIndex based on question set index (questionSetIndex) and 
@@ -53,18 +57,8 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
         } else {
             alert("Tuntematon virhe @ QuestionCtrl ");
         }
-        /*
-        var allAnswers = AnswerService.getAnswers();
-        console.log("");
-        console.log("");
-        for (var i = 0; i < allAnswers.length; i++) {
-            console.log("allAnswers.[" + i + "].Value" + allAnswers[i].Value);
-            console.log("allAnswers.[" + i + "].QuestionID" + allAnswers[i].QuestionID);
-            console.log("allAnswers.[" + i + "].QuestionMethodID" + allAnswers[i].QuestionMethodID);
-            console.log("**************");
-        }
-        */
     };
+
 });
 
 

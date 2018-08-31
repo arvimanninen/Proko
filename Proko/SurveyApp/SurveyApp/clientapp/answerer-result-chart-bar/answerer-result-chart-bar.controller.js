@@ -17,9 +17,6 @@ app.controller('AnswererResultChartBarCtrl', function (AnswererTypeService, Resu
         names.push(answererTypes[i].Name);
     }
 
-    console.log("ResultChartBarCtrl names.length: " + names.length);
-    console.log("ResultChartBarCtrl resultCounts.length: " + resultCounts.length);
-
     // - Options for chart (Angular-Chart.js/Chart.js)
     that.chart1 = {
         labels: names,

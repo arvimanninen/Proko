@@ -1,18 +1,20 @@
 ﻿'use strict';
+
 // ResultChartPieCtrl
 // - Controller for resultChartPie -component
 app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultService) {
+
     var that = this;
 
     // - Attribute from HTML template
     var chartIndex = $attrs.questionindex;
-    
     var question = QuestionService.getQuestion(chartIndex);
     // TODO: CHANGE TO DYNAMIC VALUE
     var maxResultValue = 4;
+
     that.questionText = question.QuestionText;
     that.ci = chartIndex;
-    // - Gets result counts for each result value (minimum = always 1)
+    // - Result counts for each result value (minimum = always 1)
     that.resultCounts = ResultService.getResultCounts(question.QuestionID, maxResultValue);
 
     // - Chart options for Angular-Chart.js/Chart.js chart
@@ -42,21 +44,17 @@ app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultSe
                 yAxes: [
                     {
                         id: 'y-axis-1',
-                        // CHANGED TO FALSE
                         display: false,
                         type: 'linear',
                         position: 'left',
                         ticks: {
-                            // CHANGED TO FALSE AND BACK TO TRUE
                             display: false,
                             min: 0,
                             max: 5,
-                            // mirror: false ADDED
                             beginAtZero: true,
                             stepSize: 1.25
                         },
                         scaleLabel: {
-                            // CHANGED TO FALSE AND BACK TO TRUE
                             display: true,
                             labelString: "Tyytyväisyys"
                         }
@@ -66,5 +64,4 @@ app.controller('ResultChartPieCtrl', function ($attrs, QuestionService, ResultSe
         }
     };
 
-    
 });

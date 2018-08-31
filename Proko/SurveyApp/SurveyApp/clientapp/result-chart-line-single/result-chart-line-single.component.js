@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // resultChartLineSingle
 // - Component which is used for showing results in a single line chart.
 // - Dependencies (components and directives): *none*.

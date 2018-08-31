@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // resultChartPie
 // - Component which is used for showing results in a donut chart.
 // - Dependencies (components and directives): *none*.

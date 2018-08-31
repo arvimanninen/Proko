@@ -1,8 +1,10 @@
 'use strict';
+
 // config
 // - Configuration for "app" Angular application module
 app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
     function ($routeProvider, $locationProvider, ChartJsProvider) {
+
         // - Routing
         $routeProvider
             .when('/', {
@@ -60,6 +62,7 @@ app.config(['$routeProvider', '$locationProvider', 'ChartJsProvider',
                     mode: null
                 }
             }
-        });  
+        });
+        
     }
 ]);
