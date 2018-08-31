@@ -18,10 +18,14 @@ namespace Back.ApiControllers
     {
         private MainDbContext db = new MainDbContext();
         
-        // PostSurveyAnswers()
-        // - Function gets AnswersAndBundleExtrasDTO abe-object as function parameter and saves
-        //   its content to the database
-        // @param {AnswersAndBundleExtrasDTO} abe
+        /// <summary>
+        /// The method gets AnswersAndBundleExtrasDTO abe-object as a parameter and saves
+        /// its content to the database.
+        /// </summary>
+        /// <param name="abe">
+        /// Object contains a list of answer objects (List<AnswerDTO> abe.AnswerDtos) and
+        /// answer bundle extras object (AnswerBundleExtrasDTO abe.AnswerBundleExtrasDto).
+        /// </param>
         [Route("api/postsurveyanswers")]
         [HttpPost]
         public IHttpActionResult PostSurveyAnswers([FromBody] AnswersAndBundleExtrasDTO abe)
@@ -44,7 +48,7 @@ namespace Back.ApiControllers
             Debug.WriteLine("textFb: " + textFb);
 
 
-            // - If there is no answerDtos, BadRequest will be returned.
+            // - If answerDtos is empty, BadRequest will be returned.
             if (answerDtos.Count == 0)
             {
                 return BadRequest();
@@ -105,20 +109,22 @@ namespace Back.ApiControllers
 
         }
 
-        // GetResultsToChosenQuestions()
-        // - Function returns results (AnswerResultDTO) to questions that are currently chosen
-        //   (= that are in database's ChosenQuestions-table) and returns them in a List.
-        // @return {List<AnswerResultDTO>} results
+        /// <summary>
+        /// The method returns results to questions that are currently chosen
+        ///   (= that are in database's ChosenQuestions-table) and returns them in a List.
+        /// </summary>
+        /// <returns>The method returns List<AnswerResultDTO>.</returns>
         [Route("api/getresultstochosenquestions")]
         [HttpGet]
         public IHttpActionResult GetResultsToChosenQuestions()
         {
-            // GetResultsToChosenQuestions.ScaleAnswerValue()
-            // - Gets target value, value's current maximum value and target maximum value
-            //   as parameters, and scale them 
+
+            // The function gets target value, value's current maximum value and target maximum value
+            //   as parameters, and scale them from current value range to target value range.
+            // Example: value = 3, currentMax = 4 (scale 1-4), absoluteMaxD = 5.0 (range 1-5).
+            // value is scaled to range 1-5 -> scaledValueD (scaled value) is 3.75.
             double ScaleAnswerValue(int value, int currentMax, double absoluteMaxD)
             {
-                // PREVENTS WRONG SCALING WHEN VALUE
                 if (value == 1)
                 {
                     return 1;
@@ -129,22 +135,26 @@ namespace Back.ApiControllers
                 return scaledValueD;
             }
 
-            // ConvertToUnixTime CODE FROM: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
+            // The function converts DateTime object to the Unix time format 
+            // (milliseconds since 1.1.1970) and returns the converted value.
+            // Code source: https://www.fluxbytes.com/csharp/convert-datetime-to-unix-time-in-c/
             long ConvertToUnixTime(DateTime datetime)
             {
                 DateTime sTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-
                 return (long)(datetime - sTime).TotalMilliseconds;
             }
 
+            // Querying QuestionID:s from ChosenQuestions-table.
             var rawCqIdsWithDupl = from cq in db.ChosenQuestions
                                    orderby cq.QuestionID
                                    select cq.QuestionID;
+            // IQueryable to List conversion.
             List<int> cqIdsWithDupl = rawCqIdsWithDupl.ToList();
-            Debug.WriteLine("cqIdsWithDupl.Count: "  + cqIdsWithDupl.Count);
+            // Removing duplicates.
             List<int> cqIds = cqIdsWithDupl.Distinct().ToList();
-            Debug.WriteLine("cqIds.Count: " + cqIds.Count);
 
+            // Querying Answers from database based on cqIds-List. Returns AnswerResultTemp
+            // -objects.
             var rawResultTemps = from id in cqIds
                       join a in db.Answers
                       on id equals a.QuestionID
@@ -159,8 +169,12 @@ namespace Back.ApiControllers
                           AnswerBundleDate = a.AnswerSet.AnswerBundle.Date
                       };
 
+            // Converting IENumerable to List.
             List<AnswerResultTemp> resultTemps = rawResultTemps.ToList();
+            // Helper variable for scaling values.
             double absoluteScaleMax = -2;
+
+            // Finding the largest resultTemps.AnswerScaleMax value
             foreach(AnswerResultTemp art in resultTemps)
             {
                 if(art.AnswerScaleMax > absoluteScaleMax)
@@ -170,21 +184,32 @@ namespace Back.ApiControllers
             }
 
             List<AnswerResultDTO> results = new List<AnswerResultDTO>();
+            // Converting AnswerResultTemp objects to AnswerResultDTO-objects
             foreach (AnswerResultTemp rt in resultTemps)
             {
                 AnswerResultDTO nr = new AnswerResultDTO();
                 nr.QuestionID = rt.QuestionID;
+                // Converting value to the scale range based on largest resultTemps.AnswerScaleMax
+                // (absoluteScaleMax)
                 nr.AnswerValue = ScaleAnswerValue(rt.AnswerValue, rt.AnswerScaleMax, absoluteScaleMax);
                 nr.AnswererTypeID = rt.AnswererTypeID;
                 nr.AnswererTypeName = rt.AnswererTypeName;
+                // DateTime converted to Unix time format
                 nr.AnswerBundleDateMs = ConvertToUnixTime(rt.AnswerBundleDate);
                 results.Add(nr);
             }
 
             return Ok(results);
 
-        }  
+        }
 
+        /// <summary>
+        /// The method returns answerer types from db.AnswererTypes-table, where
+        /// condition db.AnswererTypes.Chosen == true.
+        /// </summary>
+        /// <returns>
+        /// The method returns List<AnswererTypeDTO>.
+        /// </returns>
         [Route("api/getchosenanswerertypes")]
         [HttpGet]
         public IHttpActionResult GetChosenAnswererTypes()
@@ -207,36 +232,5 @@ namespace Back.ApiControllers
                 return NotFound();
             }
         }
-        /*
-        // DELETE: api/AnswersApi/5
-        [ResponseType(typeof(Answer))]
-        public IHttpActionResult DeleteAnswer(int id)
-        {
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
-            {
-                return NotFound();
-            }
-
-            db.Answers.Remove(answer);
-            db.SaveChanges();
-
-            return Ok(answer);
-        }
-        
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        
-        private bool AnswerExists(int id)
-        {
-            return db.Answers.Count(e => e.AnswerID == id) > 0;
-        }
-        */
     }
 }
