@@ -1,9 +1,10 @@
 ﻿'use strict';
+
 // AnswerBundleExtrasService
 // - Client-side storage for written feedback (textFeedback) and answerer type (answererTypeId)
 app.service('AnswerBundleExtrasService', function () {
+
     var textFeedback = "";
-    // TODO: CHANGE THIS!!!!
     var answererTypeId = -1;
     /*
     public class AnswerBundleExtrasDTO
@@ -28,7 +29,7 @@ app.service('AnswerBundleExtrasService', function () {
     // setTextFeedback()
     // - Function gets written feedback as parameter, convert it as a string
     //   and sets converted value to AnswerBundleExtrasService.textFeedback -variable.
-    // @param {=} feedback 
+    // @param {String OR Number} feedback 
     var setTextFeedback = function (feedback) {
         textFeedback = feedback.toString();
     };
@@ -75,4 +76,5 @@ app.service('AnswerBundleExtrasService', function () {
         getAnswerBundleExtras: getAnswerBundleExtras,
         reset: reset
     };
+
 });

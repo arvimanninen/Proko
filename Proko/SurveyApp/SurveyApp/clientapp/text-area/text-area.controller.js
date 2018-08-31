@@ -22,6 +22,7 @@ app.controller('TextAreaCtrl', function ($location, QuestionService, AnswerBundl
     });
 
     var textFb = document.getElementById("text-fb");
+
     // - textFeedback get from AnswerBundleExtrasService
     // - If textFeedback is already written, it is showed in "text-fb" textarea element
     //   and its available for editing.
@@ -33,7 +34,6 @@ app.controller('TextAreaCtrl', function ($location, QuestionService, AnswerBundl
     //   to the last question set view, defined by question method value. 
     // - Else if direction is 1, view is changed to the end view. Else, error message is showed.
     // @param {Number} direction
-
     that.goToEndOrBack = function (direction) {
         // - Text feedback is set to AnswerBundleExtrasService
         AnswerBundleExtrasService.setTextFeedback(textFb.value);

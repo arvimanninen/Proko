@@ -1,7 +1,9 @@
 ﻿'use strict';
+
 // AnswererTypeService
 // - Client-side storage for answerer types
 app.service('AnswererTypeService', function () {
+
     var answererTypes = [];
     /*
     public class AnswererTypeDTO
@@ -10,6 +12,7 @@ app.service('AnswererTypeService', function () {
         public string Name { get; set; }
     }
     */
+
     // getAnswererTypes()
     // - Function returns array of all answerer types (AnswererTypeDTO, check server-side code)
     //   in AnswererTypeService.answererTypes[].
@@ -17,14 +20,7 @@ app.service('AnswererTypeService', function () {
     var getAnswererTypes = function () {
         return answererTypes;
     };
-    /*
-    public class AnswererTypeDTO
-    {
-        public int AnswererTypeID { get; set; }
-        public string Name { get; set; }
-    }
-
-    */
+    
     // setAnswererTypes()
     // - Function gets array (answererTypeDtos) of answerer types (AnswererTypeDTO) as a parameter,
     //   and adds them to the end of AnswererTypeService.answererTypes[] in the same order
@@ -36,6 +32,7 @@ app.service('AnswererTypeService', function () {
             answererTypes.push(answererTypeDtos[i]);
         }
     };
+
     // reset()
     // - Function sets AnswererTypeService to the default state.
     var reset = function () {
@@ -47,4 +44,5 @@ app.service('AnswererTypeService', function () {
         setAnswererTypes: setAnswererTypes,
         reset: reset
     }
+
 });

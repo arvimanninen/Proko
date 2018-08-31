@@ -73,7 +73,7 @@ app.controller('StartCtrl', function StartCtrl($location, DataFactory, QuestionS
     }, function () {
         // - In case of question query error, error message is showed
         showErrorMessage();
-        });
+    });
 
     // that.startSurvey()
     // - Function is executed when user clicks the button which is binded to it

@@ -3,6 +3,7 @@
 // ResultService
 // - Client-side data storage/data service for results
 app.service('ResultService', function () {
+
     var results = [];
     var datePoints = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
     var datePointsModified = false;
@@ -92,6 +93,7 @@ app.service('ResultService', function () {
 
         var referenceValues = [];
         var resultCounts = [];
+
         // - Reference values are created for finding right results
         //   when ResultService.results[].AnswerValue -variable has a maximum value of 5. 
         //   Reference values are added to referenceValues[].
@@ -217,4 +219,5 @@ app.service('ResultService', function () {
         getResultCountByAnswererTypeId: getResultCountByAnswererTypeId,
         reset: reset
     };
+
 });

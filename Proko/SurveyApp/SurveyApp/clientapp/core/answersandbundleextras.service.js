@@ -1,8 +1,10 @@
 ﻿'use strict';
+
 // AnswersAndBundleExtrasService
 // - Client-side storage for answers and bundle extras (answerer type, written feedback)
 // - Used for sending data to REST API in correct format
 app.service('AnswersAndBundleExtrasService', function () {
+
     var answersAndBundleExtras = null;
 
     // Object constructor
@@ -43,11 +45,5 @@ app.service('AnswersAndBundleExtrasService', function () {
         setAnswersAndBundleExtras: setAnswersAndBundleExtras,
         reset: reset
     };
-    /*
-    public class AnswersAndBundleExtrasDTO
-    {
-        public List<AnswerDTO> AnswerDtos { get; set; }
-        public AnswerBundleExtrasDTO AnswerBundleExtrasDto { get; set; }
-    }
-    */
+    
 });

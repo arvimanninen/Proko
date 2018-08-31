@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // dynamicChartRow
 // - Creates dynamic chart row based on chart count per row (chartsperrow),
 //   chart component names (chartcomponents) and optional first chart component name (firstchartcomponent).
@@ -13,6 +14,7 @@
 // @param {Array<String>} chartcomponents
 // @param {String} firstchartcomponent
 app.directive('dynamicChartRow', function ($compile) {
+
     return {
         restrict: 'E',
         scope: {
@@ -51,30 +53,24 @@ app.directive('dynamicChartRow', function ($compile) {
             var chartsPerRow = $scope.chartsperrow; // TODO: angular.isNumber
             var chartComponents = angular.isFunction($scope.chartcomponents) ? $scope.chartcomponents() : [];
             var firstChartComponent = $scope.firstchartcomponent;
+
             // If firstChartComponent is not null (loose definition - null, undefined, NaN etc),
             // firstChartComponent is added as first component in chartComponents
             if (firstChartComponent != null) {
                 chartComponents.unshift(firstChartComponent);
             }
-            console.log("dynamic-chart-row.chartsPerRow: " + chartsPerRow);
-            console.log("dynamic-chart-row.chartComponents.length: " + chartComponents.length);
 
             var rowCount = calculateRowCount(chartComponents.length, chartsPerRow);
-
-            console.log("dynamic-chart-row.rowCount: " + rowCount);
-            
-            for (var k = 0; k < chartComponents.length; k++) {
-                console.log("dynamic-chart-row.chartComponents[" + k + "]:" + chartComponents[k]);
-            }
-
             var chartIndex = 0;
             var rowElements = [];
             var firstChartInArray = true;
-            // - Iterates all rows
+
+            // - Iterates all rows through
             for (var i = 0; i < rowCount; i++) {
                 // - Row element creation and setting correct class attribute to the row element
                 var rowElement = document.createElement("div");
                 rowElement.setAttribute("class", "row results-div");
+
                 // - Iterates all charts that will be added to current row
                 for (var j = 0; j < chartsPerRow; j++) {
                     if (chartIndex < chartComponents.length) {
@@ -100,13 +96,17 @@ app.directive('dynamicChartRow', function ($compile) {
                         break;
                     }
                 }
+
                 // Compiles rowElement
                 $compile(rowElement)($scope);
+
                 rowElements.push(rowElement);
             }
+
             // - After all rows with child chart elements (rowElements array) are created and compiled,
             //   dynamic-chart-row HTML element is replaced with rowElements
             $element.replaceWith(rowElements);
         }
     };
+
 });

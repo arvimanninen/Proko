@@ -1,9 +1,11 @@
 ﻿' use strict';
+
 // RunService
 // - State service, stores information about current question set index (questionSetIndex),
 //   question set count (questionSetCount, for avoiding unnecessary recounting) and
 //   usage of application's own navigation buttons (routeButtonsUsed).
 app.service('RunService', function () {
+
     var questionSetIndex = 1;
     var questionSetCount = 0;
     var routeButtonsUsed = false;
@@ -79,4 +81,5 @@ app.service('RunService', function () {
         setRouteButtonsUsed: setRouteButtonsUsed,
         reset: reset
     };
+
 });

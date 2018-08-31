@@ -15,13 +15,13 @@ app.service('QuestionService', function () {
                               QuestionMethodValue = questionmethod.Value
                           };
     */
+
     // getQuestion()
     // - Function returns question from QuestionService.questions[],
     //   based on question's index in array. If index-parameter is larger than
     //   QuestionService.questions[] length, function returns -1.
     // @param {Number} index
-    // @return {QuestionDTO} questions[index]
-    // OR @return {Number} -1
+    // @return {QuestionDTO} questions[index] OR @return {Number} -1
     var getQuestion = function (index) {
         if (index < questions.length) {
             return questions[index];
@@ -130,4 +130,5 @@ app.service('QuestionService', function () {
         setQuestions: setQuestions,
         reset: reset
     };
+
 });

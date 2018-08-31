@@ -1,4 +1,5 @@
 ﻿'use strict';
+
 // start
 // - Component which is the used for giving optional written feedback.
 //   View component.

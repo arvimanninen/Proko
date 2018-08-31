@@ -1,7 +1,9 @@
 ﻿'use strict';
+
 // AnswerService
 // - Client-side storage for answers
 app.service('AnswerService', function () {
+
     var answers = [];
 
     // - Object constructors
@@ -110,7 +112,6 @@ app.service('AnswerService', function () {
                 correctIndex.push(i);
             }
         }
-        
         if (correctIndex.length === 1) {
             return correctIndex[0];
         }
