@@ -47,7 +47,6 @@ app.controller('QuestionCtrl', function ($location, $route, $templateCache, Answ
     that.setAnswer = function (value, questionSetIndex, chosenQuestionIndex, questionId, questionMethodId) {
         // Check if Answer exists
         var answerIndex = AnswerService.getAnswerIndex(questionSetIndex, chosenQuestionIndex);
-        console.log("setAnswer.answerIndex: " + answerIndex);
         if (answerIndex >= 0) {
             AnswerService.replaceAnswer(answerIndex, value, questionId, questionMethodId);
         } else if (answerIndex === -1) {
